@@ -14,7 +14,7 @@ import webpack2      from 'webpack';
 import named         from 'vinyl-named';
 import uncss         from 'uncss';
 import autoprefixer  from 'autoprefixer';
-
+import rename        from 'gulp-rename';
 // Load all Gulp plugins into one variable
 const $ = plugins();
 
@@ -32,7 +32,13 @@ function loadConfig() {
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, javascript, images, copy), sass, styleGuide));
+ gulp.series(
+              clean
+              , gulp.parallel(pages, javascript, images, copy)
+              , sass
+              //, styleGuide
+            )
+          );
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -64,6 +70,24 @@ function pages() {
     .pipe(gulp.dest(PATHS.dist));
 }
 
+function xml() {
+	return (
+    gulp.src('src/pages/**/*.{xml,xslt}')
+      .pipe(panini({
+        root: 'src/pages/',
+        layouts: 'src/layouts/',
+        partials: 'src/partials/',
+        data: 'src/data/',
+        helpers: 'src/helpers/'
+      }))      	
+			.pipe(rename(function (path) {
+				let filename = path.basename.split('.');
+				path.basename = filename[0];
+				path.extname = "." + filename[1];
+			}))
+			.pipe(gulp.dest(PATHS.dist))
+	);
+}
 // Load updated HTML templates and partials into Panini
 function resetPages(done) {
   panini.refresh();
@@ -71,12 +95,12 @@ function resetPages(done) {
 }
 
 // Generate a style guide from the Markdown content and HTML template in styleguide/
-function styleGuide(done) {
-  sherpa('src/styleguide/index.md', {
-    output: PATHS.dist + '/styleguide.html',
-    template: 'src/styleguide/template.html'
-  }, done);
-}
+// function styleGuide(done) {
+//   sherpa('src/styleguide/index.md', {
+//     output: PATHS.dist + '/styleguide.html',
+//     template: 'src/styleguide/template.html'
+//   }, done);
+// }
 
 // Compile Sass into CSS
 // In production, the CSS is compressed
@@ -169,5 +193,5 @@ function watch() {
   gulp.watch('src/assets/scss/**/*.scss').on('all', sass);
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
-  gulp.watch('src/styleguide/**').on('all', gulp.series(styleGuide, browser.reload));
+  // gulp.watch('src/styleguide/**').on('all', gulp.series(styleGuide, browser.reload));
 }

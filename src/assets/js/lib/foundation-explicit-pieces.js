@@ -37,47 +37,47 @@ Foundation.addToJquery($);
 
 // Add Foundation Utils to Foundation global namespace for backwards
 // compatibility.
-Foundation.rtl = CoreUtils.rtl;
-Foundation.GetYoDigits = CoreUtils.GetYoDigits;
-Foundation.transitionend = CoreUtils.transitionend;
-Foundation.RegExpEscape = CoreUtils.RegExpEscape;
-Foundation.onLoad = CoreUtils.onLoad;
+// Foundation.rtl = CoreUtils.rtl;
+// Foundation.GetYoDigits = CoreUtils.GetYoDigits;
+// Foundation.transitionend = CoreUtils.transitionend;
+// Foundation.RegExpEscape = CoreUtils.RegExpEscape;
+// Foundation.onLoad = CoreUtils.onLoad;
 
-Foundation.Box = Box;
-Foundation.onImagesLoaded = onImagesLoaded;
-Foundation.Keyboard = Keyboard;
-Foundation.MediaQuery = MediaQuery;
-Foundation.Motion = Motion;
-Foundation.Move = Move;
-Foundation.Nest = Nest;
-Foundation.Timer = Timer;
+// Foundation.Box = Box;
+// Foundation.onImagesLoaded = onImagesLoaded;
+// Foundation.Keyboard = Keyboard;
+// Foundation.MediaQuery = MediaQuery;
+// Foundation.Motion = Motion;
+// Foundation.Move = Move;
+// Foundation.Nest = Nest;
+// Foundation.Timer = Timer;
 
 // Touch and Triggers previously were almost purely sede effect driven,
 // so no need to add it to Foundation, just init them.
-Touch.init($);
-Triggers.init($, Foundation);
-MediaQuery._init();
+// Touch.init($);
+// Triggers.init($, Foundation);
+// MediaQuery._init();
 
-Foundation.plugin(Abide, 'Abide');
-Foundation.plugin(Accordion, 'Accordion');
-Foundation.plugin(AccordionMenu, 'AccordionMenu');
-Foundation.plugin(Drilldown, 'Drilldown');
-Foundation.plugin(Dropdown, 'Dropdown');
-Foundation.plugin(DropdownMenu, 'DropdownMenu');
-Foundation.plugin(Equalizer, 'Equalizer');
-Foundation.plugin(Interchange, 'Interchange');
-Foundation.plugin(Magellan, 'Magellan');
-Foundation.plugin(OffCanvas, 'OffCanvas');
-Foundation.plugin(Orbit, 'Orbit');
-Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
-Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
-Foundation.plugin(Reveal, 'Reveal');
-Foundation.plugin(Slider, 'Slider');
-Foundation.plugin(SmoothScroll, 'SmoothScroll');
-Foundation.plugin(Sticky, 'Sticky');
-Foundation.plugin(Tabs, 'Tabs');
-Foundation.plugin(Toggler, 'Toggler');
-Foundation.plugin(Tooltip, 'Tooltip');
-Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
+// Foundation.plugin(Abide, 'Abide');
+// Foundation.plugin(Accordion, 'Accordion');
+// Foundation.plugin(AccordionMenu, 'AccordionMenu');
+// Foundation.plugin(Drilldown, 'Drilldown');
+// Foundation.plugin(Dropdown, 'Dropdown');
+// Foundation.plugin(DropdownMenu, 'DropdownMenu');
+// Foundation.plugin(Equalizer, 'Equalizer');
+// Foundation.plugin(Interchange, 'Interchange');
+// Foundation.plugin(Magellan, 'Magellan');
+// Foundation.plugin(OffCanvas, 'OffCanvas');
+// Foundation.plugin(Orbit, 'Orbit');
+// Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
+// Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
+// Foundation.plugin(Reveal, 'Reveal');
+// Foundation.plugin(Slider, 'Slider');
+// Foundation.plugin(SmoothScroll, 'SmoothScroll');
+// Foundation.plugin(Sticky, 'Sticky');
+// Foundation.plugin(Tabs, 'Tabs');
+// Foundation.plugin(Toggler, 'Toggler');
+// Foundation.plugin(Tooltip, 'Tooltip');
+// Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
 
 export { Foundation };
