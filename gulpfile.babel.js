@@ -70,24 +70,6 @@ function pages() {
     .pipe(gulp.dest(PATHS.dist));
 }
 
-function xml() {
-	return (
-    gulp.src('src/pages/**/*.{xml,xslt}')
-      .pipe(panini({
-        root: 'src/pages/',
-        layouts: 'src/layouts/',
-        partials: 'src/partials/',
-        data: 'src/data/',
-        helpers: 'src/helpers/'
-      }))      	
-			.pipe(rename(function (path) {
-				let filename = path.basename.split('.');
-				path.basename = filename[0];
-				path.extname = "." + filename[1];
-			}))
-			.pipe(gulp.dest(PATHS.dist))
-	);
-}
 // Load updated HTML templates and partials into Panini
 function resetPages(done) {
   panini.refresh();
