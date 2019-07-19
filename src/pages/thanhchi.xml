@@ -4,16 +4,16 @@ comName: CÔNG TY CỔ PHẦN THÀNH CHÍ
 comTaxCode: 3500771447
 comAddress: Số 37 Đường 3/2, Phường 8, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 ---
-<CNCom>{{page.comName}}</CNCom>
+<CNCom>{{comName}}</CNCom>
 <Content Id="SigningData">
 	<ArisingDate/>
 	<InvoicePattern>01GTKT0/001</InvoicePattern>
 	<SerialNo>TC/19E</SerialNo>
 	<InvoiceNo>0000000</InvoiceNo>
 	<Kind_of_Payment></Kind_of_Payment>
-	<ComName>{{page.comName}}</ComName>
-	<ComTaxCode>{{page.comTaxCode}}</ComTaxCode>
-	<ComAddress>{{page.comAddress}}</ComAddress>
+	<ComName>{{comName}}</ComName>
+	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
+	<ComAddress>{{comAddress}}</ComAddress>
 	<ComPhone/>
 	<ComFax/>
 	<ComBankNo/>
