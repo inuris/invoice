@@ -1,16 +1,15 @@
 ---
 layout: xml
-comName: CÔNG TY CỔ PHẦN THÀNH CHÍ
-comTaxCode: 3500771447
-comAddress: Số 37 Đường 3/2, Phường 8, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+DATA: &DATA test
+comName: *DATA
 ---
-<?xml-stylesheet type='text/xsl' href='thanhchi.xslt' ?>
-<Invoice>
+<?xml-stylesheet type='text/xsl' href='test.xslt' ?>
+<Invoice> 
 <CNCom>{{comName}}</CNCom>
 <Content Id="SigningData">
 	<ArisingDate/>
 	<InvoicePattern>01GTKT0/001</InvoicePattern>
-	<SerialNo>TC/19E</SerialNo>
+	<SerialNo>NL/19E</SerialNo>
 	<InvoiceNo>0000000</InvoiceNo>
 	<Kind_of_Payment></Kind_of_Payment>
 	<ComName>{{comName}}</ComName>
@@ -54,7 +53,7 @@ comAddress: Số 37 Đường 3/2, Phường 8, Thành phố Vũng Tàu, Tỉnh 
 	<Extra/>
 	<SignDate/>
 </Content>
-<imageClient></imageClient>
+	<imageClient></imageClient>
 	<image>Signature Valid</image>
 	<convert></convert>
 	<Fkey></Fkey>
