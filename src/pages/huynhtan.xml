@@ -1,14 +1,18 @@
 ---
 layout: xml
-comName: asfdf
+comCode: huynhtan
+comSerial: HT
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN HUỲNH TẤN
+comTaxCode: 3500422189
+comAddress: Số 11 Huyền Trân Công Chúa, Phường 8, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 ---
-<?xml-stylesheet type='text/xsl' href='test.xslt' ?>
+<?xml-stylesheet type='text/xsl' href='{{comCode}}.xslt' ?>
 <Invoice> 
 <CNCom>{{comName}}</CNCom>
 <Content Id="SigningData">
 	<ArisingDate/>
-	{{> test serial=comName}}
-	<SerialNo>NL/19E</SerialNo>
+	<InvoicePattern>01GTKT0/001</InvoicePattern>
+	<SerialNo>{{comSerial}}/19E</SerialNo>
 	<InvoiceNo>0000000</InvoiceNo>
 	<Kind_of_Payment></Kind_of_Payment>
 	<ComName>{{comName}}</ComName>

@@ -1,3 +1,15 @@
-comName: &comName CÔNG TY TEST
-comTaxCode: 123456789
-comAddress: Số 123 Lý Thường Kiệt, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa-Vũng Tàu, Việt Nam
+company:
+  width: 160
+  info:
+  - label: Đơn vị bán hàngaaa
+    code: ComName
+    style: "font-weight: bold; font-size: 17px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    style: "font-weight: bold; letter-spacing: 2px"
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Số tài khoản
+    value: 76010000372259 tại Ngân hàng Đầu tư Phát triển Bà Rịa - Vũng Tàu
+  - label: Điện thoại
+    value: 0254.6253413

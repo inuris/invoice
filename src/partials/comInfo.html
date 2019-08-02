@@ -1,0 +1,27 @@
+{{#each company.info}}
+<div class="clearfix vt-row">
+    {{#if this.label}}
+    <label class="fl-l title" style="margin-top:0;">
+        <span>{{this.label}} </span>
+    </label>
+    {{/if}}
+    <label class="fl-l" style="margin:0;">
+        {{#if this.label}}:&#160;{{/if}}
+        <span {{#if this.style}} style="{{this.style}}" {{/if}}>
+            {{#if this.code}}
+            <xsl:choose>
+                <xsl:when test="../../{{this.code}}!=''">
+                    <xsl:value-of select="../../{{this.code}}" />
+                </xsl:when>
+                <xsl:otherwise>
+                    &#160;
+                </xsl:otherwise>
+            </xsl:choose>
+            {{/if}}
+            {{#if this.value}}
+            {{this.value}}
+            {{/if}}
+        </span>
+    </label>
+</div>
+{{/each}}

@@ -1,0 +1,52 @@
+{{#each customer.info}}
+<div class="clearfix vt-row">
+    <label class="fl-l title" style="margin-top:0;">
+        <span>{{this.label}}</span>
+    </label>
+    <label class="fl-l input-name" style="width:{{this.width}}px;margin:0;">
+        {{#if this.code}}
+        :&#160;
+        <span>
+            <xsl:choose>
+                <xsl:when test="{{this.code}}!=''">
+                    {{#if this.kindOfPayment}}
+                    {{> kindOfPayment}}
+                    {{else}}
+                    <xsl:value-of select="{{this.code}}" />
+                    {{/if}}
+                </xsl:when>
+                <xsl:otherwise>
+                    &#160;
+                </xsl:otherwise>
+            </xsl:choose>
+        </span>
+        {{/if}}
+    </label>
+    {{#if this.col-2}}
+    {{#each this.col-2}}
+    <label class="fl-l" style="margin-top:0;">
+        <span>{{this.label}}</span>
+    </label>
+    <label class="fl-l input-name" style="width:{{this.width}}px;margin:0;">
+        {{#if this.code}}
+        :&#160;
+        <span>
+            <xsl:choose>
+                <xsl:when test="{{this.code}}!=''">
+                    {{#if this.kindOfPayment}}
+                    {{> kindOfPayment}}
+                    {{else}}
+                    <xsl:value-of select="{{this.code}}" />
+                    {{/if}}
+                </xsl:when>
+                <xsl:otherwise>
+                    &#160;
+                </xsl:otherwise>
+            </xsl:choose>
+        </span>
+        {{/if}}
+    </label>
+    {{/each}}
+    {{/if}}
+</div>
+{{/each}}

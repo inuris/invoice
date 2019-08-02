@@ -45,6 +45,102 @@ customer:
         width: 353
         code: CusBankNo
 ---
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl js" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <xsl:param name="bien" select="0"/>
+  <xsl:param name="bien1" select="0"/>
+
+  <xsl:variable name="itemCount">
+    <xsl:value-of select="count(Invoice//Content//Products//Product)"/>
+  </xsl:variable>
+
+  <xsl:template name="addZero">
+    <xsl:param name="count"/>
+    <xsl:if test="$count > 0">
+      <xsl:text>0</xsl:text>
+      <xsl:call-template name="addZero">
+        <xsl:with-param name="count" select="$count - 1"/>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="congphi">
+    <xsl:param name="count"/>
+    <xsl:if test="$count > 0">
+      <xsl:value-of select="$count">
+      </xsl:value-of>
+      <xsl:text>0</xsl:text>
+      <xsl:call-template name="addZero">
+        <xsl:with-param name="count" select="$count - 1"/>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="addDots">
+    <xsl:param name="val"/>
+    <xsl:param name="val1"/>
+    <xsl:param name="val2"/>
+    <xsl:param name="i" select="1"/>
+    <xsl:if test="$val1>0">
+      <xsl:choose>
+        <xsl:when test="$val2 !=0">
+          <xsl:value-of select="substring($val,$i,$val2)"/>
+          <xsl:if test="substring($val,$i+$val2+1,1) !=''">
+            <xsl:text>.</xsl:text>
+          </xsl:if>
+          <xsl:call-template name="addDots">
+            <xsl:with-param name="val" select="$val"/>
+            <xsl:with-param name="val1" select="$val1 - 1"/>
+            <xsl:with-param name="i" select="$i + $val2"/>
+            <xsl:with-param name="val2" select="3"/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <!--<xsl:text>test</xsl:text>-->
+          <xsl:value-of select="substring($val,$i,3)"/>
+          <xsl:if test="substring($val,$i+3,1) !=''">
+            <xsl:text>.</xsl:text>
+          </xsl:if>
+          <xsl:call-template name="addDots">
+            <xsl:with-param name="val" select="$val"/>
+            <xsl:with-param name="val1" select="$val1 - 1"/>
+            <xsl:with-param name="i" select="$i + 3"/>
+            <xsl:with-param name="val2" select="3"/>
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="addLine">
+    <xsl:param name="count"/>
+    <xsl:if test="$count > 0">
+      <tr class="noline back">
+        <td class="back-bold" height="13px">
+          <xsl:value-of select="''"/>
+        </td>
+        <td class="back-bold" height="13px">
+          <xsl:value-of select="''"/>
+        </td>
+        <td class="back-bold" height="13px">
+          <xsl:value-of select="''"/>
+        </td>
+        <td class="back-bold" height="13px">
+          <xsl:value-of select="''"/>
+        </td>
+        <td class="back-bold" height="13px">
+          <xsl:value-of select="''"/>
+        </td>
+        <td class="back-bold">
+          <xsl:value-of select="''"/>
+        </td>
+      </tr>
+      <xsl:call-template name="addLine">
+        <xsl:with-param name="count" select="$count - 1"/>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+  <xsl:template match="/">
 <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -408,170 +504,24 @@ customer:
                             <xsl:for-each select="/Invoice//Content">
                               <tr style="background-color: white !important;">
                                 <td colspan="6" style="padding-left: 0px !important;padding-right: 0px !important;">
-								  <table cellspacing="0" cellpadding="0"  style="width:100%; float: left;">
-									<tr style="border-top:1px solid {{cssColor}};">
-										<td style="width:215px;border:none;">
-                      <div style="margin:5px 0 0 20px;">                        
-												<!-- <img alt="logo" style="width:106px" src=""/> -->
-											</div>
-										</td>
-										<td style="vertical-align:top;border:none;">
-											<div class="InvInfoLeft" style="">
-												<p style="margin:0 auto;">
-													<b style="font-size:24px; font-family: Arial, Helvetica, sans-serif">HÓA ĐƠN GIÁ TRỊ GIA TĂNG</b>
-                        </p>
-                        <p style="margin:0 auto;">
-													<b style="font-size:16px; font-family: Arial, Helvetica, sans-serif">Bản thể hiện của hóa đơn điện tử</b>
-												</p>
-												<p style="margin:10px auto;font-size:14px;">
-													<xsl:choose>
-														<xsl:when test="ArisingDate!= '' and substring(ArisingDate,7,4) != '1957' ">
-															<span>Ngày </span>
-															<xsl:value-of select="substring(ArisingDate,1,2)"/>
-															<span>  Tháng </span>
-															<xsl:value-of select="substring(ArisingDate,4,2)"/>
-															<span>  Năm </span>
-															<xsl:value-of select="substring(ArisingDate,7,4)"/>
-														</xsl:when>
-														<xsl:otherwise>
-															<span>Ngày</span> &#8230;
-															<span>  Tháng</span> &#8230;
-															<span>  Năm</span> &#8230;
-														</xsl:otherwise>
-													</xsl:choose>
-													<br/>
-													<xsl:if test="$itemCount&gt;10">
-													  <label style=" display: block; color:#000000">
-														<xsl:choose>
-														  <xsl:when test="$pageC = 1">
-															Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 10)" />
-														  </xsl:when>
-														  <xsl:when test="$pageC &gt; 1">
-															Tiep theo trang truoc - Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 10)" />
-														  </xsl:when>
-														</xsl:choose>
-													  </label>
-													</xsl:if>
-												</p>
-											</div>
-										</td>
-										<td style="vertical-align:top;border:none;width:200px;">
-											<div class="InvInfoRight" style="padding-left:25px;">
-												<div class="clearfix" style="line-height:22px;padding-top:14px;">
-													<span>Mẫu số</span> :
-													<span><xsl:value-of select="InvoicePattern"/></span>
-												</div>
-												<div class="clearfix" style="line-height:22px">
-													<span>Ký hiệu</span> :
-													<b>
-														<xsl:value-of select="SerialNo"/>
-													</b>
-												</div>
-												<div class="clearfix" style="line-height:22px">
-													<span>Số</span>:
-													<b style="color:red;font-size:140%;">
-														<xsl:call-template name="addZero">
-															<xsl:with-param name="count" select="7-string-length(InvoiceNo)"/>
-														</xsl:call-template>
-														<xsl:value-of select="InvoiceNo"/>
-													</b>
-												</div>
-											</div>
-										</td>
-									</tr>
+                                  {{>header}}
+                                  <table cellspacing="0" cellpadding="0" style="width:100%;">
+                                      <tr class="comInfo" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};">
+                                          <td style="border:none;padding-top:7px;padding-left:10px;">
+                                            {{>comInfo company = company}}
+                                          </td>
+                                      </tr>
                                   </table>
-                                  <table cellspacing="0" cellpadding="0"  style="width:100%;" >
-                                    <tr class="comInfo" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};">
-										<td  style="border:none;padding-top:7px;padding-left:10px;">
-                    {{#each company.info}}
-                    <div class="clearfix vt-row">
-                      <label class="fl-l title" style="margin-top:0;">
-                        <span>{{this.label}} </span>
-                      </label>
-                      <label class="fl-l" style="margin:0;">:&#160;
-                        <span {{#if this.style}} style="{{this.style}}" {{/if}}>
-                        {{#if this.code}}
-                        <xsl:choose>
-                          <xsl:when test="{{this.code}}!=''">                            
-                              <xsl:value-of select="{{this.code}}"/>                            
-                          </xsl:when>
-                          <xsl:otherwise>
-                            &#160;
-                          </xsl:otherwise>
-                        </xsl:choose>
-                        {{/if}}
-                        {{#if this.value}}
-                          {{this.value}}
-                        {{/if}}
-                        </span>
-                      </label>
-                    </div>
-                    {{/each}}
-										</td>
-                                    </tr>
-                                  </table>
-                                  <table class="customerInfo" cellspacing="0" cellpadding="0"  style="">
-                                    <tr>
-										<td colspan="6" style=" border-left: none!important;border-right: none!important;padding-top:10px;padding-left:10px;">
-                      {{#each customer.info}}
-                        <div class="clearfix vt-row">
-												<label class="fl-l title" style="margin-top:0;">
-													<span>{{this.label}}</span> 
-                        </label>
-                        <label class="fl-l input-name" style="width:{{this.width}}px;margin:0;">                          
-                          {{#if this.code}}
-                          :&#160;
-                          <span>
-                          <xsl:choose>
-                            <xsl:when test="{{this.code}}!=''">	
-                                {{#if this.kindOfPayment}}
-                                    {{> kindOfPayment}}
-                                  {{else}}
-                                    <xsl:value-of select="{{this.code}}"/>
-                                {{/if}}
-                            </xsl:when>
-                            <xsl:otherwise>														
-                                &#160;
-                            </xsl:otherwise>
-                          </xsl:choose>
-                          </span>
-                          {{/if}}                          
-                        </label>
-                        {{#if this.col-2}}
-                          {{#each this.col-2}}
-                          <label class="fl-l" style="margin-top:0;">
-                          <span>{{this.label}}</span> 
-                          </label>
-                          <label class="fl-l input-name" style="width:{{this.width}}px;margin:0;">                          
-                            {{#if this.code}}
-                            :&#160;
-                            <span>
-                            <xsl:choose>
-                              <xsl:when test="{{this.code}}!=''">	
-                                  {{#if this.kindOfPayment}}
-                                      {{> kindOfPayment}}
-                                    {{else}}
-                                      <xsl:value-of select="{{this.code}}"/>
-                                  {{/if}}
-                              </xsl:when>
-                              <xsl:otherwise>														
-                                  &#160;
-                              </xsl:otherwise>
-                            </xsl:choose>
-                            </span>
-                            {{/if}}                          
-                          </label>
-                          {{/each}}
-                        {{/if}}
-											</div>
-                      {{/each}}											
-										</td>
-                                    </tr>
+                                  <table class="customerInfo" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                          <td colspan="6"
+                                              style=" border-left: none!important;border-right: none!important;padding-top:10px;padding-left:10px;">
+                                            {{>cusInfo customer = customer}}                                                                    
+                                          </td>
+                                      </tr>
                                   </table>
                                 </td>
                               </tr>
-
-
                             </xsl:for-each>
                           </thead>
                           <tbody class="nenhd">
@@ -932,3 +882,6 @@ customer:
       <!-- </script> -->
 
     </html>
+    </xsl:template>
+
+</xsl:stylesheet>
