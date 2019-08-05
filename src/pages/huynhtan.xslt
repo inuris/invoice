@@ -376,8 +376,8 @@ customer:
 		<table class="headerInfo" style="width:100%;">
 			<tr class="comInfo" style="">
 				<td style="border-bottom:1px solid;">
-					<div style="width:190px;height:81px;">
-						<img alt="logo" style="width:100%;height:100%;" src="data:image/jpeg;base64,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"/>
+					<div style="width:120px;height:81px;">
+						<img alt="logo" style="width:100%;height:100%;" src=""/>
 					</div>
 				</td>
 				<td colspan="2" style="padding-top:7px;border-bottom:1px solid;">
@@ -732,7 +732,7 @@ customer:
 				<b>
 					<xsl:choose>
 						<xsl:when test="(../../Amount='') or (../../Amount=0)">
-							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color:#000;">
+							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color:#2e3192;">
 								0
 							</label>
 						</xsl:when>
@@ -798,32 +798,32 @@ customer:
 		<xsl:choose>
 			<xsl:when test="../../Extra2 != ''">
 				<tr>
-					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #2e3192;">
 						<div style="display: block;word-wrap: break-word;width: 30px;text-align: center;  overflow: hidden;">
 
 						</div>
 					</td>
-					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #2e3192;">
 						<div style="text-align: left; width: 310px; display: block; word-wrap: break-word; overflow: hidden; float: left; padding-left: 2px">
 							<xsl:value-of select="../../Extra2"/>
 						</div>
 					</td>
-					<td class="back-bold" style="height: 20px; border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+					<td class="back-bold" style="height: 20px; border-bottom: 1px dotted #00348d;border-top: 0px solid #2e3192;">
 						<div style="display: block;word-wrap: break-word;width: 70px;text-align: center;  overflow: hidden;">
 
 						</div>
 					</td>
-					<td class="back-bold" style="height: 20px; border-bottom-color: currentColor;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+					<td class="back-bold" style="height: 20px; border-bottom-color: currentColor;border-bottom: 1px dotted #00348d;border-top: 0px solid #2e3192;">
 						<div style="display: block;word-wrap: break-word;width:130px;text-align: center;  overflow: hidden;">
 
 						</div>
 					</td>
-					<td class="back-bold" style="height: 20px; border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+					<td class="back-bold" style="height: 20px; border-bottom: 1px dotted #00348d;border-top: 0px solid #2e3192;">
 						<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
 
 						</div>
 					</td>
-					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #2e3192;">
 						<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
 
 						</div>
@@ -1044,7 +1044,7 @@ customer:
 		  	height: 100%;
 		  	}
 		  	span, i, b{
-		  		//color: #005cb3;
+		  		color: #2e3192;
 		  	}
 		  	i{
 				font-size: 85%;
@@ -1120,8 +1120,8 @@ customer:
 		  	clear: both
 		  	}
 		  	.VATTEMP .input-code {
-		  	border: 1px solid;
-		  	color: #000;
+		  	border: 1px solid #2e3192;
+		  	color: #2e3192;
 		  	float: left;
 		  	font-weight: normal;
 		  	text-align: center;
@@ -1189,7 +1189,7 @@ customer:
 		  	font-size: 14px;
 		  	}
 		  	.bgimg {
-		  	border: 1px solid #000;
+		  	border: 1px solid #2e3192;
 		  	cursor: pointer;
 		  	margin-bottom:5px;
 		  	}
@@ -1252,7 +1252,7 @@ customer:
 		  		//font-size:16px;
 		  	}
 			.customerInfo .vt-row{
-			margin-bottom: 8px;
+			margin-bottom: 2px;
 			}
 			.customerInfo .title{
 				//width: 158px;
@@ -1263,7 +1263,7 @@ customer:
 
 		  	.productTable {
 		  	background-position: bottom;
-		  	border: 1 1 1 1 solid;
+		  	border: 1 1 1 1 solid #2e3192;
 		  	font-size: 14px;
 		  	margin: 0;
 		  	height: 300px;
@@ -1330,13 +1330,13 @@ customer:
 			/* ================ */
 		  	/* Company Info*/
 		  	.comInfo label{
-		  		//font-size:16px;
+		  		font-size:13px;
 		  	}
 			.comInfo td{
 		  		padding-left: 7px;
 		  	}
 			.comInfo .vt-row{
-		  		margin-bottom:8px;
+		  		margin-bottom:0;
 		  	}
 			.comInfo .title{
 		  		//width:80px;

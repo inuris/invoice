@@ -7,7 +7,6 @@ comName: asfdf
 <CNCom>{{comName}}</CNCom>
 <Content Id="SigningData">
 	<ArisingDate/>
-	{{> test serial=comName}}
 	<SerialNo>NL/19E</SerialNo>
 	<InvoiceNo>0000000</InvoiceNo>
 	<Kind_of_Payment></Kind_of_Payment>
