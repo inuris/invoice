@@ -1,10 +1,10 @@
 ---
 layout: xml
-comCode: huynhtan
-comSerial: HT
-comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN HUỲNH TẤN
-comTaxCode: 3500422189
-comAddress: Số 11 Huyền Trân Công Chúa, Phường 8, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comCode: kimlongphat
+comSerial: KL
+comName: CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI DỊCH VỤ KIM LONG PHÁT
+comTaxCode: 3502385951
+comAddress: Tổ 13, Khu Phố Láng Sim, TT.Phước Bửu, H.Xuyên Mộc, Bà Rịa-Vũng Tàu
 ---
 <?xml-stylesheet type='text/xsl' href='{{comCode}}.xslt' ?>
 <Invoice> 

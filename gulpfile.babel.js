@@ -14,7 +14,7 @@ import webpack2      from 'webpack';
 import named         from 'vinyl-named';
 import uncss         from 'uncss';
 import autoprefixer  from 'autoprefixer';
-//import xslt          from 'gulp-xslt';
+import { xsltProcess, xmlParse } from 'xslt-processor';
 import rename        from 'gulp-rename';
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -71,10 +71,9 @@ function pages() {
     }))
     .pipe(rename(function (path) {
       // { dirname: 'huynhtan', basename: 'index', extname: '.xml' }
-      console.log(path);
-      // let filename = path.basename.split('.');
-      // path.basename = filename[0];
-      // path.extname = "." + filename[1];
+      if ((path.extname === '.xslt' || path.extname === '.xml') && path.dirname !== ''){
+        path.basename = path.dirname;
+      }
     }))
     .pipe(gulp.dest(PATHS.dist));
 }
@@ -164,7 +163,7 @@ function images() {
 // Start a server with BrowserSync to preview the site in
 function server(done) {
   browser.init({
-    server: PATHS.server,
+    server: PATHS.dist,
     port: PORT
   }, done);
 }
@@ -178,10 +177,10 @@ function reload(done) {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   // gulp.watch(PATHS.assets, copy);
-  gulp.watch('src/pages/**/*.{html,xml,xslt}').on('change', gulp.series(pages, browser.reload));
-  gulp.watch('src/{layouts,partials}/**/*.html').on('change', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));
+  gulp.watch('src/pages/**/*.{html,xml,xslt}').on('all', gulp.series(pages, reload));
+  gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, reload));
+  gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, reload));
+  gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, reload));
 
   // gulp.watch('src/assets/scss/**/*.scss').on('all', sass);
   // gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));

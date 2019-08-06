@@ -20,9 +20,6 @@ UNCSS_OPTIONS:
 PATHS:
   # Path to dist folder
   dist: "dist"
-  server: 
-    baseDir: "dist"
-    index: "index.xml"
   # Paths to static assets that aren't images, CSS, or JavaScript
   assets:
     - "src/assets/**/*"

@@ -1,0 +1,23 @@
+<xsl:choose>
+    <xsl:when test="../../Kind_of_Payment='TM'">
+        Tiền mặt
+    </xsl:when>
+    <xsl:when test="../../Kind_of_Payment='CK'">
+        Chuyển khoản
+    </xsl:when>
+    <xsl:when test="../../Kind_of_Payment='TTD'">
+        Thẻ tín dụng
+    </xsl:when>
+    <xsl:when test="../../Kind_of_Payment='HDDT'">
+        Hóa đơn điện tử
+    </xsl:when>
+    <xsl:when test="../../Kind_of_Payment='BT'">
+        Bù trừ
+    </xsl:when>
+    <xsl:when test="../../Kind_of_Payment='TM, CK'">
+        Tiền mặt/ Chuyển khoản
+    </xsl:when>
+    <xsl:otherwise>
+        <xsl:value-of select="../../Kind_of_Payment"/>
+    </xsl:otherwise>
+</xsl:choose>

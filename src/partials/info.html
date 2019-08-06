@@ -1,0 +1,56 @@
+{{#*inline "rowEntry"}}
+    {{#if this.label}}
+        <label class="fl-l title" style="margin-top:0;">
+            <span 
+            {{#if this.style}}
+                style="{{this.style}}"
+            {{/if}}
+            >{{this.label}} </span>
+        </label>
+    {{/if}}
+    <label class="fl-l
+        {{#if this.input}}
+             input-name
+        {{/if}}
+        " style="{{#if this.width}}width:{{this.width}}px;{{/if}}margin:0;">
+        {{#if this.label}}:&#160;{{/if}}
+        <span style="
+            {{#if this.style}} 
+                {{this.style}}
+            {{/if}}
+            {{#if this.valueStyle}}
+                ;{{this.valueStyle}}
+            {{/if}}
+            ">
+            {{#if this.code}}
+                <xsl:choose>
+                    <xsl:when test="../../{{this.code}}!=''">
+                        {{#if this.isPayment}}
+                            {{> payment}}
+                        {{else}}
+                            <xsl:value-of select="../../{{this.code}}" />
+                        {{/if}}
+                    </xsl:when>
+                    <xsl:otherwise>
+                        &#160;
+                    </xsl:otherwise>
+                </xsl:choose>
+            {{/if}}
+            {{#if this.value}}
+                {{this.value}}
+            {{/if}}
+        </span>
+    </label>
+{{/inline}}
+{{#each info.info}}
+<div class="clearfix vt-row">
+    {{#> rowEntry}}
+    {{/rowEntry}}
+    {{#if this.col-2}}
+        {{#each this.col-2}}
+            {{#> rowEntry}}
+            {{/rowEntry}}
+        {{/each}}
+    {{/if}}
+</div>
+{{/each}}
