@@ -18,7 +18,7 @@ company:
     code: ComAddress
     style: *style
   - label: Điện thoại
-    value: "0254.358 4968 - 358 4969  /  Fax : 0254.358 4967"
+    value: "0254.358 4968 - 358 4969"
     style: *style
   - label: Số tài khoản
     value: 118000017244 tại Ngân hàng TMCP Công Thương Việt Nam - CN Bà Rịa - Vũng Tàu  
@@ -27,29 +27,37 @@ company:
     value: "huynhtanhuan@yahoo.com.vn  /  Website: www.huynhtan.com.vn"
     style: *style
 customer:
+  input: true
   width: 160  
   info:
   - label: Họ tên người mua hàng
     width: 700
     code: Buyer
+    input: true
   - label: Tên đơn vị
     width: 772
     code: CusName
+    input: true
   - label: Mã số thuế
     width: 770
     code: CusTaxCode
+    input: true
   - label: Địa chỉ
     width: 792
     code: CusAddress
-  - width: 832
+    input: true
+  - width: 837
+    input: true
   - label: Hình thức thanh toán
     width: 200
     code: Kind_of_Payment
     isPayment: true
+    input: true
     col-2:
       - label: Số tài khoản
         width: 440
         code: CusBankNo
+        input: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns="http://www.w3.org/1999/xhtml" xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" version="1.0" exclude-result-prefixes="msxsl js">
