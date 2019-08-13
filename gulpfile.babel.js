@@ -14,8 +14,9 @@ import webpack2      from 'webpack';
 import named         from 'vinyl-named';
 import uncss         from 'uncss';
 import autoprefixer  from 'autoprefixer';
-import { xsltProcess, xmlParse } from 'xslt-processor';
-import rename        from 'gulp-rename';
+import base64        from 'gulp-base64-inline';
+import htmlImg64     from 'gulp-html-img64';
+import htmlsplit     from 'gulp-htmlsplit';
 // Load all Gulp plugins into one variable
 const $ = plugins();
 
@@ -61,7 +62,7 @@ function copy() {
 
 // Copy page templates into finished HTML files
 function pages() {
-  return gulp.src('src/pages/**/*.{html,hbs,handlebars,xml,xslt}')
+  return gulp.src('src/pages/**/*.{html,hbs,handlebars}')    
     .pipe(panini({
       root: 'src/pages/',
       layouts: 'src/layouts/',
@@ -69,12 +70,15 @@ function pages() {
       data: 'src/data/',
       helpers: 'src/helpers/'
     }))
-    .pipe(rename(function (path) {
-      // { dirname: 'huynhtan', basename: 'index', extname: '.xml' }
-      if ((path.extname === '.xslt' || path.extname === '.xml') && path.dirname !== ''){
-        path.basename = path.dirname;
-      }
-    }))
+    .pipe(base64('/'))
+    .pipe(htmlImg64())
+    .pipe(htmlsplit())
+    // .pipe(rename(function (path) {
+    //   // { dirname: 'huynhtan', basename: 'index', extname: '.xml' }
+    //   if ((path.extname === '.xslt' || path.extname === '.xml') && path.dirname !== ''){
+    //     path.basename = path.dirname;
+    //   }
+    // }))
     .pipe(gulp.dest(PATHS.dist));
 }
 
@@ -177,7 +181,7 @@ function reload(done) {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   // gulp.watch(PATHS.assets, copy);
-  gulp.watch('src/pages/**/*.{html,xml,xslt}').on('all', gulp.series(pages, reload));
+  gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, reload));
   gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, reload));
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, reload));

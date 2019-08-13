@@ -1,0 +1,28 @@
+.nenhd_bg {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+    {{#if cssBackground.width}}
+        width:{{cssBackground.width}}px;
+    {{/if}}
+    {{#if cssBackground.height}}
+        height:{{cssBackground.height}}px;
+    {{/if}}
+    {{#if cssBackground.top}}
+        top:{{cssBackground.top}}px;
+    {{/if}}
+    {{#if cssBackground.left}}
+        left:{{cssBackground.left}}px;
+    {{/if}}
+    
+    {{#if cssBackground.opacity}}
+        opacity:{{cssBackground.opacity}};
+    {{else}}
+        opacity:0.2;
+    {{/if}}    
+    {{#if cssBackground.file}}
+        background: inline('{{cssBackground.file}}');
+    {{/if}}
+}

@@ -6,8 +6,12 @@ comAddress: Số 11 Huyền Trân Công Chúa, Phường 8, Thành phố Vũng T
 comPhone: 
 comAccount: 
 comBank: 
+#global style
 cssFontFamily: Arial
 cssColor: "#2e3192"
+cssLogo: 
+cssBackground: 
+#comInfo Table
 comInfo:
   style: "color:#111;"
   info:
@@ -26,7 +30,6 @@ comInfo:
     value: "huynhtanhuan@yahoo.com.vn  /  Website: www.huynhtan.com.vn"
 cusInfo:
   isInput: true
-  width: 160  
   info:
   - label: Họ tên người mua hàng
     width: 700

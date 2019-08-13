@@ -6,8 +6,23 @@ comAddress: Tổ 41/100 ô 4, ấp Hải Tân, Thị trấn Long Hải, Huyện 
 comPhone: 
 comAccount: 
 comBank: 
+#global style
 cssFontFamily: Arial
 cssColor: "#2e3192"
+#logo
+cssLogo:
+  file: logo.png
+  width: 194
+  top: 10
+  left: 5
+#background
+cssBackground:
+  file: bg.png
+  width: 407
+  height: 296
+  top: 75
+  left: 270
+#comInfo Table
 comInfo:
   style: "color:#111;font-size: 14px;"
   margin: 6
@@ -21,6 +36,7 @@ comInfo:
     valueStyle: "font-weight: bold; letter-spacing: 2px; color:#111"
   - label: Địa chỉ
     code: ComAddress
+#cusInfo Table
 cusInfo:
   style:
   width: 

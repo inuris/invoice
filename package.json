@@ -11,6 +11,9 @@
   "license": "MIT",
   "dependencies": {
     "foundation-sites": "^6.5.1",
+    "gulp-base64-inline": "^1.0.4",
+    "gulp-html-img64": "^1.0.8",
+    "gulp-htmlsplit": "^1.1.1",
     "jquery": "^3.2.1",
     "motion-ui": "^2.0.3",
     "what-input": "^5.1.2",
