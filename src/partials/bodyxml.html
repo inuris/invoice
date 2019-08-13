@@ -1,0 +1,58 @@
+{{#with data}}
+<?xml-stylesheet type='text/xsl' href='{{comCode}}.xslt' ?>
+
+<Invoice> 
+<CNCom>{{comName}}</CNCom>
+<Content Id="SigningData">
+	<ArisingDate/>
+	<InvoicePattern>01GTKT0/001</InvoicePattern>
+	<SerialNo>{{comSerial}}/19E</SerialNo>
+	<InvoiceNo>0000000</InvoiceNo>
+	<Kind_of_Payment></Kind_of_Payment>
+	<ComName>{{comName}}</ComName>
+	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
+	<ComAddress>{{comAddress}}</ComAddress>
+	<ComPhone/>
+	<ComFax/>
+	<ComBankNo/>
+	<CusCode/>
+	<CusName></CusName>
+	<CusPhone/>
+	<DanToc/>
+	<GioiTinh/>
+	<Buyer></Buyer>
+	<CusTaxCode/>
+	<CusAddress/>
+	<Total/>
+	<VAT_Rate/>
+	<VAT_Amount/>
+	<Amount/>
+	<AmountInWords/>
+	<KindOfService/>
+	<Extra/>
+	<Discount_Rate/>
+	<Discount_Amount/>
+	<CurrencyUnit></CurrencyUnit>
+	<Products> 
+		<Product>
+			<Code/>
+			<ProdName></ProdName>
+			<ProdUnit />
+			<ProdQuantity/>
+			<ProdPrice/>
+			<Discount/>
+			<DiscountAmount/>
+			<VATRate/>
+			<VATAmount/>
+			<Amount></Amount>
+		</Product>
+	</Products>
+	<Extra/>
+	<SignDate/>
+</Content>
+	<imageClient></imageClient>
+	<image>Signature Valid</image>
+	<convert></convert>
+	<Fkey></Fkey>
+</Invoice>
+{{/with}}

@@ -1,0 +1,51 @@
+comCode: huynhtan
+comSerial: HT
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN HUỲNH TẤN
+comTaxCode: 3500422189
+comAddress: Số 11 Huyền Trân Công Chúa, Phường 8, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comPhone: 
+comAccount: 
+comBank: 
+cssFontFamily: Arial
+cssColor: "#2e3192"
+comInfo:
+  style: "color:#111;"
+  info:
+  - code: ComName
+    style: "font-weight: bold; font-size: 20px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "font-weight: bold; letter-spacing: 2px; color:#111"
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: "0254.358 4968 - 358 4969"
+  - label: Số tài khoản
+    value: 118000017244 tại Ngân hàng TMCP Công Thương Việt Nam - CN Bà Rịa - Vũng Tàu  
+  - label: Email
+    value: "huynhtanhuan@yahoo.com.vn  /  Website: www.huynhtan.com.vn"
+cusInfo:
+  isInput: true
+  width: 160  
+  info:
+  - label: Họ tên người mua hàng
+    width: 700
+    code: Buyer
+  - label: Tên đơn vị
+    width: 772
+    code: CusName
+  - label: Mã số thuế
+    width: 770
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 792
+    code: CusAddress
+  - width: 837
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+      - label: Số tài khoản
+        width: 440
+        code: CusBankNo

@@ -1,56 +1,59 @@
 {{#*inline "rowEntry"}}
     {{#if this.label}}
-        <label class="fl-l title" style="margin-top:0;">
+        <label class="fl-l title" style="margin-top:0;{{#if globalWidth}}width:{{globalWidth}}px;{{/if}}">
             <span 
-            {{#if this.style}}
-                style="{{this.style}}"
-            {{/if}}
-            >{{this.label}} </span>
+            {{#ifOr v1=globalStyle v2=this.style v3=this.labelStyle}}
+                style="{{globalStyle}};{{this.style}};{{this.labelStyle}};"
+            {{/ifOr}}            
+            >{{this.label}}</span>
         </label>
     {{/if}}
     <label class="fl-l
-        {{#if this.input}}
-             input-name
-        {{/if}}
-        " style="{{#if this.width}}width:{{this.width}}px;{{/if}}margin:0;">
-        {{#if this.label}}:{{/if}}&#160;
-        <span style="
-            {{#if this.style}} 
-                {{this.style}}
-            {{/if}}
-            {{#if this.valueStyle}}
-                ;{{this.valueStyle}}
-            {{/if}}
-            ">
-            {{#if this.code}}
-                <xsl:choose>
-                    <xsl:when test="../../{{this.code}}!=''">
-                        {{#if this.isPayment}}
-                            {{> payment}}
-                        {{else}}
-                            <xsl:value-of select="../../{{this.code}}" />
-                        {{/if}}
-                    </xsl:when>
-                    <xsl:otherwise>
-                        &#160;
-                    </xsl:otherwise>
-                </xsl:choose>
-            {{/if}}
-            {{#if this.value}}
-                {{this.value}}
-            {{/if}}
+        {{#ifOr v1=isGlobalInput v2=this.isInput}}
+            input-name
+        {{/ifOr}}
+        " style="margin:0;{{#if this.width}}width:{{this.width}}px;{{/if}}">
+        {{#if this.label}}
+            :&#160;
+        {{/if}} 
+        <span 
+        {{#ifOr v1=globalStyle v2=this.style v3=this.valueStyle}}
+            style="{{globalStyle}};{{this.style}};{{this.valueStyle}};"
+        {{/ifOr}}
+        >
+            {{#ifOr v1=this.code v2=this.value}}
+                {{#if this.code}}
+                    <xsl:choose>
+                        <xsl:when test="../../{{this.code}}!=''">
+                            {{#if this.isPayment}}
+                                {{> payment}}
+                            {{else}}
+                                <xsl:value-of select="../../{{this.code}}" />
+                            {{/if}}
+                        </xsl:when>
+                        <xsl:otherwise>
+                            &#160;
+                        </xsl:otherwise>
+                    </xsl:choose>
+                {{/if}}
+                {{#if this.value}}
+                    {{this.value}}            
+                {{/if}}
+            {{else}}
+                &#160;
+            {{/ifOr}}
         </span>
     </label>
 {{/inline}}
-{{#each info.info}}
-<div class="clearfix vt-row">
-    {{#> rowEntry}}
-    {{/rowEntry}}
-    {{#if this.col-2}}
+{{#with data}}
+    {{#each info}}
+    <div class="clearfix vt-row" {{#if ../margin}}style="margin-bottom:{{../margin}}px"{{/if}}>
+        {{#> rowEntry isGlobalInput=../isInput globalStyle=../style globalWidth=../width}}
+        {{/rowEntry}}    
         {{#each this.col-2}}
-            {{#> rowEntry}}
+            {{#> rowEntry  isGlobalInput=../../isInput globalStyle=../../style }}
             {{/rowEntry}}
         {{/each}}
-    {{/if}}
-</div>
-{{/each}}
+    </div>
+    {{/each}}
+{{/with}}
