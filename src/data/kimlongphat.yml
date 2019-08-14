@@ -6,7 +6,7 @@ comAddress: Tổ 13, Khu Phố Láng Sim, TT.Phước Bửu, H.Xuyên Mộc, Bà
 cssFontFamily: Arial
 cssColor: "#2e3192"
 comInfo:
- info:
+ row:
   - label: Đơn vị bán hàng
     valueStyle: "font-weight: bold"
     code: ComName
@@ -26,7 +26,7 @@ comInfo:
       isInput: true
 cusInfo:
  isInput: true
- info:
+ row:
   - label: Họ tên người mua hàng
     width: 616
     code: Buyer

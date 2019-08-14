@@ -1,8 +1,8 @@
-comCode: truongxuanthuy
-comSerial: AA
-comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN TRƯỜNG XUÂN THÚY
-comTaxCode: 0313958802
-comAddress: Tổ 41/100 ô 4, ấp Hải Tân, Thị trấn Long Hải, Huyện Long Điền, Bà Rịa - Vũng Tàu
+comCode: tuanhung
+comSerial: TH
+comName: CÔNG TY CỔ PHẦN XÂY DỰNG - DỊCH VỤ TUẤN HƯNG
+comTaxCode: 3500906944
+comAddress: Số 98 Hoàng Văn Thụ, Phường 7, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu
 comPhone: 
 comAccount: 
 comBank: 
@@ -11,31 +11,35 @@ cssFontFamily: Arial
 cssColor: "#2e3192"
 #logo
 cssLogo:
-  file: logo.png
+  file: 
   width: 194
   top: 10
   left: 5
 #background
 cssBackground:
-  file: bg.png
-  width: 407
-  height: 296
-  top: 75
-  left: 270
+  file: bg.jpg
+  width: 541
+  height: 126
+  top: 120
+  left: 165
 #comInfo Table
 comInfo:
-  style: "color:#111;font-size: 14px;"
-  margin: 6
+  style: 
+  margin: 
   width:
   isInput:
   row:
   - code: ComName
-    style: "color:#2e3192; font-weight: bold; font-size: 20px;"
+    style: "color:#f00; font-weight: bold; font-size: 20px;"
+    width: 775
   - label: Mã số thuế
     code: ComTaxCode
-    valueStyle: "font-weight: bold; letter-spacing: 2px; color:#111"
+    valueStyle: "font-weight: bold; letter-spacing: 2px;"
   - label: Địa chỉ
     code: ComAddress
+  - label: Điện thoại
+    width: 150
+    value: 02543532853
 #cusInfo Table
 cusInfo:
   style:
@@ -43,23 +47,22 @@ cusInfo:
   isInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 700
+    width: 620
     code: Buyer
   - label: Tên đơn vị
-    width: 772
+    width: 702
     code: CusName
   - label: Mã số thuế
-    width: 770
+    width: 699
     code: CusTaxCode
   - label: Địa chỉ
-    width: 792
+    width: 727
     code: CusAddress
-  - width: 838
   - label: Hình thức thanh toán
     width: 200
     code: Kind_of_Payment
     isPayment: true
     col-2:
       - label: Số tài khoản
-        width: 440
+        width: 350
         code: CusBankNo

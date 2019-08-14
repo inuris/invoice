@@ -14,7 +14,7 @@ cssBackground:
 #comInfo Table
 comInfo:
   style: "color:#111;"
-  info:
+  row:
   - code: ComName
     style: "font-weight: bold; font-size: 20px;"
   - label: Mã số thuế
@@ -30,7 +30,7 @@ comInfo:
     value: "huynhtanhuan@yahoo.com.vn  /  Website: www.huynhtan.com.vn"
 cusInfo:
   isInput: true
-  info:
+  row:
   - label: Họ tên người mua hàng
     width: 700
     code: Buyer
