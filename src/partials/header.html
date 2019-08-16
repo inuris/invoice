@@ -1,9 +1,8 @@
-<td style="width:215px;border:none;">
-    {{#if cssLogo.file}}
-        {{>logo}}
-    {{/if}}
+{{#if cssLogo.file}}
+<td style="border:none;vertical-align:top;">    
+    {{>logo}}    
 </td>
-
+{{/if}}
 <td style="vertical-align:top;border:none;">
     <div class="InvInfoLeft" style="">
         {{#each header.row}}
