@@ -11,13 +11,13 @@ cssFontFamily: Arial
 cssColor: "#2e3192"
 #logo
 cssLogo:
-  file: 
-  width: 194
+  file: logo.png
+  width: 169
   top: 10
   left: 5
 #background
 cssBackground:
-  file: bg.jpg
+  file: 
   width: 541
   height: 126
   top: 120
