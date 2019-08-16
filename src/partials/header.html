@@ -1,78 +1,59 @@
-<table cellspacing="0" cellpadding="0" style="width:100%; float: left;">
-    <tr>
-        <td style="width:215px;border:none;">
-            <div style="margin:5px 0 0 20px;">
-                <!-- <img alt="logo" style="width:106px" src=""/> -->
-            </div>
-        </td>
-        <td style="vertical-align:top;border:none;">
-            <div class="InvInfoLeft">
-                <p style="margin:0 auto;">
-                    <b style="font-size:24px; font-family: Arial, Helvetica, sans-serif">HÓA ĐƠN GIÁ TRỊ GIA TĂNG</b>
-                </p>
-                <p style="margin:0 auto;">
-                    <b style="font-size:16px; font-family: Arial, Helvetica, sans-serif">Bản thể hiện của hóa đơn điện
-                        tử</b>
-                </p>
-                <p style="margin:10px auto;font-size:14px;">
-                    <xsl:choose>
-                        <xsl:when test="ArisingDate!= '' and substring(ArisingDate,7,4) != '1957' ">
-                            <span>Ngày </span>
-                            <xsl:value-of select="substring(ArisingDate,1,2)" />
-                            <span> Tháng </span>
-                            <xsl:value-of select="substring(ArisingDate,4,2)" />
-                            <span> Năm </span>
-                            <xsl:value-of select="substring(ArisingDate,7,4)" />
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <span>Ngày</span> &#8230;
-                            <span> Tháng</span> &#8230;
-                            <span> Năm</span> &#8230;
-                        </xsl:otherwise>
-                    </xsl:choose>
-                    <br />
-                    <xsl:if test="$itemCount&gt;10">
-                        <label style=" display: block; color:#000000">
-                            <xsl:choose>
-                                <xsl:when test="$pageC = 1">
-                                    Trang
-                                    <xsl:value-of select="$pageC" />/
-                                    <xsl:value-of select="ceiling($itemCount div 10)" />
-                                </xsl:when>
-                                <xsl:when test="$pageC &gt; 1">
-                                    Tiep theo trang truoc - Trang
-                                    <xsl:value-of select="$pageC" />/
-                                    <xsl:value-of select="ceiling($itemCount div 10)" />
-                                </xsl:when>
-                            </xsl:choose>
-                        </label>
-                    </xsl:if>
-                </p>
-            </div>
-        </td>
-        <td style="vertical-align:top;border:none;width:200px;">
-            <div class="InvInfoRight" style="padding-left:25px;">
-                <div class="clearfix" style="line-height:22px;padding-top:14px;">
-                    <span>Mẫu số</span> :
-                    <span>
-                        <xsl:value-of select="InvoicePattern" /></span>
-                </div>
-                <div class="clearfix" style="line-height:22px">
-                    <span>Ký hiệu</span> :
-                    <b>
-                        <xsl:value-of select="SerialNo" />
-                    </b>
-                </div>
-                <div class="clearfix" style="line-height:22px">
-                    <span>Số</span>:
-                    <b style="color:red;font-size:140%;">
-                        <xsl:call-template name="addZero">
-                            <xsl:with-param name="count" select="7-string-length(InvoiceNo)" />
-                        </xsl:call-template>
-                        <xsl:value-of select="InvoiceNo" />
-                    </b>
-                </div>
-            </div>
-        </td>
-    </tr>
-</table>
+<td style="width:215px;border:none;">
+    {{#if cssLogo.file}}
+        {{>logo}}
+    {{/if}}
+</td>
+
+<td style="vertical-align:top;border:none;">
+    <div class="InvInfoLeft" style="">
+        {{#each header.row}}
+        <p style="margin:0 auto;">            
+            <span style="font-weight: bold; font-size:24px;{{this.style}}">
+                {{this.value}}
+            </span>          
+        </p>
+        {{/each}}
+        <p style="margin:10px auto;font-size:14px;">
+            <xsl:choose>
+                <xsl:when test="/Invoice/Content/ArisingDate!= '' and substring(/Invoice/Content/ArisingDate,7,4) != '1957' ">
+                    <span>Ngày </span>
+                    <xsl:value-of select="substring(/Invoice/Content/ArisingDate,1,2)" />
+                    <span> Tháng </span>
+                    <xsl:value-of select="substring(/Invoice/Content/ArisingDate,4,2)" />
+                    <span> Năm </span>
+                    <xsl:value-of select="substring(/Invoice/Content/ArisingDate,7,4)" />
+                </xsl:when>
+                <xsl:otherwise>
+                    <span>Ngày</span> &#8230;
+                    <span> Tháng</span> &#8230;
+                    <span> Năm</span> &#8230;
+                </xsl:otherwise>
+            </xsl:choose>
+            <br />
+        </p>
+    </div>
+</td>
+<td style="vertical-align:top;border:none;width:200px;">
+    <div class="InvInfoRight" style="padding-left:25px;">
+        <div class="clearfix" style="line-height:22px;padding-top:14px;">
+            <span>Mẫu số:</span>
+            <span>
+                <xsl:value-of select="/Invoice/Content/InvoicePattern" /></span>
+        </div>
+        <div class="clearfix" style="line-height:22px">
+            <span>Ký hiệu:</span>
+            <b>
+                <xsl:value-of select="/Invoice/Content/SerialNo" />
+            </b>
+        </div>
+        <div class="clearfix" style="line-height:22px">
+            <span>Số</span>:
+            <b style="color:red;font-size:140%;">
+                <xsl:call-template name="addZero">
+                    <xsl:with-param name="count" select="7-string-length(/Invoice/Content/InvoiceNo)" />
+                </xsl:call-template>
+                <xsl:value-of select="/Invoice/Content/InvoiceNo" />
+            </b>
+        </div>
+    </div>
+</td>
