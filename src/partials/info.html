@@ -24,11 +24,11 @@
             {{#ifOr v1=this.code v2=this.value}}
                 {{#if this.code}}
                     <xsl:choose>
-                        <xsl:when test="../../{{this.code}}!=''">
+                        <xsl:when test="/Invoice/Content/{{this.code}}!=''">
                             {{#if this.isPayment}}
                                 {{> payment}}
                             {{else}}
-                                <xsl:value-of select="../../{{this.code}}" />
+                                <xsl:value-of select="/Invoice/Content/{{this.code}}" />
                             {{/if}}
                         </xsl:when>
                         <xsl:otherwise>
