@@ -1,34 +1,39 @@
-comCode: noithattienthang
-comSerial: TT
-comName: CÔNG TY TNHH NỘI THẤT TIẾN THẮNG
-comTaxCode: 3500662896
-comAddress: Số 39 Lê Lợi, Phường 4, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu
-#global style
+comCode:              # tên file
+comSerial:            # mã hóa đơn
+comName:              # tên công ty
+comTaxCode:           # mst
+comAddress:           # địa chỉ
+
+### global CSS style: cssFontFamily, cssColor
 cssFontFamily: Arial
 cssColor: "#111"
-#logo : file, width, top, left
+
+### logo: file, width, top, left
 logo:
   file: logo.png
   width: 194
-  top: 10
-  left: 15
-#background : file, width, height, top, left
+
+### background: file, width, height, top, left, opacity
 background:
   file: bg.png
   width: 407
   height: 208
   top: 110
   left: 270
-#header
+
+### header: logo, row
 header:
+  # cột đầu chứa logo: file, width, top, left
   logo: 
     width: 100
+  # cột tên HD row: value, style
   row:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "color: red;"
   - value: Bản thể hiện của hóa đơn điện tử
     style: "font-weight: normal; font-size: 14px"
-#comInfo Table
+
+### Thông tin công ty comInfo: style, margin, width, isInput, row
 comInfo:
   style: "color:#111;font-size: 14px;"
   margin: 6
@@ -36,7 +41,7 @@ comInfo:
   isInput:
   row:
   - code: ComName
-    style: "color:#111; font-weight: bold; font-size: 20px;"
+    style: "font-weight: bold; font-size: 20px;"
   - label: Mã số thuế
     code: ComTaxCode
     valueStyle: "font-weight: bold; letter-spacing: 2px; color:#111"
@@ -44,7 +49,8 @@ comInfo:
     code: ComAddress
   - label: Điện thoại
     value: 02543541091
-#cusInfo Table
+
+### Thông tin khách hàng cusInfo: style, margin, width, isInput, row
 cusInfo:
   style:
   width: 

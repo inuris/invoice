@@ -9,14 +9,14 @@ comBank:
 #global style
 cssFontFamily: Arial
 cssColor: "#2e3192"
-#logo
-cssLogo:
+#logo : file, width, top, left
+logo:
   file: logo.png
   width: 194
   top: 10
   left: 5
-#background
-cssBackground:
+#background : file, width, height, top, left
+background:
   file: bg.png
   width: 407
   height: 296

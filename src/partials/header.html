@@ -1,8 +1,8 @@
-{{#if cssLogo.file}}
+{{#ifOr v1=header.logo.file v2=header.logo.width}}
 <td style="border:none;vertical-align:top;">    
-    {{>logo}}    
+    {{>logo logo=header.logo}}    
 </td>
-{{/if}}
+{{/ifOr}}
 <td style="vertical-align:top;border:none;">
     <div class="InvInfoLeft" style="">
         {{#each header.row}}

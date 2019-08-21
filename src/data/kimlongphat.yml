@@ -5,6 +5,13 @@ comTaxCode: 3502385951
 comAddress: Tổ 13, Khu Phố Láng Sim, TT.Phước Bửu, H.Xuyên Mộc, Bà Rịa-Vũng Tàu
 cssFontFamily: Arial
 cssColor: "#2e3192"
+#header
+header:
+  #logo
+  logo:
+    width: 150
+  row:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG    
 comInfo:
  row:
   - label: Đơn vị bán hàng

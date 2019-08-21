@@ -1,15 +1,17 @@
+{{#with logo}}
 <div style="
-    {{#if cssLogo.width}}
-        width:{{cssLogo.width}}px;
+    {{#if width}}
+        width:{{width}}px;
     {{/if}}
-    {{#if cssLogo.top}}
-        margin-top:{{cssLogo.top}}px;
+    {{#if top}}
+        margin-top:{{top}}px;
     {{/if}}
-    {{#if cssLogo.left}}
-        margin-left:{{cssLogo.left}}px
+    {{#if left}}
+        margin-left:{{left}}px
     {{/if}}
 ">
-    {{#if cssLogo.file}}
-        <img alt="logo" style="width:100%;height:100%;" src="{{comCode}}/{{cssLogo.file}}"/>
+    {{#if file}}
+        <img alt="logo" style="width:100%;height:100%;" src="{{../comCode}}/{{file}}"/>
     {{/if}}    
 </div>
+{{/with}}

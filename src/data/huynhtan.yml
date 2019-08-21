@@ -9,14 +9,32 @@ comBank:
 #global style
 cssFontFamily: Arial
 cssColor: "#2e3192"
-cssLogo: 
-cssBackground: 
+
+### background: file, width, height, top, left
+background:
+  file: bg.png
+  width: 500
+  height: 234
+  top: 100
+  left: 210
+
+### header: logo, row
+header:
+  # cột đầu chứa logo: file, width, top, left
+  logo: 
+    width: 100
+  # cột tên HD row: value, style
+  row:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: normal; font-size: 14px"
+
 #comInfo Table
 comInfo:
   style: "color:#111;"
   row:
   - code: ComName
-    style: "font-weight: bold; font-size: 20px;"
+    style: "font-weight: bold; font-size: 20px;color: #2e3192"
   - label: Mã số thuế
     code: ComTaxCode
     valueStyle: "font-weight: bold; letter-spacing: 2px; color:#111"

@@ -9,14 +9,8 @@ comBank:
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#005cb3"
-#logo
-cssLogo:
-  file: logo.png
-  width: 220
-  top: 20
-  left: 5
 #background
-cssBackground:
+background:
   file: 
   width: 541
   height: 126
@@ -24,6 +18,12 @@ cssBackground:
   left: 165
 #header
 header:
+  #logo
+  logo:
+    file: logo.png
+    width: 220
+    top: 20
+    left: 5
   row:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "color: red;"
@@ -45,9 +45,9 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 0254.3532853
+    value: 0254.3522 006
   - label: Số tài khoản
-    value: 76010000223047 tại Ngân hàng Đầu tư và Phát triển Tỉnh BR-VT
+    value: 008.100.1179270 tại Ngân hàng Vietcombank Vũng Tàu
 #cusInfo Table
 cusInfo:
   style:
