@@ -23,7 +23,7 @@ background:
 header:
   logo: 
     width: 100
-  row:
+  name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "color: red;"
   - value: Bản thể hiện của hóa đơn điện tử

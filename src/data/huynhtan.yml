@@ -24,7 +24,7 @@ header:
   logo: 
     width: 100
   # cột tên HD row: value, style
-  row:
+  name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
   - value: Bản thể hiện của hóa đơn điện tử
     style: "font-weight: normal; font-size: 14px"

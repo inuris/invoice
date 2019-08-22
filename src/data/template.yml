@@ -23,15 +23,18 @@ background:
 
 ### header: logo, row
 header:
-  # cột đầu chứa logo: file, width, top, left
+  # cột 1 chứa logo: file, width, top, left
   logo: 
     width: 100
-  # cột tên HD row: value, style
-  row:
+  # cột 2 tên HD: value, style
+  name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "color: red;"
   - value: Bản thể hiện của hóa đơn điện tử
     style: "font-weight: normal; font-size: 14px"
+  # cột 3 số serial: style
+  serial:
+    style: ""
 
 ### Thông tin công ty comInfo: style, margin, width, isInput, row
 comInfo:
