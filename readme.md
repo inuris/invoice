@@ -35,5 +35,5 @@ foundation watch
 1. Copy file `src/data/_template.yml`-> `comName.yml`
 2. Copy folder `src/pages/_template` -> `src/pages/comName`
 3. Vào `src/pages/comName/index.html` đổi dòng đầu tiên `{{#with _template}}` thành `{{#with comName}}`
+4. Cập nhật thông tin mới vào `src/data/comName.yml`
 
-### Cập nhật data `comName.yml`
