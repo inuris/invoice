@@ -1,16 +1,16 @@
-comCode: _template                        # tên file
-comSerial: VN                             # mã hóa đơn
-comName: CÔNG TY TNHH                     # tên công ty
-comTaxCode: 123456789                     # mst
-comAddress: 123 tỉnh Bà Rịa Vũng Tàu      # địa chỉ
+comCode: dtxdtmmiendong                       # tên file
+comSerial: DD                             # mã hóa đơn
+comName: CÔNG TY CỔ PHẦN ĐẦU TƯ XÂY DỰNG THƯƠNG MẠI MIỀN ĐÔNG                     # tên công ty
+comTaxCode: 3502378048                     # mst
+comAddress: Số 34 Phan Kế Bính, Phường 9, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu      # địa chỉ
 
 ### global CSS style: cssFontFamily, cssColor
-cssFontFamily: Arial
-cssColor: "#111"
+cssFontFamily: Times New Roman
+cssColor: "#033476"
 
 ### background: file, width, height, top, left, opacity
 background:
-  file: bg.png
+  file:
   width: 292
   height: 281
   top: 425
@@ -22,13 +22,13 @@ header:
   # cột 1 chứa logo: file, width, top, left
   logo: 
     file: logo.png
-    width: 111
-    top: 7
-    left: 30
+    width: 120
+    top: 4
+    left: 50
   # cột 2 tên HD: value, style
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "color: red;"
+    style: "font-family: Arial"
   - value: Bản thể hiện của hóa đơn điện tử
     style: "font-weight: normal; font-size: 14px"
   # cột 3 số serial: style
@@ -37,45 +37,37 @@ header:
 
 ### Thông tin công ty comInfo: style, margin, width, isInput, row
 comInfo:
-  style:                          # global css style (cả label & value)
-  labelStyle:                     # global Label css style
-  subStyle:                       # global Subtitle css style (song ngữ)
-  valueStyle:                     # global Value css style
   margin: 6                       # khoảng cách giữa các dòng
-  labelWidth:                     # kích thước cố định của label
   row:
   - label: Đơn vị bán hàng                              # Tên label
-    sub:                                                # Subtitle của label (song ngữ)
     code: ComName                                       # Tag XML
-    value:                                              # Nếu không có Tag XML thì phải set value
-    width:                                              # Width cố định của value (dùng để canh dấu chấm "..." trong bảng customer)
-    style:                                              # Style của cả dòng (label + value)
-    labelStyle: "line-height: 1.8"                      # Style riêng của label
-    subStyle:                                           # Style riêng của subtitle
+    labelStyle: "line-height: 1.8"                      # Style của cả dòng (label + value)
     valueStyle: "font-weight: bold; font-size: 20px;"   # Style riêng của value
   - label: Mã số thuế
     code: ComTaxCode
-    valueStyle: "font-weight: bold; letter-spacing: 2px; color:#111"
+    valueStyle: "font-weight: bold; letter-spacing: 2px;"
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 02543541091
+    value: 02543.832319
+  - label: Số tài khoản
+    value: 76010000033370 tại Ngân hàng Đầu tư và Phát triển tỉnh Bà Rịa Vũng Tàu
 
 ### Thông tin khách hàng cusInfo: style, margin, width, isInput, row
 cusInfo:
   isInput: true                                         # isInput = true sẽ hiển thị "..." trong value
   row:
   - label: Họ tên người mua hàng
-    width: 640
+    width: 657
     code: Buyer
   - label: Tên đơn vị
-    width: 722
+    width: 728
     code: CusName
   - label: Mã số thuế
-    width: 719
+    width: 727
     code: CusTaxCode
   - label: Địa chỉ
-    width: 745
+    width: 747
     code: CusAddress
   - label: Hình thức thanh toán
     width: 170
@@ -83,5 +75,5 @@ cusInfo:
     isPayment: true                             # Field đặc biệt: chèn code XML của phần Hình thức thanh toán
     col-2:                                      # TH có 2 field trong 1 hàng thì set col-2 và bên trong có các thuộc tính
       - label: Số tài khoản
-        width: 408
+        width: 430
         code: CusBankNo
