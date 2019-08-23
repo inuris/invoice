@@ -1,4 +1,4 @@
-comCode: template                         # tên file
+comCode: _template                        # tên file
 comSerial: VN                             # mã hóa đơn
 comName: CÔNG TY TNHH                     # tên công ty
 comTaxCode: 123456789                     # mst
