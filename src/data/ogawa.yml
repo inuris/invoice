@@ -40,7 +40,7 @@ header:
 comInfo:
   style: "color:#111;font-size: 14px;"
   margin: 6
-  width:
+  labelWidth:
   isInput:
   row:
   - label: Đơn vị bán hàng
@@ -64,7 +64,7 @@ comInfo:
 ### Thông tin khách hàng cusInfo: style, margin, width, isInput, row
 cusInfo:
   style:
-  width: 
+  labelWidth: 
   isInput: true
   row:
   - label: Họ tên người mua hàng

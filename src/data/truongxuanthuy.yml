@@ -26,7 +26,7 @@ background:
 comInfo:
   style: "color:#111;font-size: 14px;"
   margin: 6
-  width:
+  labelWidth:
   isInput:
   row:
   - code: ComName
@@ -39,7 +39,7 @@ comInfo:
 #cusInfo Table
 cusInfo:
   style:
-  width: 
+  labelWidth: 
   isInput: true
   row:
   - label: Họ tên người mua hàng

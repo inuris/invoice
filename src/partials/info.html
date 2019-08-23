@@ -1,11 +1,18 @@
 {{#*inline "rowEntry"}}
     {{#if this.label}}
-        <label class="fl-l title" style="margin-top:0;{{#if globalWidth}}width:{{globalWidth}}px;{{/if}}">
+        <label class="fl-l title" style="margin-top:0;{{#if labelWidth}}width:{{labelWidth}}px;{{/if}}">
             <span 
-            {{#ifOr v1=globalStyle v2=this.style v3=this.labelStyle}}
-                style="{{globalStyle}};{{this.style}};{{this.labelStyle}};"
+            {{#ifOr v1=globalStyle v2=globalLabelStyle v3=this.style v4=this.labelStyle}}
+                style="{{globalStyle}};{{globalLabelStyle}};{{this.style}};{{this.labelStyle}};"
             {{/ifOr}}            
             >{{this.label}}</span>
+            {{#if this.sub}}
+            <i style="font-size: 85%;
+                {{#ifOr v1=globalSubStyle v2=this.subStyle}}                
+                    {{globalSubStyle}};{{this.subStyle}};
+                {{/ifOr}}
+            "> ({{this.sub}})</i>
+            {{/if}} 
         </label>
     {{/if}}
     <label class="fl-l
@@ -17,8 +24,8 @@
             :&#160;
         {{/if}} 
         <span 
-        {{#ifOr v1=globalStyle v2=this.style v3=this.valueStyle}}
-            style="{{globalStyle}};{{this.style}};{{this.valueStyle}};"
+        {{#ifOr v1=globalStyle v2=globalValueStyle v3=this.style v4=this.valueStyle}}
+            style="{{globalStyle}};{{globalValueStyle}};{{this.style}};{{this.valueStyle}};"
         {{/ifOr}}
         >
             {{#ifOr v1=this.code v2=this.value}}
@@ -48,10 +55,10 @@
 {{#with data}}
     {{#each row}}
     <div class="clearfix vt-row" {{#if ../margin}}style="margin-bottom:{{../margin}}px"{{/if}}>
-        {{#> rowEntry isGlobalInput=../isInput globalStyle=../style globalWidth=../width}}
+        {{#> rowEntry isGlobalInput=../isInput globalStyle=../style globalLabelStyle=../labelStyle globalValueStyle=../valueStyle globalSubStyle=../subStyle labelWidth=../labelWidth}}
         {{/rowEntry}}    
         {{#each this.col-2}}
-            {{#> rowEntry  isGlobalInput=../../isInput globalStyle=../../style }}
+            {{#> rowEntry  isGlobalInput=../../isInput globalStyle=../../style globalLabelStyle=../../labelStyle globalValueStyle=../../valueStyle globalSubStyle=../../subStyle}}
             {{/rowEntry}}
         {{/each}}
     </div>

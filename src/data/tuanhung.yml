@@ -33,7 +33,7 @@ header:
 comInfo:
   style: 
   margin: 8
-  width: 109
+  labelWidth: 109
   isInput:
   row:
   - code: ComName
@@ -51,17 +51,17 @@ comInfo:
 #cusInfo Table
 cusInfo:
   style:
-  width: 
+  labelWidth: 
   isInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 640
+    width: 650
     code: Buyer
   - label: Tên đơn vị
     width: 722
     code: CusName
   - label: Mã số thuế
-    width: 719
+    width: 723
     code: CusTaxCode
   - label: Địa chỉ
     width: 745
@@ -72,5 +72,5 @@ cusInfo:
     isPayment: true
     col-2:
       - label: Số tài khoản
-        width: 379
+        width: 397
         code: CusBankNo
