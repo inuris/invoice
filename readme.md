@@ -17,9 +17,10 @@ npm install foundation-cli --global
 git clone https://github.com/inuris/invoice.git invoice
 ```
 
-3. Update NPM:
+3. Update packages:
 
 ```bash
+cd invoice
 npm install
 ```
 
