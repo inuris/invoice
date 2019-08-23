@@ -168,7 +168,8 @@ function images() {
 function server(done) {
   browser.init({
     server: PATHS.dist,
-    port: PORT
+    port: PORT,
+    startPath: "/_template/"
   }, done);
 }
 
@@ -181,7 +182,7 @@ function reload(done) {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   // gulp.watch(PATHS.assets, copy);
-  gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, reload));
+  gulp.watch('src/pages/**/*.{html,jpg,png,gif}').on('all', gulp.series(resetPages, pages, reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, reload));
   gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, reload));
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, reload));

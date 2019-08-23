@@ -23,7 +23,7 @@ header:
   logo: 
     file: logo.png
     width: 111
-    top: 3
+    top: 7
     left: 30
   # cột 2 tên HD: value, style
   name:

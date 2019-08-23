@@ -34,8 +34,8 @@ Vào link `http://localhost:8000/tên_mẫu/` để xem mẫu
 
 ## Cấu trúc source code
 
-Source nằm ở folder `invoice/src/`
-Code generated nằm ở folder `invoice/dist/comName`
+- Source nằm ở folder `invoice/src/`
+- Code generated nằm ở folder `invoice/dist/comName`
 
 ## Tạo mẫu HD mới
 
