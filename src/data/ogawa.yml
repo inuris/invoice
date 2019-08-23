@@ -43,7 +43,7 @@ comInfo:
   labelWidth:
   isInput:
   row:
-  - label: Đơn vị bán hàng
+  - label: Đơn vị bán hàng   
     code: ComName
     style: "line-height: 20px;"
     valueStyle: "font-weight: bold; font-size: 18px; color: #00a54f;"
