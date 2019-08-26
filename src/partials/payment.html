@@ -1,23 +1,23 @@
 <xsl:choose>
-    <xsl:when test="/Invoice/Content/Kind_of_Payment='TM'">
+    <xsl:when test="{{#unless relative}}../../{{/unless}}Kind_of_Payment='TM'">
         Tiền mặt
     </xsl:when>
-    <xsl:when test="/Invoice/Content/Kind_of_Payment='CK'">
+    <xsl:when test="{{#unless relative}}../../{{/unless}}Kind_of_Payment='CK'">
         Chuyển khoản
     </xsl:when>
-    <xsl:when test="/Invoice/Content/Kind_of_Payment='TTD'">
+    <xsl:when test="{{#unless relative}}../../{{/unless}}Kind_of_Payment='TTD'">
         Thẻ tín dụng
     </xsl:when>
-    <xsl:when test="/Invoice/Content/Kind_of_Payment='HDDT'">
+    <xsl:when test="{{#unless relative}}../../{{/unless}}Kind_of_Payment='HDDT'">
         Hóa đơn điện tử
     </xsl:when>
-    <xsl:when test="/Invoice/Content/Kind_of_Payment='BT'">
+    <xsl:when test="{{#unless relative}}../../{{/unless}}Kind_of_Payment='BT'">
         Bù trừ
     </xsl:when>
-    <xsl:when test="/Invoice/Content/Kind_of_Payment='TM, CK'">
+    <xsl:when test="{{#unless relative}}../../{{/unless}}Kind_of_Payment='TM, CK'">
         Tiền mặt/ Chuyển khoản
     </xsl:when>
     <xsl:otherwise>
-        <xsl:value-of select="/Invoice/Content/Kind_of_Payment"/>
+        <xsl:value-of select="{{#unless relative}}../../{{/unless}}Kind_of_Payment"/>
     </xsl:otherwise>
 </xsl:choose>

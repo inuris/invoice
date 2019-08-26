@@ -31,11 +31,11 @@
             {{#ifOr v1=this.code v2=this.value}}
                 {{#if this.code}}
                     <xsl:choose>
-                        <xsl:when test="/Invoice/Content/{{this.code}}!=''">
+                        <xsl:when test="{{#unless relative}}../../{{/unless}}{{this.code}}!=''">
                             {{#if this.isPayment}}
-                                {{> payment}}
+                                {{> payment relative=relative}}
                             {{else}}
-                                <xsl:value-of select="/Invoice/Content/{{this.code}}" />
+                                <xsl:value-of select="{{#unless relative}}../../{{/unless}}{{this.code}}" />
                             {{/if}}
                         </xsl:when>
                         <xsl:otherwise>
@@ -55,10 +55,10 @@
 {{#with data}}
     {{#each row}}
     <div class="clearfix vt-row" {{#if ../margin}}style="margin-bottom:{{../margin}}px"{{/if}}>
-        {{#> rowEntry isGlobalInput=../isInput globalStyle=../style globalLabelStyle=../labelStyle globalValueStyle=../valueStyle globalSubStyle=../subStyle labelWidth=../labelWidth}}
+        {{#> rowEntry relative=../../relative isGlobalInput=../isInput globalStyle=../style globalLabelStyle=../labelStyle globalValueStyle=../valueStyle globalSubStyle=../subStyle labelWidth=../labelWidth}}
         {{/rowEntry}}    
         {{#each this.col-2}}
-            {{#> rowEntry  isGlobalInput=../../isInput globalStyle=../../style globalLabelStyle=../../labelStyle globalValueStyle=../../valueStyle globalSubStyle=../../subStyle}}
+            {{#> rowEntry relative=../../../relative isGlobalInput=../../isInput globalStyle=../../style globalLabelStyle=../../labelStyle globalValueStyle=../../valueStyle globalSubStyle=../../subStyle}}
             {{/rowEntry}}
         {{/each}}
     </div>
