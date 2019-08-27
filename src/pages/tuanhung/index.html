@@ -463,20 +463,20 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 <td colspan="6" style="padding-left: 0px !important;padding-right: 0px !important;">
 								  <table cellspacing="0" cellpadding="0"  style="width:100%; float: left;">
 									<tr style="border-top:1px solid {{cssColor}};">
-										{{>header}}
+										{{>header relative=true}}
 									</tr>
                                   </table>
                                   <table cellspacing="0" cellpadding="0"  style="width:100%;" >
                                     <tr class="comInfo" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};">
 										<td  style="border:none;padding-top:7px;padding-left:10px;">
-											{{>info data = comInfo}}											
+											{{>info data=comInfo relative=true}}											
 										</td>
                                     </tr>
                                   </table>
                                   <table class="customerInfo" cellspacing="0" cellpadding="0"  style="">
                                     <tr>
 										<td colspan="6" style=" border-left: none!important;border-right: none!important;padding-top:10px;padding-left:10px;">
-											{{>info data = cusInfo}}
+											{{>info data=cusInfo relative=true}}
 										</td>
                                     </tr>
                                   </table>
@@ -540,7 +540,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   </div>
                                 </td>
                                 <td class="back-bold2"><!--Đơn vị tính-->
-                                  <div style="display: block;word-wrap: break-word;text-align: left;  overflow: hidden;">
+                                  <div style="display: block;word-wrap: break-word;text-align: center;  overflow: hidden;">
                                     <xsl:value-of select="ProdUnit"/>
                                   </div>
                                 </td>
@@ -552,7 +552,8 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       </xsl:when>
                                       <xsl:otherwise>
                                         <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(ProdQuantity,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                        <xsl:value-of select="translate(translate(translate(format-number(translate(ProdQuantity,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
+                                        <!-- <xsl:value-of select="translate(translate(translate(format-number(translate(ProdQuantity,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/> -->
                                       </xsl:otherwise>
                                     </xsl:choose>
                                   </div>
@@ -565,7 +566,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       </xsl:when>
                                       <xsl:otherwise>
                                         <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                        <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                       </xsl:otherwise>
                                     </xsl:choose>
                                   </div>
@@ -578,7 +579,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       </xsl:when>
                                       <xsl:otherwise>
                                         <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                        <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                       </xsl:otherwise>
                                     </xsl:choose>
                                   </div>
@@ -604,7 +605,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       <xsl:choose>
                                         <xsl:when test="(../../Total!='' and ../../Total!=0)">
                                           <!-- fix new-->
-                                          &#160;  <xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                          &#160;  <xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                         </xsl:when>
                                         <xsl:otherwise>
                                           &#160;
@@ -638,7 +639,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                     </label>
                                   </td>
                                   <td colspan="3"  style="border-left: 0;">
-                                    <label class="fl-l input-name" style="float: right!important;width:100%;">
+                                    <label class="fl-l input-name" style="float: right!important;width:100%; text-align:right">
                                       <xsl:choose>
                                         <xsl:when test="../../VAT_Amount='0'">
                                           <xsl:choose>
@@ -653,7 +654,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 
                                         <xsl:when test="../../VAT_Amount!=''">
                                           <!-- fix new-->
-                                          <xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                          <xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                         </xsl:when>
                                         <xsl:otherwise>
                                           &#160;
@@ -674,7 +675,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       <xsl:choose>
                                         <xsl:when test="(../../Amount!='' and ../../Amount!=0)">
                                           <!-- fix new-->
-                                          <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                          <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                         </xsl:when>
                                         <xsl:otherwise>
                                           &#160;
