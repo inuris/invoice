@@ -47,7 +47,9 @@ comInfo:
   - label: Điện thoại
     value: 0254.3522 006
   - label: Số tài khoản
-    value: 008.100.1179270 tại Ngân hàng Vietcombank Vũng Tàu
+    value: 008.100.1179270 tại Ngân hàng TMCP Ngoại thương Việt Nam - Vietcombank - CN Vũng Tàu
+  - labelWidth: 109
+    value: 7601.0000.223047 tại Ngân hàng TMCP Đầu tư và Phát triển Việt Nam - CN Bà Rịa - Vũng Tàu
 #cusInfo Table
 cusInfo:
   style:

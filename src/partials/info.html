@@ -1,6 +1,6 @@
 {{#*inline "rowEntry"}}
-    {{#if this.label}}
-        <label class="fl-l title" style="margin-top:0;{{#if labelWidth}}width:{{labelWidth}}px;{{/if}}">
+    {{#ifOr v1=this.label v2=this.labelWidth}}
+        <label class="fl-l title" style="margin-top:0;{{#if labelWidth}}width:{{labelWidth}}px;{{/if}}{{#if this.labelWidth}}width:{{this.labelWidth}}px;{{/if}}">
             <span 
             {{#ifOr v1=globalStyle v2=globalLabelStyle v3=this.style v4=this.labelStyle}}
                 style="{{globalStyle}};{{globalLabelStyle}};{{this.style}};{{this.labelStyle}};"
@@ -14,7 +14,7 @@
             "> ({{this.sub}})</i>
             {{/if}} 
         </label>
-    {{/if}}
+    {{/ifOr}}
     <label class="fl-l
         {{#ifOr v1=isGlobalInput v2=this.isInput}}
             input-name
@@ -22,6 +22,10 @@
         " style="margin:0;{{#if this.width}}width:{{this.width}}px;{{/if}}">
         {{#if this.label}}
             :&#160;
+        {{else}}
+            {{#if this.labelWidth}}
+            &#160;&#160;
+            {{/if}}
         {{/if}} 
         <span 
         {{#ifOr v1=globalStyle v2=globalValueStyle v3=this.style v4=this.valueStyle}}
