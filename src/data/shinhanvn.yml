@@ -34,6 +34,8 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
+  - label: Điện thoại
+    value: 0254.3740410
 cusInfo:
  row:
   - label: Họ tên người mua hàng
