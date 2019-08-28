@@ -16,7 +16,7 @@
 	<ComFax/>
 	<ComBankNo/>
 	<CusCode/>
-	<CusName></CusName>
+	<CusName/>
 	<CusPhone/>
 	<DanToc/>
 	<GioiTinh/>
@@ -34,6 +34,7 @@
 	<Discount_Amount/>
 	<CurrencyUnit></CurrencyUnit>
 	<Products> 
+		{{#if debug}}
 		<Product>
 			<Code/>
 			<ProdName>Test </ProdName>
@@ -46,6 +47,20 @@
 			<VATAmount/>
 			<Amount>300000</Amount>
 		</Product>
+		{{else}}
+		<Product>
+			<Code/>
+			<ProdName/>
+			<ProdUnit/>
+			<ProdQuantity/>
+			<ProdPrice/>
+			<Discount/>
+			<DiscountAmount/>
+			<VATRate/>
+			<VATAmount/>
+			<Amount/>
+		</Product>
+		{{/if}}
 	</Products>
 	<Extra/>
 	<SignDate/>
