@@ -9,6 +9,7 @@ comBank:
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#005cb3"
+cssFontSize: 16
 #background
 background:
   file: 
@@ -28,7 +29,7 @@ header:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "color: red;"
   - value: Bản thể hiện của hóa đơn điện tử
-    style: "font-weight: normal; font-size: 14px"
+    style: "font-weight: normal; font-size: 16px"
 #comInfo Table
 comInfo:
   style: 
@@ -57,16 +58,16 @@ cusInfo:
   isInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 650
+    width: 640
     code: Buyer
   - label: Tên đơn vị
-    width: 722
+    width: 721
     code: CusName
   - label: Mã số thuế
-    width: 723
+    width: 719
     code: CusTaxCode
   - label: Địa chỉ
-    width: 745
+    width: 744
     code: CusAddress
   - label: Hình thức thanh toán
     width: 200
@@ -74,5 +75,5 @@ cusInfo:
     isPayment: true
     col-2:
       - label: Số tài khoản
-        width: 397
+        width: 376
         code: CusBankNo
