@@ -15,38 +15,38 @@
         <p style="margin:10px auto;font-size:14px;">
             <xsl:choose>
                 <xsl:when test="{{#unless relative}}../../{{/unless}}ArisingDate!= '' and substring({{#unless relative}}../../{{/unless}}ArisingDate,7,4) != '1957' ">
-                    <span>Ngày </span>
+                    <span>Ngày {{#if english}}<i style="font-size: 85%;">(Date) </i>{{/if}}</span>
                     <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,1,2)" />
-                    <span> Tháng </span>
+                    <span> Tháng {{#if header.english}}<i style="font-size: 85%;">(month) </i>{{/if}}</span>
                     <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,4,2)" />
-                    <span> Năm </span>
+                    <span> Năm {{#if header.english}}<i style="font-size: 85%;">(year) </i>{{/if}}</span>
                     <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,7,4)" />
                 </xsl:when>
                 <xsl:otherwise>
-                    <span>Ngày</span> &#8230;
-                    <span> Tháng</span> &#8230;
-                    <span> Năm</span> &#8230;
+                    <span>Ngày {{#if english}}<i style="font-size: 85%;">(Date) </i>{{/if}}</span>&#8230;
+                    <span> Tháng {{#if english}}<i style="font-size: 85%;">(Date) </i>{{/if}}</span>&#8230;
+                    <span> Năm {{#if english}}<i style="font-size: 85%;">(Date) </i>{{/if}}</span>&#8230;
                 </xsl:otherwise>
             </xsl:choose>
             <br />
         </p>
     </div>
 </td>
-<td style="vertical-align:top;border:none; width:200px;">
+<td style="vertical-align:top;border:none; {{#if english}}width:250px;{{else}}width:200px;{{/if}}">
     <div class="InvInfoRight" style="padding-left:25px; {{#if header.serial.style}}{{header.serial.style}}{{/if}}">
         <div class="clearfix" style="line-height:22px;padding-top:14px;">
-            <span>Mẫu số: </span>
+            <span>Mẫu số {{#if english}}<i style="font-size: 85%;">(Denominator)</i>{{/if}}: </span>
             <span>
                 <xsl:value-of select="{{#unless relative}}../../{{/unless}}InvoicePattern" /></span>
         </div>
         <div class="clearfix" style="line-height:22px">
-            <span>Ký hiệu: </span>
+            <span>Ký hiệu {{#if english}}<i style="font-size: 85%;">(Serial No.)</i>{{/if}}: </span>
             <b>
                 <xsl:value-of select="{{#unless relative}}../../{{/unless}}SerialNo" />
             </b>
         </div>
         <div class="clearfix" style="line-height:22px">
-            <span>Số: </span>
+            <span>Số {{#if english}}<i style="font-size: 85%;">(No.)</i>{{/if}}: </span>
             <b style="color:red;font-size:140%;">
                 <xsl:call-template name="addZero">
                     <xsl:with-param name="count" select="7-string-length({{#unless relative}}../../{{/unless}}InvoiceNo)" />
