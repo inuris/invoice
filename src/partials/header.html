@@ -35,18 +35,18 @@
 <td style="vertical-align:top;border:none; {{#if english}}width:250px;{{else}}width:200px;{{/if}}">
     <div class="InvInfoRight" style="padding-left:25px; {{#if header.serial.style}}{{header.serial.style}}{{/if}}">
         <div class="clearfix" style="line-height:22px;padding-top:14px;">
-            <span>Mẫu số {{#if english}}<i style="font-size: 85%;">(Denominator)</i>{{/if}}: </span>
+            <span>Mẫu số {{#if english}}<i style="font-size: 85%;">(Form)</i>{{/if}}: </span>
             <span>
                 <xsl:value-of select="{{#unless relative}}../../{{/unless}}InvoicePattern" /></span>
         </div>
         <div class="clearfix" style="line-height:22px">
-            <span>Ký hiệu {{#if english}}<i style="font-size: 85%;">(Serial No.)</i>{{/if}}: </span>
+            <span>Ký hiệu {{#if english}}<i style="font-size: 85%;">(Serial)</i>{{/if}}: </span>
             <b>
                 <xsl:value-of select="{{#unless relative}}../../{{/unless}}SerialNo" />
             </b>
         </div>
         <div class="clearfix" style="line-height:22px">
-            <span>Số {{#if english}}<i style="font-size: 85%;">(No.)</i>{{/if}}: </span>
+            <span>Số {{#if english}}<i style="font-size: 85%;">(Invoice No.)</i>{{/if}}: </span>
             <b style="color:red;font-size:140%;">
                 <xsl:call-template name="addZero">
                     <xsl:with-param name="count" select="7-string-length({{#unless relative}}../../{{/unless}}InvoiceNo)" />
