@@ -47,7 +47,7 @@
         </div>
         <div class="clearfix" style="line-height:22px">
             <span>Số {{#if english}}<i style="font-size: 85%;">(Invoice No.)</i>{{/if}}: </span>
-            <b style="color:red;font-size:140%;">
+            <b style="{{#if cssColorRed}}color:{{cssColorRed}}{{else}}color:red{{/if}};font-size:140%;">
                 <xsl:call-template name="addZero">
                     <xsl:with-param name="count" select="7-string-length({{#unless relative}}../../{{/unless}}InvoiceNo)" />
                 </xsl:call-template>
