@@ -1,0 +1,81 @@
+comCode: ttgthoanggia
+comSerial: HG
+comName: CÔNG TY CỔ PHẦN ĐẦU TƯ TRUYỀN THÔNG VÀ GIẢI TRÍ HOÀNG GIA
+comTaxCode: 3502245739
+comAddress: 183/22 Bình Giã, Phường 8, TP.Vũng Tàu, Tỉnh Bà Rịa Vũng Tàu
+xml:
+  - ServiceAmount
+
+#global style
+cssFontFamily: Arial
+cssColor: "#005ead"
+cssColorRed: "#c00"
+#logo : file, width, top, left
+logo:
+  file: logo.png
+  width: 176
+  top: 10
+  left: 15
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 370
+  height: 208
+  top: 105
+  left: 275
+#header
+header:
+  logo: 
+    width: 100
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "color: #c00;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: normal; font-size: 14px"
+#comInfo Table
+comInfo:
+  style: "font-size: 14px;"
+  margin: 2
+  labelWidth:
+  isInput:
+  row:
+  - code: ComName
+    style: "font-weight: bold; font-size: 18px;"
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: "(0254) 383 59 38 - Fax: (0254) 383 59 39"
+  - label: Số tài khoản
+    value: 008.1000.999999 tại Ngân hàng TMCP Ngoại Thương Việt Nam - Chi Nhánh Vũng Tàu
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "font-weight: bold; letter-spacing: 2px; color:#c00"
+  - label: Website
+    value: www.regroup.vn
+#cusInfo Table
+cusInfo:
+  style:
+  margin: 8
+  labelWidth: 
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 690
+    code: Buyer
+  - label: Tên đơn vị
+    width: 772
+    code: CusName
+  - label: Địa chỉ
+    width: 796
+    code: CusAddress
+  - label: Mã số thuế
+    width: 770
+    code: CusTaxCode
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+      - label: Số tài khoản
+        width: 425
+        code: CusBankNo

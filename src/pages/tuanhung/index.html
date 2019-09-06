@@ -113,7 +113,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           background-color: white;
           }
 		  @page {
-        size: A4; margin: 15mm;
+        size: A4; margin: 10mm;
       }
           #main
           {
@@ -126,10 +126,13 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           font-family: '{{cssFontFamily}}', Times, serif;
           font-size: 14px;
           }
-		  span, i, b{
-			color: {{cssColor}};
-
+		  span,i, b{
+        color: {{cssColor}};
+        font-size: {{cssFontSize}}px;
 		  }
+      .footer span, .footer b, .footer i {
+        font-size: 14px !important;
+      }
           .VATTEMP .header-main, .content
           {
           width: 790px;
@@ -566,7 +569,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       </xsl:when>
                                       <xsl:otherwise>
                                         <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
+                                        <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.000'),',','?'),'.',','),'?','.')"/>
                                       </xsl:otherwise>
                                     </xsl:choose>
                                   </div>
@@ -579,7 +582,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       </xsl:when>
                                       <xsl:otherwise>
                                         <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
+                                        <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0'),',','?'),'.',','),'?','.')"/>
                                       </xsl:otherwise>
                                     </xsl:choose>
                                   </div>
@@ -690,7 +693,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       <label class="fl-l2">
                                         <span><i>Số tiền viết bằng chữ:</i></span>
                                       </label>
-                                      <label class="fl-l input-name" style="width:677px; text-align: left;">
+                                      <label class="fl-l input-name" style="width:660px; text-align: left;">
                                         <xsl:choose>
                                           <xsl:when test="../../Amount_words!=''">
                                             &#160;  <xsl:value-of select="../../Amount_words"/>
@@ -700,14 +703,6 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                           </xsl:otherwise>
                                         </xsl:choose>
                                       </label>
-                                    </div>
-                                    <div class="clearfix">
-                                        <label class="fl-l2" style="width: 120px"> 
-                                          &#160;
-                                        </label>
-                                        <label class="fl-l2 input-name" style="width: 680px">
-                                          &#160;
-                                        </label>
                                     </div>
                                   </td>
                                 </tr>
@@ -818,7 +813,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                         </table>
                         <div class="nenhd_bg"> &#160; </div>
                       </div>
-					  <div style="font-size:88%; text-align: center; margin-top: 4px;">
+					  <div class="footer" style="font-size:88%; text-align: center; margin-top: 4px;">
 							<span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - Hotline đăng ký dịch vụ 0913759468</span>
 							<br/>
 							<xsl:choose>
