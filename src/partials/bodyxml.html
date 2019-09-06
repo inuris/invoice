@@ -33,6 +33,9 @@
 	<Discount_Rate/>
 	<Discount_Amount/>
 	<CurrencyUnit></CurrencyUnit>
+	{{#each xml}}
+	<{{this}}/>
+	{{/each}}
 	<Products> 
 		{{#if debug}}
 		<Product>
