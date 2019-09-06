@@ -480,14 +480,14 @@
 			<td align="right" style="border-top:1px solid {{cssColor}};border-bottom: 1px solid {{cssColor}};border-left:1px white !important;">
 				<b>
 					<xsl:choose>
-						<xsl:when test="(../../Extra='') or (../../Extra=0)">
+						<xsl:when test="(../../ServiceAmount='') or (../../ServiceAmount=0)">
 							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color: black;">
 								0
 							</label>
 						</xsl:when>
 						<xsl:otherwise>
 							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color: black;">
-								<xsl:value-of select="translate(translate(translate(format-number(../../Extra, '###,###'),',','?'),'.',','),'?','.')"/>
+								<xsl:value-of select="translate(translate(translate(format-number(../../ServiceAmount, '###,###'),',','?'),'.',','),'?','.')"/>
 							</label>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -544,11 +544,11 @@
 			<td colspan="5" style="border-top:none!important;border-bottom:1px solid {{cssColor}};border-left:none;text-align:right;padding-right:10px;">
 				<span class="hoang_so_le">Tổng cộng tiền thanh toán : </span>
 			</td>
-			<td align="right" style="color: #31373E;border-top:none!important;border-bottom:1px solid {{cssColor}};border-left:1px white !important;">
+			<td align="right" style="border-top:none!important;border-bottom:1px solid {{cssColor}};border-left:1px white !important;">
 				<b>
 					<xsl:choose>
 						<xsl:when test="(../../Amount='') or (../../Amount=0)">
-							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color:{{cssColor}};">
+							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;">
 								0
 							</label>
 						</xsl:when>
@@ -951,6 +951,7 @@
 		  	.input-date {
 		  	border: 0;
 		  	border-bottom: 1px dotted {{cssColor}};
+			color:black;
 		  	}
 		  	.VATTEMP .statistics {
 		  	clear: both
