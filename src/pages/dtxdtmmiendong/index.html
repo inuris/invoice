@@ -623,7 +623,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                     </label>
                                   </td>
                                   <td style="border-left: 0;">
-                                    <label class="fl-l input-name" style="float: right!important;width:100%;">
+                                    <label class="fl-l input-name" style="float: right!important;width:100%;text-align:right;">
                                       <xsl:choose>
                                         <xsl:when test="../../VAT_Amount='0'">
                                           <xsl:choose>
@@ -673,7 +673,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       <label class="fl-l2">
                                         <span>Số tiền viết bằng chữ:</span>
                                       </label>
-                                      <label class="fl-l input-name" style="width:663px; text-align: left;">
+                                      <label class="fl-l input-name" style="width:675px; text-align: left;">
                                         <xsl:choose>
                                           <xsl:when test="../../Amount_words!=''">
                                             &#160;  <xsl:value-of select="../../Amount_words"/>
@@ -778,10 +778,12 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 														<div class="bgimg" style="background:url({/Invoice/image/@URI}) no-repeat center left; height: 83px;border:none;background-color:#DFF0D8;" onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
 															<p style="font-size:12px;color:red;">
 																Chữ ký điện tử có hiệu lực
-																<br/>
+																<br />
 																Được ký bởi:
-																<br/>
-																<xsl:value-of select="/Invoice/CNCom"/>
+																<br />
+                                <xsl:value-of select="/Invoice/CNCom"/>
+                                <br />
+                                Ký ngày: <xsl:value-of select="/Invoice/Content/SignDate"/>
 															</p>
 														</div>
 													</xsl:when>

@@ -56,10 +56,10 @@ comInfo:
     code: ComAddress
     sub: Address
   - label: Số tài khoản
-    value: 102010000343204 tại Ngân hàng Công Thương Bà Rịa - Vũng Tàu
+    value: 118000017174 Vietinbank Bà Rịa Vũng tàu
     sub: Account No.
   - label: Điện thoại
-    value: "02543.3580223 * Fax : 02543.574214 * Email: trungtinvt@vnn.vn"
+    value: "02543.3580223 * Email: trungtin.divingvt@gmail.com"
     sub: Tel
 
 ### Thông tin khách hàng cusInfo: style, margin, width, isInput, row
