@@ -480,14 +480,14 @@
 			<td align="right" style="border-top:1px solid {{cssColor}};border-bottom: 1px solid {{cssColor}};border-left:1px white !important;">
 				<b>
 					<xsl:choose>
-						<xsl:when test="(../../ServiceAmount='') or (../../ServiceAmount=0)">
+						<xsl:when test="(../../VATAmount0='') or (../../VATAmount0=0)">
 							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color: black;">
 								0
 							</label>
 						</xsl:when>
 						<xsl:otherwise>
 							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color: black;">
-								<xsl:value-of select="translate(translate(translate(format-number(../../ServiceAmount, '###,###'),',','?'),'.',','),'?','.')"/>
+								<xsl:value-of select="translate(translate(translate(format-number(../../VATAmount0, '###,###'),',','?'),'.',','),'?','.')"/>
 							</label>
 						</xsl:otherwise>
 					</xsl:choose>

@@ -2,7 +2,7 @@ comCode: trungtin                       # tên file
 comSerial: TT                             # mã hóa đơn
 comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN TRUNG TÍN                     # tên công ty
 comTaxCode: 3500289716                     # mst
-comAddress: 13/K4 Trịnh Hoài Đức, Phường 7, TP. Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu      # địa chỉ
+comAddress: 13K4 Trịnh Hoài Đức, Phường 7, TP. Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu      # địa chỉ
 
 ### global CSS style: cssFontFamily, cssColor
 cssFontFamily: Arial
@@ -59,7 +59,7 @@ comInfo:
     value: 118000017174 Vietinbank Bà Rịa Vũng tàu
     sub: Account No.
   - label: Điện thoại
-    value: "02543.3580223 * Email: trungtin.divingvt@gmail.com"
+    value: "0254.3580223 * Email: trungtin.divingvt@gmail.com"
     sub: Tel
 
 ### Thông tin khách hàng cusInfo: style, margin, width, isInput, row

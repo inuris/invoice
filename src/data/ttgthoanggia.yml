@@ -3,8 +3,6 @@ comSerial: HG
 comName: CÔNG TY CỔ PHẦN ĐẦU TƯ TRUYỀN THÔNG VÀ GIẢI TRÍ HOÀNG GIA
 comTaxCode: 3502245739
 comAddress: 183/22 Bình Giã, Phường 8, TP.Vũng Tàu, Tỉnh Bà Rịa Vũng Tàu
-xml:
-  - ServiceAmount
 
 #global style
 cssFontFamily: Arial
