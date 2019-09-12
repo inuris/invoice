@@ -5,7 +5,8 @@ comTaxCode: 3502402646
 comAddress: Khu phố Long Phượng, Thị trấn Long Điền, Huyện Long Điền, Tỉnh Bà Rịa Vũng Tàu
 cssFontFamily: Arial
 cssColor: "#08086b"
-
+xml:
+  - GrossValue0
 #header
 header:
   #logo

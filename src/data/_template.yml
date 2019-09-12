@@ -3,6 +3,8 @@ comSerial: VN                             # mã hóa đơn
 comName: CÔNG TY TNHH                     # tên công ty
 comTaxCode: 123456789                     # mst
 comAddress: 123 tỉnh Bà Rịa Vũng Tàu      # địa chỉ
+xml:                                      # bổ sung thêm tag XML
+debug:                                    # true: hiện data test XML
 
 ### global CSS style: cssFontFamily, cssColor
 cssFontFamily: Arial

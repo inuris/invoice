@@ -458,6 +458,27 @@
 	<xsl:template name="calltongsoproduct">
 		<tr class="bg-pink" style="">
 			<td colspan="5" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};border-left:none !important;text-align:left; text-align:right;padding-right:10px;">
+				<span class="hoang_so_le">Tiền chiết khấu: </span>
+			</td>
+			<td align="right" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};border-left:none;">
+				<b>
+					<xsl:choose>
+						<xsl:when test="(../../GrossValue0='') or (../../GrossValue0=0)">
+							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color: black;">
+								0
+							</label>
+						</xsl:when>
+						<xsl:otherwise>
+							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color: black;">
+								<xsl:value-of select="translate(translate(translate(format-number(../../GrossValue0, '###,###'),',','?'),'.',','),'?','.')"/>
+							</label>
+						</xsl:otherwise>
+					</xsl:choose>
+				</b>
+			</td>
+		</tr>
+		<tr class="bg-pink" style="">
+			<td colspan="5" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};border-left:none !important;text-align:left; text-align:right;padding-right:10px;">
 				<span class="hoang_so_le">Cộng tiền hàng: </span>
 			</td>
 			<td align="right" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};border-left:none;">
@@ -505,7 +526,7 @@
 							<label class="input-name summary" style="height:20px;display: block;margin-right:0px;color: black;border-bottom: none;">\</label>
 						</xsl:when>
 						<xsl:when test="../../VAT_Amount=''">
-							<label class="input-name summary" style="height:20px;display: block;margin-right:0px;border-bottom: none;">
+							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;">
 								<xsl:value-of select="''"/>
 							</label>
 						</xsl:when>
