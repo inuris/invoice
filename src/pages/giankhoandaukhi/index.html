@@ -445,7 +445,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                             <!--<xsl:copy-of select="$header" />-->
                             <xsl:for-each select="/Invoice//Content">
                               <tr style="background-color: white !important;">
-								<td colspan="6" style="padding-left: 0px !important;padding-right: 0px !important;">
+								<td colspan="6" style="padding-left: 0px !important;padding-right: 0px !important; padding-top: 5px; border-top: 1px solid {{cssColor}}">
 									<table class="headerInfo" style="width:100%;">
 										<tr class="comInfo">
 											<td style="border:none">
@@ -587,6 +587,37 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   </xsl:call-template>
                                 </xsl:if>
 
+                                <xsl:if test="(../../CurrencyUnit ='USD')">
+                                <tr class="noline back" style="border-top: 1px solid {{cssColor}};">
+                                  <td class="back-bold" colspan="5" style="text-align: right!important;border-bottom:none !important;border-right: 1px solid {{cssColor}}">
+                                    <label class="fl-l" style="line-height:20px; text-align:left;">
+                                      <span>Nguyên tệ{{#if english}} <i style="font-size: 85%;">(Original currency)</i>{{/if}}:</span>&#160;USD                                       
+                                    </label>
+                                    <label class="fl-l" style="line-height:20px; text-align:left; margin-left: 60px">                                      
+                                      <span>Tỉ giá{{#if english}} <i style="font-size: 85%;">(Exchange rate)</i>{{/if}}:</span> 
+                                      <xsl:if test="(../../ExchangeRate!='' and ../../ExchangeRate!=0)">
+                                        &#160;<xsl:value-of select="translate(translate(translate(format-number(translate(../../ExchangeRate,',','.'), '###,##0'),',','?'),'.',','),'?','.')"/>
+                                      </xsl:if>
+                                    </label>
+                                    <label class="fl-l" style="line-height:20px; float:right">
+                                      <span>Tổng tiền nguyên tệ{{#if english}} <i style="font-size: 85%;">(Sub-total)</i>{{/if}}:</span>
+                                    </label>
+                                  </td>
+                                  <td style="text-align: right; border-left:none !important">
+                                    <label class="fl-l input-name" style="float: right;width:100%; font-weight: 700">
+                                      <xsl:choose>
+                                        <xsl:when test="(../../ConvertedAmount!='' and ../../ConvertedAmount!=0)">
+                                          &#160;<xsl:value-of select="translate(translate(translate(format-number(translate(../../ConvertedAmount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                          &#160;
+                                        </xsl:otherwise>
+                                      </xsl:choose>
+                                    </label>
+                                  </td>
+                                </tr>
+                                </xsl:if>
+
                                 <tr  class="noline back" style="border-top: 1px solid {{cssColor}};">
                                   <td class="back-bold" colspan="5" style="padding-left: 0px;text-align: right!important;border-bottom:none !important;border-right: 1px solid {{cssColor}}">
                                     <label style="">
@@ -609,7 +640,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 </tr>
                                 <tr class="noline back" style="border-top: 1px solid {{cssColor}}; ">
                                   <td colspan="5" style="text-align: right; border-right: 1px solid {{cssColor}}">
-                                    <label class="fl-l" style="line-height:20px; text-align:left; font-weight: 700">
+                                    <label class="fl-l" style="line-height:20px; text-align:left;">
                                       <span>Thuế suất GTGT{{#if english}} <i style="font-size: 85%;">(VAT rate)</i>{{/if}}:</span>
                                       <xsl:choose>
                                         <xsl:when test="../../VAT_Rate!=''">

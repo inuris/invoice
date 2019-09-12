@@ -2,8 +2,9 @@ comCode: giankhoandaukhi
 comSerial: GK
 comName: CÔNG TY CỔ PHẦN CHẾ TẠO GIÀN KHOAN DẦU KHÍ
 comTaxCode: 3500806844
-comAddress: 65A2 đường 30/4, P.Thống Nhất, TP.Vũng Tàu, Tỉnh Bà Rịa - Vung Tàu
+comAddress: 65A2 đường 30/4, P.Thống Nhất, TP.Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 english: true
+debug: 
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#000"
@@ -11,9 +12,9 @@ cssColorRed: "#c00"
 #logo : file, width, top, left
 logo:
   file: logo.png
-  width: 176
-  top: 10
-  left: 15
+  width: 120
+  top: 2
+  left: 25
 #background : file, width, height, top, left
 background:
   file: 
@@ -37,7 +38,7 @@ header:
 #comInfo Table
 comInfo:
   style: "font-size: 14px;"
-  margin: 6
+  margin: 8
   labelWidth:
   isInput:
   row:
