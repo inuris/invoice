@@ -17,6 +17,8 @@ import autoprefixer  from 'autoprefixer';
 import base64        from 'gulp-base64-inline';
 import htmlImg64     from 'gulp-html-img64';
 import htmlsplit     from 'gulp-htmlsplit';
+import webshot       from 'gulp-webshot';
+
 // Load all Gulp plugins into one variable
 const $ = plugins();
 
@@ -37,6 +39,7 @@ gulp.task('build',
  gulp.series(
               clean
               , gulp.parallel(pages)
+              , screenshot
               //, gulp.parallel(pages, javascript, images, copy)
               //, sass
               //, styleGuide
@@ -82,6 +85,10 @@ function pages() {
     .pipe(gulp.dest(PATHS.dist));
 }
 
+function screenshot(){
+    return gulp.src(PATHS.dist+'/**/*.xml')
+    .pipe(webshot({ dest: PATHS.dist + '/screenshot' , root: PATHS.dist}));
+}
 // Load updated HTML templates and partials into Panini
 function resetPages(done) {
   panini.refresh();
