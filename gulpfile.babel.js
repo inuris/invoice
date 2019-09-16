@@ -18,6 +18,7 @@ import base64        from 'gulp-base64-inline';
 import htmlImg64     from 'gulp-html-img64';
 import htmlsplit     from 'gulp-htmlsplit';
 import webshot       from 'gulp-webshot';
+import glob          from "glob";
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -86,8 +87,15 @@ function pages() {
 }
 
 function screenshot(){
-    return gulp.src(PATHS.dist+'/**/*.xml')
-    .pipe(webshot({ dest: PATHS.dist + '/screenshot' , root: PATHS.dist}));
+  return glob(PATHS.dist + "/**/", function (er, files) {
+    for (let i = 0 ; i<files.length; i++){
+      let filename=files[i].replace(PATHS.dist + '/', "");
+      if (filename !== "")
+        webshot("localhost:8000/"+filename, filename.substr(0,filename.length-1)+".png", { dest: PATHS.dist + '/screenshot' , root: PATHS.dist})
+    }
+  })
+    // return gulp.src(PATHS.dist+'/**/*.xml')
+    // .pipe(webshot({ dest: PATHS.dist + '/screenshot' , root: PATHS.dist}));
 }
 // Load updated HTML templates and partials into Panini
 function resetPages(done) {
