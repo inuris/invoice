@@ -13,6 +13,7 @@
     "foundation-sites": "^6.5.3",
     "glob": "^7.1.4",
     "gulp-base64-inline": "^1.0.4",
+    "gulp-connect": "^5.7.0",
     "gulp-html-img64": "^1.0.8",
     "gulp-htmlsplit": "^1.1.1",
     "jquery": "^3.4.1",

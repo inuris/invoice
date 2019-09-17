@@ -18,8 +18,24 @@ import base64        from 'gulp-base64-inline';
 import htmlImg64     from 'gulp-html-img64';
 import htmlsplit     from 'gulp-htmlsplit';
 import webshot       from 'gulp-webshot';
-import glob          from "glob";
+import connect       from 'gulp-connect';
 
+var cors = function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Authorization, ...');
+  next();
+};
+
+gulp.task('server:test', function () {
+  connect.server({
+    root: 'dist',
+    livereload: true,
+    port: 9000,
+    middleware: function () {
+      return [cors];
+    }
+  });
+});
 // Load all Gulp plugins into one variable
 const $ = plugins();
 
@@ -40,11 +56,13 @@ gulp.task('build',
  gulp.series(
               clean
               , gulp.parallel(pages)
-              , screenshot
               //, gulp.parallel(pages, javascript, images, copy)
               //, sass
               //, styleGuide
             )
+          );
+gulp.task('ss',
+  gulp.series(screenshot)
           );
 
 // Build the site, run the server, and watch for file changes
@@ -87,13 +105,14 @@ function pages() {
 }
 
 function screenshot(){
-  return glob(PATHS.dist + "/**/", function (er, files) {
-    for (let i = 0 ; i<files.length; i++){
-      let filename=files[i].replace(PATHS.dist + '/', "");
-      if (filename !== "")
-        webshot("localhost:8000/"+filename, filename.substr(0,filename.length-1)+".png", { dest: PATHS.dist + '/screenshot' , root: PATHS.dist})
-    }
-  })
+  var options = {
+    root: PATHS.dist,
+    dest: PATHS.dist + "/screenshot",
+    defaultWhiteBackground: true
+   }
+  return gulp.src(PATHS.dist + "/**/")
+            .pipe(webshot(options));
+      
     // return gulp.src(PATHS.dist+'/**/*.xml')
     // .pipe(webshot({ dest: PATHS.dist + '/screenshot' , root: PATHS.dist}));
 }

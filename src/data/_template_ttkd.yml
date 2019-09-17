@@ -1,0 +1,49 @@
+comCode: _template_ttkd
+comSerial: GA
+comName: CÔNG TY TNHH
+comTaxCode: 3
+comAddress: BR-VT
+cssFontFamily: Arial
+cssColor: "#08086b"
+#header
+header:
+  #logo
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN 
+  - value: GIÁ TRỊ GIA TĂNG  
+comInfo:
+ row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: 1
+cusInfo:
+ row:
+  - label: Họ tên người mua hàng
+    width: 616
+    code: Buyer
+  - label: Tên đơn vị
+    width: 710
+    code: CusName
+  - label: Mã số thuế
+    width: 708
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 737
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 342
+      code: CusBankNo
