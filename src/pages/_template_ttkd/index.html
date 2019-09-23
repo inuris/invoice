@@ -210,14 +210,14 @@
 						<!-- Dòng product đầu tiên của trang đầu -->
 						<xsl:when test="position()=1">
 							<xsl:text disable-output-escaping="yes">&lt;div class="pagecurrent" id="1"&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 1px solid {{cssColor}};margin: 0 auto;width:810px;" &gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 1px solid #005cb3;margin: 0 auto;width:810px;" &gt;</xsl:text>
 							<xsl:call-template name="addfirtbody">
 							</xsl:call-template>
 							<xsl:call-template name="addsecondbody">
 							</xsl:call-template>
 							<xsl:text disable-output-escaping="yes">&lt;div class="statistics"&gt;</xsl:text>
 							<xsl:text disable-output-escaping="yes">&lt;div class="nenhd" style="width:800px; margin-bottom:5px"&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;table class="productTable"   width="810px" cellpadding="0" cellspacing="0" style="border: 0; border-top: 1px solid {{cssColor}};border-bottom: 1px solid {{cssColor}};margin-top: 10px;padding-bottom: 5px;margin: 0 auto;position:relative;z-index:2;"&gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;table class="productTable"   width="810px" cellpadding="0" cellspacing="0" style="border: 0; border-top: 1px solid #005cb3;border-bottom: 1px solid #005cb3;margin-top: 10px;padding-bottom: 5px;margin: 0 auto;position:relative;z-index:2;"&gt;</xsl:text>
 							<xsl:call-template name="calltitleproduct">
 							</xsl:call-template>
 							<xsl:call-template name="callbodyproduct">
@@ -247,7 +247,7 @@
 							<xsl:text disable-output-escaping="yes">&lt;div class="pagecurrent" id=</xsl:text>
 							<xsl:value-of select="((position()-1) div $itemNeeded) + 1"/>
 							<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 2px solid {{cssColor}};margin: 0 auto;width:810px;" &gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 2px solid #005cb3;margin: 0 auto;width:810px;" &gt;</xsl:text>
 							<xsl:call-template name="addfirtbody">
 							</xsl:call-template>
 							<!--  <div style="margin-left: 318px; margin-top: 8px">
@@ -258,7 +258,7 @@
 							</xsl:call-template>
 							<xsl:text disable-output-escaping="yes">&lt;div class="statistics"&gt;</xsl:text>
 							<xsl:text disable-output-escaping="yes">&lt;div class="nenhd" style="width:800px;margin-bottom:5px"&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;table class="productTable"   width="810px" cellpadding="0" cellspacing="0" style="border: 0; border-top: 1px solid {{cssColor}};border-bottom: 1px solid {{cssColor}};margin-top: 10px;padding-bottom: 5px;margin: 0 auto;position:relative;z-index:2;"&gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;table class="productTable"   width="810px" cellpadding="0" cellspacing="0" style="border: 0; border-top: 1px solid #005cb3;border-bottom: 1px solid #005cb3;margin-top: 10px;padding-bottom: 5px;margin: 0 auto;position:relative;z-index:2;"&gt;</xsl:text>
 							<xsl:call-template name="calltitleproduct">
 							</xsl:call-template>
 							<xsl:call-template name="callbodyproduct">
@@ -328,10 +328,10 @@
 	</xsl:template>
 	<xsl:template name="addfirtbody">
 		<table class="headerInfo" style="width:100%;">
-			<tr style="border-bottom:1px solid {{cssColor}};">
+			<tr style="border-bottom:1px solid #005cb3;">
 				{{>header}}				
 			</tr>
-			<tr class="comInfo" style="border-bottom:1px solid {{cssColor}};">
+			<tr class="comInfo" style="border-bottom:1px solid #005cb3;">
 				<td colspan="3" style="padding-top:7px;">
 					{{>info data=comInfo}}					
 				</td>
@@ -348,7 +348,7 @@
 		</table>
 	</xsl:template>
 	<xsl:template name="calltitleproduct">
-		<tr class="productTableHeader" style="background: #C0E1E9">
+		<tr class="productTableHeader" style="">
 			<td style="width:27px;">
 				<b class="title">STT</b>
 			</td>
@@ -356,7 +356,7 @@
 				<b class="title">Tên hàng hóa, dịch vụ</b>
 			</td>
 			<td style="width:45px;">
-				<b class="title">Đơn vị tính</b>
+				<b class="title">ĐVT</b>
 			</td>
 			<td style="width:70px;">
 				<b class="title">Số lượng</b>
@@ -368,7 +368,7 @@
 				<b class="title">Thành Tiền</b>
 			</td>
 		</tr>
-		<tr class="productInfoHeader" style="font-size:16px; text-align:center;color: {{cssColor}};">
+		<tr class="productInfoHeader" style="font-size:16px; text-align:center;color: #005cb3;">
 			<td style="font-weight:normal;line-height:25px;">1</td>
 			<td style="font-weight:normal;">2</td>
 			<td style="font-weight:normal;">3</td>
@@ -455,12 +455,12 @@
 			</td>
 		</tr>
 	</xsl:template>
-	<xsl:template name="calltongsoproduct">		
+	<xsl:template name="calltongsoproduct">
 		<tr class="bg-pink" style="">
-			<td colspan="5" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};border-left:none !important;text-align:left; text-align:right;padding-right:10px;">
+			<td colspan="5" style="border-top:1px solid #005cb3;border-bottom:1px solid #005cb3;border-left:none !important;text-align:left; text-align:right;padding-right:10px;">
 				<span class="hoang_so_le">Cộng tiền hàng: </span>
 			</td>
-			<td align="right" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};border-left:none;">
+			<td align="right" style="border-top:1px solid #005cb3;border-bottom:1px solid #005cb3;border-left:none;">
 				<b>
 					<xsl:choose>
 						<xsl:when test="(../../Total='') or (../../Total=0)">
@@ -477,7 +477,7 @@
 				</b>
 			</td>
 		</tr>
-		<tr class="bg-pink" style="border-bottom:1px solid {{cssColor}};">
+		<tr class="bg-pink" style="border-bottom:1px solid #005cb3;">
 			<td colspan="2" style="border-top:none!important;border-bottom:none!important;border-right:none!important; text-align:left; padding-left:10px;">
 				<span>Thuế suất GTGT: </span>
 				<xsl:choose>
@@ -496,7 +496,7 @@
 				</xsl:choose>
 			</td>
 			<td colspan="3" style="border-top:none;border-left:none!important;border-bottom:none;text-align:right;padding-right:10px;line-height:0px;">
-				<span>Tiền thuế GTGT: </span>  
+				<span>Tiền thuế GTGT:</span>
 			</td>
 			<td align="right" style="border-top:none!important;border-bottom:none!important;border-left:none;">
 				<b>
@@ -505,7 +505,7 @@
 							<label class="input-name summary" style="height:20px;display: block;margin-right:0px;color: black;border-bottom: none;">\</label>
 						</xsl:when>
 						<xsl:when test="../../VAT_Amount=''">
-							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;">
+							<label class="input-name summary" style="height:20px;display: block;margin-right:0px;border-bottom: none;">
 								<xsl:value-of select="''"/>
 							</label>
 						</xsl:when>
@@ -524,10 +524,10 @@
 			</td>
 		</tr>
 		<tr class="bg-pink">
-			<td colspan="5" style="border-top:none!important;border-bottom:1px solid {{cssColor}};border-left:none;text-align:right;padding-right:10px;">
+			<td colspan="5" style="border-top:none!important;border-bottom:1px solid #005cb3;border-left:none;text-align:right;padding-right:10px;">
 				<span class="hoang_so_le">Tổng cộng tiền thanh toán: </span>
 			</td>
-			<td align="right" style="color: #31373E;border-top:none!important;border-bottom:1px solid {{cssColor}};border-left:1px white !important;">
+			<td align="right" style="color: #31373E;border-top:none!important;border-bottom:1px solid #005cb3;border-left:1px white !important;">
 				<b>
 					<xsl:choose>
 						<xsl:when test="(../../Amount='') or (../../Amount=0)">
@@ -649,11 +649,14 @@
 				<table style="width: 800px;height: 83px; border-bottom: medium none; border-left: medium none; border-top: medium none; border-right: medium none;">
 					<tr>
 						<!--panel client-->
-						<td style="border: none;width: 333px;vertical-align: top;text-align:center;color: {{cssColor}};">
-							<p style="font-size:14px; margin-top:0;margin-bottom: 5px;">
+						<td style="border: none;width: 333px;vertical-align: top;text-align:center;color: #005cb3;">
+							<p style="font-size:14px; margin-top:0;height: 20px;margin-bottom: 0;">
 								<b>
 								Người mua hàng
 								</b>
+							</p>
+							<p style="font-size:14px; margin-top:0;height: 20px;margin-bottom: 0;">
+							(<i>Ký, ghi rõ họ tên</i>)
 							</p>
 							<xsl:choose>
 								<xsl:when test="/Invoice/imageClient != '' ">
@@ -675,7 +678,7 @@
 						<td style="border: none;width: 333px;vertical-align: top;">
 							<xsl:choose>
 								<xsl:when test="/Invoice/convert!=''">
-									<div style="text-align:center;padding-top:1px;color: {{cssColor}};">
+									<div style="text-align:center;padding-top:1px;color: #005cb3;">
 										<div>
 											<label style="font-size:11px">
 												<b>
@@ -710,11 +713,14 @@
 							</xsl:choose>
 						</td>
 						<!--panel server-->
-						<td style="border: none;width: 333px;vertical-align: top;text-align:center;color: {{cssColor}};">
-							<p style="font-size:14px; margin-top:0;margin-bottom: 5px;">
+						<td style="border: none;width: 333px;vertical-align: top;text-align:center;color: #005cb3;">
+							<p style="font-size:14px; margin-top:0;height: 20px;margin-bottom: 0;">
 								<b>
 								Người bán hàng
 								</b>
+							</p>
+							<p style="font-size:14px; margin-top:0;height: 20px;margin-bottom: 0;">
+							(<i>Ký, ghi rõ họ tên</i>)
 							</p>
 							<xsl:choose>
 								<xsl:when test="/Invoice/image != '' ">
@@ -847,7 +853,7 @@
 		  	height: 100%;
 		  	}
 		  	span, i, b{
-		  		color: {{cssColor}};
+		  		color: #005cb3;
 		  	}
 		  	i{
 				font-size: 85%;
@@ -860,7 +866,7 @@
 		  	}
 		  	.VATTEMP {
 		  	background-color: #fff;
-		  	font: 78%/1.4em {{cssFontFamily}}, "Helvetica Neue", Helvetica, sans-serif;
+		  	font: 78%/1.4em Arial, "Helvetica Neue", Helvetica, sans-serif;
 		  	padding: 0px 10px 10px 10px;
 		  	width: auto;
 		  	height: auto;
@@ -875,43 +881,43 @@
 		  	.VATTEMP .header {
 		  	float: right;
 		  	width: 600px;
-		  	font-family: {{cssFontFamily}}
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header-content {
 		  	float: left;
 		  	text-align: center;
 		  	width: 375px;
-		  	font-family: {{cssFontFamily}}
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header-content2 {
 		  	float: left;
 		  	text-align: left;
 		  	width: 610px;
-		  	font-family: {{cssFontFamily}}
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header h2 {
 		  	font-size: 22px;
-		  	font-family: {{cssFontFamily}}
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header h2,
 		  	.header p {
 		  	margin: 0;
-		  	font-family: {{cssFontFamily}}
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header p.name-upcase {
 		  	font-size: 14px;
 		  	text-transform: uppercase;
-		  	font-family: {{cssFontFamily}}
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header-note {
 		  	float: right;
 		  	font-size: 14px;
 		  	width: 200px;
 		  	margin-top: 0;
-		  	font-family: {{cssFontFamily}}
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header .number {
-		  	font-family: "{{cssFontFamily}}", Times, serif;
+		  	font-family: "Times New Roman", Times, serif;
 		  	font-size: 22px
 		  	}
 		  	.clearfix:after {
@@ -926,7 +932,7 @@
 		  	clear: both
 		  	}
 		  	.VATTEMP .input-code {
-		  	border: 1px solid {{cssColor}};
+		  	border: 1px solid #005cb3;
 		  	color: #000;
 		  	float: left;
 		  	font-weight: normal;
@@ -941,7 +947,7 @@
 		  	.VATTEMP .input-name,
 		  	.input-date {
 		  	border: 0;
-		  	border-bottom: 1px dotted {{cssColor}};
+		  	border-bottom: 1px dotted #005cb3;
 		  	}
 		  	.VATTEMP .statistics {
 		  	clear: both
@@ -1010,7 +1016,7 @@
 		  	#SolutionVNPT{
 		  	margin-bottom:5px;
 		  	font-size:12px;
-		  	border-bottom:1px dashed {{cssColor}};
+		  	border-bottom:1px dashed #005cb3;
 		  	text-align: center;width: auto;
 		  	width: 1010px;
 		  	}
@@ -1069,7 +1075,7 @@
 
 		  	.productTable {
 		  	background-position: bottom;
-		  	border: 1 1 1 1 solid {{cssColor}};
+		  	border: 1 1 1 1 solid #005cb3;
 		  	font-size: 14px;
 		  	margin: 0;
 		  	height: 300px;
@@ -1085,15 +1091,15 @@
 		  	text-align: center
 		  	}
 		  	.productTable .back td {
-		  	font-family: "{{cssFontFamily}}", Times, serif;
+		  	font-family: "Times New Roman", Times, serif;
 		  	font-size: 14px
 		  	}
 		  	.productTable .noline td {
 		  	border-bottom: 1 none
 		  	}
 		  	.productTable td {
-		  	border-bottom: 1px solid {{cssColor}};
-		  	border-right: 1px solid {{cssColor}};
+		  	border-bottom: 1px solid #005cb3;
+		  	border-right: 1px solid #005cb3;
 		  	padding: 0px;
 		  	}
 		  	.productTable td:last-child{
@@ -1104,8 +1110,8 @@
 		  	padding-right: 5px;
 		  	padding-left: 5px;
 		  	text-align: right;
-		  	border-bottom: 1px dotted {{cssColor}};
-		  	border-top: 0px solid {{cssColor}};
+		  	border-bottom: 1px dotted #005cb3;
+		  	border-top: 0px solid #005cb3;
 		  	height: 30px;
 		  	}
 		  	.productTable tr.bg-pink{

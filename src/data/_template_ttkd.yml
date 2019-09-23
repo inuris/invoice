@@ -9,10 +9,9 @@ cssColor: "#08086b"
 header:
   #logo
   logo:
-    width: 150
+    width: 100
   name:
-  - value: HÓA ĐƠN 
-  - value: GIÁ TRỊ GIA TĂNG  
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
 comInfo:
  row:
   - label: Đơn vị bán hàng
@@ -23,8 +22,15 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-  - label: Điện thoại
-    value: 1
+  - label: STK
+    width: 180
+    code: CusBankName
+    isInput: true
+    col-2:
+    - label: tại
+      width: 553
+      code: CusBankNo
+      isInput: true
 cusInfo:
  row:
   - label: Họ tên người mua hàng

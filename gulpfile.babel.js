@@ -17,8 +17,7 @@ import autoprefixer  from 'autoprefixer';
 import base64        from 'gulp-base64-inline';
 import htmlImg64     from 'gulp-html-img64';
 import htmlsplit     from 'gulp-htmlsplit';
-import webshot       from 'gulp-webshot';
-import connect       from 'gulp-connect';
+import casperJs      from 'gulp-casperjs';
 
 var cors = function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -26,16 +25,7 @@ var cors = function (req, res, next) {
   next();
 };
 
-gulp.task('server:test', function () {
-  connect.server({
-    root: 'dist',
-    livereload: true,
-    port: 9000,
-    middleware: function () {
-      return [cors];
-    }
-  });
-});
+
 // Load all Gulp plugins into one variable
 const $ = plugins();
 
@@ -61,10 +51,13 @@ gulp.task('build',
               //, styleGuide
             )
           );
-gulp.task('ss',
-  gulp.series(screenshot)
-          );
-
+// gulp.task('ss',
+//   gulp.series(screenshot)
+//           );
+gulp.task('ss', function () {
+  gulp.src('src/test.js')
+    .pipe(casperJs({binPath: './node_modules/casperjs/bin/casperjs'}));
+});
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
   gulp.series('build', server, watch));
@@ -104,18 +97,6 @@ function pages() {
     .pipe(gulp.dest(PATHS.dist));
 }
 
-function screenshot(){
-  var options = {
-    root: PATHS.dist,
-    dest: PATHS.dist + "/screenshot",
-    defaultWhiteBackground: true
-   }
-  return gulp.src(PATHS.dist + "/**/")
-            .pipe(webshot(options));
-      
-    // return gulp.src(PATHS.dist+'/**/*.xml')
-    // .pipe(webshot({ dest: PATHS.dist + '/screenshot' , root: PATHS.dist}));
-}
 // Load updated HTML templates and partials into Panini
 function resetPages(done) {
   panini.refresh();
