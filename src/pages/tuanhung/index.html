@@ -796,7 +796,9 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 																<br/>
 																Được ký bởi:
 																<br/>
-																<xsl:value-of select="/Invoice/CNCom"/>
+                                <xsl:value-of select="/Invoice/CNCom"/>
+                                <br />
+                                Ký ngày: <xsl:value-of select="/Invoice/Content/SignDate"/>
 															</p>
 														</div>
 													</xsl:when>
