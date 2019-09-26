@@ -1,4 +1,4 @@
-{{#with phucthanh}}
+{{#with phucthanhqt}}
 <!-- split {{comCode}}.xslt -->
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns="http://www.w3.org/1999/xhtml" xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" version="1.0" exclude-result-prefixes="msxsl js">
@@ -809,21 +809,7 @@
 								Người bán hàng
 								</b>
 							</p>
-							<xsl:choose>
-								<xsl:when test="/Invoice/image != '' ">
-									<div class="bgimg" style="background:url({/Invoice/image/@URI}) no-repeat center left; height: 70px;border:none;background-color:#DFF0D8;float:right;" onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
-										<p style="font-size:12px;text-align:left;margin:0px;line-height:18px;">
-											Chữ ký điện tử có hiệu lực
-											<br/>
-											Được ký bởi:
-											<br/>
-                      <xsl:value-of select="/Invoice/CNCom"/>
-                      <br />
-                      Ký ngày: <xsl:value-of select="/Invoice/Content/SignDate"/>
-										</p>
-									</div>
-								</xsl:when>
-							</xsl:choose>
+							{{>sign height=90}}
 						</td>
 					</tr>
 				</table>

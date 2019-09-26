@@ -1,4 +1,4 @@
-comCode: phucthanh                        # tên file
+comCode: phucthanhqt                        # tên file
 comSerial: PT                             # mã hóa đơn
 comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN THƯƠNG MẠI SẢN XUẤT PHÚC THÀNH QT                     # tên công ty
 comTaxCode: 3502405326                     # mst
@@ -17,7 +17,7 @@ background:
   width: 541
   height: 103
   top: 145
-  left: 170
+  left: 160
   opacity: 
 
 ### header: logo, row
