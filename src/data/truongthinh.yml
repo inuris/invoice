@@ -2,14 +2,17 @@ comCode: truongthinh
 comSerial: TT
 comName: CÔNG TY TNHH TƯ VẤN THIẾT KẾ VÀ KHẢO SÁT TRƯỜNG THỊNH
 comTaxCode: 3502405083
-comAddress: 75/8 Lương Thế Vinh, Phường Nguyễn An Ninh, Thành Phố Vũng Tàu, BR-VT
+comAddress: 75/8 Lương Thế Vinh, Phường Nguyễn An Ninh, Thành phố Vũng Tàu, Tỉnh Bà Rịa Vũng Tàu
 cssFontFamily: Arial
 cssColor: "#08086b"
 #header
 header:
   #logo
   logo:
-    width: 100
+    file: logo.jpg
+    width: 93
+    height: 110
+    left: 45
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
 comInfo:
@@ -22,6 +25,8 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
+  - label: Điện thoại
+    value: 0918057887
   - label: STK
     width: 180
     code: CusBankName
