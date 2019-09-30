@@ -1,8 +1,8 @@
-comCode: truongthinh
-comSerial: TT
-comName: CÔNG TY TNHH TƯ VẤN THIẾT KẾ VÀ KHẢO SÁT TRƯỜNG THỊNH
-comTaxCode: 3502405083
-comAddress: 75/8 Lương Thế Vinh, Phường Nguyễn An Ninh, Thành phố Vũng Tàu, Tỉnh Bà Rịa Vũng Tàu
+comCode: dienmatroidonga
+comSerial: DS
+comName: CÔNG TY TNHH ĐIỆN MẶT TRỜI ĐÔNG Á
+comTaxCode: 3502402318
+comAddress: Số 88/11, Nguyễn Hữu Cảnh, Phường Thắng Nhất, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 cssFontFamily: Arial
 cssColor: "#08086b"
 #header
@@ -10,9 +10,10 @@ header:
   #logo
   logo:
     file: logo.jpg
-    width: 93
-    height: 110
-    left: 45
+    width: 130
+    height: 87
+    left: 38
+    top: 3
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
 comInfo:
@@ -26,7 +27,7 @@ comInfo:
     - label: Địa chỉ
       code: ComAddress
     - label: Điện thoại
-      value: 0918057887
+      value: 0913693702
     - label: STK
       width: 180
       code: CusBankName
