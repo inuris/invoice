@@ -1,0 +1,79 @@
+comCode: tpevietnam
+comSerial: TP
+comName: CÔNG TY TNHH TPE VIỆT NAM
+comTaxCode: 3502406390
+comAddress: 492 D, đường 30/4, Phường Rạch Dừa, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu
+english: true
+#global style
+cssFontFamily: Arial
+cssColor: "#111"
+#logo : file, width, top, left
+logo:
+  file: logo.png
+  width: 194
+  top: 10
+  left: 15
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 407
+  height: 208
+  top: 110
+  left: 270
+#header
+header:
+  logo: 
+    width: 100
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "color: red;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: normal; font-size: 14px"
+#comInfo Table
+comInfo:
+  style: "color:#111;font-size: 14px;"
+  margin: 6
+  labelWidth:
+  isInput:
+  row:
+  - code: ComName
+    style: "color:#111; font-weight: bold; font-size: 20px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "font-weight: bold; letter-spacing: 2px; color:#111"
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: 02543541091
+#cusInfo Table
+cusInfo:
+  style:
+  labelWidth: 
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 665
+    code: Buyer
+    sub: Buyer
+  - label: Tên đơn vị
+    width: 690
+    code: CusName
+    sub: Company name
+  - label: Mã số thuế
+    width: 720
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 746
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 190
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Payment method
+    col-2:
+      - label: Số tài khoản
+        width: 305
+        code: CusBankNo
+        sub: Bank A/C
