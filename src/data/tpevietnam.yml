@@ -10,70 +10,82 @@ cssColor: "#111"
 #logo : file, width, top, left
 logo:
   file: logo.png
-  width: 194
+  width: 100
   top: 10
-  left: 15
+  left: 45
 #background : file, width, height, top, left
 background:
   file: bg.png
-  width: 407
-  height: 208
-  top: 110
-  left: 270
+  width: 260
+  height: 330
+  top: 78
+  left: 330
 #header
 header:
   logo: 
     width: 100
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "color: red;"
+    style: "color: red; font-size: 21px"
+    sub: VAT INVOICE
+    subStyle: "color: red; font-size: 21px"
   - value: Bản thể hiện của hóa đơn điện tử
-    style: "font-weight: normal; font-size: 14px"
+    style: "font-weight: bold; font-size: 14px; line-height: 24px;"
+    sub: Electronic Invoice Display    
 #comInfo Table
 comInfo:
   style: "color:#111;font-size: 14px;"
   margin: 6
   labelWidth:
   isInput:
+  subStyle: "font-size: 100%"
   row:
   - code: ComName
-    style: "color:#111; font-weight: bold; font-size: 20px;"
+    style: "color:#111; font-weight: bold; font-size: 18px; font-family: Arial"
   - label: Mã số thuế
     code: ComTaxCode
-    valueStyle: "font-weight: bold; letter-spacing: 2px; color:#111"
+    style: "font-weight: bold;"
+    valueStyle: "letter-spacing: 2px; "
+    subStyle: "font-weight: bold;"
+    sub: Tax code
   - label: Địa chỉ
     code: ComAddress
+    sub: Address
   - label: Điện thoại
     value: 02543541091
+    sub: Tel
+  - label: Số tài khoản VND 
+    sub: Bank A/C
 #cusInfo Table
 cusInfo:
   style:
   labelWidth: 
   isInput: true
+  subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 665
+    width: 658
     code: Buyer
     sub: Buyer
   - label: Tên đơn vị
-    width: 690
+    width: 675
     code: CusName
     sub: Company name
   - label: Mã số thuế
-    width: 720
+    width: 713
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 746
+    width: 739
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 190
+    width: 185
     code: Kind_of_Payment
     isPayment: true
     sub: Payment method
     col-2:
       - label: Số tài khoản
-        width: 305
+        width: 285
         code: CusBankNo
         sub: Bank A/C
