@@ -5,11 +5,13 @@ comTaxCode: 123456789                     # mst
 comAddress: 123 tỉnh Bà Rịa Vũng Tàu      # địa chỉ
 xml:                                      # bổ sung thêm tag XML
 debug:                                    # true: hiện data test XML
+english:                                  # true: hóa đơn song ngữ
 
 ### global CSS style: cssFontFamily, cssColor
 cssFontFamily: Arial
-cssColor: "#111"
-english:                                  # true: hóa đơn song ngữ
+cssColor: "#111"                          # màu primary của hóa đơn (cần replace trong file index)
+cssColorRed: "#f00"                       # màu đỏ của tên HD và số hiệu
+
 
 ### background: file, width, height, top, left, opacity
 background:

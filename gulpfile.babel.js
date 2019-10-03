@@ -6,24 +6,24 @@ import browser       from 'browser-sync';
 import gulp          from 'gulp';
 import panini        from 'panini';
 import rimraf        from 'rimraf';
-import sherpa        from 'style-sherpa';
+// import sherpa        from 'style-sherpa';
 import yaml          from 'js-yaml';
 import fs            from 'fs';
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import named         from 'vinyl-named';
-import uncss         from 'uncss';
+// import uncss         from 'uncss';
 import autoprefixer  from 'autoprefixer';
 import base64        from 'gulp-base64-inline';
 import htmlImg64     from 'gulp-html-img64';
 import htmlsplit     from 'gulp-htmlsplit';
-import casperJs      from 'gulp-casperjs';
+import pdf           from  'gulp-html-pdf';
 
-var cors = function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Authorization, ...');
-  next();
-};
+// var cors = function (req, res, next) {
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Authorization, ...');
+//   next();
+// };
 
 
 // Load all Gulp plugins into one variable
@@ -55,8 +55,9 @@ gulp.task('build',
 //   gulp.series(screenshot)
 //           );
 gulp.task('ss', function () {
-  gulp.src('src/test.js')
-    .pipe(casperJs({binPath: './node_modules/casperjs/bin/casperjs'}));
+  return gulp.src(PATHS.dist + '/**/*.html')
+        .pipe(pdf())
+        .pipe(gulp.dest(PATHS.dist));
 });
 // Build the site, run the server, and watch for file changes
 gulp.task('default',

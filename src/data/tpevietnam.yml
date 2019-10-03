@@ -52,8 +52,10 @@ comInfo:
     code: ComAddress
     sub: Address
   - label: Điện thoại
-    value: 02543541091
+    value: 0934912551 / 0913949415
     sub: Tel
+  - label: Email
+    value: tpecompany@gmail.com
   - label: Số tài khoản VND 
     sub: Bank A/C
 #cusInfo Table

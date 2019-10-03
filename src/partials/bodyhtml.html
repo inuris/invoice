@@ -16,12 +16,19 @@ xhttp.open("GET",dname,false);
 xhttp.send("");
 return xhttp.responseXML;
 }
-
+$(document).ready(function() {
+  var xsldoc = $.xsl.load("{{comCode}}.xml");
+  var xmldoc = $.xsl.load("{{comCode}}.xslt");
+  // with an xpath
+  $('#example').getTransform(
+      xsldoc,
+      xmldoc
+  );
+})
 function displayResult()
 {
     xml=loadXMLDoc("{{comCode}}.xml");    
     xsl=loadXMLDoc("{{comCode}}.xslt");
-    
 // code for IE
 if (window.ActiveXObject)
   {
@@ -44,7 +51,7 @@ else if (document.implementation && document.implementation.createDocument)
 br + br { display: none; }
 </style>
 </head>
-<body onload="displayResult()">
+<body onload=displayResult()>
 <div id="example" />
 </body>
 </html>
