@@ -30,6 +30,9 @@ header:
     style: "color: red; font-size: 18px"
   - value: Bản thể hiện của hóa đơn điện tử
     style: "font-weight: bold; font-size: 14px; line-height: 24px;"
+    sub: Electronic Invoice Display
+  serial:
+    width: 220
 #comInfo Table
 comInfo:
   style: "color:#111;font-size: 14px;"
@@ -55,13 +58,13 @@ comInfo:
   - label: Điện thoại
     value: (0254) 3535 333
     sub: Tel
-    width: 200
+    width: 240
     col-2:
       - label: Fax
         value: (0254) 3526 596
   - label: Email
-    value: Bank A/C
-    width: 200
+    value: newwave@newwavevungtau.vn
+    width: 240
     col-2:
       - label: "Website"
         value: www.newwavevungtau.vn
@@ -79,7 +82,6 @@ cusInfo:
     width: 620
     code: CusName
     sub: Company Name
-  - width: 784
   - label: Mã số thuế
     width: 655
     code: CusTaxCode

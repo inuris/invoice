@@ -24,9 +24,9 @@
                 <xsl:when test="{{#unless relative}}../../{{/unless}}ArisingDate!= '' and substring({{#unless relative}}../../{{/unless}}ArisingDate,7,4) != '1957' ">
                     <span>Ngày {{#if english}}<i style="font-size: 85%;">(Date) </i>{{/if}}</span>
                     <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,1,2)" />
-                    <span> tháng {{#if header.english}}<i style="font-size: 85%;">(month) </i>{{/if}}</span>
+                    <span> tháng {{#if english}}<i style="font-size: 85%;">(month) </i>{{/if}}</span>
                     <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,4,2)" />
-                    <span> năm {{#if header.english}}<i style="font-size: 85%;">(year) </i>{{/if}}</span>
+                    <span> năm {{#if english}}<i style="font-size: 85%;">(year) </i>{{/if}}</span>
                     <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,7,4)" />
                 </xsl:when>
                 <xsl:otherwise>
@@ -39,7 +39,7 @@
         </p>
     </div>
 </td>
-<td style="vertical-align:top;border:none; {{#if english}}width:250px;{{else}}width:200px;{{/if}}">
+<td style="vertical-align:top;border:none; {{#if header.serial.width}}width:{{header.serial.width}}px;{{else}}{{#if english}}width:250px;{{else}}width:200px;{{/if}}{{/if}}">
     <div class="InvInfoRight" style="padding-left:25px; {{#if header.serial.style}}{{header.serial.style}}{{/if}}">
         <div class="clearfix" style="line-height:22px;padding-top:14px;">
             <span>Mẫu số {{#if english}}<i style="font-size: 85%;">(Form)</i>{{/if}}: </span>
