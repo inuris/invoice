@@ -2,7 +2,7 @@ comCode: sealingtechnology
 comSerial: SJ
 comName: CÔNG TY TNHH SJP SEALING TECHNOLOGY VIỆT NAM
 comTaxCode: 3502354946
-comAddress: Số 42A đường 30/4, Phường 9, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu
+comAddress: Số 42A đường 30/4, Phường 9, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 english: true
 #global style
 cssFontFamily: Arial
@@ -52,8 +52,13 @@ comInfo:
     code: ComAddress
     sub: Address
   - label: Điện thoại
-    value: 0254 3811828
+    value: 0254 381 1828
     sub: Tel
+    width: 150
+    col-2:
+      - label: Fax
+        value: 0254 362 3338
+        sub: Tel
   - label: Số tài khoản VND 
     sub: Bank A/C
 #cusInfo Table

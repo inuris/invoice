@@ -1,7 +1,7 @@
 <xsl:choose>
     <xsl:when test="/Invoice/image != '' ">
         <div class="bgimg"
-            style="background:url({/Invoice/image/@URI}) no-repeat center left; {{#if height}}height: {{height}}px;{{else}}height: 83px;{{/if}}border:none;background-color:#DFF0D8;"
+            style="background:url({/Invoice/image/@URI}) no-repeat center left; {{#if height}}height: {{height}}px;{{/if}}border:none;background-color:#DFF0D8;padding: 6px 5px"
             onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;">
                 Chữ ký điện tử có hiệu lực
