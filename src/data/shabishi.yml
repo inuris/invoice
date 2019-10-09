@@ -1,0 +1,55 @@
+comCode: shabishi
+comSerial: BS
+comName: CÔNG TY TNHH DƯỢC PHẨM SHABISHI
+comTaxCode: 3502353815
+comAddress: 49X2 Khu phố Long Phượng, Thị Trấn Long Điền, Huyện Long Điền, Tỉnh BRVT
+cssFontFamily: Arial
+cssColor: "#08086b"
+#header
+header:
+  #logo
+  logo:
+    file: logo.png
+    width: 135
+    height: 73
+    left: 38
+    top: 10
+  name:
+    - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+comInfo:
+  row:
+    - label: Đơn vị bán hàng
+      valueStyle: "font-weight: bold"
+      code: ComName
+    - label: Mã số thuế
+      valueStyle: "font-weight: bold"
+      code: ComTaxCode
+    - label: Địa chỉ
+      code: ComAddress
+    - label: Điện thoại
+      value: 0945413758 - 0907780017 
+    - label: STK
+      value: 76110000331868 ngân hàng TMCP Đầu Tư và Phát Triển Việt Nam. Chi nhánh Bà Rịa      
+cusInfo:
+  isInput: true
+  row:
+    - label: Họ tên người mua hàng
+      width: 616
+      code: Buyer
+    - label: Tên đơn vị
+      width: 710
+      code: CusName
+    - label: Mã số thuế
+      width: 708
+      code: CusTaxCode
+    - label: Địa chỉ
+      width: 737
+      code: CusAddress
+    - label: Hình thức thanh toán
+      width: 200
+      code: Kind_of_Payment
+      isPayment: true
+      col-2:
+        - label: Số tài khoản
+          width: 342
+          code: CusBankNo
