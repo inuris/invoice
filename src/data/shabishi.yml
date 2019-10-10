@@ -5,6 +5,16 @@ comTaxCode: 3502353815
 comAddress: 49X2 Khu phố Long Phượng, Thị Trấn Long Điền, Huyện Long Điền, Tỉnh BRVT
 cssFontFamily: Arial
 cssColor: "#08086b"
+
+
+### background: file, width, height, top, left, opacity
+background:
+  file: bg.png
+  width: 350
+  height: 190
+  top: 125
+  left: 260
+
 #header
 header:
   #logo
