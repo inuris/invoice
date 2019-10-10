@@ -15,6 +15,10 @@ background:
   top: 125
   left: 260
 
+### background: file, width, height, top, left, opacity
+background_full:
+  file: bg_full.png
+  top: 69 
 #header
 header:
   #logo

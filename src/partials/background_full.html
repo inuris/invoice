@@ -1,0 +1,9 @@
+{{#with background_full}}
+.VATBOUND {  
+    {{#if file}}
+        background: inline('{{file}}');
+    {{/if}}
+    background-position: {{#if left}}{{left}}%{{else}}center{{/if}} {{#if top}}{{top}}%{{else}}center{{/if}};
+    background-repeat: no-repeat;
+}
+{{/with}}
