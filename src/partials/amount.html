@@ -1,0 +1,59 @@
+{{#with amount}}
+<xsl:template name="tempAmount_words">
+	<xsl:param name="str"/>
+	<xsl:variable name="strLength">
+		<xsl:value-of select="string-length($str)"/>
+	</xsl:variable>
+	<xsl:variable name="row1Length">
+		<xsl:value-of select="88"/>
+	</xsl:variable>
+	<xsl:choose>
+		<xsl:when test="$strLength &gt; $row1Length">
+			<xsl:variable name="str0">
+				<xsl:value-of select="substring($str, 1, $row1Length)"/>
+			</xsl:variable>
+			<xsl:variable name="spaceCharPosition">
+				<xsl:call-template name="findSpaceChar">
+					<xsl:with-param name="str" select="$str0"/>
+				</xsl:call-template>
+			</xsl:variable>
+			<xsl:variable name="str1">
+				<xsl:value-of select="substring($str0, 1, $spaceCharPosition)"/>
+			</xsl:variable>
+			<xsl:variable name="str2">
+				<xsl:value-of select="substring($str, $spaceCharPosition + 1)"/>
+			</xsl:variable>
+			<div class="clearfix">
+				<label class="fl-l" style="font-weight:normal; padding-left:10px;">
+					<span>Số tiền viết bằng chữ{{#if english}} <i style="font-size: 85%;">(Amount in words)</i>{{/if}}: </span>
+				</label>
+				<label class="fl-l input-name" style="width:645px;{{#if width}}width:{{width}}px;{{/if}}height:17px;min-width: 100px;display: block;">
+					<xsl:value-of select="$str1"/>
+				</label>
+			</div>
+			{{#if width-2}}
+			<div class="clearfix" style="padding-bottom:5px;">
+				<label class="fl-l input-name" style="width:{{width-2}}px;height:17px;min-width: 100px;display: block;margin-left:10px;">
+					<xsl:value-of select="$str2"/>
+				</label>
+			</div>
+			{{/if}}
+		</xsl:when>
+		<xsl:otherwise>
+			<div class="clearfix">
+				<label class="fl-l" style="font-weight:normal;padding-left:10px;padding-top:6px;">
+					<span>Số tiền viết bằng chữ{{#if english}} <i style="font-size: 85%;">(Amount in words)</i>{{/if}}: </span>
+				</label>
+				<label class="fl-l input-name" style="width:645px;{{#if width}}width:{{width}}px;{{/if}}height:17px;min-width: 100px;display: block;padding-top:6px;">
+					<xsl:value-of select="$str"/>
+				</label>
+			</div>
+			{{#if width-2}}
+			<div class="clearfix" style="padding-bottom:5px;">
+				<label class="fl-l input-name" style="width:{{width-2}}px;height:17px;min-width: 100px;display: block;margin-left:10px;"/>
+			</div>
+			{{/if}}
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:template>
+{{/with}}

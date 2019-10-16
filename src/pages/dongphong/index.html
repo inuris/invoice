@@ -1,4 +1,4 @@
-{{#with dienmatroidonga}}
+{{#with dongphong}}
 <!-- split {{comCode}}.xslt -->
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns="http://www.w3.org/1999/xhtml" xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" version="1.0" exclude-result-prefixes="msxsl js">
@@ -115,59 +115,7 @@
 			</xsl:choose>
 		</xsl:if>
 	</xsl:template>
-	<xsl:template name="tempAmount_words">
-		<xsl:param name="str"/>
-		<xsl:variable name="strLength">
-			<xsl:value-of select="string-length($str)"/>
-		</xsl:variable>
-		<xsl:variable name="row1Length">
-			<xsl:value-of select="88"/>
-		</xsl:variable>
-		<xsl:choose>
-			<xsl:when test="$strLength &gt; $row1Length">
-				<xsl:variable name="str0">
-					<xsl:value-of select="substring($str, 1, $row1Length)"/>
-				</xsl:variable>
-				<xsl:variable name="spaceCharPosition">
-					<xsl:call-template name="findSpaceChar">
-						<xsl:with-param name="str" select="$str0"/>
-					</xsl:call-template>
-				</xsl:variable>
-				<xsl:variable name="str1">
-					<xsl:value-of select="substring($str0, 1, $spaceCharPosition)"/>
-				</xsl:variable>
-				<xsl:variable name="str2">
-					<xsl:value-of select="substring($str, $spaceCharPosition + 1)"/>
-				</xsl:variable>
-				<div class="clearfix">
-					<label class="fl-l" style="font-weight:normal; padding-left:10px;">
-						<span>Số tiền viết bằng chữ: </span>
-					</label>
-					<label class="fl-l input-name" style="width:645px;height:17px;min-width: 100px;display: block;">
-						<xsl:value-of select="$str1"/>
-					</label>
-				</div>
-				<div class="clearfix" style="padding-bottom:5px;">
-					<label class="fl-l input-name" style="width:789px;height:17px;min-width: 100px;display: block;margin-left:10px;">
-						<xsl:value-of select="$str2"/>
-					</label>
-				</div>
-			</xsl:when>
-			<xsl:otherwise>
-				<div class="clearfix">
-					<label class="fl-l" style="font-weight:normal;padding-left:10px;padding-top:6px;">
-						<span>Số tiền viết bằng chữ: </span>
-					</label>
-					<label class="fl-l input-name" style="width:645px;height:17px;min-width: 100px;display: block;padding-top:6px;">
-						<xsl:value-of select="$str"/>
-					</label>
-				</div>
-				<div class="clearfix" style="padding-bottom:5px;">
-					<label class="fl-l input-name" style="width:789px;height:17px;min-width: 100px;display: block;margin-left:10px;"/>
-				</div>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
+	{{>amount}}
 	<xsl:variable name="countExtra1">
 		<xsl:choose>
 			<xsl:when test="Extra2!=''">
@@ -210,14 +158,14 @@
 						<!-- Dòng product đầu tiên của trang đầu -->
 						<xsl:when test="position()=1">
 							<xsl:text disable-output-escaping="yes">&lt;div class="pagecurrent" id="1"&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 1px solid #005cb3;margin: 0 auto;width:810px;" &gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 1px solid {{cssColor}};margin: 0 auto;width:810px;" &gt;</xsl:text>
 							<xsl:call-template name="addfirtbody">
 							</xsl:call-template>
 							<xsl:call-template name="addsecondbody">
 							</xsl:call-template>
 							<xsl:text disable-output-escaping="yes">&lt;div class="statistics"&gt;</xsl:text>
 							<xsl:text disable-output-escaping="yes">&lt;div class="nenhd" style="width:800px; margin-bottom:5px"&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;table class="productTable"   width="810px" cellpadding="0" cellspacing="0" style="border: 0; border-top: 1px solid #005cb3;border-bottom: 1px solid #005cb3;margin-top: 10px;padding-bottom: 5px;margin: 0 auto;position:relative;z-index:2;"&gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;table class="productTable"   width="810px" cellpadding="0" cellspacing="0" style="border: 0; border-top: 1px solid {{cssColor}};border-bottom: 1px solid {{cssColor}};margin-top: 10px;padding-bottom: 5px;margin: 0 auto;position:relative;z-index:2;"&gt;</xsl:text>
 							<xsl:call-template name="calltitleproduct">
 							</xsl:call-template>
 							<xsl:call-template name="callbodyproduct">
@@ -227,7 +175,7 @@
 								<xsl:call-template name="addchuky">
 								</xsl:call-template>
 								<xsl:call-template name="addLine">
-									<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 - $countExtra2 - $counttyGia"/>
+									<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 -$countExtra2 - $counttyGia"/>
 								</xsl:call-template>
 								<xsl:call-template name="calltongsoproduct">
 								</xsl:call-template>
@@ -247,7 +195,7 @@
 							<xsl:text disable-output-escaping="yes">&lt;div class="pagecurrent" id=</xsl:text>
 							<xsl:value-of select="((position()-1) div $itemNeeded) + 1"/>
 							<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 2px solid #005cb3;margin: 0 auto;width:810px;" &gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 2px solid {{cssColor}};margin: 0 auto;width:810px;" &gt;</xsl:text>
 							<xsl:call-template name="addfirtbody">
 							</xsl:call-template>
 							<!--  <div style="margin-left: 318px; margin-top: 8px">
@@ -258,7 +206,7 @@
 							</xsl:call-template>
 							<xsl:text disable-output-escaping="yes">&lt;div class="statistics"&gt;</xsl:text>
 							<xsl:text disable-output-escaping="yes">&lt;div class="nenhd" style="width:800px;margin-bottom:5px"&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;table class="productTable"   width="810px" cellpadding="0" cellspacing="0" style="border: 0; border-top: 1px solid #005cb3;border-bottom: 1px solid #005cb3;margin-top: 10px;padding-bottom: 5px;margin: 0 auto;position:relative;z-index:2;"&gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;table class="productTable"   width="810px" cellpadding="0" cellspacing="0" style="border: 0; border-top: 1px solid {{cssColor}};border-bottom: 1px solid {{cssColor}};margin-top: 10px;padding-bottom: 5px;margin: 0 auto;position:relative;z-index:2;"&gt;</xsl:text>
 							<xsl:call-template name="calltitleproduct">
 							</xsl:call-template>
 							<xsl:call-template name="callbodyproduct">
@@ -268,7 +216,7 @@
 								<xsl:call-template name="addchuky">
 								</xsl:call-template>
 								<xsl:call-template name="addLine">
-									<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 - $countExtra2 - $counttyGia"/>
+									<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 -$countExtra2 - $counttyGia"/>
 								</xsl:call-template>
 								<xsl:call-template name="calltongsoproduct">
 								</xsl:call-template>
@@ -304,7 +252,7 @@
 					<xsl:call-template name="addchuky">
 					</xsl:call-template>
 					<xsl:call-template name="addLine">
-						<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 - $countExtra2 - $counttyGia"/>
+						<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 -$countExtra2 - $counttyGia"/>
 					</xsl:call-template>
 					<xsl:call-template name="calltongsoproduct">
 					</xsl:call-template>
@@ -328,10 +276,10 @@
 	</xsl:template>
 	<xsl:template name="addfirtbody">
 		<table class="headerInfo" style="width:100%;">
-			<tr style="border-bottom:1px solid #005cb3;">
+			<tr style="border-bottom:1px solid {{cssColor}};">
 				{{>header}}				
 			</tr>
-			<tr class="comInfo" style="border-bottom:1px solid #005cb3;">
+			<tr class="comInfo" style="border-bottom:1px solid {{cssColor}};">
 				<td colspan="3" style="padding-top:7px;">
 					{{>info data=comInfo}}					
 				</td>
@@ -356,7 +304,7 @@
 				<b class="title">Tên hàng hóa, dịch vụ</b>
 			</td>
 			<td style="width:45px;">
-				<b class="title">ĐVT</b>
+				<b class="title">Đơn vị tính</b>
 			</td>
 			<td style="width:70px;">
 				<b class="title">Số lượng</b>
@@ -368,7 +316,7 @@
 				<b class="title">Thành Tiền</b>
 			</td>
 		</tr>
-		<tr class="productInfoHeader" style="font-size:16px; text-align:center;color: #005cb3;">
+		<tr class="productInfoHeader" style="font-size:16px; text-align:center;color: {{cssColor}};">
 			<td style="font-weight:normal;line-height:25px;">1</td>
 			<td style="font-weight:normal;">2</td>
 			<td style="font-weight:normal;">3</td>
@@ -457,10 +405,10 @@
 	</xsl:template>
 	<xsl:template name="calltongsoproduct">
 		<tr class="bg-pink" style="">
-			<td colspan="5" style="border-top:1px solid #005cb3;border-bottom:1px solid #005cb3;border-left:none !important;text-align:left; text-align:right;padding-right:10px;">
+			<td colspan="5" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};border-left:none !important;text-align:left; text-align:right;padding-right:10px;">
 				<span class="hoang_so_le">Cộng tiền hàng: </span>
 			</td>
-			<td align="right" style="border-top:1px solid #005cb3;border-bottom:1px solid #005cb3;border-left:none;">
+			<td align="right" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};border-left:none;">
 				<b>
 					<xsl:choose>
 						<xsl:when test="(../../Total='') or (../../Total=0)">
@@ -477,7 +425,7 @@
 				</b>
 			</td>
 		</tr>
-		<tr class="bg-pink" style="border-bottom:1px solid #005cb3;">
+		<tr class="bg-pink" style="border-bottom:1px solid {{cssColor}};">
 			<td colspan="2" style="border-top:none!important;border-bottom:none!important;border-right:none!important; text-align:left; padding-left:10px;">
 				<span>Thuế suất GTGT: </span>
 				<xsl:choose>
@@ -524,10 +472,10 @@
 			</td>
 		</tr>
 		<tr class="bg-pink">
-			<td colspan="5" style="border-top:none!important;border-bottom:1px solid #005cb3;border-left:none;text-align:right;padding-right:10px;">
+			<td colspan="5" style="border-top:none!important;border-bottom:1px solid {{cssColor}};border-left:none;text-align:right;padding-right:10px;">
 				<span class="hoang_so_le">Tổng cộng tiền thanh toán: </span>
 			</td>
-			<td align="right" style="color: #31373E;border-top:none!important;border-bottom:1px solid #005cb3;border-left:1px white !important;">
+			<td align="right" style="color: #31373E;border-top:none!important;border-bottom:1px solid {{cssColor}};border-left:1px white !important;">
 				<b>
 					<xsl:choose>
 						<xsl:when test="(../../Amount='') or (../../Amount=0)">
@@ -649,7 +597,7 @@
 				<table style="width: 800px;height: 83px; border-bottom: medium none; border-left: medium none; border-top: medium none; border-right: medium none;">
 					<tr>
 						<!--panel client-->
-						<td style="border: none;width: 333px;vertical-align: top;text-align:center;color: #005cb3;">
+						<td style="border: none;width: 333px;vertical-align: top;text-align:center;color: {{cssColor}};">
 							<p style="font-size:14px; margin-top:0;height: 20px;margin-bottom: 0;">
 								<b>
 								Người mua hàng
@@ -678,7 +626,7 @@
 						<td style="border: none;width: 333px;vertical-align: top;">
 							<xsl:choose>
 								<xsl:when test="/Invoice/convert!=''">
-									<div style="text-align:center;padding-top:1px;color: #005cb3;">
+									<div style="text-align:center;padding-top:1px;color: {{cssColor}};">
 										<div>
 											<label style="font-size:11px">
 												<b>
@@ -713,7 +661,7 @@
 							</xsl:choose>
 						</td>
 						<!--panel server-->
-						<td style="border: none;width: 333px;vertical-align: top;text-align:center;color: #005cb3;">
+						<td style="border: none;width: 343px;vertical-align: top;text-align:center;color: {{cssColor}};">
 							<p style="font-size:14px; margin-top:0;height: 20px;margin-bottom: 0;">
 								<b>
 								Người bán hàng
@@ -722,24 +670,10 @@
 							<p style="font-size:14px; margin-top:0;height: 20px;margin-bottom: 0;">
 							(<i>Ký, ghi rõ họ tên</i>)
 							</p>
-							<xsl:choose>
-								<xsl:when test="/Invoice/image != '' ">
-									<div class="bgimg" style="background:url({/Invoice/image/@URI}) no-repeat center left; height: 83px;width:295px;" onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
-										<p style="margin-top:3px;margin-bottom:5px;font-size:12px">
-											<xsl:value-of select="/Invoice/image"/>
-										</p>
-										<p style="font-size:12px">
-										Ký bởi:
-											<xsl:value-of select="/Invoice/CNCom"/>
-											<br/> Ký ngày:
-											<xsl:value-of select="/Invoice//Content/SignDate"/>
-										</p>
-									</div>
-								</xsl:when>
-							</xsl:choose>
+							{{>sign}}
 						</td>
 					</tr>
-				</table>
+				</table>				
 			</center>
 			<!--dialog server-->
 			<div id="dialogServer" style="background-color:white;display:none">
@@ -754,7 +688,7 @@
 				</a>
 			</div>
 			<!--dialog TVAN-->
-			<!---->
+			
 			<!--dialog client-->
 			<div id="dialogClient" style="background-color:white;display:none">
 				<xsl:variable name="sc1">
@@ -853,7 +787,7 @@
 		  	height: 100%;
 		  	}
 		  	span, i, b{
-		  		color: #005cb3;
+		  		color: {{cssColor}};
 		  	}
 		  	i{
 				font-size: 85%;
@@ -863,15 +797,16 @@
 		  	}
 		  	#main {
 		  	margin: 0 auto
-		  	}
+		  	}			
 		  	.VATTEMP {
 		  	background-color: #fff;
-		  	font: 78%/1.4em Arial, "Helvetica Neue", Helvetica, sans-serif;
+		  	font: 78%/1.4em {{cssFontFamily}}, "Helvetica Neue", Helvetica, sans-serif;
 		  	padding: 0px 10px 10px 10px;
 		  	width: auto;
 		  	height: auto;
 		  	font-size: 14px;
-		  	margin: 0px auto;		  	
+		  	margin: 0px auto;
+			  
 		  	}
 
 		  	.VATTEMP .header-main,
@@ -932,7 +867,7 @@
 		  	clear: both
 		  	}
 		  	.VATTEMP .input-code {
-		  	border: 1px solid #005cb3;
+		  	border: 1px solid {{cssColor}};
 		  	color: #000;
 		  	float: left;
 		  	font-weight: normal;
@@ -947,7 +882,7 @@
 		  	.VATTEMP .input-name,
 		  	.input-date {
 		  	border: 0;
-		  	border-bottom: 1px dotted #005cb3;
+		  	border-bottom: 1px dotted {{cssColor}};
 		  	}
 		  	.VATTEMP .statistics {
 		  	clear: both
@@ -955,19 +890,7 @@
 		  	.nenhd {
 		  	position: relative;
 		  	}
-		  	.nenhd_bg {
-		  	background: url('') no-repeat;
-		  	background-size: 400px 400px;
-		  	width: 400px;
-		  	height: 400px;
-		  	top: 70px;
-		  	left: 240px;
-		  	position: absolute;
-		  	z-index: 1;
-		  	margin: 0;
-		  	opacity:0.3;
-		  	}
-
+		  	{{>background}}
 		  	.VATTEMP .payment,
 		  	.date {
 		  	text-align: center;
@@ -1016,7 +939,7 @@
 		  	#SolutionVNPT{
 		  	margin-bottom:5px;
 		  	font-size:12px;
-		  	border-bottom:1px dashed #005cb3;
+		  	border-bottom:1px dashed {{cssColor}};
 		  	text-align: center;width: auto;
 		  	width: 1010px;
 		  	}
@@ -1075,7 +998,7 @@
 
 		  	.productTable {
 		  	background-position: bottom;
-		  	border: 1 1 1 1 solid #005cb3;
+		  	border: 1 1 1 1 solid {{cssColor}};
 		  	font-size: 14px;
 		  	margin: 0;
 		  	height: 300px;
@@ -1098,8 +1021,8 @@
 		  	border-bottom: 1 none
 		  	}
 		  	.productTable td {
-		  	border-bottom: 1px solid #005cb3;
-		  	border-right: 1px solid #005cb3;
+		  	border-bottom: 1px solid {{cssColor}};
+		  	border-right: 1px solid {{cssColor}};
 		  	padding: 0px;
 		  	}
 		  	.productTable td:last-child{
@@ -1110,8 +1033,8 @@
 		  	padding-right: 5px;
 		  	padding-left: 5px;
 		  	text-align: right;
-		  	border-bottom: 1px dotted #005cb3;
-		  	border-top: 0px solid #005cb3;
+		  	border-bottom: 1px dotted {{cssColor}};
+		  	border-top: 0px solid {{cssColor}};
 		  	height: 30px;
 		  	}
 		  	.productTable tr.bg-pink{

@@ -1,0 +1,30 @@
+comCode: thcslythuongkiet
+comPattern: 02GTTT0/001
+comSerial: AA
+comName: TRƯỜNG THCS LÝ THƯỜNG KIỆT
+comTaxCode: 3501318416
+comAddress: Ấp Xuân Hòa, Sơn Bình, Châu Đức, Bà Rịa-Vũng Tàu, Việt Nam
+
+comInfo:
+ row:
+  - label: Đơn vị thu tiền
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+cusInfo:
+ isInput: true
+ row:
+  - label: Họ và tên người nộp tiền
+    width: 675
+    code: Buyer
+  - label: Địa chỉ (lớp)
+    width: 747
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 696
+    code: Kind_of_Payment
+    isPayment: true
