@@ -19,9 +19,13 @@ import base64        from 'gulp-base64-inline';
 import htmlImg64     from 'gulp-html-img64';
 import htmlsplit     from 'gulp-htmlsplit';
 import pdf           from  'gulp-html-pdf';
-import { xsltProcess, xmlParse } from 'xslt-processor';
+
 import tap           from 'gulp-tap';
-import xsltproc from 'node-xsltproc';
+
+// success with xsltproc bin
+// import xsltproc from 'node-xsltproc';
+
+
 // var cors = function (req, res, next) {
 //   res.setHeader('Access-Control-Allow-Origin', '*');
 //   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, Authorization, ...');
@@ -53,16 +57,19 @@ function xml2html(){
 function readxml(filename){
   let xmlString, xsltString;
   let filenoext = path.join(path.dirname(filename),path.basename(filename,'.xml'));
+  let filexml = filenoext+'.xml';
+  let filexslt = filenoext+'.xslt';
   console.log(filenoext);
-  xsltproc().transform([filenoext+'.xslt', filenoext+'.xml']).then((data) => {
+  // xsltproc().transform([filexml , filexslt], {debug: true}).then((data) => {
     
-    fs.writeFile(filenoext+'.html', data.result ,'utf8', function(err) {
-      if(err) {
-          return console.log(err);
-      }      
-      console.log("The file was saved!");
-    }); 
-  });
+  //   fs.writeFile(filenoext+'.html', data.result ,'utf8', function(err) {
+  //     if(err) {
+  //         return console.log(err);
+  //     }      
+  //     console.log("The file was saved!");
+  //   }); 
+  // });
+  
   // fs.readFile(filename, 'utf8', function(err, data) {
   //   if (!err) {
   //     xmlString = data;
@@ -70,10 +77,11 @@ function readxml(filename){
   //       if (!err) {
   //         xsltString = data;
   //         if (xmlString && xsltString){
-  //           const outXmlString = xsltProcess(
-  //             xmlParse(xmlString),
-  //             xmlParse(xsltString)
-  //           );
+  //           var options = {
+  //             fullDocument: true,
+  //             encoding: 'UTF-8'
+  //           }
+  //           const outXmlString = xslt(xmlString, xsltString, options);
   //           console.log("Done process");
   //           fs.writeFile(filenoext+'.html', outXmlString ,'utf8', function(err) {
   //             if(err) {
