@@ -11,7 +11,10 @@
   "license": "MIT",
   "dependencies": {
     "foundation-sites": "^6.5.3",
+    "html-pdf": "^2.2.0",
     "jquery": "^3.4.1",
+    "node-libxml": "^3.2.5",
+    "node-xsltproc": "^1.1.1",
     "path": "^0.12.7",
     "what-input": "^5.2.3"
   },

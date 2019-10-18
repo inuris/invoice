@@ -18,12 +18,11 @@ import autoprefixer  from 'autoprefixer';
 import base64        from 'gulp-base64-inline';
 import htmlImg64     from 'gulp-html-img64';
 import htmlsplit     from 'gulp-htmlsplit';
-import pdf           from  'gulp-html-pdf';
+import pdf           from 'html-pdf';
 
 import tap           from 'gulp-tap';
 
-// success with xsltproc bin
-// import xsltproc from 'node-xsltproc';
+import xsltproc from 'node-xsltproc';
 
 
 // var cors = function (req, res, next) {
@@ -56,20 +55,32 @@ function xml2html(){
 }
 function readxml(filename){
   let xmlString, xsltString;
+  var options = { 
+    format: 'Letter',
+    border: {
+      top: "1in",            // default is 0, units: mm, cm, in, px
+      right: "1in",
+      bottom: 0,
+      left: "1in"
+    },
+  };
   let filenoext = path.join(path.dirname(filename),path.basename(filename,'.xml'));
   let filexml = filenoext+'.xml';
   let filexslt = filenoext+'.xslt';
-  console.log(filenoext);
-  // xsltproc().transform([filexml , filexslt], {debug: true}).then((data) => {
-    
-  //   fs.writeFile(filenoext+'.html', data.result ,'utf8', function(err) {
-  //     if(err) {
-  //         return console.log(err);
-  //     }      
-  //     console.log("The file was saved!");
-  //   }); 
-  // });
-  
+  xsltproc().transform([filexml , filexslt], {debug: true}).then((data) => {    
+    fs.writeFile(path.dirname(filename)+'/topdf.html', data.result ,'utf8', function(err) {
+      if(err) {
+          return console.log(err);
+      }      
+      console.log("HTML generated");
+      var html = fs.readFileSync(path.dirname(filename)+'/topdf.html', 'utf8');
+      pdf.create(html,options).toFile(filenoext+'.pdf', function(err, res){
+        console.log(res.filename);
+        console.log("PDF generated");
+      });
+    }); 
+  });
+
   // fs.readFile(filename, 'utf8', function(err, data) {
   //   if (!err) {
   //     xmlString = data;
@@ -126,7 +137,6 @@ gulp.task('default',
 function clean(done) {
   rimraf(PATHS.dist, done);
 }
-
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy() {
