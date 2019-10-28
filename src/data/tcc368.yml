@@ -57,7 +57,7 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
     sub: Address
-    valueStyle: "font-size: 15px"
+    valueStyle: "font-size: 14px"
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"
@@ -75,7 +75,7 @@ cusInfo:
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 649
+    width: 648
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
