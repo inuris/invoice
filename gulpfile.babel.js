@@ -23,7 +23,7 @@ import pdf           from 'html-pdf';
 import tap           from 'gulp-tap';
 
 import xsltproc from 'node-xsltproc';
-
+import puppeteer from 'puppeteer';
 
 // var cors = function (req, res, next) {
 //   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -46,22 +46,21 @@ function loadConfig() {
   return yaml.load(ymlFile);
 }
 
-function xml2html(){ 
-  return gulp.src(PATHS.dist+'/dienmatroidonga/*.xml')
+function xml2html(){
+  return gulp.src(PATHS.dist+'/dienmattroidonga/*.xml')
           .pipe(tap(function(file, t) {
             readxml(file.path);
           })
           );
 }
 function readxml(filename){
-  let xmlString, xsltString;
   var options = { 
-    format: 'Letter',
+    width: (210 * 1.2)+"mm", // avoid pantomjs bug
+    height: (297 * 1.2)+"mm",
     border: {
-      top: "1in",            // default is 0, units: mm, cm, in, px
-      right: "1in",
-      bottom: 0,
-      left: "1in"
+      top: "0.2in",            // default is 0, units: mm, cm, in, px
+      right: "0.2in",
+      left: "0.2in"
     },
   };
   let filenoext = path.join(path.dirname(filename),path.basename(filename,'.xml'));
@@ -71,46 +70,25 @@ function readxml(filename){
     fs.writeFile(path.dirname(filename)+'/topdf.html', data.result ,'utf8', function(err) {
       if(err) {
           return console.log(err);
-      }      
-      console.log("HTML generated");
-      var html = fs.readFileSync(path.dirname(filename)+'/topdf.html', 'utf8');
-      pdf.create(html,options).toFile(filenoext+'.pdf', function(err, res){
-        console.log(res.filename);
-        console.log("PDF generated");
-      });
-    }); 
-  });
+      }
+    })
+  }).then((e)=>{
+    console.log(e);
+    var html = fs.readFileSync(path.dirname(filename)+'/topdf.html', 'utf8');
+    pdf.create(html,options).toFile(filenoext+'.pdf', function(err, res){
+      if (err){
+        console.log(err);
+      }
+      else{
+        rimraf(path.dirname(filename)+'/topdf.html',function(err){
+          if (err){
+            console.log(err);
+          }            
+        });
+      }        
+    });
+  }); ;
 
-  // fs.readFile(filename, 'utf8', function(err, data) {
-  //   if (!err) {
-  //     xmlString = data;
-  //     fs.readFile(filenoext+'.xslt', 'utf8', function(err, data) {
-  //       if (!err) {
-  //         xsltString = data;
-  //         if (xmlString && xsltString){
-  //           var options = {
-  //             fullDocument: true,
-  //             encoding: 'UTF-8'
-  //           }
-  //           const outXmlString = xslt(xmlString, xsltString, options);
-  //           console.log("Done process");
-  //           fs.writeFile(filenoext+'.html', outXmlString ,'utf8', function(err) {
-  //             if(err) {
-  //                 return console.log(err);
-  //             }      
-  //             console.log("The file was saved!");
-  //           }); 
-  //         }
-  //       }
-  //       else{
-  //         return "Error XSLT: " + err;
-  //       }        
-  //     });
-  //   }
-  //   else{
-  //     return "Error XML: " + err;
-  //   }    
-  // });  
 }
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
@@ -156,7 +134,7 @@ function pages() {
     }))
     .pipe(base64('/'))
     .pipe(htmlImg64())
-    .pipe(htmlsplit())    
+    .pipe(htmlsplit())
     // .pipe(rename(function (path) {
     //   // { dirname: 'huynhtan', basename: 'index', extname: '.xml' }
     //   if ((path.extname === '.xslt' || path.extname === '.xml') && path.dirname !== ''){
@@ -164,6 +142,7 @@ function pages() {
     //   }
     // }))
     .pipe(gulp.dest(PATHS.dist))
+
 }
 
 // Load updated HTML templates and partials into Panini
@@ -270,7 +249,6 @@ function watch() {
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));
-
   // gulp.watch('src/assets/scss/**/*.scss').on('all', sass);
   // gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
   // gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));

@@ -1,0 +1,88 @@
+comCode: tcc368
+comSerial: TC
+comName: CÔNG TY TNHH THƯƠNG MẠI XÂY DỰNG 368 VŨNG TÀU
+comTaxCode: 3502408687
+comAddress: Số 456/6A. Đường 3/2, Phường Nguyễn An Ninh, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+english: true
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 320
+  height: 309
+  top: 445
+  left: 240
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 120
+    top: 5
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "color: red; font-size: 21px"
+  - value: (VAT INVOICE)
+    style: "color: red; font-size: 18px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: bold; font-size: 14px; line-height: 24px;"    
+  - sub: Electronic Invoice Display
+  serial:
+    width: 220
+#comInfo Table
+comInfo:
+  style: "color:#111;font-size: 14px;"
+  margin: 6
+  labelWidth: 150
+  labelStyle: "font-weight:bold"
+  isInput:
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-weight: bold; font-size: 18px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;font-weight: bold;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+#cusInfo Table
+cusInfo:
+  style:
+  labelWidth: 
+  labelStyle: "font-weight:bold"
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 550
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 635
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 667
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 695
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 185
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
+    col-2:
+      - label: Số tài khoản
+        width: 243
+        code: CusBankNo
+        sub: A/C No.
