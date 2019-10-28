@@ -1,15 +1,18 @@
 comCode: quangcaohth
 comSerial: HT
 comName: CÔNG TY TNHH THƯƠNG MẠI - DỊCH VỤ QUẢNG CÁO HTH
-comTaxCode: 3
-comAddress: Số 146 Lê Hồng Phong, Phường 4, Thành Phố Vũng Tàu, Tỉnh Bà Rịa Vũng Tàu
+comTaxCode: 3502209071
+comAddress: Số 146 Lê Hồng Phong, Phường 4, Thành Phố Vũng Tàu, Tỉnh Bà Rịa Vũng tàu
 cssFontFamily: Arial
 cssColor: "#08086b"
 #header
 header:
   #logo
   logo:
-    width: 100
+    file: logo.png
+    width: 150
+    top: 5
+    left: 30
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
 comInfo:

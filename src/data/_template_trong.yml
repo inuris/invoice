@@ -1,8 +1,8 @@
-comCode: tcc368
+comCode: _template_trong
 comSerial: TC
-comName: CÔNG TY TNHH THƯƠNG MẠI XÂY DỰNG 368 VŨNG TÀU
-comTaxCode: 3502408687
-comAddress: Số 456/6A. Đường 3/2, Phường Nguyễn An Ninh, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+comName: CÔNG TY TNHH 
+comTaxCode: 
+comAddress: 
 english: true
 #global style
 cssFontFamily: Arial
@@ -57,7 +57,7 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
     sub: Address
-    valueStyle: "font-size: 14px"
+    valueStyle: "font-size: 15px"
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"
@@ -75,7 +75,7 @@ cusInfo:
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 648
+    width: 649
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ

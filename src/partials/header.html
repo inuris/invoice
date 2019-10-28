@@ -39,22 +39,47 @@
         </p>
     </div>
 </td>
+
 <td style="vertical-align:top;border:none; {{#if header.serial.width}}width:{{header.serial.width}}px;{{else}}{{#if english}}width:250px;{{else}}width:200px;{{/if}}{{/if}}">
     <div class="InvInfoRight" style="padding-left:25px; {{#if header.serial.style}}{{header.serial.style}}{{/if}}">
         <div class="clearfix" style="line-height:22px;padding-top:14px;">
-            <span>Mẫu số {{#if english}}<i style="font-size: 85%;">(Form)</i>{{/if}}: </span>
-            <span>
+            <span
+                {{#if header.serial.labelStyle}}
+                    style="{{header.serial.labelStyle}}"
+                {{/if}}
+            >Mẫu số {{#if english}}<i style="font-size: 85%;{{#if header.serial.subStyle}}{{header.serial.subStyle}}{{/if}}">(Form)</i>{{/if}}: </span>
+            <span
+                {{#if header.serial.valueStyle}}
+                    style="{{header.serial.valueStyle}}"
+                {{/if}}
+            >
                 <xsl:value-of select="{{#unless relative}}../../{{/unless}}InvoicePattern" /></span>
         </div>
         <div class="clearfix" style="line-height:22px">
-            <span>Ký hiệu {{#if english}}<i style="font-size: 85%;">(Serial)</i>{{/if}}: </span>
-            <b>
+            <span
+                {{#if header.serial.labelStyle}}
+                    style="{{header.serial.labelStyle}}"
+                {{/if}}
+            >Ký hiệu {{#if english}}<i style="font-size: 85%;{{#if header.serial.subStyle}}{{header.serial.subStyle}}{{/if}}">(Serial)</i>{{/if}}: </span>
+            <b
+                {{#if header.serial.valueStyle}}
+                    style="{{header.serial.valueStyle}}"
+                {{/if}}
+            >
                 <xsl:value-of select="{{#unless relative}}../../{{/unless}}SerialNo" />
             </b>
         </div>
         <div class="clearfix" style="line-height:22px">
-            <span>Số {{#if english}}<i style="font-size: 85%;">(Invoice No.)</i>{{/if}}: </span>
-            <b style="{{#if cssColorRed}}color:{{cssColorRed}}{{else}}color:red{{/if}};font-size:140%;">
+            <span
+                {{#if header.serial.labelStyle}}
+                     style="{{header.serial.labelStyle}}"
+                {{/if}}
+            >Số {{#if english}}<i style="font-size: 85%;{{#if header.serial.subStyle}}{{header.serial.subStyle}}{{/if}}">(No.)</i>{{/if}}: </span>
+            <b style="{{#if cssColorRed}}color:{{cssColorRed}}{{else}}color:red{{/if}};font-size:140%;
+                {{#if header.serial.valueStyle}}
+                    {{header.serial.valueStyle}}
+                {{/if}}
+                ">
                 <xsl:call-template name="addZero">
                     <xsl:with-param name="count" select="7-string-length({{#unless relative}}../../{{/unless}}InvoiceNo)" />
                 </xsl:call-template>
