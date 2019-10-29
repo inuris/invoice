@@ -1,4 +1,4 @@
-{{#with _template_ttkd}}
+{{#with otongocphuong}}
 <!-- split {{comCode}}.xslt -->
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns="http://www.w3.org/1999/xhtml" xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" version="1.0" exclude-result-prefixes="msxsl js">
@@ -143,12 +143,12 @@
 					<label class="fl-l" style="font-weight:normal; padding-left:10px;">
 						<span>Số tiền viết bằng chữ: </span>
 					</label>
-					<label class="fl-l input-name" style="width:645px;height:17px;min-width: 100px;display: block;">
+					<label class="fl-l input-name" style="width:666px;height:17px;min-width: 100px;display: block;">
 						<xsl:value-of select="$str1"/>
 					</label>
 				</div>
 				<div class="clearfix" style="padding-bottom:5px;">
-					<label class="fl-l input-name" style="width:789px;height:17px;min-width: 100px;display: block;margin-left:10px;">
+					<label class="fl-l input-name" style="width:792px;height:17px;min-width: 100px;display: block;margin-left:10px;">
 						<xsl:value-of select="$str2"/>
 					</label>
 				</div>
@@ -158,12 +158,12 @@
 					<label class="fl-l" style="font-weight:normal;padding-left:10px;padding-top:6px;">
 						<span>Số tiền viết bằng chữ: </span>
 					</label>
-					<label class="fl-l input-name" style="width:645px;height:17px;min-width: 100px;display: block;padding-top:6px;">
+					<label class="fl-l input-name" style="width:666px;height:17px;min-width: 100px;display: block;padding-top:6px;">
 						<xsl:value-of select="$str"/>
 					</label>
 				</div>
 				<div class="clearfix" style="padding-bottom:5px;">
-					<label class="fl-l input-name" style="width:789px;height:17px;min-width: 100px;display: block;margin-left:10px;"/>
+					<label class="fl-l input-name" style="width:792px;height:17px;min-width: 100px;display: block;margin-left:10px;"/>
 				</div>
 			</xsl:otherwise>
 		</xsl:choose>
@@ -887,30 +887,37 @@
 		  	float: left;
 		  	text-align: center;
 		  	width: 375px;
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header-content2 {
 		  	float: left;
 		  	text-align: left;
 		  	width: 610px;
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header h2 {
 		  	font-size: 22px;
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header h2,
 		  	.header p {
 		  	margin: 0;
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header p.name-upcase {
 		  	font-size: 14px;
 		  	text-transform: uppercase;
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header-note {
 		  	float: right;
 		  	font-size: 14px;
 		  	width: 200px;
 		  	margin-top: 0;
+		  	font-family: Times New Roman
 		  	}
 		  	.VATTEMP .header .number {
+		  	font-family: "Times New Roman", Times, serif;
 		  	font-size: 22px
 		  	}
 		  	.clearfix:after {
@@ -948,19 +955,7 @@
 		  	.nenhd {
 		  	position: relative;
 		  	}
-		  	.nenhd_bg {
-		  	background: url('') no-repeat;
-		  	background-size: 400px 400px;
-		  	width: 400px;
-		  	height: 400px;
-		  	top: 70px;
-		  	left: 240px;
-		  	position: absolute;
-		  	z-index: 1;
-		  	margin: 0;
-		  	opacity:0.3;
-		  	}
-
+		  	{{>background}}
 		  	.VATTEMP .payment,
 		  	.date {
 		  	text-align: center;
@@ -1010,7 +1005,7 @@
 		  	margin-bottom:5px;
 		  	font-size:12px;
 		  	border-bottom:1px dashed {{cssColor}};
-		  	text-align: center;
+		  	text-align: center;width: auto;
 		  	width: 1010px;
 		  	}
 
@@ -1084,7 +1079,7 @@
 		  	text-align: center
 		  	}
 		  	.productTable .back td {
-		  	font-family: {{cssFontFamily}}, Times, serif;
+		  	font-family: "Times New Roman", Times, serif;
 		  	font-size: 14px
 		  	}
 		  	.productTable .noline td {
