@@ -29,7 +29,6 @@ comInfo:
     col-2:
     - label: tại
       width: 553
-      code: CusBankNo
       isInput: true
 cusInfo:
  row:
