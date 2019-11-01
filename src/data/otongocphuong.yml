@@ -27,6 +27,8 @@ header:
     bottom: 5
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+  - sub: Hóa đơn chuyển đổi từ hóa đơn điện tử
+    subStyle: "font-size: 14px; font-weight: 400; line-height: 24px"
 comInfo:
   margin: 6
   row:
