@@ -23,7 +23,6 @@ import pdf           from 'html-pdf';
 import tap           from 'gulp-tap';
 
 import xsltproc from 'node-xsltproc';
-import puppeteer from 'puppeteer';
 
 // var cors = function (req, res, next) {
 //   res.setHeader('Access-Control-Allow-Origin', '*');
