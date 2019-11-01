@@ -10,16 +10,16 @@ cssColor: "#000"
 
 #background : file, width, height, top, left
 background:
-  file: bg.jpg
+  file: bg.png
   width: 290
   height: 280
-  top: 540
+  top: 550
   left: 268
 #header
 header:
   #logo : file, width, top, left
   logo:
-    file: logo.jpg
+    file: logo.png
     width: 120
     top: 15
     left: 35
@@ -40,10 +40,10 @@ header:
 comInfo:
   style: "font-weight: 700; font-size: 16px"
   margin: 6
-  labelWidth: 165
+  labelWidth: 170
   isInput:  
   labelStyle: 
-  subStyle: "font-size: 90%"
+  subStyle: "font-size: 100%"
   row:
   - label: Đơn vị bán hàng
     sub: Seller
@@ -80,7 +80,7 @@ cusInfo:
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 649
+    width: 648
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
