@@ -57,9 +57,9 @@ function readxml(filename){
     width: (210 * 1.2)+"mm", // avoid pantomjs bug
     height: (297 * 1.2)+"mm",
     border: {
-      top: "0.2in",            // default is 0, units: mm, cm, in, px
-      right: "0.2in",
-      left: "0.2in"
+      top: "0.1in",            // default is 0, units: mm, cm, in, px
+      right: "0.1in",
+      left: "0.1in"
     },
   };
   let filenoext = path.join(path.dirname(filename),path.basename(filename,'.xml'));
