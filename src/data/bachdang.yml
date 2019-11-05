@@ -1,8 +1,8 @@
-comCode: _template_trong
-comSerial: TC
-comName: CÔNG TY TNHH 
-comTaxCode: 
-comAddress: 
+comCode: bachdang
+comSerial: BD
+comName: CÔNG TY TNHH ĐÓNG SỬA TÀU THUYỀN BẠCH ĐẰNG
+comTaxCode: 3500899084
+comAddress: Số 15A đường Bạch Đằng, Phường 5, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 english: true
 #global style
 cssFontFamily: Arial
@@ -10,7 +10,6 @@ cssColor: "#000"
 
 #background : file, width, height, top, left
 background:
-  file: bg.png
   width: 268
   height: 260
   top: 500
@@ -19,7 +18,6 @@ background:
 header:
   #logo : file, width, top, left
   logo:
-    file: logo.png
     width: 120
     top: 5
     left: 35
@@ -60,7 +58,7 @@ comInfo:
   - label: Điện thoại
     sub: Tel
     valueStyle: "font-size: 15px"
-    value: 0
+    value: 02543 838 311 - 02543 551 818
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"
