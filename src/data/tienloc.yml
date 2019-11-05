@@ -6,7 +6,7 @@ comAddress: Số E22 Nguyễn Bình, Phường 9, Thành Phố Vũng Tàu, Bà R
 english: true
 #global style
 cssFontFamily: Arial
-cssColor: "#000"
+cssColor: "#185b9d"
 
 #background : file, width, height, top, left
 background:
@@ -25,9 +25,9 @@ header:
     left: 35
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "font-size: 22px"
+    style: "font-size: 22px; color: red"
   - sub: VAT INVOICE
-    subStyle: "font-size: 18px; line-height: 1.2;"
+    subStyle: "font-size: 18px; line-height: 1.2; color: red"
   - value: Bản thể hiện của hóa đơn điện tử
     style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
   - sub: Electronic Invoice Display
@@ -35,7 +35,6 @@ header:
   serial:
     width: 220
     labelStyle: "display: block; width: 100px; float: left"
-    valueStyle: "color: #000; font-size: 15px;"
 #comInfo Table
 comInfo:
   style: "font-weight: 700; font-size: 16px"
@@ -49,7 +48,7 @@ comInfo:
     sub: Seller
     code: ComName
     style: "line-height: 18px;"
-    valueStyle: "font-size: 18px;"
+    valueStyle: "font-size: 18px; color: red"
   - label: Mã số thuế
     code: ComTaxCode
     valueStyle: "letter-spacing: 2px;"
