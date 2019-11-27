@@ -1,0 +1,96 @@
+comCode: sealingtechnology
+comSerial: SJ
+comName: CÔNG TY TNHH SJP SEALING TECHNOLOGY VIỆT NAM
+comTaxCode: 3502354946
+comAddress: Số 42A đường 30/4, Phường 9, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+english: true
+#global style
+cssFontFamily: Arial
+cssColor: "#111"
+#logo : file, width, top, left
+logo:
+  file: logo.png
+  width: 164
+  top: 10
+  left: 35
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 318
+  height: 233
+  top: 108
+  left: 300
+#header
+header:
+  logo: 
+    width: 100
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "color: red; font-size: 21px"
+    sub: VAT INVOICE
+    subStyle: "color: red; font-size: 21px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: bold; font-size: 14px; line-height: 24px;"
+    sub: Electronic Invoice Display    
+#comInfo Table
+comInfo:
+  style: "color:#111;font-size: 14px;"
+  margin: 6
+  labelWidth:
+  isInput:
+  subStyle: "font-size: 100%"
+  row:
+  - code: ComName
+    style: "color:#111; font-weight: bold; font-size: 18px; font-family: Arial"
+  - label: Mã số thuế
+    code: ComTaxCode
+    style: "font-weight: bold;"
+    valueStyle: "letter-spacing: 2px; "
+    subStyle: "font-weight: bold;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Điện thoại
+    value: 0254 381 1828
+    sub: Tel
+    width: 150
+    col-2:
+      - label: Fax
+        value: 0254 362 3338
+        sub: Tel
+  - label: Số tài khoản VND 
+    sub: Bank A/C
+#cusInfo Table
+cusInfo:
+  style:
+  labelWidth: 
+  isInput: true
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    width: 658
+    code: Buyer
+    sub: Buyer
+  - label: Tên đơn vị
+    width: 675
+    code: CusName
+    sub: Company name
+  - label: Mã số thuế
+    width: 713
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 739
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 185
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Payment method
+    col-2:
+      - label: Số tài khoản
+        width: 285
+        code: CusBankNo
+        sub: Bank A/C

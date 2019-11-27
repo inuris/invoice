@@ -1,0 +1,73 @@
+comCode: noithattienthang
+comSerial: TT
+comName: CÔNG TY TNHH NỘI THẤT TIẾN THẮNG
+comTaxCode: 3500662896
+comAddress: Số 39 Lê Lợi, Phường 4, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu
+#global style
+cssFontFamily: Arial
+cssColor: "#111"
+#logo : file, width, top, left
+logo:
+  file: logo.png
+  width: 194
+  top: 10
+  left: 15
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 407
+  height: 208
+  top: 110
+  left: 270
+#header
+header:
+  logo: 
+    width: 100
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "color: red;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: normal; font-size: 14px"
+#comInfo Table
+comInfo:
+  style: "color:#111;font-size: 14px;"
+  margin: 6
+  labelWidth:
+  isInput:
+  row:
+  - code: ComName
+    style: "color:#111; font-weight: bold; font-size: 20px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "font-weight: bold; letter-spacing: 2px; color:#111"
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: 02543541091
+#cusInfo Table
+cusInfo:
+  style:
+  labelWidth: 
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 700
+    code: Buyer
+  - label: Tên đơn vị
+    width: 772
+    code: CusName
+  - label: Mã số thuế
+    width: 770
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 792
+    code: CusAddress
+  - width: 838
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+      - label: Số tài khoản
+        width: 440
+        code: CusBankNo

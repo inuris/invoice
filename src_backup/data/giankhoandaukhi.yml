@@ -1,0 +1,93 @@
+comCode: giankhoandaukhi
+comSerial: GK
+comName: CÔNG TY CỔ PHẦN CHẾ TẠO GIÀN KHOAN DẦU KHÍ
+comTaxCode: 3500806844
+comAddress: 65A2 đường 30/4, P.Thắng Nhất, TP.Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+english: true
+debug: 
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#000"
+cssColorRed: "#c00"
+#logo : file, width, top, left
+logo:
+  file: logo.png
+  width: 120
+  top: 2
+  left: 25
+#background : file, width, height, top, left
+background:
+  file: 
+  width: 370
+  height: 208
+  top: 105
+  left: 275
+#header
+header:
+  logo: 
+    width: 100
+  name:
+  - value: HÓA ĐƠN
+    style: "font-size: 21px"
+  - value: GIÁ TRỊ GIA TĂNG
+    style: "font-size: 21px"
+  - value: (TAX INVOICE)
+    style: "font-style: italic; font-size: 16px"      
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: normal; font-size: 14px"
+#comInfo Table
+comInfo:
+  style: "font-size: 14px;"
+  margin: 8
+  labelWidth:
+  isInput:
+  row:
+  - code: ComName
+    style: "font-weight: bold; font-size: 18px;"
+  - label: Địa chỉ
+    sub: Address
+    code: ComAddress
+  - label: Điện thoại
+    sub: Tel
+    value: 0254 354 5555
+    width: 243
+    col-2: 
+      - label: Fax
+        value: 0254 351 2121
+  - label: Tài khoản số
+    sub: Bank A/C
+    value: 76010000109712
+    width: 200
+    col-2: 
+      - label: Tại
+        sub: At
+        value: Ngân hàng BIDV - CN Vũng Tàu
+  - label: Mã số thuế
+    code: ComTaxCode
+    sub: Tax code
+#cusInfo Table
+cusInfo:
+  style:
+  margin: 8
+  labelWidth: 
+  isInput: 
+  row:
+  - label: Tên khách hàng
+    sub: Customer's name
+    code: Buyer
+  - label: Tên đơn vị
+    sub: Company
+    code: CusName
+  - label: Địa chỉ
+    sub: Address
+    code: CusAddress
+  - label: Số tài khoản
+    sub: Bank A/C
+    code: CusBankNo
+  - label: Mã số thuế
+    sub: Tax code
+    code: CusTaxCode
+  - label: Hình thức thanh toán
+    sub: Payment method
+    code: Kind_of_Payment
+    isPayment: true

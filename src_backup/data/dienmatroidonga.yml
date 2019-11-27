@@ -1,0 +1,61 @@
+comCode: dienmatroidonga
+comSerial: DS
+comName: CÔNG TY TNHH ĐIỆN MẶT TRỜI ĐÔNG Á
+comTaxCode: 3502402318
+comAddress: Số 88/11, Nguyễn Hữu Cảnh, Phường Thắng Nhất, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+cssFontFamily: Arial
+cssColor: "#08086b"
+#header
+header:
+  #logo
+  logo:
+    file: logo.jpg
+    width: 130
+    height: 87
+    left: 38
+    top: 3
+  name:
+    - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+comInfo:
+  row:
+    - label: Đơn vị bán hàng
+      valueStyle: "font-weight: bold"
+      code: ComName
+    - label: Mã số thuế
+      valueStyle: "font-weight: bold"
+      code: ComTaxCode
+    - label: Địa chỉ
+      code: ComAddress
+    - label: Điện thoại
+      value: 0913693702
+    - label: STK
+      width: 180
+      code: CusBankName
+      isInput: true
+      col-2:
+        - label: tại
+          width: 553
+          code: CusBankNo
+          isInput: true
+cusInfo:
+  row:
+    - label: Họ tên người mua hàng
+      width: 616
+      code: Buyer
+    - label: Tên đơn vị
+      width: 710
+      code: CusName
+    - label: Mã số thuế
+      width: 708
+      code: CusTaxCode
+    - label: Địa chỉ
+      width: 737
+      code: CusAddress
+    - label: Hình thức thanh toán
+      width: 200
+      code: Kind_of_Payment
+      isPayment: true
+      col-2:
+        - label: Số tài khoản
+          width: 342
+          code: CusBankNo

@@ -1,0 +1,49 @@
+comCode: caoduchuy
+comSerial: DH
+comName: CTY TNHH PHÁT TRIỂN THƯƠNG MẠI CAO ĐỨC HUY
+comTaxCode: 3502402646
+comAddress: Khu phố Long Phượng, Thị trấn Long Điền, Huyện Long Điền, Tỉnh Bà Rịa Vũng Tàu
+cssFontFamily: Arial
+cssColor: "#08086b"
+xml:
+  - GrossValue0
+#header
+header:
+  #logo
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN 
+  - value: GIÁ TRỊ GIA TĂNG  
+comInfo:
+ row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+cusInfo:
+ row:
+  - label: Họ tên người mua hàng
+    width: 616
+    code: Buyer
+  - label: Tên đơn vị
+    width: 710
+    code: CusName
+  - label: Mã số thuế
+    width: 708
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 737
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 342
+      code: CusBankNo

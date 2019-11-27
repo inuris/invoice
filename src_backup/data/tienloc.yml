@@ -1,0 +1,93 @@
+comCode: tienloc
+comSerial: TL
+comName: CÔNG TY CỔ PHẦN TIẾN LỘC
+comTaxCode: 3501480049
+comAddress: Số E22 Nguyễn Bình, Phường 9, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu
+english: true
+#global style
+cssFontFamily: Arial
+cssColor: "#185b9d"
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 290
+  height: 280
+  top: 550
+  left: 268
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 120
+    top: 15
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px; color: red"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2; color: red"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 6
+  labelWidth: 170
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px; color: red"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Số tài khoản
+    sub: Account No.
+    value: 0081000965122(VND); 0081370965949(USD) tại Vietcombank Vũng Tàu
+  - label: Điện thoại
+    sub: Tel
+    value: "0254.3563628 * Fax : 0254.3563629"
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  isInput: true
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    width: 514
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 611
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 648
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 681
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 517
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment

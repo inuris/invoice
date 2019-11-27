@@ -1,0 +1,52 @@
+comCode: taxibaria
+comSerial: TX
+comName: CÔNG TY TNHH TAXI BÀ RỊA
+comTaxCode: 3502226863
+comAddress: 57 Đặng Nguyên Cẩn, Phường Long Toàn, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu
+cssFontFamily: Times New Roman
+cssColor: "#185b9d"
+#header
+header:
+  #logo
+  logo:
+    width: 100
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+comInfo:
+  labelWidth: 120
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: "02543.828282"
+  - label: STK
+    value: "80200013714758 tại Ngân hàng Seabank - Phòng giao dịch Bà Rịa"
+cusInfo:
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 638
+    code: Buyer
+  - label: Tên đơn vị
+    width: 720
+    code: CusName
+  - label: Mã số thuế
+    width: 718
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 743
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 370
+      code: CusBankNo

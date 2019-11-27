@@ -1,0 +1,79 @@
+comCode: tuanhung
+comSerial: TH
+comName: CÔNG TY CỔ PHẦN XÂY DỰNG - DỊCH VỤ TUẤN HƯNG
+comTaxCode: 3500906944
+comAddress: Số 98 Hoàng Văn Thụ, Phường 7, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu
+comPhone: 
+comAccount: 
+comBank: 
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#005cb3"
+cssFontSize: 16
+#background
+background:
+  file: 
+  width: 541
+  height: 126
+  top: 120
+  left: 165
+#header
+header:
+  #logo
+  logo:
+    file: logo.png
+    width: 220
+    top: 20
+    left: 5
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "color: red;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: normal; font-size: 16px"
+#comInfo Table
+comInfo:
+  style: 
+  margin: 8
+  labelWidth: 109
+  isInput:
+  row:
+  - code: ComName
+    valueStyle: "font-weight: bold; font-size: 20px; line-height: 14px"    
+    label: Đơn vị bán hàng
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "font-weight: bold; letter-spacing: 2px;"
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: 0254.3522 006
+  - label: Số tài khoản
+    value: 008.100.1179270 tại Ngân hàng TMCP Ngoại thương Việt Nam - Vietcombank - CN Vũng Tàu
+  - labelWidth: 109
+    value: 7601.0000.223047 tại Ngân hàng TMCP Đầu tư và Phát triển Việt Nam - CN Bà Rịa - Vũng Tàu
+#cusInfo Table
+cusInfo:
+  style:
+  labelWidth: 
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 640
+    code: Buyer
+  - label: Tên đơn vị
+    width: 721
+    code: CusName
+  - label: Mã số thuế
+    width: 719
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 744
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+      - label: Số tài khoản
+        width: 376
+        code: CusBankNo
