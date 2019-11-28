@@ -530,7 +530,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                               <tr class="noline back">
                                 <td class="back-bold2" style="text-align:center;">
                                   <div style="display: block;">
-                                    <xsl:value-of select="position()"/>
+                                    <xsl:value-of select="position() + $level1Count"/>
                                   </div>
                                 </td>
                                 <td class="back-bold2"><!--Tên hàng hóa, dịch vụ-->
@@ -810,7 +810,8 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 									</div>
 								</xsl:when>
 							</xsl:choose>
-						</div>
+            </div>
+            <p style="page-break-after: always"/>
                       <!--panel footer-->
                     </div>
                   </div>
