@@ -280,7 +280,6 @@
 								</xsl:call-template>
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
-								<xsl:call-template name="add_vnpt_introduction"/>
 							</xsl:if>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -356,7 +355,7 @@
 				<b class="title">Tên hàng hóa, dịch vụ</b>
 			</td>
 			<td style="width:45px;">
-				<b class="title">Đơn vị tính</b>
+				<b class="title">ĐVT</b>
 			</td>
 			<td style="width:70px;">
 				<b class="title">Số lượng</b>
@@ -411,14 +410,7 @@
 						 
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:choose>
-								<xsl:when test="../../SoVT = '1'">
-									<xsl:value-of select="format-number(ProdQuantity, '###,##0.00')"/>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:value-of select="format-number(translate(ProdQuantity,',','.'), '###,##0.##')"/>
-								</xsl:otherwise>
-							</xsl:choose>
+							<xsl:value-of select="translate(translate(translate(format-number(ProdQuantity, '###,###.##'),',','?'),'.',','),'?','.')"/>
 						</xsl:otherwise>
 					</xsl:choose>
 				</div>
@@ -430,7 +422,7 @@
 						 	&#160;
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:value-of select="translate(translate(translate(format-number(ProdPrice, '###,###'),',','?'),'.',','),'?','.')"/>
+							<xsl:value-of select="translate(translate(translate(format-number(ProdPrice, '###,###.##'),',','?'),'.',','),'?','.')"/>
 						</xsl:otherwise>
 					</xsl:choose>
 				</div>
@@ -496,7 +488,7 @@
 				</xsl:choose>
 			</td>
 			<td colspan="3" style="border-top:none;border-left:none!important;border-bottom:none;text-align:right;padding-right:10px;line-height:0px;">
-				<span>Tiền thuế GTGT:</span>
+				<span>Tiền thuế GTGT: </span>
 			</td>
 			<td align="right" style="border-top:none!important;border-bottom:none!important;border-left:none;">
 				<b>
@@ -846,7 +838,7 @@
 				<style type="text/css" rel="stylesheet">		  	
 			@charset "utf-8";
 			#main{margin:0 auto}
-			@page {size: "A4"; margin: 0.1in;}
+			@page {size: A4; margin: 11mm;}
 		  	* html,body {
 		  	margin: 0px auto;
 		  	padding: 0;

@@ -4,14 +4,15 @@ comName: CÔNG TY TNHH
 comTaxCode: 3
 comAddress: BR-VT
 cssFontFamily: Arial
-cssColor: "#08086b"
+cssColor: "#005cb3"
 #header
 header:
   #logo
   logo:
-    width: 100
+    width: 150
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 27px"
 comInfo:
  row:
   - label: Đơn vị bán hàng
@@ -24,13 +25,15 @@ comInfo:
     code: ComAddress
   - label: STK
     width: 180
-    code: CusBankName
+    code: ComBankNo
     isInput: true
     col-2:
     - label: tại
       width: 553
+      code: ComBankName
       isInput: true
 cusInfo:
+ isInput: true
  row:
   - label: Họ tên người mua hàng
     width: 616
