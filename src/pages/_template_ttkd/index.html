@@ -410,7 +410,14 @@
 						 
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:value-of select="translate(translate(translate(format-number(ProdQuantity, '###,###.##'),',','?'),'.',','),'?','.')"/>
+							<xsl:choose>
+								<xsl:when test="../../SoVT = '1'">	
+									<xsl:value-of select="format-number(ProdQuantity, '###,##0.00')"/>	
+								</xsl:when>	
+								<xsl:otherwise>	
+									<xsl:value-of select="translate(translate(translate(format-number(ProdQuantity, '###,###.##'),',','?'),'.',','),'?','.')"/>	
+								</xsl:otherwise>	
+							</xsl:choose>
 						</xsl:otherwise>
 					</xsl:choose>
 				</div>
