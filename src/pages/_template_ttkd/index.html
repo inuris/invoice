@@ -280,6 +280,7 @@
 								</xsl:call-template>
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								
 							</xsl:if>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -328,7 +329,7 @@
 	<xsl:template name="addfirtbody">
 		<table class="headerInfo" style="width:100%;">
 			<tr style="border-bottom:1px solid {{cssColor}};">
-				{{>header}}				
+				{{>header}}		
 			</tr>
 			<tr class="comInfo" style="border-bottom:1px solid {{cssColor}};">
 				<td colspan="3" style="padding-top:7px;">
