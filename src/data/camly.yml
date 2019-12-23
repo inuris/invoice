@@ -1,0 +1,94 @@
+comCode: camly
+comSerial: CL
+comName: CÔNG TY CỔ PHẦN CAM LY
+comTaxCode: 3500745528
+comAddress: Ấp Hồ Tràm, Xã Phước Thuận, Huyện Xuyên Mộc, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+english: true
+#global style
+cssFontFamily: Arial
+cssColor: "#111"
+#logo : file, width, top, left
+logo:
+  file: logo.png
+  width: 210
+  top: 5
+  left: 5
+#background : file, width, height, top, left
+background:
+  file: bg.jpg
+  width: 500
+  height: 326
+  top: 35
+  left: 200
+#header
+header:
+  logo: 
+    width: 100
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 21px"
+    sub: VAT INVOICE
+    subStyle: "font-size: 21px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: bold; font-size: 14px; line-height: 24px;"
+    sub: Electronic Invoice Display    
+#comInfo Table
+comInfo:
+  style: "color:#111;font-size: 14px;"
+  margin: 6
+  labelWidth:
+  isInput:
+  subStyle: "font-size: 100%"
+  row:
+  - code: ComName
+    style: "color:#111; font-weight: bold; font-size: 18px; font-family: Arial"
+  - label: Mã số thuế
+    code: ComTaxCode
+    style: "font-weight: bold;"
+    valueStyle: "letter-spacing: 2px; "
+    subStyle: "font-weight: bold;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Điện thoại
+    value: (02543)831500
+    sub: Tel
+  - label: Số tài khoản VND 
+    sub: A/C No
+    value: 112002806403 (VND),110002806405 (USD)
+  - value: tại Ngân hàng Vietinbank, phòng giao dịch Côn Đảo, CN Bà Rịa - Vũng Tàu
+#cusInfo Table
+cusInfo:
+  style:
+  labelWidth: 
+  isInput: true
+  subStyle: "font-size: 100%"
+  margin: 8
+  row:
+  - label: Họ tên người mua hàng
+    width: 638
+    code: Buyer
+    sub: Customer
+  - label: Tên đơn vị
+    width: 710
+    code: CusName
+    sub: Company
+  - label: Mã số thuế
+    width: 713
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 739
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 185
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of payment
+    col-2:
+      - label: Số tài khoản
+        width: 273
+        code: CusBankNo
+        sub: Bank A/C
