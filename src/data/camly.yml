@@ -62,7 +62,7 @@ comInfo:
 cusInfo:
   style:
   labelWidth: 
-  isInput: true
+  isInput: 
   subStyle: "font-size: 100%"
   margin: 8
   row:
