@@ -6,12 +6,14 @@
                 style="{{globalStyle}};{{globalLabelStyle}};{{this.style}};{{this.labelStyle}};"
             {{/ifOr}}            
             >{{this.label}}</span>
-            {{#if this.sub}}
-            <i style="font-size: 85%;
-                {{#ifOr v1=globalSubStyle v2=this.subStyle}}                
-                    {{globalSubStyle}};{{this.subStyle}};
-                {{/ifOr}}
-            "> ({{this.sub}})</i>
+            {{#if english}}
+                {{#if this.sub}}
+                <i style="font-size: 85%;
+                    {{#ifOr v1=globalSubStyle v2=this.subStyle}}                
+                        {{globalSubStyle}};{{this.subStyle}};
+                    {{/ifOr}}
+                "> ({{this.sub}})</i>
+                {{/if}} 
             {{/if}} 
         </label>
     {{/ifOr}}
@@ -67,10 +69,10 @@
 {{#with data}}
     {{#each row}}
     <div class="clearfix vt-row" {{#if ../margin}}style="margin-bottom:{{../margin}}px"{{/if}}>
-        {{#> rowEntry relative=../../relative isGlobalInput=../isInput globalStyle=../style globalLabelStyle=../labelStyle globalValueStyle=../valueStyle globalSubStyle=../subStyle globalLabelWidth=../labelWidth globalWidth=../width}}
+        {{#> rowEntry english=../../english relative=../../relative isGlobalInput=../isInput globalStyle=../style globalLabelStyle=../labelStyle globalValueStyle=../valueStyle globalSubStyle=../subStyle globalLabelWidth=../labelWidth globalWidth=../width}}
         {{/rowEntry}}    
         {{#each this.col-2}}
-            {{#> rowEntry relative=../../../relative isGlobalInput=../../isInput globalStyle=../../style globalLabelStyle=../../labelStyle globalValueStyle=../../valueStyle globalSubStyle=../../subStyle globalLabelWidth=../../labelWidth globalWidth=../../width}}
+            {{#> rowEntry english=../../../english relative=../../../relative isGlobalInput=../../isInput globalStyle=../../style globalLabelStyle=../../labelStyle globalValueStyle=../../valueStyle globalSubStyle=../../subStyle globalLabelWidth=../../labelWidth globalWidth=../../width}}
             {{/rowEntry}}
         {{/each}}
     </div>

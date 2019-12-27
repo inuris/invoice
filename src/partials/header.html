@@ -10,12 +10,14 @@
             <span style="font-weight: bold; font-size:24px;{{this.style}}">
                 {{this.value}}
             </span>
-            {{#if this.sub}}
-                <i style="font-size: 85%;
-                    {{#if this.subStyle}}                
-                        {{this.subStyle}};
-                    {{/if}}
-                "> ({{this.sub}})</i>
+            {{#if ../english}}
+                {{#if this.sub}}
+                    <i style="font-size: 85%;
+                        {{#if this.subStyle}}                
+                            {{this.subStyle}};
+                        {{/if}}
+                    "> ({{this.sub}})</i>
+                {{/if}} 
             {{/if}} 
         </p>
         {{/each}}

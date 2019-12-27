@@ -1,0 +1,97 @@
+comCode: baseafood2
+comSerial: BS
+comName: CÔNG TY CỔ PHẦN BASEAFOOD 2
+comTaxCode: 3502385084
+comAddress: Ấp An Hải, Xã Lộc An, Huyện Đất Đỏ, Tỉnh Bà Rịa - Vũng Tàu
+english: 
+#global style
+cssFontFamily: Arial
+cssColor: "#000"
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 408
+  height: 260
+  top: 498
+  left: 198
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 130
+    top: 7
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-size: 16px"
+  margin: 6
+  labelWidth: 180
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+    valueStyle: "font-size: 15px"
+  - label: Số tài khoản
+    valueStyle: "font-size: 15px"
+    value: 0081001344018 tại VCB CN Vũng Tàu
+  - label: Điện thoại
+    sub: Tel
+    valueStyle: "font-size: 15px"
+    value: 02543677877
+
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 180
+  width: 608
+  isInput: true
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 150
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
+    col-2:
+    - label: Số tài khoản
+      width: 363
+      labelWidth: 95
+      code: CusBankNo
