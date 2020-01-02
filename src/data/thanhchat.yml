@@ -1,0 +1,56 @@
+comCode: thanhchat
+comSerial: TC
+comName: CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ THÀNH CHẤT
+comTaxCode: 3500736890
+comAddress: 128 Nguyễn Hữu Thọ, Phường Phước Trung, Thành phố Bà Rịa, Tỉnh Bà Rịa-Vũng Tàu
+cssFontFamily: Times New Roman
+cssColor: "#005cb3"
+#header
+header:
+  #logo
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 27px"
+comInfo:
+ row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold; letter-spacing: 2px"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: "0254.3825 049 - Fax: 0254.3716 998."
+    width: 300
+    col-2:
+      - label: Email
+        value: ctythanhchat_2012@yahoo.com.vn
+  - label: STK
+    value: 050000818701 tại Ngân hàng Sacombank - PGD Bà Rịa - Chi nhánh BRVT
+cusInfo:
+ isInput: true
+ row:
+  - label: Họ tên người mua hàng
+    width: 636
+    code: Buyer
+  - label: Tên đơn vị
+    width: 717
+    code: CusName
+  - label: Mã số thuế
+    width: 715
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 739
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 366
+      code: CusBankNo
