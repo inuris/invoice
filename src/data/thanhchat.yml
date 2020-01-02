@@ -5,11 +5,22 @@ comTaxCode: 3500736890
 comAddress: 128 Nguyễn Hữu Thọ, Phường Phước Trung, Thành phố Bà Rịa, Tỉnh Bà Rịa-Vũng Tàu
 cssFontFamily: Times New Roman
 cssColor: "#005cb3"
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 268
+  height: 283
+  top: 80
+  left: 300
 #header
 header:
   #logo
   logo:
-    width: 150
+    file: logo.png
+    width: 90
+    top: 3
+    left: 50
+    bottom: 3
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 27px"
