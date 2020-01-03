@@ -19,9 +19,9 @@ background:
 header:
   #logo : file, width, top, left
   logo:
-    file: 
-    width: 120
-    top: 5
+    file: logo.png
+    width: 150
+    top: 0
     left: 35
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
