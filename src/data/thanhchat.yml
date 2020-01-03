@@ -5,6 +5,7 @@ comTaxCode: 3500736890
 comAddress: 128 Nguyễn Hữu Thọ, Phường Phước Trung, Thành phố Bà Rịa, Tỉnh Bà Rịa-Vũng Tàu
 cssFontFamily: Times New Roman
 cssColor: "#005cb3"
+convert: 1
 #background : file, width, height, top, left
 background:
   file: bg.png
