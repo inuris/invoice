@@ -2,7 +2,7 @@ comCode: dtxdtonghop
 comSerial: AA
 comName: CÔNG TY CỔ PHẦN TƯ VẤN ĐẦU TƯ XÂY DỰNG TỔNG HỢP TỈNH BÀ RỊA - VŨNG TÀU
 comTaxCode: 3500101266
-comAddress: Số 01 Pasteur, Phường 7, Thành Phố Vũng Tàu, Bà Rịa, Vũng Tàu
+comAddress: Số 01 Pasteur, Phường 7, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 english: 
 #global style
 cssFontFamily: Arial
@@ -62,7 +62,7 @@ comInfo:
   - label: Điện thoại
     sub: Tel
     valueStyle: "font-size: 15px"
-    value: "0254 3852 654 - 3857 079 / Fax: 0254 3852 654"
+    value: "0254 3856368 / Fax: 0254 3852 654"
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"
