@@ -29,6 +29,8 @@ header:
     style: "font-size: 22px"
   - sub: SALES INVOICE
     subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Dùng cho tổ chức, cá nhân trong khu phi thuế quan
+    style: "font-size: 14px"
   - value: Bản thể hiện của hóa đơn điện tử
     style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
   - sub: Electronic Invoice Display
@@ -55,13 +57,16 @@ comInfo:
     valueStyle: "letter-spacing: 2px;"
     sub: Tax code
   - label: Địa chỉ
-    code: ComAddress
+    value: Khu công nghiệp Mỹ Xuân B1 - Conac, Phường Mỹ Xuân, Thị xã Phú Mỹ,
     sub: Address
-    valueStyle: "font-size: 14.5px;"
+    valueStyle: "font-size: 15px;"
+  - labelWidth: 160
+    value: Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+    valueStyle: "font-size: 15px;"
   - label: Điện thoại
     sub: Tel
     valueStyle: "font-size: 15px"
-    value: 0
+    value: 02543921921
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"

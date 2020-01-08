@@ -612,75 +612,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                     </label>
                                   </td>
                                 </tr>
-                                <tr class="noline back" style="border-top: 1px solid {{cssColor}}; ">
-                                  <td class="back-bold" colspan="5" style="text-align: right; border-right: 1px solid {{cssColor}}">
-                                    <label class="fl-l" style="line-height:20px; text-align:left;">
-                                      <span style="font-weight:bold;font-size:16px">Thuế GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Rate)</i>{{/if}}:</span>
-                                      <xsl:choose>
-                                        <xsl:when test="../../VAT_Rate!=''">
-                                        <xsl:choose>
-                                          <xsl:when test="../../VAT_Rate!='-1' ">
-                                          &#160; <xsl:value-of select="../../VAT_Rate"/>%
-                                          </xsl:when>
-                                          <xsl:otherwise>
-                                          &#160;/
-                                          </xsl:otherwise>
-                                        </xsl:choose>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                        &#160; %
-                                        </xsl:otherwise>
-                                      </xsl:choose>                                      
-                                    </label>
-                                    <label class="fl-l" style="line-height:20px; float:right">
-                                        <span style="font-weight:bold;font-size:16px;text-align: right!important">Tiền thuế GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Amount)</i>{{/if}}:</span>
-                                    </label>
-                                  </td>
-                                  <td style="border-left: 0;">
-                                    <label class="fl-l input-name" style="float: right!important;width:100%;; text-align: right; font-weight: 700">
-                                      <xsl:choose>
-                                        <xsl:when test="../../VAT_Amount='0'">
-                                          <xsl:choose>
-                                            <xsl:when test="../../VAT_Rate='-1'">
-                                              &#160;/
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                                              0
-                                            </xsl:otherwise>
-                                          </xsl:choose>
-                                        </xsl:when>
-
-                                        <xsl:when test="../../VAT_Amount!=''">
-                                          <!-- fix new-->
-                                          <xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                          &#160;
-                                        </xsl:otherwise>
-                                      </xsl:choose>
-                                      
-                                    </label>
-                                  </td>
-                                </tr>
-                                <tr class="noline back" style="border-top: 1px solid {{cssColor}}; border-bottom: 1px solid {{cssColor}};">
-                                  <td class="back-bold" style="text-align: left; border-right: 1px solid {{cssColor}}" colspan="5">
-                                    <label style="line-height:20px;float: right!important;font-size:16px;">
-                                      <span><b>TỔNG CỘNG TIỀN THANH TOÁN{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Total payment)</i>{{/if}}:</b></span>
-                                    </label>
-                                  </td>
-                                  <td  colspan="3" style="border-left: 0;">
-                                    <label class="fl-l input-name" style="float: right;width: 100%;text-align: right; font-weight: 700">
-                                      <xsl:choose>
-                                        <xsl:when test="(../../Amount!='' and ../../Amount!=0)">
-                                          <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                          &#160;
-                                        </xsl:otherwise>
-                                      </xsl:choose>
-                                    </label>
-                                  </td>
-                                </tr>
+                                
                                 <tr class="noline back" style="border-top: 1px solid {{cssColor}}; border-bottom: 1px solid {{cssColor}};">
                                   <td colspan="6" style="padding-right: 0px;padding-top: 8px; padding-bottom: 4px;">
                                     <div class="clearfix">
@@ -786,7 +718,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 													</b>
                           {{#if english}}<i style="font-size: 100%;">(Seller)</i>{{/if}}
 												</p>
-												{{>sign}}
+												{{>sign arising=true}}
 											</td>
 										</tr>
                                     </table>
@@ -799,17 +731,35 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                         </table>
                         <div class="nenhd_bg"> &#160; </div>
                       </div>
-					  <div style="font-size:88%; text-align: center; margin-top: 4px;">
-							<span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - Hotline đăng ký dịch vụ 0913759468</span>
-							<br/>
-							<xsl:choose>
-								<xsl:when test="/Invoice/Fkey !=''">
-									<div style="font-size:13px; width:800px; text-align: center; margin:5px auto;">
-										<span>Hóa đơn Điện tử (HĐĐT) được tra cứu trực tuyến tại https://portaltool-miennam.vnpt-invoice.com.vn.
-										<br/>Mã tra cứu HĐĐT này: <b><xsl:value-of select="/Invoice/Fkey"/></b></span>
-									</div>
-								</xsl:when>
-							</xsl:choose>
+            <xsl:choose>
+              <xsl:when test="/Invoice/Fkey !=''">							
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                  <p style="margin:0px;">
+                    <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    nhập mã: <xsl:value-of select="/Invoice/Fkey"/> để lấy hoá đơn</span>
+                    <br/>
+                    <i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    with code: <xsl:value-of select="/Invoice/Fkey"/> to get your invoice.)</i>
+                  </p>
+                </div>
+              </xsl:when>
+              <xsl:otherwise>
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                  <p style="margin:0px;">
+                    <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    nhập mã: để lấy hoá đơn</span>
+                    <br/>
+                    <i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> with code: to get your invoice.)</i>
+                  </p>
+                </div>
+              </xsl:otherwise>
+            </xsl:choose>
+            <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed;width:811px;">
+              <p style="margin:0px;">
+                <span>Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu- Chi nhánh Tổng công ty Dịch vụ Viễn thông
+                <br/>
+                MST: 0106869738-044, Hotline đăng ký dịch vụ: 0913 759 468</span>
+              </p>
             </div>
             <p style="page-break-after: always"/>
                       <!--panel footer-->
