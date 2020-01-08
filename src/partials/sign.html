@@ -10,7 +10,11 @@
                 <xsl:value-of select="/Invoice/CNCom" />
                 <br />
                 Ký ngày:  
-                <xsl:value-of select="/Invoice/Content/SignDate" />
+                {{#if arising}}
+                    <xsl:value-of select="substring-before(/Invoice/Content/ArisingDate,' ')" />
+                    {{else}}
+                    <xsl:value-of select="/Invoice/Content/SignDate" />
+                {{/if}}
             </p>
         </div>
     </xsl:when>
@@ -26,9 +30,9 @@
                 <br />
                 Ký ngày:
                 {{#if arising}}
-                <xsl:value-of select="substring-before(/Invoice/Content/ArisingDate,' ')" />
-                {{else}}
-                <xsl:value-of select="/Invoice/Content/SignDate" />
+                    <xsl:value-of select="substring-before(/Invoice/Content/ArisingDate,' ')" />
+                    {{else}}
+                    <xsl:value-of select="/Invoice/Content/SignDate" />
                 {{/if}}
             </p>
         </div>

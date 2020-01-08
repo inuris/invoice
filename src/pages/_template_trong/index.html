@@ -442,7 +442,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
               <xsl:variable name="pageC" select="(position())"/>
 
               <div class = "VATTEMP" style="border:1px solid white;">
-                <div  class ="pagecurrent" id="page_{position()}">
+                <div  class ="pagecurrent" id="page_{$pageC}">
                   <div style="width:810px !important;margin-top:5px;">
                     <div class="statistics"  >
                       <div class="nenhd" style="margin-bottom: 10px !important;">
@@ -786,7 +786,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 													</b>
                           {{#if english}}<i style="font-size: 100%;">(Seller)</i>{{/if}}
 												</p>
-												{{>sign}}
+												{{>sign arising=true}}
 											</td>
 										</tr>
                                     </table>
@@ -799,17 +799,35 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                         </table>
                         <div class="nenhd_bg"> &#160; </div>
                       </div>
-					  <div style="font-size:88%; text-align: center; margin-top: 4px;">
-							<span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - Hotline đăng ký dịch vụ 0913759468</span>
-							<br/>
-							<xsl:choose>
-								<xsl:when test="/Invoice/Fkey !=''">
-									<div style="font-size:13px; width:800px; text-align: center; margin:5px auto;">
-										<span>Hóa đơn Điện tử (HĐĐT) được tra cứu trực tuyến tại https://portaltool-miennam.vnpt-invoice.com.vn.
-										<br/>Mã tra cứu HĐĐT này: <b><xsl:value-of select="/Invoice/Fkey"/></b></span>
-									</div>
-								</xsl:when>
-							</xsl:choose>
+            <xsl:choose>
+              <xsl:when test="/Invoice/Fkey !=''">							
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                  <p style="margin:0px;">
+                    <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    nhập mã: <xsl:value-of select="/Invoice/Fkey"/> để lấy hoá đơn</span>
+                    <br/>
+                    <i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    with code: <xsl:value-of select="/Invoice/Fkey"/> to get your invoice.)</i>
+                  </p>
+                </div>
+              </xsl:when>
+              <xsl:otherwise>
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                  <p style="margin:0px;">
+                    <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    nhập mã: để lấy hoá đơn</span>
+                    <br/>
+                    <i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> with code: to get your invoice.)</i>
+                  </p>
+                </div>
+              </xsl:otherwise>
+            </xsl:choose>
+            <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed;width:811px;">
+              <p style="margin:0px;">
+                <span>Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu- Chi nhánh Tổng công ty Dịch vụ Viễn thông
+                <br/>
+                MST: 0106869738-044, Hotline đăng ký dịch vụ: 0913 759 468</span>
+              </p>
             </div>
             <p style="page-break-after: always"/>
                       <!--panel footer-->

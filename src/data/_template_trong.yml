@@ -6,7 +6,7 @@ comAddress:
 english: true
 #global style
 cssFontFamily: Arial
-cssColor: "#000"
+cssColor: "#000000"
 
 #background : file, width, height, top, left
 background:
