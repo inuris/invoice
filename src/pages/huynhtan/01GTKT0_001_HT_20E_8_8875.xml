@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='huynhtan.xslt' ?>
+
+<Invoice> 
+<CNCom>CÔNG TY TRÁCH NHIỆM HỮU HẠN HUỲNH TẤN</CNCom>
+<Content Id="SigningData">
+    <ArisingDate>16/01/2020 00:00:00</ArisingDate>
+    <InvoiceName>Hóa đơn giá trị gia tăng</InvoiceName>
+    <InvoicePattern>01GTKT0/001</InvoicePattern>
+    <SerialNo>HT/20E</SerialNo>
+    <InvoiceNo>8</InvoiceNo>
+    <Kind_of_Payment>CK</Kind_of_Payment>
+    <ComName>CÔNG TY TRÁCH NHIỆM HỮU HẠN HUỲNH TẤN</ComName>
+    <ComTaxCode>3500422189</ComTaxCode>
+    <ComAddress>Số 11 Huyền Trân Công Chúa, Phường 8, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam</ComAddress>
+    <ComPhone>02543584968</ComPhone>
+    <ComBankNo />
+    <ComBankName />
+    <CusCode>QUOCNAM</CusCode>
+    <CusName>Công Ty TNHH Quốc Nam</CusName>
+    <CusTaxCode>5800431734</CusTaxCode>
+    <CusPhone />
+    <CusAddress>Số 20, Tổ 6, Hiệp Thạnh, Đức Trọng, Lâm Đồng</CusAddress>
+    <CusBankName />
+    <CusBankNo />
+    <Total>179360000</Total>
+    <VAT_Amount>17936000</VAT_Amount>
+    <Amount>197296000</Amount>
+    <Amount_words>Một trăm chín mươi bảy triệu hai trăm chín mươi sáu ngàn đồng chẵn.</Amount_words>
+    <GrossValueNonTax>0</GrossValueNonTax>
+    <GrossValue>0</GrossValue>
+    <Buyer />
+    <GrossValue0>0</GrossValue0>
+    <VATAmount0>0</VATAmount0>
+    <GrossValue5>0</GrossValue5>
+    <VATAmount5>0</VATAmount5>
+    <GrossValue10>0</GrossValue10>
+    <VATAmount10>0</VATAmount10>
+    <CurrencyUnit>VND</CurrencyUnit>
+    <ExchangeRate>0</ExchangeRate>
+    <ConvertedAmount>0</ConvertedAmount>
+    <Extra1 />
+    <Extra2 />
+    <EmailDeliver />
+    <SMSDeliver />
+    <VAT_Rate>10</VAT_Rate>
+    <KindOfService />
+    <Products>
+      <Product>
+        <Code>MI16570_13XM1</Code>
+        <Extra1 />
+        <Extra2 />
+        <Remark>1</Remark>
+        <Total>0</Total>
+        <ProdName>Lốp Michelin 165/70R13/XM1/TLan</ProdName>
+        <ProdUnit>Cái</ProdUnit>
+        <ProdQuantity>5.00</ProdQuantity>
+        <ProdPrice>967000.00</ProdPrice>
+        <Discount>0</Discount>
+        <DiscountAmount>0</DiscountAmount>
+        <VATRate>0</VATRate>
+        <VATAmount>0</VATAmount>
+        <Amount>4835000</Amount>
+      </Product>
+      <Product>
+        <Code>MI17570_13XM2</Code>
+        <Extra1 />
+        <Extra2 />
+        <Remark>2</Remark>
+        <Total>0</Total>
+        <ProdName>Lốp Michelin 175/70R13/XM2/TLan</ProdName>
+        <ProdUnit>Cái</ProdUnit>
+        <ProdQuantity>4.00</ProdQuantity>
+        <ProdPrice>988000.00</ProdPrice>
+        <Discount>0</Discount>
+        <DiscountAmount>0</DiscountAmount>
+        <VATRate>0</VATRate>
+        <VATAmount>0</VATAmount>
+        <Amount>3952000</Amount>
+      </Product>
+      <Product>
+        <Code>MI18565_14XM2+</Code>
+        <Extra1 />
+        <Extra2 />
+        <Remark>3</Remark>
+        <Total>0</Total>
+        <ProdName>Lốp Michelin 185/65R14/XM2+/TLan</ProdName>
+        <ProdUnit>Cái</ProdUnit>
+        <ProdQuantity>4.00</ProdQuantity>
+        <ProdPrice>1232000.00</ProdPrice>
+        <Discount>0</Discount>
+        <DiscountAmount>0</DiscountAmount>
+        <VATRate>0</VATRate>
+        <VATAmount>0</VATAmount>
+        <Amount>4928000</Amount>
+      </Product>
+      <Product>
+        <Code>MI15565_13XM2</Code>
+        <Extra1 />
+        <Extra2 />
+        <Remark>4</Remark>
+        <Total>0</Total>
+        <ProdName>Lốp Michelin 155/65R13/XM2/TL</ProdName>
+        <ProdUnit>Cái</ProdUnit>
+        <ProdQuantity>5.00</ProdQuantity>
+        <ProdPrice>828000.00</ProdPrice>
+        <Discount>0</Discount>
+        <DiscountAmount>0</DiscountAmount>
+        <VATRate>0</VATRate>
+        <VATAmount>0</VATAmount>
+        <Amount>4140000</Amount>
+      </Product>
+      <Product>
+        <Code>MI19570_14XM2</Code>
+        <Extra1 />
+        <Extra2 />
+        <Remark>5</Remark>
+        <Total>0</Total>
+        <ProdName>Lốp Michelin 195/70R14/XM2/TLan</ProdName>
+        <ProdUnit>Cái</ProdUnit>
+        <ProdQuantity>9.00</ProdQuantity>
+        <ProdPrice>945000.00</ProdPrice>
+        <Discount>0</Discount>
+        <DiscountAmount>0</DiscountAmount>
+        <VATRate>0</VATRate>
+        <VATAmount>0</VATAmount>
+        <Amount>8505000</Amount>
+      </Product>
+      <Product>
+        <Code>MI19565_15XM2+</Code>
+        <Extra1 />
+        <Extra2 />
+        <Remark>6</Remark>
+        <Total>0</Total>
+        <ProdName>Lốp Michelin 195/65R15/XM2+/TLan</ProdName>
+        <ProdUnit>Cái</ProdUnit>
+        <ProdQuantity>4.00</ProdQuantity>
+        <ProdPrice>1210000.00</ProdPrice>
+        <Discount>0</Discount>
+        <DiscountAmount>0</DiscountAmount>
+        <VATRate>0</VATRate>
+        <VATAmount>0</VATAmount>
+        <Amount>4840000</Amount>
+      </Product>
+      <Product>
+        <Code>MI19570_15AGI</Code>
+        <Extra1 />
+        <Extra2 />
+        <Remark>7</Remark>
+        <Total>0</Total>
+        <ProdName>Lốp Michelin 195/70R15/Agilis/TLan</ProdName>
+        <ProdUnit>Cái</ProdUnit>
+        <ProdQuantity>3.00</ProdQuantity>
+        <ProdPrice>1795000.00</ProdPrice>
+        <Discount>0</Discount>
+        <DiscountAmount>0</DiscountAmount>
+        <VATRate>0</VATRate>
+        <VATAmount>0</VATAmount>
+        <Amount>5385000</Amount>
+      </Product>
+      <Product>
+        <Code>MI23575_15LTX</Code>
+        <Extra1 />
+        <Extra2 />
+        <Remark>8</Remark>
+        <Total>0</Total>
+        <ProdName>Lốp Michelin 235/75R15/LTX/TLan</ProdName>
+        <ProdUnit>Cái</ProdUnit>
+        <ProdQuantity>8.00</ProdQuantity>
+        <ProdPrice>2370000.00</ProdPrice>
+        <Discount>0</Discount>
+        <DiscountAmount>0</DiscountAmount>
+        <VATRate>0</VATRate>
+        <VATAmount>0</VATAmount>
+        <Amount>18960000</Amount>
+      </Product>
+      <Product>
+        <Code>MI20555_16XM2</Code>
+        <Extra1 />
+        <Extra2 />
+        <Remark>9</Remark>
+        <Total>0</Total>
+        <ProdName>Lốp Michelin 205/55R16/XM2/TLan</ProdName>
+        <ProdUnit>Cái</ProdUnit>
+        <ProdQuantity>5.00</ProdQuantity>
+        <ProdPrice>1511000.00</ProdPrice>
+        <Discount>0</Discount>
+        <DiscountAmount>0</DiscountAmount>
+        <VATRate>0</VATRate>
+        <VATAmount>0</VATAmount>
+        <Amount>7555000</Amount>
+      </Product>
+         
+    </Products>
+    <Extra />
+    <SignDate>16/01/2020</SignDate>
+  </Content>
+	<imageClient></imageClient>
+	<image>Signature Valid</image>
+	<convert></convert>
+	<Fkey></Fkey>
+</Invoice>

@@ -143,13 +143,13 @@
 					<label class="fl-l" style="font-weight:normal; padding-left:10px;">
 						<span>Số tiền viết bằng chữ : </span>
 					</label>
-					<label class="fl-l input-name" style="width:712px;height:17px;min-width: 100px;display: block;">
-						<xsl:value-of select="$str1"/>
+					<label class="fl-l input-name" style="width:702px;height:17px;min-width: 100px;display: block;">
+						<b style="color:#111"><xsl:value-of select="$str1"/></b>
 					</label>
 				</div>
 				<div class="clearfix" style="padding-bottom:5px;">
 					<label class="fl-l input-name" style="width:842px;height:17px;min-width: 100px;display: block;margin-left:10px;">
-						<xsl:value-of select="$str2"/>
+						<b style="color:#111"><xsl:value-of select="$str2"/></b>
 					</label>
 				</div>
 			</xsl:when>
@@ -158,8 +158,8 @@
 					<label class="fl-l" style="font-weight:normal;padding-left:10px;padding-top:6px;">
 						<span>Số tiền viết bằng chữ : </span>
 					</label>
-					<label class="fl-l input-name" style="width:712px;height:17px;min-width: 100px;display: block;padding-top:6px;">
-						<xsl:value-of select="$str"/>
+					<label class="fl-l input-name" style="width:702px;height:17px;min-width: 100px;display: block;padding-top:6px;">
+						<b style="color:#111"><xsl:value-of select="$str"/></b>
 					</label>
 				</div>
 				<div class="clearfix" style="padding-bottom:5px;">
@@ -280,6 +280,7 @@
 								</xsl:call-template>
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								
 							</xsl:if>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -315,6 +316,7 @@
 					</xsl:call-template>
 					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+					<xsl:call-template name="add_vnpt_introduction"/>
 				</xsl:when>
 				<!-- Các vị trí dòng sản phẩm ở khoảng giữa một trang -->
 				<xsl:otherwise>
@@ -339,7 +341,70 @@
 		</table>
 		<table style="width:100%;">
 			<tr style="">
-				{{>header}}
+				<td style="border:none;vertical-align:top; width: 100px">    
+				    <div style="
+				            width:100px;
+				    ">
+				    </div>
+				</td>
+				<td style="vertical-align:top;border:none;">
+				    <div class="InvInfoLeft" style="">
+				        <p style="margin:0 auto;">            
+				            <span style="font-weight: bold; font-size:24px;">
+				                HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+				            </span>
+				        </p>
+				        <p style="margin:0 auto;">            
+				            <span style="font-weight: bold; font-size:24px;font-weight: normal; font-size: 14px">
+				                Bản thể hiện của hóa đơn điện tử
+				            </span>
+				        </p>
+				        <p style="margin:10px auto;font-size:14px;">
+				            <xsl:choose>
+				                <xsl:when test="../../ArisingDate!= '' and substring(../../ArisingDate,7,4) != '1957' ">
+				                    <span>Ngày </span>
+				                    <b style="color: #111"><xsl:value-of select="substring(../../ArisingDate,1,2)" /></b>
+				                    <span> tháng </span>
+				                    <b style="color: #111"><xsl:value-of select="substring(../../ArisingDate,4,2)" /></b>
+				                    <span> năm </span>
+				                    <b style="color: #111"><xsl:value-of select="substring(../../ArisingDate,7,4)" /></b>
+				                </xsl:when>
+				                <xsl:otherwise>
+				                    <span>Ngày </span>&#8230;
+				                    <span> tháng </span>&#8230;
+				                    <span> năm </span>&#8230;
+				                </xsl:otherwise>
+				            </xsl:choose>
+				            <br />
+				        </p>
+				    </div>
+				</td>
+				
+				<td style="vertical-align:top;border:none; width:200px;">
+				    <div class="InvInfoRight" style="padding-left:25px; ">
+				        <div class="clearfix" style="line-height:22px;padding-top:14px;">
+				            <span>Mẫu số : </span>
+				            <span>
+				                <xsl:value-of select="../../InvoicePattern" /></span>
+				        </div>
+				        <div class="clearfix" style="line-height:22px">
+										<span>Ký hiệu : </span>
+										<b>
+				                <xsl:value-of select="../../SerialNo" />
+				            </b>
+				        </div>
+				        <div class="clearfix" style="line-height:22px">
+				            <span>Số : </span>
+				            <b style="color:red;font-size:140%;
+				                ">
+				                <xsl:call-template name="addZero">
+				                    <xsl:with-param name="count" select="7-string-length(../../InvoiceNo)" />
+				                </xsl:call-template>
+				                <xsl:value-of select="../../InvoiceNo" />
+				            </b>
+				        </div>
+				    </div>
+				</td>		
 			</tr>
 		</table>
 	</xsl:template>
@@ -826,12 +891,17 @@
 		  	padding: 0;
 		  	height: 100%;
 		  	}
-		  	span, i, b{
+		  	span, i, b, p, label{
 		  		color: #2e3192;
+					font-size: 15px
 		  	}
 		  	i{
 				font-size: 85%;
 		  	}		  	
+				.input-name{
+					color: #111;
+					font-weight: 700
+				}
 		  	table {
 				border-collapse: collapse
 		  	}
@@ -959,7 +1029,7 @@
 		  	margin-right: 0px;
 		  	margin-top: 0px;
 		  	margin-bottom: 1px;
-		  	font-size: 14px;
+		  	font-size: 15px;
 		  	}
 		  	.bgimg {
 		  	border: 1px solid {{cssColor}};
@@ -971,9 +1041,7 @@
 		  	padding-left: 5px;
 		  	text-align: left
 		  	}
-		  	p {
-		  	font-size: 14px
-		  	}
+		  	
 		  	#SolutionVNPT{
 		  	margin-bottom:5px;
 		  	font-size:12px;
@@ -1037,14 +1105,12 @@
 		  	.productTable {
 		  	background-position: bottom;
 		  	border: 1px solid {{cssColor}};
-		  	font-size: 14px;
 		  	margin: 0;
 		  	height: 300px;
 		  	position: relative;
 		  	z-index: 2
 		  	}
 		  	.productTable th {
-		  	font-size: 14px;
 		  	text-transform: uppercase;
 		  	height: 60px;
 		  	}
@@ -1053,7 +1119,7 @@
 		  	}
 		  	.productTable .back td {
 		  	font-family: "Times New Roman", Times, serif;
-		  	font-size: 14px
+				font-weight: 700
 		  	}
 		  	.productTable .noline td {
 		  	border-bottom: 1 none
@@ -1067,7 +1133,6 @@
 		  		border-right:0;
 		  	}
 		  	.productTable tr td.back-bold {
-		  	font-size: 14px;
 		  	padding-right: 5px;
 		  	padding-left: 5px;
 		  	text-align: right;
@@ -1079,7 +1144,6 @@
 		  	height: 32px;
 		  	}
 		  	.productTable tr.bg-pink td {
-		  	font-size: 14px;
 		  	text-align: right;
 		  	}
 
@@ -1119,7 +1183,7 @@
 				background-size: 100% !important;
 				padding-top:27px;
 				width: 870px;
-				//height: 1125px;
+				height: 1125px;
 			}
 			.english-font{
 				//font-size: 88% !important; 

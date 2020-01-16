@@ -31,7 +31,8 @@ header:
 
 #comInfo Table
 comInfo:
-  style: "color:#111;"
+  style: "color:#111;font-size: 13.5px"
+  margin: 2
   row:
   - code: ComName
     style: "font-weight: bold; font-size: 20px;color: #2e3192"
@@ -40,6 +41,7 @@ comInfo:
     valueStyle: "font-weight: bold; letter-spacing: 2px; color:#111"
   - label: Địa chỉ
     code: ComAddress
+    valueStyle: "letter-spacing: -0.2px"
   - label: Điện thoại
     value: "0254.358 4968 - 358 4969"
   - label: Số tài khoản
@@ -49,7 +51,7 @@ comInfo:
 cusInfo:
   isInput: true
   style: "font-size: 16px"
-  valueStyle: "color:#111"
+  valueStyle: "color:#111;"
   row:
   - label: Họ tên người mua hàng
     width: 686
