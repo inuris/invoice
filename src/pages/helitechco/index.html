@@ -1,0 +1,854 @@
+{{#with helitechco}}
+<!-- split {{comCode}}.xslt -->
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl js" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <xsl:param name="bien" select="0"/>
+  <xsl:param name="bien1" select="0"/>
+
+  <xsl:variable name="itemCount">
+    <xsl:value-of select="count(Invoice//Content//Products//Product)"/>
+  </xsl:variable>
+
+  <xsl:template name="addZero">
+    <xsl:param name="count"/>
+    <xsl:if test="$count > 0">
+      <xsl:text>0</xsl:text>
+      <xsl:call-template name="addZero">
+        <xsl:with-param name="count" select="$count - 1"/>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="congphi">
+    <xsl:param name="count"/>
+    <xsl:if test="$count > 0">
+      <xsl:value-of select="$count">
+      </xsl:value-of>
+      <xsl:text>0</xsl:text>
+      <xsl:call-template name="addZero">
+        <xsl:with-param name="count" select="$count - 1"/>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="addDots">
+    <xsl:param name="val"/>
+    <xsl:param name="val1"/>
+    <xsl:param name="val2"/>
+    <xsl:param name="i" select="1"/>
+    <xsl:if test="$val1>0">
+      <xsl:choose>
+        <xsl:when test="$val2 !=0">
+          <xsl:value-of select="substring($val,$i,$val2)"/>
+          <xsl:if test="substring($val,$i+$val2+1,1) !=''">
+            <xsl:text>.</xsl:text>
+          </xsl:if>
+          <xsl:call-template name="addDots">
+            <xsl:with-param name="val" select="$val"/>
+            <xsl:with-param name="val1" select="$val1 - 1"/>
+            <xsl:with-param name="i" select="$i + $val2"/>
+            <xsl:with-param name="val2" select="3"/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <!--<xsl:text>test</xsl:text>-->
+          <xsl:value-of select="substring($val,$i,3)"/>
+          <xsl:if test="substring($val,$i+3,1) !=''">
+            <xsl:text>.</xsl:text>
+          </xsl:if>
+          <xsl:call-template name="addDots">
+            <xsl:with-param name="val" select="$val"/>
+            <xsl:with-param name="val1" select="$val1 - 1"/>
+            <xsl:with-param name="i" select="$i + 3"/>
+            <xsl:with-param name="val2" select="3"/>
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="addLine">
+    <xsl:param name="count"/>
+    <xsl:if test="$count > 0">
+      <tr class="noline back">
+        <td class="back-bold" height="13px">
+          <xsl:value-of select="''"/>
+        </td>
+        <td class="back-bold" height="13px">
+          <xsl:value-of select="''"/>
+        </td>
+        <td class="back-bold" height="13px">
+          <xsl:value-of select="''"/>
+        </td>
+        <td class="back-bold" height="13px">
+          <xsl:value-of select="''"/>
+        </td>
+        <td class="back-bold" height="13px">
+          <xsl:value-of select="''"/>
+        </td>
+        <td class="back-bold">
+          <xsl:value-of select="''"/>
+        </td>
+      </tr>
+      <xsl:call-template name="addLine">
+        <xsl:with-param name="count" select="$count - 1"/>
+      </xsl:call-template>
+    </xsl:if>
+  </xsl:template>
+  <xsl:template match="/">
+<html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <!--<link href="styles.css" type="text/css" rel="stylesheet" />-->
+        <title>VAT</title>
+        <style type="text/css" rel="stylesheet">
+          html, body
+          {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          background-color: white;
+          }
+		  @page {
+          size: 21cm 29.7cm;
+          margin: 0;
+      }
+          #main
+          {
+          margin: 0 auto;
+          }
+          .VATTEMP
+          {
+            width: 836px !important;
+            background-color: white;
+            font-family: {{cssFontFamily}}, Times, serif;
+            font-size: 14px;
+          }
+          span, i, b{
+          color: {{cssColor}};
+          font-family:Times;
+          }
+          .VATTEMP .header-main, .content
+          {
+          width: 790px;
+          }
+          .VATTEMP #logo
+          {
+          float: left;
+          width: 100px;
+          height: 100px;
+          background: url('') no-repeat;
+          margin: 0;
+          }
+          .VATTEMP .header
+          {
+          float: right;
+          width: 613px;
+          }
+          .VATTEMP .header-content
+          {
+          float: left;
+          text-align: center;
+          width: 400px;
+          }
+          .VATTEMP .header h2
+          {
+          font-size: 1em;
+          }
+          .VATTEMP .header h2, .header p
+          {
+          margin: 0;
+          }
+          .VATTEMP .header p.name-upcase
+          {
+          font-size: 13px;
+          text-transform: uppercase;
+          }
+          .VATTEMP .header-note
+          {
+          float: right;
+          font-size: 100%;
+          width: 175px;
+          margin-top: 0;
+          }
+          .VATTEMP .header .number
+          {
+          font-family: 'Arial', Times, serif;
+          font-size: 100%;
+          }
+          .clearfix:after
+          {
+          clear: both;
+          content: ".";
+          display: block;
+          height: 1px;
+          overflow: hidden;
+          visibility: hidden;
+          }
+          .clearfix
+          {
+          clear: both;
+          }
+          .VATTEMP .input-code
+          {
+          border: 1px solid {{cssColor}};
+          float: left;
+          text-align: center;
+          width: 18px;
+          height: 14px;
+          }
+          .VATTEMP div label.fl-l, div label
+          {
+          margin-right: 0;
+          margin-top: 3px;
+
+          }
+          .VATTEMP .input-name, .input-date
+          {
+          border: 0;
+          border-bottom: 1px dotted {{cssColor}};
+          }
+          .VATTEMP .statistics
+          {
+          clear: both;
+          margin-right: 0;
+          }
+          .nenhd
+          {
+          position: relative;
+          }
+          {{>background}}
+          .VATTEMP .statistics table
+          {
+          background-position: bottom;
+          border: 0 none;
+          font-size: 100%;
+          margin: 0;
+          position: relative;
+          z-index: 2;
+          }
+          table
+          {
+          border-collapse: collapse;
+          }
+          .VATTEMP .statistics table th
+          {
+          font-size: 100%;
+          border-bottom: 1px solid {{cssColor}};
+          border-right: 1px solid {{cssColor}};
+          border-left: 1px solid {{cssColor}};
+          border-top: 1px solid {{cssColor}};
+          text-align:center;
+          padding:2px 5px;
+          }
+          .VATTEMP .statistics table th.h2
+          {
+          font-size: 100%;
+          text-transform: none;
+          border-bottom: 1px solid {{cssColor}} !important;
+          border-right: 1px solid {{cssColor}} !important;
+          border-left: 1px solid {{cssColor}} !important;
+          border-top: 1px solid {{cssColor}} !important;
+          color:  {{cssColor}};
+          }
+          .VATTEMP .statistics table td.stt
+          {
+          text-align: center;
+          padding-left: 0;
+          }
+          .VATTEMP .statistics table td.stt2
+          {
+          text-align: center;
+          color: {{cssColor}};
+          }
+          .VATTEMP .statistics table .back td
+          {
+          color: {{cssColor}};
+          font-family: 'Arial', Times, serif;
+          font-size: 100%;
+          }
+          <!-- .VATTEMP .statistics table .noline td -->
+          <!-- { -->
+          <!-- border-bottom: 1px dotted {{cssColor}}; -->
+          <!-- border-right: 1px solid {{cssColor}}; -->
+          <!-- border-left: 1px solid {{cssColor}}; -->
+          <!-- border-top: 0 none; -->
+          <!-- } -->
+          .VATTEMP .statistics table td
+          {
+          border-right: 1px solid {{cssColor}};
+          border-left: 1px solid {{cssColor}};
+          //padding-top: 2px;
+          padding-bottom: 2px;
+          padding-right: 2px;
+          padding-left: 5px;
+          }
+          .VATTEMP .statistics tr td.back-bold
+          {
+          font-size: 100%;
+          border-bottom: 1px dotted {{cssColor}};
+          }
+          .VATTEMP .statistics table .back-bold
+          {
+          padding-right: 5px;
+          text-align: right;
+		  height: 30px;
+          }
+          .VATTEMP .statistics tr td.back-bold2
+          {
+			  font-size: 100%;
+			  border-bottom: 1px dotted {{cssColor}};
+			  height: 30px;
+          }
+          .VATTEMP .statistics tr td.back-bold3
+          {
+          font-size: 100%;
+          border-bottom:none!important;
+          }
+          .VATTEMP .statistics table .back-bold2
+          {
+          padding-left: 5px;
+          text-align: left;
+          }
+          .VATTEMP .statistics tr.bg-pink td
+          {
+          font-size: 100%;
+          text-align: right;
+          background: none repeat scroll 0 0 #fedccc;
+          }
+          .VATTEMP .payment, .date
+          {
+          margin: 20px 0;
+          text-align: center;
+          width: 35%;
+          }
+          .VATTEMP .payment
+          {
+          float: left;
+          }
+          .VATTEMP .payment p, .date p
+          {
+          margin: 0;
+          }
+          .VATTEMP .date
+          {
+          float: right;
+          height: 120px;
+          }
+          .VATTEMP .input-date
+          {
+          width: 40px;
+          }
+          .VATTEMP .input-name, .back-bold, .input-date
+          {
+            font-family: 'Arial', Times, serif;
+          }
+          .fl-l2
+          {
+          float: left;
+          color: {{cssColor}};
+          }
+          .fl-l
+          {
+          float: left;
+          min-height: 16px;
+
+          }
+          .bgimg
+          {
+          border: 1px solid {{cssColor}};
+          cursor: pointer;
+          //width: 170px;
+          }
+          .bgimg p
+          {
+          color: {{cssColor}};
+          padding-left: 13px;
+          text-align: left;
+          }
+          p
+          {
+          font-size: 13px;
+          }
+          .item
+          {
+          color: {{cssColor}};
+          }
+		  /* ================ */
+		  	/* Company Info*/
+		  	.comInfo label{
+		  	
+		  	}
+			.comInfo td{
+		  		padding-left:10px;
+		  	}
+			.comInfo .vt-row{
+		  		margin-bottom:0;
+		  	}
+			.comInfo .title{
+		  	}
+			
+			
+			/* ================ */
+		  	/* Customer Info*/
+
+		  	.customerInfo{
+		  	margin-top: 5px;
+		  	display: block;		  	
+		  	}
+		  	.customerInfo td{
+		  		padding-left: 10px;
+		  	}
+		  	.customerInfo label{
+		  	}
+			.customerInfo .title{
+			}
+			.customerInfo .vt-row{
+			margin-bottom: 8px;
+			}
+			.InvInfoLeft{
+		  	text-align:center;
+		  	margin:15px 0px 0px 0px;
+		  	}
+			.InvInfoRight{
+		  	text-align:left;
+		  	padding-bottom:10px;
+		  	}
+			.InvInfoRight span{
+			font-size: 14px;
+      font-weight: 700;
+			}
+      .InvInfoRight i{
+			font-size: 100%;
+      font-weight: 400;
+			}
+        </style>
+
+
+
+      </head>
+      <body>
+        <center>
+          <div id="printView" style="position: relative;background-color: white;WIDTH: 100%;">
+            <xsl:choose>
+              <xsl:when test="/Invoice/Invcancel!=''">
+                <img style="position: absolute;left: 0px;top: 0px;width: 100%;height: auto;z-index: 3;" width="100%" height="900px" src="data:image/png;base64,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" />
+              </xsl:when>
+            </xsl:choose>
+
+            <xsl:for-each select="Invoice//Content/Products/Product[(position()-1) mod 10 = 0]">
+              <xsl:variable name="level1Count" select="(position()-1)*10"/>
+              <xsl:variable name="pageC" select="(position())"/>
+
+              <div class = "VATTEMP" style="border:1px solid white;">
+                <div  class ="pagecurrent" id="page_{$pageC}">
+                  <div style="width:810px !important;margin-top:5px;">
+                    <div class="statistics"  >
+                      <div class="nenhd" style="margin-bottom: 10px !important;">
+                        <table cellspacing="0" cellpadding="0" border="0" style="">
+                          <thead>
+                            <!--<xsl:copy-of select="$header" />-->
+                            <xsl:for-each select="/Invoice//Content">
+                              <tr style="background-color: white !important;">
+								<td colspan="6" style="padding-left: 0px !important;padding-right: 0px !important; padding-top: 5px; border-top: 1px solid {{cssColor}}">
+                  <table class="headerInfo"  style="width:100%;">
+										<tr style="">
+											{{>header relative=true}}									
+                    </tr>
+									</table>
+
+									<table class="comInfo" style="width:100%;" cellspacing="0" cellpadding="0">
+										<tr>
+											<td colspan="6" style="border-left: none!important;border-right: none!important;padding: 10px 10px 4px 10px; border-top: 1px solid {{cssColor}}">
+												 {{>info data=comInfo relative=true}}   
+											</td>
+										</tr>
+									</table>
+									
+									<table class="customerInfo" cellspacing="0" cellpadding="0">
+										<tr>
+											<td colspan="6" style="border-left: none!important;border-right: none!important;padding: 10px 10px 4px 10px; border-top: 1px solid {{cssColor}}">
+                        {{>info data=cusInfo relative=true}}  
+											</td>
+										</tr>
+									</table>								  
+                                </td>
+                              </tr>
+
+
+                            </xsl:for-each>
+                          </thead>
+                          <tbody class="nenhd">
+                            <tr style="font-size:16px;">
+                              <th style="width:27px;" >
+                                <span>STT</span>
+                                {{#if english}}<br /><i style="font-size: 16px;font-weight: 400;">(No.)</i>{{/if}}
+                              </th>
+                              <th>
+                                <span>Tên hàng hóa, dịch vụ</span>
+                                {{#if english}}<br /><i style="font-size: 16px;font-weight: 400;">(Description)</i>{{/if}}
+                              </th>
+                              <th style="width: 50px;">
+                                <span>Đơn vị tính</span>
+                                {{#if english}}<br /><i style="font-size: 16px;font-weight: 400;">(Unit)</i>{{/if}}
+                              </th>
+                              <th style="width: 70px;">
+                                <span>Số lượng</span>
+                                {{#if english}}<br /><i style="font-size: 16px;font-weight: 400;">(Quantity)</i>{{/if}}
+                              </th>
+                              <th style="width: 115px;">
+                                <span>Đơn giá</span>
+                                {{#if english}}<br /><i style="font-size: 16px;font-weight: 400;">(Unit price)</i>{{/if}}
+                              </th>
+                              <th style="width: 145px;">
+                                <span>Thành tiền</span>
+                                {{#if english}}<br /><i style="font-size: 16px;font-weight: 400;">(Amount)</i>{{/if}}
+                              </th>
+                            </tr>
+                            <tr style="font-size:13px;">
+                              <th class="h2" style="line-height:25px;font-weight:700;">
+                                1
+                              </th>
+                              <th class="h2" style="font-weight:700;">
+                               2
+                              </th>
+                              <th class="h2" style="font-weight:700;">
+                               3
+                              </th>
+                              <th class="h2" style="font-weight:700;">
+                                4
+                              </th>
+                              <th class="h2" style="font-weight:700;">
+                                5
+                              </th>
+                              <th class="h2" style="font-weight:700;">
+                                6 = 4 x 5
+                              </th>
+                            </tr>
+                            <xsl:for-each select="..//../Products/Product[  ($level1Count  + 10)  >= position() and  position() >  $level1Count]">
+                              <tr class="noline back">
+                                <td class="back-bold2" style="text-align:center;">
+                                  <div style="display: block;">
+                                    <xsl:value-of select="position() + $level1Count"/>
+                                  </div>
+                                </td>
+                                <td class="back-bold2"><!--Tên hàng hóa, dịch vụ-->
+                                  <div style="display: block;word-wrap: break-word;text-align: left;overflow: hidden;">
+                                    <xsl:value-of select="ProdName"/>
+                                  </div>
+                                </td>
+                                <td class="back-bold2"><!--Đơn vị tính-->
+                                  <div style="display: block;word-wrap: break-word;text-align: center;  overflow: hidden;">
+                                    <xsl:value-of select="ProdUnit"/>
+                                  </div>
+                                </td>
+                                <td class="back-bold2"><!--Số lượng-->
+                                  <div style="display: block;word-wrap: break-word;text-align: center;  overflow: hidden;">
+                                    <xsl:choose>
+                                      <xsl:when test="(ProdQuantity='') or(ProdQuantity=0)">
+                                        &#160;
+                                      </xsl:when>
+                                      <xsl:otherwise>
+                                        <!-- fix new-->
+                                        <xsl:value-of select="translate(translate(translate(format-number(translate(ProdQuantity,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                      </xsl:otherwise>
+                                    </xsl:choose>
+                                  </div>
+                                </td>
+                                <td class="back-bold2"><!--Đơn giá-->
+                                  <div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
+                                    <xsl:choose>
+                                      <xsl:when test="(ProdPrice='') or(ProdPrice=0)">
+                                        &#160;
+                                      </xsl:when>
+                                      <xsl:otherwise>
+                                        <!-- fix new-->
+                                        <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                      </xsl:otherwise>
+                                    </xsl:choose>
+                                  </div>
+                                </td>
+                                <td class="back-bold2"><!--Thành tiền-->
+                                  <div style="display: block;word-wrap: break-word;text-align: right; overflow: hidden;">
+                                    <xsl:choose>
+                                      <xsl:when test="(Amount=0) or(Amount='')">
+                                        &#160;
+                                      </xsl:when>
+                                      <xsl:otherwise>
+                                        <!-- fix new-->
+                                        <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                      </xsl:otherwise>
+                                    </xsl:choose>
+                                  </div>
+                                </td>
+                              </tr>
+
+
+                              <xsl:if test="(position() + $level1Count)= $itemCount">
+                                <xsl:if test="($itemCount mod 10) != 0">
+                                  <xsl:call-template name="addLine">
+                                    <xsl:with-param name="count" select="10- ($itemCount mod 10)"/>
+                                  </xsl:call-template>
+                                </xsl:if>
+
+                                <tr  class="noline back" style="border-top: 1px solid {{cssColor}};">
+                                  <td class="back-bold" colspan="5" style="padding-left: 0px;text-align: right!important;border-bottom:none !important;border-right: 1px solid {{cssColor}}">
+                                    <label style="">
+                                      <span style="font-weight:bold;font-size:16px;">Cộng tiền hàng{{#if english}} <i style="font-size: 16px;font-weight:normal;">(Sub total)</i>{{/if}}:</span>
+                                    </label>
+                                  </td>
+                                  <td style="text-align: right; border-left:none !important">
+                                    <label class="fl-l input-name" style="float: right;width:100%; font-weight: 700;">
+                                      <xsl:choose>
+                                        <xsl:when test="(../../Total!='' and ../../Total!=0)">
+                                          <!-- fix new-->
+                                          &#160;  <xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                          &#160;
+                                        </xsl:otherwise>
+                                      </xsl:choose>
+                                    </label>
+                                  </td>
+                                </tr>
+                                <tr class="noline back" style="border-top: 1px solid {{cssColor}}; ">
+                                  <td class="back-bold" colspan="5" style="text-align: right; border-right: 1px solid {{cssColor}}">
+                                    <label class="fl-l" style="line-height:20px; text-align:left;">
+                                      <span style="font-weight:bold;font-size:16px">Thuế GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Rate)</i>{{/if}}:</span>
+                                      <xsl:choose>
+                                        <xsl:when test="../../VAT_Rate!=''">
+                                        <xsl:choose>
+                                          <xsl:when test="../../VAT_Rate!='-1' ">
+                                          &#160; <xsl:value-of select="../../VAT_Rate"/>%
+                                          </xsl:when>
+                                          <xsl:otherwise>
+                                          &#160;/
+                                          </xsl:otherwise>
+                                        </xsl:choose>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                        &#160; %
+                                        </xsl:otherwise>
+                                      </xsl:choose>                                      
+                                    </label>
+                                    <label class="fl-l" style="line-height:20px; float:right">
+                                        <span style="font-weight:bold;font-size:16px;text-align: right!important">Tiền thuế GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Amount)</i>{{/if}}:</span>
+                                    </label>
+                                  </td>
+                                  <td style="border-left: 0;">
+                                    <label class="fl-l input-name" style="float: right!important;width:100%;; text-align: right; font-weight: 700">
+                                      <xsl:choose>
+                                        <xsl:when test="../../VAT_Amount='0'">
+                                          <xsl:choose>
+                                            <xsl:when test="../../VAT_Rate='-1'">
+                                              &#160;/
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                              0
+                                            </xsl:otherwise>
+                                          </xsl:choose>
+                                        </xsl:when>
+
+                                        <xsl:when test="../../VAT_Amount!=''">
+                                          <!-- fix new-->
+                                          <xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                          &#160;
+                                        </xsl:otherwise>
+                                      </xsl:choose>
+                                      
+                                    </label>
+                                  </td>
+                                </tr>
+                                <tr class="noline back" style="border-top: 1px solid {{cssColor}}; border-bottom: 1px solid {{cssColor}};">
+                                  <td class="back-bold" style="text-align: left; border-right: 1px solid {{cssColor}}" colspan="5">
+                                    <label style="line-height:20px;float: right!important;font-size:16px;">
+                                      <span><b>TỔNG CỘNG TIỀN THANH TOÁN{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Total payment)</i>{{/if}}:</b></span>
+                                    </label>
+                                  </td>
+                                  <td  colspan="3" style="border-left: 0;">
+                                    <label class="fl-l input-name" style="float: right;width: 100%;text-align: right; font-weight: 700">
+                                      <xsl:choose>
+                                        <xsl:when test="(../../Amount!='' and ../../Amount!=0)">
+                                          <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                          &#160;
+                                        </xsl:otherwise>
+                                      </xsl:choose>
+                                    </label>
+                                  </td>
+                                </tr>
+                                <tr class="noline back" style="border-top: 1px solid {{cssColor}}; border-bottom: 1px solid {{cssColor}};">
+                                  <td colspan="6" style="padding-right: 0px;padding-top: 8px; padding-bottom: 4px;">
+                                    <div class="clearfix">
+                                      <label class="fl-l2">
+                                        <span style="font-weight:bold;font-size:16px;">Số tiền viết bằng chữ{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>{{/if}}:</span>
+                                      </label>
+                                      <label class="fl-l input-name" style="width:529px; text-align: left; font-weight: 700">
+                                        <xsl:choose>
+                                          <xsl:when test="../../Amount_words!=''">
+                                            &#160;  <xsl:value-of select="../../Amount_words"/>
+                                          </xsl:when>
+                                          <xsl:otherwise>
+                                            &#160;
+                                          </xsl:otherwise>
+                                        </xsl:choose>
+                                      </label>
+                                    </div>
+                                  </td>
+                                </tr>
+								<!--variable-->
+								<xsl:variable name="serial">
+									<xsl:value-of select="SerialNo"/>
+								</xsl:variable>
+								<xsl:variable name="pattern">
+									<xsl:value-of select="InvoicePattern"/>
+								</xsl:variable>
+								<xsl:variable name="invno">
+									<xsl:value-of select="InvoiceNo"/>
+								</xsl:variable>
+								<!---->
+                                <tr  class="noline back" style="border-bottom: 1px solid {{cssColor}};">
+                                  <td colspan="6" style="padding-top:10px;">
+                                    <table style="width:100%;">
+										<tr>
+											<td style="border: none;width: 333px;vertical-align: top;text-align:center;color: #08086B;">
+												<p style="font-size:16px; margin-top:0;margin-bottom: 0;">
+													<b>
+													Người mua hàng
+													</b>
+                          {{#if english}}<i style="font-size: 100%;">(Buyer)</i>{{/if}}
+												</p>
+												<xsl:choose>
+													<xsl:when test="/Invoice/imageClient != '' ">
+														<div class="bgimg" style="background:url({/Invoice/imageClient/@URI}) no-repeat center left; height: 83px;width:295px;border:none;background-color:#DFF0D8;" onclick="showDialog('dialogClient','{$serial}','{$pattern}','{$invno}',1,'messClt','ic')">
+															<p style="margin-top:3px;margin-bottom:5px;font-size:12px">
+																<xsl:value-of select="/Invoice/imageClient"/>
+															</p>
+															<p style="font-size:12px;">
+															Ký bởi:
+																<xsl:value-of select="/Invoice/CNCus"/>
+																<br/> Ký ngày:
+																<xsl:value-of select="/Invoice/Date"/>
+															</p>
+														</div>
+													</xsl:when>
+												</xsl:choose>
+											</td>
+											<!--panel TVAN-->
+											<td style="border: none;width: 333px;vertical-align: top;">
+												<xsl:choose>
+													<xsl:when test="/Invoice/convert!=''">
+														<div style="text-align:center;padding-top:1px;color: #08086B;">
+															<div>
+																<label style="font-size:11px">
+																	<b>
+																		<!--<xsl:value-of select="/Invoice/convert"/>-->
+																HÓA ĐƠN CHUYỂN ĐỔI TỪ HÓA ĐƠN ĐIỆN TỬ
+																	</b>
+																</label>
+																<p style="font-size:11px; margin:0px">
+																Ngày <b>
+																		<xsl:value-of select="substring(/Invoice/ConvertDate,1,2)"/>
+																	</b> tháng <b>
+																		<xsl:value-of select="substring(/Invoice/ConvertDate,4,2)"/>
+																	</b> năm <b>
+																		<xsl:value-of select="concat('20',substring(/Invoice/ConvertDate,9,2))"/>
+																	</b>
+																</p>
+																<p style="font-size:11px; margin:0px">
+																Người chuyển đổi
+																</p>
+                                {{#if english}}
+                                <i>
+																(Signature of converter)
+                                </i>
+                                {{/if}}
+																<p style="margin-top:20px">
+																	<xsl:value-of select="/Invoice/ConvertBy"/>
+																</p>
+																<!--<p style="font-size:14px; margin:0px">
+															Thủ trưởng đơn vị
+															</p>-->
+															</div>
+														</div>
+													</xsl:when>
+												</xsl:choose>
+											</td>
+											<!--panel server-->
+											<td style="border: none;width: 343px;vertical-align: top;text-align:center;color: #08086B;">
+												<p style="font-size:16px; margin-top:0;margin-bottom: 0;">
+													<b>
+													Người bán hàng
+													</b>
+                          {{#if english}}<i style="font-size: 100%;">(Seller)</i>{{/if}}
+												</p>
+												{{>sign arising=true}}
+											</td>
+										</tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </xsl:if>
+                            </xsl:for-each>
+                            <!-- </xsl:for-each> -->
+                          </tbody>
+                        </table>
+                        <div class="nenhd_bg"> &#160; </div>
+                      </div>
+            <xsl:choose>
+              <xsl:when test="/Invoice/Fkey !=''">							
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                  <p style="margin:0px;">
+                    <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    nhập mã: <xsl:value-of select="/Invoice/Fkey"/> để lấy hoá đơn</span>
+                    <br/>
+                    <i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    with code: <xsl:value-of select="/Invoice/Fkey"/> to get your invoice.)</i>
+                  </p>
+                </div>
+              </xsl:when>
+              <xsl:otherwise>
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                  <p style="margin:0px;">
+                    <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    nhập mã: để lấy hoá đơn</span>
+                    <br/>
+                    <i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> with code: to get your invoice.)</i>
+                  </p>
+                </div>
+              </xsl:otherwise>
+            </xsl:choose>
+            <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed;width:811px;">
+              <p style="margin:0px;">
+                <span>Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu- Chi nhánh Tổng công ty Dịch vụ Viễn thông
+                <br/>
+                MST: 0106869738-044, Hotline đăng ký dịch vụ: 0913 759 468</span>
+              </p>
+            </div>
+            <p style="page-break-after: always"/>
+                      <!--panel footer-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </xsl:for-each>
+          </div>
+          <div class="clearfix" id="bt"> &#160; </div>
+        </center>
+      </body>
+      <!-- <script> -->
+        <!-- ShowCurrentPage(); -->
+      <!-- </script> -->
+
+    </html>
+    
+  </xsl:template>
+
+</xsl:stylesheet>
+{{>bodyxml}}
+{{>bodyhtml}}
+{{/with}}
