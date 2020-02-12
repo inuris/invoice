@@ -1,0 +1,93 @@
+comCode: aladanh
+comSerial: AL
+comName: CÔNG TY TNHH A LA ĐANH
+comTaxCode: 3500812774
+comAddress: Số 06 Yên Bái, Phường 4, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+english: true
+#global style
+cssFontFamily: Arial
+cssColor: "#111"
+#logo : file, width, top, left
+logo:
+  file: logo.png
+  width: 124
+  top: 5
+  left: 25
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 300
+  height: 306
+  top: 80
+  left: 315
+#header
+header:
+  logo: 
+    width: 100
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 21px; color: red"
+    sub: VAT INVOICE
+    subStyle: "font-size: 21px; color: red"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: bold; font-size: 14px; line-height: 24px;"
+    sub: Electronic Invoice Display    
+#comInfo Table
+comInfo:
+  style: "color:#111;font-size: 14px;"
+  margin: 6
+  labelWidth:
+  isInput:
+  subStyle: "font-size: 100%"
+  row:
+  - code: ComName
+    style: "color:#111; font-weight: bold; font-size: 18px; font-family: Arial"
+  - label: Mã số thuế
+    code: ComTaxCode
+    style: "font-weight: bold;"
+    valueStyle: "letter-spacing: 2px; "
+    subStyle: "font-weight: bold;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Điện thoại
+    value: "0254 3543042 / 6254086 - Fax: 0254 3543044"
+    sub: Tel  
+  - label: Số tài khoản VND 
+    sub: A/C No
+    value: 
+#cusInfo Table
+cusInfo:
+  style:
+  labelWidth: 
+  isInput: 
+  subStyle: "font-size: 100%"
+  margin: 8
+  row:
+  - label: Họ tên người mua hàng
+    width: 638
+    code: Buyer
+    sub: Customer
+  - label: Tên đơn vị
+    width: 710
+    code: CusName
+    sub: Company
+  - label: Mã số thuế
+    width: 713
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 739
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 185
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of payment
+    col-2:
+      - label: Số tài khoản
+        width: 273
+        code: CusBankNo
+        sub: Bank A/C
