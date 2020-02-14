@@ -56,7 +56,7 @@ comInfo:
     sub: Tel  
   - label: Số tài khoản VND 
     sub: A/C No
-    value: 
+    value: 5511100827002 Tại Ngân hàng TMCP Quân Đội - CN Vũng Tàu
 #cusInfo Table
 cusInfo:
   style:

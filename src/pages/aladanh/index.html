@@ -345,9 +345,9 @@
 		</table>
 	</xsl:template>
 	<xsl:template name="addsecondbody">
-		<table class="customerInfo" style="border-top: 1px solid {{cssColor}}; padding-top: 8px;">
+		<table class="customerInfo" style="border-top: 1px solid {{cssColor}};">
 			<tr>
-				<td>
+				<td style="padding-top: 8px;">
 					{{>info data=cusInfo}}
 				</td>
 			</tr>
@@ -799,20 +799,39 @@
 		</div>
 	</xsl:template>
 	<xsl:template name="add_vnpt_introduction">
-		<div style="font-size:13px;text-align: center; margin:0px auto;">
-			<b style="color:black;">Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b style="color:black;">Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - Hotline đăng ký dịch vụ: 0913759468
-		</div>
+		<center>
 		<xsl:choose>
-			<xsl:when test="/Invoice/Fkey !=''">
-				<div style="font-size:13px;text-align: center; margin:5px auto;">
-					Hóa đơn Điện tử (HĐĐT) được tra cứu trực tuyến tại https://portaltool-miennam.vnpt-invoice.com.vn/.
-					<br/>Mã tra cứu HĐĐT này: <b style="color:black;"><xsl:value-of select="/Invoice/Fkey"/></b>
-				</div>
-			</xsl:when>
-		</xsl:choose>
-		<div style="margin:0px auto; margin-top:2px; ">
-			<div class="clearfix" id="bt" style="margin:0px auto;"/>
-		</div>
+              <xsl:when test="/Invoice/Fkey !=''">							
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                  <p style="margin:0px;">
+                    <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    nhập mã: <xsl:value-of select="/Invoice/Fkey"/> để lấy hoá đơn</span>
+                    <br/>
+                    <i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    with code: <xsl:value-of select="/Invoice/Fkey"/> to get your invoice.)</i>
+                  </p>
+                </div>
+              </xsl:when>
+              <xsl:otherwise>
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                  <p style="margin:0px;">
+                    <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    nhập mã: để lấy hoá đơn</span>
+                    <br/>
+                    <i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> with code: to get your invoice.)</i>
+                  </p>
+                </div>
+              </xsl:otherwise>
+            </xsl:choose>
+            <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed;width:811px;">
+              <p style="margin:0px;">
+                <span>Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu- Chi nhánh Tổng công ty Dịch vụ Viễn thông
+                <br/>
+                MST: 0106869738-044, Hotline đăng ký dịch vụ: 0913 759 468</span>
+              </p>
+			</div>
+		</center>
+        <p style="page-break-after: always"/>
 	</xsl:template>
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
