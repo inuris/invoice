@@ -1,0 +1,90 @@
+comCode: maytanmy
+comSerial: TM
+comName: CÔNG TY TNHH MAY TÂN MỸ
+comTaxCode: 3500816433
+comAddress: Khu phố Trảng Cát, Phương Hắc Dịch, Thị xã Phú Mỹ, Tỉnh Bà Rịa - Vũng Tàu
+english: true
+#global style
+cssFontFamily: Arial
+cssColor: "#111"
+#logo : file, width, top, left
+logo:
+  file: logo.png
+  width: 80
+  top: 0
+  left: 10
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 300
+  height: 281
+  top: 100
+  left: 315
+#header
+header:
+  logo: 
+    width: 100
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 21px; color: red"
+    sub: VAT INVOICE
+    subStyle: "font-size: 21px; color: red"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: bold; font-size: 14px; line-height: 24px;"
+    sub: Electronic Invoice Display    
+#comInfo Table
+comInfo:
+  style: "color:#111;font-size: 13.5px;"
+  margin: 6
+  labelWidth:
+  isInput: 
+  subStyle: "font-size: 100%"
+  row:
+  - code: ComName
+    style: "color:#111; font-weight: bold; font-size: 18px; font-family: Times New Roman"
+  - label: Mã số thuế
+    code: ComTaxCode
+    style: "font-weight: bold;"
+    valueStyle: "letter-spacing: 2px; "
+    subStyle: "font-weight: bold;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Số tài khoản
+    sub: Account No.
+    value: 008.100.1002740 tại NH Ngoại Thương Bà Rịa Vũng Tàu - PGD Số 3 Tỉnh Bà Rịa Vũng Tàu
+#cusInfo Table
+cusInfo:
+  style:
+  labelWidth: 
+  isInput: true
+  subStyle: "font-size: 100%"
+  margin: 8
+  row:
+  - label: Họ tên người mua hàng
+    width: 616
+    code: Buyer
+    sub: Customer
+  - label: Tên đơn vị
+    width: 659
+    code: CusName
+    sub: Company name
+  - label: Mã số thuế
+    width: 698
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 729
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 165
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Payment method
+    col-2:
+      - label: Số tài khoản
+        width: 248
+        code: CusBankNo
+        sub: Account No.
