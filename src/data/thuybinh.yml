@@ -1,0 +1,80 @@
+comCode: thuybinh
+comSerial: TB
+comName: CÔNG TY TNHH TM DV THỦY BÌNH
+comTaxCode: 3502391899
+comAddress: 82 Bạch Đằng, Khu Phố 2, Phường Phước Trung, Thành Phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comPhone: 
+comAccount: 
+comBank: 
+#global style
+cssFontFamily: Arial
+cssColor: "#005cb3"
+
+### background: file, width, height, top, left
+background:
+  file: bg.png
+  width: 490
+  height: 78
+  top: 160
+  left: 200
+
+### header: logo, row
+header:
+  logo:
+  # cột đầu chứa logo: file, width, top, left
+  # cột tên HD row: value, style
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: normal; font-size: 14px"
+
+#comInfo Table
+comInfo:
+  margin: 4  
+  labelWidth: 80
+  row:
+  - code: ComName
+    style: "font-weight: bold; font-size: 20px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "font-weight: bold; letter-spacing: 2px;"
+  - label: Địa chỉ
+    code: ComAddress
+    valueStyle: ""
+  - label: Điện thoại
+    width: 320
+    isInput: true    
+    col-2: 
+      - label: Fax
+        labelWidth: 30
+        width: 395
+        isInput: true
+  - label: Số tài khoản
+    width: 750
+    isInput: true
+cusInfo:
+  isInput: true
+  style: "font-size: 16px"
+  valueStyle: "color:#111;"
+  row:
+  - label: Họ tên người mua hàng
+    width: 686
+    code: Buyer
+  - label: Tên đơn vị
+    width: 769
+    code: CusName
+  - label: Mã số thuế
+    width: 768
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 791
+    code: CusAddress
+    valueStyle: "font-size: 15px"
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+      - label: Số tài khoản
+        width: 418
+        code: CusBankNo
