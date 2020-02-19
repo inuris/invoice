@@ -1,4 +1,4 @@
-{{#with noithatvanhoa}}
+{{#with thucphamquynhhoa}}
 <!-- split {{comCode}}.xslt -->
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns="http://www.w3.org/1999/xhtml" xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" version="1.0" exclude-result-prefixes="msxsl js">
@@ -280,6 +280,7 @@
 								</xsl:call-template>
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								
 							</xsl:if>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -328,7 +329,7 @@
 	<xsl:template name="addfirtbody">
 		<table class="headerInfo" style="width:100%;">
 			<tr style="border-bottom:1px solid {{cssColor}};">
-				{{>header}}				
+				{{>header}}		
 			</tr>
 			<tr class="comInfo" style="border-bottom:1px solid {{cssColor}};">
 				<td colspan="3" style="padding-top:7px;">
@@ -410,7 +411,14 @@
 						 
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:value-of select="translate(translate(translate(format-number(ProdQuantity, '###,###.####'),',','?'),'.',','),'?','.')"/>
+							<xsl:choose>
+								<xsl:when test="../../SoVT = '1'">	
+									<xsl:value-of select="format-number(ProdQuantity, '###,##0.00')"/>	
+								</xsl:when>	
+								<xsl:otherwise>	
+									<xsl:value-of select="translate(translate(translate(format-number(ProdQuantity, '###,###.##'),',','?'),'.',','),'?','.')"/>	
+								</xsl:otherwise>	
+							</xsl:choose>
 						</xsl:otherwise>
 					</xsl:choose>
 				</div>
@@ -422,7 +430,7 @@
 						 	&#160;
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:value-of select="translate(translate(translate(format-number(ProdPrice, '###,###.####'),',','?'),'.',','),'?','.')"/>
+							<xsl:value-of select="translate(translate(translate(format-number(ProdPrice, '###,###.##'),',','?'),'.',','),'?','.')"/>
 						</xsl:otherwise>
 					</xsl:choose>
 				</div>

@@ -1,0 +1,69 @@
+comCode: congnghemoihdt
+comSerial: AA
+comName: CÔNG TY TNHH DỊCH VỤ VIỄN THÔNG CÔNG NGHỆ MỚI HDT
+comTaxCode: 3502413302
+comAddress: Số 69 Lê Lợi, Phường Phước Hiệp, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+cssFontFamily: Arial
+cssColor: "#005cb3"
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 199
+  height: 280
+  top: 80
+  left: 340
+#header
+header:
+  #logo
+  logo:
+    file: logo.png
+    width: 111
+    left: 50
+    top: 5
+    bottom: 5
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 27px"
+comInfo:
+ row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: STK
+    width: 180
+    code: ComBankNo
+    isInput: true
+    col-2:
+    - label: tại
+      width: 553
+      code: ComBankName
+      isInput: true
+cusInfo:
+ isInput: true
+ row:
+  - label: Họ tên người mua hàng
+    width: 616
+    code: Buyer
+  - label: Tên đơn vị
+    width: 710
+    code: CusName
+  - label: Mã số thuế
+    width: 708
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 737
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 342
+      code: CusBankNo
