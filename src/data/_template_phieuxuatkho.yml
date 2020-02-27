@@ -4,24 +4,35 @@ comName: CÔNG TY TNHH HIKOSENCARA
 comTaxCode: 3500388324
 comAddress: Khu CN Đông Xuyên, Phường Rạch Dừa, Thành Phố Vũng Tàu
 cssFontFamily: Arial
-cssColor: "#005cb3"
+cssColor: "#00a651"
+#logo
+logo:
+  file: logo.png
+  width: 150
+background:
+  file: bg.png
+  width: 474
+  height: 165
+  top: 530
+  left: 175
 #header
 header:
   #logo
   logo:
     width: 150
   name:
-  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "font-size: 27px"
+    - value: PHIẾU XUẤT KHO KIÊM VẬN CHUYỂN NỘI BỘ
+  serial:
+    - style: "color: #00a651"
 comInfo:
  row:
   - valueStyle: "font-weight: bold; font-size: 20px"
     code: ComName
+  - label: Địa chỉ
+    code: ComAddress
   - label: Mã số thuế
     valueStyle: "font-weight: bold"
     code: ComTaxCode
-  - label: Địa chỉ
-    code: ComAddress
 cusInfo:
  isInput: true
  margin: 6

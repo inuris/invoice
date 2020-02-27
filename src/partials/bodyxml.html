@@ -53,6 +53,9 @@
 			<VATRate/>
 			<VATAmount/>
 			<Amount>38000000</Amount>
+			{{#each xml-product}}
+			<{{this}}/>
+			{{/each}}
 		</Product>
 	</Products>
 	<Extra/>
@@ -104,6 +107,9 @@
 			<VATRate/>
 			<VATAmount/>
 			<Amount/>
+			{{#each xml-product}}
+			<{{this}}/>
+			{{/each}}
 		</Product>
 	</Products>
 	<Extra/>
