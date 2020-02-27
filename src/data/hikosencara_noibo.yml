@@ -1,0 +1,111 @@
+comCode: hikosencara_noibo
+comPattern: 03XKNB3/001
+comSerial: HC
+comName: CÔNG TY TNHH HIKOSEN CARA
+comTaxCode: 3500388234
+comAddress: Khu công nghiệp Đông Xuyên, Phường Rạch Dừa, Thành Phố Vũng Tàu, tỉnh Bà Rịa - Vũng Tàu
+cssFontFamily: Arial
+cssColor: "#00a651"
+xml:
+  - DocNo
+  - Extra
+  - DocDate
+  - DieuDongNgay
+  - ShippingAddress
+  - DieuDongCua
+  - DocWork
+  - VeViec
+  - ContractNumber
+  - Extra1
+  - DocShipper
+  - NguoiVanChuyen
+  - DocVehicle
+  - PhuongTienVC
+  - DocExport
+  - XuatTaiKho
+  - DocImport
+  - NhapTaiKho
+  - TotalQuantity
+  - SellerBankCode
+xml-product:
+  - Extra1
+#logo
+logo:
+  file: logo.png
+  width: 150
+background:
+  file: bg.png
+  width: 474
+  height: 165
+  top: 525
+  left: 182
+#header
+header:
+  #logo
+  logo:
+    width: 150
+  name:
+    - value: PHIẾU XUẤT KHO KIÊM VẬN CHUYỂN NỘI BỘ
+  serial:
+    - style: "color: #00a651"
+comInfo:
+ row:
+  - valueStyle: "font-weight: bold; font-size: 20px"
+    code: ComName
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+cusInfo:
+ isInput: true
+ margin: 6
+ row:
+  - label: Căn cứ lệnh điều động số
+    width: 364
+    code: Extra
+    codeElse: DocNo
+    col-2: 
+    - label: Ngày
+      width: 37
+      code: DieuDongNgay
+      codeValue: substring(DieuDongNgay,1,2)
+      codeElse: substring(DocDate,1,2)
+    - label: tháng
+      width: 37
+      code: DieuDongNgay
+      codeValue: substring(DieuDongNgay,4,2)
+      codeElse: substring(DocDate,4,2)
+    - label: năm
+      width: 135
+      code: DieuDongNgay
+      codeValue: substring(DieuDongNgay,7,4)
+      codeElse: substring(DocDate,7,4)
+  - label: của
+    width: 300
+    code: DieuDongCua
+    codeElse: ShippingAddress
+    col-2:
+    - label: về việc
+      width: 448
+      code: CusCom
+  - label: Họ tên người vận chuyển
+    width: 365
+    code: CusName
+    codeElse: DocShipper
+    col-2:
+    - label: Hợp đồng số
+      width: 223
+      code: ContractNumber
+  - label: Phương tiện vận chuyển
+    width: 666
+    code: PhuongTienVC
+    codeElse: DocVehicle
+  - label: Xuất tại kho
+    width: 740
+    code: XuatTaiKho
+    codeElse: DocExport
+  - label: Nhập tại kho
+    width: 736
+    code: NhapTaiKho
+    codeElse: DocImport
