@@ -400,15 +400,13 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                 <div  class ="pagecurrent" id="page_{position()}">
                   <div style="width:816!important">
                     <div class="statistics"  style="float:left;">
-                      <div style="font-size:12px;border-bottom:1px dashed {{cssColor}}; width:826px; text-align: center; color: {{cssColor}};margin-bottom: 2px;">
-                        Đơn vị cung cấp giải pháp hóa đơn điện tử: Tổng Công ty Dịch vụ Viễn thông - VNPT Vinaphone, MST:0106869738, Điện thoại:18001260
-                      </div>
+                      
                       <div class="nenhd" style="margin-bottom: 10px!important;">
                         <table width="100%" cellspacing="0" cellpadding="0" border="0" style="width:816!important;">
                           <thead>
                             <!--<xsl:copy-of select="$header" />-->
                             <xsl:for-each select="/Invoice//Content">
-                              <tr style="border-top: 1px solid {{cssColor}};background-color: white!important;">
+                              <tr style="background-color: white!important;">
                                 <td colspan="7" style="padding-left: 0px!important;padding-right: 0px!important;">
                                   <table cellspacing="0" cellpadding="0"  style="width:824px!important">
                                     <tr>
@@ -698,17 +696,37 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 </tr>
 								<tr>
 									<td colspan="7" style="border:none !important;">
-										<div style="font-size:12px;text-align: center; margin:0px auto; padding-top:2px; color:{{cssColor}}">
-                    <b style="color:{{cssColor}}">Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b style="color:{{cssColor}}">Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0913 759 468
-										</div>
 										<xsl:choose>
-											<xsl:when test="/Invoice/Fkey !=''">
-												<div style="font-size:13px;text-align: center; margin:5px auto; color:{{cssColor}}">
-													Hóa đơn Điện tử (HĐĐT) được tra cứu trực tuyến tại https://portaltool-miennam.vnpt-invoice.com.vn/.
-													<br/>Mã tra cứu HĐĐT này: <b style="color:{{cssColor}}"><xsl:value-of select="/Invoice/Fkey"/></b>
-												</div>
-											</xsl:when>
-										</xsl:choose>
+              <xsl:when test="/Invoice/Fkey !=''">							
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                  <p style="margin:0px;">
+                    <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    nhập mã: <xsl:value-of select="/Invoice/Fkey"/> để lấy hoá đơn</span>
+                    <br/>
+                    <i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    with code: <xsl:value-of select="/Invoice/Fkey"/> to get your invoice.)</i>
+                  </p>
+                </div>
+              </xsl:when>
+              <xsl:otherwise>
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                  <p style="margin:0px;">
+                    <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
+                    nhập mã: để lấy hoá đơn</span>
+                    <br/>
+                    <i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> with code: to get your invoice.)</i>
+                  </p>
+                </div>
+              </xsl:otherwise>
+            </xsl:choose>
+            <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed;width:811px;">
+              <p style="margin:0px;">
+                <span>Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu- Chi nhánh Tổng công ty Dịch vụ Viễn thông
+                <br/>
+                MST: 0106869738-044, Hotline đăng ký dịch vụ: 0913 759 468</span>
+              </p>
+            </div>
+            <p style="page-break-after: always"/>
 									</td>
 								</tr>
                               </xsl:if>
