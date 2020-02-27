@@ -1,0 +1,79 @@
+comCode: _template_phieuxuatkho
+comSerial: HC
+comName: CÔNG TY TNHH HIKOSENCARA
+comTaxCode: 3500388324
+comAddress: Khu CN Đông Xuyên, Phường Rạch Dừa, Thành Phố Vũng Tàu
+cssFontFamily: Arial
+cssColor: "#005cb3"
+#header
+header:
+  #logo
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 27px"
+comInfo:
+ row:
+  - valueStyle: "font-weight: bold; font-size: 20px"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+cusInfo:
+ isInput: true
+ margin: 6
+ row:
+  - label: Căn cứ hợp đồng kinh tế số
+    width: 350
+    code: Extra
+    codeElse: DocNo
+    col-2: 
+    - label: Ngày
+      width: 37
+      code: DieuDongNgay
+      codeValue: substring(DieuDongNgay,1,2)
+      codeElse: substring(DocDate,1,2)
+    - label: tháng
+      width: 37
+      code: DieuDongNgay
+      codeValue: substring(DieuDongNgay,4,2)
+      codeElse: substring(DocDate,4,2)
+    - label: năm
+      width: 135
+      code: DieuDongNgay
+      codeValue: substring(DieuDongNgay,7,4)
+      codeElse: substring(DocDate,7,4)
+  - label: của
+    width: 200
+    code: DieuDongCua
+    codeElse: ShippingAddress
+    col-2:
+    - label: với (tổ chức, cá nhân)
+      width: 234
+      code: CusCom
+    - label: MST
+      width: 200
+      code: CusTaxcode
+  - label: Họ tên người vận chuyển
+    width: 365
+    code: CusName
+    codeElse: DocShipper
+    col-2:
+    - label: Hợp đồng số
+      width: 223
+      code: ContractNumber
+  - label: Phương tiện vận chuyển
+    width: 666
+    code: PhuongTienVC
+    codeElse: DocVehicle
+  - label: Xuất tại kho
+    width: 740
+    code: XuatTaiKho
+    codeElse: DocExport
+  - label: Nhập tại kho
+    width: 736
+    code: NhapTaiKho
+    codeElse: DocImport

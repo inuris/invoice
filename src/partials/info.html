@@ -49,11 +49,19 @@
                             {{#if this.isPayment}}
                                 {{> payment relative=relative}}
                             {{else}}
+                                {{#if this.codeValue}}
+                                <xsl:value-of select="{{this.codeValue}}" />
+                                {{else}}
                                 <xsl:value-of select="{{#unless relative}}../../{{/unless}}{{this.code}}" />
+                                {{/if}}
                             {{/if}}
                         </xsl:when>
                         <xsl:otherwise>
+                            {{#if this.codeElse}}                            
+                            <xsl:value-of select="{{this.codeElse}}" />
+                            {{else}}
                             &#160;
+                            {{/if}}
                         </xsl:otherwise>
                     </xsl:choose>
                 {{/if}}
