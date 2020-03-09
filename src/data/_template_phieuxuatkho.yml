@@ -3,8 +3,10 @@ comSerial: HC
 comName: CÔNG TY TNHH HIKOSENCARA
 comTaxCode: 3500388324
 comAddress: Khu CN Đông Xuyên, Phường Rạch Dừa, Thành Phố Vũng Tàu
+comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#00a651"
+
 #logo
 logo:
   file: logo.png

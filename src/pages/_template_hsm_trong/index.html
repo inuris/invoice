@@ -1,0 +1,1292 @@
+{{#with _template_hsm_trong}}
+<!-- split {{comCode}}.xslt -->
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns="http://www.w3.org/1999/xhtml" xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" version="1.0" exclude-result-prefixes="msxsl js">
+	<xsl:variable name="itemsPerPage">
+		<xsl:value-of select="10"/>
+	</xsl:variable>
+	<xsl:variable name="itemCount">
+		<xsl:value-of select="count(Invoice//Content//Products//Product)"/>
+	</xsl:variable>
+	<xsl:variable name="pagesNeeded">
+		<xsl:choose>
+			<xsl:when test="$itemCount &lt;= $itemsPerPage">
+				<xsl:value-of select="1"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:choose>
+					<xsl:when test="$itemCount mod $itemsPerPage = 0">
+						<xsl:value-of select="$itemCount div $itemsPerPage"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="ceiling($itemCount div $itemsPerPage)"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+	<xsl:template name="addZero">
+		<xsl:param name="count"/>
+		<xsl:if test="$count &gt; 0">
+			<xsl:text>0</xsl:text>
+			<xsl:call-template name="addZero">
+				<xsl:with-param name="count" select="$count - 1"/>
+			</xsl:call-template>
+		</xsl:if>
+	</xsl:template>
+	<xsl:template name="addDots">
+		<xsl:param name="val"/>
+		<xsl:param name="val1"/>
+		<xsl:param name="val2"/>
+		<xsl:param name="i" select="1"/>
+		<xsl:if test="$val1&gt;0">
+			<xsl:choose>
+				<xsl:when test="$val2 !=0">
+					<xsl:value-of select="substring($val,$i,$val2)"/>
+					<xsl:if test="substring($val,$i+$val2+1,1) !=''">
+						<xsl:text>.</xsl:text>
+					</xsl:if>
+					<xsl:call-template name="addDots">
+						<xsl:with-param name="val" select="$val"/>
+						<xsl:with-param name="val1" select="$val1 - 1"/>
+						<xsl:with-param name="i" select="$i + $val2"/>
+						<xsl:with-param name="val2" select="3"/>
+					</xsl:call-template>
+				</xsl:when>
+				<xsl:otherwise>
+					<!--<xsl:text>test</xsl:text>-->
+					<xsl:value-of select="substring($val,$i,3)"/>
+					<xsl:if test="substring($val,$i+3,1) !=''">
+						<xsl:text>.</xsl:text>
+					</xsl:if>
+					<xsl:call-template name="addDots">
+						<xsl:with-param name="val" select="$val"/>
+						<xsl:with-param name="val1" select="$val1 - 1"/>
+						<xsl:with-param name="i" select="$i + 3"/>
+						<xsl:with-param name="val2" select="3"/>
+					</xsl:call-template>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+	</xsl:template>
+	<xsl:template name="addLine">
+		<xsl:param name="count"/>
+		<xsl:if test="$count &gt; 0">
+			<tr class="noline back">
+				<td class="back-bold">
+					<xsl:value-of select="''"/>
+				</td>
+				<td class="back-bold">
+					<xsl:value-of select="''"/>
+				</td>
+				<td class="back-bold">
+					<xsl:value-of select="''"/>
+				</td>
+				<td class="back-bold">
+					<xsl:value-of select="''"/>
+				</td>
+				<td class="back-bold">
+					<xsl:value-of select="''"/>
+				</td>
+				<td class="back-bold">
+					<xsl:value-of select="''"/>
+				</td>
+			</tr>
+			<xsl:call-template name="addLine">
+				<xsl:with-param name="count" select="$count - 1"/>
+			</xsl:call-template>
+		</xsl:if>
+	</xsl:template>
+	<xsl:template name="findSpaceChar">
+		<xsl:param name="str"/>
+		<xsl:variable name="strLength">
+			<xsl:value-of select="string-length($str)"/>
+		</xsl:variable>
+		<xsl:if test="$strLength &gt; 0">
+			<xsl:choose>
+				<xsl:when test="substring($str, $strLength) != ' '">
+					<xsl:call-template name="findSpaceChar">
+						<xsl:with-param name="str" select="substring($str, 1, $strLength - 1)"/>
+					</xsl:call-template>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$strLength"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:if>
+	</xsl:template>
+	<xsl:template name="tempAmount_words">
+		<xsl:param name="str"/>
+		<xsl:variable name="strLength">
+			<xsl:value-of select="string-length($str)"/>
+		</xsl:variable>
+		<xsl:variable name="row1Length">
+			<xsl:value-of select="88"/>
+		</xsl:variable>
+		<xsl:choose>
+			<xsl:when test="$strLength &gt; $row1Length">
+				<xsl:variable name="str0">
+					<xsl:value-of select="substring($str, 1, $row1Length)"/>
+				</xsl:variable>
+				<xsl:variable name="spaceCharPosition">
+					<xsl:call-template name="findSpaceChar">
+						<xsl:with-param name="str" select="$str0"/>
+					</xsl:call-template>
+				</xsl:variable>
+				<xsl:variable name="str1">
+					<xsl:value-of select="substring($str0, 1, $spaceCharPosition)"/>
+				</xsl:variable>
+				<xsl:variable name="str2">
+					<xsl:value-of select="substring($str, $spaceCharPosition + 1)"/>
+				</xsl:variable>
+				<div class="clearfix">
+					<label class="fl-l" style="font-weight:normal; padding-left:10px;">
+						<span style="font-weight:bold;font-size:16px;">Số tiền viết bằng chữ <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>:</span>
+					</label>
+					<label class="fl-l input-name" style="width:530px;height:17px;min-width: 100px;display: block;">
+						<xsl:value-of select="$str1"/>
+					</label>
+				</div>
+				<div class="clearfix" style="padding-bottom:5px;">
+					<label class="fl-l input-name" style="width:789px;height:17px;min-width: 100px;display: block;margin-left:10px;">
+						<xsl:value-of select="$str2"/>
+					</label>
+				</div>
+			</xsl:when>
+			<xsl:otherwise>
+				<div class="clearfix">
+					<label class="fl-l" style="font-weight:normal;padding-left:10px;padding-top:6px;">
+						<span style="font-weight:bold;font-size:16px;">Số tiền viết bằng chữ <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>:</span>
+					</label>
+					<label class="fl-l input-name" style="width:530px;height:17px;min-width: 100px;display: block;padding-top:6px;">
+						<xsl:value-of select="$str"/>
+					</label>
+				</div>
+				<div class="clearfix" style="padding-bottom:5px;">
+					<label class="fl-l input-name" style="width:789px;height:17px;min-width: 100px;display: block;margin-left:10px;"/>
+				</div>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<xsl:variable name="countExtra1">
+		<xsl:choose>
+			<xsl:when test="Extra2!=''">
+				<xsl:value-of select="count(Extra1)"/>
+			</xsl:when>
+			<xsl:otherwise>
+					 0
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+	<xsl:variable name="countExtra2">
+		<xsl:choose>
+			<xsl:when test="Extra2!=''">
+				<xsl:value-of select="count(Extra2)"/>
+			</xsl:when>
+			<xsl:otherwise>
+					 0
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+	<xsl:variable name="counttyGia">
+		<xsl:choose>
+			<xsl:when test="../../ExchangeRate!=''">
+				<xsl:value-of select="count(../../ExchangeRate)"/>
+			</xsl:when>
+			<xsl:otherwise>
+					 0
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+	<xsl:template name="main">
+		<xsl:param name="pagesNeededfnc"/>
+		<xsl:param name="itemCountfnc"/>
+		<xsl:param name="itemNeeded"/>
+		<xsl:for-each select="Products//Product">
+			<xsl:choose>
+				<!-- Vị trí dòng product đầu mỗi trang -->
+				<xsl:when test=" position() mod $itemNeeded = 1">
+					<xsl:choose>
+						<!-- Dòng product đầu tiên của trang đầu -->
+						<xsl:when test="position()=1">
+							<xsl:text disable-output-escaping="yes">&lt;div class="pagecurrent" id="1"&gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 1px solid;margin: 0 auto;width:810px;" &gt;</xsl:text>
+							<xsl:call-template name="addfirtbody">
+								<xsl:with-param name="pagesNeededfnc" select="$pagesNeededfnc"/>
+								<xsl:with-param name="itemCountfnc" select="count(Products//Product)"/>
+								<xsl:with-param name="itemNeeded" select="$itemNeeded"/>
+							</xsl:call-template>
+							<xsl:call-template name="addsecondbody">
+							</xsl:call-template>
+							<xsl:text disable-output-escaping="yes">&lt;div class="statistics"&gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="nenhd" style="width:800px; margin-bottom:5px"&gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;table class="productTable"   width="810px" cellpadding="0" cellspacing="0" style="border: 0; border-top: 1px solid;border-bottom: 1px solid;margin-top: 10px;padding-bottom: 5px;margin: 0 auto;position:relative;z-index:2;"&gt;</xsl:text>
+							<xsl:call-template name="calltitleproduct">
+							</xsl:call-template>
+							<xsl:call-template name="callbodyproduct">
+							</xsl:call-template>
+							<!-- Trường hợp chỉ có 1 sản phẩm product -->
+							<xsl:if test="(position()=1) and $itemCountfnc=1">
+								<xsl:call-template name="addchuky">
+								</xsl:call-template>
+								<xsl:call-template name="addLine">
+									<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 -$countExtra2 - $counttyGia"/>
+								</xsl:call-template>
+								<xsl:call-template name="calltongsoproduct">
+								</xsl:call-template>
+								<xsl:text disable-output-escaping="yes">&lt;/table&gt;</xsl:text>
+								<xsl:text disable-output-escaping="yes">&lt;div class="nenhd_bg" style="margin-top: -6px; margin-left: -26px"&gt;&lt;/div&gt;</xsl:text>
+								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								<xsl:call-template name="addfinalbody">
+								</xsl:call-template>
+								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								<xsl:call-template name="add_vnpt_introduction"/>
+							</xsl:if>
+						</xsl:when>
+						<!-- Dòng product đầu của các trang sau -->
+						<xsl:otherwise>
+							<xsl:text disable-output-escaping="yes">&lt;div class="pagecurrent" id=</xsl:text>
+							<xsl:value-of select="((position()-1) div $itemNeeded) + 1"/>
+							<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 2px solid;margin: 0 auto;width:810px;" &gt;</xsl:text>
+							<xsl:call-template name="addfirtbody">
+								<xsl:with-param name="pagesNeededfnc" select="$pagesNeededfnc"/>
+								<xsl:with-param name="itemCountfnc" select="count(Products//Product)"/>
+								<xsl:with-param name="itemNeeded" select="$itemNeeded"/>
+							</xsl:call-template>
+							<!-- <div style="margin-left: 318px; margin-top: 8px"> -->
+								 <!-- <label>Tiếp theo trang trước - trang</label> -->
+								 <!-- <xsl:value-of select="((position()-1) div $itemNeeded) + 1"/>/<xsl:value-of select="$pagesNeededfnc"/> -->
+							<!-- </div> -->
+							<xsl:call-template name="addsecondbody">
+							</xsl:call-template>
+							<xsl:text disable-output-escaping="yes">&lt;div class="statistics"&gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="nenhd" style="width:800px;margin-bottom:5px"&gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;table class="productTable"   width="810px" cellpadding="0" cellspacing="0" style="border: 0; border-top: 1px solid;border-bottom: 1px solid;margin-top: 10px;padding-bottom: 5px;margin: 0 auto;position:relative;z-index:2;"&gt;</xsl:text>
+							<xsl:call-template name="calltitleproduct">
+							</xsl:call-template>
+							<xsl:call-template name="callbodyproduct">
+							</xsl:call-template>
+							<!-- Trường hợp dòng product cuối cùng là dòng đầu tiên của trang cuối cùng -->
+							<xsl:if test=" position() = $itemCountfnc">
+								<xsl:call-template name="addchuky">
+								</xsl:call-template>
+								<xsl:call-template name="addLine">
+									<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 -$countExtra2 - $counttyGia"/>
+								</xsl:call-template>
+								<xsl:call-template name="calltongsoproduct">
+								</xsl:call-template>
+								<xsl:text disable-output-escaping="yes">&lt;/table&gt;</xsl:text>
+								<xsl:text disable-output-escaping="yes">&lt;div class="nenhd_bg" style=" margin-left: -26px"&gt;&lt;/div&gt;</xsl:text>
+								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								<xsl:call-template name="addfinalbody">
+								</xsl:call-template>
+								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								<xsl:call-template name="add_vnpt_introduction"/>
+							</xsl:if>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:when>
+				<!-- Vị trí dòng product cuối cùng mỗi trang, không phải trang cuối -->
+				<xsl:when test=" (position() mod $itemNeeded = 0) and (position() &lt; $itemCountfnc)">
+					<xsl:call-template name="callbodyproduct">
+					</xsl:call-template>
+					<xsl:text disable-output-escaping="yes">&lt;/table&gt;</xsl:text>
+					<xsl:text disable-output-escaping="yes">&lt;div class="nenhd_bg" style="margin-top: -6px; margin-left: -26px"&gt;&lt;/div&gt;</xsl:text>
+					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+					<p style="page-break-before: always"/>
+				</xsl:when>
+				<!-- Vị trí dòng sản phẩm cuối cùng -->
+				<xsl:when test=" position() = $itemCountfnc">
+					<xsl:call-template name="callbodyproduct">
+					</xsl:call-template>
+					<xsl:call-template name="addchuky">
+					</xsl:call-template>
+					<xsl:call-template name="addLine">
+						<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 -$countExtra2 - $counttyGia"/>
+					</xsl:call-template>
+					<xsl:call-template name="calltongsoproduct">
+					</xsl:call-template>
+					<xsl:text disable-output-escaping="yes">&lt;/table&gt;</xsl:text>
+					<xsl:text disable-output-escaping="yes">&lt;div class="nenhd_bg" style="margin-top: -6px; margin-left: -26px"&gt;&lt;/div&gt;</xsl:text>
+					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+					<xsl:call-template name="addfinalbody">
+					</xsl:call-template>
+					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+					<xsl:call-template name="add_vnpt_introduction"/>
+				</xsl:when>
+				<!-- Các vị trí dòng sản phẩm ở khoảng giữa một trang -->
+				<xsl:otherwise>
+					<xsl:call-template name="callbodyproduct">
+					</xsl:call-template>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each>
+	</xsl:template>
+	<xsl:template name="addfirtbody">
+		<xsl:param name="pagesNeededfnc"/>
+		<xsl:param name="itemCountfnc"/>
+		<xsl:param name="itemNeeded"/>
+		<table class="headerInfo" style="width:100%;">
+			<tr style="border-bottom:1px solid;">
+				<td style="border:none;vertical-align:top;">    
+				    <div style="
+				            width:135px;
+				            margin-top:10px;
+				            margin-left:38px;
+				    ">
+				            <img alt="logo" style="max-width:100%;" src="data:image/png;base64,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"/>
+				    </div>
+				</td>
+				<td style="vertical-align:top;border:none;">
+				    <div class="" style="text-align:center;margin:15px 0px 0px 0px;">
+						<p style="margin:0 auto;">            
+							<span style="font-weight: bold;  font-size: 22px">
+								HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+							</span>
+						</p>
+						<p style="margin:0 auto;">            
+							<span style="font-weight: normal;  font-size: 18px; font-style:italic;">
+								(VAT INVOICE)
+							</span>
+						</p>
+						<p style="margin:0 auto;">            
+							<span style="font-weight: bold;font-weight: bold; font-size: 16px; line-height: 24px;">
+								Bản thể hiện của hóa đơn điện tử
+							</span><br/>
+								<i style="font-size: 100%;
+								"> (Electronic Invoice Display)</i>
+						</p>
+						<p style="margin:10px auto;font-size:14px;">
+							<xsl:choose>
+								<xsl:when test="ArisingDate!= '' and substring(ArisingDate,7,4) != '1957' ">
+									<span>Ngày <i style="font-size: 85%;">(Date) </i></span>
+									<xsl:value-of select="substring(ArisingDate,1,2)" />
+									<span> tháng <i style="font-size: 85%;">(month) </i></span>
+									<xsl:value-of select="substring(ArisingDate,4,2)" />
+									<span> năm <i style="font-size: 85%;">(year) </i></span>
+									<xsl:value-of select="substring(ArisingDate,7,4)" />
+								</xsl:when>
+								<xsl:otherwise>
+									<span>Ngày <i style="font-size: 85%;">(Date) </i></span>&#8230;
+									<span> tháng <i style="font-size: 85%;">(month) </i></span>&#8230;
+									<span> năm <i style="font-size: 85%;">(year) </i></span>&#8230;
+								</xsl:otherwise>
+							</xsl:choose>
+							<br />
+							<xsl:if test="$itemCount&gt;10">
+							  <label style=" display: block;">
+								<xsl:if test="(((position()-1) div $itemNeeded) + 1) > 1">
+									<label>Tiếp theo trang trước - trang&#160;
+									<xsl:value-of select="((position()-1) div $itemNeeded) + 1"/>/<xsl:value-of select="$pagesNeededfnc"/></label>
+								</xsl:if>
+							  </label>
+							</xsl:if>
+						</p>
+					</div>
+				</td>
+				<td style="vertical-align:top;border:none; width:200px;">
+				    <div class="InvInfoRight" style="">
+						<div class="clearfix" style="line-height:20px;padding-top:14px;">
+							<span style="font-weight:bold">Mẫu số <i style="font-size: 100%;font-weight:normal;">(Form):</i> </span>
+							<span style="font-weight:bold;margin-left:10px;">
+								<xsl:value-of select="/Invoice/Content/InvoicePattern" /></span>
+						</div>
+						<div class="clearfix" style="line-height:22px">
+							<span style="font-weight:bold">Ký hiệu <i style="font-size: 100%;font-weight:normal">(Serial):</i> </span>
+							<b style="margin-left:5px;">
+								<xsl:value-of select="/Invoice/Content/SerialNo" />
+							</b>
+						</div>
+						<div class="clearfix" style="line-height:22px">
+							<span style="font-weight:bold">Số <i style="font-size: 100%;font-weight:normal;">(No.):</i> </span>
+							<b style="font-size:110%;margin-left:50px;">
+								<xsl:call-template name="addZero">
+									<xsl:with-param name="count" select="7-string-length(InvoiceNo)" />
+								</xsl:call-template>
+								<xsl:value-of select="/Invoice/Content/InvoiceNo" />
+							</b>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr class="comInfo" style="border-bottom:1px solid;">
+        <td colspan="3" style="padding-top:7px;">
+          {{>info data=comInfo}}					
+				</td>
+			</tr>
+		</table>
+	</xsl:template>
+	<xsl:template name="addsecondbody">
+		<table class="customerInfo" style="">
+			<tr>
+				<td>
+					{{>info data=cusInfo}}
+				</td>
+			</tr>
+		</table>
+	</xsl:template>
+	<xsl:template name="calltitleproduct">
+		<tr class="productTableHeader" style="">
+			<td style="width:27px;" >
+				<span style="font-weight:bold;">STT</span>
+				<br /><i style="font-size: 16px;font-weight: 400;">(No.)</i>
+			</td>
+			<td>
+				<span style="font-weight:bold;">Tên hàng hóa, dịch vụ</span>
+				<br /><i style="font-size: 16px;font-weight: 400;">(Description)</i>
+			</td>
+			<td style="width: 50px;">
+				<span style="font-weight:bold;">Đơn vị tính</span>
+				<br /><i style="font-size: 16px;font-weight: 400;">(Unit)</i>
+			</td>
+			<td style="width: 70px;">
+				<span style="font-weight:bold;">Số lượng</span>
+				<br /><i style="font-size: 16px;font-weight: 400;">(Quantity)</i>
+			</td>
+			<td style="width: 115px;">
+				<span style="font-weight:bold;">Đơn giá</span>
+				<br /><i style="font-size: 16px;font-weight: 400;">(Unit price)</i>
+			</td>
+			<td style="width: 145px;">
+				<span style="font-weight:bold;">Thành tiền</span>
+				<br /><i style="font-size: 16px;font-weight: 400;">(Amount)</i>
+			</td>
+		</tr>
+		<tr class="productInfoHeader" style="font-size:16px; text-align:center;">
+			<td style="font-weight:bold;line-height:25px;">1</td>
+			<td style="font-weight:bold;">2</td>
+			<td style="font-weight:bold;">3</td>
+			<td style="font-weight:bold;">4</td>
+			<td style="font-weight:bold;">5</td>
+			<td style="font-weight:bold;">6 = 4 x 5</td>
+		</tr>
+	</xsl:template>
+	<xsl:template name="callbodyproduct">
+		<tr class="noline back productTableContent">
+			<td class="back-bold">
+				<div style="display: block ;word-wrap: break-word;text-align: center;  overflow: hidden;">
+					<xsl:if test="Remark!=''">
+						<xsl:value-of select="Remark"/>
+					</xsl:if>
+					<xsl:if test="position() !=''">
+						<xsl:value-of select="position()"/>
+					</xsl:if>
+				</div>
+			</td>
+			<td class="back-bold">
+				<div style="text-align: left;display: block; word-wrap: break-word; overflow: hidden; float: left; padding-left: 2px">
+					<xsl:value-of select="ProdName"/>
+				</div>
+			</td>
+			<td class="back-bold">
+				<div style="display: block;word-wrap: break-word;text-align: center;  overflow: hidden;">
+					<xsl:choose>
+						<xsl:when test="(ProdUnit=0) or(ProdUnit='')">
+						 
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="ProdUnit"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</div>
+			</td>
+			<td class="back-bold">
+				<div style="display: block;word-wrap: break-word;text-align: center;  overflow: hidden;">
+					<xsl:choose>
+						<xsl:when test="ProdQuantity=0">
+						 
+						</xsl:when>
+						<xsl:when test="ProdQuantity=''">
+						 
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:choose>
+								<xsl:when test="../../SoVT = '1'">
+									<xsl:value-of select="format-number(ProdQuantity, '###,##0.00')"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:value-of select="translate(translate(translate(format-number(translate(ProdQuantity,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:otherwise>
+					</xsl:choose>
+				</div>
+			</td>
+			<td class="back-bold">
+				<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
+					<xsl:choose>
+						<xsl:when test="(ProdPrice='') or(ProdPrice=0)">
+						 	&#160;
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</div>
+			</td>
+			<td class="back-bold">
+				<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
+					<xsl:choose>
+						<xsl:when test="Amount=''">
+						 
+						</xsl:when>
+						<xsl:when test="Amount=0">
+						 
+						</xsl:when>
+						<xsl:when test="Amount='-1'">
+						 
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</div>
+			</td>
+		</tr>
+	</xsl:template>
+	<xsl:template name="calltongsoproduct">
+		<tr class="bg-pink" style="">
+			<td colspan="5" style="border-top:1px solid;border-bottom:1px solid;border-left:none !important;text-align:left; text-align:right;padding-right:10px;">
+				<span style="font-weight:bold;font-size:16px;">Cộng tiền hàng <i style="font-size: 16px;font-weight:normal;">(Total amount)</i>:</span>
+			</td>
+			<td align="right" style="border-top:1px solid;border-bottom:1px solid;border-left:none;">
+				<b>
+					<xsl:choose>
+						<xsl:when test="(../../Total='') or (../../Total=0)">
+							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color: black;">
+								
+							</label>
+						</xsl:when>
+						<xsl:otherwise>
+							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color: black;">
+								<xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+							</label>
+						</xsl:otherwise>
+					</xsl:choose>
+				</b>
+			</td>
+		</tr>
+		<tr class="bg-pink" style="border-bottom:1px solid;">
+			<td colspan="2" style="border-top:none!important;border-bottom:none!important;border-right:none!important; text-align:left; padding-left:10px;">
+				<span style="font-weight:bold;font-size:16px">Thuế GTGT <i style="font-size: 100%;font-weight:normal;">(VAT Rate)</i>:</span>
+				<xsl:choose>
+					<xsl:when test="../../VAT_Rate='-1'">
+						<label class="input-name"> \ %</label>
+					</xsl:when>
+					<xsl:when test="../../VAT_Rate!=''">
+						<label class="input-name" style="width:40px;height:20px;padding-top:0px;font-size:15px;border-bottom: none;">
+						 <xsl:value-of select="../../VAT_Rate"/> %
+						</label>
+					</xsl:when>
+					<xsl:otherwise>
+						<label class="input-name" style="width:45px;height:20px;padding-top:0px;border-bottom: none;">
+						</label>&#160; %
+					</xsl:otherwise>
+				</xsl:choose>
+			</td>
+			<td colspan="3" style="border-top:none;border-left:none!important;border-bottom:none;text-align:right;padding-right:10px;line-height:0px;">
+				<span style="font-weight:bold;font-size:16px;">Tiền thuế GTGT <i style="font-size: 100%;font-weight:normal;">(VAT Amount)</i>:</span>
+			</td>
+			<td align="right" style="border-top:none!important;border-bottom:none!important;border-left:none;">
+				<b>
+					<xsl:choose>
+						<xsl:when test="../../VAT_Rate='-1'">
+							<label class="input-name summary" style="height:20px;display: block;margin-right:0px;color: black;border-bottom: none;">\</label>
+						</xsl:when>
+						<xsl:when test="../../VAT_Amount=''">
+							<label class="input-name summary" style="height:20px;display: block;margin-right:0px;border-bottom: none;">
+								<xsl:value-of select="''"/>
+							</label>
+						</xsl:when>
+						<xsl:when test="../../VAT_Amount=0">
+							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;color: black;border-bottom: none;">
+								
+							</label>
+						</xsl:when>
+						<xsl:otherwise>
+							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;color: black;border-bottom: none;">
+								<xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+							</label>
+						</xsl:otherwise>
+					</xsl:choose>
+				</b>
+			</td>
+		</tr>
+		<tr class="bg-pink">
+			<td colspan="5" style="border-top:none!important;border-bottom:1px solid;border-left:none;text-align:right;padding-right:10px;">
+				<span><b>TỔNG CỘNG TIỀN THANH TOÁN <i style="font-size: 100%;font-weight:normal;">(Total payment)</i>:</b></span>
+			</td>
+			<td align="right" style="color: #31373E;border-top:none!important;border-bottom:1px solid;border-left:1px white !important;">
+				<b>
+					<xsl:choose>
+						<xsl:when test="(../../Amount='') or (../../Amount=0)">
+							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color:#000;">
+								
+							</label>
+						</xsl:when>
+						<xsl:otherwise>
+							<label class="input-name summary" style="height:20px;display: block;margin-right:5px;color:black;border-bottom: none;">
+								<xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+							</label>
+						</xsl:otherwise>
+					</xsl:choose>
+				</b>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				<xsl:call-template name="tempAmount_words">
+					<xsl:with-param name="str" select="../../Amount_words"/>
+				</xsl:call-template>
+			</td>
+		</tr>
+	</xsl:template>
+	<xsl:template name="addchuky">
+		<xsl:choose>
+			<xsl:when test="../../Extra1 != ''">
+				<tr>
+					<td class="back-bold">
+						<div style="display: block;word-wrap: break-word;width: 30px;text-align: center;  overflow: hidden;">
+
+						</div>
+					</td>
+					<td class="back-bold">
+						<div style="text-align: left; width: 310px; display: block; word-wrap: break-word; overflow: hidden; float: left; padding-left: 2px">
+							<xsl:value-of select="../../Extra1"/>
+						</div>
+					</td>
+					<td class="back-bold">
+						<div style="display: block;word-wrap: break-word;width: 70px;text-align: center;  overflow: hidden;">
+
+						</div>
+					</td>
+					<td class="back-bold">
+						<div style="display: block;word-wrap: break-word;width:130px;text-align: center;  overflow: hidden;">
+
+						</div>
+					</td>
+					<td class="back-bold">
+						<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
+
+						</div>
+					</td>
+					<td class="back-bold">
+						<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
+
+						</div>
+					</td>
+				</tr>
+			</xsl:when>
+			<xsl:otherwise>
+
+			</xsl:otherwise>
+		</xsl:choose>
+		<xsl:choose>
+			<xsl:when test="../../Extra2 != ''">
+				<tr>
+					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+						<div style="display: block;word-wrap: break-word;width: 30px;text-align: center;  overflow: hidden;">
+
+						</div>
+					</td>
+					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+						<div style="text-align: left; width: 310px; display: block; word-wrap: break-word; overflow: hidden; float: left; padding-left: 2px">
+							<xsl:value-of select="../../Extra2"/>
+						</div>
+					</td>
+					<td class="back-bold" style="height: 20px; border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+						<div style="display: block;word-wrap: break-word;width: 70px;text-align: center;  overflow: hidden;">
+
+						</div>
+					</td>
+					<td class="back-bold" style="height: 20px; border-bottom-color: currentColor;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+						<div style="display: block;word-wrap: break-word;width:130px;text-align: center;  overflow: hidden;">
+
+						</div>
+					</td>
+					<td class="back-bold" style="height: 20px; border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+						<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
+
+						</div>
+					</td>
+					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
+						<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
+
+						</div>
+					</td>
+				</tr>
+			</xsl:when>
+			<xsl:otherwise>
+
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<xsl:template name="addfinalbody">
+		<div class="clearfix">
+			<!--variable-->
+			<xsl:variable name="serial">
+				<xsl:value-of select="SerialNo"/>
+			</xsl:variable>
+			<xsl:variable name="pattern">
+				<xsl:value-of select="InvoicePattern"/>
+			</xsl:variable>
+			<xsl:variable name="invno">
+				<xsl:value-of select="InvoiceNo"/>
+			</xsl:variable>
+			<!---->
+			<center>
+				<table style="width: 800px;height: 83px; border-bottom: medium none; border-left: medium none; border-top: medium none; border-right: medium none;">
+					<tr>
+						<!--panel client-->
+						<td style="border: none;width: 333px;vertical-align: top;text-align:center;">
+							<p style="font-size:14px; margin-top:0;height: 20px;margin-bottom: 0;">
+								<b>
+								Người mua hàng
+								</b><i>(Buyer)</i>
+							</p>
+							<xsl:choose>
+								<xsl:when test="/Invoice/imageClient != '' ">
+									<div class="bgimg" style="background:url({/Invoice/imageClient/@URI}) no-repeat center left; height: 83px;width:295px;" onclick="showDialog('dialogClient','{$serial}','{$pattern}','{$invno}',1,'messClt','ic')">
+										<p style="margin-top:3px;margin-bottom:5px;font-size:12px">
+											<xsl:value-of select="/Invoice/imageClient"/>
+										</p>
+										<p style="font-size:12px;">
+										Ký bởi:
+											<xsl:value-of select="/Invoice/CNCus"/>
+											<br/> Ký ngày:
+											<xsl:value-of select="/Invoice/Date"/>
+										</p>
+									</div>
+								</xsl:when>
+							</xsl:choose>
+						</td>
+						<!--panel TVAN-->
+						<td style="border: none;width: 333px;vertical-align: top;">
+							<xsl:choose>
+								<xsl:when test="/Invoice/convert!=''">
+									<div style="text-align:center;padding-top:1px;">
+										<div>
+											<label style="font-size:11px">
+												<b>
+													<!--<xsl:value-of select="/Invoice/convert"/>-->
+											HÓA ĐƠN CHUYỂN ĐỔI TỪ HÓA ĐƠN ĐIỆN TỬ
+												</b>
+											</label>
+											<p style="font-size:11px; margin:0px">
+											Ngày <b>
+													<xsl:value-of select="substring(/Invoice/ConvertDate,1,2)"/>
+												</b> tháng <b>
+													<xsl:value-of select="substring(/Invoice/ConvertDate,4,2)"/>
+												</b> năm <b>
+													<xsl:value-of select="concat('20',substring(/Invoice/ConvertDate,9,2))"/>
+												</b>
+											</p>
+											<p style="font-size:11px; margin:0px">
+											Người chuyển đổi
+											</p>
+											<i>
+											(Signature of converter)
+											</i>
+											<p style="margin-top:20px">
+												<xsl:value-of select="/Invoice/ConvertBy"/>
+											</p>
+											<!--<p style="font-size:14px; margin:0px">
+										Thủ trưởng đơn vị
+										</p>-->
+										</div>
+									</div>
+								</xsl:when>
+							</xsl:choose>
+						</td>
+						<!--panel server-->
+						<td style="border: none;width: 333px;vertical-align: top;text-align:center;">
+							<p style="font-size:14px; margin-top:0;height: 20px;margin-bottom: 0;">
+								<b>
+								Người bán hàng
+								</b><i>(Seller)</i>
+							</p>
+							{{>sign}}
+						</td>
+					</tr>
+				</table>
+			</center>
+			<!--dialog server-->
+			<div id="dialogServer" style="background-color:white;display:none">
+				<xsl:variable name="sc">
+					<xsl:value-of select="//*[contains(@Id,'serSig')]//*[local-name() = 'X509Certificate']"/>
+				</xsl:variable>
+				<div style="color:blue" id="messSer">Unknown!</div>
+				<br/>
+				<br/>
+				<a href="#" onclick="displayCert('{$sc}')">
+					<div style="color:#184D4E">Xem thông tin chứng thư</div>
+				</a>
+			</div>
+			<!--dialog TVAN-->
+			<!---->
+			<!--dialog client-->
+			<div id="dialogClient" style="background-color:white;display:none">
+				<xsl:variable name="sc1">
+					<xsl:value-of select="//*[contains(@Id,'cltSig')]//*[local-name() = 'X509Certificate']"/>
+				</xsl:variable>
+				<div style="color:blue" id="messClt">Unknown!</div>
+				<br/>
+				<br/>
+				<a href="#" onclick="displayCert('{$sc1}')">
+					<div style="color:#184D4E">Xem thông tin chứng thư</div>
+				</a>
+			</div>
+			<!---->
+			<div class="clearfix"/>
+			<!--panel replace-->
+			<xsl:choose>
+				<xsl:when test="/Invoice/TvanData/Content/isReplace!=''">
+					<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+						<xsl:value-of select="//Invoice/TvanData/Content/isReplace"/>
+					</div>
+				</xsl:when>
+				<xsl:when test="isReplace!=''">
+					<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+						<xsl:value-of select="isReplace"/>
+					</div>
+				</xsl:when>
+				<xsl:when test="/Invoice/Content/isReplace!=''">
+					<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+						<xsl:value-of select="//Invoice/Content/isReplace"/>
+					</div>
+				</xsl:when>
+				<xsl:when test="isReplace!=''">
+					<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+						<xsl:value-of select="isReplace"/>
+					</div>
+				</xsl:when>
+			</xsl:choose>
+			<xsl:choose>
+				<xsl:when test="/Invoice/Content/isAdjust!=''">
+					<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+						<xsl:value-of select="//Invoice/Content/isAdjust"/>
+					</div>
+				</xsl:when>
+				<xsl:when test="isAdjust!=''">
+					<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+						<xsl:value-of select="isAdjust"/>
+					</div>
+				</xsl:when>
+				<xsl:when test="/Invoice/TvanData/Content/isAdjust!=''">
+					<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+						<xsl:value-of select="//Invoice/TvanData/Content/isAdjust"/>
+					</div>
+				</xsl:when>
+				<xsl:when test="isAdjust!=''">
+					<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+						<xsl:value-of select="isAdjust"/>
+					</div>
+				</xsl:when>
+			</xsl:choose>
+			<!---->
+			<!--panel convert-->
+			<!---->
+
+		</div>
+	</xsl:template>
+	<xsl:template name="add_vnpt_introduction">
+    <center>
+		<xsl:choose>
+			<xsl:when test="/Invoice/Fkey !=''">                            
+				<div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+					<p style="margin:0px;">
+						<span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a>
+						nhập mã: <xsl:value-of select="/Invoice/Fkey"/> để lấy hoá đơn</span>
+						<br/>
+						<i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a>
+						with code: <xsl:value-of select="/Invoice/Fkey"/> to get your invoice.)</i>
+					</p>
+				</div>
+			</xsl:when>
+			<xsl:otherwise>
+				<div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+					<p style="margin:0px;">
+						<span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a>
+						nhập mã: để lấy hoá đơn</span>
+						<br/>
+						<i>(Please login to web page <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> with code: to get your invoice.)</i>
+					</p>
+				</div>
+			</xsl:otherwise>
+		</xsl:choose>
+		<div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed;width:811px;">
+			<p style="margin:0px;">
+				<span>Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu- Chi nhánh Tổng công ty Dịch vụ Viễn thông
+				<br/>
+				MST: 0106869738-044, Hotline đăng ký dịch vụ: 0913 759 468</span>
+			</p>
+		</div>
+		<div style="margin:0px auto; margin-top:2px; ">
+			<div class="clearfix" id="bt" style="margin:0px auto;"/>
+    </div>
+    </center>
+	</xsl:template>
+	<xsl:template match="/">
+		<html xmlns="http://www.w3.org/1999/xhtml">
+			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+				<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+				<title>VAT</title>
+				<style type="text/css" rel="stylesheet">		  	
+			@charset "utf-8";
+			#main{margin:0 auto}
+			@page {size: A4; margin: 11mm;}
+		  	* html,body {
+		  	margin: 0px auto;
+		  	padding: 0;
+		  	height: 100%;
+		  	}
+		  	span, i, b{
+		  		//color: #005cb3;
+		  	}
+		  	i{
+				font-size: 85% !important;
+		  	}
+			.pagecurrent{
+				padding-top:5px;
+			}
+		  	table {
+				border-collapse: collapse
+		  	}
+		  	#main {
+		  	margin: 0 auto
+		  	}			
+		  	.VATTEMP {
+		  	background-color: #fff;
+		  	font: 78%/1.4em Times, serif;
+		  	padding: 0px 10px 10px 10px;
+		  	width: auto;
+		  	height: auto;
+		  	font-size: 14px;
+		  	margin: 0px auto;
+			  
+		  	}
+
+		  	.VATTEMP .header-main,
+		  	.content {
+		  	width: 790px
+		  	}
+		  	.VATTEMP .header {
+		  	float: right;
+		  	width: 600px;
+		  	font-family: Times New Roman
+		  	}
+		  	.VATTEMP .header-content {
+		  	float: left;
+		  	text-align: center;
+		  	width: 375px;
+		  	font-family: Times New Roman
+		  	}
+		  	.VATTEMP .header-content2 {
+		  	float: left;
+		  	text-align: left;
+		  	width: 610px;
+		  	font-family: Times New Roman
+		  	}
+		  	.VATTEMP .header h2 {
+		  	font-size: 22px;
+		  	font-family: Times New Roman
+		  	}
+		  	.VATTEMP .header h2,
+		  	.header p {
+		  	margin: 0;
+		  	font-family: Times New Roman
+		  	}
+		  	.VATTEMP .header p.name-upcase {
+		  	font-size: 14px;
+		  	text-transform: uppercase;
+		  	font-family: Times New Roman
+		  	}
+		  	.VATTEMP .header-note {
+		  	float: right;
+		  	font-size: 14px;
+		  	width: 200px;
+		  	margin-top: 0;
+		  	font-family: Times New Roman
+		  	}
+		  	.VATTEMP .header .number {
+		  	font-family: "Times New Roman", Times, serif;
+		  	font-size: 22px
+		  	}
+		  	.clearfix:after {
+		  	clear: both;
+		  	content: ".";
+		  	display: block;
+		  	height: 1px;
+		  	overflow: hidden;
+		  	visibility: hidden
+		  	}
+		  	.clearfix {
+		  	clear: both
+		  	}
+		  	.VATTEMP .input-code {
+		  	border: 1px solid;
+		  	color: #000;
+		  	float: left;
+		  	font-weight: normal;
+		  	text-align: center;
+		  	width: 18px;
+		  	height: 14px
+		  	}
+		  	.VATTEMP div label.fl-l,
+		  	div label {
+		  	margin-right: 5px;
+		  	}
+		  	.VATTEMP .input-name,
+		  	.input-date {
+		  	border: 0;
+		  	border-bottom: 1px dotted;
+		  	}
+		  	.VATTEMP .statistics {
+		  	clear: both
+		  	}
+		  	.nenhd {
+		  	position: relative;
+		  	}
+		  	.nenhd_bg {
+		  	    background-size: 100%;
+		  	    background-repeat: no-repeat;
+		  	    position: absolute;
+		  	    z-index: 1;
+		  	    margin: 0;
+		  	        width:350px;
+		  	        height:190px;
+		  	        top:125px;
+		  	        left:260px;
+		  	    
+		  	        opacity:0.2;
+		  	        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAAC+CAMAAABKxpceAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAKLUExURQAAAHa/SXa/SQ5zu3a/STaOlg5zu3a/SXa/SXa/SQ5zu3a/SXa/SQ5zuw5zuw5zuw5zu3a/SQ5zuw5zuw5zuw5zuw5zu3a/SQ5zuw5zuw5zuw5zuw5zuw5zuw5zu3a/SQ5zuw5zuw5zu3a/SXa/SXa/SQ5zu3a/SQ5zuw5zuw5zu3a/SQ5zuw5zuw5zuw5zuw5zuw5zuw5zuw5zuw5zu3a/SQ5zuw5zuw5zuw5zuw5zuw5zuw5zuw5zuw5zuw5zu3a/SQ5zuw5zuw5zu3a/SXa/SXa/SXa/SQ5zuw5zuw5zuw5zuw5zuw5zu3a/SXa/SXa/SQ5zuw5zuw5zuw5zuw5zu3a/SXa/SXa/SXa/SXa/SXa/SXa/SXa/SQ5zuw5zuw5zu3a/SQ5zuw5zuw5zuw5zuw5zu3a/SQ5zuw5zuw5zuw5zuw5zuw5zuw5zuw5zu3a/SXa/SXa/SXa/SXa/SQ5zuw5zuw5zuw5zuw5zuw5zuw5zu3a/SXa/SXa/SXa/SXa/SQ5zuw5zuw5zuw5zuw5zuw5zuw5zuw5zu3a/SXa/SXa/SXa/SXa/SXa/SXa/SQ5zu3a/SQ5zuw5zuw5zuw5zuw5zuw5zu3a/SXa/SXa/SXa/SXa/SXa/SXa/SQ5zuw5zuw5zu3a/SXa/SXa/SXa/SXa/SQ5zuw5zu3a/SXa/SXa/SXa/SXa/SXa/SXa/SXa/SXa/SXa/SQ5zu3a/SXa/SXa/SXa/SXa/SXa/SXa/SQ5zu3a/SXa/SXa/SXa/SXa/SQ5zu3a/SXa/SXa/SXa/SXa/SXa/SXa/SXa/SXa/SXa/SXa/SXa/SQ5zu3a/SXa/SXa/SXa/SXa/SXa/SXa/SXa/SXa/SQ5zu6t8kcIAAADXdFJOUwAW3/vdAQT4/hX9BgLn5Rv3KAgR6/bz9ocT1v4NzSFjKwMKCnXO+fzu4w4MMz7Lpu/UAsGwCBXdxVrbDE9wXdIkHa6EWCaArKAGI99iRMX0+xlJkTiKUpcRPHzU7RNSujavlBcHX454VZ3xmm0pgX+51ylp59CrZjBpWEGpGlVmD6MlyJvDuHZzYI7By5xyiC7Iv0dMJ3t40VoYpyCCLtm8s5OFTNrwO6iaM6KkK2zqcETetXmfUDB/TrSXIkde4Enh4+U/3JG7OB1vbpa9frY1O4vhv1xFwD2IOwAAHABJREFUeNrtfYdfFFfU9ijuglJlF5ClV+ldqUoR6VVRkapIVaMigkgREMWuYFCJURFQsGDFFlEUNbHEEpPozp/z3TuzsI3h3h327ve+b/b8EhWd2bv3mTPnnn4o6n8JuR4Mj5VIHALq6yNCIyIiOgMcAhzSTeVkJh5zpfTEl/xpFHVa6lHiTUuQ8O7Ug8SbRN5IeJv0KPGmlUh0DfL0KPGmUiS8gXrRy5vixUh49+lR4k37DJCyYUSPEkHZUL9cjxJfsk1Hwpsi1MNETun17NWjxJdcApDwis/qYeJtEFsh4T3ko4eJL61Fokuf06PEl1xD0fBW62HiSyOeSHQnHfUw8bYp0Mxbo0eJt94QiFbLSvQw8SVHsV42EKQYtGzo1KPEl8ob0PAu0cPEl+K90J70DD1MfCkDzbzW/nqY+BKGbAjQe8v4kn2wXvQSpCZknIK20gcxeVMKmnkl+iAmb5sCHaegr4foceJJK9Gygd6uh4kvrUKja9Csh4knWUag4Q3TZ0byJWe0O4deoYeJL+3FEL2Repj40gAaXatuPUx83TnhaHg79GoZb7XMDg2vPlBBUi0LatTDxJNcMdSyUL1axpdK0OjSZXqY+BI6c49epK+o4Es+V9DwmjrrceJrsllhxIj1zkjeJhutD1SQI0ENRhDzZz1OPElUj4bXTJ+ew5eaMGRDoB4mvrKhA8OTvlKPE1+1TIIhG/QVFXzJzwIN75X/o3t3a8/PLy5euHDeQi6al+/m2+4LyM1tmbGMTBgSYKplGN6yBpFjrq1IJLJlSSQjW/AXouhyAf/9GfuC7RVz7g1N4JqFxQuNNV+5/a+jdaeTs/r6Cq8tWDD/wQIOetn39V3Wu12fvyYnt4wCOnny5I0NkAaPXUq6dCkp6VJBFSD3Oqeq0w9vzrAORoIDbRrr3R9cH1AvkfRDiq2PrXdwcIgNjpVIAko7Kr9s73UUacw5ca/qhh7t6rt27dqCmXf3YD6aHrz85/drD+5ouHb+26FdNlKtU/IM3rIoWhsUHlqWeUCDDe52Sn6pvX39oRG4F+uOZ0tJ0DP1tX62orVFk2XNeBGN1sSWN1rd1ylN5NG9WikhuqW+WhmtRbIoxaiJbXcv1Pa+vuOj+/izlBgdU5cNwbRWyarDFsE8Tlla35bRK+wD7e9scuhK76mtNxJEa5kmZw3YX36Wo/1tvbyIiW7cLoLgSg2vqi24gtY6ee7l3t/+NyT21dOOia4HSXSld1erWcQN2oeXXsSZ63fPiMi+NrthoXuzT0oW3jjVFXPDaRLEccAVENrXJyzD5vZ8KWF4n6suWW1BBN7wGY2Mj+AQIsK+dTjorr5GGF3pZ9WXSBhGk6EO9e2ZHFtKaFvDt3GMxF1ksQWMc1p1zfgoQvDaqfeLOkVsZx4LMeAtIMy6RjPoZTEGhOClE1SX+lZEbGejJmh0rw5LidNH1UUrSaGrFrhfXEhuW08xfDiF5NE1nFD1pEcQg9dTpW3JKLlt5WDYbMfIoyvdVayyaDcx2UDT65RWemVIblt985DoPsnWAbwnVWVUJDl0lXUHtxOEVDLGDYgUvSaPpEbk4R1dpjPRS9NjSm4qKcH9uSOZ922OLuAdVDFu4icJwuug0PDMOJngroouI+H9Q6oLUjVuSgiiS8dukS/0PofgrtCy4ckeXaBr80TFnZNCEt4AOfca/0rS0L/5P4R5+1SMm9x0kvCGyuNCl4sI7uo0Et0PL3UCr+oX+dmAJLxhCm5Ikm4UtEE8oRN0bd6retLtdATvM0JW/lKp9For2qRo0Qm8hfkqy14nia6C3nvzLrE9vVuN4ea9qxN4C1SWdTYlCu+R6YWSSO3oeBtOECgxRxfoqqmHGYtIomvQpNnLmZPV8vfRxLq6NqeCGzf+OLb5RFZWlkdtYWHhtQX/vH69583r16/vFhUVDWcvNcrJyd5zzSPr0v18rBBQkk6YN1nAI/mJpk07O8cSDkmC64NNvQCZRk2mSyIi0PXzXtMO32IcZ9WzV77GU18Qpsctg2lz7cXF+cWtF+MWL959G9BfGwG9SExcv//F7YutmNFLitqlC3TvPuGV4NDgLBBSVKpIZC9Kc+5udHbcEh+/XIhRqRU1HQ56j/a0Gl7ikYOHSRf+IY7tTJ70RowODtY7XGb8yiHjyFsHNAkT3KHIURVpbwP0VbWoWY7nMXh3FVdKsDVS9E7PZilGZ3SdJIhuex95yZCt/vLhNPLe6szxndFzm4Kmmz/cR3p6h28ShBdbKzQCenSOYbaNxsz+ZvNG9WVxZEMKVzXGOnSV4XQ7xL+RvsDjJgThfYUVni4cfPHtLaD3f71/0Xanrs198NGjls0MJScnt7Q8+/fzu57aB6/3FOVM7cYou2i+x65P7q/iZsphicQw2bjqVXzQnP9l2p2DPrgLSKb3O2GAu+BjvuoTNjE2Nl62zA3QsmXLjI3dfH3d2j+s3n355v3H353a2pyOTqx/e3P1PDcuzsCo0jbg6neahuR8i2m1bF4f6p3M2U8QXRMMZ92J21pfdnksGt5Srg4O6EI4h+kK5Ks5KHiz3xKE9+IC9MFEQPT3zkFvwOhdsm3ahrmFZp52gvDeR1vEGwgsuwMjEZoz0Rwdvp/uUn3xgRYctnOgO2hH4l/aX1WAnqFAS7bwLoTzNp/O50VubylJm4IaRK7fQmBVnH6nV0J4n4phqVPXDqGt9b8IotuKzIpcWkdg2cMYopezp+EZ5K07ptPB0Umf828bL3PzzS/O91UiN1j9KIDeHUh897kRqfXaPNY+uuUYeadBXK2m09B+4phpXytGZlZtT88Jj8LCPg8lOtHT05P1+d/jn3dBejR07+qrm24ab9QdbXNpXyujzNGznulgrjLLSOTgpvR4Ir7Wu8lJG+dptE+MEPWJfO3Du2YuHRzQhXCBQny1TMMkxBN1xRrs0xdd45VMwBWKMfbOgEv0WnYi762YNtlOaN89lXUUXxLfRLuaL2kf3VyMKJtXGsfNzUhnZJAzvreMV6LnD9yNfkd/WJv24cVJforguvkI+tbp/JwJMq7s7I+YG32KPtkuax/ebRjwnue6OUGDnlxVpGIvD/E2ij7Z/iUgescwksu51DJzdLGLvBPtaWIBmKc4+yxGn2wEHA5CjMZaprkcN8cgLWKFqopH5OIv9zE2WocW/VXahzcSo1QwUMhbsHTJL35HMOcII/sJIzPSo6CqoCrp9KWHVQ+r3OVUUOVeVfXR6fvE0cdvN258+2SZBvDilArG8PYTGygUbGeRg1d6A73RT9rISTfMzrbZ8/lW1f7neOjaYpQRpy/nbZDIvWUURbAzhdQGac36avXpGv1+EkshbN6qaVmPYlYlOq9X4erNJMPfo6iN/maj5RWHRzG8e4ft+MuG1OsaPZlBkvC+RklfAmnFw1WoqLYlRoKDN1dDzgPI3iVKMY42khkyhusROx3S9opwN4O+sy+Kk3eaIOSdP2Kq+GQ22pBkX1QUiYxo2jx7Y5m59ELGkA1hSnp9LUl4kxEx+BNklq2dVQCPz0Ets0UXwik52gSPSMJ7Ynb3ui+pKu35s6ho0RiiN4rLZGtGnoqeyn0c3pKEt2921+9GYvVIn7lTB/wt+MsGAdpPXGqpqVNlDtw7e6DhMTnB7z6nIGYFV25ZAPLWc6pZMgT7KCDyTx6TK8K/+55jzS1ohGgx13SgEWS7ya1+amkyRf+/4N1PsMfBMw4/ph9OPSV/pSNAPf55lRi+HrMLh/UE4c3hyIuLwYC3kusLo4tdamZQmN+Sah/WM7vmsJ9kwdXMFnk5RtM9r0beead09Uz37SZUm/Nsdr33l6UE4d3zYaYlRRgJDgFckdgKZA2ymfnMCv6fPSS2+Ovs8F4l2uDFaaYlcaq0OWUDOu0vkCstbeHVQe2XkGyeHd7nRHsafuKXfUcbcKll0egBDHtny6b77fSt5F09hbWFtQ8ePJj/EtL8f/aw9Bq2SX/5z/wF12prf1/gUYt1HH6dHV43or21vs7gOitHh3npSa4EBz+k6BU7I3KSlrm1X2i90Hrx4sXncZCex92+DOstL8ddfP4c/NXzD63zPqyOa427owXhQDRWIq2dIR2rxJO/yUbtRGt0Wpv3eH9uthNLf5OE9+5i9QXRBVO0HVc5UCo6J31ca9HWNhzv6wTiQ34hqZkNz1DMhuHOEXPJBn9k8hOtvcFCOP00DVEVRa0kq4kNE9Wlp/Uc1DJ0kaxYa2O4sRpzDb9AfQzJUF+OumZ2HiPK9oUD3mh0TnqXUGs5+8hD32gWv4rcbiNoWBipl4TgdHcZ4crOQTbXsNunNdnw5C4GvO+Q6WFuBHUHI7VJJDiTw7wO8E6aFmtvDPcPQ76KvUoofqkO4e3FGF+TwKFbpaGt6QjtpWm5G/F6O9X9/wQbxKnB+wVDNhzmfbBxp55oTuj8CCNp9nuMD7rwOzHu/VNlqZABDHg5BrpuQaedGlRrD96vGPDWYtUJ3SbVPlKtHs4Zo4PDGMewZww/pvcWraH7FsfXhVkr++2BjuDFGV9zhG/2CE03aI95cfJWja5iftj742TMChWbMQTDnWOXOWPm0zmMpL9Fe7WGbiLO9mpbcT+u2H0BAXizVR6vD7pgiu53FLLkwlCqq73Ir3odhguepi2ctWSwfTiN5QZ/pEEh7POkB1oPyqvajN0YuWXijpSampSUlG1l4+PjZWUdVwIkQZi9+iKUNDqT9ta43asZWjwbrZYR+MPi3bsXP3l1ahST1SY0emit+zd4vCkaxgtuYuUdFv2leW7ZHEjRCZ8/cePfa0WGNtk2gAxnIxsZGcquwzYDPDSuVW1/svHH+ok69zttfz4sKHj4NCkJ/Afp6aWhoSH469OkSwVPTw89/AVHWt9VrthyqSELr4I7Z/9xKXEiUHIiJ5whF0XKLWLSvIiie8ZeI1/tXKloN0l4cUaYqHQ8LSHLvPLEyIuGOoD3Bkl0sRyZfRcU7xBuI4qugdzRVqcL5v1GEt1WnJGPo0qay5ZJovD2T6esfvhdB/BeIsq8WH0RB5XVMqJt6OmG8qmFXukA3TeLicKLlX8ypLFFPAfZEKOb8KyMiPaOoqgJnNNDeWx6GFF4x6bDQPnXyKP7zIQsvHdw7Aolj5KjN1F45SHi7+TRfd1KFl2sQvNspcP1CFF05ekjJpuJo4sOEM+RsCqKril5m4mabEHyTqlx84nD60QYXWohjnzLUoyj+sSShHenQnZNzv9unYxhkdc4GXzGmmXY8KfOVPlCG0iju9mXOLxYFUXHFK2KSE9y6IoVmihf8CCM7vEPxNGlbuB8kUQNQ2V8yUIxwPGUNLrF5NGdhxa9RtJhRcNGRM4iFvfqKqkL0IZ28ujiqJZG0q+KikOMBTF0mxW/WT7RGRHDf+oAXGoeVhnIkIZpvfwoXbkdF9FSJ48fukDXDSuvJ0cxjhlCSPRarVMJX94iB67hDcK2mrGxiYnbzQK8pL8exVDUyFYi6EoiVb7hxQXE0J3/QhM/w7yNL1789nj9xNEJJ6fvid+d2u7cO3XP/WkBoIcP3U+dcn8If3N3P/Xnnbo7Hz/eaatrK7g1evJTC25Kj1L24D4S4HqttVXd1UZS4C79V4PZBybfknpIB0yU8uIJzMsNL5thZIgTIbmQnKiBLbEsmXwwqkixx9fyYC1jGxW4YsYsYCK9G4Zv3NdEhPqy7i4jolPElOrhq7UoEfo7O77EcBS33H6j/Uyjr6c0HIlSJdUBfVdcMdOhfmxgrAtQ6ZnO4ODgiPr0qP6oqKjw8KhJM28zSN5mYi8vL3GQtbV1kFhs6u09CSlcEitxuD5+MKWmrKxsybnDFf5n4aRBLppFNhhpyE1GS3Ns/tm14dRtTe0IYx2kWKhUDLqIRNGu0dH20fb2PiJbW1uRKHe5jHLjWTKPdzz709mzzt3Ozs4HHB3j43Nzzc3BVbbLRZZCYaowxMUFI8B61enUPSenU3ecAB39nrgf0Pr16x8D+u23q48TE/cn/sIS+NPjq4kTTjI6OgEuTkxM/OV74npI+9e/+LHx8gdfHkGJ3W90AO8f1H+VfuhgaO7wt/8svKfJo2s09J9Ft1gHSRbZcf9ZeDdmk4d3g+A/C+89I/JqQ/5/Fl28celzI7VyNsoy2idarq66WJZTFAeDC10tFfXaVFdL1e4twuhyxR9DXJX1YEvL8tRUhb8SWqbqEN3WQsKn2gwt23MPh0okASkVsg5j/tvODMRTM/e8cQwMOHRE/k9nEzpDVQpStnRIBjYphEHWdnYoNoYrCe0Ka0joOLe3l4V4TceZbSLdwfvKkDi8quPH/KamKJxh/AQi2IWPa4IrnIF5XW5AwHKBAeUrYGHnF/mPsEGJfCwmZe8wbT5vgymTsO+U2VndwTsklRIWvp9VahXTzORNcmBJtZ8V9zggZsKjvAmk8KBagxFX2HVAXvjuAueLVMrhdVZItXIAXJ1pTdOxuuNeE+IW8R7VpHimmK0zsJ9pDG3OZko2cJRe+hxSmk2c2kWb9isXusGHo5Ap7bKOtpIoCIdNsPW3dT87KLLLkjoH+/LpjnmfFBFG11BVNJjDioq1tpQjDLdNOlIuMEl9LcfXywPgmSk4yc3941XavsGxCuEKzX3L/brjFf4ZtvESZzoe2AvLa6OWMyNEVugO3o+kmVdtHPgmL1k38+iGhCbwu88VuOP4pozeaJkEyGuKjGxmjzPI2VfO9q4sYSdW+XTnRUKwo3+OjKxmO6Jvh8mm5v4rm1jYlzc3/6SwmH3EVO0rdOAHWArAzxYZ3RWRU29EfExTZIksPnegOsaR8s8YoXwyf3alnJsqesE7JfSPXCk7OUP8qiMjS+I1gfcWYXT/VvMxNYLX1WIJ1KUsmSxG22CaXhQabuFpXQqZ0PJ8v5eFhUXQAPMEoCQNl1h7WqUzdfEZQVZ2leAJRVhbWFiZjoNLUuHDCQgNsrBIZ/Kld1hbbFXQI5hWPcykLNhA3CEE/mzVL/a0CBqHMDmWTcJPEocxov+KlXVsWJBnoG3YVuuGtabgG3WljZSCj/Yah08+r1NsBZc97IKN7rw+sui2qE+2ETFCt7R76vhxlJ90KUJKON1HvRPs31berAQOVhAcZJqaHZgauVsqouLld29tlnVLVkh0yIRJOzCtpBG2J+igVtrRtN10fnXudNHtAHjSjbI6sJqf5TkYZrKS/XUh1Jrp6v1V2Ph+syGK7okLM6yZIYs7ypSFCnYfpnZM6wYRbLzlHQ4T0HZM7diTgXA7eJNhak8mM/cxysGCuX4NU6AhjoJ1sKuAogC4M1xhjgI8yYL2lVTsk7DF9UzWq0G9N1hM7MeqFbEBi9hHUCHDfUkGk/4mZkG2C4awpsczPbK3RsSC9Ux/woX3T6LoLphxbl6ILLM3ffu08Aw63D3Syb7GZ8MkK9JEK9jjjgkaRVR3Q0A7fag8qGv4lANVdnILtTI9+LArtRLC25VnDo+sbWwbgjPRHCFTcTwzz1gcaZkGeNl6DUU1Hzqz15JaYkdbNE1FryVhjnCausGRkX0Q3/CVIlh+Z3qASl2RHpZJCUKVVJnZSXCSqKth9cyrupyT1QStggdZh2wiVddUr10glqMhS5exRsUZH7ajkZ0fc9AlCHyAdDHNEFJp5jLNIDaaPQPH2Rsq5e+uSLEJXXoTE0K1BlJcEAs4MVNmh/scBvCuZKXz1i9AJMGLgCZ9AGgt4jwg6aEkgccEbL5xFnCB9SZcZ2QPQXSzuGeBjMgaw4LTaATwiBd4naEQZdvt9a4bC7ZmhIMLlKQwM4SZEZ2ZeoaREUKG+68wJ1mqA1tGkdrF8L7gjHIDCIXarvAyYKs1gfe/k2IbV0qgCuLiv26sHsBo3cvkcxtAC8Y5iL0ow4CdKLJTxghUWkbNgDfTAwET3svD5NAdvTDLwsISJhQfbM7IhuB4dv6Ew3Iq5EisDBIDIIjTGVkLjjigTxk428t+7GYkslUZ0N0OAMFoAd5VSwlTAZ9rpmxfM8Il8Py5ijV5jlN6Hhx2DLscXQFiamewLFtoMp7KA5/qBVW0ait2ft4q1gJxCWRbooyUmnJMauAkcqXMNu6zdEyDGpkj5DdrP+acGgdvKRR4DS62TDWWpxhwl9kBKhNsVAIVKIjipM9PBowdAgPNTEeHbUKqyYK9As5lSj9LRYIrvOUeBRfY6axeweYAgmjRPvZ3upLyYzp8WlstYrgVPmcJrPKuZI9VwRX2PF0OnpxBMxXDKA5W8NkfxLWIiU3X8uDsVVnuv+OLyEUgoKD64+3MzCCtAEgkMDwCQfYM680EaEnMZbIWygvo2AmBPewTGG9i9HZGE+hlOKwMsiXg/QQWGYVO1cw4lwG5/3ELeP/tgI4gPAQnFzPuCeudP0Ht4gx7CjLThQbYpsrQ+bMVvAmbwDM+ZCmEC8auyKtBdFxWgjeZDLg5nzhH7YrGpxxcvZ6webEwHGyxWTZTrFcIRIYnUB9KDOBLLEiZMpdTmGqU7bLOZPDo8gllTsLrMn/OAHtlIK00XIhpXL8tVcnE9uoGpjXAyptpQ2VazShvi85RIWOyRsGQW+Hx5w8esRkQFr2MCG4Cv0qcmW9i5owresl01Pp9lkIkRyjs7A6nmfvDYyvKFn75ACDLuoPgzMVGcKSZxVNpEcwzcDRl+2wJ4bQ8Tz9Gq4oEB33HKkdGZTBoFgAlImgEPBwoyTMoS8CdXgr5vZG0MtyRjGlBMS9OKPNKAK7dBCS6QR7VKGZkFRC94LF3Ctk3IcCeFcGrGBm2D5qN4B7cyJa7lEAMPuvjrHFLNm86qp45wDoYxapD5sgNo84C8K3COqCFZRFDrWE6IHbtZHrJ1VA+8BjLYzbaP54CXl1rRyhy4cPJC2LMBOgei7BXNioWOSv7d6CyfYR5GTLBQwsaXwdPw6CfGK03GJrq8M0ppdj5sZCbG5hiDag+nDncAb91An4IXuvwetxDJAm5Kgx83trIeCcPyzYzrtgsuT+eOqLQfDZgOXPQxZorNPS+zti4Y9DyAxwXwNoYgQqi9wp74/SJCs/NEjZ3224f4+yYampkyTBpGAxowFWBHmYPFFwLYHkIHRhx0C03lNfiwntJy57dd0k/LiAXFa2dUnDG8ihBsKx2PZY9MpoZ7zfcSr0PdRDIxhp2VGNXLst7HQIqdZVspw22zAtcJrP8GljDQGHzjQbKfddhFfNWYNDaxrIyI9JO3k+ufGDK9wM0mkXgGTSCFykqmjWzA8pZGTHziCdOev/s866enl2bn21u+XX01q1HJ298OsbSH4ODg582fNpwkqVbo7dGf/21Bfx/a3NWVvLo5l8f3bhx49Pgp0+Dx479nfQ0qW3/9++/xeFltwkcj3R0OnQdXAmN173blkTCV3L7ulXroJ5/trK0YWdeyZKdawSU37nzmakjS8JCAyugPzKvcsdOxlHeeGQs2KFhJdDu/M7tPAJtN8fz4zDrf9P5dUcUVH777ZU71yr4B1y3Vy4B1h4lzFiypAIu6h8YmlLRvH3HFz9BSPXOc18YX2PGklUrRODiveNroS8oOqNyHRTnLvu6SmuaYg5XrsI1Kv4flPfSCzHh1BwAAAAASUVORK5CYII=);
+		  	}
+			.VATBound {  
+			        //background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAMAAACJuGjuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA9hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJERUZEQUMxNTczOUY1QUM1N0FFM0YxQTc0OTc2M0ZGRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowRjQ2ODdBMEVDQ0MxMUU5OEJFM0Y3RDdCNzREMTI0NSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowRjQ2ODc5RkVDQ0MxMUU5OEJFM0Y3RDdCNzREMTI0NSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSBXaW5kb3dzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MzRBQkYxQkNFQjNFMTFFOUEyQzdCM0ZBQjMzMDNDREMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzRBQkYxQkRFQjNF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);
+			    background-position: center 69%;
+			    background-repeat: no-repeat;
+			}
+		  	.VATTEMP .payment,
+		  	.date {
+		  	text-align: center;
+		  	width: 35%
+		  	}
+		  	.VATTEMP .payment {
+		  	float: left
+		  	}
+		  	.VATTEMP .payment p,
+		  	.date p {
+		  	margin: 0
+		  	}
+		  	.VATTEMP .date {
+		  	float: right
+		  	}
+		  	.VATTEMP .input-date {
+		  	width: 40px;
+		  	color: #101011 !important;
+		  	}
+		  	.fl-l {
+		  	float: left;
+		  	}
+		  	.fl-r {
+		  	float: right
+		  	}
+		  	.VATTEMP div label.fl-r,
+		  	div label {
+		  	margin-right: 0px;
+		  	margin-top: 0px;
+		  	margin-bottom: 1px;
+		  	font-size: 14px;
+		  	}
+		  	.bgimg {
+		  	border: 1px solid #000;
+		  	cursor: pointer;
+		  	margin-bottom:5px;
+		  	}
+		  	.bgimg p {
+		  	color: #f00;
+		  	padding-left: 5px;
+		  	text-align: left
+		  	}
+		  	p {
+		  	font-size: 14px
+		  	}
+		  	#SolutionVNPT{
+		  	margin-bottom:5px;
+		  	font-size:12px;
+		  	border-bottom:1px dashed;
+		  	text-align: center;width: auto;
+		  	width: 1010px;
+		  	}
+
+			/* ================ */
+		  	/* Header Info*/
+
+		  	.headerInfo{
+		  	border-bottom:none!important;
+		  	}
+		  	.headerInfo p {
+		  		margin:0 0 5px 0;
+		  		padding:0;
+		  	}
+
+			/* ================ */
+		  	/* Title*/
+		  	.InvInfoLeft{
+		  	text-align:center;
+		  	margin:15px 0px 0px 0px;
+		  	}
+
+		  	/* ================ */
+		  	/* Form, Serial, No. */
+
+		  	.InvInfoRight{
+		  	text-align:left;
+		  	padding-bottom:10px;
+		  	}
+			.InvInfoRight span{
+			font-size: 14px;
+			}
+
+			/* ================ */
+		  	/* Customer Info*/
+
+		  	.customerInfo{
+		  	margin-top: 5px;
+		  	display: block;		  	
+		  	}
+		  	.customerInfo td{
+		  		padding-left: 10px;
+		  	}
+		  	.customerInfo label{
+		  		font-size:16px;
+		  	}
+			.customerInfo .vt-row{
+			margin-bottom: 8px;
+			}
+			/*.customerInfo .title{
+				width: 295px;
+			}*/
+
+			/* ================ */
+		  	/* Product Table*/
+
+		  	.productTable {
+		  	background-position: bottom;
+		  	border: 1 1 1 1 solid;
+		  	font-size: 16px;
+		  	margin: 0;
+		  	height: 300px;
+		  	position: relative;
+		  	z-index: 2
+		  	}
+		  	.productTable th {
+		  	font-size: 14px;
+		  	text-transform: uppercase;
+		  	height: 60px;
+		  	}
+		  	.productTable td.stt {
+		  	text-align: center
+		  	}
+		  	.productTable .back td {
+		  	font-family: "Times New Roman", Times, serif;
+		  	font-size: 14px
+		  	}
+		  	.productTable .noline td {
+		  	border-bottom: 1 none
+		  	}
+		  	.productTable td {
+		  	border-bottom: 1px solid;
+		  	border-right: 1px solid;
+		  	padding: 0px;
+		  	}
+		  	.productTable td:last-child{
+		  		border-right:0;
+		  	}
+		  	.productTable tr td.back-bold {
+		  	font-size: 14px;
+		  	padding-right: 5px;
+		  	padding-left: 5px;
+		  	text-align: right;
+		  	border-bottom: 1px dotted;
+		  	border-top: 0px solid;
+		  	height: 30px;
+		  	}
+		  	.productTable tr.bg-pink{
+		  	height: 32px;
+		  	}
+		  	.productTable tr.bg-pink td {
+		  	font-size: 14px;
+		  	text-align: right;
+		  	}
+
+
+			.productTableHeader{
+				height:40px;
+			}
+		  	.productTableHeader td{
+		  		text-align:center;
+		  		padding:2px 5px;
+		  	}
+		  	.productTableHeader td:last-child{
+		  		border-right:0;
+		  	}
+		  	.productTableHeader .title{
+		  	}
+		  	.productTableHeader .subtitle{
+				font-style:italic;
+				font-size:13px;
+		  	}
+			/* ================ */
+		  	/* Company Info*/
+		  	.comInfo label{
+		  		font-size:16px;
+		  	}
+			.comInfo td{
+		  		padding-left:10px;
+		  	}
+			.comInfo .vt-row{
+		  		margin-bottom:8px;
+		  	}
+			.comInfo .title{
+		  		width:160px;
+		  	}
+				</style>
+			</head>
+			<body style="width: 830px;height: auto;">
+				<div id="printView" style="position: relative;">
+					<xsl:choose>
+						<xsl:when test="/Invoice/Invcancel!=''">
+							<img style="position: absolute;left: 0px;top: 0px;width: 100%;height: 94%;z-index: 2;" width="100%" height="900px" src="data:image/png;base64,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"/>
+						</xsl:when>
+					</xsl:choose>
+					<xsl:for-each select="Invoice//Content">
+						<div class="VATTEMP">
+							<div id="quantitypages" style="padding-left:auto;padding-right:auto;">
+								<xsl:call-template name="main">
+									<xsl:with-param name="pagesNeededfnc" select="$pagesNeeded"/>
+									<xsl:with-param name="itemCountfnc" select="count(Products//Product)"/>
+									<xsl:with-param name="itemNeeded" select="$itemsPerPage"/>
+								</xsl:call-template>
+							</div>
+						</div>
+					</xsl:for-each>
+				</div>
+			</body>
+		</html>
+	</xsl:template>
+</xsl:stylesheet>
+{{>bodyxml}}
+{{>bodyhtml}}
+{{/with}}

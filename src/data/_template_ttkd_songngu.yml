@@ -3,6 +3,7 @@ comSerial: TC
 comName: CÔNG TY TNHH 
 comTaxCode: 
 comAddress: 
+comInvoiceNo: 0000000
 english: true
 #global style
 cssFontFamily: Arial
