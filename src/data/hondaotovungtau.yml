@@ -1,4 +1,4 @@
-comCode: _template_hsm_trong
+comCode: hondaotovungtau
 comSerial: NG
 comName: CÔNG TY CỔ PHẦN Ô TÔ NGHĨA VŨNG TÀU
 comTaxCode: 3502316891
@@ -40,7 +40,7 @@ header:
 comInfo:
   style: "font-size: 16px;"
   valueStyle: "font-weight: 700; font-size: 15px;"
-  margin: 4
+  margin: 3
   isInput:  
   subStyle: "font-size: 100%;"
   row:
@@ -80,6 +80,7 @@ cusInfo:
   isInput: true
   labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
+  margin: 4
   row:
   - label: Họ tên người mua hàng
     width: 514
