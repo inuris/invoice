@@ -1,4 +1,4 @@
-{{#with _template_trong}}
+{{#with xaydungxuanan}}
 <!-- split {{comCode}}.xslt -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl js" xmlns="http://www.w3.org/1999/xhtml"
 xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
@@ -277,9 +277,9 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           <!-- } -->
           .VATTEMP .statistics table td
           {
-          /* border-right: 1px solid {{cssColor}};
-          border-left: 1px solid {{cssColor}}; */
-          //padding-top: 2px;
+          border-right: 1px solid {{cssColor}};
+          /* border-left: 1px solid {{cssColor}}; */
+          /* padding-top: 2px; */
           padding-bottom: 2px;
           padding-right: 2px;
           padding-left: 5px;
@@ -687,7 +687,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       <label class="fl-l2">
                                         <span style="font-weight:bold;font-size:16px;">Số tiền viết bằng chữ{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>{{/if}}:</span>
                                       </label>
-                                      <label class="fl-l input-name" style="width:529px; text-align: left; font-weight: 700">
+                                      <label class="fl-l input-name" style="width:519px; text-align: left; font-weight: 700">
                                         <xsl:choose>
                                           <xsl:when test="../../Amount_words!=''">
                                             &#160;  <xsl:value-of select="../../Amount_words"/>

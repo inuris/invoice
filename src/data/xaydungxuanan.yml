@@ -1,8 +1,8 @@
-comCode: _template_trong
+comCode: xaydungxuanan
 comSerial: TC
-comName: CÔNG TY TNHH 
-comTaxCode: 
-comAddress: 
+comName: CÔNG TY TNHH XÂY DỰNG XUÂN AN VŨNG TÀU
+comTaxCode: 3502419706
+comAddress: Số 29 Bến Đình 3, Phường Thắng Nhì, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
 english: true
 #global style
@@ -11,7 +11,7 @@ cssColor: "#000000"
 
 #background : file, width, height, top, left
 background:
-  file: bg.png
+  file: 
   width: 268
   height: 260
   top: 500
@@ -20,15 +20,15 @@ background:
 header:
   #logo : file, width, top, left
   logo:
-    file: logo.png
-    width: 120
+    file: 
+    width: 170
     top: 5
     left: 35
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "font-size: 22px"
+    style: "font-size: 22px; color: #3569a7"
   - sub: VAT INVOICE
-    subStyle: "font-size: 18px; line-height: 1.2;"
+    subStyle: "font-size: 18px; line-height: 1.2; color: #3569a7"
   - value: Bản thể hiện của hóa đơn điện tử
     style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
   - sub: Electronic Invoice Display
@@ -49,7 +49,7 @@ comInfo:
     sub: Seller
     code: ComName
     style: "line-height: 18px;"
-    valueStyle: "font-size: 18px;"
+    valueStyle: "font-size: 18px;letter-spacing: -1px"
   - label: Mã số thuế
     code: ComTaxCode
     valueStyle: "letter-spacing: 2px;"
@@ -61,7 +61,7 @@ comInfo:
   - label: Điện thoại
     sub: Tel
     valueStyle: "font-size: 15px"
-    value: 0
+    value: 0982456775
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"

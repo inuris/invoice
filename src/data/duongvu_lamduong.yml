@@ -1,8 +1,8 @@
-comCode: _template_trong
+comCode: duongvu_lamduong
 comSerial: TC
-comName: CÔNG TY TNHH 
-comTaxCode: 
-comAddress: 
+comName: CHI NHÁNH CÔNG TY TNHH DƯƠNG VŨ - NHÀ HÀNG HẢI SẢN LÂM ĐƯỜNG
+comTaxCode: 3501460003-001
+comAddress: Số 125 B đường Trần Phú, Phường 5, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 comInvoiceNo: 0000000
 english: true
 #global style
@@ -11,7 +11,7 @@ cssColor: "#000000"
 
 #background : file, width, height, top, left
 background:
-  file: bg.png
+  file: 
   width: 268
   height: 260
   top: 500
@@ -20,15 +20,15 @@ background:
 header:
   #logo : file, width, top, left
   logo:
-    file: logo.png
-    width: 120
+    file: 
+    width: 170
     top: 5
     left: 35
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "font-size: 22px"
+    style: "font-size: 22px; color: #3569a7"
   - sub: VAT INVOICE
-    subStyle: "font-size: 18px; line-height: 1.2;"
+    subStyle: "font-size: 18px; line-height: 1.2; color: #3569a7"
   - value: Bản thể hiện của hóa đơn điện tử
     style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
   - sub: Electronic Invoice Display
@@ -49,7 +49,7 @@ comInfo:
     sub: Seller
     code: ComName
     style: "line-height: 18px;"
-    valueStyle: "font-size: 18px;"
+    valueStyle: "font-size: 18px;letter-spacing: -1px"
   - label: Mã số thuế
     code: ComTaxCode
     valueStyle: "letter-spacing: 2px;"
@@ -58,10 +58,10 @@ comInfo:
     code: ComAddress
     sub: Address
     valueStyle: "font-size: 15px"
-  - label: Điện thoại
-    sub: Tel
-    valueStyle: "font-size: 15px"
-    value: 0
+  # - label: Điện thoại
+  #   sub: Tel
+  #   valueStyle: "font-size: 15px"
+  #   value: 0
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"

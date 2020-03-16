@@ -38,7 +38,7 @@
                 </xsl:otherwise>
             </xsl:choose>
             <br />
-            <!-- <xsl:if test="$itemCount&gt;10">
+            <xsl:if test="$itemCount&gt;10">
                 <label style=" display: block; color:#000000">
                     <xsl:choose>
                         <xsl:when test="$pageC = 1">
@@ -49,7 +49,7 @@
                         </xsl:when>
                     </xsl:choose>
                 </label>
-            </xsl:if> -->
+            </xsl:if>
         </p>
     </div>
 </td>
@@ -81,7 +81,7 @@
             <span {{#if header.serial.labelStyle}}
                      style="{{header.serial.labelStyle}}"
                 {{/if}}>Số {{#if english}}<i style="font-size: 85%;{{#if header.serial.subStyle}}{{header.serial.subStyle}}{{/if}}">(No.)</i>{{/if}}: </span>
-            <b style="{{#if cssColorRed}}color:{{cssColorRed}}{{else}}color:red{{/if}};font-size:140%;
+            <b style="{{#if cssColorRed}}color:{{cssColorRed}}{{else}}color:red{{/if}};font-size:140%;letter-spacing: 2px;
                 {{#if header.serial.valueStyle}}
                     {{header.serial.valueStyle}}
                 {{/if}}
