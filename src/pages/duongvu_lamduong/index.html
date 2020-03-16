@@ -246,11 +246,14 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           {
           font-size: 100%;
           text-transform: none;
-          border-bottom: 1px solid {{cssColor}} !important;
-          border-right: 1px solid {{cssColor}} !important;
+          border-bottom: 1px solid {{cssColor}};
+          border-right: 1px solid {{cssColor}};
           /* border-left: 1px solid {{cssColor}} !important; */
-          border-top: 1px solid {{cssColor}} !important;
+          border-top: 1px solid {{cssColor}};
           color:  {{cssColor}};
+          }
+          .VATTEMP .statistics table tr th:last-child{
+            border-right: none;
           }
           .VATTEMP .statistics table td.stt
           {
@@ -283,6 +286,9 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           padding-bottom: 2px;
           padding-right: 2px;
           padding-left: 5px;
+          }
+          .VATTEMP .statistics table tr td:last-child{
+            border-right: none;
           }
           .VATTEMP .statistics tr td.back-bold
           {
@@ -779,7 +785,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 												</xsl:choose>
 											</td>
 											<!--panel server-->
-											<td style="border: none;width: 343px;vertical-align: top;text-align:center;color: #08086B;">
+											<td style="border: none;width: 393px;vertical-align: top;text-align:center;color: #08086B;">
 												<p style="font-size:16px; margin-top:0;margin-bottom: 0;">
 													<b>
 													Người bán hàng
@@ -801,7 +807,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                       </div>
             <xsl:choose>
               <xsl:when test="/Invoice/Fkey !=''">							
-                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:801px;">
                   <p style="margin:0px;">
                     <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
                     nhập mã: <xsl:value-of select="/Invoice/Fkey"/> để lấy hoá đơn</span>
@@ -812,7 +818,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                 </div>
               </xsl:when>
               <xsl:otherwise>
-                <div style="font-size:13px; text-align: center; margin-top: 4px;width:811px;">
+                <div style="font-size:13px; text-align: center; margin-top: 4px;width:801px;">
                   <p style="margin:0px;">
                     <span>Quý khách truy cập trang web <a href="https://portaltool-miennam.vnpt-invoice.com.vn">https://portaltool-miennam.vnpt-invoice.com.vn</a> 
                     nhập mã: để lấy hoá đơn</span>
@@ -822,7 +828,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                 </div>
               </xsl:otherwise>
             </xsl:choose>
-            <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed;width:811px;">
+            <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed;width:801px;">
               <p style="margin:0px;">
                 <span>Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu- Chi nhánh Tổng công ty Dịch vụ Viễn thông
                 <br/>
