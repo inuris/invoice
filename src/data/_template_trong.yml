@@ -7,7 +7,7 @@ comInvoiceNo: 0000000
 english: true
 #global style
 cssFontFamily: Arial
-cssColor: "#000000"
+cssColor: "#111"
 
 #background : file, width, height, top, left
 background:
