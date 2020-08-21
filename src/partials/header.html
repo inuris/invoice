@@ -38,7 +38,19 @@
                     <span> năm {{#if english}}<i style="font-size: 85%;">(year) </i>{{/if}}</span>&#8230;
                 </xsl:otherwise>
             </xsl:choose>
-            
+            <!-- <br />
+            <xsl:if test="$itemCount&gt;10">
+                <label style=" display: block; color:#000000">
+                    <xsl:choose>
+                        <xsl:when test="$pageC = 1">
+                            Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 10)" />
+                        </xsl:when>
+                        <xsl:when test="$pageC &gt; 1">
+                            Tiếp theo trang trước - Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 10)" />
+                        </xsl:when>
+                    </xsl:choose>
+                </label>
+            </xsl:if> -->
         </p>
     </div>
 </td>
