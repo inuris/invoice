@@ -1,8 +1,8 @@
 comCode: nghiduonga
-comSerial: TC
-comName: CÔNG TY TNHH 
-comTaxCode: 
-comAddress: 
+comSerial: AA
+comName: CÔNG TY CỔ PHẦN KHU DU LỊCH NGHỈ DƯỠNG A
+comTaxCode: 3500773187
+comAddress: Số 08 Tôn Đức Thắng, Thị trấn Côn Đảo, Huyện Côn Đảo, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
 english: true
 #global style
@@ -12,17 +12,17 @@ cssColor: "#111"
 #background : file, width, height, top, left
 background:
   file: bg.png
-  width: 268
-  height: 260
-  top: 500
-  left: 275
+  width: 350
+  height: 179
+  top: 515
+  left: 259
 #header
 header:
   #logo : file, width, top, left
   logo:
     file: logo.png
-    width: 120
-    top: 5
+    width: 150
+    top: 20
     left: 35
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
@@ -38,10 +38,11 @@ header:
     labelStyle: "display: block; width: 100px; float: left"
 #comInfo Table
 comInfo:
-  style: "font-weight: 700; font-size: 16px"
-  margin: 6
-  labelWidth: 160
+  style: "font-weight: 700; font-size: 15px"
+  margin: 3
+  labelWidth: 
   isInput:  
+  valueStyle: "font-weight: 400;"
   labelStyle: 
   subStyle: "font-size: 100%"
   row:
@@ -49,11 +50,11 @@ comInfo:
     sub: Seller
     code: ComName
     style: "line-height: 18px;"
-    valueStyle: "font-size: 18px;"
+    valueStyle: "font-size: 18px; font-weight: 700;"
   - label: Mã số thuế
     code: ComTaxCode
-    valueStyle: "letter-spacing: 2px;"
-    sub: Tax code
+    valueStyle: "letter-spacing: 2px; font-weight: 700;"
+    sub: VAT code
   - label: Địa chỉ
     code: ComAddress
     sub: Address
@@ -61,33 +62,77 @@ comInfo:
   - label: Điện thoại
     sub: Tel
     valueStyle: "font-size: 15px"
-    value: 0
+    value: 02543.837.888
+    width: 180
+    col-2:
+      - label: Email
+        valueStyle: "font-size: 15px"
+        value: sales@thesecretcondao.com
+        width: 250
+      - label: Website
+        valueStyle: "font-size: 15px"
+        value: thesecretcondao.com
+  - label: Số tài khoản
+    sub: Bank account number
+    valueStyle: "font-size: 15px"
+    value: 110 002 774 341 tại Ngân Hàng TMCP Công Thương Việt Nam (Vietinbank) - Chi Nhánh 11
+  - labelWidth: 215
+    valueStyle: "font-size: 15px"
+    value: 13310000034548  tại  Ngân hàng TMCP Đầu Từ Và Phát Triển Việt Nam ( BIDV) - CN Nhà Bè
 #cusInfo Table
 cusInfo:
-  style: "font-size: 16px"
-  labelWidth: 
+  style: "font-size: 14px"
+  margin: 3
+  labelWidth:   
   isInput: true
   labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 504
     code: Buyer
     sub: Customer's Name
-  - label: Tên đơn vị
-    width: 601
+    width: 328
+    col-2: 
+      - label: Số thứ tự
+        sub: Folio No.
+        width: 121
+  - label: Tên công ty
     code: CusName
-    sub: Company Name
-  - label: Mã số thuế
-    width: 638
+    sub: Company's Name
+    width: 399
+    col-2: 
+      - label: Phòng số
+        sub: Room No.
+        width: 121
+  - label: MST
     code: CusTaxCode
     sub: Tax code
+    width: 486
+    col-2: 
+      - label: Ngày đến
+        sub: Arrival
+        width: 135
   - label: Địa chỉ
-    width: 671
     code: CusAddress
     sub: Address
+    width: 480
+    col-2: 
+      - label: Ngày đi
+        sub: Departure
+        width: 126
   - label: Hình thức thanh toán
-    width: 507
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
+    width: 328
+    col-2: 
+      - label: Số khách
+        sub: No of Guests
+        width: 105
+  - label: Số tài khoản
+    sub: Acc No
+    width: 190
+    col-2: 
+      - label: Ngân hàng
+        sub: Bank
+        width: 400

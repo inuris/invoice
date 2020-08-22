@@ -127,6 +127,10 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 		  span, i, b{
 			color: {{cssColor}};
 		  }
+
+          .nenhd {  
+            background: inline('bg_repeat.png');
+          }
           .VATTEMP .header-main, .content
           {
           width: 790px;
@@ -444,7 +448,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                           <thead>
                             <!--<xsl:copy-of select="$header" />-->
                             <xsl:for-each select="/Invoice//Content">
-                              <tr style="background-color: white !important;">
+                              <tr style="background-color: transparent !important;">
 								<td colspan="6" style="padding-left: 0px !important;padding-right: 0px !important; padding-top: 5px; border-top: 1px solid {{cssColor}}">
                   <table class="headerInfo"  style="width:100%;">
 										<tr style="">
