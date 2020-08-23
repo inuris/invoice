@@ -5,7 +5,7 @@
 <Invoice> 
 <CNCom>{{comName}}</CNCom>
 <Content Id="SigningData">
-	{{#if debug}}
+	{{#ifCond debug '==' 1}}
 	<ArisingDate/>
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
 	<SerialNo>{{comSerial}}/20E</SerialNo>
@@ -35,9 +35,9 @@
 	<Extra/>
 	<Discount_Rate/>
 	<Discount_Amount/>
-	<CurrencyUnit>USD</CurrencyUnit>
-	<ExchangeRate>23150</ExchangeRate>
-	<ConvertedAmount>1211339</ConvertedAmount>
+	<CurrencyUnit></CurrencyUnit>
+	<ExchangeRate></ExchangeRate>
+	<ConvertedAmount></ConvertedAmount>
 	{{#each xml}}
 	<{{this}}/>
 	{{/each}}
@@ -60,7 +60,64 @@
 	</Products>
 	<Extra/>
 	<SignDate/>	
-	{{else}}
+	{{/ifCond}}
+	{{#ifCond debug '==' 2}}
+	<ArisingDate>21/08/2020 09:42:29</ArisingDate>
+	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
+	<SerialNo>{{comSerial}}/20E</SerialNo>
+	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
+	<Kind_of_Payment>TM</Kind_of_Payment>
+	<ComName>{{comName}}</ComName>
+	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
+	<ComAddress>{{comAddress}}</ComAddress>
+	<ComPhone/>
+	<ComFax/>
+	<ComBankNo/>	
+	<CusCode/>
+	<CusName>Công ty TNHH Steinsvik</CusName>
+	<CusPhone></CusPhone>
+	<DanToc/>
+	<GioiTinh/>
+	<Buyer></Buyer>
+	<CusTaxCode>4201504438</CusTaxCode>
+	<CusAddress>Lô E7-E8, KCN Suối Dầu, xã Suối Tân, huyện Cam Lâm, tĩnh Khánh Hòa, VN</CusAddress>
+	<Total>12177</Total>
+	<VAT_Rate>10</VAT_Rate>
+	<VAT_Amount>1218</VAT_Amount>
+	<Amount>13395</Amount>
+	<AmountInWords></AmountInWords>
+	<Amount_words>Mười  ba  nghìn ba  trăm  chín  mươi lăm  đô la Mỹ</Amount_words>
+	<KindOfService/>
+	<Extra/>
+	<Discount_Rate/>
+	<Discount_Amount/>
+	<CurrencyUnit>USD</CurrencyUnit>
+	<ExchangeRate>23250</ExchangeRate>
+	<ConvertedAmount>311433750</ConvertedAmount>
+	{{#each xml}}
+	<{{this}}/>
+	{{/each}}
+	<Products>
+		<Product>
+			<Code/>
+			<ProdName>Dịch vụ thuê vận chuyển Container 40ft </ProdName>
+			<ProdUnit>Cái</ProdUnit>
+			<ProdQuantity>3</ProdQuantity>	
+			<ProdPrice>38000000</ProdPrice>
+			<Discount/>
+			<DiscountAmount/>
+			<VATRate/>
+			<VATAmount/>
+			<Amount>38000000</Amount>
+			{{#each xml-product}}
+			<{{this}}/>
+			{{/each}}
+		</Product>
+	</Products>
+	<Extra/>
+	<SignDate/>	
+	{{/ifCond}}
+	{{#ifCond debug '==' null}}
 	<ArisingDate/>
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
 	<SerialNo>{{comSerial}}/20E</SerialNo>
@@ -114,7 +171,7 @@
 	</Products>
 	<Extra/>
 	<SignDate/>
-	{{/if}}
+	{{/ifCond}}
 </Content>
 	<imageClient></imageClient>
 	<image>Signature Valid</image>

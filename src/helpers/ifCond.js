@@ -1,3 +1,4 @@
+// Using: {{#ifCond var1 '==' var2}}
 module.exports = function (v1, operator, v2, options) {
     switch (operator) {
         case '==':
