@@ -6,11 +6,26 @@
 {{/ifOr}}
 <td style="vertical-align:top;border:none; text-align:center;">
     <div class="InvInfoLeft" style="">
-        {{#each header.name}}
-        <p style="margin:0 auto;">            
+        {{#each header.name}}            
+        <p style="margin:0 auto;">
+            {{#if this.valueConvert}}
+            <xsl:choose>
+                <xsl:when test="/Invoice/ConvertDate != ''">
+                    <span style="font-style:italic; font-size: 16px; line-height: 24px;{{this.styleConvert}}">
+                        {{this.valueConvert}}
+                    </span>
+                </xsl:when>
+                <xsl:otherwise>
+                    <span style="font-weight: bold;font-size: 16px; line-height: 24px;{{this.style}}">
+                        {{this.value}}
+                    </span>
+                </xsl:otherwise>
+            </xsl:choose>
+            {{else}}            
             <span style="font-weight: bold; font-size:24px;{{this.style}}">
                 {{this.value}}
             </span>
+            {{/if}} 
             {{#if ../english}}
                 {{#if this.sub}}
                     <i style="font-size: 85%;
