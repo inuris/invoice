@@ -862,7 +862,7 @@
 		</div>
 	</xsl:template>
 	<xsl:template name="add_vnpt_introduction">
-		<div style="font-size:12px; text-align: center; margin-top: 4px;">
+		<div id="invFooter" style="font-size:12px; text-align: center; margin-top: 4px;">
 			<span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0254 800126</span>
 			<br/>
 			<xsl:variable name="comTaxCode" select="/Invoice/Content/ComTaxCode" />
@@ -927,7 +927,7 @@
 		  	.VTU-VATTEMP .header {
 		  	float: right;
 		  	width: 600px;
-		  	font-family: Times New Roman
+		  	font-family: {{cssFontFamily}}
 		  	}
 		  	.VTU-VATTEMP .header-content {
 		  	float: left;
@@ -1192,6 +1192,9 @@
 			.comInfo .title{
 		  		//width:125px;
 		  	}
+			#invFooter{
+				display: block !important;
+			}
 				</style>
 			</head>
 			<body>
