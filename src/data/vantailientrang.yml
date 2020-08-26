@@ -1,8 +1,8 @@
-comCode: _template_ttkd
-comSerial: GA
-comName: CÔNG TY TNHH
-comTaxCode: 3
-comAddress: BR-VT
+comCode: vantailientrang
+comSerial: LT
+comName: CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ VẬN TẢI LIÊN TRANG
+comTaxCode: 3502432785
+comAddress: Ấp Nhân Tâm, Xã Xuyên Mộc, Huyện Xuyên Mộc, Tỉnh Bà Rịa - Vũng Tàu
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
