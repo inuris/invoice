@@ -6,7 +6,7 @@ comAddress: Đường 12, Khu Công Nghiệp Đông Xuyên, Phường Rạch D�
 comInvoiceNo: 0000000
 english: true
 debug: 
-convert: 1
+convert: 
 xml:
   - GrossValue0
 #global style
