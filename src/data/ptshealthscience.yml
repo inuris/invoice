@@ -5,7 +5,7 @@ comTaxCode: 3502418156
 comAddress: Tầng 3 tòa nhà e-Building số 80 Nguyễn Văn Cừ, P.9, TP. Vũng Tàu, tỉnh Bà Rịa - Vũng Tàu
 comInvoiceNo: 0000000
 english: true
-convert: 
+convert: 1
 debug: 
 #global style
 cssFontFamily: Arial
@@ -80,6 +80,7 @@ comInfo:
         width: 100
   - label: Số tài khoản
     sub: Acc.No.
+    value: 19135736540014 tại Ngân Hàng Techcombank- CN Bà Rịa Vũng Tàu
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"
