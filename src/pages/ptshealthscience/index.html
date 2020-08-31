@@ -1,4 +1,4 @@
-{{#with _template_trong}}
+{{#with ptshealthscience}}
 <!-- split {{comCode}}.xslt -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl js" xmlns="http://www.w3.org/1999/xhtml"
 xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
@@ -417,8 +417,8 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 			.InvInfoRight span{
 			font-size: 14px;
 			}
-      .vat-product th,td{
-				border-right:1px solid;
+      .vat-product th, td{
+				border-right:1px solid {{cssColor}};
 			}
         </style>
 
@@ -448,12 +448,13 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                             <!--<xsl:copy-of select="$header" />-->
                             <xsl:for-each select="/Invoice//Content">
                               <tr style="">
-								<td colspan="6" style="padding-left: 0px !important;padding-right: 0px !important; padding-top: 5px;border-right:none;">
-                  <table class="headerInfo"  style="width:100%;">
+                <td colspan="6" style="padding-left: 0px !important;padding-right: 0px !important; padding-top: 5px;border-right:none;">
+                  
+                  <table class="comInfo" style="width:100%;" cellspacing="0" cellpadding="0">
                     <tr style="border:none;">
                       <td colspan="3" style="border:none;padding-left:5px;text-align:left;">
                           <xsl:if test="$itemCount&gt;10">
-                            <label style=" display: block; color:#000000">
+                            <label style=" display: block; color:{{cssColor}}">
                               <xsl:choose>
                                 <xsl:when test="$pageC = 1">
                                   Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 10)" />
@@ -466,22 +467,32 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                           </xsl:if>
                       </td>
                     </tr>
+										<tr>
+                      <td style="width: 90px; border-left: none!important;border-right: none!important;padding: 5px; vertical-align: top;">
+                        {{>logo}}   
+                     </td>
+											<td style="border-left: none!important;border-right: none!important;padding: 5px 10px 4px 10px;">
+												 {{>info data=comInfo relative=true}}   
+											</td>
+                      <td style="width: 200px; border-left: none!important;border-right: none!important;padding: 5px;">
+                        {{>header-serial relative=true}}   
+                     </td>
+										</tr>
+                  </table>
+                  
+                  <table class="headerInfo"  style="width:100%;">                    
 										<tr style="">
-											{{>header relative=true}}									
+                      <td colspan="6" style="border-left: none!important;border-right: none!important;padding: 10px 10px 4px 10px;">
+                        {{>header-name relative=true}}
+                      </td>		
                     </tr>
 									</table>
 
-									<table class="comInfo" style="width:100%;" cellspacing="0" cellpadding="0">
-										<tr>
-											<td colspan="6" style="border-left: none!important;border-right: none!important;padding: 10px 10px 4px 10px; border-top: 1px solid {{cssColor}}">
-												 {{>info data=comInfo relative=true}}   
-											</td>
-										</tr>
-									</table>
+									
 									
 									<table class="customerInfo" cellspacing="0" cellpadding="0">
 										<tr>
-											<td colspan="6" style="border-left: none!important;border-right: none!important;padding: 10px 10px 4px 10px; border-top: 1px solid {{cssColor}}">
+											<td colspan="6" style="border-left: none!important;border-right: none!important;padding: 10px 10px 4px 10px;">
                         {{>info data=cusInfo relative=true}}  
 											</td>
 										</tr>
@@ -648,7 +659,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   </td>
                                 </tr>
                                 <tr class="noline back" style="border-top: 1px solid {{cssColor}}; ">
-                                  <td colspan="5" style="text-align: right; border-right: 1px solid {{cssColor}}">
+                                  <td colspan="5" style="text-align: right; border-right: 1px solid {{cssColor}}; padding-right: 5px;">
                                     <label class="fl-l" style="line-height:20px; text-align:left;">
                                       <span style="font-weight:bold;font-size:16px">Thuế suất GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Rate)</i>{{/if}}:</span>
                                       <xsl:choose>
@@ -720,9 +731,9 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   <td colspan="6" style="padding-right: 0px;padding-top: 8px; padding-bottom: 4px;border-right:0px;">
                                     <div class="clearfix">
                                       <label class="fl-l2">
-                                        <span style="font-weight:bold;font-size:16px;">Số tiền viết bằng chữ{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>{{/if}}:</span>
+                                        <span style="font-weight:bold;font-size:16px;">Số tiền viết bằng chữ{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Total amount in words)</i>{{/if}}:</span>
                                       </label>
-                                      <label class="fl-l input-name" style="width:565px; text-align: left; font-weight: 700">
+                                      <label class="fl-l input-name" style="width:497px; text-align: left; font-weight: 700">
                                         <xsl:choose>
                                           <xsl:when test="../../Amount_words!=''">
                                             &#160;  <xsl:value-of select="../../Amount_words"/>

@@ -1,0 +1,116 @@
+comCode: ptshealthscience
+comSerial: AA
+comName: CÔNG TY CỔ PHẦN PTS HEALTH SCIENCE
+comTaxCode: 3502418156
+comAddress: Tầng 3 tòa nhà e-Building số 80 Nguyễn Văn Cừ, P.9, TP. Vũng Tàu, tỉnh Bà Rịa - Vũng Tàu
+comInvoiceNo: 0000000
+english: true
+convert: 
+debug: 
+#global style
+cssFontFamily: Arial
+cssColor: "#c0333d"
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 192
+  height: 265
+  top: 500
+  left: 337
+logo:
+  file: logo.png
+  width: 80
+  top: 0
+  left: 5
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: 
+    width: 120
+    top: 5
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 24px; font-family: Times New Roman;"
+  - value: VAT INVOICE
+    style: "font-size: 18px; line-height: 1.2; font-family: Times New Roman; font-weight: 700"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    style: "font-size: 12px; padding-left: 11px;"
+    width: 200
+    labelStyle: "display: block; width: 100px; float: left; letter-spacing: -0.2px;"
+    valueStyle: "letter-spacing: -0.2px;"
+#comInfo Table
+comInfo:
+  style: "font-size: 11px; line-height: 11px;"
+  margin: 1
+  labelWidth:
+  isInput:  
+  labelStyle: "font-weight: 700;"   
+  subStyle: "font-size: 11px"
+  width: 
+  row:
+  - code: ComName
+    style: "line-height: 18px; font-size: 18px; font-weight: 700; font-family: Times New Roman;"
+  - label: Văn Phòng
+    code: ComAddress
+    valueStyle: "letter-spacing: -0.2px;"
+  - label: Nhà máy
+    value: Đường số 10, Khu công nghiệp Phú Mỹ 1, P.Phú Mỹ, TX. Phú Mỹ, tỉnh Bà Rịa - Vũng Tàu   
+    valueStyle: "letter-spacing: -0.2px;"
+  - label: Website
+    value: www.e-timber.com.vn
+    width: 288
+    col-2:
+      - label: Điện thoại
+        value: 0254-392.3969
+        width: 100
+  - label: Email
+    value: info@e-timber.com.vn - etimber.pts@gmail.com
+    width: 300
+    col-2:
+      - label: Fax
+        value: 0254-350.9968
+        width: 100
+  - label: Số tài khoản
+    sub: Acc.No.
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  isInput: true
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    width: 513
+    code: Buyer
+    sub: Purchaser's Name
+  - label: Tên đơn vị
+    width: 667
+    code: CusName
+    sub: Company
+  - label: Địa chỉ
+    width: 704
+    code: CusAddress
+    sub: Address
+  - label: Số tài khoản
+    width: 156
+    code: ComBankNo
+    sub: Account No.
+    col-2:
+      - label: Hình thức thanh toán
+        width: 200
+        code: Kind_of_Payment
+        isPayment: true
+        sub: Payment method
+  - label: Mã số thuế
+    width: 665
+    code: CusTaxCode
+    sub: Tax Code
