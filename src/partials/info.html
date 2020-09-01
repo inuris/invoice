@@ -1,5 +1,5 @@
 {{#*inline "rowEntry"}}
-	{{#ifOr v1=this.label v2=this.labelWidth}}
+	{{#ifOr v1=this.label v2=this.labelWidth v3=globalLabelWidth}}
 		<label class="fl-l title" style="margin-top:0;
 										{{#if globalLabelWidth}}width:{{globalLabelWidth}}px;{{/if}}
 										{{#if this.labelWidth}}width:{{this.labelWidth}}px;{{/if}}
@@ -46,9 +46,7 @@
 			{{/ifOr}}
 			>:&#160;</span>
 		{{else}}
-			{{#if this.labelWidth}}
-			&#160;&#160;
-			{{/if}}
+			{{#ifOr v1=this.labelWidth v2=globalLabelWidth}}<span style="margin-left: 8px"></span>{{/ifOr}}
 		{{/if}} 
 		<span 
 		{{#ifOr v1=globalStyle v2=globalValueStyle v3=this.style v4=this.valueStyle}}

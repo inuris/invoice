@@ -5,7 +5,7 @@ comTaxCode: 3500810304
 comAddress: 195/44 Ba Cu, Phương 4, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
 english:
-convert:
+convert: 1
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#3b7b43"
@@ -15,7 +15,7 @@ background:
   file: bg.jpg
   width: 600
   height: 238
-  top: 463
+  top: 483
   left: 125
 #header
 header:
@@ -63,8 +63,9 @@ comInfo:
     sub: Tel
     value: "0254.3597343 * Fax: 0254.3597344"
   - label: Số tài khoản
-    value: 29397629 Ngân hàng TMCP Á Châu chi nhánh Thành phố Vũng Tàu
+    value: 29397629 tại Ngân hàng TMCP Á Châu - Chi nhánh Thành phố Vũng Tàu
     sub: Tax code
+  - value: 5521100476008 tại Ngân hàng TMCP Quân Đội - Chi nhánh Thành phố Vũng Tàu
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
