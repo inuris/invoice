@@ -12,7 +12,7 @@ cssColor: "#3b7b43"
 
 #background : file, width, height, top, left
 background:
-  file: bg.png
+  file: 
   width: 340
   height: 135
   top: 500

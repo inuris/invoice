@@ -5,26 +5,26 @@ comTaxCode: 3500810304
 comAddress: 195/44 Ba Cu, Phương 4, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
 english:
-convert: 1
+convert:
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#3b7b43"
 
 #background : file, width, height, top, left
 background:
-  file: bg.png
-  width: 340
-  height: 135
-  top: 500
-  left: 255
+  file: bg.jpg
+  width: 600
+  height: 238
+  top: 463
+  left: 125
 #header
 header:
   #logo : file, width, top, left
   logo:
     file: logo.png
-    width: 160
-    top: 12
-    left: 15
+    width: 192
+    top: 3
+    left: 25
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 22px"
