@@ -7,7 +7,7 @@ comInvoiceNo: 0000000
 english: true
 convert:
 #global style
-cssFontFamily: Arial
+cssFontFamily: Times New Roman
 cssColor: "#111"
 
 #background : file, width, height, top, left
@@ -73,23 +73,23 @@ cusInfo:
   subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 551
+    width: 550
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 648
+    width: 647
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 685
+    width: 684
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 718
+    width: 717
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 554
+    width: 553
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
