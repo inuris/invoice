@@ -68,7 +68,6 @@ comInfo:
 cusInfo:
   style: "font-size: 16px"
   labelWidth: 
-  isInput: true
   labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
   row:

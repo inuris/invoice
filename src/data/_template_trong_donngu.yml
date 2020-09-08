@@ -1,14 +1,14 @@
 comCode: _template_trong_donngu
 comSerial: AD
-comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN AN DƯƠNG
-comTaxCode: 3500810304
-comAddress: 195/44 Ba Cu, Phương 4, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN
+comTaxCode: 3500
+comAddress: BRVT
 comInvoiceNo: 0000000
 english:
 convert:
 #global style
 cssFontFamily: Times New Roman
-cssColor: "#3b7b43"
+cssColor: "#111"
 
 #background : file, width, height, top, left
 background:
@@ -21,13 +21,13 @@ background:
 header:
   #logo : file, width, top, left
   logo:
-    file: logo.png
+    file:
     width: 160
     top: 12
     left: 15
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "font-size: 22px"
+    style: "font-size: 22px; color: #3569a7"
   - sub: VAT INVOICE
     subStyle: "font-size: 18px; line-height: 1.2;"
   - value: Bản thể hiện của hóa đơn điện tử
@@ -63,36 +63,35 @@ comInfo:
   - label: Điện thoại
     sub: Tel
     valueStyle: "font-size: 15px"
-    value: "0254.3597343 * Fax: 0254.3597344"
+    value: 
   - label: Số tài khoản
-    value: 29397629 Ngân hàng TMCP Á Châu chi nhánh Thành phố Vũng Tàu
+    value: 
     sub: Tax code
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
-  labelWidth: 
-  isInput: true
+  labelWidth:
   labelStyle: 
   subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 673
+    width: 672
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 755
+    width: 754
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 753
+    width: 752
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 778
+    width: 777
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 254
+    width: 253
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
