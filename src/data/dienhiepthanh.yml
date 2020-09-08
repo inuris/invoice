@@ -1,0 +1,97 @@
+comCode: dienhiepthanh
+comSerial: AA
+comName: CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ ĐIỆN HIỆP THÀNH
+comTaxCode: 3502369484
+comAddress: Số 126 Lưu Hữu Phước, Phường Thắng Nhất, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+comInvoiceNo: 0000000
+english:
+convert: 1
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+
+#background : file, width, height, top, left
+background:
+  file: 
+  width: 340
+  height: 135
+  top: 500
+  left: 255
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: 
+    width: 160
+    top: 12
+    left: 15
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px; color: #3569a7"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 400; font-size: 16px"
+  margin: 6
+  labelWidth: 110
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px; font-weight: 700"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px; font-weight: 700"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+    valueStyle: 
+  - label: Điện thoại
+    sub: Tel
+    valueStyle: 
+    value: 0981357790
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px; font-weight: 400;"
+  labelWidth:
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    width: 672
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 754
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 752
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 777
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 253
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
+    col-2:
+      - label: Tài khoản
+        width: 370
