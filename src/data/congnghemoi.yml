@@ -5,7 +5,7 @@ comTaxCode: 3500644600
 comAddress: Số 402/1 Thống Nhất, Phường 8, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 comInvoiceNo: 0000000
 english:
-convert: 1
+convert: 
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#000055"
@@ -18,11 +18,11 @@ logo:
   left: 5
 #background : file, width, height, top, left
 background:
-  file: 
+  file: bg.png
   width: 309
   height: 281
-  top: 500
-  left: 255
+  top: 411
+  left: 276
 #header
 header:
   #logo : file, width, top, left

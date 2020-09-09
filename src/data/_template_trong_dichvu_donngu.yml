@@ -18,7 +18,7 @@ logo:
   left: 5
 #background : file, width, height, top, left
 background:
-  file: 
+  file: bg.png
   width: 340
   height: 135
   top: 500
