@@ -30,7 +30,7 @@ header:
     style: "font-size: 27px; color: #e4322b;font-family: Times New Roman;"
 comInfo:
   labelWidth: 90  
-  width: 525
+  width: 520
   row:
   - valueStyle: "font-weight: bold; font-size: 20px; color: #e4322b; font-family: Times New Roman;"
     labelWidth: "0"
