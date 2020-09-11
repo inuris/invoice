@@ -46,7 +46,9 @@
 			{{/ifOr}}
 			>:&#160;</span>
 		{{else}}
-			{{#ifOr v1=this.labelWidth v2=globalLabelWidth}}<span style="margin-left: 8px"></span>{{/ifOr}}
+			{{#ifOr v1=this.labelWidth v2=globalLabelWidth}}
+				{{#if this.label}}<span style="margin-left: 8px"></span>{{/if}}
+			{{/ifOr}}
 		{{/if}} 
 		<span 
 		{{#ifOr v1=globalStyle v2=globalValueStyle v3=this.style v4=this.valueStyle}}
