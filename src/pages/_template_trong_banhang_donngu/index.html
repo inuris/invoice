@@ -591,30 +591,16 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 </td>
                                 <td class="back-bold2" style="border-right:none;"><!--Thành tiền-->
                                   <div style="display: block;word-wrap: break-word;text-align: right; overflow: hidden;">
-                                    <xsl:if test="Total=0">
-                                      <!--TOKEN V3: Thành tiền mỗi sp lấy theo tag Amount-->
-                                      <xsl:choose>
-                                        <xsl:when test="(Amount=0) or(Amount='')">
+                                    
+                                    <xsl:choose>
+                                      <xsl:when test="(Total=0) or(Total='')">
                                         &#160;
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                        <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0'),',','?'),'.',','),'?','.')"/>
-                                        </xsl:otherwise>
-                                      </xsl:choose>
-                                    </xsl:if>
-                                    <xsl:if test="Total!=0">
-                                      <!--TOKEN V5: Thành tiền mỗi sp lấy theo tag Total-->
-                                      <xsl:choose>
-                                        <xsl:when test="(Total=0) or(Total='')">
-                                        &#160;
-                                        </xsl:when>
-                                        <xsl:otherwise>
+                                      </xsl:when>
+                                      <xsl:otherwise>
                                         <!-- fix new-->
                                         <xsl:value-of select="translate(translate(translate(format-number(translate(Total,',','.'), '###,##0'),',','?'),'.',','),'?','.')"/>
-                                        </xsl:otherwise>
-                                      </xsl:choose>
-                                    </xsl:if>
+                                      </xsl:otherwise>
+                                    </xsl:choose>
                                   </div>
                                 </td>
                               </tr>
@@ -827,11 +813,9 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                         </table>
                         <div class="nenhd_bg"> &#160; </div>
                       </div>
-            <i style="margin:0px;font-size:13px;">
-              <span>(Cần kiểm tra, đối chiếu khi lập, giao nhận hóa đơn)</span>
-            </i>
+            
         
-            <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed; padding: 5px;">
+            
             <xsl:variable name="comTaxCode" select="/Invoice/Content/ComTaxCode" />
             <xsl:variable name="portalV5" select="concat('https://',$comTaxCode,'.vnpt-invoice.com.vn')" />
             <xsl:choose>
@@ -849,7 +833,8 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 								</div>
 							</xsl:when>
 							<xsl:otherwise>
-								<div style="font-size:13px; text-align: left; margin-top: 4px;width:100%;">
+
+								<div style="font-size:13px; text-align: left; margin-top: 4px; padding-left:10px;">
 									<p style="margin:0px;">
 										<i>Mã tra cứu hóa đơn: </i>
 										<br/>
@@ -861,11 +846,15 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 									</p>
 								</div>
 							</xsl:otherwise>
-						</xsl:choose>
-					  <span>Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu - MST: 0106869738-044, Hotline đăng ký dịch vụ: 0913 759 468
-                           
-                            </span>
-                      </div>
+            </xsl:choose>
+            
+					  <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed;">
+              <p style="margin:0px;">
+                  <span>Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu- Chi nhánh Tổng công ty Dịch vụ Viễn thông
+                  <br/>
+                  MST: 0106869738-044, Hotline đăng ký dịch vụ: 0913 759 468</span>
+              </p>
+            </div>
 					  
 						
                       <!--panel footer-->
