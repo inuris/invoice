@@ -59,10 +59,8 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
     sub: Address
-    valueStyle: "font-size: 15px"
   - label: Điện thoại
     sub: Tel
-    valueStyle: "font-size: 15px"
     value: 0
 #cusInfo Table
 cusInfo:

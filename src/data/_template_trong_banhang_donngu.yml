@@ -60,14 +60,10 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
     sub: Address
-    valueStyle: "font-size: 15px"
   - label: Điện thoại
-    sub: Tel
-    valueStyle: "font-size: 15px"
     value: 
   - label: Số tài khoản
     value: 
-    sub: Tax code
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
