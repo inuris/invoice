@@ -1,5 +1,5 @@
 comCode: _template_trong_songngu
-comSerial: TC
+comSerial: AA
 comName: CÔNG TY TNHH 
 comTaxCode: 
 comAddress: 
@@ -12,7 +12,7 @@ cssColor: "#111"
 
 #background : file, width, height, top, left
 background:
-  file: bg.png
+  file:
   width: 268
   height: 260
   top: 500
@@ -21,7 +21,7 @@ background:
 header:
   #logo : file, width, top, left
   logo:
-    file: logo.png
+    file:
     width: 120
     top: 5
     left: 35
