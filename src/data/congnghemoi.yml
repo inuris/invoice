@@ -12,25 +12,26 @@ cssColor: "#000055"
 
 #logo : file, width, top, left
 logo:
-  file: logo.png
+  file: 
   width: 120
   top: 0
   left: 5
 #background : file, width, height, top, left
 background:
   file: bg.png
-  width: 309
-  height: 281
-  top: 411
-  left: 276
+  width: 260
+  height: 242
+  top: 546
+  left: 301
 #header
 header:
   #logo : file, width, top, left
   logo:
-    file:
-    width: 160
-    top: 12
-    left: 15
+    file: logo.png
+    width: 130
+    top: 1
+    left: 5
+    bottom: 8
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 22px;"
@@ -50,14 +51,13 @@ comInfo:
   margin: 4  
   isInput:  
   labelStyle: 
-  subStyle: "font-size: 100%"
-  labelWidth: 180
+  subStyle: "font-size: 90%"
+  labelWidth: 175
   row:
-  - label: Đơn vị bán hàng
+  - label: Đơn vị bán
     sub: Seller
     code: ComName
-    style: "letter-spacing: -0.3px; font-weight: 700"
-    valueStyle: ""
+    valueStyle: "font-weight: 700"
   - label: Mã số thuế
     code: ComTaxCode
     valueStyle: "letter-spacing: 2px; font-weight: 700"
@@ -86,22 +86,23 @@ cusInfo:
   style: "font-size: 15px; font-weight: 400;"
   labelWidth:
   labelStyle: 
-  subStyle: "font-size: 100%"  
+  isInput: true
+  subStyle: "font-size: 90%"  
   row:
-  - label: Họ tên người mua hàng
-    width: 537
+  - label: Người mua
+    width: 704
     code: Buyer
-    sub: Customer's Name
-  - label: Tên đơn vị
-    width: 636
+    sub: Buyer
+  - label: Đơn vị
+    width: 677
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 677
+    width: 683
     code: CusTaxCode
-    sub: Tax code
+    sub: Tax Code
   - label: Địa chỉ
-    width: 711
+    width: 720
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
@@ -112,4 +113,4 @@ cusInfo:
     col-2:
       - label: Số tài khoản
         sub: Account No.
-        width: 235
+        width: 258
