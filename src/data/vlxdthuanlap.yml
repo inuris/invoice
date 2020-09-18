@@ -1,0 +1,117 @@
+comCode: vlxdthuanlap
+comSerial: TL
+comName: CÔNG TY TNHH KHAI THÁC - SẢN XUẤT VẬT LIỆU XÂY DỰNG THUẬN LẬP
+comTaxCode: 3500385850
+comAddress: Ấp 6, Xã Tóc Tiên, Thị xã Phú Mỹ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+english: 1
+convert: 
+#global style
+cssFontFamily: Arial
+cssColor: "#111"
+
+#logo : file, width, top, left
+logo:
+  file: logo.png
+  width: 140
+  top: 0
+  left: 5
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 350
+  height: 191
+  top: 572
+  left: 255
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file:
+    width: 160
+    top: 12
+    left: 15
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px; color: #002789"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2; color: #002789"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 400; font-size: 15px"
+  margin: 2  
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - code: ComName
+    style: "line-height: 18px; color: #002789"
+    valueStyle: "font-size: 22px; line-height: 22px;font-weight: 700; display: inline-block; width: 658px; text-align: center"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px; font-weight: 700"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Add
+  - label: Điện thoại
+    sub: Tel
+    value: (0254) 3876641
+    col-2:
+    - label: "Fax"
+      value: (0254) 3894312
+      labelStyle: "margin-left: 40px"
+  - label: TK số
+    sub: Acc No.
+    value: 083.01.0067939.0001
+    valueStyle: "font-weight: 700"
+    col-2: 
+      - value: tại NH TMCP Sài Gòn (SCB) - PGD Tân Thành
+        valueStyle: "margin-left: 8px"
+  - label: TK số
+    sub: Acc No.
+    value: 7621.000000.0527
+    valueStyle: "font-weight: 700"
+    col-2: 
+      - value: tại NH TMCP ĐT&PT VN (BIDV) - CN Phú Mỹ
+        valueStyle: "margin-left: 8px"
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px; font-weight: 400;"
+  labelWidth:
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 525
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 628
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 670
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 706
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 253
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
+    col-2:
+      - label: Tài khoản
+        width: 211
