@@ -900,46 +900,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                         </table>
                         <div class="nenhd_bg"> &#160; </div>
                       </div>
-            
-            <xsl:variable name="comTaxCode" select="/Invoice/Content/ComTaxCode" />
-            <xsl:variable name="portalV5" select="concat('https://',$comTaxCode,'.vnpt-invoice.com.vn')" />
-            <xsl:choose>
-							<xsl:when test="/Invoice/Fkey !=''">                            
-								<div style="font-size:13px; text-align: left; margin-top: 4px;width:832px;width:100%;">
-									<p style="margin:0px;">
-										<i>Mã tra cứu hóa đơn: <xsl:value-of select="/Invoice/Fkey"/></i>
-										<br/>
-										<i>Tra cứu hóa đơn điện tử tại website:
-											<xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text><xsl:value-of select="$portalV5"/> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-												<xsl:value-of select="$portalV5"/>
-											<xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
-										</i>
-									</p>
-								</div>
-							</xsl:when>
-							<xsl:otherwise>
-								<div style="font-size:13px; text-align: left; margin-top: 4px;width:100%;">
-									<p style="margin:0px;">
-										<i>Mã tra cứu hóa đơn: </i>
-										<br/>
-										<i>Tra cứu hóa đơn điện tử tại website:
-											<xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text><xsl:value-of select="$portalV5"/> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-												<xsl:value-of select="$portalV5"/>
-											<xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
-										</i>
-									</p>
-								</div>
-							</xsl:otherwise>
-						</xsl:choose>
-
-					  <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed; padding: 5px;">
-              <p style="margin:0px;">
-                  <span>Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu- Chi nhánh Tổng công ty Dịch vụ Viễn thông
-                  <br/>
-                  MST: 0106869738-044, Hotline đăng ký dịch vụ: 0913 759 468</span>
-              </p>
-            </div>
-					  
+                      {{>footer-trong}}
 						
                       <!--panel footer-->
                     </div>
