@@ -86,7 +86,7 @@ cusInfo:
   style: "font-size: 15px; font-weight: 400;"
   labelWidth:
   labelStyle: 
-  isInput: true
+  isInput: 
   subStyle: "font-size: 90%"  
   row:
   - label: Người mua
