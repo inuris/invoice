@@ -1,11 +1,11 @@
 comCode: congnghemoi
-comSerial: AA
+comSerial: CN
 comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN SẢN XUẤT VẬT LIỆU XÂY DỰNG CÔNG NGHỆ MỚI
 comTaxCode: 3500644600
 comAddress: Số 402/1 Thống Nhất, Phường 8, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 comInvoiceNo: 0000000
 english: 1
-convert: 
+convert: 1
 #global style
 cssFontFamily: Arial
 cssColor: "#000055"
