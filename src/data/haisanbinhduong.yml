@@ -1,0 +1,69 @@
+comCode: haisanbinhduong
+comSerial: BD
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN HẢI SẢN BÌNH DƯƠNG
+comTaxCode: 3502259273
+comAddress: 22/36 Chi Lăng, Phường 12, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#27299e"
+
+#background : file, width, height, top, left
+background:
+  file: bg.jpg
+  width: 280
+  height: 278
+  top: 83
+  left: 304
+#header
+header:
+  #logo
+  logo:
+    file: logo.png
+    width: 120
+    left: 30
+    top: 5
+    bottom: 5
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 27px; font-family: Times New Roman"
+comInfo:
+ labelWidth: 170
+ width: 616
+ row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold; font-size: 20px; line-height: 21px; font-family: Times New Roman"
+    labelStyle: "line-height: 21px;"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold; letter-spacing: 2px"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+    valueStyle: "letter-spacing: -0.2px"
+  - label: Số tài khoản
+    code: ComBankNo
+    isInput: true
+  - label: Điện thoại
+    value: "02543.553368 * Fax : 02543.553368"
+cusInfo:
+ labelWidth: 170
+ width: 616
+ isInput: true
+ row:
+  - label: Họ tên người mua hàng    
+    code: Buyer
+  - label: Tên đơn vị
+    code: CusName
+  - label: Mã số thuế
+    code: CusTaxCode
+  - label: Địa chỉ
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      labelWidth: 93
+      width: 318
+      code: CusBankNo
