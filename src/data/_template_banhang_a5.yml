@@ -1,0 +1,51 @@
+comCode: _template_banhang_a5
+comPattern: 02GTTT0/001
+comSerial: AA
+comName: CÔNG TY
+comTaxCode: 350
+comAddress: Khu phố
+comInvoiceNo: 0000000
+comFkey: ...
+convert:
+comInfo:   
+  row:
+  - valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    labelWidth: 65
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+    labelWidth: 65
+    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+  - label: Điện thoại
+    value: 0254
+    labelWidth: 65
+  - label: STK
+    value: 0000
+    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+    labelWidth: 65
+cusInfo:
+ isInput: true
+ margin: 4
+ row:
+  - label: Họ và tên người mua hàng
+    width: 661
+    code: Buyer
+  - label: Tên đơn vị
+    width: 754
+    code: CusName
+  - label: Mã số thuế
+    width: 751
+    code: CusTaxcode
+  - label: Địa chỉ
+    width: 776
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+      - label: Số tài khoản
+        width: 421
