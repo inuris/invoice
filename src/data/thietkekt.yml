@@ -5,7 +5,7 @@ comTaxCode: 3502320697
 comAddress: 406/6 Bình Giã, Phường Nguyễn An Ninh, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 comInvoiceNo: 0000000
 english:
-convert: 1
+convert:
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#111"
@@ -70,6 +70,8 @@ comInfo:
     col-2:
     - label: Website
       value: quangcaoktvungtau.com
+  - label: Số TK
+    value: 790 790 198 907 000 10 - tại Ngân Hàng Oceanbank, 19 Trần Hưng Đạo, Chi nhánh Vũng Tàu
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
