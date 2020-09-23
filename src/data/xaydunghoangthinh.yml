@@ -6,6 +6,12 @@ comAddress: Số 6A, Đinh Tiên Hoàng, TT.Ngãi Giao, Huyện Châu Đức, T�
 comInvoiceNo: 0000000
 cssFontFamily: Times New Roman
 cssColor: "#7b5473"
+
+### background: file, width, height, top, left, opacity
+background_full:
+  file: bg_full.png
+  top: 69 
+
 #header
 header:
   #logo
@@ -28,6 +34,9 @@ comInfo:
     width: 717
     code: ComPhone
     isInput: true
+  - label: Số tài khoản
+    isInput: true
+    width: 704
 cusInfo:
  isInput: true
  row:
