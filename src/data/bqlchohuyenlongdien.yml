@@ -7,6 +7,7 @@ comAddress: Khu phố Long Phượng, Thị trấn Long Điền, Huyện Long Đ
 comInvoiceNo: 0000000
 comFkey: ...
 convert:
+isHSM: true
 comInfo:   
   row:
   - valueStyle: "font-weight: bold"
