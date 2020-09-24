@@ -771,14 +771,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 								</tr>
 								<tr>
 									<td colspan="6">
-										<xsl:choose>
-											<xsl:when test="/Invoice/Fkey !=''">
-												<div style="font-size:13px; width:800px; text-align: center; margin:5px auto;">
-													Để tra cứu hóa đơn, truy cập vào đường link: https://portaltool-miennam.vnpt-invoice.com.vn
-													<br/>Mã tra cứu: <b><xsl:value-of select="/Invoice/Fkey"/></b>
-												</div>
-											</xsl:when>
-										</xsl:choose>
+										{{>footer center=true}}
 									</td>
 								</tr>
                                 

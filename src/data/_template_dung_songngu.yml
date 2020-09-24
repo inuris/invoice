@@ -9,7 +9,10 @@ convert:
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#111"
-
+### background: file, width, height, top, left, opacity
+background_full:
+  file: 
+  top: 69 
 #background : file, width, height, top, left
 background:
   file: bg.png

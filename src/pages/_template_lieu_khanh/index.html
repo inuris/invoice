@@ -878,19 +878,7 @@
 		<div id="invFooter" style="font-size:12px; text-align: center; margin-top: 4px;">
 			<span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0254 800126</span>
 			<br/>
-			<xsl:variable name="comTaxCode" select="/Invoice/Content/ComTaxCode" />
-			<xsl:variable name="portalV5" select="concat('https://',$comTaxCode,'.vnpt-invoice.com.vn')" />
-			<xsl:choose>
-				<xsl:when test="/Invoice/Fkey !=''">
-					<div style="font-size:12px; width:800px; text-align: center; margin:5px auto;">
-						<span>Hóa đơn Điện tử (HĐĐT) được tra cứu trực tuyến tại
-						<xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text><xsl:value-of select="$portalV5"/> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-							<xsl:value-of select="$portalV5"/>
-						<xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
-						<br/>Mã tra cứu HĐĐT này: <b><xsl:value-of select="/Invoice/Fkey"/></b></span>
-					</div>
-				</xsl:when>
-			</xsl:choose>
+			{{>footer}}
 		</div>
 		<div style="margin:0px auto; margin-top:2px; ">
 			<div class="clearfix" id="bt" style="margin:0px auto;"/>
@@ -1019,7 +1007,7 @@
 		  	position: relative;
 		  	}
 		  	{{>background}}
-			{{>background_full}}			
+				{{>background_full}}			
 		  	.VTU-VATTEMP .payment,
 		  	.date {
 		  	text-align: center;

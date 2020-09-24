@@ -1,0 +1,37 @@
+<xsl:variable name="comTaxCode" select="/Invoice/Content/ComTaxCode" />
+{{#if isHSM}}
+  <xsl:variable name="portalV5" select="concat('https://','{{comCode}}','.vnpt-invoice.com.vn')" />
+{{else}}          
+  <xsl:variable name="portalV5" select="concat('https://',$comTaxCode,'.vnpt-invoice.com.vn')" />
+{{/if}} 
+<xsl:choose>
+  <xsl:when test="/Invoice/Fkey !=''">
+<div style="font-size:13px; margin-top: 4px; {{#if center}}text-align: center;{{else}}text-align: left;{{/if}}">
+      <p style="margin:0px;">
+        <i>Mã tra cứu hóa đơn:
+          <xsl:value-of select="/Invoice/Fkey" /></i>
+        <br />
+        <i>Tra cứu hóa đơn điện tử tại website:
+          <xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text>
+          <xsl:value-of select="$portalV5" /> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;
+          </xsl:text>
+          <xsl:value-of select="$portalV5" />
+          <xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
+        </i>
+      </p>
+    </div>
+  </xsl:when>
+  <xsl:otherwise>
+    <div style="font-size:13px; margin-top: 4px; {{#if center}}text-align: center;{{else}}text-align: left;{{/if}}">
+      <p style="margin:0px;">
+        <i>Mã tra cứu hóa đơn: </i>
+        <br/>
+        <i>Tra cứu hóa đơn điện tử tại website:
+          <xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text><xsl:value-of select="$portalV5"/> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
+            <xsl:value-of select="$portalV5"/>
+          <xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
+        </i>
+      </p>
+    </div>
+  </xsl:otherwise>
+</xsl:choose>

@@ -3,9 +3,13 @@ comSerial: VN                             # mã hóa đơn
 comName: CÔNG TY TNHH                     # tên công ty
 comTaxCode: 123456789                     # mst
 comAddress: 123 tỉnh Bà Rịa Vũng Tàu      # địa chỉ
+comInvoiceNo: 0000000                     # [optional] đổi serial
+comFkey: ...                              # [optional] đổi Fkey
 xml:                                      # bổ sung thêm tag XML
 debug:                                    # true: hiện data test XML
 english:                                  # true: hóa đơn song ngữ
+isHSM:                                    # true: hóa đơn HSM (thay link tra cứu)
+
 
 ### global CSS style: cssFontFamily, cssColor
 cssFontFamily: Arial
