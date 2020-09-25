@@ -120,7 +120,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           background-color: white;
           font-family: Tahoma;
           font-size: 13px;
-		  color: #185b9d;         
+		      color: {{cssColor}};
           }
           .VATTEMP .header-main, .content
           {
@@ -248,17 +248,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           {
           position: relative;
           }
-          .nenhd_bg
-          {
-          //background-image: url('');
-          //height:150px;
-          //left: 80px;
-          //margin: 0 auto;
-          //position: absolute;
-          //top: 425px;
-          //width: 670px;
-          //z-index: 1;
-          }
+          {{>background}}
           .VATTEMP .statistics table
           {
           background-position: bottom;
@@ -276,10 +266,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           font-size: 100%;
           text-transform: none;
           font-weight: bold;
-          border-bottom: 1px solid #185b9d !important;
-          border-right: 1px solid #185b9d !important;
-          border-left: 1px solid #185b9d !important;
-          border-top: 1px solid #185b9d !important;
+          border: 1px solid {{cssColor}} !important;
           }
 		  .VATTEMP .statistics table th:first-child
           {
@@ -294,10 +281,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           font-size: 100%;
           text-transform: none;
           font-weight: bold;
-          border-bottom: 1px solid #185b9d !important;
-          border-right: 1px solid #185b9d !important;
-          border-left: 1px solid #185b9d !important;
-          border-top: 1px solid #185b9d !important;
+          border: 1px solid {{cssColor}} !important;
           }
 		  .VATTEMP .statistics table th.h2:first-child
           {
@@ -318,14 +302,14 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           }
           .VATTEMP .statistics table .back td
           {
-          color: #185b9d;
+          color: {{cssColor}};
           font-size: 100%;
           }
           .VATTEMP .statistics table .noline td
           {
-          border-bottom: 1px dotted #185b9d;
-          border-right: 1px solid #185b9d ;
-          border-left: 1px solid #185b9d;
+          border-bottom: 1px dotted {{cssColor}};
+          border-right: 1px solid {{cssColor}} ;
+          border-left: 1px solid {{cssColor}};
           border-top: 0 none;
           }
 		  .VATTEMP .statistics table .noline td:first-child
@@ -342,7 +326,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           .VATTEMP .statistics tr td.back-bold
           {
           font-size: 100%;
-          border-bottom: 1px dotted #185b9d !important;
+          border-bottom: 1px dotted {{cssColor}} !important;
           }
           .VATTEMP .statistics table .back-bold
           {
@@ -352,7 +336,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           .VATTEMP .statistics tr td.back-bold2
           {
           font-size: 100%;
-          border-bottom: 1px dotted #185b9d !important;
+          border-bottom: 1px dotted {{cssColor}} !important;
           }
           .VATTEMP .statistics tr td.back-bold3
           {
@@ -428,7 +412,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           color: #000000;
           }
 		  p{
-			color: #185b9d;
+			color: {{cssColor}};
 		  }
         </style>
       </head>
@@ -448,8 +432,8 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
               <div class = "VATTEMP">
                 <div  class ="pagecurrent" id="page_{position()}">
                   <div style="width:850px !important">
-					<div style="font-size:12px;border-bottom:1px dashed #142f4a; text-align: center; color: #142f4a;margin-bottom: 2px;width:100%;">
-                        Đơn vị cung cấp giải pháp hóa đơn điện tử: Tổng Công ty Dịch vụ Viễn thông - VNPT Vinaphone, MST:0106869738, Điện thoại:18001260
+					<div style="font-size:12px;border-bottom:1px dashed {{cssColor}}; text-align: center; color: {{cssColor}};margin-bottom: 2px;width:100%;">
+            <span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0254 800126</span>
 					</div>
                     <div class="statistics"  style="float:left;">
                       <div class="nenhd" style="margin-bottom: 10px!important;">
@@ -463,25 +447,25 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       <td style="width:20%;height:55px;padding:2px 50px;" >
                                       </td>
                                       <td style="text-align:center;width:50%;">
-                                        <div style="text-align:center; font-size:22px !important;margin-top:10px; font-weight: bold;"><label style="color:#185b9d; font-family: Tahoma;">HÓA ĐƠN BÁN HÀNG - PHIẾU THU TIỀN</label></div>
-										<div style="text-align:center;color: #185B9D;font-size: 13px;line-height:30px; font-style:italic;">
+                                        <div style="text-align:center; font-size:22px !important;margin-top:10px; font-weight: bold;"><label style="color:{{cssColor}}; font-family: Tahoma;">HÓA ĐƠN BÁN HÀNG</label></div>
+										<div style="text-align:center;color: {{cssColor}};font-size: 13px;line-height:30px; font-style:italic;">
 											<xsl:choose>
 												<xsl:when test="substring(ArisingDate,7,4)!= '1957' and substring(ArisingDate,7,4)!= ''">
 													Ngày 
-													<label style="border-bottom: 1px dotted #185B9D; color:#185B9D">
+													<label style="border-bottom: 1px dotted {{cssColor}}; color:{{cssColor}}">
 														<xsl:value-of select="substring(ArisingDate,1,2)" />
 													</label>
 					    							tháng  
-													<label style="border-bottom: 1px dotted #185B9D; color:#185B9D">
+													<label style="border-bottom: 1px dotted {{cssColor}}; color:{{cssColor}}">
 														<xsl:value-of select="substring(ArisingDate,4,2)" />
 													</label>
 					    							năm
-													<label style="border-bottom: 1px dotted #185B9D; color:#185B9D">
+													<label style="border-bottom: 1px dotted {{cssColor}}; color:{{cssColor}}">
 														<xsl:value-of select="concat('20',substring(ArisingDate,9,2))" />
 													</label>
 												</xsl:when>
 												<xsl:otherwise>
-												Ngày  <label style="border-bottom: 1px dotted #185B9D;">    </label> tháng  <label style="border-bottom: 1px dotted #185B9D;">    </label> năm <label style="border-bottom: 1px dotted #185B9D;">    </label>
+												Ngày  <label style="border-bottom: 1px dotted {{cssColor}};">    </label> tháng  <label style="border-bottom: 1px dotted {{cssColor}};">    </label> năm <label style="border-bottom: 1px dotted {{cssColor}};">    </label>
 												</xsl:otherwise>
 											</xsl:choose>
 										</div>
@@ -525,7 +509,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       </td>
                                     </tr>
                                   </table>
-                                  <table style="float: left;font-size:13px;width:100%;color:#185b9d;">
+                                  <table style="float: left;font-size:13px;width:100%;color:{{cssColor}};">
                                     <tr style="border-top:1px solid;">
 										<td colspan="6" style=" border-left: none!important;border-right: none!important;padding-left:10px;">
 											{{>info data=comInfo relative=true}}
@@ -544,7 +528,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                               </tr>
                             </xsl:for-each>
                           </thead>
-                          <tbody class="nenhd" style="color:#185b9d;">
+                          <tbody class="nenhd" style="color:{{cssColor}};">
                             <tr style="">
                               <th style="height:30px;width:40px;">
                                 STT
@@ -651,7 +635,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   </xsl:call-template>
                                 </xsl:if>
 								
-                                <tr class="noline back" style="border-top: 1px solid #185b9d;border-bottom: 1px solid #185b9d;">
+                                <tr class="noline back" style="border-top: 1px solid {{cssColor}};border-bottom: 1px solid {{cssColor}};">
                                   <td style="text-align: left;padding-top:3px;padding-bottom:3px;border: none !important;padding-left:10px;" colspan="6">
 									<label class="fl-l" style="">
                                       Cộng tiền bán hàng hóa, dịch vụ: 
@@ -671,7 +655,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 									</label>
                                   </td>
                                 </tr>
-                                <tr class="noline back" style="border-top: 1px solid #185b9d;">
+                                <tr class="noline back" style="border-top: 1px solid {{cssColor}};">
                                   <td colspan="6" style="padding-right: 0px;border: none; padding-top: 3px; padding-bottom: 3px;padding-left:10px;">									
 									<label class="fl-l" style="">Số tiền bằng chữ : </label>
 									<label class="fl-l input-name" style="min-width:100px;display: block; text-align:left; width:710px;">
@@ -689,7 +673,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   </td>
                                 </tr>
                                 <tr style="border-top:1px solid;">
-									<td colspan="3" style="vertical-align: top;border:none;padding-top:5px;color: #185b9d;">
+									<td colspan="3" style="vertical-align: top;border:none;padding-top:5px;color: {{cssColor}};">
 										<div style="padding-left: 50px; padding-bottom: 4px;">Người nộp tiền</div>
 										<div style="padding-left: 50px;">
 											<i>(Ký, ghi rõ họ tên)</i>
@@ -705,35 +689,9 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 										  </xsl:variable>
 										  <xsl:variable name="invno">
 											<xsl:value-of select="../../InvoiceNo"/>
-										  </xsl:variable>
-										  <xsl:choose>
-                        <xsl:when test="/Invoice/image != '' ">
-                          <div style="text-align: right;padding-right: 50px;padding-bottom:4px;color:#185b9d;">Đơn vị thu tiền</div>
-                          <div class="bgimg" style="float: right;margin: 0 auto;width:185px;background:url({/Invoice/image/@URI}) no-repeat center center;border:1px solid #185b9d;" onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
-                          <p style="color:red!important">
-                            <xsl:value-of select="/Invoice/image"/>
-                          </p>
-                          <p style="color:red!important">
-                            Ký bởi: <xsl:value-of select="/Invoice/Content/ComName"/>
-                            <br/>
-                            Ký ngày: <xsl:value-of select="/Invoice//Content/SignDate"/>
-                          </p>
-                          </div>
-                        </xsl:when>
-                        <xsl:otherwise>
-                          <div style="text-align: right;padding-right: 50px;padding-bottom:4px;color:#185b9d;">Đơn vị thu tiền</div>
-                            <div class="bgimg" style="background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAlCAMAAADhl5DFAAAAmVBMVEUAAABzmT9ymD9wlz5vlD17qkNwlj5efzNffzRhdzBukj1rjTxgfzhigTldejZ3okFmcCh2oEBymz9sjzxrjDxqizxpiTtpiTpnhzpkhDlihDZfgzdggTlhgTZcgTRQey96p0J4o0F1nUB0nT9ukj1qjDtpijtoijpmiDlhgzZbgDBXdDNqizxriT1oiztlhThmhDd/r0V9q0OIU0qaAAAAMXRSTlMA19XSzfvQHBgOysQtKiDtBujbyL6tmIhhT0M1MiUiCvjx49/Ps56QVzgVEbZ1Z0k8pyoq0gAAAQRJREFUOMuN0tlWwkAMgOG0U7qCrVIoCLIoooBb+v4PZ49C08lMp/mvv5OLJCDoqUxA3NjDdCvFEw8RMyn2sameifEfn8tx06ga3oaPbbvPIayw037hxHchauVLB94o1CsLGlTwyRxndKKTqhgOOabzrzzcVU6cahhx9EY4MvAFbq0bTNyKzxw3fH7FAcNBTB/pI2o8NnCkYeJHCw4ZpuqjgdUG2l5Rr/YcGGKFzvwJdIuc3BuDXnzoxw9r4J2DXrwCs8uhB5/AVpLa8MsP2EumFvwIfW0N/kzYrJgy/A2uiqyL75cwUCbBVNnidxD08Y9zJ2YfmS9A2KwmLOH7L5CXuI7yC+4AcRHIyKHTAAAAAElFTkSuQmCC') no-repeat center left; float: right;margin: 0 auto;width:185px;background:url({/Invoice/image/@URI}) no-repeat center center;border:1px solid #185b9d;" onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
-                            <p style="color:red!important">
-                              <xsl:value-of select="/Invoice/image"/>
-                            </p>
-                            <p style="color:red!important">
-                              Ký bởi: <xsl:value-of select="/Invoice/Content/ComName"/>
-                              <br/>
-                              Ký ngày: <xsl:value-of select="/Invoice//Content/SignDate"/>
-                            </p>
-                          </div>                          
-                        </xsl:otherwise>
-										  </xsl:choose>
+                      </xsl:variable>
+                      <div style="text-align: right;padding-right: 50px;padding-bottom:4px;color:{{cssColor}};">Đơn vị thu tiền</div>
+										  <div style="float:right">{{>sign-eng}}</div>
 										</p>
 									</td>
                                 </tr>
@@ -743,7 +701,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 										<xsl:value-of select="../../isAdjust"/>
 										<xsl:choose>
 										  <xsl:when test="/Invoice/convert!=''">
-											<div style="text-align:center;padding-top:5px;color:#185b9d;">
+											<div style="text-align:center;padding-top:5px;color:{{cssColor}};">
 											  <div>
 												<label style="font-size:14px;">
 												  <b>
@@ -774,7 +732,6 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 										{{>footer center=true}}
 									</td>
 								</tr>
-                                
                               </xsl:if>
 
 
@@ -792,7 +749,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 
                           </tbody>
                         </table>
-                        <div class="nenhd_bg"> &#160; </div>
+                        <div class="nenhd_bg"></div>
 
                       </div>
 

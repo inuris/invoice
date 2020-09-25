@@ -5,6 +5,7 @@ comName: TRƯỜNG
 comTaxCode: 3
 comAddress: BR-VT
 comInvoiceNo: 0000000
+cssColor: "#185b9d"
 comInfo:
  row:
   - label: Đơn vị thu tiền
