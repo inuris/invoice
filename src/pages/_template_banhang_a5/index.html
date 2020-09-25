@@ -745,34 +745,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 										  <xsl:variable name="invno">
 											<xsl:value-of select="../../InvoiceNo"/>
 										  </xsl:variable>
-										  <xsl:choose>
-                        <xsl:when test="/Invoice/image != '' ">
-                          <div style="text-align: right;padding-right: 50px;padding-bottom:4px;color:#185b9d;">Đơn vị thu tiền</div>
-                          <div class="bgimg" style="float: right;margin: 0 auto;width:185px;background:url({/Invoice/image/@URI}) no-repeat center center;border:1px solid #185b9d;" onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
-                          <p style="color:red!important">
-                            <xsl:value-of select="/Invoice/image"/>
-                          </p>
-                          <p style="color:red!important">
-                            Ký bởi: <xsl:value-of select="/Invoice/Content/ComName"/>
-                            <br/>
-                            Ký ngày: <xsl:value-of select="/Invoice//Content/SignDate"/>
-                          </p>
-                          </div>
-                        </xsl:when>
-                        <xsl:otherwise>
-                          <div style="text-align: right;padding-right: 50px;padding-bottom:4px;color:#185b9d;">Người bán hàng</div>
-                            <div class="bgimg" style="background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAlCAMAAADhl5DFAAAAmVBMVEUAAABzmT9ymD9wlz5vlD17qkNwlj5efzNffzRhdzBukj1rjTxgfzhigTldejZ3okFmcCh2oEBymz9sjzxrjDxqizxpiTtpiTpnhzpkhDlihDZfgzdggTlhgTZcgTRQey96p0J4o0F1nUB0nT9ukj1qjDtpijtoijpmiDlhgzZbgDBXdDNqizxriT1oiztlhThmhDd/r0V9q0OIU0qaAAAAMXRSTlMA19XSzfvQHBgOysQtKiDtBujbyL6tmIhhT0M1MiUiCvjx49/Ps56QVzgVEbZ1Z0k8pyoq0gAAAQRJREFUOMuN0tlWwkAMgOG0U7qCrVIoCLIoooBb+v4PZ49C08lMp/mvv5OLJCDoqUxA3NjDdCvFEw8RMyn2sameifEfn8tx06ga3oaPbbvPIayw037hxHchauVLB94o1CsLGlTwyRxndKKTqhgOOabzrzzcVU6cahhx9EY4MvAFbq0bTNyKzxw3fH7FAcNBTB/pI2o8NnCkYeJHCw4ZpuqjgdUG2l5Rr/YcGGKFzvwJdIuc3BuDXnzoxw9r4J2DXrwCs8uhB5/AVpLa8MsP2EumFvwIfW0N/kzYrJgy/A2uiqyL75cwUCbBVNnidxD08Y9zJ2YfmS9A2KwmLOH7L5CXuI7yC+4AcRHIyKHTAAAAAElFTkSuQmCC') no-repeat center left; float: right;margin: 0 auto;width:185px;background:url({/Invoice/image/@URI}) no-repeat center center;border:1px solid #185b9d;" onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
-                            <p style="color:red!important">
-                              <xsl:value-of select="/Invoice/image"/>
-                            </p>
-                            <p style="color:red!important">
-                              Ký bởi: <xsl:value-of select="/Invoice/Content/ComName"/>
-                              <br/>
-                              Ký ngày: <xsl:value-of select="/Invoice//Content/SignDate"/>
-                            </p>
-                          </div>                          
-                        </xsl:otherwise>
-										  </xsl:choose>
+										  {{>sign-eng}}
 										</p>
 									</td>
                                 </tr>

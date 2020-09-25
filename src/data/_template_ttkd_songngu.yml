@@ -30,7 +30,8 @@ header:
   - sub: VAT INVOICE
     subStyle: "font-size: 18px; line-height: 1.2;"
   - value: Bản thể hiện của hóa đơn điện tử
-    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"  
   - sub: Electronic Invoice Display
     subStyle: "font-size: 13px; line-height: 1.4;"    
   serial:

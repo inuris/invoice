@@ -14,6 +14,9 @@ header:
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 27px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
  row:
   - label: Đơn vị bán hàng

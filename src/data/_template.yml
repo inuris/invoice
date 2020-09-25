@@ -39,7 +39,8 @@ header:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "color: red;"
   - value: Bản thể hiện của hóa đơn điện tử
-    style: "font-weight: normal; font-size: 14px"
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
   # cột 3 số serial: style
   serial:
     style: 
