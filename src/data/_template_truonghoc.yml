@@ -16,6 +16,10 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
+  - label: Số điện thoại
+    value: 
+  - label: Số tài khoản
+    value: 
 cusInfo:
  isInput: true
  row:

@@ -1,3 +1,37 @@
+<!-- split mail.html -->
+<div>
+  <p>khanhmaivt@gmail.com, linhpn.vt@gmail.com, ngavtt.vtu79@gmail.com, nvdung08121977@gmail.com, hotrohddtvtu@gmail.com</p>
+  <p>ACC TEST HDDT - {{comName}}</p>
+  <p>
+    Gửi a.c,
+    <br />
+    Em gửi hệ thống demo + mẫu hóa đơn.
+    <br />
+    A.c gửi yêu cầu qua jira để kích hoạt hệ thống thật cho khách sử dụng
+  </p>
+  <p>
+    ===Hệ thống demo HDDT
+    <br />
+    {{comName}}
+    <br />
+    MST: {{comTaxCode}}
+  </p>
+  {{#if isHSM}}
+  <p>
+    *Cadmin: https://{{comCode}}admindemo.vnpt-invoice.com.vn
+    <br />
+    Tài khoản admin: {{comCode}}admin / Einv@oi@vn#pt20
+  </p>
+  <p>*Portal tra cứu: https://{{comCode}}.vnpt-invoice.com.vn</p>
+  {{else}}
+  <p>
+    *Cadmin: https://{{comTaxCode}}-democadmin.vnpt-invoice.com.vn
+    <br />
+    Tài khoản admin: {{comTaxCode}}_admin_demo / Einv@oi@vn#pt20
+  </p>
+  <p>*Portal tra cứu: https://{{comTaxCode}}demo.vnpt-invoice.com.vn</p>
+  {{/if}}
+</div>
 <!-- split index.html -->
 <html>
 <head>
