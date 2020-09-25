@@ -43,15 +43,10 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-  - label: STK
-    width: 180
-    code: ComBankNo
-    isInput: true
-    col-2:
-    - label: tại
-      width: 553
-      code: ComBankName
-      isInput: true
+  - label: Điện thoại
+    value: 
+  - label: Số tài khoản
+    value: 
 cusInfo:
   isInput: true
   row:

@@ -6,7 +6,7 @@
 {{/if}} 
 <xsl:choose>
   <xsl:when test="/Invoice/Fkey !=''">
-<div style="font-size:13px; margin-top: 4px; {{#if center}}text-align: center;{{else}}text-align: left;{{/if}}">
+    <div style="font-size:13px; margin-top: 4px; {{#if center}}text-align: center;{{else}}text-align: left;{{/if}}">
       <p style="margin:0px;">
         <i>Mã tra cứu hóa đơn:
           <xsl:value-of select="/Invoice/Fkey" /></i>
