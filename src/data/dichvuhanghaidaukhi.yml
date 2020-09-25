@@ -5,7 +5,7 @@ comTaxCode: 0302743192-004
 comAddress: Phòng 310, Lầu 3, Tòa nhà Dầu khí, số 8 Hoàng Diệu, P.1, TP. Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
 english: true
-convert:
+convert: 1
 #global style
 cssFontFamily: Arial
 cssColor: "#111"
