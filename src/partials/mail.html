@@ -1,0 +1,20 @@
+khanhmaivt@gmail.com, linhpn.vt@gmail.com, ngavtt.vtu79@gmail.com, nvdung08121977@gmail.com, hotrohddtvtu@gmail.com
+
+ACC TEST HDDT - {{comName}}
+
+Gửi a.c,
+Em gửi hệ thống demo + mẫu hóa đơn.
+A.c gửi yêu cầu qua jira để kích hoạt hệ thống thật cho khách sử dụng
+
+===Hệ thống demo HDDT
+{{comName}}
+MST: {{comTaxCode}}
+{{#if isHSM}}
+*Cadmin: https://{{comCode}}admindemo.vnpt-invoice.com.vn
+Tài khoản admin: {{comCode}}admin / Einv@oi@vn#pt20
+
+*Portal tra cứu: https://{{comCode}}.vnpt-invoice.com.vn{{else}}
+*Cadmin: https://{{comTaxCode}}-democadmin.vnpt-invoice.com.vn
+Tài khoản admin: {{comTaxCode}}_admin_demo / Einv@oi@vn#pt20
+
+*Portal tra cứu: https://{{comTaxCode}}demo.vnpt-invoice.com.vn{{/if}}
