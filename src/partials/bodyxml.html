@@ -175,7 +175,188 @@
 </Content>
 	<imageClient></imageClient>
 	<image></image>
-	<convert>{{convert}}</convert>
-	<ConvertDate>{{convert}}</ConvertDate>
+	<convert></convert>
+	<ConvertDate></ConvertDate>
+	<Fkey>{{#if comFkey}}{{comFkey}}{{/if}}</Fkey>
+</Invoice>
+<!-- split convert.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='{{comCode}}.xslt' ?>
+
+<Invoice> 
+<CNCom>{{comName}}</CNCom>
+<Content Id="SigningData">
+	{{#ifCond debug '==' 1}}
+	<ArisingDate/>
+	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
+	<SerialNo>{{comSerial}}/20E</SerialNo>
+	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
+	<Kind_of_Payment>TM</Kind_of_Payment>
+	<ComName>{{comName}}</ComName>
+	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
+	<ComAddress>{{comAddress}}</ComAddress>
+	<ComPhone/>
+	<ComFax/>
+	<ComBankNo/>	
+	<CusCode/>
+	<CusName>Công ty TNHH Steinsvik</CusName>
+	<CusPhone></CusPhone>
+	<DanToc/>
+	<GioiTinh/>
+	<Buyer></Buyer>
+	<CusTaxCode>4201504438</CusTaxCode>
+	<CusAddress>Lô E7-E8, KCN Suối Dầu, xã Suối Tân, huyện Cam Lâm, tĩnh Khánh Hòa, VN</CusAddress>
+	<Total>38000000</Total>
+	<VAT_Rate>10</VAT_Rate>
+	<VAT_Amount>3800000</VAT_Amount>
+	<Amount>41800000.955</Amount>
+	<AmountInWords></AmountInWords>
+	<Amount_words>Bốn mươi mốt triệu, tám trăm nghìn đồng</Amount_words>
+	<KindOfService/>
+	<Extra/>
+	<Discount_Rate/>
+	<Discount_Amount/>
+	<CurrencyUnit></CurrencyUnit>
+	<ExchangeRate></ExchangeRate>
+	<ConvertedAmount></ConvertedAmount>
+	{{#each xml}}
+	<{{this}}/>
+	{{/each}}
+	<Products>
+		<Product>
+			<Code/>
+			<ProdName>Dịch vụ thuê vận chuyển Container 40ft </ProdName>
+			<ProdUnit>Cái</ProdUnit>
+			<ProdQuantity>3</ProdQuantity>	
+			<ProdPrice>38000000</ProdPrice>
+			<Discount/>
+			<DiscountAmount/>
+			<VATRate/>
+			<VATAmount/>
+			<Amount>38000000</Amount>
+			{{#each xml-product}}
+			<{{this}}/>
+			{{/each}}
+		</Product>
+	</Products>
+	<Extra/>
+	<SignDate/>	
+	{{/ifCond}}
+	{{#ifCond debug '==' 2}}
+	<ArisingDate>21/08/2020 09:42:29</ArisingDate>
+	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
+	<SerialNo>{{comSerial}}/20E</SerialNo>
+	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
+	<Kind_of_Payment>TM</Kind_of_Payment>
+	<ComName>{{comName}}</ComName>
+	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
+	<ComAddress>{{comAddress}}</ComAddress>
+	<ComPhone/>
+	<ComFax/>
+	<ComBankNo/>	
+	<CusCode/>
+	<CusName>Công ty TNHH Steinsvik</CusName>
+	<CusPhone></CusPhone>
+	<DanToc/>
+	<GioiTinh/>
+	<Buyer></Buyer>
+	<CusTaxCode>4201504438</CusTaxCode>
+	<CusAddress>Lô E7-E8, KCN Suối Dầu, xã Suối Tân, huyện Cam Lâm, tĩnh Khánh Hòa, VN</CusAddress>
+	<Total>12177</Total>
+	<VAT_Rate>10</VAT_Rate>
+	<VAT_Amount>1218</VAT_Amount>
+	<Amount>13395</Amount>
+	<AmountInWords></AmountInWords>
+	<Amount_words>Mười  ba  nghìn ba  trăm  chín  mươi lăm  đô la Mỹ</Amount_words>
+	<KindOfService/>
+	<Extra/>
+	<Discount_Rate/>
+	<Discount_Amount/>
+	<CurrencyUnit>USD</CurrencyUnit>
+	<ExchangeRate>23250</ExchangeRate>
+	<ConvertedAmount>311433750</ConvertedAmount>
+	{{#each xml}}
+	<{{this}}/>
+	{{/each}}
+	<Products>
+		<Product>
+			<Code/>
+			<ProdName>Dịch vụ thuê vận chuyển Container 40ft </ProdName>
+			<ProdUnit>Cái</ProdUnit>
+			<ProdQuantity>3</ProdQuantity>	
+			<ProdPrice>38000000</ProdPrice>
+			<Discount/>
+			<DiscountAmount/>
+			<VATRate/>
+			<VATAmount/>
+			<Amount>38000000</Amount>
+			{{#each xml-product}}
+			<{{this}}/>
+			{{/each}}
+		</Product>
+	</Products>
+	<Extra/>
+	<SignDate/>	
+	{{/ifCond}}
+	{{#ifCond debug '==' null}}
+	<ArisingDate/>
+	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
+	<SerialNo>{{comSerial}}/20E</SerialNo>
+	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
+	<Kind_of_Payment></Kind_of_Payment>
+	<ComName>{{comName}}</ComName>
+	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
+	<ComAddress>{{comAddress}}</ComAddress>
+	<ComPhone/>
+	<ComFax/>
+	<ComBankNo/>
+	<CusCode/>
+	<CusName/>
+	<CusPhone/>
+	<DanToc/>
+	<GioiTinh/>
+	<Buyer></Buyer>
+	<CusTaxCode/>
+	<CusAddress/>
+	<Total/>
+	<VAT_Rate/>
+	<VAT_Amount/>
+	<Amount/>
+	<AmountInWords/>
+	<KindOfService/>
+	<Extra/>
+	<Discount_Rate/>
+	<Discount_Amount/>
+	<CurrencyUnit>USD</CurrencyUnit>
+	<ExchangeRate/>
+	<ConvertedAmount/>
+	{{#each xml}}
+	<{{this}}/>
+	{{/each}}
+	<Products> 		
+		<Product>
+			<Code/>
+			<ProdName/>
+			<ProdUnit/>
+			<ProdQuantity/>
+			<ProdPrice/>
+			<Discount/>
+			<DiscountAmount/>
+			<VATRate/>
+			<VATAmount/>
+			<Amount/>
+			{{#each xml-product}}
+			<{{this}}/>
+			{{/each}}
+		</Product>
+	</Products>
+	<Extra/>
+	<SignDate/>
+	{{/ifCond}}
+</Content>
+	<imageClient></imageClient>
+	<image></image>
+	<convert>1</convert>
+	<ConvertDate>1</ConvertDate>
 	<Fkey>{{#if comFkey}}{{comFkey}}{{/if}}</Fkey>
 </Invoice>
