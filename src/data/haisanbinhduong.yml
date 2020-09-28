@@ -1,6 +1,6 @@
 comCode: haisanbinhduong
 comSerial: BD
-comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN HẢI SẢN BÌNH DƯƠNG
+comName: CÔNG TY CỔ PHẦN HẢI SẢN BÌNH DƯƠNG
 comTaxCode: 3502259273
 comAddress: 22/36 Chi Lăng, Phường 12, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
@@ -40,11 +40,10 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
     valueStyle: "letter-spacing: -0.2px"
-  - label: Số tài khoản
-    code: ComBankNo
-    isInput: true
   - label: Điện thoại
     value: "02543.553368 * Fax : 02543.553368"
+  - label: Số tài khoản
+    value: 180314851009321 tại Ngân hàng Eximbank - Chi nhánh Vũng Tàu
 cusInfo:
  labelWidth: 170
  width: 616
