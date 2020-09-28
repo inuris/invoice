@@ -66,6 +66,11 @@ comInfo:
     value: 29397629 tại Ngân hàng TMCP Á Châu - Chi nhánh Thành phố Vũng Tàu
     sub: Tax code
   - value: 5521100476008 tại Ngân hàng TMCP Quân Đội - Chi nhánh Thành phố Vũng Tàu
+    valueStyle: "margin-left: 8px"
+  - label: Đơn đặt hàng số
+    code: Extra1
+  - label: Hợp đồng số
+    code: Extra2
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
