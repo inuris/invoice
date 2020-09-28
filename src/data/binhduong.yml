@@ -2,7 +2,7 @@ comCode: binhduong
 comSerial: BD
 comName: DOANH NGHIỆP TƯ NHÂN BÌNH DƯƠNG
 comTaxCode: 3500504096
-comAddress: Số 41 Phước Thắng, Phường 12, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comAddress: Số 41 - 43 Phước Thắng, Phường 12, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu , Việt Nam
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#27299e"
@@ -28,6 +28,7 @@ header:
     style: "font-size: 27px; font-family: Times New Roman"
 comInfo:
  labelWidth: 170
+ style: "font-size: 15px;"
  width: 616
  row:
   - label: Đơn vị bán hàng
@@ -39,13 +40,11 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-    valueStyle: "letter-spacing: -0.2px; font-size: 15px;"
-  - label: Số tài khoản
-    value: 58280939 tại Ngân hàng ACB chi nhánh Vũng Tàu
-    valueStyle: "font-size: 15px;"
+    valueStyle: "letter-spacing: -0.4px; font-size: 15px;"
   - label: Điện thoại
-    value:
-    isInput: true
+    value: 0254.3848806
+  - label: Số tài khoản
+    value: 051704070006085 tại Ngân hàng HD Bank - Chi nhánh Vũng Tàu
 cusInfo:
  labelWidth: 170
  width: 616
