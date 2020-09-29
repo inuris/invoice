@@ -556,7 +556,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   <div style="display: block;">
                                     <xsl:choose>
                                       <xsl:when test="Remark=''">
-                                       	<xsl:value-of select="position() + $level1Count"/>
+                                       <xsl:value-of select="position() + $level1Count"/>
                                       </xsl:when>
                                       <xsl:otherwise>
                                         <xsl:value-of select="Remark"/>
