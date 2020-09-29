@@ -6,7 +6,7 @@ comAddress: 123 tỉnh Bà Rịa Vũng Tàu      # địa chỉ
 comInvoiceNo: 0000000                     # [optional] đổi serial
 comFkey: ...                              # [optional] đổi Fkey
 xml:                                      # bổ sung thêm tag XML
-debug:                                    # true: hiện data test XML
+debug:                                    # 1: test data VND, 2: test data USD
 english:                                  # true: hóa đơn song ngữ
 isHSM:                                    # true: hóa đơn HSM (thay link tra cứu)
 

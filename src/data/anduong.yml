@@ -5,6 +5,7 @@ comTaxCode: 3500810304
 comAddress: 195/44 Ba Cu, Phường 4, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
 english:
+debug: 
 convert: 1
 #global style
 cssFontFamily: Times New Roman
@@ -15,7 +16,7 @@ background:
   file: bg.jpg
   width: 600
   height: 238
-  top: 483
+  top: 550
   left: 125
 #header
 header:
@@ -41,7 +42,7 @@ header:
 #comInfo Table
 comInfo:
   style: "font-weight: 400; font-size: 16px"
-  margin: 6
+  margin: 4
   labelWidth: 120
   isInput:  
   labelStyle: 
@@ -67,10 +68,6 @@ comInfo:
     sub: Tax code
   - value: 5521100476008 tại Ngân hàng TMCP Quân Đội - Chi nhánh Thành phố Vũng Tàu
     valueStyle: "margin-left: 8px"
-  - label: Đơn đặt hàng số
-    code: Extra1
-  - label: Hợp đồng số
-    code: Extra2
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
@@ -103,3 +100,9 @@ cusInfo:
     col-2:
       - label: Tài khoản
         width: 370
+  - label: Đơn đặt hàng số
+    width: 719
+    code: Extra1
+  - label: Hợp đồng số
+    width: 742
+    code: Extra2

@@ -33,6 +33,8 @@
 	<Amount_words>Bốn mươi mốt triệu, tám trăm nghìn đồng</Amount_words>
 	<KindOfService/>
 	<Extra/>
+	<Extra1>extra 1</Extra1>
+	<Extra2>extra 2</Extra2>
 	<Discount_Rate/>
 	<Discount_Amount/>
 	<CurrencyUnit></CurrencyUnit>
@@ -43,10 +45,27 @@
 	{{/each}}
 	<Products>
 		<Product>
-			<Code/>
+			<Remark>1</Remark>
+			<Code>SP-001</Code>
 			<ProdName>Dịch vụ thuê vận chuyển Container 40ft </ProdName>
 			<ProdUnit>Cái</ProdUnit>
 			<ProdQuantity>3</ProdQuantity>	
+			<ProdPrice>38000000</ProdPrice>
+			<Discount/>
+			<DiscountAmount/>
+			<VATRate/>
+			<VATAmount/>
+			<Amount>38000000</Amount>
+			{{#each xml-product}}
+			<{{this}}/>
+			{{/each}}
+		</Product>
+		<Product>
+			<Remark>20</Remark>
+			<Code>SP-002</Code>
+			<ProdName>Dịch vụ thuê vận chuyển Container 40ft </ProdName>
+			<ProdUnit>Cái</ProdUnit>
+			<ProdQuantity>4</ProdQuantity>	
 			<ProdPrice>38000000</ProdPrice>
 			<Discount/>
 			<DiscountAmount/>
