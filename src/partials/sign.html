@@ -6,9 +6,18 @@
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Chữ ký điện tử có hiệu lực
             </p>
+            {{#if enter}}
+            <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
+                Được ký bởi:
+            </p>
+            <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
+                <xsl:value-of select="/Invoice/CNCom" />
+            </p>
+            {{else}}
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Được ký bởi: <xsl:value-of select="/Invoice/CNCom" />
             </p>
+            {{/if}}
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Ký ngày: <xsl:value-of select="substring-before(/Invoice/Content/ArisingDate,' ')" />
             </p>
@@ -21,9 +30,18 @@
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Chữ ký điện tử có hiệu lực
             </p>
+            {{#if enter}}
+            <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
+                Được ký bởi:
+            </p>
+            <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
+                <xsl:value-of select="/Invoice/CNCom" />
+            </p>
+            {{else}}
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Được ký bởi: <xsl:value-of select="/Invoice/CNCom" />
             </p>
+            {{/if}}
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Ký ngày: <xsl:value-of select="substring-before(/Invoice/Content/ArisingDate,' ')" />
             </p>

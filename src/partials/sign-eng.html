@@ -6,9 +6,18 @@
             <p style="margin-top:3px;margin-bottom:5px;font-size:12px;color: #f00;">
                 <xsl:value-of select="/Invoice/image" />
             </p>
+            {{#if enter}}
+            <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
+                Ký bởi:
+            </p>
+            <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00"></p>
+                <xsl:value-of select="/Invoice/CNCom" />
+            </p>
+            {{else}}
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Ký bởi: <xsl:value-of select="/Invoice/CNCom" />
             </p>
+            {{/if}}
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Ký ngày: <xsl:value-of select="substring-before(/Invoice/Content/ArisingDate,' ')" />
             </p>
@@ -21,9 +30,18 @@
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Signature Valid
             </p>
+            {{#if enter}}
+            <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
+                Ký bởi:
+            </p>
+            <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00"></p>
+                <xsl:value-of select="/Invoice/CNCom" />
+            </p>
+            {{else}}
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Ký bởi: <xsl:value-of select="/Invoice/CNCom" />
             </p>
+            {{/if}}            
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Ký ngày: <xsl:value-of select="substring-before(/Invoice/Content/ArisingDate,' ')" />
             </p>
