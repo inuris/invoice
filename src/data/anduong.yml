@@ -16,7 +16,7 @@ background:
   file: bg.jpg
   width: 600
   height: 238
-  top: 550
+  top: 578
   left: 125
 #header
 header:
