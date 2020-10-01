@@ -40,9 +40,10 @@
 			">
 		{{#if this.label}}
 			<span 
-			{{#ifOr v1=globalStyle v2=globalColonStyle}}
+			{{#ifOr v1=globalStyle v2=globalColonStyle v3=this.style}}
 				style="{{#if globalStyle}}{{globalStyle}};{{/if}}
-				{{#if globalColonStyle}}{{globalColonStyle}};{{/if}}"
+				{{#if globalColonStyle}}{{globalColonStyle}};{{/if}}
+				{{#if this.style}}{{this.style}};{{/if}}"
 			{{/ifOr}}
 			>:&#160;</span>
 		{{else}}
