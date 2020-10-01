@@ -1,19 +1,15 @@
-ACC TEST HDDT - {{comName}}
-
-Gửi a.c,
-Em gửi hệ thống demo + mẫu hóa đơn.
-A.c gửi yêu cầu qua jira để kích hoạt hệ thống thật cho khách sử dụng
-
-===Hệ thống demo HDDT
-{{comName}}
-MST: {{comTaxCode}}
-{{#if isHSM}}
-*Cadmin: https://{{comCode}}admindemo.vnpt-invoice.com.vn
-Tài khoản admin: {{comCode}}admin / Einv@oi@vn#pt20
-
-*Portal tra cứu demo: https://{{comCode}}demo.vnpt-invoice.com.vn
-*Portal tra cứu thật: https://{{comCode}}.vnpt-invoice.com.vn{{else}}
-*Cadmin: https://{{comTaxCode}}-democadmin.vnpt-invoice.com.vn
-Tài khoản admin: {{comTaxCode}}_admin_demo / Einv@oi@vn#pt20
-
-*Portal tra cứu: https://{{comTaxCode}}demo.vnpt-invoice.com.vn{{/if}}
+"ACC TEST HDDT - {{comName}}" + String.fromCharCode(10,10) +
+"Gửi a.c," + String.fromCharCode(10) +
+"Em gửi hệ thống demo + mẫu hóa đơn." + String.fromCharCode(10) +
+"A.c gửi yêu cầu qua jira để kích hoạt hệ thống thật cho khách sử dụng" + String.fromCharCode(10,10) +
+"===Hệ thống demo HDDT" + String.fromCharCode(10) +
+"{{comName}}" + String.fromCharCode(10) +
+"MST: {{comTaxCode}}" + String.fromCharCode(10) +
+"{{#if isHSM}}" + String.fromCharCode(10) +
+"*Cadmin: https://{{comCode}}admindemo.vnpt-invoice.com.vn" + String.fromCharCode(10) +
+"Tài khoản admin: {{comCode}}admin / Einv@oi@vn#pt20" + String.fromCharCode(10,10) +
+"*Portal tra cứu demo: https://{{comCode}}demo.vnpt-invoice.com.vn" + String.fromCharCode(10) +
+"*Portal tra cứu thật: https://{{comCode}}.vnpt-invoice.com.vn{{else}}" + String.fromCharCode(10) +
+"*Cadmin: https://{{comTaxCode}}-democadmin.vnpt-invoice.com.vn" + String.fromCharCode(10) +
+"Tài khoản admin: {{comTaxCode}}_admin_demo / Einv@oi@vn#pt20" + String.fromCharCode(10,10) +
+"*Portal tra cứu: https://{{comTaxCode}}demo.vnpt-invoice.com.vn{{/if}}" + String.fromCharCode(10)
