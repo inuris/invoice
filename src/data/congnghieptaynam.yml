@@ -47,7 +47,7 @@ header:
 #comInfo Table
 comInfo:
   style: "font-weight: 400; font-size: 16px; display: inline-block;"
-  margin: 2  
+  margin: 2
   isInput: 
   subStyle: "font-size: 100%"
   row:
@@ -69,6 +69,7 @@ comInfo:
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
+  margin: 8
   labelWidth:
   labelStyle: 
   subStyle: "font-size: 100%"
