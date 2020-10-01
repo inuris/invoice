@@ -21,7 +21,7 @@ background:
   file: bg.png
   width: 330
   height: 102
-  top: 626
+  top: 584
   left: 268
 #header
 header:
