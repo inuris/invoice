@@ -19,10 +19,7 @@ logo:
 #background : file, width, height, top, left
 background:
   file: bg.png
-  width: 330
-  height: 102
-  top: 626
-  left: 268
+  top: 525
 #header
 header:
   #logo : file, width, top, left

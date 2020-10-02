@@ -1,0 +1,12 @@
+{{#with background}}
+<div style="position: relative; width: 100%">
+    <div style="position: absolute;
+                {{#if top}}top:{{top}}px;{{/if}}
+                {{#if left}}left:{{left}}px; {{else}}left: 50%; transform: translateX(-50%){{/if}}
+                {{#if opacity}}opacity:{{opacity}};{{else}}opacity:0.2;{{/if}}"> 
+        {{#if file}}
+            <img alt="bg" src="{{../comCode}}/{{file}}"/>
+        {{/if}}    
+    </div>
+</div>
+{{/with}}

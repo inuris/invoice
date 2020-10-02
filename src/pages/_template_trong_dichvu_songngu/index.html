@@ -224,7 +224,6 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           {
           position: relative;
           }
-          {{>background}}
           .VTU-VATTEMP .statistics table
           {
           background-position: bottom;
@@ -432,6 +431,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                   <div style="width:855px !important;margin:0px auto;padding-top:5px;">
                   <div class="statistics" style="border: 5px double {{cssColor}};"  >
                       <div class="nenhd" style="margin-bottom: 2px !important;">
+                        {{>background_2}}
                         <table cellspacing="0" cellpadding="0" border="0" style="width:100%;">
                           <thead>
                             <!--<xsl:copy-of select="$header" />-->
@@ -487,6 +487,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                             </xsl:for-each>
                           </thead>
                           <tbody class="nenhd">
+                                                 
                             <tr class="vat-product" style="font-size:16px;">
                               <th style="width:27px;" >
                                 <span>STT</span>
@@ -532,7 +533,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                               <th class="h2" style="font-weight:700;border-right:none;">
                                 6 = 4 x 5
                               </th>
-                            </tr>
+                            </tr>                            
                             <xsl:for-each select="..//../Products/Product[  ($level1Count  + 10)  >= position() and  position() >  $level1Count]">
                               <tr class="noline back vat-product">
                                 <td class="back-bold2" style="text-align:center;">
@@ -740,9 +741,9 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 									<xsl:value-of select="InvoiceNo"/>
 								</xsl:variable>
 								<!---->
-                                <tr  class="noline back" style="">
-                                  <td colspan="6" style="padding-top:20px;border-right:0px;">
-                                    <table style="width:100%;">
+              <tr  class="noline back" style="">
+                <td colspan="6" style="padding-top:20px;border-right:0px;">
+                  <table style="width:100%;">
 										<tr>
 											<td style="border: none;width: 333px;vertical-align: top;text-align:center;">
 												<p style="font-size:16px; margin-top:0;margin-bottom: 0;">
@@ -886,8 +887,8 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                             </xsl:for-each>
                             <!-- </xsl:for-each> -->
                           </tbody>
-                        </table>
-                        <div class="nenhd_bg"> &#160; </div>
+                        </table>  
+                        
                       </div>
                       {{>footer-trong}}
 						
