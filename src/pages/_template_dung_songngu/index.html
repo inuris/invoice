@@ -1,4 +1,4 @@
-{{#with _template_trong_songngu}}
+{{#with _template_dung_songngu}}
 <!-- split {{comCode}}.xslt -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl js" xmlns="http://www.w3.org/1999/xhtml"
 xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
@@ -224,7 +224,6 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           {
           position: relative;
           }
-          {{>background}}
           {{>background_full}}
           .VTU-VATTEMP .statistics table
           {
@@ -444,6 +443,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                   <div style="width:855px !important;margin:0px auto;padding-top:5px;">
                   <div class="statistics" style="border: 5px double {{cssColor}};"  >
                       <div class="nenhd" style="margin-bottom: 2px !important;">
+                        {{>background_2}}
                         <table cellspacing="0" cellpadding="0" border="0" style="width:100%;">
                           <thead>
                             <!--<xsl:copy-of select="$header" />-->

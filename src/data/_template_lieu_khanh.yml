@@ -10,10 +10,7 @@ cssColor: "#005cb3"
 ### background: file, width, height, top, left, opacity
 background:
   file: bg.png
-  width: 350
-  height: 190
-  top: 125
-  left: 260
+  top: 500
 
 ### background: file, width, height, top, left, opacity
 background_full:

@@ -16,10 +16,7 @@ background_full:
 #background : file, width, height, top, left
 background:
   file: bg.png
-  width: 268
-  height: 260
   top: 500
-  left: 275
 #header
 header:
   #logo : file, width, top, left

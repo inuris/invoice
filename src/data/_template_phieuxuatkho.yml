@@ -27,7 +27,7 @@ header:
   serial:
     - style: "color: #00a651"
 comInfo:
- row:
+  row:
   - valueStyle: "font-weight: bold; font-size: 20px"
     code: ComName
   - label: Địa chỉ
@@ -36,9 +36,9 @@ comInfo:
     valueStyle: "font-weight: bold"
     code: ComTaxCode
 cusInfo:
- isInput: true
- margin: 6
- row:
+  isInput: true
+  margin: 6
+  row:
   - label: Căn cứ hợp đồng kinh tế số
     width: 350
     code: Extra

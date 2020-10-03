@@ -986,7 +986,6 @@
 		  	.nenhd {
 		  	position: relative;
 		  	}
-		  	{{>background}}
 				{{>background_full}}			
 		  	.VTU-VATTEMP .payment,
 		  	.date {
@@ -1153,8 +1152,6 @@
 		  	.productTableHeader td:last-child{
 		  		border-right:0;
 		  	}
-		  	.productTableHeader .title{
-		  	}
 		  	.productTableHeader .subtitle{
 				font-style:italic;
 				font-size:13px;
@@ -1170,9 +1167,6 @@
 			.comInfo .vt-row{
 		  		margin-bottom:8px;
 		  	}
-			.comInfo .title{
-		  		//width:125px;
-		  	}
 			#invFooter{
 				display: block !important;
 			}
@@ -1187,6 +1181,7 @@
 					</xsl:choose>
 					<xsl:for-each select="Invoice//Content">
 						<div class="VATTEMP VTU-VATTEMP">
+							{{>background_2}}
 							<div id="quantitypages" style="padding-left:auto;padding-right:auto;">
 								<xsl:call-template name="main">
 									<xsl:with-param name="pagesNeededfnc" select="$pagesNeeded"/>

@@ -12,11 +12,8 @@ cssColor: "#111"
 
 #background : file, width, height, top, left
 background:
-  file:
-  width: 268
-  height: 260
-  top: 500
-  left: 275
+  file: bg.png
+  top: 480
 #header
 header:
   #logo : file, width, top, left

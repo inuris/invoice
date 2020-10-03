@@ -18,7 +18,7 @@ header:
     valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
     style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
- row:
+  row:
   - label: Đơn vị bán hàng
     valueStyle: "font-weight: bold"
     code: ComName
@@ -37,8 +37,8 @@ comInfo:
       code: ComBankName
       isInput: true
 cusInfo:
- isInput: true
- row:
+  isInput: true
+  row:
   - label: Họ tên người mua hàng
     width: 616
     code: Buyer

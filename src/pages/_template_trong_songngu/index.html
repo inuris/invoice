@@ -224,7 +224,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           {
           position: relative;
           }
-          {{>background}}
+          
           .VTU-VATTEMP .statistics table
           {
           background-position: bottom;
@@ -443,6 +443,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                   <div style="width:855px !important;margin:0px auto;padding-top:5px;">
                   <div class="statistics" style="border: 5px double {{cssColor}};"  >
                       <div class="nenhd" style="margin-bottom: 2px !important;">
+                        {{>background_2}}
                         <table cellspacing="0" cellpadding="0" border="0" style="width:100%;">
                           <thead>
                             <!--<xsl:copy-of select="$header" />-->
@@ -634,7 +635,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                     </label>
                                   </td>
                                   <td style="text-align: right; border-left:none !important;border-right:none;">
-                                    <label class="fl-l input-name" style="float: right;width:100%; font-weight: 700;">
+                                    <label class="fl-l" style="float: right;width:100%; font-weight: 700;">
                                       <xsl:choose>
                                         <xsl:when test="(../../Total!='' and ../../Total!=0)">
                                           <!-- fix new-->
@@ -672,7 +673,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                     </label>
                                   </td>
                                   <td style="border-left: 0;border-right:0px;">
-                                    <label class="fl-l input-name" style="float: right!important;width:100%;; text-align: right; font-weight: 700">
+                                    <label class="fl-l" style="float: right!important;width:100%;; text-align: right; font-weight: 700">
                                       <xsl:choose>
                                         <xsl:when test="../../VAT_Amount='0'">
                                           <xsl:choose>
@@ -704,7 +705,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                     </label>
                                   </td>
                                   <td  colspan="3" style="border-left: 0;border-right:0px;">
-                                    <label class="fl-l input-name" style="float: right;width: 100%;text-align: right; font-weight: 700">
+                                    <label class="fl-l" style="float: right;width: 100%;text-align: right; font-weight: 700">
                                       <xsl:choose>
                                         <xsl:when test="(../../Amount!='' and ../../Amount!=0)">
                                           <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
@@ -722,7 +723,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       <label class="fl-l2">
                                         <span style="font-weight:bold;font-size:16px;">Số tiền viết bằng chữ{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>{{/if}}:</span>
                                       </label>
-                                      <label class="fl-l input-name" style="width:565px; text-align: left; font-weight: 700">
+                                      <label class="fl-l" style="width:565px; text-align: left; font-weight: 700">
                                         <xsl:choose>
                                           <xsl:when test="../../Amount_words!=''">
                                             &#160;  <xsl:value-of select="../../Amount_words"/>

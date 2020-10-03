@@ -27,9 +27,9 @@ comInfo:
     valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
     labelWidth: 65
 cusInfo:
- isInput: true
- margin: 4
- row:
+  isInput: true
+  margin: 4
+  row:
   - label: Họ và tên người mua hàng
     width: 661
     code: Buyer
