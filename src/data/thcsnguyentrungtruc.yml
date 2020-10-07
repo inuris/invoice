@@ -1,0 +1,31 @@
+comCode: thcsnguyentrungtruc
+comPattern: 02GTTT0/001
+comSerial: TT
+comName: TRƯỜNG TRUNG HỌC CƠ SỞ NGUYỄN TRUNG TRỰC
+comTaxCode: 3501326054
+comAddress: Thôn 4, xã Suối Rao, Huyện Châu Đức, Bà Rịa-Vũng Tàu
+comInvoiceNo: 0000000
+cssColor: "#185b9d"
+comInfo:
+ row:
+  - label: Đơn vị thu tiền
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+cusInfo:
+ isInput: true
+ row:
+  - label: Họ và tên người nộp tiền
+    width: 675
+    code: Buyer
+  - label: Địa chỉ (lớp)
+    width: 747
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 696
+    code: Kind_of_Payment
+    isPayment: true
