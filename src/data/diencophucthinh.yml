@@ -59,8 +59,8 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
     sub: Address
-  - label: Điện thoại
-    value: 0963390129
+  - label: Số tài khoản
+    value: 191 34944687 014 tại Ngân Hàng Techcombank CN Bà Rịa - Vũng Tàu
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
