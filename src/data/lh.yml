@@ -33,6 +33,8 @@ comInfo:
     value: "0254.3712 666 - Fax: 0254.3712 568 - Email: lhjsc2009@gmail.com"
   - label: STK
     value: 050001319121 tại Ngân hàng Sacombank - Chi nhánh Bà Rịa
+  - value: 76110000197538 tại Ngân hàng BIDV - Chi nhánh Bà Rịa
+    valueStyle: "margin-left: 43px"
 cusInfo:
   isInput: true
   row:
