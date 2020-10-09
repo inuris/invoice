@@ -71,23 +71,23 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
     <xsl:param name="count"/>
     <xsl:if test="$count > 0">
       <tr class="noline back">
-        <td class="back-bold" height="13px">
-          <xsl:value-of select="''"/>
+        <td class="back-bold">
+          <div><xsl:value-of select="''"/></div>
         </td>
-        <td class="back-bold" height="13px">
-          <xsl:value-of select="''"/>
+        <td class="back-bold">
+          <div><xsl:value-of select="''"/></div>
         </td>
-        <td class="back-bold" height="13px">
-          <xsl:value-of select="''"/>
+        <td class="back-bold">
+          <div><xsl:value-of select="''"/></div>
         </td>
-        <td class="back-bold" height="13px">
-          <xsl:value-of select="''"/>
+        <td class="back-bold">
+          <div><xsl:value-of select="''"/></div>
         </td>
-        <td class="back-bold" height="13px">
-          <xsl:value-of select="''"/>
+        <td class="back-bold">
+          <div><xsl:value-of select="''"/></div>
         </td>
         <td class="back-bold" style="border-right:none;">
-          <xsl:value-of select="''"/>
+          <div><xsl:value-of select="''"/></div>
         </td>
       </tr>
       <xsl:call-template name="addLine">
@@ -292,13 +292,16 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           {
           padding-right: 5px;
           text-align: right;
-		  height: 26px;
+          height: 26px;
           }
           .VTU-VATTEMP .statistics tr td.back-bold2
           {
 			  font-size: 16px;
 			  border-bottom: 1px dotted {{cssColor}};
-			  height: 26px;
+			  
+          }
+          .VTU-VATTEMP .statistics tr td.back-bold div, .VTU-VATTEMP .statistics tr td.back-bold2 div{
+            height: 26px;
           }
           .VTU-VATTEMP .statistics tr td.back-bold3
           {
