@@ -1,101 +1,12 @@
-
 {{#ifOr v1=header.logo.file v2=header.logo.width}}
 <td style="border:none;vertical-align:top; width: {{header.logo.width}}px">    
     {{>logo logo=header.logo}}    
 </td>
 {{/ifOr}}
 <td style="vertical-align:top;border:none; text-align:center;">
-    <div class="InvInfoLeft">
-        {{#each header.name}}            
-        <p style="margin:0 auto;">
-            {{#if this.valueConvert}}
-            <xsl:choose>
-                <xsl:when test="/Invoice/ConvertDate != ''">
-                    <span style="font-style:italic; font-size: 16px; line-height: 24px;{{this.styleConvert}}">
-                        {{this.valueConvert}}
-                    </span>
-                </xsl:when>
-                <xsl:otherwise>
-                    <span style="font-weight: bold;font-size: 16px; line-height: 24px;{{this.style}}">
-                        {{this.value}}
-                    </span>
-                </xsl:otherwise>
-            </xsl:choose>
-            {{else}}
-                {{#if this.value}}
-                <span style="font-weight: bold; font-size:24px;{{this.style}}">
-                    {{this.value}}
-                </span>
-                {{/if}}
-            {{/if}} 
-            {{#if ../english}}
-                {{#if this.sub}}
-                    <i style="font-size: 85%;
-                        {{#if this.subStyle}}                
-                            {{this.subStyle}};
-                        {{/if}}
-                    "> ({{this.sub}})</i>
-                {{/if}} 
-            {{/if}} 
-        </p>
-        {{/each}}
-        <p style="margin: auto; margin-top:10px;font-size:14px;">
-            <xsl:choose>
-                <xsl:when test="{{#unless relative}}../../{{/unless}}ArisingDate!= '' and substring({{#unless relative}}../../{{/unless}}ArisingDate,7,4) != '1957' ">
-                    <span>Ngày {{#if english}}<i style="font-size: 85%;">(Date) </i>{{/if}}</span>
-                    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,1,2)" />
-                    <span> tháng {{#if english}}<i style="font-size: 85%;">(month) </i>{{/if}}</span>
-                    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,4,2)" />
-                    <span> năm {{#if english}}<i style="font-size: 85%;">(year) </i>{{/if}}</span>
-                    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,7,4)" />
-                </xsl:when>
-                <xsl:otherwise>
-                    <span>Ngày {{#if english}}<i style="font-size: 85%;">(Date) </i>{{/if}}</span>&#8230;
-                    <span> tháng {{#if english}}<i style="font-size: 85%;">(month) </i>{{/if}}</span>&#8230;
-                    <span> năm {{#if english}}<i style="font-size: 85%;">(year) </i>{{/if}}</span>&#8230;
-                </xsl:otherwise>
-            </xsl:choose>
-        </p>
-    </div>
+    {{>header-name}}    
 </td>
 
 <td style="vertical-align:top;border:none; {{#if header.serial.width}}width:{{header.serial.width}}px;{{else}}{{#if english}}width:250px;{{else}}width:200px;{{/if}}{{/if}}">
-    <div class="InvInfoRight" style="padding-left:10px; {{#if header.serial.style}}{{header.serial.style}}{{/if}}">
-        <div class="clearfix" style="line-height:22px;padding-top:14px;">
-            <span {{#if header.serial.labelStyle}}
-                    style="{{header.serial.labelStyle}}"
-                {{/if}}>Mẫu số {{#if english}}<i style="font-size: 85%;{{#if header.serial.subStyle}}{{header.serial.subStyle}}{{/if}}">(Form)</i>{{/if}}: </span>
-            <span
-                {{#if header.serial.valueStyle}}
-                    style="{{header.serial.valueStyle}}"
-                {{/if}}
-            >
-                <xsl:value-of select="{{#unless relative}}../../{{/unless}}InvoicePattern" /></span>
-        </div>
-        <div class="clearfix" style="line-height:22px">
-            <span {{#if header.serial.labelStyle}}
-                    style="{{header.serial.labelStyle}}"
-                {{/if}}>Ký hiệu {{#if english}}<i style="font-size: 85%;{{#if header.serial.subStyle}}{{header.serial.subStyle}}{{/if}}">(Serial)</i>{{/if}}: </span>
-            <b {{#if header.serial.valueStyle}}
-                    style="{{header.serial.valueStyle}}"
-                {{/if}}>
-                <xsl:value-of select="{{#unless relative}}../../{{/unless}}SerialNo" />
-            </b>
-        </div>
-        <div class="clearfix" style="line-height:22px">
-            <span {{#if header.serial.labelStyle}}
-                     style="{{header.serial.labelStyle}}"
-                {{/if}}>Số {{#if english}}<i style="font-size: 85%;{{#if header.serial.subStyle}}{{header.serial.subStyle}}{{/if}}">(No.)</i>{{/if}}: </span>
-            <b style="{{#if cssColorRed}}color:{{cssColorRed}}{{else}}color:red{{/if}};font-size:140%;letter-spacing: 2px;
-                {{#if header.serial.valueStyle}}
-                    {{header.serial.valueStyle}}
-                {{/if}}
-                ">
-                <xsl:call-template name="addZero">
-                    <xsl:with-param name="count" select="7-string-length({{#unless relative}}../../{{/unless}}InvoiceNo)" />
-                </xsl:call-template>
-                <xsl:value-of select="{{#unless relative}}../../{{/unless}}InvoiceNo" />
-            </b>
-        </div>
-    </div>
+    {{>header-serial}}  
 </td>

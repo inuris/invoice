@@ -7,6 +7,19 @@ comAddress: Khu phố
 comInvoiceNo: 0000000
 comFkey: ...
 convert:
+
+#header
+header:
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG
+    style: "font-size: 18px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 13px; line-height: 1.4;" 
+
+
 comInfo:   
   row:
   - valueStyle: "font-weight: bold"

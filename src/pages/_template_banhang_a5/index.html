@@ -463,78 +463,22 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                         {{>info data=comInfo relative=true}}
                                       </td>
                                       <td style="text-align:center;width:34%;">
-                                        <div style="text-align:center; font-size:22px !important;margin-top:10px; font-weight: bold;">
-                                          <p style="font-size: 20px; color:#185b9d; font-family: Tahoma; margin-bottom: 5px;">
-                                          HÓA ĐƠN BÁN HÀNG</p>
-                                          <p style="font-size: 13px; color:#185b9d; font-family: Tahoma;">
+                                        {{>header-name relative=true}}
+                                        <xsl:if test="$itemCount&gt;10">
+                                          <label style=" display: block; color:#000000">
                                           <xsl:choose>
-																							<xsl:when test="/Invoice/ConvertDate != ''">
-																								(Hóa đơn chuyển đổi từ hóa đơn điện tử)
-																							</xsl:when>
-																							<xsl:otherwise>
-																								Bản thể hiện của hóa đơn điện tử																							
-																							</xsl:otherwise>
-																						</xsl:choose>
-																					</p>
-                                        </div>
-										<div style="text-align:center;color: #185B9D;font-size: 13px;line-height:30px; font-style:italic;">
-											<xsl:choose>
-												<xsl:when test="substring(ArisingDate,7,4)!= '1957' and substring(ArisingDate,7,4)!= ''">
-													Ngày 
-													<label style="border-bottom: 1px dotted #185B9D; color:#185B9D">
-														<xsl:value-of select="substring(ArisingDate,1,2)" />
-													</label>
-					    							tháng  
-													<label style="border-bottom: 1px dotted #185B9D; color:#185B9D">
-														<xsl:value-of select="substring(ArisingDate,4,2)" />
-													</label>
-					    							năm
-													<label style="border-bottom: 1px dotted #185B9D; color:#185B9D">
-														<xsl:value-of select="concat('20',substring(ArisingDate,9,2))" />
-													</label>
-												</xsl:when>
-												<xsl:otherwise>
-												Ngày  <label style="border-bottom: 1px dotted #185B9D;">    </label> tháng  <label style="border-bottom: 1px dotted #185B9D;">    </label> năm <label style="border-bottom: 1px dotted #185B9D;">    </label>
-												</xsl:otherwise>
-											</xsl:choose>
-										</div>
-										<xsl:if test="$itemCount&gt;10">
-										  <label style=" display: block; color:#000000">
-											<xsl:choose>
-											  <xsl:when test="$pageC = 1">
-												Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 10)" />
-											  </xsl:when>
-											  <xsl:when test="$pageC &gt; 1">
-												Tiếp theo trang trước - Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 10)" />
-											  </xsl:when>
-											</xsl:choose>
-										  </label>
-										</xsl:if>
+                                            <xsl:when test="$pageC = 1">
+                                            Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 10)" />
+                                            </xsl:when>
+                                            <xsl:when test="$pageC &gt; 1">
+                                            Tiếp theo trang trước - Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 10)" />
+                                            </xsl:when>
+                                          </xsl:choose>
+                                          </label>
+                                        </xsl:if>
                                       </td>
                                       <td style=" font-size:13px;width:20%;">
-                                        <div style="margin-left: 10px;margin-top:0px">
-											<p style=" margin-top: 0px; margin-bottom: 0px;font-size:13px;line-height:17px!important;">
-											Mẫu số: 
-												<b>
-													<xsl:value-of select="InvoicePattern"/>
-												</b>
-											</p>
-											<p style=" margin-top: 0px; margin-bottom: 0px;font-size:13px;line-height:17px!important;">
-											Ký hiệu: 
-												<b>
-													<xsl:value-of select="SerialNo"/>
-												</b>
-											</p>
-											<p style=" margin-top: 0px; margin-bottom:0px; font-size:13px;line-height:17px!important;">
-											Số: 
-												<label style="color:red;font-size:17px;">
-													<xsl:call-template name="addZero">
-														<xsl:with-param name="count" select="7-string-length(InvoiceNo)" />
-													</xsl:call-template>
-													<xsl:value-of select="InvoiceNo" />
-												</label>
-											</p>
-										</div>
+                                        {{>header-serial relative=true}}
                                       </td>
                                     </tr>
                                   </table>
