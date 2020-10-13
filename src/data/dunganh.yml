@@ -44,13 +44,13 @@ cusInfo:
  isInput: true
  row:
   - label: Họ tên người mua hàng
-    width: 616
+    width: 631
     code: Buyer
   - label: Tên đơn vị
-    width: 710
+    width: 713
     code: CusName
   - label: Mã số thuế
-    width: 708
+    width: 711
     code: CusTaxCode
   - label: Địa chỉ
     width: 737
@@ -61,5 +61,5 @@ cusInfo:
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 342
+      width: 363
       code: CusBankNo
