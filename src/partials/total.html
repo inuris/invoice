@@ -1,0 +1,151 @@
+{{#ifCond comPattern '==' '02GTTT0/001'}}
+<tr class="noline back" style="border-top: 1px solid {{cssColor}};border-bottom: 1px solid {{cssColor}};">
+    <td style="text-align: left;padding-top:3px;padding-bottom:3px;border: none !important;padding-left:10px;" colspan="6">
+      <label class="fl-l" style="">
+        Cộng tiền bán hàng hóa, dịch vụ: 
+      </label>
+      <label class="fl-l input-name" style="min-width:100px;display: block; text-align:right; width:620px;">
+        <b>
+          <xsl:choose>
+              <xsl:when test="../../Amount!=''">
+                <xsl:value-of select="translate(translate(translate(format-number(../../Amount, '###,###'),',','?'),'.',','),'?','.')"/>
+              </xsl:when>
+              <xsl:otherwise>
+                &#160;
+              </xsl:otherwise>
+          </xsl:choose>
+          đồng
+        </b>
+      </label>
+    </td>
+  </tr>
+  <tr class="noline back" style="border-top: 1px solid {{cssColor}};">
+    <td colspan="6" style="padding-right: 0px;border: none; padding-top: 3px; padding-bottom: 3px;padding-left:10px;">									
+      <label class="fl-l" style="">
+        Số tiền bằng chữ : 
+      </label>
+      <label class="fl-l input-name" style="min-width:100px;display: block; text-align:left; width:710px;">
+        <b>
+          <xsl:choose>
+          <xsl:when test="../../Amount_words!=''">
+            <xsl:value-of select="../../Amount_words"/>
+          </xsl:when>
+          <xsl:otherwise>
+            &#160;
+          </xsl:otherwise>
+          </xsl:choose>
+        </b>
+      </label>
+    </td>
+  </tr> 
+{{/ifCond}}
+{{#ifCond comPattern '==' null}}
+<tr class="noline back" style="border-top: 1px solid {{cssColor}};">
+    <td class="back-bold" colspan="5" style="padding-left: 0px;text-align: right!important;border-bottom:none !important;border-right: 1px solid {{cssColor}}">
+      <label style="">
+        <span style="font-weight:bold;">Cộng tiền hàng{{#if english}} <i style="font-size: 16px;font-weight:normal;">(Sub total)</i>{{/if}}:</span>
+      </label>
+    </td>
+    <td class="back-bold" style="text-align: right; border-left:none !important;border-right:none;">
+      <label class="fl-l" style="float: right;width:100%; font-weight: 700;">
+        <xsl:choose>
+          <xsl:when test="(../../Total!='' and ../../Total!=0)">
+            <!-- fix new-->
+            &#160;  <xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            &#160;
+          </xsl:otherwise>
+        </xsl:choose>
+      </label>
+    </td>
+  </tr>
+  <tr class="noline back" style="border-top: 1px solid {{cssColor}};">
+    <td class="back-bold" colspan="5" style="padding-left: 5px;text-align: right; border-right: 1px solid {{cssColor}}">
+      <label class="fl-l" style="line-height:20px; text-align:left;">
+        <span style="font-weight:bold;">Thuế suất GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Rate)</i>{{/if}}:</span>
+        <xsl:choose>
+          <xsl:when test="../../VAT_Rate!=''">
+          <xsl:choose>
+            <xsl:when test="../../VAT_Rate!='-1' ">
+            &#160; <xsl:value-of select="../../VAT_Rate"/>&#160;%
+            </xsl:when>
+            <xsl:otherwise>
+            &#160;/
+            </xsl:otherwise>
+          </xsl:choose>
+          </xsl:when>
+          <xsl:otherwise>
+          &#160; %
+          </xsl:otherwise>
+        </xsl:choose>                                      
+      </label>
+      <label class="fl-l" style="line-height:20px; float:right">
+          <span style="font-weight:bold;">Tiền thuế GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Amount)</i>{{/if}}:</span>
+      </label>
+    </td>
+    <td class="back-bold" style="border-left: 0;border-right:0px;">
+      <label class="fl-l" style="float: right!important;width:100%;; text-align: right; font-weight: 700">
+        <xsl:choose>
+          <xsl:when test="../../VAT_Amount='0'">
+            <xsl:choose>
+              <xsl:when test="../../VAT_Rate='-1'">
+                &#160;/
+              </xsl:when>
+              <xsl:otherwise>
+                0
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:when>
+
+          <xsl:when test="../../VAT_Amount!=''">
+            <!-- fix new-->
+            <xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            &#160;
+          </xsl:otherwise>
+        </xsl:choose>
+        
+      </label>
+    </td>
+  </tr>
+  <tr class="noline back" style="border-top: 1px solid {{cssColor}};">
+    <td class="back-bold" style="text-align: left; border-right: 1px solid {{cssColor}}" colspan="5">
+      <label style="line-height:20px;float: right!important;">
+        <span><b>Tổng cộng tiền thanh toán{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Total payment)</i>{{/if}}:</b></span>
+      </label>
+    </td>
+    <td class="back-bold" colspan="3" style="border-left: 0;border-right:0px;">
+      <label class="fl-l" style="float: right;width: 100%;text-align: right; font-weight: 700">
+        <xsl:choose>
+          <xsl:when test="(../../Amount!='' and ../../Amount!=0)">
+            <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+          </xsl:when>
+          <xsl:otherwise>
+            &#160;
+          </xsl:otherwise>
+        </xsl:choose>
+      </label>
+    </td>
+  </tr>
+  <tr class="noline back" style="border-top: 1px solid {{cssColor}};">
+    <td colspan="6" style="border-bottom: none; padding-right: 0px;  padding-left: 5px; padding-bottom: 4px;border-right:0px;">
+      <div class="clearfix">
+        <label class="fl-l">
+          <span style="font-weight:bold;">Số tiền viết bằng chữ{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>{{/if}}:</span>
+        </label>
+        <label class="fl-l input-name" style="width:682px; text-align: left; font-weight: 700">
+          <xsl:choose>
+            <xsl:when test="../../Amount_words!=''">
+              &#160;  <xsl:value-of select="../../Amount_words"/>
+            </xsl:when>
+            <xsl:otherwise>
+              &#160;
+            </xsl:otherwise>
+          </xsl:choose>
+        </label>
+      </div>
+    </td>
+  </tr>
+{{/ifCond}}
