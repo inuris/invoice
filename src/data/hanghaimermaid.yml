@@ -29,7 +29,7 @@ header:
   #logo : file, width, top, left
   logo:
     file: 
-    width: 100
+    width: 202
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 22px"
