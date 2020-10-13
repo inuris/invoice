@@ -3,11 +3,12 @@ comPattern: 02GTTT0/001
 comSerial: AA
 comName: CÔNG TY
 comTaxCode: 350
-comAddress: Khu phố
+comAddress: BRVT
 comInvoiceNo: 0000000
-comFkey: ...
+cssColor: "#005cb3"
+comFkey: "..."
 convert:
-
+debug: 
 #header
 header:
   logo:
@@ -17,7 +18,8 @@ header:
     style: "font-size: 18px"
   - value: Bản thể hiện của hóa đơn điện tử
     valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
-    style: "font-weight: bold; font-size: 13px; line-height: 1.4;" 
+    style: "font-size: 12px; line-height: 1.4;"
+    styleConvert: "font-size: 12px; line-height: 1.4;"
 
 
 comInfo:   
