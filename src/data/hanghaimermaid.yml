@@ -51,7 +51,7 @@ comInfo:
   labelStyle: 
   subStyle: "font-size: 100%"
   row:
-  - code: ComName
+  - value: Công ty Cổ Phần Hàng Hải Mermaid Việt Nam
     style: "font-weight: 700;"
     valueStyle: "color: #dc214c;"
   - code: ComAddress
