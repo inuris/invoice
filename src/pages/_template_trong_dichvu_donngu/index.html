@@ -103,6 +103,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
         <!--<link href="styles.css" type="text/css" rel="stylesheet" />-->
         <title>VAT</title>
         <style type="text/css" rel="stylesheet">
+        {{>css}}
           html, body
           {
           margin: 0;
@@ -480,10 +481,8 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   </table>
                                   
                                   <table class="headerInfo"  style="width:100%;">                    
-                                    <tr style="">
-                                      <td colspan="6" style="border-left: none!important;border-right: none!important;padding: 10px 10px 4px 10px;">
-                                        {{>header cssLogo=null relative=true}}
-                                      </td>		
+                                    <tr style="">                                      
+                                      {{>header cssLogo=null relative=true}}
                                     </tr>
                                   </table>
 									

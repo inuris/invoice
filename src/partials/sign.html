@@ -1,7 +1,7 @@
 <xsl:choose>
     <xsl:when test="/Invoice/image != '' ">
         <div class="bgimg"
-            style="margin-top: 10px;background:url({/Invoice/image/@URI}) no-repeat center left; {{#if height}}height: {{height}}px;{{/if}}border:none;background-color:#DFF0D8;padding: 6px 5px"
+            style="margin-top: 10px;background:url({/Invoice/image/@URI}) no-repeat center left; {{#if height}}height: {{height}}px;{{/if}}{{#if width}}width: {{width}}px;{{/if}}border:none;background-color:#DFF0D8;padding: 6px 5px"
             onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Chữ ký điện tử có hiệu lực
@@ -25,7 +25,7 @@
     </xsl:when>
     <xsl:otherwise>
         <div class="bgimg" 
-            style="background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAlCAMAAADhl5DFAAAAmVBMVEUAAABzmT9ymD9wlz5vlD17qkNwlj5efzNffzRhdzBukj1rjTxgfzhigTldejZ3okFmcCh2oEBymz9sjzxrjDxqizxpiTtpiTpnhzpkhDlihDZfgzdggTlhgTZcgTRQey96p0J4o0F1nUB0nT9ukj1qjDtpijtoijpmiDlhgzZbgDBXdDNqizxriT1oiztlhThmhDd/r0V9q0OIU0qaAAAAMXRSTlMA19XSzfvQHBgOysQtKiDtBujbyL6tmIhhT0M1MiUiCvjx49/Ps56QVzgVEbZ1Z0k8pyoq0gAAAQRJREFUOMuN0tlWwkAMgOG0U7qCrVIoCLIoooBb+v4PZ49C08lMp/mvv5OLJCDoqUxA3NjDdCvFEw8RMyn2sameifEfn8tx06ga3oaPbbvPIayw037hxHchauVLB94o1CsLGlTwyRxndKKTqhgOOabzrzzcVU6cahhx9EY4MvAFbq0bTNyKzxw3fH7FAcNBTB/pI2o8NnCkYeJHCw4ZpuqjgdUG2l5Rr/YcGGKFzvwJdIuc3BuDXnzoxw9r4J2DXrwCs8uhB5/AVpLa8MsP2EumFvwIfW0N/kzYrJgy/A2uiqyL75cwUCbBVNnidxD08Y9zJ2YfmS9A2KwmLOH7L5CXuI7yC+4AcRHIyKHTAAAAAElFTkSuQmCC') no-repeat center left; {{#if height}}height: {{height}}px;{{/if}}border:none;background-color:#DFF0D8;padding: 6px 5px"
+            style="background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAlCAMAAADhl5DFAAAAmVBMVEUAAABzmT9ymD9wlz5vlD17qkNwlj5efzNffzRhdzBukj1rjTxgfzhigTldejZ3okFmcCh2oEBymz9sjzxrjDxqizxpiTtpiTpnhzpkhDlihDZfgzdggTlhgTZcgTRQey96p0J4o0F1nUB0nT9ukj1qjDtpijtoijpmiDlhgzZbgDBXdDNqizxriT1oiztlhThmhDd/r0V9q0OIU0qaAAAAMXRSTlMA19XSzfvQHBgOysQtKiDtBujbyL6tmIhhT0M1MiUiCvjx49/Ps56QVzgVEbZ1Z0k8pyoq0gAAAQRJREFUOMuN0tlWwkAMgOG0U7qCrVIoCLIoooBb+v4PZ49C08lMp/mvv5OLJCDoqUxA3NjDdCvFEw8RMyn2sameifEfn8tx06ga3oaPbbvPIayw037hxHchauVLB94o1CsLGlTwyRxndKKTqhgOOabzrzzcVU6cahhx9EY4MvAFbq0bTNyKzxw3fH7FAcNBTB/pI2o8NnCkYeJHCw4ZpuqjgdUG2l5Rr/YcGGKFzvwJdIuc3BuDXnzoxw9r4J2DXrwCs8uhB5/AVpLa8MsP2EumFvwIfW0N/kzYrJgy/A2uiqyL75cwUCbBVNnidxD08Y9zJ2YfmS9A2KwmLOH7L5CXuI7yC+4AcRHIyKHTAAAAAElFTkSuQmCC') no-repeat center left; {{#if height}}height: {{height}}px;{{/if}}{{#if width}}width: {{width}}px;{{/if}}border:none;background-color:#DFF0D8;padding: 6px 5px"
             onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
             <p style="font-size:12px;text-align:left;margin:0px;line-height:18px;color: #f00">
                 Chữ ký điện tử có hiệu lực

@@ -103,6 +103,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
         <!--<link href="styles.css" type="text/css" rel="stylesheet" />-->
         <title>VAT</title>
         <style type="text/css" rel="stylesheet">
+        {{>css}}
           html, body
           {
           margin: 0;
@@ -833,7 +834,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 													</b>
                           {{#if english}}<i style="font-size: 100%;">(Seller)</i>{{/if}}
 												</p>
-												{{>sign arising=true}}
+												{{>sign width=325}}
 											</td>
                     </tr>
                     <tr>

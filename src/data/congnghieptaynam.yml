@@ -10,6 +10,8 @@ convert:
 cssFontFamily: Times New Roman
 cssColor: "#000055"
 
+sign:
+  width: 325
 #logo : file, width, top, left
 logo:
   file: logo.png
@@ -63,9 +65,11 @@ comInfo:
   - label: Tel
     value: "+84-254-3532 620 - Fax: +84-254-3532 621"
   - value: "Số TK (Acc No.): 0081000330159 (VND) Ngân Hàng TMCP Ngoại Thương Việt Nam - CN Vũng Tàu"
-    valueStyle: "margin-left: -159px"
+    valueStyle: "margin-left: -255px"
   - value: 14023883965011 (VND) Ngân Hàng TMCP Kỹ Thương Việt Nam - CN Thắng Lợi, TP.HCM   
-    valueStyle: "letter-spacing: -0.2px"
+    valueStyle: "letter-spacing: -0.2px; margin-left: -96px;"
+  - value: 050055859598 (VND) Ngân hàng TMCP Sài Gòn Thương Tín - CN Bà Rịa Vũng Tàu, PGD Rạch Dừa   
+    valueStyle: "letter-spacing: -0.3px; margin-left: -45px;"
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"

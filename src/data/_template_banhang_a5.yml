@@ -9,6 +9,11 @@ cssColor: "#005cb3"
 comFkey: "..."
 convert:
 debug: 
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  top: 155
 #header
 header:
   logo:
