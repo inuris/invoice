@@ -13,13 +13,13 @@ cssColor: "#000055"
 #logo : file, width, top, left
 logo:
   file: logo.png
-  width: 100
+  width: 110
   top: 5
   left: 5
 #background : file, width, height, top, left
 background:
   file: bg.png
-  top: 500
+  top: 407
 #header
 header:
   #logo : file, width, top, left
