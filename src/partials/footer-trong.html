@@ -8,17 +8,17 @@
   <xsl:when test="/Invoice/Fkey !=''">
     <div style="font-size:13px; text-align: left; margin-top: 4px;">
       <p style="margin:0px;">
-        <i>Mã tra cứu hóa đơn:
-          <xsl:value-of select="/Invoice/Fkey" /></i>
+        <span>Mã tra cứu hóa đơn{{#if isEnglish}} <i style="font-size: 90%;">(Code for checking)</i>{{/if}}: 
+          <xsl:value-of select="/Invoice/Fkey" /></span>
       </p>
-      <p style="margin:0px;">
-        <i>Tra cứu hóa đơn điện tử tại website:
+      <p style="margin:0px;margin-top:2px;">
+        <span>Tra cứu hóa đơn điện tử tại website{{#if isEnglish}}<i style="font-size: 90%;">(Tracking) </i>{{/if}}:
           <xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text>
           <xsl:value-of select="$portalV5" /> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;
           </xsl:text>
           <xsl:value-of select="$portalV5" />
           <xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
-        </i>
+        </span>
       </p>
     </div>
   </xsl:when>
@@ -26,16 +26,16 @@
 
     <div style="font-size:13px; text-align: left; margin-top: 4px; padding-left:10px;">
       <p style="margin:0px;">
-        <i>Mã tra cứu hóa đơn: </i>
+        <span>Mã tra cứu hóa đơn{{#if isEnglish}} <i style="font-size: 90%;">(Code for checking)</i>{{/if}}: </span>
       </p>
-      <p style="margin:0px;">
-        <i>Tra cứu hóa đơn điện tử tại website:
+      <p style="margin:0px;margin-top:2px;">
+        <span>Tra cứu hóa đơn điện tử tại website{{#if isEnglish}}<i style="font-size: 90%;">(Tracking) </i>{{/if}}:
           <xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text>
           <xsl:value-of select="$portalV5" /> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;
           </xsl:text>
           <xsl:value-of select="$portalV5" />
           <xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
-        </i>
+        </span>
       </p>
     </div>
   </xsl:otherwise>
