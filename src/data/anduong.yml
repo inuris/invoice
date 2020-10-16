@@ -14,10 +14,7 @@ cssColor: "#3b7b43"
 #background : file, width, height, top, left
 background:
   file: bg.jpg
-  width: 600
-  height: 238
-  top: 578
-  left: 125
+  top: 535
 #header
 header:
   #logo : file, width, top, left
@@ -100,8 +97,8 @@ cusInfo:
     col-2:
       - label: Tài khoản
         width: 370
-  - label: Đơn đặt hàng số
-    width: 719
+  - label: Đơn đặt hàng số / Dự án
+    width: 667
     code: Extra1
   - label: Hợp đồng số
     width: 742
