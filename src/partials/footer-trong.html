@@ -12,7 +12,7 @@
           <xsl:value-of select="/Invoice/Fkey" /></span>
       </p>
       <p style="margin:0px;margin-top:2px;">
-        <span>Tra cứu hóa đơn điện tử tại website{{#if isEnglish}}<i style="font-size: 90%;">(Tracking) </i>{{/if}}:
+        <span>Tra cứu hóa đơn điện tử tại website{{#if isEnglish}} <i style="font-size: 90%;">(Tracking) </i>{{/if}}:
           <xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text>
           <xsl:value-of select="$portalV5" /> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;
           </xsl:text>
@@ -29,7 +29,7 @@
         <span>Mã tra cứu hóa đơn{{#if isEnglish}} <i style="font-size: 90%;">(Code for checking)</i>{{/if}}: </span>
       </p>
       <p style="margin:0px;margin-top:2px;">
-        <span>Tra cứu hóa đơn điện tử tại website{{#if isEnglish}}<i style="font-size: 90%;">(Tracking) </i>{{/if}}:
+        <span>Tra cứu hóa đơn điện tử tại website{{#if isEnglish}} <i style="font-size: 90%;">(Tracking) </i>{{/if}}:
           <xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text>
           <xsl:value-of select="$portalV5" /> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;
           </xsl:text>
