@@ -112,14 +112,13 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           }
           @page {
           size: "A4";
-          margin-left: 5px;
-          margin-right: 5px;
+          margin: 0 5px;
           }
           @media print {
-          html, body {
-          margin-left: 5px;
-          margin-right: 5px;
-          }}
+            html, body {
+              margin: 0 5px;
+            }
+          }
           #main
           {
           margin: 0 auto;
@@ -590,8 +589,14 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                         &#160;
                                       </xsl:when>
                                       <xsl:otherwise>
-                                        <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                        <xsl:choose>
+                                          <xsl:when test="((../../CurrencyUnit ='USD') or (../../CurrencyUnit ='EURO')) and (../../ExchangeRate > 0)">
+                                            <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
+                                          </xsl:when>
+                                          <xsl:otherwise>
+                                            <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                          </xsl:otherwise>
+                                        </xsl:choose>
                                       </xsl:otherwise>
                                     </xsl:choose>
                                   </div>
@@ -605,8 +610,14 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                         &#160;
                                         </xsl:when>
                                         <xsl:otherwise>
-                                        <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                          <xsl:choose>
+                                            <xsl:when test="((../../CurrencyUnit ='USD') or (../../CurrencyUnit ='EURO')) and (../../ExchangeRate > 0)">
+                                              <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                              <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                            </xsl:otherwise>   
+                                          </xsl:choose>                                     
                                         </xsl:otherwise>
                                       </xsl:choose>
                                     </xsl:if>
@@ -617,8 +628,14 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                         &#160;
                                         </xsl:when>
                                         <xsl:otherwise>
-                                        <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(Total,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                          <xsl:choose>
+                                            <xsl:when test="((../../CurrencyUnit ='USD') or (../../CurrencyUnit ='EURO')) and (../../ExchangeRate > 0)">
+                                              <xsl:value-of select="translate(translate(translate(format-number(translate(Total,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                              <xsl:value-of select="translate(translate(translate(format-number(translate(Total,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                            </xsl:otherwise>
+                                          </xsl:choose>
                                         </xsl:otherwise>
                                       </xsl:choose>
                                     </xsl:if>
