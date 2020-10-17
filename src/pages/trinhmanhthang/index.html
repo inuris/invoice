@@ -103,6 +103,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
         <!--<link href="styles.css" type="text/css" rel="stylesheet" />-->
         <title>VAT</title>
         <style type="text/css" rel="stylesheet">
+        {{>css}}
           html, body
           {
           margin: 0;
@@ -224,6 +225,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           {
           position: relative;
           }
+          
           .VTU-VATTEMP .statistics table
           {
           background-position: bottom;
@@ -444,7 +446,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                 <div  class ="pagecurrent" id="page_{$pageC}">
                   <div style="width:855px !important;margin:0px auto;padding-top:5px;">
                   <div class="statistics" style="border: 5px double {{cssColor}};"  >
-                      <div class="nenhd" style="margin-bottom: 2px !important;">                        
+                      <div class="nenhd" style="margin-bottom: 2px !important;">
                         {{>background_2}}
                         <table cellspacing="0" cellpadding="0" border="0" style="width:100%;">
                           <thead>
@@ -725,7 +727,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       <label class="fl-l2">
                                         <span style="font-weight:bold;font-size:16px;">Số tiền viết bằng chữ{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>{{/if}}:</span>
                                       </label>
-                                      <label class="fl-l" style="width:687px; text-align: left; font-weight: 700">
+                                      <label class="fl-l" style="width:565px; text-align: left; font-weight: 700">
                                         <xsl:choose>
                                           <xsl:when test="../../Amount_words!=''">
                                             &#160;  <xsl:value-of select="../../Amount_words"/>
@@ -837,7 +839,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 													</b>
                           {{#if english}}<i style="font-size: 100%;">(Seller)</i>{{/if}}
 												</p>
-												{{>sign arising=true}}
+												{{>sign}}
 											</td>
                     </tr>
                     <tr>
@@ -901,7 +903,6 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                       <i style="margin:0px;font-size:13px;">
                         <span>(Cần kiểm tra, đối chiếu khi lập, giao nhận hóa đơn)</span>
                       </i>
-                      
                       {{>footer-trong}}
 					  
 						
