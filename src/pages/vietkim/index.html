@@ -379,23 +379,23 @@
 		</table>
 	</xsl:template>
 	<xsl:template name="calltitleproduct">
-		<tr class="productTableHeader" style="">
-			<td style="width:50px;">
+		<tr class="productTableHeader">
+			<td style="width: 30px;">
 				<b class="title">STT</b>
 			</td>
-			<td style="">
+			<td>
 				<b class="title">Tên hàng hóa, dịch vụ</b>
 			</td>
-			<td style="width:45px;">
+			<td style="width:65px;">
 				<b class="title">ĐVT</b>
 			</td>
-			<td style="width:70px;">
+			<td style="width:65px;">
 				<b class="title">Số lượng</b>
 			</td>
-			<td style="width:115px;">
+			<td style="width:110px;">
 				<b class="title">Đơn giá</b>
 			</td>
-			<td style="width:115px;">
+			<td style="width:110px;">
 				<b class="title">Thành Tiền</b>
 			</td>
 		</tr>
@@ -520,6 +520,9 @@
 					<xsl:when test="../../VAT_Rate='-1'">
 						<label class="input-name"> \ %</label>
 					</xsl:when>
+					<xsl:when test="../../VAT_Rate='-2'">
+						<label class="input-name"> \ %</label>
+					</xsl:when>
 					<xsl:when test="../../VAT_Rate!=''">
 						<label class="input-name" style="width:40px;height:20px;padding-top:0px;font-size:15px;border-bottom: none;">
 						 <xsl:value-of select="../../VAT_Rate"/> %
@@ -538,6 +541,9 @@
 				<b>
 					<xsl:choose>
 						<xsl:when test="../../VAT_Rate='-1'">
+							<label class="input-name summary" style="height:20px;display: block;margin-right:0px;color: black;border-bottom: none;">\</label>
+						</xsl:when>
+						<xsl:when test="../../VAT_Rate='-2'">
 							<label class="input-name summary" style="height:20px;display: block;margin-right:0px;color: black;border-bottom: none;">\</label>
 						</xsl:when>
 						<xsl:when test="../../VAT_Amount=''">
@@ -763,34 +769,7 @@
 							<p style="font-size:14px; margin-top:0;height: 20px;margin-bottom: 0;">
 							(<i>Ký, ghi rõ họ tên</i>)
 							</p>
-							<xsl:choose>
-								<xsl:when test="/Invoice/image != '' ">
-									<div class="bgimg" style="background:url({/Invoice/image/@URI}) no-repeat center left; width:295px;" onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
-										<p style="margin-top:3px;margin-bottom:5px;font-size:12px">
-											<xsl:value-of select="/Invoice/image"/>
-										</p>
-										<p style="font-size:12px">
-										Ký bởi:
-											<xsl:value-of select="/Invoice/CNCom"/>
-											<br/> Ngày ký:
-											<xsl:value-of select="/Invoice//Content/ArisingDate"/>
-										</p>
-									</div>
-								</xsl:when>
-								<xsl:otherwise>
-									<div class="bgimg" style="background:url('data:image/png;base64,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') no-repeat center left; height: 83px;background-size:48px 48px; width:295px;" onclick="showDialog('dialogServer','{$serial}','{$pattern}','{$invno}',0,'messSer','is')">
-										<p style="margin-top:3px;margin-bottom:5px;font-size:12px">
-											Signature Valid
-										</p>
-										<p style="font-size:12px">
-											Ký bởi:
-											<xsl:value-of select="/Invoice/CNCom"/>
-											<br/> Ngày ký:
-											<xsl:value-of select="/Invoice//Content/ArisingDate"/>
-										</p>
-									</div>
-								</xsl:otherwise>
-							</xsl:choose>
+							{{>sign-eng}}
 						</td>
 					</tr>
 				</table>
@@ -878,19 +857,7 @@
 		<div id="invFooter" style="font-size:12px; text-align: center; margin-top: 4px;">
 			<span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0254 800126</span>
 			<br/>
-			<xsl:variable name="comTaxCode" select="/Invoice/Content/ComTaxCode" />
-			<xsl:variable name="portalV5" select="concat('https://',$comTaxCode,'.vnpt-invoice.com.vn')" />
-			<xsl:choose>
-				<xsl:when test="/Invoice/Fkey !=''">
-					<div style="font-size:12px; width:800px; text-align: center; margin:5px auto;">
-						<span>Hóa đơn Điện tử (HĐĐT) được tra cứu trực tuyến tại
-						<xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text><xsl:value-of select="$portalV5"/> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-							<xsl:value-of select="$portalV5"/>
-						<xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
-						<br/>Mã tra cứu HĐĐT này: <b><xsl:value-of select="/Invoice/Fkey"/></b></span>
-					</div>
-				</xsl:when>
-			</xsl:choose>
+			{{>footer center=true}}
 		</div>
 		<div style="margin:0px auto; margin-top:2px; ">
 			<div class="clearfix" id="bt" style="margin:0px auto;"/>
@@ -902,17 +869,11 @@
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 				<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 				<title>VAT</title>
-				<style type="text/css" rel="stylesheet">		  	
-			@charset "utf-8";
+				<style type="text/css" rel="stylesheet">	
+			{{>css}}
 			#main{margin:0 auto}
-			@page {size: "A4"; margin: 11mm;}
-			.pagecurrent{
-				//margin-top:5px;
-			}
-		  	* html,body {
-		  	margin: 0px auto;
-		  	padding: 0;
-		  	height: 100%;
+			body {
+		  		margin: 0 auto;
 		  	}
 		  	span, i, b{
 		  		color: {{cssColor}};
@@ -1019,8 +980,7 @@
 		  	.nenhd {
 		  	position: relative;
 		  	}
-		  	{{>background}}
-			{{>background_full}}			
+				{{>background_full}}			
 		  	.VTU-VATTEMP .payment,
 		  	.date {
 		  	text-align: center;
@@ -1186,8 +1146,6 @@
 		  	.productTableHeader td:last-child{
 		  		border-right:0;
 		  	}
-		  	.productTableHeader .title{
-		  	}
 		  	.productTableHeader .subtitle{
 				font-style:italic;
 				font-size:13px;
@@ -1203,9 +1161,6 @@
 			.comInfo .vt-row{
 		  		margin-bottom:8px;
 		  	}
-			.comInfo .title{
-		  		//width:125px;
-		  	}
 			#invFooter{
 				display: block !important;
 			}
@@ -1220,6 +1175,7 @@
 					</xsl:choose>
 					<xsl:for-each select="Invoice//Content">
 						<div class="VATTEMP VTU-VATTEMP">
+							{{>background_2}}
 							<div id="quantitypages" style="padding-left:auto;padding-right:auto;">
 								<xsl:call-template name="main">
 									<xsl:with-param name="pagesNeededfnc" select="$pagesNeeded"/>
