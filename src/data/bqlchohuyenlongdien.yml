@@ -21,8 +21,8 @@ comInfo:
     valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
   - label: Điện thoại
     value: 0254-3653011
-  - label: STK
-    value: 6001205060641 Tại Agribank chi nhánh huyện Long Điền
+  # - label: STK
+  #   value: 6001205060641 Tại Agribank chi nhánh huyện Long Điền
 cusInfo:
  isInput: true
  margin: 4
