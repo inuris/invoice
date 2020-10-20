@@ -1,0 +1,41 @@
+comCode: maugiaohoami
+comPattern: 02GTTT0/001
+comSerial: HM
+comName: TRƯỜNG MẪU GIÁO HỌA MI
+comTaxCode: 3501230384
+comAddress: Thôn 5, Xã Bình Trung, Huyện Châu Đức, Tỉnh Bà Rịa -Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+cssColor: "#185b9d"
+comInfo:
+  margin: 3
+  row:
+  - label: Đơn vị thu tiền
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Số điện thoại
+    isInput: true
+    value: 
+    width: 743
+  - label: Số tài khoản
+    value: 
+    isInput: true
+    width: 747
+cusInfo:
+  margin: 3
+  isInput: true
+  row:
+  - label: Họ và tên người nộp tiền
+    width: 675
+    code: Buyer
+  - label: Địa chỉ (lớp)
+    width: 747
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 696
+    code: Kind_of_Payment
+    isPayment: true
