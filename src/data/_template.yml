@@ -95,3 +95,6 @@ cusInfo:
       - label: Số tài khoản
         width: 408
         code: CusBankNo
+  - code: Amount
+    codeValue: translate(translate(translate(format-number(Amount, '###,###'),',','?'),'.',','),'?','.')
+    codeElse: 

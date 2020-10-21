@@ -58,22 +58,25 @@
 			{{#if this.style}}{{this.style}};{{/if}}
 			{{#if this.valueStyle}}{{this.valueStyle}};{{/if}}"
 		{{/ifOr}}
-		>{{#ifOr v1=this.code v2=this.value}}{{#if this.code}}
+		>{{#ifOr v1=this.code v2=this.value V3=this.prefix}}{{#if this.code}}
 			<xsl:choose>
 				<xsl:when test="{{#unless relative}}../../{{/unless}}{{this.code}}!=''">
 					{{#if this.isPayment}}
 						{{> payment relative=relative}}
 					{{else}}
+						{{#if this.codePrefix}}{{this.codePrefix}}{{/if}}
 						{{#if this.codeValue}}
 						<xsl:value-of select="{{this.codeValue}}" />
 						{{else}}
 						<xsl:value-of select="{{#unless relative}}../../{{/unless}}{{this.code}}" />
-						{{/if}}
+						{{/if}}{{#if this.codeSuffix}}{{this.codeSuffix}}{{/if}}
 					{{/if}}
 				</xsl:when>
 				<xsl:otherwise>
-					{{#if this.codeElse}}                            
+					{{#if this.codeElse}}
+					{{#if this.codePrefix}}{{this.codePrefix}}{{/if}}                           
 					<xsl:value-of select="{{this.codeElse}}" />
+					{{#if this.codeSuffix}}{{this.codeSuffix}}{{/if}}
 					{{else}}
 					&#160;
 					{{/if}}

@@ -32,7 +32,7 @@
         {{/if}} 
     </p>
     {{/each}}
-    <p style="margin: auto; margin-top:10px;font-size:14px;">
+    <p style="margin: auto; margin-top:10px;font-size:14px;{{#if header.date}}{{header.date.style}}{{/if}}  ">
         <xsl:choose>
             <xsl:when test="{{#unless relative}}../../{{/unless}}ArisingDate!= '' and substring({{#unless relative}}../../{{/unless}}ArisingDate,7,4) != '1957' ">
                 <span>Ngày {{#if english}}<i style="font-size: 85%;">(Date) </i>{{/if}}</span>
