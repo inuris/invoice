@@ -1,0 +1,81 @@
+comCode: thptlehongphong
+comPattern: 02GTTT0/001
+comSerial: AA
+comName: TRƯỜNG TRUNG HỌC PHỔ THÔNG TƯ THỤC LÊ HỒNG PHONG 
+comTaxCode: 3500335874
+comAddress: Số 209/52 Bình Giã, P.8, TP Vũng Tàu
+comInvoiceNo: 0000000
+cssColor: "#111"
+comFkey: "..."
+convert:
+debug:
+
+#background : file, width, height, top, left
+background:
+  file: 
+  top: 155
+#header
+header:
+  logo:
+    width: 150
+  name:
+  - value: CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+    style: "font-size: 14px; font-weight: 400; font-family: Times New Roman;"
+  - value: Độc lập - Tự do - Hạnh phúc
+    style: "border-bottom: 1px solid #111;font-size: 14px; font-weight: 400; padding-bottom: 3px; font-family: Times New Roman;"
+  - value: HÓA ĐƠN THU TIỀN HỌC PHÍ
+    style: "font-size: 18px; line-height: 28px; font-family: Times New Roman;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-size: 12px; line-height: 1.4;"
+    styleConvert: "font-size: 12px; line-height: 1.4;"
+  date:
+    style: "margin-top: 4px"
+  serial:
+    style: "padding-top: 0;"
+
+comInfo:
+  width: 279
+  style: "margin:0"
+  row:
+  - value: SỞ GIÁO DỤC VÀ ĐÀO TẠO
+  - valueStyle: "font-weight: bold;"
+    value: TRƯỜNG THPT TƯ THỤC LÊ HỒNG PHONG 
+  - codePrefix: "Địa chỉ: "
+    code: ComAddress
+    # valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+  - codePrefix: "MST: "
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px"
+  - value: "Điện thoại: 0254 3807275 - 3581755"
+
+cusInfo:
+  isInput: true
+  margin: 4
+  row:
+  - label: "- Họ tên người nộp"
+    width: 710
+    code: Buyer
+  # - label: Tên đơn vị
+  #   width: 754
+  #   code: CusName
+  # - label: Mã số thuế
+  #   width: 751
+  #   code: CusTaxcode
+  - label: "- Lớp"
+    width: 789
+    code: CusAddress
+  - label: "- Nội dung thu"
+    width: 735
+    code: "Extra1"
+  - label: "- Số tiền"
+    width: 175
+    code: Amount
+    codeValue: translate(translate(translate(format-number(Amount, '###,###'),',','?'),'.',','),'?','.')
+    codeSuffix: " đồng"
+    valueStyle: "font-weight: 700"
+    col-2:
+      - label: Bằng chữ
+        width: 541
+        code: Amount_words
+        valueStyle: "font-weight: 700"
