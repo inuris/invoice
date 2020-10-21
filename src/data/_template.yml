@@ -97,4 +97,6 @@ cusInfo:
         code: CusBankNo
   - code: Amount
     codeValue: translate(translate(translate(format-number(Amount, '###,###'),',','?'),'.',','),'?','.')
-    codeElse: 
+    codeElse:                                   # Điền field trong otherwise
+    codePrefix:                                 # Thêm fixed text trước code
+    codeSuffix: " đồng"                         # Thêm fixed text sau code

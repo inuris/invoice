@@ -60,7 +60,7 @@ cusInfo:
     width: 737
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 200
+    width: 195
     code: Kind_of_Payment
     isPayment: true
     col-2:
