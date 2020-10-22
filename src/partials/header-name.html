@@ -1,4 +1,11 @@
 <div class="InvInfoLeft">
+    {{#with (lookup @root [template])~}}
+        {{#each header.name}}
+        <p style="margin:0 auto;">
+            {{this.value}}
+        </p>
+        {{/each}}
+    {{/with}}
     {{#each header.name}}            
     <p style="margin:0 auto;">
         {{#if this.valueConvert}}
