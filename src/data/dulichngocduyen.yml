@@ -42,11 +42,10 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 02543630123
+    value: 0254.3630123
   - label: Số tài khoản
-    value: 110000114420 Tại ngân hàng Vietinbank Chi nhánh ngân hàng công thương Bà Rịa - Vũng tàu,
-  - value: Phòng giao dịch tại côn Đảo 
-    valueStyle: "margin-left: 104px"
+    value: 110000114420 Tại ngân hàng Vietinbank Chi nhánh ngân hàng công thương Bà Rịa - Vũng tàu, Phòng giao dịch tại côn Đảo 
+    width: 684
   - label: Email
     value: sale@thientanstarhotel.com
 cusInfo:
@@ -54,16 +53,16 @@ cusInfo:
   isInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 616
+    width: 599
     code: Buyer
   - label: Tên đơn vị
-    width: 710
+    width: 693
     code: CusName
   - label: Mã số thuế
-    width: 708
+    width: 689
     code: CusTaxCode
   - label: Địa chỉ
-    width: 737
+    width: 719
     code: CusAddress
   - label: Hình thức thanh toán
     width: 195
@@ -71,5 +70,5 @@ cusInfo:
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 342
+      width: 310
       code: CusBankNo

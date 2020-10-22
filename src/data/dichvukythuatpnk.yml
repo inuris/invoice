@@ -1,0 +1,94 @@
+comFolder: 201022_DichVuKyThuatPNK_V5_AMTrong
+comCode: dichvukythuatpnk
+comSerial: AA
+comName: CÔNG TY TNHH DỊCH VỤ KỸ THUẬT PNK 
+comTaxCode: 3502384556
+comAddress: 791/12/3 Bình Giã, Phường 10, Thành Phố Vũng Tàu,Tỉnh Bà Rịa - Vũng Tàu
+comInvoiceNo: 0000000
+english: true
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+
+#background : file, width, height, top, left
+background:
+  file: bg.jpg
+  top: 500
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.jpg
+    width: 150
+    top: 5
+    left: 45
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 6
+  labelWidth: 180
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Điện thoại
+    sub: Tel
+    value: 0948001463
+  # - label: Số tài khoản
+  #   sub: Account No.
+  #   value: 76010000278560 tại Ngân hàng BIDV - CN Vũng Tàu
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  isInput: 
+  row:
+  - label: Họ tên người mua hàng
+    width: 539
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 636
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 672
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 705
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 541
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
