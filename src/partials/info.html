@@ -24,6 +24,22 @@
 			{{/if}} 
 		</label>
 	{{/ifOr}}
+	{{#if this.label}}
+	<label class="fl-l">
+		<span 
+		{{#ifOr v1=globalStyle v2=globalColonStyle v3=this.style}}
+			style="{{#if globalStyle}}{{globalStyle}};{{/if}}
+			{{#if globalColonStyle}}{{globalColonStyle}};{{/if}}
+			{{#if this.style}}{{this.style}};{{/if}}"
+		{{/ifOr}}
+		>:&#160;</span>
+	</label>
+	{{else}}
+		{{#ifOr v1=this.labelWidth v2=globalLabelWidth}}
+			{{#if this.label}}
+			<label class="fl-l"><span style="margin-left: 8px"></span></label>{{/if}}
+		{{/ifOr}}
+	{{/if}} 
 	<label class="fl-l 
 		{{#ifOr v1=isGlobalInput v2=this.isInput}}
 			input-name
@@ -36,20 +52,7 @@
 					width:{{globalWidth}}px;
 				{{/if}}
 			{{/if}}
-			">
-		{{#if this.label}}
-			<span 
-			{{#ifOr v1=globalStyle v2=globalColonStyle v3=this.style}}
-				style="{{#if globalStyle}}{{globalStyle}};{{/if}}
-				{{#if globalColonStyle}}{{globalColonStyle}};{{/if}}
-				{{#if this.style}}{{this.style}};{{/if}}"
-			{{/ifOr}}
-			>:&#160;</span>
-		{{else}}
-			{{#ifOr v1=this.labelWidth v2=globalLabelWidth}}
-				{{#if this.label}}<span style="margin-left: 8px"></span>{{/if}}
-			{{/ifOr}}
-		{{/if}} 
+			">		
 		<span 
 		{{#ifOr v1=globalStyle v2=globalValueStyle v3=this.style v4=this.valueStyle}}
 			style="

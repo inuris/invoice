@@ -59,36 +59,34 @@ comInfo:
     code: ComAddress
   - label: Tel
     value: "+84-254-3532 620 - Fax: +84-254-3532 621"
+
 #cusInfo Table
 cusInfo:
-  style: "font-size: 16px; font-weight: 400;"
-  labelWidth:
-  labelStyle:
-  margin: 8 
+  style: "font-size: 16px"
+  labelWidth: 
+  labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
-  isInput:
+  isInput: 
+  margin: 6
   row:
   - label: Họ tên người mua hàng
-    width: 557
+    width: 539
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 648
+    width: 636
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 687
+    width: 672
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 717
+    width: 705
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 578
+    width: 541
     code: Kind_of_Payment
     isPayment: true
-    sub: Term of Payment
-  - label: Tài khoản
-    sub: Account No
-    width: 678
+    sub: Method of Payment

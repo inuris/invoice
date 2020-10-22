@@ -65,25 +65,26 @@ cusInfo:
   labelWidth: 
   labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
+  isInput: 
   row:
   - label: Họ tên người mua hàng
-    width: 550
+    width: 539
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 647
+    width: 636
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 684
+    width: 672
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 717
+    width: 705
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 553
+    width: 541
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
