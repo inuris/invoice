@@ -195,3 +195,9 @@ br + br { display: none; }
   </script>
 </body>
 </html>
+{{#if comFolder}}
+<!-- split copy.bat -->
+md "{{@root.config.folder}}\\{{comFolder}}"
+copy "{{comCode}}.xml" "{{@root.config.folder}}\\{{comFolder}}"
+copy "{{comCode}}.xslt" "{{@root.config.folder}}\\{{comFolder}}"
+{{/if}}
