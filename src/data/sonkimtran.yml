@@ -30,22 +30,23 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 0835426068
-    
+    value: 0907779520
+  - label: Số tài khoản
+    value: 6090201014238 Ngân hàng Agribank chi nhánh TP. Vũng Tàu
 cusInfo:
   isInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 616
+    width: 601
     code: Buyer
   - label: Tên đơn vị
-    width: 710
+    width: 695
     code: CusName
   - label: Mã số thuế
-    width: 708
+    width: 692
     code: CusTaxCode
   - label: Địa chỉ
-    width: 737
+    width: 723
     code: CusAddress
   - label: Hình thức thanh toán
     width: 200
@@ -53,5 +54,5 @@ cusInfo:
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 337
+      width: 308
       code: CusBankNo
