@@ -3,7 +3,7 @@ comCode: dichvukythuatpnk
 comSerial: AA
 comName: CÔNG TY TNHH DỊCH VỤ KỸ THUẬT PNK 
 comTaxCode: 3502384556
-comAddress: 791/12/3 Bình Giã, Phường 10, Thành Phố Vũng Tàu,Tỉnh Bà Rịa - Vũng Tàu
+comAddress: 791/12/3 Bình Giã, Phường 10, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 comInvoiceNo: 0000000
 english: true
 convert:
@@ -59,7 +59,7 @@ comInfo:
     sub: Address
   - label: Điện thoại
     sub: Tel
-    value: 0948001463
+    value: 0945117865
   # - label: Số tài khoản
   #   sub: Account No.
   #   value: 76010000278560 tại Ngân hàng BIDV - CN Vũng Tàu
