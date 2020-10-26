@@ -1,3 +1,4 @@
+comFolder: 201007_THCSNguyenTrungTruc_V5_AMTuanAnh
 comCode: thcsnguyentrungtruc
 comPattern: 02GTTT0/001
 comSerial: TT
@@ -6,8 +7,18 @@ comTaxCode: 3501326054
 comAddress: Thôn 4, xã Suối Rao, Huyện Châu Đức, Bà Rịa-Vũng Tàu
 comInvoiceNo: 0000000
 cssColor: "#185b9d"
+header:
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG - PHIẾU THU TIỀN
+    style: "font-size: 18px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-size: 12px; line-height: 1.4;"
+    styleConvert: "font-size: 12px; line-height: 1.4;"
 comInfo:
- row:
+  row:
   - label: Đơn vị thu tiền
     valueStyle: "font-weight: bold"
     code: ComName
@@ -17,15 +28,15 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
 cusInfo:
- isInput: true
- row:
+  isInput: true
+  row:
   - label: Họ và tên người nộp tiền
-    width: 675
+    width: 664
     code: Buyer
   - label: Địa chỉ (lớp)
-    width: 747
+    width: 737
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 696
+    width: 685
     code: Kind_of_Payment
     isPayment: true

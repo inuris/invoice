@@ -4,6 +4,7 @@
 xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
   <xsl:param name="bien" select="0"/>
   <xsl:param name="bien1" select="0"/>
+  <xsl:param name="itemperpage" select="7"/>
 
   <xsl:variable name="itemCount">
     <xsl:value-of select="count(Invoice//Content//Products//Product)"/>
@@ -104,16 +105,31 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
         <!--<link href="styles.css" type="text/css" rel="stylesheet" />-->
         <title>VAT</title>
         <style type="text/css" rel="stylesheet">
+          {{>css}}
           html, body
           {
-          margin: 0;
-          padding: 0;
           height: 100%;
           background-color: white;
+          }
+          @page {
+            size: "A5 landscape"; 
+          }
+          @media print {
+            html, body {
+            margin-left: 2px;
+            margin-right: 2px;
+            }
           }
           #main
           {
           margin: 0 auto;
+          }
+          span, p, b{
+            font-size: 13px;
+		        color: {{cssColor}};
+          }
+          .pagecurrent{
+            page-break-after: always;
           }
           .VATTEMP
           {
@@ -121,6 +137,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           font-family: Tahoma;
           font-size: 13px;
 		      color: {{cssColor}};
+          page-break-after: always;         
           }
           .VATTEMP .header-main, .content
           {
@@ -266,7 +283,10 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           font-size: 100%;
           text-transform: none;
           font-weight: bold;
-          border: 1px solid {{cssColor}} !important;
+          border-bottom: 1px solid {{cssColor}} !important;
+          border-right: 1px solid {{cssColor}} !important;
+          border-left: 1px solid {{cssColor}} !important;
+          border-top: 1px solid {{cssColor}} !important;
           }
 		  .VATTEMP .statistics table th:first-child
           {
@@ -281,7 +301,10 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           font-size: 100%;
           text-transform: none;
           font-weight: bold;
-          border: 1px solid {{cssColor}} !important;
+          border-bottom: 1px solid {{cssColor}} !important;
+          border-right: 1px solid {{cssColor}} !important;
+          border-left: 1px solid {{cssColor}} !important;
+          border-top: 1px solid {{cssColor}} !important;
           }
 		  .VATTEMP .statistics table th.h2:first-child
           {
@@ -394,7 +417,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           {
           border: 1px solid #000000;
           cursor: pointer;
-          width: 170px;
+          width: 270px;
           }
           .bgimg p
           {
@@ -425,346 +448,264 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
               </xsl:when>
             </xsl:choose>
 
-            <xsl:for-each select="Invoice//Content/Products/Product[(position()-1) mod 10 = 0]">
-              <xsl:variable name="level1Count" select="(position()-1)*10"/>
+            <xsl:for-each select="Invoice//Content/Products/Product[(position()-1) mod $itemperpage = 0]">
+              <xsl:variable name="level1Count" select="(position()-1)*$itemperpage"/>
               <xsl:variable name="pageC" select="(position())"/>
 
               <div class = "VATTEMP">
                 <div  class ="pagecurrent" id="page_{position()}">
                   <div style="width:850px !important">
-					<div style="font-size:12px;border-bottom:1px dashed {{cssColor}}; text-align: center; color: {{cssColor}};margin-bottom: 2px;width:100%;">
-            <span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0254 800126</span>
-					</div>
-                    <div class="statistics"  style="float:left;">
-                      <div class="nenhd" style="margin-bottom: 10px!important;">
-                        <table width="100%" cellspacing="0" cellpadding="0" style="width:834px !important;">
-                          <thead>
-                            <xsl:for-each select="/Invoice//Content">
-                              <tr style="background-color: white!important;">
-                                <td colspan="6" style="">
-                                  <table cellspacing="0" cellpadding="0" style="width:100%;">
-                                    <tr style="line-height:17px;">
-                                      <td style="width:20%;height:55px;padding:2px 50px;" >
-                                      </td>
-                                      <td style="text-align:center;width:50%;">
-                                        <div style="text-align:center; font-size:22px !important;margin-top:10px; font-weight: bold;"><label style="font-weight: 700; color:{{cssColor}}; font-family: Tahoma;">HÓA ĐƠN BÁN HÀNG</label></div>
-										<div style="text-align:center;color: {{cssColor}};font-size: 13px;line-height:30px; font-style:italic;">
-											<xsl:choose>
-												<xsl:when test="substring(ArisingDate,7,4)!= '1957' and substring(ArisingDate,7,4)!= ''">
-													Ngày 
-													<label style="border-bottom: 1px dotted {{cssColor}}; color:{{cssColor}}">
-														<xsl:value-of select="substring(ArisingDate,1,2)" />
-													</label>
-					    							tháng  
-													<label style="border-bottom: 1px dotted {{cssColor}}; color:{{cssColor}}">
-														<xsl:value-of select="substring(ArisingDate,4,2)" />
-													</label>
-					    							năm
-													<label style="border-bottom: 1px dotted {{cssColor}}; color:{{cssColor}}">
-														<xsl:value-of select="concat('20',substring(ArisingDate,9,2))" />
-													</label>
-												</xsl:when>
-												<xsl:otherwise>
-												Ngày  <label style="border-bottom: 1px dotted {{cssColor}};">    </label> tháng  <label style="border-bottom: 1px dotted {{cssColor}};">    </label> năm <label style="border-bottom: 1px dotted {{cssColor}};">    </label>
-												</xsl:otherwise>
-											</xsl:choose>
-										</div>
-										<xsl:if test="$itemCount&gt;10">
-										  <label style=" display: block; color:#000000">
-											<xsl:choose>
-											  <xsl:when test="$pageC = 1">
-												Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 10)" />
-											  </xsl:when>
-											  <xsl:when test="$pageC &gt; 1">
-												Tiếp theo trang trước - Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 10)" />
-											  </xsl:when>
-											</xsl:choose>
-										  </label>
-										</xsl:if>
-                                      </td>
-                                      <td style=" font-size:13px;width:20%;">
-                                        <div style="margin-left: 10px;margin-top:0px">
-											<p style=" margin-top: 0px; margin-bottom: 0px;font-size:13px;line-height:17px!important;">
-											Mẫu số: 
-												<b>
-													<xsl:value-of select="InvoicePattern"/>
-												</b>
-											</p>
-											<p style=" margin-top: 0px; margin-bottom: 0px;font-size:13px;line-height:17px!important;">
-											Ký hiệu: 
-												<b>
-													<xsl:value-of select="SerialNo"/>
-												</b>
-											</p>
-											<p style=" margin-top: 0px; margin-bottom:0px; font-size:13px;line-height:17px!important;">
-											Số: 
-												<label style="color:red;font-size:17px;">
-													<xsl:call-template name="addZero">
-														<xsl:with-param name="count" select="7-string-length(InvoiceNo)" />
-													</xsl:call-template>
-													<xsl:value-of select="InvoiceNo" />
-												</label>
-											</p>
-										</div>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                  <table style="float: left;font-size:13px;width:100%;color:{{cssColor}};">
-                                    <tr style="border-top:1px solid;">
-										<td colspan="6" style=" border-left: none!important;border-right: none!important;padding-left:10px;">
-											{{>info data=comInfo relative=true}}
-										</td>
-                                    </tr>
-                                    <tr style="border-top:1px solid;">
-										<td colspan="6" style=" border-left: none!important;border-right: none!important;padding-left:10px;">
-											{{>info data=cusInfo relative=true}}
-										</td>
-                                    </tr>
-									<tr>
-										<td style="height: 5px;border: none;"></td>
-									</tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </xsl:for-each>
-                          </thead>
-                          <tbody class="nenhd" style="color:{{cssColor}};">
-                            <tr style="">
-                              <th style="height:30px;width:40px;">
-                                STT
-                              </th>
-                              <th style="">
-                                Tên khoản thu
-                              </th>
-                              <th style="width: 80px;">
-                                Đơn vị tính
-                              </th>
-                              <th style="width: 80px;">
-                                Số lượng
-                              </th>
-                              <th style="width: 120px;">
-                                Đơn giá
-                              </th>
-                              <th style="width: 120px;">
-                                Thành tiền
-                              </th>
+                  <div style="font-size:12px;border-bottom:1px dashed #142f4a; text-align: center; color: #142f4a;margin-bottom: 2px;width:100%;">
+                    <span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0254 800126</span>
+                  </div>
+                  <div class="statistics"  style="float:left;">
+                    <div class="nenhd">
+                      {{>background_2}}
+                      <table width="100%" cellspacing="0" cellpadding="0" style="width:834px !important;">
+                        <thead>
+                          <xsl:for-each select="/Invoice//Content">
+                            <tr>
+                              <td colspan="6">
+                                <table cellspacing="0" cellpadding="0" style="width:100%;">
+                                  <tr style="line-height:17px;">
+                                    <td style="color: {{cssColor}};padding-left: 10px;" >
+                                      
+                                    </td>
+                                    <td style="text-align:center;width:57%;">
+                                      {{>header-name relative=true}}
+                                      <xsl:if test="$itemCount &gt; $itemperpage">
+                                        <label style=" display: block; color:#000000">
+                                        <xsl:choose>
+                                          <xsl:when test="$pageC = 1">
+                                          Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div $itemperpage)" />
+                                          </xsl:when>
+                                          <xsl:when test="$pageC &gt; 1">
+                                          Tiếp theo trang trước - Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div $itemperpage)" />
+                                          </xsl:when>
+                                        </xsl:choose>
+                                        </label>
+                                      </xsl:if>
+                                    </td>
+                                    <td style=" font-size:13px;width:20%;">
+                                      {{>header-serial relative=true}}
+                                    </td>
+                                  </tr>
+                                </table>
+                                <table style="float: left;font-size:13px;width:100%;color:{{cssColor}};">                                  
+                                  <tr style="border-top:1px solid;">
+                                    <td colspan="6" style=" border-left: none!important;border-right: none!important;padding-left:10px;padding-top: 5px;">
+                                      {{>info data=comInfo relative=true}}
+                                    </td>
+                                  </tr>
+                                </table>
+                                <table style="float: left;font-size:13px;width:100%;color:{{cssColor}};">                                  
+                                  <tr style="border-top:1px solid;">
+                                    <td colspan="6" style=" border-left: none!important;border-right: none!important;padding-left:10px;padding-top: 5px;">
+                                      {{>info data=cusInfo relative=true}}
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
                             </tr>
-                            <tr style="">
-                              <th class="h2">
-                                1
-                              </th>
-                              <th class="h2">
-                                2
-                              </th>
-                              <th class="h2">
-                                3
-                              </th>
-                              <th class="h2">
-                                4
-                              </th>
-                              <th class="h2">
-                                5
-                              </th>
-                              <th class="h2">
-                                6=4x5
-                              </th>
+                          </xsl:for-each>
+                        </thead>
+                        <tbody class="nenhd" style="color:{{cssColor}};">
+                          <tr style="">
+                            <th style="height:30px;width:40px;">
+                              STT
+                            </th>
+                            <th>
+                              Tên hàng hóa dịch vụ 
+                            </th>
+                            <th style="width: 80px;">
+                              Đơn vị tính
+                            </th>
+                            <th style="width: 80px;">
+                              Số lượng
+                            </th>
+                            <th style="width: 120px;">
+                              Đơn giá
+                            </th>
+                            <th style="width: 120px;">
+                              Thành tiền
+                            </th>
+                          </tr>
+                          <tr style="">
+                            <th class="h2">
+                              1
+                            </th>
+                            <th class="h2">
+                              2
+                            </th>
+                            <th class="h2">
+                              3
+                            </th>
+                            <th class="h2">
+                              4
+                            </th>
+                            <th class="h2">
+                              5
+                            </th>
+                            <th class="h2">
+                              6=4x5
+                            </th>
+                          </tr>
+                          <xsl:for-each select="..//../Products/Product[  ($level1Count  + $itemperpage)  >= position() and  position() >  $level1Count]">
+                            <tr class="noline back" style="line-height:20px;">
+                              <td class="stt" >
+                                <div style="display: block;height:17px;">
+                                  <xsl:value-of select="position() + $level1Count"/>
+                                </div>
+                              </td>
+                              <td class="back-bold2">
+                                <div style="display: block;word-wrap: break-word;text-align: left;  overflow: hidden;">
+                                  <xsl:value-of select="ProdName"/>
+                                </div>
+                              </td>
+                              <td class="back-bold2">
+                                <div style="display: block;word-wrap: break-word;text-align: center;  overflow: hidden;">
+                                  <xsl:value-of select="ProdUnit"/>
+                                </div>
+                              </td>
+                              <td class="back-bold">
+                                <div style="display: block;word-wrap: break-word;text-align: center;  overflow: hidden;">
+                                  <xsl:choose>
+                                    <xsl:when test="(ProdQuantity='') or(ProdQuantity=0)">
+                                      &#160;
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                      <!-- fix new-->
+                                      <xsl:value-of select="translate(translate(translate(format-number(translate(ProdQuantity,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                    </xsl:otherwise>
+                                  </xsl:choose>
+                                </div>
+                              </td>
+                              <td class="back-bold">
+                                <div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
+                                  <xsl:choose>
+                                    <xsl:when test="(ProdPrice='') or(ProdPrice=0)">
+                                      &#160;
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                      <!-- fix new-->
+                                      <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                    </xsl:otherwise>
+                                  </xsl:choose>
+                                </div>
+                              </td>
+                              <td class="back-bold">
+                                <div style="display: block;word-wrap: break-word;text-align: right; overflow: hidden;">
+                                  <xsl:choose>
+                                    <xsl:when test="(Amount=0) or(Amount='')">
+                                      &#160;
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                      <!-- fix new-->
+                                      <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                    </xsl:otherwise>
+                                  </xsl:choose>
+                                </div>
+                              </td>
                             </tr>
-                            <xsl:for-each select="..//../Products/Product[  ($level1Count  + 10)  >= position() and  position() >  $level1Count]">
-                              <tr class="noline back" style="line-height:20px;">
-                                <td class="stt" >
-                                  <div style="display: block;height:17px;">
-                                    <xsl:value-of select="position() + $level1Count"/>
-                                  </div>
-                                </td>
-                                <td class="back-bold2">
-                                  <div style="display: block;word-wrap: break-word;text-align: left;  overflow: hidden;">
-                                    <xsl:value-of select="ProdName"/>
-                                  </div>
-                                </td>
-                                <td class="back-bold2">
-                                  <div style="display: block;word-wrap: break-word;text-align: left;  overflow: hidden;">
-                                    <xsl:value-of select="ProdUnit"/>
-                                  </div>
-                                </td>
-                                <td class="back-bold">
-                                  <div style="display: block;word-wrap: break-word;text-align: center;  overflow: hidden;">
-                                    <xsl:choose>
-                                      <xsl:when test="(ProdQuantity='') or(ProdQuantity=0)">
-                                        &#160;
-                                      </xsl:when>
-                                      <xsl:otherwise>
-                                        <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(ProdQuantity,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
-                                      </xsl:otherwise>
-                                    </xsl:choose>
-                                  </div>
-                                </td>
-                                <td class="back-bold">
-                                  <div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
-                                    <xsl:choose>
-                                      <xsl:when test="(ProdPrice='') or(ProdPrice=0)">
-                                        &#160;
-                                      </xsl:when>
-                                      <xsl:otherwise>
-                                        <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
-                                      </xsl:otherwise>
-                                    </xsl:choose>
-                                  </div>
-                                </td>
-                                <td class="back-bold">
-                                  <div style="display: block;word-wrap: break-word;text-align: right; overflow: hidden;">
-                                    <xsl:choose>
-                                      <xsl:when test="(Amount=0) or(Amount='')">
-                                        &#160;
-                                      </xsl:when>
-                                      <xsl:otherwise>
-                                        <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
-                                      </xsl:otherwise>
-                                    </xsl:choose>
-                                  </div>
-                                </td>
-                              </tr>
-
-
-                              <xsl:if test="(position() + $level1Count)= $itemCount">
-                                <xsl:if test="($itemCount mod 3) != 0">
-                                  <xsl:call-template name="addLine">
-                                    <xsl:with-param name="count" select="3 - ($itemCount mod 3)"/>
-                                  </xsl:call-template>
-                                </xsl:if>
-								
-                                <tr class="noline back" style="border-top: 1px solid {{cssColor}};border-bottom: 1px solid {{cssColor}};">
-                                  <td style="text-align: left;padding-top:3px;padding-bottom:3px;border: none !important;padding-left:10px;" colspan="6">
-									<label class="fl-l" style="">
-                                      Cộng tiền bán hàng hóa, dịch vụ: 
-									</label>
-									<label class="fl-l input-name" style="min-width:100px;display: block; text-align:right; width:620px;">
-										<b>
-										<xsl:choose>
-												  <xsl:when test="../../Amount!=''">
-													<xsl:value-of select="translate(translate(translate(format-number(../../Amount, '###,###'),',','?'),'.',','),'?','.')"/>
-												  </xsl:when>
-												  <xsl:otherwise>
-													&#160;
-												  </xsl:otherwise>
-										 </xsl:choose>
-										 đồng
-										</b>
-									</label>
-                                  </td>
-                                </tr>
-                                <tr class="noline back" style="border-top: 1px solid {{cssColor}};">
-                                  <td colspan="6" style="padding-right: 0px;border: none; padding-top: 3px; padding-bottom: 3px;padding-left:10px;">									
-									<label class="fl-l" style="">Số tiền bằng chữ : </label>
-									<label class="fl-l input-name" style="min-width:100px;display: block; text-align:left; width:710px;">
-										<b>
-											<xsl:choose>
-											<xsl:when test="../../Amount_words!=''">
-											  <xsl:value-of select="../../Amount_words"/>
-											</xsl:when>
-											<xsl:otherwise>
-											  &#160;
-											</xsl:otherwise>
-											</xsl:choose>
-										</b>
-									</label>
-                                  </td>
-                                </tr>
-                                <tr style="border-top:1px solid;">
-									<td colspan="3" style="vertical-align: top;border:none;padding-top:5px;color: {{cssColor}};">
-										<div style="padding-left: 50px; padding-bottom: 4px;">Người nộp tiền</div>
-										<div style="padding-left: 50px;">
-											<i>(Ký, ghi rõ họ tên)</i>
-										</div>
-									</td>
-									<td colspan="3" style="vertical-align: top;border:none;padding-top:5px;">
-										<p style="font-size:12px; margin:0px;color:red!important;" class="ComNameSignDate">
-										  <xsl:variable name="serial">
-											<xsl:value-of select="../../SerialNo"/>
-										  </xsl:variable>
-										  <xsl:variable name="pattern">
-											<xsl:value-of select="../../InvoicePattern"/>
-										  </xsl:variable>
-										  <xsl:variable name="invno">
-											<xsl:value-of select="../../InvoiceNo"/>
-                      </xsl:variable>
-                      <div style="text-align: right;padding-right: 50px;padding-bottom:4px;color:{{cssColor}};">Đơn vị thu tiền</div>
-										  <div style="float:right">{{>sign-eng}}</div>
-										</p>
-									</td>
-                                </tr>
-								<tr>
-									<td colspan="6" style="text-align:center;border:none;">
-										<xsl:value-of select="../../isReplace"/>
-										<xsl:value-of select="../../isAdjust"/>
-										<xsl:choose>
-										  <xsl:when test="/Invoice/convert!=''">
-											<div style="text-align:center;padding-top:5px;color:{{cssColor}};">
-											  <div>
-												<label style="font-size:14px;">
-												  <b>
-													HÓA ĐƠN CHUYỂN ĐỔI TỪ HÓA ĐƠN ĐIỆN TỬ
-												  </b>
-												</label>
-												<p style="font-size:14px; margin:0px;">
-												  Ngày <b>
-													<xsl:value-of select="substring(/Invoice/ConvertDate,1,2)"/>
-												  </b> tháng <b>
-													<xsl:value-of select="substring(/Invoice/ConvertDate,4,2)"/>
-												  </b> năm <b>
-
-													<xsl:value-of select="concat('20',substring(/Invoice/ConvertDate,9,2))"/>
-												  </b>
-												</p>
-												<p style="font-size:14px; margin:0px;height: 50px;">
-												  Người chuyển đổi
-												</p>
-											  </div>
-											</div>
-										  </xsl:when>
-										</xsl:choose>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="6">
-										{{>footer center=true}}
-									</td>
-								</tr>
+                            <xsl:if test="(position() + $level1Count)= $itemCount">
+                              <xsl:if test="($itemCount mod 3) != 0">
+                                <xsl:call-template name="addLine">
+                                  <xsl:with-param name="count" select="3 - ($itemCount mod 3)"/>
+                                </xsl:call-template>
                               </xsl:if>
+                              {{>total_a5}} 
+                              <tr class="noline back">
+                                <td colspan="6" style="border: 0">
+                                  <table style="width: 100%">                                                              
+                                    <tr style="border-top:1px solid {{cssColor}};">
+                                      <td colspan="2" style="vertical-align: top;border:none;padding-top:5px;color: {{cssColor}}; width: 35%">
+                                        <div style="padding-left: 50px; padding-bottom: 4px;">
+                                          Người nộp tiền
+                                        </div>
+                                        <div style="padding-left: 50px;">
+                                          <i>(Ký, ghi rõ họ tên)</i>
+                                        </div>
+                                      </td>
+                                      <td colspan="2" style="text-align:center;border:none;">
+                                        <xsl:value-of select="../../isReplace"/>
+                                        <xsl:value-of select="../../isAdjust"/>
+                                        <xsl:choose>
+                                          <xsl:when test="/Invoice/convert!=''">
+                                            <div style="text-align:center;padding-top:5px;color:{{cssColor}};">
+                                              <div>
+                                              <label style="font-size:11px;">
+                                                <b>
+                                                HÓA ĐƠN CHUYỂN ĐỔI TỪ HÓA ĐƠN ĐIỆN TỬ
+                                                </b>
+                                              </label>
+                                              <p style="font-size:11px; margin:0px;">
+                                                Ngày <b>
+                                                <xsl:value-of select="substring(/Invoice/ConvertDate,1,2)"/>
+                                                </b> tháng <b>
+                                                <xsl:value-of select="substring(/Invoice/ConvertDate,4,2)"/>
+                                                </b> năm <b>
 
-
-
-
-
-
-
-                            </xsl:for-each>
-
-
-                            <!-- </xsl:for-each> -->
-
-
-
+                                                <xsl:value-of select="concat('20',substring(/Invoice/ConvertDate,9,2))"/>
+                                                </b>
+                                              </p>
+                                              <p style="font-size:11px; margin:0px;height: 50px;">
+                                                Người chuyển đổi
+                                              </p>
+                                              </div>
+                                            </div>
+                                          </xsl:when>
+                                        </xsl:choose>
+                                      </td>
+                                      <td colspan="2" style="vertical-align: top;border:none;padding-top:5px;  width: 35%">
+                                        <p style="font-size:12px; margin:0px;color:red!important;" class="ComNameSignDate">
+                                          <xsl:variable name="serial">
+                                          <xsl:value-of select="../../SerialNo"/>
+                                          </xsl:variable>
+                                          <xsl:variable name="pattern">
+                                          <xsl:value-of select="../../InvoicePattern"/>
+                                          </xsl:variable>
+                                          <xsl:variable name="invno">
+                                          <xsl:value-of select="../../InvoiceNo"/>
+                                          </xsl:variable>
+                                          <div style="text-align: right;padding-right: 100px;padding-bottom:4px;color:{{cssColor}};">
+                                            Đơn vị thu tiền
+                                          </div>
+                                          {{>sign-eng}}
+                                        </p>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="6" style="border: 0">                    
+                                        {{>footer center=true}}
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="6" style="border: 0; text-align: center; padding: 3px 0">
+                                          <i style="font-size: 11px;">
+                                            (Cần kiểm tra, đối chiếu khi lập, giao, nhận hóa đơn)
+                                          </i>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </xsl:if>
+                          </xsl:for-each>
+                                  <!-- </xsl:for-each> -->
                           </tbody>
                         </table>
-                        <div class="nenhd_bg"></div>
-
-                      </div>
-
-                      <!--panel footer-->
-
+                      <div class="nenhd_bg"></div>
                     </div>
+
+                    <!--panel footer-->
+
+                  </div>
                   </div>
                 </div>
               </div>
             </xsl:for-each>
-
-
-
           </div>
-          <div class="clearfix" id="bt"> &#160; </div>
+          <div class="clearfix" id="bt" style="page-break-after: always;"> &#160; </div>
         </center>
       </body>
 
