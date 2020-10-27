@@ -1,3 +1,4 @@
+comFolder: 201009_QuachVanTu_V5_AMLieu
 comCode: quachvantu
 comSerial: VT
 comName: DOANH NGHIỆP TƯ NHÂN QUÁCH VĂN TƯ
@@ -44,16 +45,16 @@ cusInfo:
   margin: 4
   row:
   - label: Họ và tên người mua hàng
-    width: 661
+    width: 654
     code: Buyer
   - label: Tên đơn vị
-    width: 754
+    width: 747
     code: CusName
   - label: Mã số thuế
-    width: 751
+    width: 745
     code: CusTaxcode
   - label: Địa chỉ
-    width: 776
+    width: 769
     code: CusAddress
   - label: Hình thức thanh toán
     width: 200
@@ -61,4 +62,4 @@ cusInfo:
     isPayment: true
     col-2:
       - label: Số tài khoản
-        width: 421
+        width: 406
