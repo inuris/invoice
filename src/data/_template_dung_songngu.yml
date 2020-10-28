@@ -1,3 +1,4 @@
+comFolder:
 comCode: _template_dung_songngu
 comSerial: TC
 comName: CÔNG TY TNHH 
@@ -59,11 +60,12 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
     sub: Address
-    valueStyle: "font-size: 15px"
   - label: Điện thoại
     sub: Tel
-    valueStyle: "font-size: 15px"
     value: 0
+  - label: Số tài khoản
+    sub: Account No.
+    value: 
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"
@@ -73,23 +75,23 @@ cusInfo:
   subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 550
+    width: 542
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 647
+    width: 639
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 684
+    width: 676
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 717
+    width: 709
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 553
+    width: 545
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
