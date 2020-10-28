@@ -55,7 +55,7 @@ comInfo:
     valueStyle: "font-size: 18px;"
   - label: Mã số thuế
     code: ComTaxCode
-    valueStyle: "letter-spacing: 2px;"
+    valueStyle: "letter-spacing: 5px;"
     sub: Tax code
   - label: Địa chỉ
     code: ComAddress
@@ -66,7 +66,7 @@ comInfo:
     value: 0254.3676595
   - label: Số tài khoản
     sub: Account No.
-    value: 146988539 Tại Ngân hàng Á Châu (ACB) - PGD Long Điền- CN Bà Rịa - Vũng Tàu
+    value: 146988539 Tại Ngân hàng Á Châu (ACB) - PGD Long Điền
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"
