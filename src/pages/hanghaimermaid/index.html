@@ -5,6 +5,10 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
   <xsl:param name="bien" select="0"/>
   <xsl:param name="bien1" select="0"/>
 
+  <xsl:variable name="rate" select="Invoice/Content/ExchangeRate"/>
+  <xsl:variable name="vatrate" select="Invoice/Content/VAT_Rate"/>
+  <xsl:variable name="total" select="Invoice/Content/Total"/>
+
   <xsl:variable name="itemCount">
     <xsl:value-of select="count(Invoice//Content//Products//Product)"/>
   </xsl:variable>
@@ -667,16 +671,12 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                           <xsl:choose>
                                             <!-- USD -->
                                             <xsl:when test="(../../CurrencyUnit ='USD') and (../../ExchangeRate > 0)">
-                                              <xsl:variable name="rate" select="../../ExchangeRate"/>
-                                              <xsl:variable name="total" select="../../Total"/>
                                               USD <xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                               <br />
                                               VND <xsl:value-of select="translate(translate(translate(format-number(translate($rate * $total,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
                                             </xsl:when>
                                             <!-- EURO -->
                                             <xsl:when test="(../../CurrencyUnit ='EURO') and (../../ExchangeRate > 0)">
-                                              <xsl:variable name="rate" select="../../ExchangeRate"/>
-                                              <xsl:variable name="total" select="../../Total"/>
                                               EUR <xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                               <br />
                                               VND <xsl:value-of select="translate(translate(translate(format-number(translate($rate * $total,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
@@ -738,20 +738,15 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                           <xsl:choose>
                                             <!-- USD -->
                                             <xsl:when test="(../../CurrencyUnit ='USD') and (../../ExchangeRate > 0)">
-                                              <xsl:variable name="rate" select="../../ExchangeRate"/>
-                                              <xsl:variable name="vatrate" select="../../VAT_Rate"/>
-                                              <xsl:variable name="total" select="../../Total"/>
                                               USD <xsl:value-of select="translate(translate(translate(format-number(translate(../../VAT_Amount,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                               <br />
-                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate($rate * $vatrate,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
+                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate($rate * $vatrate * $total div 100,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
                                             </xsl:when>
                                             <!-- EURO -->
                                             <xsl:when test="(../../CurrencyUnit ='EURO') and (../../ExchangeRate > 0)">
-                                              <xsl:variable name="rate" select="../../ExchangeRate"/>
-                                              <xsl:variable name="vatamount" select="../..//VAT_Amount"/>
                                               EUR <xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                               <br />
-                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate($rate * $vatrate,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
+                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate($rate * $vatrate * $total div 100,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
                                             </xsl:when>
                                             <!-- VND -->
                                             <xsl:otherwise>
@@ -785,13 +780,13 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                             <xsl:when test="(../../CurrencyUnit ='USD') and (../../ExchangeRate > 0)">
                                               USD <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                               <br />
-                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate(../../ConvertedAmount,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
+                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate($rate * ($vatrate + 100) * $total div 100,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
                                             </xsl:when>
                                             <!-- EURO -->
                                             <xsl:when test="(../../CurrencyUnit ='EURO') and (../../ExchangeRate > 0)">
                                               EUR <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                               <br />
-                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate(../../ConvertedAmount,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
+                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate($rate * ($vatrate + 100) * $total div 100,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
                                             </xsl:when>
                                             <!-- VND -->
                                             <xsl:otherwise>
