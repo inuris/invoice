@@ -780,13 +780,13 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                             <xsl:when test="(../../CurrencyUnit ='USD') and (../../ExchangeRate > 0)">
                                               USD <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                               <br />
-                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate($rate * ($vatrate + 100) * $total div 100,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
+                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate(round($rate * $vatrate * $total div 100) + $rate * $total * 100 div 100,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
                                             </xsl:when>
                                             <!-- EURO -->
                                             <xsl:when test="(../../CurrencyUnit ='EURO') and (../../ExchangeRate > 0)">
                                               EUR <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.00'),',','?'),'.',','),'?','.')"/>
                                               <br />
-                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate($rate * ($vatrate + 100) * $total div 100,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
+                                              VND <xsl:value-of select="translate(translate(translate(format-number(translate(round($rate * $vatrate * $total div 100) + $rate * $total * 100 div 100,',','.'), '###,###'),',','?'),'.',','),'?','.')"/> 
                                             </xsl:when>
                                             <!-- VND -->
                                             <xsl:otherwise>
