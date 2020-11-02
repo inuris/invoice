@@ -1,3 +1,4 @@
+comFolder: 201005_THCSChuVanAn_V5_AMTuanAnh
 comCode: thcschuvanan
 comPattern: 02GTTT0/001
 comSerial: VA
@@ -24,12 +25,12 @@ cusInfo:
  isInput: true
  row:
   - label: Họ và tên người nộp tiền
-    width: 675
+    width: 664
     code: Buyer
   - label: Địa chỉ (lớp)
-    width: 747
+    width: 737
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 696
+    width: 685
     code: Kind_of_Payment
     isPayment: true
