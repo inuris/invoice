@@ -1,0 +1,101 @@
+comFolder: 201102_MarinaBay_V5_AMTrong
+comCode: marinabay
+comSerial: MA
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN HÀ ĐẠT
+comTaxCode: 3500456558
+comAddress: Số 115 Trần Phú, Phường 5, Thành phố Vũng Tàu,Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+english: true
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#101661"
+isHSM: true
+
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  top: 548
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 140
+    top: 5
+    left: 15
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 6
+  labelWidth: 160
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px;"
+  - label: MST
+    code: ComTaxCode
+    valueStyle: 
+    sub: Tax Code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Điện thoại
+    sub: Tel.
+    value: 0254.3576.766 | 0254 384 8888
+  - label: STK
+    sub: Account No.
+    value: 5541100183004 tại Ngân hàng TMCP Quân Đội - CN Vũng Tàu
+    
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  isInput: 
+  row:
+  - label: Người mua
+    width: 692
+    code: Buyer
+    sub: Buyer
+  - label: Đơn vị
+    width: 702
+    code: CusName
+    sub: Co. name
+  - label: MST
+    width: 713
+    code: CusTaxCode
+    sub: Tax Code
+  - label: Địa chỉ
+    width: 709
+    code: CusAddress
+    sub: Address
+  - label: HTTT
+    width: 688
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Pay. method
+  - label: STK
+    width: 700
+    code: CusBankNo
+    sub: Account No.
