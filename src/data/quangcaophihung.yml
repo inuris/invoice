@@ -21,11 +21,11 @@ background_full:
 header:
   #logo
   logo:
-    file: 
-    width: 135
-    height: 73
-    left: 38
-    top: 10
+    file: logo.jpg
+    width: 100
+    left: 30
+    top: 2
+    bottom: 2
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     - value: Bản thể hiện của hóa đơn điện tử
