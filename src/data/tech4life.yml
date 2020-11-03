@@ -5,7 +5,11 @@ comTaxCode: 3502374269
 comAddress: 53 Nguyễn Hiền, Phường 2, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 comInvoiceNo: 0000000
 cssFontFamily: Arial
-cssColor: "#005cb3"
+cssColor: "#111"
+english: true
+background:
+  file: bg.png
+  top: 520
 #header
 header:
   #logo
@@ -18,44 +22,62 @@ header:
     valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
     style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
+  style: "font-size: 15px"
+  margin: 4
   row:
-  - label: Đơn vị bán hàng
-    valueStyle: "font-weight: bold"
-    code: ComName
+  - code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 16px; font-weight: 700"
   - label: Mã số thuế
-    valueStyle: "font-weight: bold"
     code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
   - label: Địa chỉ
     code: ComAddress
-  - label: STK
-    width: 180
-    code: ComBankNo
-    isInput: true
+    sub: Address
+  - label: Điện thoại
+    sub: Tel
+    value:  "0254 3 838 388 Fax: 0254 3 835 668"
+  - label: Số tài khoản
+    sub: A/C no.
+    value: 167704079030379 Tại ngân hàng HDBank - PGD Rạch Dừa, chi nhánh Vũng Tàu
+  - label: Email
+    value: "info@ltechjsc.com"
     col-2:
-    - label: tại
-      width: 553
-      code: ComBankName
-      isInput: true
+      - label: Website
+        value: ltechjsc.com
+        style: "margin-left: 8px;"
+
+#cusInfo Table
 cusInfo:
+  style: "font-size: 15px"
+  labelWidth: 
   isInput: true
+  labelStyle:
+  subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 616
+    width: 529
     code: Buyer
+    sub: Customer's Name
   - label: Tên đơn vị
-    width: 710
+    width: 627
     code: CusName
+    sub: Company Name
   - label: Mã số thuế
-    width: 708
+    width: 668
     code: CusTaxCode
+    sub: Tax code
   - label: Địa chỉ
-    width: 737
+    width: 703
     code: CusAddress
+    sub: Address
   - label: Hình thức thanh toán
     width: 200
     code: Kind_of_Payment
     isPayment: true
+    sub: Method of Payment
     col-2:
-    - label: Số tài khoản
-      width: 342
-      code: CusBankNo
+      - label: Số tài khoản
+        width: 237
+        sub: A/C no.
