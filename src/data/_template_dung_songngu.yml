@@ -6,6 +6,7 @@ comTaxCode:
 comAddress: 
 comInvoiceNo: 0000000
 english: true
+debug: 1
 convert:
 #global style
 cssFontFamily: Times New Roman
