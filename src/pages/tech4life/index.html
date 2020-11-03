@@ -634,7 +634,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       <label class="fl-l2">
                                         <span style="font-weight:bold;font-size:16px;">Số tiền viết bằng chữ{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>{{/if}}:</span>
                                       </label>
-                                      <label class="fl-l input-name" style="width:531px; text-align: left; font-weight: 700">
+                                      <label class="fl-l input-name" style="width:532px; text-align: left; font-weight: 700">
                                         <xsl:choose>
                                           <xsl:when test="../../Amount_words!=''">
                                             &#160;  <xsl:value-of select="../../Amount_words"/>
@@ -746,7 +746,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 													</b>
                           {{#if english}}<i style="font-size: 100%;">(Seller)</i>{{/if}}
 												</p>
-												{{>sign-eng}}
+												{{>sign-eng width=287}}
 											</td>
                     </tr>
                     <tr>

@@ -1,3 +1,4 @@
+comFolder: 201014_Tech4Life_V5_AMTuanAnh
 comCode: tech4life
 comSerial: TL
 comName: CÔNG TY TNHH TECH4LIFE VIỆT NAM
@@ -9,39 +10,56 @@ cssColor: "#111"
 english: true
 background:
   file: bg.png
-  top: 520
+  top: 621
 #header
 header:
   #logo
   logo:
+    file: logo.png
     width: 150
+    left: 5
+    top: 1
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "font-size: 27px"
+    style: "font-size: 27px; color: #f00;"
+  - sub: VAT INVOICE
+    subStyle: "color: #f00; font-size: 18px; font-weight: 700;"
   - value: Bản thể hiện của hóa đơn điện tử
     valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
     style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
   style: "font-size: 15px"
-  margin: 4
+  margin: 6  
   row:
   - code: ComName
+    labelStyle: "width: 0;"
     style: "line-height: 18px;"
     valueStyle: "font-size: 16px; font-weight: 700"
   - label: Mã số thuế
+    labelWidth: 160
     code: ComTaxCode
-    valueStyle: "letter-spacing: 2px;"
+    valueStyle: "letter-spacing: 2px; font-weight: 700;"
     sub: Tax code
   - label: Địa chỉ
+    labelWidth: 160
     code: ComAddress
     sub: Address
   - label: Điện thoại
+    labelWidth: 160
+    width: 180
     sub: Tel
-    value:  "0254 3 838 388 Fax: 0254 3 835 668"
+    value:  "0254 3 838 388"
+    col-2:
+      - label: Fax
+        value: 0254 3 835 668
+        style: "margin-left: 8px;"
   - label: Số tài khoản
+    labelWidth: 160
     sub: A/C no.
     value: 167704079030379 Tại ngân hàng HDBank - PGD Rạch Dừa, chi nhánh Vũng Tàu
   - label: Email
+    labelWidth: 160
+    width: 180
     value: "info@ltechjsc.com"
     col-2:
       - label: Website
@@ -51,7 +69,7 @@ comInfo:
 #cusInfo Table
 cusInfo:
   style: "font-size: 15px"
-  labelWidth: 
+  labelWidth:
   isInput: true
   labelStyle:
   subStyle: "font-size: 100%"
@@ -73,11 +91,11 @@ cusInfo:
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 200
+    width: 160
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
     col-2:
       - label: Số tài khoản
-        width: 237
+        width: 225
         sub: A/C no.
