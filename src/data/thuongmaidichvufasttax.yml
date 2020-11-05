@@ -1,0 +1,97 @@
+comFolder: 201027_ThuongMaiDichVuFastTax_V5_AMHuong
+comCode: thuongmaidichvufasttax
+comSerial: FT
+comName: CÔNG TY TNHH THƯƠNG MẠI - DỊCH VỤ FAST TAX
+comTaxCode: 3502404749
+comAddress: 167 B Nguyễn An Ninh, Phường Nguyễn An Ninh, Thành Phố Vũng Tàu, Tỉnh Bà Rịa Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+english: true
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+### background: file, width, height, top, left, opacity
+background_full:
+  file: 
+  top: 69 
+#background : file, width, height, top, left
+background:
+  file:
+  top: 500
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file:
+    width: 150
+    top: 5
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 6
+  labelWidth: 
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+    valueStyle: "letter-spacing: -0.2px; font-size: 15.5px"
+  - label: Điện thoại
+    sub: Tel
+    value: 0907121086
+  # - label: Tài khoản
+  #   sub: Account No.
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  isInput: true
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    width: 542
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 639
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 676
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 709
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 545
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment

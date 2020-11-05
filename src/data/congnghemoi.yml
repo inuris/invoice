@@ -1,0 +1,116 @@
+comCode: congnghemoi
+comSerial: CN
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN SẢN XUẤT VẬT LIỆU XÂY DỰNG CÔNG NGHỆ MỚI
+comTaxCode: 3500644600
+comAddress: Số 402/1 Thống Nhất, Phường 8, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+comInvoiceNo: 0000000
+english: 1
+convert: 
+#global style
+cssFontFamily: Arial
+cssColor: "#000055"
+
+#logo : file, width, top, left
+logo:
+  file: 
+  width: 120
+  top: 0
+  left: 5
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 260
+  height: 242
+  top: 542
+  left: 301
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 130
+    top: 1
+    left: 5
+    bottom: 8
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px;"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 400; font-size: 15px"
+  margin: 4  
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 90%"
+  labelWidth: 175
+  row:
+  - label: Đơn vị bán
+    sub: Seller
+    code: ComName
+    valueStyle: "font-weight: 700"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px; font-weight: 700"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Điện thoại
+    sub: Tel
+    width: 220
+    value: 0254 3575111
+    col-2: 
+      - label: Email
+        labelWidth: 45
+        value: congnghemoi.vt@gmail.com
+  - label: Số tài khoản
+    sub: Account No.
+    value: 7601 0000 027328 tại Ngân hàng TMCP Đầu tư và Phát triển Việt Nam - CN BRVT
+  - value: 551 1101 213008 tại Ngân hàng TMCP Quân đội - CN Vũng Tàu
+    valueStyle: "margin-left: 8px"
+  - value: 032 1002 455006 tại Ngân hàng TMCP An Bình - CN Vũng Tàu
+    valueStyle: "margin-left: 8px"
+
+#cusInfo Table
+cusInfo:
+  style: "font-size: 15px; font-weight: 400;"
+  labelWidth:
+  labelStyle: 
+  isInput: 
+  subStyle: "font-size: 90%"  
+  row:
+  - label: Người mua
+    width: 704
+    code: Buyer
+    sub: Buyer
+  - label: Đơn vị
+    width: 677
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 683
+    code: CusTaxCode
+    sub: Tax Code
+  - label: Địa chỉ
+    width: 720
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 153
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Payment method
+    col-2:
+      - label: Số tài khoản
+        sub: Account No.
+        width: 258

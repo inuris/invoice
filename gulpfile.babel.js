@@ -121,6 +121,11 @@ function copy() {
     .pipe(gulp.dest(PATHS.dist + '/assets'));
 }
 
+function copyxml() {
+  return gulp.src('src/pages/**/*.xml')
+    .pipe(gulp.dest(PATHS.dist));
+}
+
 // Copy page templates into finished HTML files
 function pages() {
   return gulp.src('src/pages/**/*.{html,hbs,handlebars}')    
@@ -245,6 +250,7 @@ function reload(done) {
 function watch() {
   // gulp.watch(PATHS.assets, copy);
   gulp.watch('src/pages/**/*.{html,jpg,png,gif}').on('all', gulp.series(pages, browser.reload));
+  gulp.watch('src/pages/**/*.xml').on('all', gulp.series(copyxml, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));

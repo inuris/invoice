@@ -1,0 +1,36 @@
+comFolder: 201005_THCSChuVanAn_V5_AMTuanAnh
+comCode: thcschuvanan
+comPattern: 02GTTT0/001
+comSerial: VA
+comName: TRƯỜNG THCS CHU VĂN AN
+comTaxCode: 3501385275
+comAddress: Ấp Tân An, Xã Phước Tân, Huyện Xuyên Mộc, Bà Rịa-Vũng Tàu
+comInvoiceNo: 0000000
+cssColor: "#185b9d"
+comInfo:
+ row:
+  - label: Đơn vị thu tiền
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Số điện thoại
+    value: 
+  - label: Số tài khoản
+    value: 
+cusInfo:
+ isInput: true
+ row:
+  - label: Họ và tên người nộp tiền
+    width: 664
+    code: Buyer
+  - label: Địa chỉ (lớp)
+    width: 737
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 685
+    code: Kind_of_Payment
+    isPayment: true

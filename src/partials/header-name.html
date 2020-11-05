@@ -1,0 +1,52 @@
+<div class="InvInfoLeft">
+    {{#each header.name}}            
+    <p style="margin:0 auto;">
+        {{#if this.valueConvert}}
+        <xsl:choose>
+            <xsl:when test="/Invoice/ConvertDate != ''">
+                <span style="font-style:italic; font-size: 16px; line-height: 24px;{{this.styleConvert}}">
+                    {{this.valueConvert}}
+                </span>
+            </xsl:when>
+            <xsl:otherwise>
+                <span style="font-weight: bold;font-size: 16px; line-height: 24px;{{this.style}}">
+                    {{this.value}}
+                </span>
+            </xsl:otherwise>
+        </xsl:choose>
+        {{else}}
+            {{#if this.value}}
+            <span style="font-weight: bold; font-size:24px;{{this.style}}">
+                {{this.value}}
+            </span>
+            {{/if}}
+        {{/if}} 
+        {{#if ../english}}
+            {{#if this.sub}}
+                <i style="font-size: 85%;
+                    {{#if this.subStyle}}                
+                        {{this.subStyle}};
+                    {{/if}}
+                "> ({{this.sub}})</i>
+            {{/if}} 
+        {{/if}} 
+    </p>
+    {{/each}}
+    <p style="margin: auto; margin-top:10px;font-size:14px;{{#if header.date}}{{header.date.style}}{{/if}}  ">
+        <xsl:choose>
+            <xsl:when test="{{#unless relative}}../../{{/unless}}ArisingDate!= '' and substring({{#unless relative}}../../{{/unless}}ArisingDate,7,4) != '1957' ">
+                <span>Ngày {{#if english}}<i style="font-size: 85%;">(Date) </i>{{/if}}</span>
+                <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,1,2)" />
+                <span> tháng {{#if english}}<i style="font-size: 85%;">(month) </i>{{/if}}</span>
+                <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,4,2)" />
+                <span> năm {{#if english}}<i style="font-size: 85%;">(year) </i>{{/if}}</span>
+                <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ArisingDate,7,4)" />
+            </xsl:when>
+            <xsl:otherwise>
+                <span>Ngày {{#if english}}<i style="font-size: 85%;">(Date) </i>{{/if}}</span>&#8230;
+                <span> tháng {{#if english}}<i style="font-size: 85%;">(month) </i>{{/if}}</span>&#8230;
+                <span> năm {{#if english}}<i style="font-size: 85%;">(year) </i>{{/if}}</span>&#8230;
+            </xsl:otherwise>
+        </xsl:choose>
+    </p>
+</div>

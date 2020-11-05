@@ -1,0 +1,85 @@
+comCode: canhbuomcondao
+comSerial: CB
+comName: CÔNG TY CỔ PHẦN ĐẦU TƯ THƯƠNG MẠI DỊCH VỤ DU LỊCH CÁNH BUỒM CÔN ĐẢO
+comTaxCode: 3502349417
+comAddress: Khu 5, đường Nguyễn Đức Thuận, Thị Trấn Côn Đảo, Huyện Côn Đảo, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+
+#logo
+logo:
+  file: logo.jpg
+  width: 140
+  left: 15
+#background : file, width, height, top, left
+background:
+  file: bg.jpg
+  top: 495
+#header
+header:
+  #logo
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 27px; font-family: Times New Roman; color: #f00;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+
+#comInfo Table
+comInfo:
+  style: "font-weight: 400; font-size: 16px; line-height: 1.2;"
+  margin: 2  
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 16px; font-weight: 700; color: #f00;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px; font-weight: 700"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    codeSuffix: "- Điện thoại: 0918889492"
+    sub: Address
+    width: 595
+  - label: Số tài khoản
+    value: 116002645268 tại ngân hàng Vietinbank chi nhánh Bà Rịa - Vũng Tàu, Phòng giao dịch tại Côn Đảo
+    width: 555 
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px; font-weight: 400;"
+  labelWidth:
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 641
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 734
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 730
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 761
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 210
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
+    col-2:
+      - label: Tài khoản
+        width: 370

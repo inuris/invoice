@@ -1,0 +1,165 @@
+comFolder: 200824_HangHaiMermaid_V5_AMTrong
+comCode: hanghaimermaid
+comSerial: MM
+comName: Công ty Cổ Phần Hàng Hải Mermaid Việt Nam
+comTaxCode: 3500674108
+comAddress: Đường 12,KCN Đông Xuyên, P. Rạch Dừa, Tp. Vũng Tàu, tỉnh Bà Rịa Vũng Tàu.
+comInvoiceNo: 0000000
+english: true
+debug: 2
+convert: 1
+xml:
+  - GrossValue0
+#global style
+cssFontFamily: Arial
+cssColor: "#111"
+logo:
+  file: logo.png
+  width: 200
+  top: 5
+  left: 15
+#background : file, width, height, top, left
+background:
+  file: 
+  width: 268
+  height: 260
+  top: 500
+  left: 275
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: 
+    width: 202
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - value: TAX INVOICE
+    style: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight:700; font-size: 16px; line-height: 1.2;"   
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-size: 12.5px; line-height: 16px; vertical-align: top;"
+  margin: 2
+  isInput:  
+  labelStyle: 
+  subStyle:
+  row:
+  - value: Công ty Cổ Phần Hàng Hải Mermaid Việt Nam
+    style: "font-weight: 700;"
+    valueStyle: "color: #dc214c;"
+  - code: ComAddress
+  - label: Điện thoại
+    value: +84-254-3613305-7
+  - label: Fax
+    value: +84-254-3613308
+  - label: Email
+    value: safety@mermaid-safety.vn
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "font-weight: 700;"
+
+#comInfo Table
+comInfo2:
+  style: "font-size: 12.5px; line-height: 16px; vertical-align: top;"
+  margin: 2
+  isInput:  
+  labelStyle: 
+  subStyle:
+  row:
+  - value: Mermaid Maritime Vietnam JSC.
+    style: "font-weight: 700;"
+    valueStyle: "color: #dc214c;"
+  - value: Road 12, Dong Xuyen IP, Rach Dua Ward, Vung Tau City, S.R. VIETNAM
+  - label: Tel
+    value: +84-254-3613305-7
+  - label: Fax
+    value: +84-254-3613308
+  - label: Email
+    value: safety@mermaid-safety.vn
+  - label: Tax code
+    code: ComTaxCode
+    valueStyle: "font-weight: 700;"
+#cusInfo Table
+cusInfo:
+  style: "font-size: 13px"
+  margin: 2
+  labelWidth: 240
+  width: 585
+  isInput: false
+  labelStyle:
+  subStyle: "font-size: 12px;"
+  row:
+  - label: Họ tên khách hàng
+    code: Buyer
+    sub: Customer's name
+  - label: Tên đơn vị
+    code: CusName
+    sub: Company's name
+  - label: Địa chỉ
+    code: CusAddress
+    sub: Address
+  - label: Mã số thuế
+    code: CusTaxCode
+    sub: Tax code
+  - label: Số tài khoản
+    code: ComBankNo
+    sub: Bank A/C
+  - label: Hình thức thanh toán
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Payment method
+
+bankInfo:
+  style: "font-size: 12px"
+  margin: 1
+  row:
+  - label: Beneficiary name
+    value: Mermaid Maritime Vietnam JSC.
+  - label: Beneficiary bank
+    value: Vietcombank - Vung Tau
+  - label: Beneficiary bank address
+    value: 27-29 Tran Hung Dao St., Vung Tau City, S.R Viet Nam
+bankAccount:
+  style: "font-size: 12px"
+  margin: 1
+  row:
+  - label: Account No.
+    value: 008.1370.193198 (USD)
+  - label: Account No.
+    value: 008.1000.193188 (VND)
+  - label: Account No.
+    value: 008.1141.205347 (EUR)
+  - label: Swift Code
+    value: BFTVVNVX
+    valueStyle: "font-weight: 700"
+
+    
+bankInfo2:
+  style: "font-size: 12px"
+  margin: 1
+  row:
+  - label: Beneficiary name
+    value: Mermaid Maritime Vietnam JSC
+  - value: "Beneficiary bank: Joint Stock Commercial Bank for Investment and Development of Viet Nam – Ba Ria Vung Tau Branch"
+    width: 520   
+  - label: Beneficiary bank address
+    value: 24 Tran Hung Dao St., Vung Tau City.S.R Vietnam  
+bankAccount2:
+  style: "font-size: 12px"
+  margin: 1
+  row:
+  - label: Account No.
+    value: 760. 10000 355 427  (VND)
+  - label: Account No.
+    value: 760. 10370 .040.833 (USD)
+  - label: Swift Code
+    value: BIDVVNVX
+    valueStyle: "font-weight: 700"

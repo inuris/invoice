@@ -1,0 +1,51 @@
+<xsl:variable name="comTaxCode" select="/Invoice/Content/ComTaxCode" />
+{{#if isHSM}}
+  <xsl:variable name="portalV5" select="concat('https://','{{comCode}}','.vnpt-invoice.com.vn')" />
+{{else}}          
+  <xsl:variable name="portalV5" select="concat('https://',$comTaxCode,'.vnpt-invoice.com.vn')" />
+{{/if}} 
+<xsl:choose>
+  <xsl:when test="/Invoice/Fkey !=''">
+    <div style="font-size:13px; text-align: left; margin-top: 4px;">
+      <p style="margin:0px;">
+        <span>Mã tra cứu hóa đơn{{#if isEnglish}} <i style="font-size: 90%;">(Code for checking)</i>{{/if}}: 
+          <xsl:value-of select="/Invoice/Fkey" /></span>
+      </p>
+      <p style="margin:0px;margin-top:2px;">
+        <span>Tra cứu hóa đơn điện tử tại website{{#if isEnglish}} <i style="font-size: 90%;">(Tracking) </i>{{/if}}:
+          <xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text>
+          <xsl:value-of select="$portalV5" /> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;
+          </xsl:text>
+          <xsl:value-of select="$portalV5" />
+          <xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
+        </span>
+      </p>
+    </div>
+  </xsl:when>
+  <xsl:otherwise>
+
+    <div style="font-size:13px; text-align: left; margin-top: 4px; padding-left:10px;">
+      <p style="margin:0px;">
+        <span>Mã tra cứu hóa đơn{{#if isEnglish}} <i style="font-size: 90%;">(Code for checking)</i>{{/if}}: </span>
+      </p>
+      <p style="margin:0px;margin-top:2px;">
+        <span>Tra cứu hóa đơn điện tử tại website{{#if isEnglish}} <i style="font-size: 90%;">(Tracking) </i>{{/if}}:
+          <xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text>
+          <xsl:value-of select="$portalV5" /> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;
+          </xsl:text>
+          <xsl:value-of select="$portalV5" />
+          <xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
+        </span>
+      </p>
+    </div>
+  </xsl:otherwise>
+</xsl:choose>
+
+<div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed;">
+  <p style="margin:2px 0;">
+    Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu- Chi nhánh Tổng công ty Dịch vụ Viễn thông
+  </p>
+  <p style="margin:0px;">
+    MST: 0106869738-044, Hotline đăng ký dịch vụ: 0913 759 468
+  </p>
+</div>

@@ -1,0 +1,98 @@
+comFolder: 201023_MayGiaCongPhuongMi_V5_AMLieu
+comCode: maygiacongphuongmi
+comSerial: PM
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN MAY GIA CÔNG PHƯƠNG MI
+comTaxCode: 3502205214
+comAddress: Q 45, Tổ 7, Ấp Phước Hiệp, Xã Phước Tỉnh, Huyện Long Điền, Tỉnh Bà Rịa-Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+english: true
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+### background: file, width, height, top, left, opacity
+background_full:
+  file: 
+  top: 69 
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  top: 535
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 140
+    top: 5
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 4
+  labelWidth: 169
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 5px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+    valueStyle: "font-size: 15.5px"
+  - label: Điện thoại
+    sub: Tel
+    value: 0254.3676595
+  - label: Số tài khoản
+    sub: Account No.
+    value: 146988539 Tại Ngân hàng Á Châu (ACB) - PGD Long Điền
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  isInput: true
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    width: 541
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 638
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 676
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 708
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 545
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment

@@ -7,3 +7,4 @@ backup
 *.swp
 .cache
 .idea
+src/data/config.yml

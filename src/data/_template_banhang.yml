@@ -1,0 +1,58 @@
+comFolder: 
+comCode: _template_banhang
+comPattern: 02GTTT0/001
+comSerial: AA
+comName: DOANH NGHIỆP
+comTaxCode: 350
+comAddress: 1
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+
+#header
+header:
+  #logo
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG
+    style: "font-size: 27px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+comInfo:
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: 
+    
+cusInfo:
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 599
+    code: Buyer
+  - label: Tên đơn vị
+    width: 693
+    code: CusName
+  - label: Mã số thuế
+    width: 689
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 719
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 195
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 310
+      code: CusBankNo

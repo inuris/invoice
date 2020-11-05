@@ -1,4 +1,5 @@
 <!-- split index.html -->
+<!DOCTYPE html>
 <html>
 <head>
 <script>
@@ -16,42 +17,194 @@ xhttp.open("GET",dname,false);
 xhttp.send("");
 return xhttp.responseXML;
 }
-$(document).ready(function() {
-  var xsldoc = $.xsl.load("{{comCode}}.xml");
-  var xmldoc = $.xsl.load("{{comCode}}.xslt");
-  // with an xpath
-  $('#example').getTransform(
-      xsldoc,
-      xmldoc
-  );
-})
+
 function displayResult()
 {
-    xml=loadXMLDoc("{{comCode}}.xml");    
-    xsl=loadXMLDoc("{{comCode}}.xslt");
-// code for IE
-if (window.ActiveXObject)
-  {
-  ex=xml.transformNode(xsl);
-  document.getElementById("example").innerHTML=ex;
-  }
-// code for Mozilla, Firefox, Opera, etc.
-else if (document.implementation && document.implementation.createDocument)
-  {
-  xsltProcessor=new XSLTProcessor();
-  xsltProcessor.importStylesheet(xsl);
-  resultDocument = xsltProcessor.transformToFragment(xml,document);
-  
-  document.getElementById("example").appendChild(resultDocument);
+  // code for IE
+  if (window.ActiveXObject || "ActiveXObject" in window) {
+
+    var xslt = new ActiveXObject("Msxml2.XSLTemplate.3.0");
+    var xslDoc = new ActiveXObject("Msxml2.FreeThreadedDOMDocument.3.0");
+    var xslProc;
+    xslDoc.async = false;
+    xslDoc.load("{{comCode}}.xslt");
+    if (xslDoc.parseError.errorCode != 0) {
+      var myErr = xslDoc.parseError;
+      alert("You have error " + myErr.reason);
+    } else {
+      xslt.stylesheet = xslDoc;
+      var xmlDoc = new ActiveXObject("Msxml2.DOMDocument.3.0");
+      xmlDoc.async = false;
+      xmlDoc.load("{{comCode}}.xml");
+
+      var xmlConvertDoc = new ActiveXObject("Msxml2.DOMDocument.3.0");
+      xmlConvertDoc.async = false;
+      xmlConvertDoc.load("convert.xml");
+
+      if (xmlDoc.parseError.errorCode != 0) {
+        var myErr = xmlDoc.parseError;
+        alert("You have error " + myErr.reason);
+      } else {
+        xslProc = xslt.createProcessor();
+        xslProc.input = xmlDoc;
+        xslProc.transform();
+        document.getElementById("invoice").innerHTML = xslProc.output;
+
+        xslProc = xslt.createProcessor();
+        xslProc.input = xmlConvertDoc;
+        xslProc.transform();
+        document.getElementById("invoiceConvert").innerHTML = xslProc.output;
+      }
+    }
+
 
   }
+  // code for Mozilla, Firefox, Opera, etc.
+  else if (document.implementation && document.implementation.createDocument)
+    {
+    xml = loadXMLDoc("{{comCode}}.xml");
+    xmlConvert = loadXMLDoc("convert.xml");
+    xsl = loadXMLDoc("{{comCode}}.xslt");
+
+    xsltProcessor=new XSLTProcessor();
+    xsltProcessor.importStylesheet(xsl);
+    resultDocument = xsltProcessor.transformToFragment(xml,document);  
+    document.getElementById("invoice").appendChild(resultDocument);
+
+    resultDocumentConvert = xsltProcessor.transformToFragment(xmlConvert,document);  
+    document.getElementById("invoiceConvert").appendChild(resultDocumentConvert);
+
+    }
+}
+function printPage(id)
+{
+  let inv = document.getElementsByClassName('invoice');
+  for (let i=0; i < inv.length; i++) {
+    inv[i].style.display = 'none';
+  }
+  document.getElementById(id).style.display = 'block';
+}
+
+function copyToClipboard() {
+  var string = {{>mail}};
+  let textarea;
+  let result;
+
+  try {
+    textarea = document.createElement('textarea');
+    textarea.setAttribute('readonly', true);
+    textarea.setAttribute('contenteditable', true);
+    textarea.style.position = 'fixed'; // prevent scroll from jumping to the bottom when focus is set.
+    textarea.value = string;
+
+    document.body.appendChild(textarea);
+
+    textarea.focus();
+    textarea.select();
+
+    const range = document.createRange();
+    range.selectNodeContents(textarea);
+
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+
+    textarea.setSelectionRange(0, textarea.value.length);
+    result = document.execCommand('copy');
+  } catch (err) {
+    console.error(err);
+    result = null;
+  } finally {
+    document.body.removeChild(textarea);
+  }
+
+  // manual copy fallback using prompt
+  if (!result) {
+    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+    const copyHotkey = isMac ? '⌘C' : 'CTRL+C';
+    result = prompt("Press " + copyHotkey, string); // eslint-disable-line no-alert
+    if (!result) {
+      return false;
+    }
+  }
+  return true;
 }
 </script>
 <style>
 br + br { display: none; }
+#top button{
+  width:100px;
+  height: 32px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+#top a{  
+  color: #fff;
+  font-family: Arial;
+  font-size: 14px;
+  margin: 0 5px;
+}
+#invoiceConvert{
+  display: none;
+}
+@media only print{
+  @page {
+    size: "A4";
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  #top{
+    display: none;
+  }
+  /* Hide Browser Sync Connected when print */
+  #__bs_notify__ {
+    display: none !important;
+  }
+}
+
 </style>
 </head>
 <body onload=displayResult()>
-<div id="example" />
+  <div id="top" style="padding: 3px 0; background: #333; text-align: center">
+    <button onclick='copyToClipboard()'>Copy Mail</button>
+    <button style="margin-left: 5px" onclick="printPage('invoice')">Print Invoice</button>
+    <button style="margin-left: 5px" onclick="printPage('invoiceConvert')">Print Convert</button>
+    <button style="margin-left: 5px" id="test"  onclick="generatePDF()">Test</button>
+    {{#if isHSM}}
+    <a target="_blank" style="margin-left: 20px" href="https://{{comCode}}admindemo.vnpt-invoice.com.vn/InvoiceTemplate/ResetTem?username=admin&password=1234567">Reset Demo</a>
+    <a target="_blank" href="https://{{comCode}}admin.vnpt-invoice.com.vn/InvoiceTemplate/ResetTem?username=admin&password=Hddt@1726354aA@">Reset Thật</a>
+    {{else}}
+    <a target="_blank" href="https://{{comTaxCode}}-democadmin.vnpt-invoice.com.vn/InvoiceTemplate/ResetTem?username=admin&password=1234567">Reset Demo</a>
+    <a target="_blank" href="https://{{comTaxCode}}-cadmin.vnpt-invoice.com.vn/InvoiceTemplate/ResetTem?username=admin&password=Hddt@1726354aA@">Reset Thật</a>
+    {{/if}}
+  </div>
+  <div class="invoice" id="invoice"></div>
+  <div class="invoice" id="invoiceConvert"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  <script>  
+  
+  
+  
+  function generatePDF() {
+    // Choose the element that our invoice is rendered in.
+    const element = document.getElementById("invoice");
+    // This will implicitly create the canvas and PDF objects before saving.
+    var worker = html2pdf().from(element).to('pdf').outputPdf().save();
+  }
+  </script>
 </body>
 </html>
+{{#if comFolder}}
+<!-- split copy.bat -->
+md "{{@root.config.folder}}\\{{comFolder}}"
+copy "{{comCode}}.xml" "{{@root.config.folder}}\\{{comFolder}}"
+copy "{{comCode}}.xslt" "{{@root.config.folder}}\\{{comFolder}}"
+echo Set oWS = WScript.CreateObject("WScript.Shell") > CreateShortcut.vbs
+echo sLinkFile = "{{comFolder}}.lnk" >> CreateShortcut.vbs
+echo Set oLink = oWS.CreateShortcut(sLinkFile) >> CreateShortcut.vbs
+echo oLink.TargetPath = "{{@root.config.folder}}\\{{comFolder}}" >> CreateShortcut.vbs
+echo oLink.Save >> CreateShortcut.vbs
+cscript CreateShortcut.vbs
+del CreateShortcut.vbs
+{{/if}}

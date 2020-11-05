@@ -1,80 +1,107 @@
 {{#*inline "rowEntry"}}
-    {{#ifOr v1=this.label v2=this.labelWidth}}
-        <label class="fl-l title" style="margin-top:0;{{#if globalLabelWidth}}width:{{globalLabelWidth}}px;{{/if}}{{#if this.labelWidth}}width:{{this.labelWidth}}px;{{/if}}">
-            <span 
-            {{#ifOr v1=globalStyle v2=globalLabelStyle v3=this.style v4=this.labelStyle}}
-                style="{{globalStyle}};{{globalLabelStyle}};{{this.style}};{{this.labelStyle}};"
-            {{/ifOr}}            
-            >{{this.label}}</span>
-            {{#if english}}
-                {{#if this.sub}}
-                <i style="font-size: 85%;
-                    {{#ifOr v1=globalSubStyle v2=this.subStyle}}                
-                        {{globalSubStyle}};{{this.subStyle}};
-                    {{/ifOr}}
-                "> ({{this.sub}})</i>
-                {{/if}} 
-            {{/if}} 
-        </label>
-    {{/ifOr}}
-    <label class="fl-l
-        {{#ifOr v1=isGlobalInput v2=this.isInput}}
-            input-name
-        {{/ifOr}}
-        " style="margin:0;
-            {{#if this.width}}
-                width:{{this.width}}px;
-                {{else}}
-                {{#if globalWidth}}
-                    width:{{globalWidth}}px;
-                {{/if}}
-            {{/if}}
-            ">
-        {{#if this.label}}
-            :&#160;
-        {{else}}
-            {{#if this.labelWidth}}
-            &#160;&#160;
-            {{/if}}
-        {{/if}} 
-        <span 
-        {{#ifOr v1=globalStyle v2=globalValueStyle v3=this.style v4=this.valueStyle}}
-            style="{{globalStyle}};{{globalValueStyle}};{{this.style}};{{this.valueStyle}};"
-        {{/ifOr}}
-        >
-            {{#ifOr v1=this.code v2=this.value}}
-                {{#if this.code}}
-                    <xsl:choose>
-                        <xsl:when test="{{#unless relative}}../../{{/unless}}{{this.code}}!=''">
-                            {{#if this.isPayment}}
-                                {{> payment relative=relative}}
-                            {{else}}
-                                <xsl:value-of select="{{#unless relative}}../../{{/unless}}{{this.code}}" />
-                            {{/if}}
-                        </xsl:when>
-                        <xsl:otherwise>
-                            &#160;
-                        </xsl:otherwise>
-                    </xsl:choose>
-                {{/if}}
-                {{#if this.value}}
-                    {{this.value}}            
-                {{/if}}
-            {{else}}
-                &#160;
-            {{/ifOr}}
-        </span>
-    </label>
+	{{#ifOr v1=this.label v2=this.labelWidth v3=globalLabelWidth}}
+		<label class="fl-l title" style="{{#if globalLabelWidth}}width:{{globalLabelWidth}}px;{{/if}}
+										{{#if this.labelWidth}}width:{{this.labelWidth}}px;{{/if}}
+										">
+			<span 
+			{{#ifOr v1=globalStyle v2=globalLabelStyle v3=this.style v4=this.labelStyle}}
+				style="
+				{{#if globalStyle}}{{globalStyle}};{{/if}}
+				{{#if globalLabelStyle}}{{globalLabelStyle}};{{/if}}
+				{{#if this.style}}{{this.style}};{{/if}}
+				{{#if this.labelStyle}}{{this.labelStyle}};{{/if}}
+				"
+			{{/ifOr}}            
+			>{{this.label}}</span>
+			{{#if english}}
+				{{#if this.sub}}
+				<i style="font-size: 85%;
+					{{#ifOr v1=globalSubStyle v2=this.subStyle}}                
+						{{globalSubStyle}};{{this.subStyle}};
+					{{/ifOr}}
+				"> ({{this.sub}})</i>
+				{{/if}} 
+			{{/if}} 
+		</label>
+	{{/ifOr}}
+	{{#if this.label}}
+	<label class="fl-l">
+		<span 
+		{{#ifOr v1=globalStyle v2=globalColonStyle v3=this.style}}
+			style="{{#if globalStyle}}{{globalStyle}};{{/if}}
+			{{#if globalColonStyle}}{{globalColonStyle}};{{/if}}
+			{{#if this.style}}{{this.style}};{{/if}}"
+		{{/ifOr}}
+		>:&#160;</span>
+	</label>
+	{{else}}
+		{{#ifOr v1=this.labelWidth v2=globalLabelWidth}}
+			{{#if this.label}}
+			<label class="fl-l"><span style="margin-left: 8px"></span></label>{{/if}}
+		{{/ifOr}}
+	{{/if}} 
+	<label class="fl-l 
+		{{#ifOr v1=isGlobalInput v2=this.isInput}}
+			input-name
+		{{/ifOr}}
+		" style="
+			{{#if this.width}}
+				width:{{this.width}}px;
+				{{else}}
+				{{#if globalWidth}}
+					width:{{globalWidth}}px;
+				{{/if}}
+			{{/if}}
+			">		
+		<span 
+		{{#ifOr v1=globalStyle v2=globalValueStyle v3=this.style v4=this.valueStyle}}
+			style="
+			{{#if globalStyle}}{{globalStyle}};{{/if}}
+			{{#if globalValueStyle}}{{globalValueStyle}};{{/if}}
+			{{#if this.style}}{{this.style}};{{/if}}
+			{{#if this.valueStyle}}{{this.valueStyle}};{{/if}}"
+		{{/ifOr}}
+		>{{#ifOr v1=this.code v2=this.value V3=this.prefix}}{{#if this.code}}
+			<xsl:choose>
+				<xsl:when test="{{#unless relative}}../../{{/unless}}{{this.code}}!=''">
+					{{#if this.isPayment}}
+						{{> payment relative=relative}}
+					{{else}}
+						{{#if this.codePrefix}}{{this.codePrefix}}{{/if}}
+						{{#if this.codeValue}}
+						<xsl:value-of select="{{this.codeValue}}" />
+						{{else}}
+						<xsl:value-of select="{{#unless relative}}../../{{/unless}}{{this.code}}" />
+						{{/if}}{{#if this.codeSuffix}}{{this.codeSuffix}}{{/if}}
+					{{/if}}
+				</xsl:when>
+				<xsl:otherwise>
+					{{#if this.codeElse}}
+					{{#if this.codePrefix}}{{this.codePrefix}}{{/if}}                           
+					<xsl:value-of select="{{this.codeElse}}" />
+					{{#if this.codeSuffix}}{{this.codeSuffix}}{{/if}}
+					{{else}}
+					&#160;
+					{{/if}}
+				</xsl:otherwise>
+			</xsl:choose>
+			{{/if}}{{#if this.value}}{{this.value}}
+			{{/if}}
+		{{else}}
+			&#160;
+		{{/ifOr}}
+		</span>
+	</label>
 {{/inline}}
 {{#with data}}
-    {{#each row}}
-    <div class="clearfix vt-row" {{#if ../margin}}style="margin-bottom:{{../margin}}px"{{/if}}>
-        {{#> rowEntry english=../../english relative=../../relative isGlobalInput=../isInput globalStyle=../style globalLabelStyle=../labelStyle globalValueStyle=../valueStyle globalSubStyle=../subStyle globalLabelWidth=../labelWidth globalWidth=../width}}
-        {{/rowEntry}}    
-        {{#each this.col-2}}
-            {{#> rowEntry english=../../../english relative=../../../relative isGlobalInput=../../isInput globalStyle=../../style globalLabelStyle=../../labelStyle globalValueStyle=../../valueStyle globalSubStyle=../../subStyle globalLabelWidth=../../labelWidth globalWidth=../../width}}
-            {{/rowEntry}}
-        {{/each}}
-    </div>
-    {{/each}}
+	{{#each row}}
+	<div class="clearfix vt-row" {{#if ../margin}}style="margin-bottom:{{../margin}}px"{{/if}}>
+		{{#> rowEntry english=../../english relative=../../relative isGlobalInput=../isInput globalStyle=../style globalLabelStyle=../labelStyle globalValueStyle=../valueStyle globalSubStyle=../subStyle globalLabelWidth=../labelWidth globalWidth=../width globalColonStyle=../colonStyle}}
+		{{/rowEntry}}    
+		{{#each this.col-2}}
+			{{#> rowEntry english=../../../english relative=../../../relative isGlobalInput=../../isInput globalStyle=../../style globalLabelStyle=../../labelStyle globalValueStyle=../../valueStyle globalSubStyle=../../subStyle globalLabelWidth=../../labelWidth globalWidth=../../width globalColonStyle=../../colonStyle}}
+			{{/rowEntry}}
+		{{/each}}
+	</div>
+	{{/each}}
 {{/with}}

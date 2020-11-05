@@ -1,0 +1,65 @@
+comCode: dunganh
+comSerial: DA
+comName: CÔNG TY TNHH THƯƠNG MẠI DŨNG ANH
+comTaxCode: 3502257780
+comAddress: 49 Nguyễn Trãi, Phường Phú Mỹ, Thị xã Phú Mỹ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+cssFontFamily: Times New Roman
+cssColor: "#005cb3"
+#header
+header:
+  #logo
+  logo:
+    file: logo.png
+    width: 130
+    top: 12
+    left: 15
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 27px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+comInfo:
+ labelWidth: 115
+ row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold; letter-spacing: 2px;"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: 02543.922 839
+    width: 200
+    col-2:
+      - label: Email
+        labelWidth: 40
+        value: nguyenthao.040273@gmail.com
+  - label: Số tài khoản
+    value: 76210001136902 tại Ngân hàng TMCP Đầu tư và Phát triển VN - Chi nhánh Phú Mỹ    
+cusInfo:
+ isInput: true
+ row:
+  - label: Họ tên người mua hàng
+    width: 631
+    code: Buyer
+  - label: Tên đơn vị
+    width: 713
+    code: CusName
+  - label: Mã số thuế
+    width: 711
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 737
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 363
+      code: CusBankNo

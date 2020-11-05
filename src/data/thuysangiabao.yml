@@ -1,0 +1,99 @@
+comCode: thuysangiabao
+comSerial: AA
+comName: CÔNG TY TNHH XUẤT NHẬP KHẨU THƯƠNG MẠI DỊCH VỤ THỦY SẢN GIA BẢO
+comTaxCode: 3502388938
+comAddress: Số 813 đường 30/4, Phường 11, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+english: false
+#global style
+cssFontFamily: Arial
+cssColor: "#111"
+convert: 1
+
+#background : file, width, height, top, left
+background:
+  file: 
+  width: 268
+  height: 260
+  top: 500
+  left: 275
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: 
+    width: 120
+    top: 5
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px; color: #3569a7"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 6
+  labelWidth: 120
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px;letter-spacing: -0.2px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+    valueStyle: "font-size: 15px"
+  - label: Điện thoại
+    sub: Tel
+    valueStyle: "font-size: 15px"
+    value: "02543.575.366"
+  - label: Số tài khoản
+    sub: Acc
+    valueStyle: "font-size: 15px"
+    value: "0501.0238.6666 tại Ngân hàng Sacombank - CN Bà Rịa -Vũng Tàu"
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  isInput: true
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    width: 660
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 748
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 746
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 774
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 674
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment

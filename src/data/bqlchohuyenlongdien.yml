@@ -1,0 +1,48 @@
+comCode: bqlchohuyenlongdien
+comPattern: 02GTTT0/001
+comSerial: LD
+comName: BAN QUẢN LÝ CÁC CHỢ HUYỆN LONG ĐIỀN
+comTaxCode: 35015111106
+comAddress: Khu phố Long Phượng, Thị trấn Long Điền, Huyện Long Điền, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+comFkey: ...
+convert:
+isHSM: true
+comInfo:   
+  row:
+  - valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    labelWidth: 65
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+  - label: Điện thoại
+    value: 0254-3653011
+  # - label: STK
+  #   value: 6001205060641 Tại Agribank chi nhánh huyện Long Điền
+cusInfo:
+ isInput: true
+ margin: 4
+ row:
+  - label: Họ và tên người mua hàng
+    width: 661
+    code: Buyer
+  - label: Tên đơn vị
+    width: 754
+    code: CusName
+  - label: Mã số thuế
+    width: 751
+    code: CusTaxcode
+  - label: Địa chỉ
+    width: 776
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+      - label: Số tài khoản
+        width: 421

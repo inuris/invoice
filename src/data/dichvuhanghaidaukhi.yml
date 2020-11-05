@@ -1,0 +1,121 @@
+comCode: dichvuhanghaidaukhi
+comSerial: PA
+comName: CHI NHÁNH TỔNG CÔNG TY CỔ PHẦN VẬN TẢI DẦU KHÍ - CÔNG TY DỊCH VỤ HÀNG HẢI DẦU KHÍ
+comTaxCode: 0302743192-004
+comAddress: Phòng 310, Lầu 3, Tòa nhà Dầu khí, số 8 Hoàng Diệu, P.1, TP. Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+english: true
+convert: 1
+#global style
+cssFontFamily: Arial
+cssColor: "#111"
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 158
+  height: 300
+  top: 500
+  left: 348
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 178
+    top: 22
+    left: 20
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px; font-family: Times New Roman;"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2; font-family: Times New Roman;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-size: 14px"
+  margin: 4
+  labelWidth: 165
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "letter-spacing: -0.3px;"
+    valueStyle: "font-weight: 700;"
+  - value: PVTRANS OILFIELD SERVICES (PVTRANS-OFS)
+    style: "font-size: 13px"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "font-weight: 700; letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Add
+    valueStyle: "letter-spacing: -0.4px;"
+  - label: Số tài khoản
+    sub: Account No
+    valueStyle: 
+    isInput: true
+    width: 657
+  - label: Điện thoại
+    sub: Tel
+    valueStyle: 
+    value: 84.254.3576669
+    width: 150    
+    col-2:
+      - label: "- Fax"
+        value: 84.254.3576667
+        labelWidth: 50
+  - label: Website
+    sub: Website
+    valueStyle: 
+    value: www.pvtrans.com
+    width: 150
+    col-2:
+      - label: "- Email"
+        value: pvtransofs@pvtrans.com
+        labelWidth: 50
+
+#cusInfo Table
+cusInfo:
+  style: "font-size: 14px"
+  labelWidth: 
+  isInput: true
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    width: 585
+    code: Buyer
+    sub: Buyer name
+  - label: Tên đơn vị
+    width: 682
+    code: CusName
+    sub: Company
+  - label: Mã số thuế
+    width: 683
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 715
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Payment method
+    col-2: 
+      - label: Số tài khoản
+        width: 232
+        sub: Acc. No

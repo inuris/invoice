@@ -1,0 +1,96 @@
+comCode: dtxdtonghop
+comSerial: AA
+comName: CÔNG TY CỔ PHẦN TƯ VẤN ĐẦU TƯ XÂY DỰNG TỔNG HỢP TỈNH BÀ RỊA - VŨNG TÀU
+comTaxCode: 3500101266
+comAddress: Số 01 Pasteur, Phường 7, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+english: 
+#global style
+cssFontFamily: Arial
+cssColor: "#000"
+
+#background : file, width, height, top, left
+background:
+  file: 
+  width: 268
+  height: 260
+  top: 500
+  left: 275
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 150
+    top: 0
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 6
+  labelWidth: 130
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 15px; letter-spacing: -0.2px"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+    valueStyle: "font-size: 15px"
+  - label: Số tài khoản
+    value: 7601 0000000 329 tại Ngân hàng Đầu tư và Phát triển tỉnh Bà Rịa - Vũng Tàu
+  - label: Điện thoại
+    sub: Tel
+    valueStyle: "font-size: 15px"
+    value: "0254 3856368 / Fax: 0254 3852 654"
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 165
+  width: 622
+  isInput: true
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
+    col-2: 
+    - label: Số tài khoản
+      labelWidth: 90
+      code: CusBankNo
+      width: 332

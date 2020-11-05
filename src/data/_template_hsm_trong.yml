@@ -1,0 +1,108 @@
+comCode: _template_hsm_trong
+comSerial: NG
+comName: CÔNG TY CỔ PHẦN Ô TÔ NGHĨA VŨNG TÀU
+comTaxCode: 3502316891
+comAddress: Khu phố Hương Tân, Phường Long Hương, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comInvoiceNo: 
+english: true
+#global style
+cssFontFamily: Arial
+cssColor: "#000000"
+
+logo:
+  file: logo.png
+  width: 120
+  top: 5
+  left: 5
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  width: 380
+  height: 109
+  top: 183
+  left: 250
+#header
+header:
+  #logo : file, width, top, left
+  logo:    
+    width: 120
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px; color: #f00;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-size: 16px;"
+  valueStyle: "font-weight: 700; font-size: 15px;"
+  margin: 4
+  isInput:  
+  subStyle: "font-size: 100%;"
+  row:
+  - code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px;"
+  - value: Honda Ô tô Bà Rịa - Vũng Tàu
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px; color: #f00"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Số điện thoại
+    sub: Tel
+    value: (0254) 3636999
+    valueStyle: "margin-right: 5px;"
+    col-2:
+      - label: "- Fax"
+        value: (0254) 3989777
+  - label: Website
+    value: Hondaotovungtau.com.vn
+    valueStyle: "margin-right: 5px;"
+    col-2:
+      - label: "- Email"
+        value: infos@hondaotovungtau.com.vn
+  - label: Số tài khoản
+    sub: Account No
+    value: 118 000 193721 Tại NH TMCP Công Thương Tỉnh Bà Rịa - Vũng Tàu
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  isInput: true
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    width: 504
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 601
+    code: CusName
+    sub: Company Name
+  - label: Địa chỉ
+    width: 671
+    code: CusAddress
+    sub: Address
+  - label: Mã số thuế
+    width: 638
+    code: CusTaxCode
+    sub: Tax code
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Payment
+    col-2: 
+    - label: Số tài khoản
+      width: 200
+      sub: Account No

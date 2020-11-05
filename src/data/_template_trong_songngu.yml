@@ -1,0 +1,91 @@
+comFolder: 
+comCode: _template_trong_songngu
+comSerial: AA
+comName: CÔNG TY TNHH 
+comTaxCode: 
+comAddress: 
+comInvoiceNo: 0000000
+english: true
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  top: 480
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file:
+    width: 120
+    top: 5
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 6
+  labelWidth: 160
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Điện thoại
+    sub: Tel
+    value: 0
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  isInput: 
+  row:
+  - label: Họ tên người mua hàng
+    width: 539
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 636
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 672
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 705
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 541
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment

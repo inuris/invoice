@@ -802,14 +802,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 					  <div style="font-size:88%; text-align: center; margin-top: 4px;">
 							<span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0254 800126</span>
 							<br/>
-							<xsl:choose>
-								<xsl:when test="/Invoice/Fkey !=''">
-									<div style="font-size:13px; width:800px; text-align: center; margin:5px auto;">
-										<span>Hóa đơn Điện tử (HĐĐT) được tra cứu trực tuyến tại https://portaltool-miennam.vnpt-invoice.com.vn.
-										<br/>Mã tra cứu HĐĐT này: <b><xsl:value-of select="/Invoice/Fkey"/></b></span>
-									</div>
-								</xsl:when>
-							</xsl:choose>
+							{{>footer}}
 						</div>
                       <!--panel footer-->
                     </div>

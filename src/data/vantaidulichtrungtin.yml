@@ -1,0 +1,74 @@
+comCode: vantaidulichtrungtin
+comSerial: TT
+comName: CÔNG TY TNHH THƯƠNG MẠI VẬN TẢI DU LỊCH TRUNG TÍN
+comTaxCode: 3500731081
+comAddress: Số 180 Nguyễn Thanh Đằng, Phường Phước Hiệp, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+#logo
+logo:
+  file: logo.png
+  width: 150
+  left: 15
+  top: 17
+
+#background : file, width, height, top, left
+background:
+  file: bg.jpg
+  width: 350
+  height: 200
+  top: 122
+  left: 263
+#header
+header:
+  #logo
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 27px; color: #e4322b;font-family: Times New Roman;"
+comInfo:
+  labelWidth: 90  
+  width: 520
+  row:
+  - valueStyle: "font-weight: bold; font-size: 20px; color: #e4322b; font-family: Times New Roman;"
+    labelWidth: "0"
+    width: 610
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    labelStyle: "font-weight: 700"
+    value: 0254 3829 031
+  - label: Số tài khoản
+    value: 0081001149795, Ngân hàng TMCP Ngoại Thương chi nhánh Vũng Tàu
+  - value: 6000205152329, Ngân hàng NN&PTNT chi nhánh tỉnh Bà Rịa - Vũng Tàu
+    valueStyle: "margin-left: 8px;"
+    
+cusInfo:
+ isInput: true
+ row:
+  - label: Họ tên người mua hàng
+    width: 616
+    code: Buyer
+  - label: Tên đơn vị
+    width: 710
+    code: CusName
+  - label: Mã số thuế
+    width: 708
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 737
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 342
+      code: CusBankNo

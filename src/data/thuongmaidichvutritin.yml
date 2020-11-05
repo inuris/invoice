@@ -1,0 +1,97 @@
+comFolder: 201027_ThuongMaiDichVuTriTin_V5_AMHuong
+comCode: thuongmaidichvutritin
+comSerial: TT
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN ĐẦU TƯ SẢN XUẤT THƯƠNG MẠI DỊCH VỤ TRÍ TÍN
+comTaxCode: 3501801535
+comAddress: 22 Nam Kỳ Khởi Nghĩa , Phường Thắng Tam, Thành Phố Vũng, Tỉnh Bà Rịa Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+english: true
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+### background: file, width, height, top, left, opacity
+background_full:
+  file: 
+  top: 69 
+#background : file, width, height, top, left
+background:
+  file: bg.jpg
+  top: 546
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.jpg
+    width: 150
+    top: 5
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 15.5px"
+  margin: 6
+  labelWidth: 160
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "letter-spacing: -0.2px; color: #ed1c24"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Điện thoại
+    sub: Tel
+    value: 02543 583623 - 0909 311 351 - 0909 15 6661
+  - label: Tài khoản
+    sub: Account No.
+    value: 112000077829 Ngân Hàng Công Thương Việt Nam - CN Bà Rịa Vũng Tàu
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  isInput: true
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    width: 542
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 639
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 676
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 709
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 545
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment

@@ -1,0 +1,37 @@
+comCode: mamnonhoahong
+comPattern: 02GTTT0/001
+comSerial: HH
+comName: TRƯỜNG MẦM NON HOA HỒNG
+comTaxCode: 3501223066
+comAddress: Thôn Bàu Điển, Xã Đá Bạc, Huyện Châu Đức, Bà Rịa - Vũng Tàu, Việt Nam
+comInvoiceNo: 0000000
+cssColor: "#185b9d"
+comInfo:
+ row:
+  - label: Đơn vị thu tiền
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Số điện thoại
+    isInput: true
+    width: 743
+  - label: Số tài khoản
+    isInput: true
+    width: 747
+cusInfo:
+ isInput: true
+ row:
+  - label: Họ và tên người nộp tiền
+    width: 675
+    code: Buyer
+  - label: Địa chỉ (lớp)
+    width: 747
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 696
+    code: Kind_of_Payment
+    isPayment: true
