@@ -1,18 +1,26 @@
 comFolder: 201104_HungThaiXangDau19_V5_AMTrong
 comCode: hungthaixangdau19
 comSerial: HT
-comName: ĐỊA ĐIỂM KINH DOANH CÔNG TY CỔ PHẦN DỊCH VỤ HÀNG HẢI - DẦU KHÍ HƯNG THÁI - CỬA HÀNG XĂNG DẦU SỐ 19
+comName: CÔNG TY CỔ PHẦN DỊCH VỤ HÀNG HẢI - DẦU KHÍ HƯNG THÁI
 comTaxCode: 3500798008
-comAddress: Số 35 Trần Hưng Đạo, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa -Vũng Tàu
+comAddress: Số 92 Lý Tự Trọng, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
+isHSM : 1
+comDomain: hungthai
 debug:
 convert:
 #header
+logo:
+    file: logo.jpg
+    width: 80
+    left: 10
+    top: 3
+    bottom: 5
 header:
   logo:
-    file: logo.jpg
+    file: 
     width: 150
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
@@ -21,41 +29,54 @@ header:
     valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
     style: "font-size: 12px; line-height: 1.4;" 
     styleConvert: "font-size: 12px; line-height: 1.4;"
-
-comInfo:   
+comInfo2:
+  margin: 1
+  style: "text-align: center; display: inline-block; width: 221px;line-height:1.1;"
   row:
-  - valueStyle: "font-weight: bold"
-    code: ComName
+  - code: ComName
+    valueStyle: "font-weight: 700; font-size: 13px;"
+  - code: ComTaxCode
+    codePrefix: "Mã số thuế :"
+    valueStyle: "font-size: 11px; letter-spacing: 2px;"
+  - code: ComAddress
+    codePrefix: "Địa chỉ :"
+    valueStyle: "font-size: 11px; width: 245px;"
+comInfo:   
+  labelWidth: 145
+  margin: 1
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold; line-height: 16px; letter-spacing: -0.2px"    
+    value: ĐỊA ĐIỂM KINH DOANH CÔNG TY CỔ PHẦN DỊCH VỤ HÀNG HẢI - DẦU KHÍ HƯNG THÁI - CỬA HÀNG XĂNG DẦU SỐ 19
   - label: Mã số thuế
-    valueStyle: "font-weight: bold"
-    labelWidth: 65
+    valueStyle: "font-weight: bold; letter-spacing: 3px"
     code: ComTaxCode
   - label: Địa chỉ
-    code: ComAddress
-    labelWidth: 65
-    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
-  - label: Điện thoại
-    value: 
-    labelWidth: 65
+    value: Số 35 Trần Hưng Đạo, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa -Vũng Tàu
+    valueStyle: 
+  # - label: Điện thoại
+  #   value: 
   - label: STK
     value: 5107040134473 tại Ngân hàng Xăng Dầu Petrolimex Vũng Tàu
-    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
-    labelWidth: 65
+    valueStyle:
+
 cusInfo:
-  isInput: true
-  margin: 4
+  isInput: 
+  margin: 1
+  labelWidth: 145
+  width: 647
   row:
-  - label: Họ và tên người mua hàng
-    width: 661
+  - label: Họ tên người mua hàng
+    # width: 661
     code: Buyer
   - label: Tên đơn vị
-    width: 754
+    # width: 754
     code: CusName
   - label: Mã số thuế
-    width: 751
+    # width: 751
     code: CusTaxcode
   - label: Địa chỉ
-    width: 776
+    # width: 776
     code: CusAddress
   - label: Hình thức thanh toán
     width: 200
@@ -63,4 +84,5 @@ cusInfo:
     isPayment: true
     col-2:
       - label: Số tài khoản
-        width: 421
+        labelWidth: 80
+        width: 472

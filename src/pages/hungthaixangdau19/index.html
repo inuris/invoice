@@ -246,7 +246,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           .VATTEMP div label.fl-l, div label
           {
           margin-right: 0;
-          margin-top: 3px;
+          margin-top: 0;
 
           }
           .VATTEMP .input-name, .input-date
@@ -454,21 +454,24 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 
               <div class = "VATTEMP">
                 <div  class ="pagecurrent" id="page_{position()}">
-                  <div style="width:850px !important">
+                  <div style="width:950px !important">
                   <div style="font-size:12px;border-bottom:1px dashed #142f4a; text-align: center; color: #142f4a;margin-bottom: 2px;width:100%;">
                     <span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0254 800126</span>
                   </div>
                   <div class="statistics"  style="float:left;">
                     <div class="nenhd">
-                      <table width="100%" cellspacing="0" cellpadding="0" style="width:834px !important;">
+                      <table width="100%" cellspacing="0" cellpadding="0" >
                         <thead>
                           <xsl:for-each select="/Invoice//Content">
                             <tr>
                               <td colspan="6">
                                 <table cellspacing="0" cellpadding="0" style="width:100%;">
                                   <tr style="line-height:17px;">
+                                    <td style="">
+                                      {{>logo}}
+                                    </td>
                                     <td style="color: {{cssColor}};padding-left: 10px;" >
-                                      {{>info data=comInfo relative=true}}
+                                      {{>info data=comInfo2 relative=true}}
                                     </td>
                                     <td style="text-align:center;width:34%;">
                                       {{>header-name relative=true}}
@@ -493,11 +496,15 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 <table style="float: left;font-size:13px;width:100%;color:{{cssColor}};">                                  
                                   <tr style="border-top:1px solid;">
                                     <td colspan="6" style=" border-left: none!important;border-right: none!important;padding-left:10px;padding-top: 5px;">
-                                      {{>info data=cusInfo relative=true}}
+                                      {{>info data=comInfo relative=true}}
                                     </td>
                                   </tr>
-                                  <tr>
-                                    <td style="height: 5px;border: none;"></td>
+                                </table>
+                                <table style="float: left;font-size:13px;width:100%;color:{{cssColor}};">                                  
+                                  <tr style="border-top:1px solid;">
+                                    <td colspan="6" style=" border-left: none!important;border-right: none!important;padding-left:10px;padding-top: 5px;">
+                                      {{>info data=cusInfo relative=true}}
+                                    </td>
                                   </tr>
                                 </table>
                               </td>
@@ -506,7 +513,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                         </thead>
                         <tbody class="nenhd" style="color:{{cssColor}};">
                           <tr style="">
-                            <th style="height:30px;width:40px;">
+                            <th style="height:20px;width:40px;">
                               STT
                             </th>
                             <th>

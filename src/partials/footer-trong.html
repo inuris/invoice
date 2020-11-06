@@ -1,6 +1,6 @@
 <xsl:variable name="comTaxCode" select="/Invoice/Content/ComTaxCode" />
 {{#if isHSM}}
-  <xsl:variable name="portalV5" select="concat('https://','{{comCode}}','.vnpt-invoice.com.vn')" />
+  <xsl:variable name="portalV5" select="concat('https://','{{#if comDomain}}{{comDomain}}{{else}}{{comCode}}{{/if}}','.vnpt-invoice.com.vn')" />
 {{else}}          
   <xsl:variable name="portalV5" select="concat('https://',$comTaxCode,'.vnpt-invoice.com.vn')" />
 {{/if}} 
