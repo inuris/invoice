@@ -4,12 +4,23 @@
 "A.c gửi yêu cầu qua jira để kích hoạt hệ thống thật cho khách sử dụng" + String.fromCharCode(10,10) +
 "===Hệ thống demo HDDT" + String.fromCharCode(10) +
 "{{comName}}" + String.fromCharCode(10) +
-"MST: {{comTaxCode}}" + String.fromCharCode(10) +
-"{{#if isHSM}}" + String.fromCharCode(10) +
-"- Cadmin: https://{{comCode}}admindemo.vnpt-invoice.com.vn" + String.fromCharCode(10) +
-"Tài khoản admin: {{comCode}}admin / Einv@oi@vn#pt20" + String.fromCharCode(10,10) +
-"- Portal tra cứu demo: https://{{comCode}}demo.vnpt-invoice.com.vn" + String.fromCharCode(10) +
-"- Portal tra cứu thật: https://{{comCode}}.vnpt-invoice.com.vn{{else}}" + String.fromCharCode(10) +
+"MST: {{comTaxCode}}" + String.fromCharCode(10,10) +
+
+{{#if isHSM}}
+"- Cadmin: https://{{#if comDomain}}{{comDomain}}{{else}}{{comCode}}{{/if}}admindemo.vnpt-invoice.com.vn" + String.fromCharCode(10) +
+"Tài khoản admin: {{#if comDomain}}{{comDomain}}{{else}}{{comCode}}{{/if}}admin / Einv@oi@vn#pt20" + String.fromCharCode(10,10) +
+"- Portal tra cứu demo: https://{{#if comDomain}}{{comDomain}}{{else}}{{comCode}}{{/if}}demo.vnpt-invoice.com.vn" + String.fromCharCode(10) +
+"- Portal tra cứu thật: https://{{#if comDomain}}{{comDomain}}{{else}}{{comCode}}{{/if}}.vnpt-invoice.com.vn" + String.fromCharCode(10,10) +
+
+"*Web services:" + String.fromCharCode(10) +
+"{{#if comDomain}}{{comDomain}}{{else}}{{comCode}}{{/if}}admin.vnpt-invoice.com.vn/PublishService.asmx" + String.fromCharCode(10) +
+"{{#if comDomain}}{{comDomain}}{{else}}{{comCode}}{{/if}}admin.vnpt-invoice.com.vn/PortalService.asmx" + String.fromCharCode(10) +
+"{{#if comDomain}}{{comDomain}}{{else}}{{comCode}}{{/if}}admin.vnpt-invoice.com.vn/BusinessService.asmx" + String.fromCharCode(10) +
+"Tài khoản service: sv / Einv@oi@vn#pt20"
+{{else}}
 "*Cadmin: https://{{comTaxCode}}-democadmin.vnpt-invoice.com.vn" + String.fromCharCode(10) +
 "Tài khoản admin: {{comTaxCode}}_admin_demo / Einv@oi@vn#pt20" + String.fromCharCode(10,10) +
-"*Portal tra cứu: https://{{comTaxCode}}demo.vnpt-invoice.com.vn{{/if}}" + String.fromCharCode(10)
+"*Portal tra cứu: https://{{comTaxCode}}demo.vnpt-invoice.com.vn"
+{{/if}}
+
+
