@@ -52,7 +52,7 @@ comInfo:
     valueStyle: "font-weight: bold; letter-spacing: 3px"
     code: ComTaxCode
   - label: Địa chỉ
-    value: Số 35 Trần Hưng Đạo, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa -Vũng Tàu
+    value: Số 15 Trần Hưng Đạo, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa -Vũng Tàu
     valueStyle: 
   # - label: Điện thoại
   #   value: 
