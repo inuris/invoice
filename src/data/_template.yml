@@ -1,8 +1,12 @@
+comFolder:                                # tên folder
 comCode: _template                        # tên file
+
 comSerial: VN                             # mã hóa đơn
 comName: CÔNG TY TNHH                     # tên công ty
 comTaxCode: 123456789                     # mst
 comAddress: 123 tỉnh Bà Rịa Vũng Tàu      # địa chỉ
+comRepresent:                             # tên người đại diện
+
 comInvoiceNo: 0000000                     # [optional] đổi serial
 comFkey: ...                              # [optional] đổi Fkey
 xml:                                      # bổ sung thêm tag XML

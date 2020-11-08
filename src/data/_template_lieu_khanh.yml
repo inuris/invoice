@@ -1,9 +1,11 @@
 comFolder: 
 comCode: _template_lieu_khanh
+
 comSerial: GA
 comName: CÔNG TY TNHH
 comTaxCode: 3
 comAddress: BR-VT
+
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"

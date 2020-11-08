@@ -85,8 +85,8 @@ function printPage(id)
   document.getElementById(id).style.display = 'block';
 }
 
-function copyToClipboard() {
-  var string = {{>mail}};
+function copyToClipboard(str) {
+  
   let textarea;
   let result;
 
@@ -95,7 +95,7 @@ function copyToClipboard() {
     textarea.setAttribute('readonly', true);
     textarea.setAttribute('contenteditable', true);
     textarea.style.position = 'fixed'; // prevent scroll from jumping to the bottom when focus is set.
-    textarea.value = string;
+    textarea.value = str;
 
     document.body.appendChild(textarea);
 
@@ -129,6 +129,15 @@ function copyToClipboard() {
   }
   return true;
 }
+function copyMail(){
+  var str = {{>mail}};
+  copyToClipboard(str);
+}
+function copyPost(){
+  var str = {{>post}};
+  copyToClipboard(str);
+}
+
 </script>
 <style>
 br + br { display: none; }
@@ -169,7 +178,7 @@ br + br { display: none; }
     <button onclick='copyToClipboard()'>Copy Mail</button>
     <button style="margin-left: 5px" onclick="printPage('invoice')">Print Invoice</button>
     <button style="margin-left: 5px" onclick="printPage('invoiceConvert')">Print Convert</button>
-    <button style="margin-left: 5px" id="test"  onclick="generatePDF()">Test</button>
+    <button style="margin-left: 5px" id="test"  onclick="copyPost()">Test</button>
     {{#if isHSM}}
     <a target="_blank" style="margin-left: 20px" href="https://{{comCode}}admindemo.vnpt-invoice.com.vn/InvoiceTemplate/ResetTem?username=admin&password=1234567">Reset Demo</a>
     <a target="_blank" href="https://{{comCode}}admin.vnpt-invoice.com.vn/InvoiceTemplate/ResetTem?username=admin&password=Hddt@1726354aA@">Reset Thật</a>

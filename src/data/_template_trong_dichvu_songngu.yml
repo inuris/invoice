@@ -1,9 +1,11 @@
 comFolder: 
 comCode: _template_trong_dichvu_songngu
+
 comSerial: TN
 comName: CÔNG TY
 comTaxCode: 3500
 comAddress: KCN
+
 comInvoiceNo: 0000000
 english: 1
 convert:

@@ -1,9 +1,11 @@
 comFolder: 
 comCode: _template_trong_songngu
+
 comSerial: AA
 comName: CÔNG TY TNHH 
 comTaxCode: 
 comAddress: 
+
 comInvoiceNo: 0000000
 english: true
 convert:

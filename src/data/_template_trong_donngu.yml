@@ -1,9 +1,11 @@
 comFolder: 
 comCode: _template_trong_donngu
+
 comSerial: AD
 comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN
 comTaxCode: 3500
 comAddress: BRVT
+
 comInvoiceNo: 0000000
 english:
 convert:
