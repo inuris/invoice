@@ -1,5 +1,6 @@
 comFolder: 201104_HungThai_V5_AMTrong
-comCode: hungthaixangdau19
+comCode: hungthaidvhaucanthuysan
+comRepresent: Nguyễn Minh Tuấn
 comSerial: HT
 comName: CÔNG TY CỔ PHẦN DỊCH VỤ HÀNG HẢI - DẦU KHÍ HƯNG THÁI
 comTaxCode: 3500798008
@@ -47,10 +48,10 @@ comInfo:
   row:
   - label: Đơn vị bán hàng
     valueStyle: "font-weight: bold; line-height: 16px; letter-spacing: -0.2px"    
-    value: ĐỊA ĐIỂM KINH DOANH CÔNG TY CỔ PHẦN DỊCH VỤ HÀNG HẢI - DẦU KHÍ HƯNG THÁI - CỬA HÀNG XĂNG DẦU SỐ 19
+    value: CHI NHÁNH CTCP DỊCH VỤ HÀNG HẢI - DẦU KHÍ HƯNG THÁI-XÍ NGHIỆP DỊCH VỤ HẬU CẦN THỦY SẢN HƯNG THÁI
   - label: Mã số thuế
     valueStyle: "font-weight: bold; letter-spacing: 3px"
-    code: ComTaxCode
+    value: 3500798008-008
   - label: Địa chỉ
     value: Số 15 Trần Hưng Đạo, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa -Vũng Tàu
     valueStyle: 
