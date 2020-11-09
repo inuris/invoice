@@ -6,6 +6,7 @@ comSerial: SM
 comName: PHÒNG
 comTaxCode: 3500
 comAddress: Số
+comRepresent: 
 
 comInvoiceNo: 0000000
 convert: 
@@ -31,7 +32,7 @@ cusInfo:
     code: CusName
   - label: Mã số thuế
     width: 751
-    code: CusTaxcode
+    code: CusTaxCode
   - label: Địa chỉ
     width: 776
     code: CusAddress

@@ -6,6 +6,7 @@ comSerial: GA
 comName: TRƯỜNG
 comTaxCode: 3
 comAddress: BR-VT
+comRepresent: 
 
 comInvoiceNo: 0000000
 cssColor: "#185b9d"

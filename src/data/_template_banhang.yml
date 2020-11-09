@@ -6,6 +6,7 @@ comSerial: AA
 comName: DOANH NGHIỆP
 comTaxCode: 350
 comAddress: 1
+comRepresent: 
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial

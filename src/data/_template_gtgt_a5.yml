@@ -5,6 +5,7 @@ comSerial: AA
 comName: CÔNG TY
 comTaxCode: 350
 comAddress: BRVT
+comRepresent: 
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
@@ -54,7 +55,7 @@ cusInfo:
     code: CusName
   - label: Mã số thuế
     width: 751
-    code: CusTaxcode
+    code: CusTaxCode
   - label: Địa chỉ
     width: 776
     code: CusAddress

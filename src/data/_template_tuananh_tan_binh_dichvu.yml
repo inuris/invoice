@@ -5,6 +5,7 @@ comSerial: TN
 comName: CÔNG TY 
 comTaxCode: 350
 comAddress: BRVT
+comRepresent: 
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial

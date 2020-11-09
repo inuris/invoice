@@ -69,7 +69,7 @@ cusInfo:
       code: CusCom
     - label: MST
       width: 200
-      code: CusTaxcode
+      code: CusTaxCode
   - label: Họ tên người vận chuyển
     width: 365
     code: CusName
