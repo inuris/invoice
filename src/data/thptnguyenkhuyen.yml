@@ -1,0 +1,51 @@
+comFolder: 201106_THPTNguyenKhuyen_V5_AMTuanAnh
+comCode: thptnguyenkhuyen
+
+comPattern: 02GTTT0/001
+comSerial: NK
+comName: TRƯỜNG THPT NGUYỄN KHUYẾN
+comTaxCode: 3502435458
+comRepresent: Nguyễn Thị Trà My
+comAddress: Đường Nguyễn Gia Thiều, Phường 12, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+
+comInvoiceNo: 0000000
+cssColor: "#185b9d"
+
+header:
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG - PHIẾU THU TIỀN
+    style: "font-size: 18px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-size: 12px; line-height: 1.4;"
+    styleConvert: "font-size: 12px; line-height: 1.4;"
+
+comInfo:
+  row:
+  - label: Đơn vị thu tiền
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  # - label: Số điện thoại
+  #   value: 02543 897 217
+  # - label: Số tài khoản
+  #   value: 
+cusInfo:
+  isInput: true
+  row:
+  - label: Họ và tên người nộp tiền
+    width: 664
+    code: Buyer
+  - label: Địa chỉ (lớp)
+    width: 737
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 685
+    code: Kind_of_Payment
+    isPayment: true
