@@ -1,4 +1,4 @@
-{{#ifCond comPattern '==' '02GTTT0/001'}}
+{{#if isGTTT}}
 <tr class="noline back" style="border-top: 1px solid {{cssColor}};border-bottom: 1px solid {{cssColor}};">
     <td style="text-align: left;padding-top:3px;padding-bottom:3px;border: none !important;padding-left:10px;" colspan="6">
       <label class="fl-l" style="">
@@ -8,13 +8,12 @@
         <b>
           <xsl:choose>
               <xsl:when test="../../Amount!=''">
-                <xsl:value-of select="translate(translate(translate(format-number(../../Amount, '###,###'),',','?'),'.',','),'?','.')"/>
+                <xsl:value-of select="translate(translate(translate(format-number(../../Amount, '###,###'),',','?'),'.',','),'?','.')"/> đồng
               </xsl:when>
               <xsl:otherwise>
                 &#160;
               </xsl:otherwise>
-          </xsl:choose>
-          đồng
+          </xsl:choose>          
         </b>
       </label>
     </td>
@@ -38,8 +37,7 @@
       </label>
     </td>
   </tr> 
-{{/ifCond}}
-{{#ifCond comPattern '==' null}}
+{{else}}
 <tr class="noline back" style="border-top: 1px solid {{cssColor}};">
     <td class="back-bold" colspan="5" style="padding-left: 0px;text-align: right!important;border-bottom:none !important;border-right: 1px solid {{cssColor}}">
       <label style="">
@@ -148,4 +146,4 @@
       </div>
     </td>
   </tr>
-{{/ifCond}}
+{{/if}}

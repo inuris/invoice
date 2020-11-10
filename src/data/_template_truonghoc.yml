@@ -1,6 +1,7 @@
 comFolder: 
 comCode: _template_truonghoc
 comPattern: 02GTTT0/001
+isGTTT: true
 
 comSerial: GA
 comName: TRƯỜNG
