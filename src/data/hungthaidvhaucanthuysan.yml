@@ -4,7 +4,7 @@ comCode: hungthaidvhaucanthuysan
 comRepresent: Nguyễn Minh Tuấn
 comSerial: HT
 comName: CHI NHÁNH CTCP DỊCH VỤ HÀNG HẢI - DẦU KHÍ HƯNG THÁI-XÍ NGHIỆP DỊCH VỤ HẬU CẦN THỦY SẢN HƯNG THÁI
-comTaxCode: 3500798008-008
+comTaxCode: 3500798008
 comAddress: ấp Lò Vôi, Xã Phước Hưng, Huyện Long Điền,Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
 cssFontFamily: Arial
@@ -37,11 +37,9 @@ comInfo2:
   row:
   - value: CÔNG TY CỔ PHẦN DỊCH VỤ HÀNG HẢI - DẦU KHÍ HƯNG THÁI
     valueStyle: "font-weight: 700; font-size: 13px;"
-  - value: 3500798008
-    codePrefix: "Mã số thuế :"
+  - value: "Mã số thuế : 3500798008"
     valueStyle: "font-size: 11px; letter-spacing: 2px;"
-  - value: Số 92 Lý Tự Trọng, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam 
-    codePrefix: "Địa chỉ :"
+  - value: "Địa chỉ : Số 92 Lý Tự Trọng, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam"
     valueStyle: "font-size: 11px; width: 245px;"
 comInfo:   
   labelWidth: 145
@@ -49,10 +47,11 @@ comInfo:
   row:
   - label: Đơn vị bán hàng
     valueStyle: "font-weight: bold; line-height: 16px; letter-spacing: -0.2px"
-    code: ComName    
+    code: ComName 
   - label: Mã số thuế
     valueStyle: "font-weight: bold; letter-spacing: 3px"
     code: ComTaxCode
+    codeSuffix: -008
   - label: Địa chỉ
     code: ComAddress    
     valueStyle: 
