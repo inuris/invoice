@@ -1,5 +1,7 @@
+comFolder: 200923_BQLChoBaRia_V5_AMTan
 comCode: bqlchobaria
 comPattern: 02GTTT0/001
+isGTTT: true
 comSerial: BR
 comName: BAN QUẢN LÝ CHỢ BÀ RỊA
 comTaxCode: 3500352083
@@ -40,16 +42,16 @@ cusInfo:
  margin: 4
  row:
   - label: Họ và tên người mua hàng
-    width: 661
+    width: 649
     code: Buyer
   - label: Tên đơn vị
-    width: 754
+    width: 742
     code: CusName
   - label: Mã số thuế
-    width: 751
-    code: CusTaxcode
+    width: 740
+    code: CusTaxCode
   - label: Địa chỉ
-    width: 776
+    width: 764
     code: CusAddress
   - label: Hình thức thanh toán
     width: 200
@@ -57,4 +59,4 @@ cusInfo:
     isPayment: true
     col-2:
       - label: Số tài khoản
-        width: 421
+        width: 401

@@ -1,6 +1,7 @@
 comFolder: 201102_UBNDPhuocHung_V5_AMDuc
 comCode: ubndphuochung
 comPattern: 02GTTT0/001
+isGTTT: true
 comSerial: PH
 comName: UBND PHƯỜNG PHƯỚC HƯNG
 comTaxCode: 3500274389
@@ -59,7 +60,7 @@ cusInfo:
     code: CusName
   - label: Mã số thuế
     width: 745
-    code: CusTaxcode
+    code: CusTaxCode
   - label: Địa chỉ
     width: 769
     code: CusAddress

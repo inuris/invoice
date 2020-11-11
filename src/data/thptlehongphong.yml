@@ -1,5 +1,6 @@
 comCode: thptlehongphong
 comPattern: 02GTTT0/001
+isGTTT: true
 comSerial: AA
 comName: TRƯỜNG TRUNG HỌC PHỔ THÔNG TƯ THỤC LÊ HỒNG PHONG 
 comTaxCode: 3500335874
@@ -61,7 +62,7 @@ cusInfo:
   #   code: CusName
   # - label: Mã số thuế
   #   width: 751
-  #   code: CusTaxcode
+  #   code: CusTaxCode
   - label: "- Lớp"
     width: 789
     code: CusAddress

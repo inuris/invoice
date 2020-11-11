@@ -1,5 +1,8 @@
+
+comFolder: 200915_PhongCongChungSo1_V5_AMTrong
 comCode: phongcongchungso1
 comPattern: 02GTTT0/001
+isGTTT: true
 comSerial: SM
 comName: PHÒNG CÔNG CHỨNG SỐ 1
 comTaxCode: 3500287317
@@ -21,16 +24,16 @@ comInfo:
 cusInfo:
  row:
   - label: Họ và tên người mua hàng
-    width: 661
+    width: 649
     code: Buyer
   - label: Tên đơn vị
-    width: 754
+    width: 742
     code: CusName
   - label: Mã số thuế
-    width: 751
-    code: CusTaxcode
+    width: 740
+    code: CusTaxCode
   - label: Địa chỉ
-    width: 776
+    width: 764
     code: CusAddress
   - label: Hình thức thanh toán
     width: 200
@@ -38,4 +41,4 @@ cusInfo:
     isPayment: true
     col-2:
       - label: Số tài khoản
-        width: 421
+        width: 401

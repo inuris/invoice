@@ -52,7 +52,7 @@ cusInfo:
     code: CusName
   - label: Mã số thuế
     width: 745
-    code: CusTaxcode
+    code: CusTaxCode
   - label: Địa chỉ
     width: 769
     code: CusAddress
