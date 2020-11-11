@@ -1,6 +1,7 @@
 comFolder: 201029_VPLuatSuHanhTrung_V5_AMTrong
 comCode: vpluatsuhanhtrung
 comPattern: 02GTTT0/001
+isGTTT: true
 comSerial: HT
 comName: VĂN PHÒNG LUẬT SƯ HẠNH TRUNG
 comTaxCode: 3502429101

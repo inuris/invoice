@@ -2,6 +2,7 @@ comFolder: 201106_THPTNguyenKhuyen_V5_AMTuanAnh
 comCode: thptnguyenkhuyen
 
 comPattern: 02GTTT0/001
+isGTTT: true
 comSerial: NK
 comName: TRƯỜNG THPT NGUYỄN KHUYẾN
 comTaxCode: 3502435458

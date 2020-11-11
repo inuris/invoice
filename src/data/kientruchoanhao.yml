@@ -1,6 +1,7 @@
 comFolder: 201030_KienTrucHoanHao_V5_AMDuc
 comCode: kientruchoanhao
 comPattern: 02GTTT0/001
+isGTTT: true
 comSerial: HH
 comName: CÔNG TY TNHH KIẾN TRÚC HOÀN HẢO
 comTaxCode: 3502417522
