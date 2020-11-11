@@ -41,7 +41,7 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-    valueStyle: "letter-spacing: -0.4px; font-size: 15px;"
+    valueStyle: "letter-spacing: -0.4px; font-size: 14.5px;"
   - label: Điện thoại
     value: 0913539979
   - label: STK
@@ -50,22 +50,22 @@ cusInfo:
   isInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 616
+    width: 599
     code: Buyer
   - label: Tên đơn vị
-    width: 710
+    width: 693
     code: CusName
   - label: Mã số thuế
-    width: 708
+    width: 689
     code: CusTaxCode
   - label: Địa chỉ
-    width: 737
+    width: 719
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 200
+    width: 195
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 342
+      width: 310
       code: CusBankNo
