@@ -412,7 +412,17 @@
 		<tr class="noline back productTableContent">
 			<td class="back-bold">
 				<div style="display: block ;word-wrap: break-word;text-align: center;  overflow: hidden;">
-					<xsl:value-of select="position()"/>
+					<xsl:choose>
+						<xsl:when test="Remark!='' and Remark!='.'">
+						<xsl:value-of select="Remark" />
+						</xsl:when>
+						<xsl:when test="Remark='.'">
+						&#160;
+						</xsl:when>
+						<xsl:otherwise>
+						<xsl:value-of select="position()" />
+						</xsl:otherwise>
+					</xsl:choose>
 				</div>
 			</td>
 			<td class="back-bold">

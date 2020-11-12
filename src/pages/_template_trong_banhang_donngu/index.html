@@ -548,11 +548,14 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 <td class="back-bold2" style="text-align:center;">
                                   <div style="display: block;">
                                     <xsl:choose>
-                                      <xsl:when test="Remark=''">
-                                        <xsl:value-of select="position() + $level1Count"/>
+                                      <xsl:when test="Remark!='' and Remark!='.'">
+                                        <xsl:value-of select="Remark" />
+                                      </xsl:when>
+                                      <xsl:when test="Remark='.'">
+                                        &#160;
                                       </xsl:when>
                                       <xsl:otherwise>
-                                        <xsl:value-of select="Remark"/>
+                                        <xsl:value-of select="position()" />
                                       </xsl:otherwise>
                                     </xsl:choose>
                                   </div>
