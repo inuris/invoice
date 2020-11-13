@@ -15,7 +15,7 @@ convert:
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#000055"
-
+debug: 1
 #logo : file, width, top, left
 logo:
   file: logo.png
