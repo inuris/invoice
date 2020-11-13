@@ -16,7 +16,7 @@ debug:
 background:
   file: logo.gif
   top: 1
-  left: 1
+  left: 72
 #header
 header:
   logo:
