@@ -14,6 +14,7 @@ cssColor: "#005cb3"
 header:
   #logo
   logo:
+    file: logo.jpg
     width: 150
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
