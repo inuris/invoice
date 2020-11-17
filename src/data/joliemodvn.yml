@@ -1,0 +1,97 @@
+comFolder: 201117_JolieModVN_V5_AMTrong
+
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN JOLIE MOD VIET NAM
+comCode: joliemodvn
+comTaxCode: 3500862253
+comRepresent: Nguyễn Thị Ngọc Quý
+comSerial: AA
+comAddress: Nhà tròn đối diện Số 150 Hạ Long, Phường 2, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: &comPhone 0254 362 6666
+
+comInvoiceNo: 0000000
+english: true
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  top: 500
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 150
+    top: 15
+    left: 30
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 15.5px"
+  margin: 6
+  labelWidth: 160
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 16px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+    valueStyle: "letter-spacing: -0.2px; font-size: 15px;"
+  - label: Điện thoại
+    sub: Tel
+    value: *comPhone
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  isInput: 
+  row:
+  - label: Họ tên người mua hàng
+    width: 539
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 636
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 672
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 705
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 541
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
