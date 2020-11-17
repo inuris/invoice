@@ -10,12 +10,18 @@ comRepresent: TRẦN THỊ HƯỜNG
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
+background: 
+  file: bg.jpg
+  top: 534
 #header
 header:
   #logo
   logo:
     file: logo.jpg
     width: 150
+    top: 5
+    left: 20
+    bottom: 5
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 27px"
