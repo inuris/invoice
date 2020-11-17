@@ -1,0 +1,80 @@
+comFolder: 201116_MuoiThanhQuang_V5_AMDuc
+comPattern: 02GTTT0/001
+
+comName: DOANH NGHIỆP TƯ NHÂN MUỐI THANH QUANG
+comCode: muoithanhquang
+comTaxCode: 3502431421
+comRepresent: Phan Ngọc Trinh
+comSerial: TQ
+comAddress: Tổ 3, khu phố 6, Phường Long Toàn, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu
+comSys: 1
+comPhone: &comPhone 0983720972
+comAccount:
+isGTTT: 1
+
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+
+### background: file, width, height, top, left, opacity
+background:
+  file: 
+  top: 534
+
+### background: file, width, height, top, left, opacity
+background_full:
+  file: bg_full.png
+  top: 69 
+#header
+header:
+  #logo
+  logo:
+    file: 
+    width: 135
+    height: 73
+    left: 38
+    top: 10
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG
+    style: "font-size: 27px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+comInfo:
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: *comPhone
+  # - label: Số tài khoản
+  #   value: 
+cusInfo:
+  margin: 2
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 599
+    code: Buyer
+  - label: Tên đơn vị
+    width: 693
+    code: CusName
+  - label: Mã số thuế
+    width: 689
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 719
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 195
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 310
+      code: CusBankNo
