@@ -1,4 +1,4 @@
-{{#ifCond comPattern '==' '02GTTT0/001'}}
+{{#if isGTTT}}
 <tr class="bg-pink">
   <td colspan="5" style="border-top:1px solid #005cb3;border-bottom:1px solid #005cb3;border-left:none;text-align:right;padding-right:10px;">
     <span class="hoang_so_le">Cộng tiền bán hàng hóa, dịch vụ: </span>
@@ -27,8 +27,7 @@
     </xsl:call-template>
   </td>
 </tr>
-{{/ifCond}}
-{{#ifCond comPattern '==' null}}
+{{else}}
 <tr class="bg-pink" style="">
   <td colspan="5" style="border-top:1px solid {{cssColor}};border-bottom:1px solid {{cssColor}};border-left:none !important;text-align:left; text-align:right;padding-right:10px;">
     <span class="hoang_so_le">Cộng tiền hàng: </span>
@@ -124,4 +123,4 @@
     </xsl:call-template>
   </td>
 </tr>
-{{/ifCond}}
+{{/if}}
