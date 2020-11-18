@@ -1,0 +1,63 @@
+comFolder: 201118_KimThanhPhat_V5_AMDung
+comName: CÔNG TY TNHH ĐẦU TƯ VÀ THƯƠNG MẠI KIM THÀNH PHÁT
+comCode: kimthanhphat
+comTaxCode: 3502384411
+comRepresent: Phạm Thị Vân Anh
+comSerial: TP
+comAddress: Số 57 Lưu Hữu Phước, Phường Rạch Dừa, Thành Phố Vũng Tàu, Bà Rịa, Vũng Tàu
+comSys: 1
+comPhone: &p 0938672768
+
+
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+#header
+header:
+  #logo
+  logo:
+    file: logo.jpg
+    width: 150
+    top: 5
+    left: 30
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 27px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+comInfo:
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: *p
+cusInfo:
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 601
+    code: Buyer
+  - label: Tên đơn vị
+    width: 695
+    code: CusName
+  - label: Mã số thuế
+    width: 692
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 723
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 308
+      code: CusBankNo
