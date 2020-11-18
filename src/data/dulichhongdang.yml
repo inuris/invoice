@@ -25,7 +25,7 @@ logo:
 #background : file, width, height, top, left
 background:
   file: bg.png
-  top: 500
+  top: 526
 #header
 header:
   #logo : file, width, top, left
@@ -79,7 +79,7 @@ cusInfo:
   labelWidth:
   labelStyle: 
   subStyle: "font-size: 100%"
-  isInput:
+  isInput: 1
   row:
   - label: Họ tên người mua hàng
     width: 661
@@ -98,10 +98,11 @@ cusInfo:
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 253
+    width: 674
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
-    col-2:
-      - label: Tài khoản
-        width: 350
+  - label: 1.1 Tiền vé
+    labelStyle: "font-weight: 700"
+    valueStyle: "display: none"
+    
