@@ -1,0 +1,70 @@
+comFolder: 201118_TMDVXDPhuGiaKhang_V5_AMTan 
+
+comName: CÔNG TY TNHH ĐẦU TƯ THƯƠNG MẠI DỊCH VỤ XÂY DỰNG PHÚ GIA KHANG
+comCode: tmdvxdphugiakhang
+comTaxCode: 3501843983
+comRepresent: VÕ NGỌC TÀI
+comSerial: GK
+comAddress: Số 32A5 khu dân cư Lan Anh 4, Xã Hoà Long, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu
+comSys: 1
+comPhone: &p 0937555538
+comAccount: &a 37555538 tại Ngân hàng TMCP Á Châu - Chi nhánh Bà Rịa, Tỉnh BRVT
+
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+
+background:
+  file: bg.jpg
+  top: 500
+#header
+header:
+  #logo
+  logo:
+    file: logo.jpg
+    width: 150
+    top: 4
+    left: 25
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 27px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+comInfo:
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: *p
+  - label: STK
+    value: *a
+cusInfo:
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 601
+    code: Buyer
+  - label: Tên đơn vị
+    width: 695
+    code: CusName
+  - label: Mã số thuế
+    width: 692
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 723
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 308
+      code: CusBankNo
