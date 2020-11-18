@@ -1,0 +1,106 @@
+comFolder: 201119_DeltaVungTau_V5_AMTrong
+comName: CÔNG TY TNHH DELTA VŨNG TÀU
+comCode: deltavungtau
+comTaxCode: 3502352561
+comRepresent: Lê Văn Hanh
+comSerial: DT
+comAddress: Số 118 Lưu Hữu Phước, Phường Long Tâm, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu
+comSys: 1
+comAccount: &a 7611 0000 329748 tại Ngân hàng BIDV - Chi nhánh Bà Rịa
+
+comInvoiceNo: 0000000
+english:
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#170965"
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  top: 500
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 160
+    top: 8
+    left: 15
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px; color: #d00"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 400; font-size: 16px"
+  margin: 6
+  labelWidth: 120
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px; font-weight: 700; color: #d00;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px; font-weight: 700"
+    sub: Tax code
+    isTaxCode: 1
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Điện thoại
+    value: 
+    isInput: 1
+    width: 250
+    col-2:
+      - label: "* Email"
+        labelWidth: 60
+        value: detaco.vn@gmail.com
+  - label: Số tài khoản
+    value: *a
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px; font-weight: 400;"
+  labelWidth:
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  isInput: 
+  row:
+  - label: Họ tên người mua hàng
+    width: 661
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 741
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 740
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 763
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 253
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
+    col-2:
+      - label: Tài khoản
+        width: 350

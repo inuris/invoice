@@ -67,12 +67,16 @@
 					{{#if this.isPayment}}
 						{{> payment relative=relative}}
 					{{else}}
-						{{#if this.codePrefix}}{{this.codePrefix}}{{/if}}
-						{{#if this.codeValue}}
-						<xsl:value-of select="{{this.codeValue}}" />
+						{{#if this.isTaxCode}}
+							{{> taxcode relative=relative}}
 						{{else}}
-						<xsl:value-of select="{{#unless relative}}../../{{/unless}}{{this.code}}" />
-						{{/if}}{{#if this.codeSuffix}}{{this.codeSuffix}}{{/if}}
+							{{#if this.codePrefix}}{{this.codePrefix}}{{/if}}
+							{{#if this.codeValue}}
+							<xsl:value-of select="{{this.codeValue}}" />
+							{{else}}
+							<xsl:value-of select="{{#unless relative}}../../{{/unless}}{{this.code}}" />
+							{{/if}}{{#if this.codeSuffix}}{{this.codeSuffix}}{{/if}}
+						{{/if}}
 					{{/if}}
 				</xsl:when>
 				<xsl:otherwise>
