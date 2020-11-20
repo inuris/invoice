@@ -1,3 +1,4 @@
+comFolder: 201016_NhiDongSaiGonVungTau_V5_AMTrong
 comCode: nhidongsaigonvungtau
 comSerial: AA
 comName: CÔNG TY TNHH NHI ĐỒNG SÀI GÒN - VŨNG TÀU
@@ -6,6 +7,7 @@ comAddress: Số 210 Bình Giã, Phường 8, Thành Phố Vũng Tàu, Tỉnh B�
 comInvoiceNo: 0000000
 english:
 convert:
+debug: 
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#000055"
@@ -73,19 +75,19 @@ cusInfo:
   subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 672
+    width: 661
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 754
+    width: 741
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 752
+    width: 740
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 777
+    width: 763
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
@@ -95,4 +97,4 @@ cusInfo:
     sub: Method of Payment
     col-2:
       - label: Tài khoản
-        width: 370
+        width: 350
