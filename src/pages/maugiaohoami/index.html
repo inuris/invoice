@@ -448,28 +448,8 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       <td style="width:20%;height:55px;padding:2px 50px;" >
                                       </td>
                                       <td style="text-align:center;width:50%;">
-                                        <div style="text-align:center; font-size:22px !important;margin-top:10px; font-weight: bold;"><label style="font-weight: 700; color:{{cssColor}}; font-family: Tahoma;">HÓA ĐƠN BÁN HÀNG</label></div>
-										<div style="text-align:center;color: {{cssColor}};font-size: 13px;line-height:30px; font-style:italic;">
-											<xsl:choose>
-												<xsl:when test="substring(ArisingDate,7,4)!= '1957' and substring(ArisingDate,7,4)!= ''">
-													Ngày 
-													<label style="border-bottom: 1px dotted {{cssColor}}; color:{{cssColor}}">
-														<xsl:value-of select="substring(ArisingDate,1,2)" />
-													</label>
-					    							tháng  
-													<label style="border-bottom: 1px dotted {{cssColor}}; color:{{cssColor}}">
-														<xsl:value-of select="substring(ArisingDate,4,2)" />
-													</label>
-					    							năm
-													<label style="border-bottom: 1px dotted {{cssColor}}; color:{{cssColor}}">
-														<xsl:value-of select="concat('20',substring(ArisingDate,9,2))" />
-													</label>
-												</xsl:when>
-												<xsl:otherwise>
-												Ngày  <label style="border-bottom: 1px dotted {{cssColor}};">    </label> tháng  <label style="border-bottom: 1px dotted {{cssColor}};">    </label> năm <label style="border-bottom: 1px dotted {{cssColor}};">    </label>
-												</xsl:otherwise>
-											</xsl:choose>
-										</div>
+                                        {{>header-name relative=true}} 
+										
 										<xsl:if test="$itemCount&gt;10">
 										  <label style=" display: block; color:#000000">
 											<xsl:choose>
