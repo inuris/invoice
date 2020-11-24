@@ -18,15 +18,16 @@ cssColor: "#170965"
 #background : file, width, height, top, left
 background:
   file: bg.png
-  top: 500
+  top: 490
 #header
 header:
   #logo : file, width, top, left
   logo:
     file: logo.png
-    width: 160
-    top: 8
-    left: 15
+    width: 220
+    top: 1
+    left: 10
+    bottom: 5
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 22px; color: #d00"
