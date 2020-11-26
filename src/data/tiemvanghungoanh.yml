@@ -1,11 +1,15 @@
-comFolder: 
+comFolder: 201201_TiemVangHungOanh_V5_AMLieu
+comPattern: 02GTTT0/001
+isGTTT: true
 
-comCode: _template_banhang_a5
-comSerial: AA
-comName: CÔNG TY
-comTaxCode: 350
-comAddress: BRVT
-comRepresent: 
+comName: DOANH NGHIỆP TƯ NHÂN TIỆM VÀNG HƯNG OANH
+comCode: tiemvanghungoanh
+comTaxCode: 3502239580
+comRepresent: Nguyễn Xuân Hưng
+comSerial: HO
+comAddress: Lô 2/19 Khu phố Hải An, Thị Trấn Phước Hải, Huyện Đất đỏ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: &p 0908114128
 
 comInvoiceNo: 0000000
 cssColor: "#005cb3"
@@ -13,11 +17,9 @@ comFkey: "..."
 convert:
 debug: 
 
-comPattern: 02GTTT0/001
-isGTTT: true
 #background : file, width, height, top, left
 background:
-  file: bg.png
+  file: 
   top: 155
 #header
 header:
@@ -45,12 +47,12 @@ comInfo:
     labelWidth: 65
     valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
   - label: Điện thoại
-    value: 0254
+    value: *p
     labelWidth: 65
-  - label: STK
-    value: 0000
-    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
-    labelWidth: 65
+  # - label: STK
+  #   value: 0000
+  #   valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+  #   labelWidth: 65
 cusInfo:
   isInput: true
   margin: 4

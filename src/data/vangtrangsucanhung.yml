@@ -1,11 +1,15 @@
-comFolder: 
+comFolder: 201126_VangTrangSucAnHung_V5_AMLieu
+comPattern: 02GTTT0/001
+isGTTT: true
 
-comCode: _template_banhang_a5
-comSerial: AA
-comName: CÔNG TY
-comTaxCode: 350
-comAddress: BRVT
-comRepresent: 
+comName: CÔNG TY TNHH THƯƠNG MẠI VÀNG TRANG SỨC AN HƯNG
+comCode: vangtrangsucanhung
+comTaxCode: 3502244372
+comRepresent: Phạm Thị Mười
+comSerial: AH
+comAddress: Số 01 Ô1/2 Khu phố Hải Trung, Thị Trấn Phước Hải, Huyện Đất đỏ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: &p 0254.3677162 - 0254.3886028
 
 comInvoiceNo: 0000000
 cssColor: "#005cb3"
@@ -13,11 +17,9 @@ comFkey: "..."
 convert:
 debug: 
 
-comPattern: 02GTTT0/001
-isGTTT: true
 #background : file, width, height, top, left
 background:
-  file: bg.png
+  file: 
   top: 155
 #header
 header:
@@ -45,12 +47,12 @@ comInfo:
     labelWidth: 65
     valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
   - label: Điện thoại
-    value: 0254
+    value: *p
     labelWidth: 65
-  - label: STK
-    value: 0000
-    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
-    labelWidth: 65
+  # - label: STK
+  #   value: 0000
+  #   valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+  #   labelWidth: 65
 cusInfo:
   isInput: true
   margin: 4
