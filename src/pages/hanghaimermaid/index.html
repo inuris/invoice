@@ -445,7 +445,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                 <div  class ="pagecurrent" id="page_{$pageC}">
                   <div style="width:855px !important;margin:0px auto;padding-top:5px;">
                   <div class="statistics" style=""  >
-                      <div class="nenhd" style="margin-bottom: 2px !important; overflow: hidden;"> 
+                      <div class="nenhd" style="margin-bottom: 2px !important;"> 
                         {{>background_2}}
                         <table cellspacing="0" cellpadding="0" border="0" style="width:100%;">
                           <thead>
@@ -821,205 +821,212 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                     </div>
                                   </td>
                                 </tr>
-								<!--variable-->
-								<xsl:variable name="serial">
-									<xsl:value-of select="SerialNo"/>
-								</xsl:variable>
-								<xsl:variable name="pattern">
-									<xsl:value-of select="InvoicePattern"/>
-								</xsl:variable>
-								<xsl:variable name="invno">
-									<xsl:value-of select="InvoiceNo"/>
-								</xsl:variable>
-								<!---->
+                                <!--variable-->
+                                <xsl:variable name="serial">
+                                  <xsl:value-of select="SerialNo"/>
+                                </xsl:variable>
+                                <xsl:variable name="pattern">
+                                  <xsl:value-of select="InvoicePattern"/>
+                                </xsl:variable>
+                                <xsl:variable name="invno">
+                                  <xsl:value-of select="InvoiceNo"/>
+                                </xsl:variable>
+                                <!---->
                                 <tr  class="noline back" style="">
                                   <td colspan="6" style="padding-top:5px;border-right:0px;">
                                     <table style="width:100%;">
-										<tr>
-											<td style="border: none;width: 333px;vertical-align: top;text-align:center;">
-												<p style="margin-top:0;margin-bottom: 0;">
-													<b>
-													Người mua hàng
-													</b>
-                          {{#if english}}<i style="">(Buyer)</i>{{/if}}
-												</p>
-												<xsl:choose>
-													<xsl:when test="/Invoice/imageClient != '' ">
-                          <div class="bgimg" style="background:url({/Invoice/imageClient/@URI}) no-repeat center left; min-height: 83px;width:295px;border:none;background-color:#DFF0D8;" onclick="showDialog('dialogClient','{$serial}','{$pattern}','{$invno}',1,'messClt','ic')">
-															<p style="margin-top:3px;margin-bottom:5px;font-size:12px">
-																<xsl:value-of select="/Invoice/imageClient"/>
-															</p>
-															<p style="font-size:12px;">
-															Ký bởi:
-																<xsl:value-of select="/Invoice/CNCus"/>
-																<br/> Ký ngày:
-																<xsl:value-of select="/Invoice/Date"/>
-															</p>
-														</div>
-													</xsl:when>
-												</xsl:choose>
-											</td>
-											<!--panel TVAN-->
-											<td style="border: none;width: 333px;vertical-align: top;">
-												<xsl:choose>
-													<xsl:when test="/Invoice/convert!=''">
-														<div style="text-align:center;padding-top:1px;">
-															<div>
-																<label>
-																	<b style="font-size:12px">
-																		<!--<xsl:value-of select="/Invoice/convert"/>-->
-																HÓA ĐƠN CHUYỂN ĐỔI TỪ HÓA ĐƠN ĐIỆN TỬ
-																	</b>
-                                </label>
-                                <xsl:if test="/Invoice/ConvertDate != 1">
-                                  <p style="font-size:11px; margin:0px">
-                                  Ngày <b>
-                                      <xsl:value-of select="substring(/Invoice/ConvertDate,1,2)"/>
-                                    </b> tháng <b>
-                                      <xsl:value-of select="substring(/Invoice/ConvertDate,4,2)"/>
-                                    </b> năm <b>
-                                      <xsl:value-of select="concat('20',substring(/Invoice/ConvertDate,9,2))"/>
-                                    </b>
-                                  </p>
-                                </xsl:if>
-																<xsl:if test="/Invoice/ConvertDate = 1">
-																	<p style="font-size:11px; margin:0px">
-																		Ngày <b>...
-																			
-																		</b> tháng <b>...
-																			
-																		</b> năm <b>...
-																			
-																		</b>
-																	</p>
-																</xsl:if>
-																<p style="font-size:11px; margin:0px">
-																Người chuyển đổi
-																</p>
-                                {{#if english}}
-                                <i>
-																(Signature of converter)
-                                </i>
-                                {{/if}}
-																<p style="margin-top:20px">
-																	<xsl:value-of select="/Invoice/ConvertBy"/>
-																</p>
-																<!--<p style="font-size:14px; margin:0px">
-															Thủ trưởng đơn vị
-															</p>-->
-															</div>
-														</div>
-													</xsl:when>
-												</xsl:choose>
-											</td>
-											<!--panel server-->
-											<td style="border: none;width: 333px;vertical-align: top;text-align:center;">
-												<p style="margin-top:0;margin-bottom: 0;">
-													<b>
-													Người bán hàng
-													</b>
-                          {{#if english}}<i style="">(Seller)</i>{{/if}}
-												</p>
-												{{>sign arising=true}}
-											</td>
-                    </tr>
-                    <tr>
-											<td colspan="3" style="border:none;">
-												<xsl:choose>
-													<xsl:when test="/Invoice/TvanData/Content/isReplace!=''">
-														<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
-															<xsl:value-of select="//Invoice/TvanData/Content/isReplace"/>
-														</div>
-													</xsl:when>
-													<xsl:when test="../../isReplace!=''">
-														<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
-															<xsl:value-of select="../../isReplace"/>
-														</div>
-													</xsl:when>
-													<xsl:when test="/Invoice/Content/isReplace!=''">
-														<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
-															<xsl:value-of select="//Invoice/Content/isReplace"/>
-														</div>
-													</xsl:when>
-													<xsl:when test="../../isReplace!=''">
-														<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
-															<xsl:value-of select="../../isReplace"/>
-														</div>
-													</xsl:when>
-												</xsl:choose>
-												<xsl:choose>
-													<xsl:when test="/Invoice/Content/isAdjust!=''">
-														<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
-															<xsl:value-of select="//Invoice/Content/isAdjust"/>
-														</div>
-													</xsl:when>
-													<xsl:when test="../../isAdjust!=''">
-														<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
-															<xsl:value-of select="../../isAdjust"/>
-														</div>
-													</xsl:when>
-													<xsl:when test="/Invoice/TvanData/Content/isAdjust!=''">
-														<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
-															<xsl:value-of select="//Invoice/TvanData/Content/isAdjust"/>
-														</div>
-													</xsl:when>
-													<xsl:when test="../../isAdjust!=''">
-														<div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
-															<xsl:value-of select="../../isAdjust"/>
-														</div>
-													</xsl:when>
-												</xsl:choose>
-											</td>
-										</tr>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </xsl:if>
-                            </xsl:for-each>
-                            <!-- </xsl:for-each> -->
-                          </tbody>
-                        </table>
-                        <div class="nenhd_bg"></div>
-                      </div>
+                                    <tr>
+                                      <td style="border: none;width: 333px;vertical-align: top;text-align:center;">
+                                        <p style="margin-top:0;margin-bottom: 0;">
+                                          <b>
+                                          Người mua hàng
+                                          </b>
+                                          {{#if english}}<i style="">(Buyer)</i>{{/if}}
+                                        </p>
+                                        <xsl:choose>
+                                          <xsl:when test="/Invoice/imageClient != '' ">
+                                          <div class="bgimg" style="background:url({/Invoice/imageClient/@URI}) no-repeat center left; min-height: 83px;width:295px;border:none;background-color:#DFF0D8;" onclick="showDialog('dialogClient','{$serial}','{$pattern}','{$invno}',1,'messClt','ic')">
+                                              <p style="margin-top:3px;margin-bottom:5px;font-size:12px">
+                                                <xsl:value-of select="/Invoice/imageClient"/>
+                                              </p>
+                                              <p style="font-size:12px;">
+                                              Ký bởi:
+                                                <xsl:value-of select="/Invoice/CNCus"/>
+                                                <br/> Ký ngày:
+                                                <xsl:value-of select="/Invoice/Date"/>
+                                              </p>
+                                            </div>
+                                          </xsl:when>
+                                        </xsl:choose>
+                                      </td>
+                                      <!--panel TVAN-->
+                                      <td style="border: none;width: 333px;vertical-align: top;">
+                                        <xsl:choose>
+                                          <xsl:when test="/Invoice/convert!=''">
+                                            <div style="text-align:center;padding-top:1px;">
+                                              <div>
+                                                <label>
+                                                  <b style="font-size:12px">
+                                                    <!--<xsl:value-of select="/Invoice/convert"/>-->
+                                                HÓA ĐƠN CHUYỂN ĐỔI TỪ HÓA ĐƠN ĐIỆN TỬ
+                                                  </b>
+                                                </label>
+                                                <xsl:if test="/Invoice/ConvertDate != 1">
+                                                  <p style="font-size:11px; margin:0px">
+                                                  Ngày <b>
+                                                      <xsl:value-of select="substring(/Invoice/ConvertDate,1,2)"/>
+                                                    </b> tháng <b>
+                                                      <xsl:value-of select="substring(/Invoice/ConvertDate,4,2)"/>
+                                                    </b> năm <b>
+                                                      <xsl:value-of select="concat('20',substring(/Invoice/ConvertDate,9,2))"/>
+                                                    </b>
+                                                  </p>
+                                                </xsl:if>
+                                                <xsl:if test="/Invoice/ConvertDate = 1">
+                                                  <p style="font-size:11px; margin:0px">
+                                                    Ngày <b>...
+                                                      
+                                                    </b> tháng <b>...
+                                                      
+                                                    </b> năm <b>...
+                                                      
+                                                    </b>
+                                                  </p>
+                                                </xsl:if>
+                                                <p style="font-size:11px; margin:0px">
+                                                Người chuyển đổi
+                                                </p>
+                                                {{#if english}}
+                                                <i>
+                                                (Signature of converter)
+                                                </i>
+                                                {{/if}}
+                                                <p style="margin-top:20px">
+                                                  <xsl:value-of select="/Invoice/ConvertBy"/>
+                                                </p>
+                                                <!--<p style="font-size:14px; margin:0px">
+                                              Thủ trưởng đơn vị
+                                              </p>-->
+                                              </div>
+                                            </div>
+                                          </xsl:when>
+                                        </xsl:choose>
+                                      </td>
+                                      <!--panel server-->
+                                      <td style="border: none;width: 333px;vertical-align: top;text-align:center;">
+                                        <p style="margin-top:0;margin-bottom: 0;">
+                                          <b>
+                                          Người bán hàng
+                                          </b>
+                                          {{#if english}}<i style="">(Seller)</i>{{/if}}
+                                        </p>
+                                        {{>sign arising=true}}
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="3" style="border:none;">
+                                        <xsl:choose>
+                                          <xsl:when test="/Invoice/TvanData/Content/isReplace!=''">
+                                            <div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+                                              <xsl:value-of select="//Invoice/TvanData/Content/isReplace"/>
+                                            </div>
+                                          </xsl:when>
+                                          <xsl:when test="../../isReplace!=''">
+                                            <div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+                                              <xsl:value-of select="../../isReplace"/>
+                                            </div>
+                                          </xsl:when>
+                                          <xsl:when test="/Invoice/Content/isReplace!=''">
+                                            <div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+                                              <xsl:value-of select="//Invoice/Content/isReplace"/>
+                                            </div>
+                                          </xsl:when>
+                                          <xsl:when test="../../isReplace!=''">
+                                            <div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+                                              <xsl:value-of select="../../isReplace"/>
+                                            </div>
+                                          </xsl:when>
+                                        </xsl:choose>
+                                        <xsl:choose>
+                                          <xsl:when test="/Invoice/Content/isAdjust!=''">
+                                            <div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+                                              <xsl:value-of select="//Invoice/Content/isAdjust"/>
+                                            </div>
+                                          </xsl:when>
+                                          <xsl:when test="../../isAdjust!=''">
+                                            <div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+                                              <xsl:value-of select="../../isAdjust"/>
+                                            </div>
+                                          </xsl:when>
+                                          <xsl:when test="/Invoice/TvanData/Content/isAdjust!=''">
+                                            <div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+                                              <xsl:value-of select="//Invoice/TvanData/Content/isAdjust"/>
+                                            </div>
+                                          </xsl:when>
+                                          <xsl:when test="../../isAdjust!=''">
+                                            <div style="text-align:center;padding-top:0px;font-size:14px;text-transform:uppercase">
+                                              <xsl:value-of select="../../isAdjust"/>
+                                            </div>
+                                          </xsl:when>
+                                        </xsl:choose>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colspan="6">
+                                  <div style="border: 1px solid {{cssColor}}; padding: 4px 10px; margin-top: 10px; overflow: auto;">
+                                    <div style="overflow: auto; border-bottom: 1px solid {{cssColor}}">
+                                      <div style="width: 70%; float: left; text-align: left">
+                                        {{>info data=bankInfo}}
+                                      </div>                
+                                      <div style="width: 30%; float: left; text-align: left">
+                                        {{>info data=bankAccount}}
+                                      </div>
+                                    </div>
+                                    <div style="overflow: auto; border-bottom: 1px solid {{cssColor}}; margin-top: 8px">                
+                                      <div style="width: 70%; float: left; text-align: left">
+                                        {{>info data=bankInfo2}}
+                                      </div>                
+                                      <div style="width: 30%; float: left; text-align: left">
+                                        {{>info data=bankAccount2}}
+                                      </div>  
+                                    </div> 
+                                    <div style="padding-top: 4px">
+                                      <p style="font-size: 12px; text-align: left"><strong>All bank charges to be borned by customer</strong></p>
+                                    </div>
+                                  </div>
                       
-                      <div style="border: 1px solid {{cssColor}}; padding: 4px 10px; margin-top: 10px; overflow: auto;">
-                        <div style="overflow: auto; border-bottom: 1px solid {{cssColor}}">
-                          <div style="width: 70%; float: left; text-align: left">
-                            {{>info data=bankInfo}}
-                          </div>                
-                          <div style="width: 30%; float: left; text-align: left">
-                            {{>info data=bankAccount}}
-                          </div>
-                        </div>
-                        <div style="overflow: auto; border-bottom: 1px solid {{cssColor}}; margin-top: 8px">                
-                          <div style="width: 70%; float: left; text-align: left">
-                            {{>info data=bankInfo2}}
-                          </div>                
-                          <div style="width: 30%; float: left; text-align: left">
-                            {{>info data=bankAccount2}}
-                          </div>  
-                        </div> 
-                        <div style="padding-top: 4px">
-                          <p style="font-size: 12px; text-align: left"><strong>All bank charges to be borned by customer</strong></p>
-                        </div>
-                      </div>
-
-                      <div style="margin-top: 8px;">
-                        <p style="margin:0px;font-size:13px;">
-                          <span>Cần kiểm tra, đối chiếu khi lập, giao nhận hóa đơn </span><i>(Need to check and compare when making and delivering invoices).</i>
-                        </p>
-                      </div>
+                                  <div style="margin-top: 8px;">
+                                    <p style="margin:0px;font-size:13px;">
+                                      <span>Cần kiểm tra, đối chiếu khi lập, giao nhận hóa đơn </span><i>(Need to check and compare when making and delivering invoices).</i>
+                                    </p>
+                                  </div>                                  
+                                  {{>footer-trong isEnglish=true}}
+                                </td>
+                              </tr>
+                            </xsl:if>
+                          </xsl:for-each>
+                          <!-- </xsl:for-each> -->
+                        </tbody>
+                      </table>
+                      <div class="nenhd_bg"></div>
+                    </div>                     
                       
-                      {{>footer-trong isEnglish=true}}
                       <!--panel footer-->
-                    </div>
-					
-					  
+                    </div> 
                   </div>
                 </div>
-              </div><p style="page-break-after: always"/>
-            </xsl:for-each>
+              </div>
+              
+              <p style="page-break-after: always"/>            
+              
+            </xsl:for-each>   
+
+                     
           </div>
+          
           <!-- <div class="clearfix" id="bt"> &#160; </div> -->
         </center>
       </body>

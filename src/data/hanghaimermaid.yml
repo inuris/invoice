@@ -6,7 +6,7 @@ comTaxCode: 3500674108
 comAddress: Đường 12,KCN Đông Xuyên, P. Rạch Dừa, Tp. Vũng Tàu, tỉnh Bà Rịa Vũng Tàu.
 comInvoiceNo: 0000000
 english: true
-debug: 2
+debug: 1
 convert: 1
 xml:
   - GrossValue0
