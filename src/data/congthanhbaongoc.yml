@@ -9,11 +9,12 @@ comRepresent: Lê Quang Bảo Đoan
 comSerial: BN
 comAddress: 178 Mạc Thanh Đạm, Khu phố Long Lâm, Thị Trấn Long Điền, Huyện Long Điền, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
-comPhone: &p 0254-862048
+comPhone: &p 0254-3862048
 
 
 comInvoiceNo: 0000000
 cssColor: "#005cb3"
+cssFontFamily: "Times New Roman"
 comFkey: "..."
 convert:
 debug: 
@@ -24,56 +25,50 @@ background:
   top: 155
 #header
 header:
+  #logo
   logo:
     width: 150
   name:
   - value: HÓA ĐƠN BÁN HÀNG
-    style: "font-size: 18px"
+    style: "font-size: 27px"
   - value: Bản thể hiện của hóa đơn điện tử
     valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
-    style: "font-size: 12px; line-height: 1.4;"
-    styleConvert: "font-size: 12px; line-height: 1.4;"
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 
 
-comInfo:   
+comInfo:
   row:
-  - valueStyle: "font-weight: bold"
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
     code: ComName
   - label: Mã số thuế
     valueStyle: "font-weight: bold"
-    labelWidth: 65
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-    labelWidth: 65
-    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+    valueStyle: "font-size: 15.5px; letter-spacing: -0.2px"
   - label: Điện thoại
     value: *p
-    labelWidth: 65
-  # - label: STK
-  #   value: 0000
-  #   valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
-  #   labelWidth: 65
 cusInfo:
   isInput: true
-  margin: 4
   row:
-  - label: Họ và tên người mua hàng
-    width: 654
+  - label: Họ tên người mua hàng
+    width: 619
     code: Buyer
   - label: Tên đơn vị
-    width: 747
+    width: 700
     code: CusName
   - label: Mã số thuế
-    width: 745
+    width: 699
     code: CusTaxCode
   - label: Địa chỉ
-    width: 769
+    width: 723
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 200
+    width: 195
     code: Kind_of_Payment
     isPayment: true
     col-2:
-      - label: Số tài khoản
-        width: 406
+    - label: Số tài khoản
+      width: 337
+      code: CusBankNo
