@@ -1,15 +1,16 @@
-comFolder: 201124_VangBacDaQuyHongKhang_V5_AMLieu
+comFolder: 201130_TMVangMyHung_V5_AMLieu
 comPattern: 02GTTT0/001
 isGTTT: true
 
-comName: DOANH NGHIỆP TƯ NHÂN VÀNG BẠC ĐÁ QUÝ HỒNG KHANG
-comCode: vangbacdaquyhongkhang
-comTaxCode: 3502321919
-comRepresent: Nguyễn Thị Hồng
-comSerial: HK
-comAddress: T30, Tổ 1, ấp Tân Phước, Xã Phước Tỉnh, Huyện Long Điền, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comName: DOANH NGHIỆP TƯ NHÂN THƯƠNG MẠI VÀNG MỸ HƯNG
+comCode: tmvangmyhung
+comTaxCode: 3502231969
+comRepresent: Nguyễn Thị Lai
+comSerial: MH
+comAddress: Ấp 2, Phường Hắc Dịch, Thị Xã Phú Mỹ, Tỉnh Bà Rịa-Vũng Tàu, Việt Nam
 comSys: 1
-comPhone: &p 0254-3842777
+comPhone: 0909.368638
+
 
 comInvoiceNo: 0000000
 cssColor: "#005cb3"
@@ -45,7 +46,7 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-    valueStyle:
+    valueStyle: 
   - label: Điện thoại
     value: *p
 cusInfo:
