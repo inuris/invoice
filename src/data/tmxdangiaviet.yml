@@ -1,0 +1,105 @@
+comFolder: 201207_TMXDAnGiaViet_V5_AMTrong
+
+comName: CÔNG TY TNHH THƯƠNG MẠI XÂY DỰNG AN GIA VIỆT
+comCode: tmxdangiaviet
+comTaxCode: 3502271753
+comRepresent: Cái Kim Dũng
+comSerial: GV
+comAddress: Số 355 Nguyễn Văn Linh, Phường Phước Nguyên, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu
+comSys: 1
+comPhone: &p 0254 6536168
+
+
+comInvoiceNo: 0000000
+english: true
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+
+#background : file, width, height, top, left
+background:
+  file: bg.jpg
+  top: 540
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.jpg
+    width: 150
+    top: 5
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 3
+  labelWidth: 185
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+    valueStyle: "font-size: 15.5px;letter-spacing: -0.2px"
+  - label: Điện thoại
+    sub: Tel
+    value: *p
+  - label: Số tài khoản
+    sub: Account No.
+    value: 55.111.5111.6868 - Ngân hàng TMCP Quân đội (MB) - Chi nhánh Vũng Tàu. 
+  - value: 192.734.709 - Ngân hàng TMCP Á Châu (ACB) - PGD Bà Rịa 
+    valueStyle: "margin-left: 8px"
+  - value: 0800.1010.75.6868 - Ngân hàng TMCP Hàng Hải Việt Nam (MSB) - CN Vũng Tàu
+    valueStyle: "margin-left: 8px"
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  isInput: 
+  row:
+  - label: Họ tên người mua hàng
+    width: 539
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 636
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 672
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 705
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 541
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment

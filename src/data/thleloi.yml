@@ -1,0 +1,55 @@
+comFolder: 201207_THLeLoi_V5_AMTan
+comPattern: 02GTTT0/001
+isGTTT: true
+
+comName: TRƯỜNG TIỂU HỌC LÊ LỢI
+comCode: thleloi
+comTaxCode: 3501473210
+comRepresent: Phan Thị Thu Huyền
+comSerial: LL
+comAddress: Khu phố Quảng Phú, Phường Phú Mỹ, Thị xã Phú Mỹ, Tỉnh Bà Rịa-Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: &p 02543.876517
+
+comInvoiceNo: 0000000
+cssColor: "#185b9d"
+
+header:
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG - PHIẾU THU TIỀN
+    style: "font-size: 15.5px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-size: 12px; line-height: 1.4;"
+    styleConvert: "font-size: 12px; line-height: 1.4;"
+
+comInfo:
+  margin: 1
+  row:
+  - valueStyle: "font-weight: bold; font-size: 16px"
+    code: ComName
+  - label: MST
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: ĐC
+    code: ComAddress
+    valueStyle: "width: 310px; display: inline-block; vertical-align: top;"
+  - label: Điện thoại
+    value: *p
+  # - label: Số tài khoản
+  #   value: 
+cusInfo:
+  isInput: true
+  row:
+  - label: Họ và tên người nộp tiền
+    width: 664
+    code: Buyer
+  - label: Địa chỉ (lớp)
+    width: 737
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 685
+    code: Kind_of_Payment
+    isPayment: true
