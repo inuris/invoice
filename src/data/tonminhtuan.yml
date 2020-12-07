@@ -1,5 +1,6 @@
+comFolder: 200908_TonMinhTuan_V5_AMTrong
 comCode: tonminhtuan
-comSerial: AA
+comSerial: MT
 comName: CÔNG TY TNHH SẮT THÉP TÔN MINH TUẤN
 comTaxCode: 3502327861
 comAddress: Số 344, Quốc lộ 51, Tổ 2, Khu phố Nam Dinh, Phường Kim Dinh, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
@@ -60,27 +61,31 @@ comInfo:
     code: ComAddress
     sub: Address
     valueStyle: "font-size: 15px; letter-spacing: -0.3px;"
+  - label: Số tài khoản
+    sub: Account No.
+    value: 5601111868788 tại Ngân hàng MB - CN Bà Rịa
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
   labelWidth:
   labelStyle: 
+  isInput: 
   subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 672
+    width: 661
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 754
+    width: 741
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 752
+    width: 740
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 777
+    width: 763
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
@@ -90,4 +95,4 @@ cusInfo:
     sub: Method of Payment
     col-2:
       - label: Tài khoản
-        width: 370
+        width: 350
