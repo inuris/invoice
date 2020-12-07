@@ -5,7 +5,7 @@ comCode: lekim
 comTaxCode: 3501481123
 comRepresent: Lê Quế Lâm
 comSerial: LK
-comAddress: C18 Khu phố Chợ Mới - Thị trấn Long Điền - Huyện Long Điền - Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comAddress: C18 Khu phố Chợ Mới, Thị trấn Long Điền, Huyện Long Điền, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
 comPhone: &comPhone 0903972838
 
@@ -27,32 +27,34 @@ background_full:
 header:
   #logo
   logo:
-    file: 
+    file: logo.jpg
     width: 155
-    height: 73
-    left: 38
-    top: 10
+    left: 25
+    top: 5
+    bottom: 4
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     - value: Bản thể hiện của hóa đơn điện tử
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
+  margin: 4
   row:
   - label: Đơn vị bán hàng
     valueStyle: "font-weight: bold"
     code: ComName
   - label: Mã số thuế
-    valueStyle: "font-weight: bold"
+    valueStyle: "font-weight: bold; letter-spacing: 4px;"
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
     value: *comPhone
-  # - label: Số tài khoản
-  #   value: 
+  - label: Số tài khoản
+    isInput: 1
+    width: 680
 cusInfo:
-  margin: 2
+  margin: 4
   isInput: true
   row:
   - label: Họ tên người mua hàng
