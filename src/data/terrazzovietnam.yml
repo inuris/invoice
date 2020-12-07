@@ -5,7 +5,7 @@ comCode: terrazzovietnam
 comTaxCode: 3502437913
 comRepresent: Phạm Thị Thụy Uyên
 comSerial: VN
-comAddress: 51 đường 27/4, - Phường Phước Hiệp - Thành phố Bà Rịa - Bà Rịa - Vũng Tàu.
+comAddress: 51 đường 27/4, - Phường Phước Hiệp - Thành phố Bà Rịa - Bà Rịa - Vũng Tàu
 comSys: 1
 comPhone: &p 0983222822
 
@@ -39,6 +39,8 @@ comInfo:
     code: ComAddress
   - label: Điện thoại
     value: *p
+  - label: Số tài khoản
+    value: 0651006396789 Ngân Hàng Bình An Chi Nhánh Bà Rịa Tỉnh BRVT
 
 cusInfo:
   isInput: true
