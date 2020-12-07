@@ -1,3 +1,4 @@
+comFolder: 190927_TruongThinh_AMTuanAnh
 comCode: truongthinh
 comSerial: TT
 comName: CÔNG TY TNHH TƯ VẤN THIẾT KẾ VÀ KHẢO SÁT TRƯỜNG THỊNH
@@ -33,28 +34,28 @@ comInfo:
       isInput: true
       col-2:
         - label: tại
-          width: 553
+          width: 517
           code: CusBankNo
           isInput: true
 cusInfo:
   row:
-    - label: Họ tên người mua hàng
-      width: 616
-      code: Buyer
-    - label: Tên đơn vị
-      width: 710
-      code: CusName
-    - label: Mã số thuế
-      width: 708
-      code: CusTaxCode
-    - label: Địa chỉ
-      width: 737
-      code: CusAddress
-    - label: Hình thức thanh toán
-      width: 200
-      code: Kind_of_Payment
-      isPayment: true
-      col-2:
-        - label: Số tài khoản
-          width: 342
-          code: CusBankNo
+  - label: Họ tên người mua hàng
+    width: 601
+    code: Buyer
+  - label: Tên đơn vị
+    width: 695
+    code: CusName
+  - label: Mã số thuế
+    width: 692
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 723
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 308
+      code: CusBankNo
