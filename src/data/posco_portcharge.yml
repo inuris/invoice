@@ -26,7 +26,7 @@ background:
 header:
   #logo : file, width, top, left
   logo:
-    file: logo.jpg
+    file: logo.png
     width: 150
     top: 19
     left: 35

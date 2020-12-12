@@ -1,4 +1,4 @@
-{{#with posco}}
+{{#with posco_portcharge}}
 <!-- split {{comCode}}.xslt -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl js" xmlns="http://www.w3.org/1999/xhtml"
 xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
@@ -294,16 +294,16 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           {
           padding-right: 5px;
           text-align: right;
-		      height: 26px;
+		      min-height: 26px;
           }
           .VTU-VATTEMP .statistics tr td.back-bold2
           {
           font-size: 16px;
           border-bottom: 0;
-          height: 26px;
+          min-height: 26px;
           }
           .VTU-VATTEMP .statistics tr td.back-bold div, .VTU-VATTEMP .statistics tr td.back-bold2 div{
-            height: 26px;
+            min-height: 26px;
           }
           .VTU-VATTEMP .statistics tr td.back-bold3
           {
@@ -906,7 +906,57 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                       <i style="margin:0px;font-size:13px;">
                         <span>(Cần kiểm tra, đối chiếu khi lập, giao nhận hóa đơn)</span>
                       </i>
-                      {{>footer-trong}}
+                      <xsl:variable name="comTaxCode" select="/Invoice/Content/ComTaxCode" />
+{{#if isHSM}}
+  <xsl:variable name="portalV5" select="concat('https://','{{#if comDomain}}{{comDomain}}{{else}}{{comCode}}{{/if}}','.vnpt-invoice.com.vn')" />
+{{else}}          
+  <xsl:variable name="portalV5" select="concat('https://',$comTaxCode,'.vnpt-invoice.com.vn')" />
+{{/if}} 
+<xsl:choose>
+  <xsl:when test="/Invoice/Fkey !=''">
+    <div style="font-size:13px; text-align: left; margin-top: 4px;">
+      <p style="margin:0; color: {{cssColor}}">
+        <span>Mã tra cứu hóa đơn{{#if isEnglish}} <i style="font-size: 90%;">(Code for checking)</i>{{/if}}: 
+          <xsl:value-of select="/Invoice/Fkey" /></span>
+      </p>
+      <p style="margin:0;margin-top:2px; color: {{cssColor}}">
+        <span>Tra cứu hóa đơn điện tử tại website{{#if isEnglish}} <i style="font-size: 90%;">(Tracking) </i>{{/if}}:
+          <xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text>
+          <xsl:value-of select="$portalV5" /> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;
+          </xsl:text>
+          <xsl:value-of select="$portalV5" />
+          <xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
+        </span>
+      </p>
+    </div>
+  </xsl:when>
+  <xsl:otherwise>
+
+    <div style="font-size:13px; text-align: left; margin-top: 4px; padding-left:10px;">
+      <p style="margin:0; color: {{cssColor}}">
+        <span>Mã tra cứu hóa đơn{{#if isEnglish}} <i style="font-size: 90%;">(Code for checking)</i>{{/if}}: </span>
+      </p>
+      <p style="margin:0;margin-top:2px; color: {{cssColor}}">
+        <span>Tra cứu hóa đơn điện tử tại website{{#if isEnglish}} <i style="font-size: 90%;">(Tracking) </i>{{/if}}:
+          <xsl:text disable-output-escaping="yes">&lt;a href=</xsl:text>
+          <xsl:value-of select="$portalV5" /> style="color:#0066CC;" <xsl:text disable-output-escaping="yes">&gt;
+          </xsl:text>
+          <xsl:value-of select="$portalV5" />
+          <xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
+        </span>
+      </p>
+    </div>
+  </xsl:otherwise>
+</xsl:choose>
+
+<div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed;">
+<p style="margin:2px 0; color: {{cssColor}}">
+    Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu- Chi nhánh Tổng công ty Dịch vụ Viễn thông
+  </p>
+  <p style="margin:0px; color: {{cssColor}}">
+    MST: 0106869738-044
+  </p>
+</div>
 					  
 						
                       <!--panel footer-->
