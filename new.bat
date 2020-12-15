@@ -9,6 +9,7 @@ echo 6. Trong Dich vu (Song ngu)
 echo 7. Ban hang A5
 echo 8. Ban hang A4
 echo 9. Truong hoc
+echo 10. Thuy PM
 
 set /p t=Choose template:
 
@@ -21,6 +22,7 @@ if "%t%"=="6" set template=_template_trong_dichvu_songngu
 if "%t%"=="7" set template=_template_banhang_a5
 if "%t%"=="8" set template=_template_banhang
 if "%t%"=="9" set template=_template_truonghoc
+if "%t%"=="10" set template=_template_thuypm
 
 cls
 echo %template%
