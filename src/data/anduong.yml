@@ -1,3 +1,4 @@
+comFolder: 200831_AnDuong_V5_AMTrong
 comCode: anduong
 comSerial: AD
 comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN AN DƯƠNG
@@ -14,7 +15,7 @@ cssColor: "#3b7b43"
 #background : file, width, height, top, left
 background:
   file: bg.jpg
-  top: 535
+  top: 575
 #header
 header:
   #logo : file, width, top, left
@@ -47,7 +48,7 @@ comInfo:
   row:
   - label: Đơn vị bán hàng
     sub: Seller
-    code: ComName
+    value: CÔNG TY TRÁCH NHIỆM HỮU HẠN AN DƯƠNG
     style: "line-height: 18px;"
     valueStyle: "font-size: 18px; font-weight: 700"
   - label: Mã số thuế
@@ -74,32 +75,32 @@ cusInfo:
   subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 673
+    width: 661
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 755
+    width: 741
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 753
+    width: 740
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 778
+    width: 763
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 254
+    width: 253
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
     col-2:
       - label: Tài khoản
-        width: 370
+        width: 350
   - label: Đơn đặt hàng số / Dự án
-    width: 667
+    width: 654
     code: Extra1
   - label: Hợp đồng số
-    width: 742
+    width: 729
     code: Extra2
