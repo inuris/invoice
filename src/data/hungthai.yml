@@ -69,7 +69,7 @@ comInfo:
     sub: Account No.
     value: 08001010009779 tại Ngân Hàng TMCP Hàng Hải Việt Nam -CN Vũng Tàu
   - label: Email
-    value: info@hungthai.com.vn
+    value: info@htholdings.com.vn
     width: 250
     col-2:
       - label: Website
