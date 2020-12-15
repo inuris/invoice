@@ -10,7 +10,6 @@ echo 7. Ban hang A5
 echo 8. Ban hang A4
 echo 9. Truong hoc
 
-set /p code=Code name:
 set /p t=Choose template:
 
 if "%t%"=="1" set template=_template_tuananh_tan_binh
@@ -23,5 +22,11 @@ if "%t%"=="7" set template=_template_banhang_a5
 if "%t%"=="8" set template=_template_banhang
 if "%t%"=="9" set template=_template_truonghoc
 
-xcopy "src\pages\%template%" "src\pages\%code%" /s /i /y
-copy "src\data\%template%.yml" "src\data\%code%.yml" /y
+cls
+echo %template%
+set /p code=Code name:
+
+@xcopy "src\pages\%template%" "src\pages\%code%" /s /i /y
+@copy "src\data\%template%.yml" "src\data\%code%.yml" /y
+
+echo "Finished..."
