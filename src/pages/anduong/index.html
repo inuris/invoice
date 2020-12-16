@@ -71,19 +71,19 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
     <xsl:param name="count"/>
     <xsl:if test="$count > 0">
       <tr class="noline back">
-        <td class="back-bold" height="13px">
+        <td class="back-bold" height="26px">
           <xsl:value-of select="''"/>
         </td>
-        <td class="back-bold" height="13px">
+        <td class="back-bold">
           <xsl:value-of select="''"/>
         </td>
-        <td class="back-bold" height="13px">
+        <td class="back-bold">
           <xsl:value-of select="''"/>
         </td>
-        <td class="back-bold" height="13px">
+        <td class="back-bold">
           <xsl:value-of select="''"/>
         </td>
-        <td class="back-bold" height="13px">
+        <td class="back-bold">
           <xsl:value-of select="''"/>
         </td>
         <td class="back-bold" style="border-right:none;">
@@ -104,13 +104,6 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
         <title>VAT</title>
         <style type="text/css" rel="stylesheet">
           {{>css}}
-          html, body
-          {
-          margin: 0;
-          padding: 0;
-          height: 100%;
-          background-color: white;
-          }
           @page {
           size: "A4";
           margin-left: 5px;
@@ -207,9 +200,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           }
           .VTU-VATTEMP div label.fl-l, div label
           {
-          margin-right: 0;
-          margin-top: 3px;
-
+            margin-right: 0;
           }
           .VTU-VATTEMP .input-name, .input-date
           {
@@ -293,13 +284,13 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           {
           padding-right: 5px;
           text-align: right;
-		  height: 26px;
+		      min-height: 26px;
           }
           .VTU-VATTEMP .statistics tr td.back-bold2
           {
-			  font-size: 16px;
-			  border-bottom: 1px dotted {{cssColor}};
-			  height: 26px;
+          font-size: 16px;
+          border-bottom: 1px dotted {{cssColor}};
+          min-height: 26px;
           }
           .VTU-VATTEMP .statistics tr td.back-bold3
           {
@@ -353,7 +344,6 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           {
           float: left;
           min-height: 16px;
-
           }
           .bgimg
           {
@@ -405,7 +395,6 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 			.customerInfo .title{
 			}
 			.customerInfo .vt-row{
-			margin-bottom: 8px;
 			}
 			.InvInfoLeft{
 		  	text-align:center;

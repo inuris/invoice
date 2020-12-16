@@ -15,7 +15,7 @@ cssColor: "#3b7b43"
 #background : file, width, height, top, left
 background:
   file: bg.jpg
-  top: 575
+  top: 515
 #header
 header:
   #logo : file, width, top, left
@@ -69,6 +69,7 @@ comInfo:
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
+  margin: 4
   labelWidth: 
   isInput: true
   labelStyle: 
