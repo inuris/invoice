@@ -3,9 +3,9 @@
 <div style="position: relative; width: 100%;">
 	<div style="position: absolute;
 				{{#if top}}top:{{top}}px;{{else}}top: 500px;{{/if}}
-				{{#if left}}left:{{left}}px; {{else}}left: 50%; transform: translateX(-50%);{{/if}}
+				{{#if left}}left:{{left}}px; {{else}}left: 50%; -webkit-backface-visibility: hidden; -webkit-transform: translateX(-50%);-ms-transform: translateX(-50%); transform: translateX(-50%);{{/if}}
 				{{#if opacity}}opacity:{{opacity}};{{else}}opacity:0.2;{{/if}}">		
-		<img alt="bg" style="display: block; max-width: 100%;" src="{{../comCode}}/{{file}}"/>
+		<img alt="bg" style="display: block;" src="{{../comCode}}/{{file}}"/>
 	</div>
 </div>
 {{/if}} 
