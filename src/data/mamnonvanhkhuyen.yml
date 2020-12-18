@@ -1,0 +1,57 @@
+comFolder: 201218_MamNonVanhKhuyen_V5_AMBinh
+comPattern: 02GTTT0/001
+isGTTT: true
+
+comName: TRƯỜNG MẦM NON VÀNH KHUYÊN
+comCode: mamnonvanhkhuyen
+comTaxCode: 3501222954
+comRepresent: Nguyễn Thị Hồng Mỵ
+comSerial: VK
+comAddress: Ấp Quảng Giao, xã Xuân Sơn, huyện Châu Đức, Bà Rịa – Vũng Tàu, Việt Nam
+comSys: 1
+
+comInvoiceNo: 0000000
+cssColor: "#185b9d"
+
+header:
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG - PHIẾU THU TIỀN
+    style: "font-size: 18px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-size: 12px; line-height: 1.4;"
+    styleConvert: "font-size: 12px; line-height: 1.4;"
+
+comInfo:
+  row:
+  - label: Đơn vị thu tiền
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Số điện thoại
+    isInput: 1
+    value: 
+    width: 731
+  - label: Số tài khoản
+    isInput: 1
+    value: 
+    width: 734
+cusInfo:
+  isInput: true
+  row:
+  - label: Họ và tên người nộp tiền
+    width: 664
+    code: Buyer
+  - label: Địa chỉ (lớp)
+    width: 737
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 685
+    code: Kind_of_Payment
+    isPayment: true

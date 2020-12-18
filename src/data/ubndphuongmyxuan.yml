@@ -1,0 +1,79 @@
+comFolder: 201217_UBNDPhuongMyXuan_V5_AMTan
+comPattern: 02GTTT0/001
+isGTTT: true
+
+comName: ỦY BAN NHÂN DÂN PHƯỜNG MỸ XUÂN
+comCode: ubndphuongmyxuan
+comTaxCode: 3500118728
+comRepresent: LÊ THANH BÌNH 
+comSerial: MX
+comAddress: Quốc Lộ 51, Khu phố Bến Đình, Phường Mỹ Xuân, Thị xã Phú Mỹ, Tỉnh Bà Rịa - Vũng Tàu
+comSys: 1
+comPhone: &p 02543.931548
+comAccount: &a 9527.4.1020945 - tại KBNN Phú Mỹ - Bà Rịa Vũng Tàu
+
+### background: file, width, height, top, left, opacity
+background_full:
+  file: bg_full.png
+  top: 69 
+
+comInvoiceNo: 0000000
+cssColor: "#005cb3"
+cssFontFamily: "Times New Roman"
+comFkey: "..."
+convert:
+debug: 
+
+#background : file, width, height, top, left
+background:
+  file: 
+  top: 155
+#header
+header:
+  #logo
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG
+    style: "font-size: 27px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+
+
+comInfo:
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+    valueStyle: 
+  - label: Điện thoại
+    value: *p
+cusInfo:
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 619
+    code: Buyer
+  - label: Tên đơn vị
+    width: 700
+    code: CusName
+  - label: Mã số thuế
+    width: 699
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 723
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 195
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 337
+      code: CusBankNo

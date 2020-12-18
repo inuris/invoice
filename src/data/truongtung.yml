@@ -6,7 +6,7 @@ comRepresent: Nguyễn Trường Tùng
 comSerial: AA
 comAddress: Số 46/5 Lê Quang Định, Phường Thắng Nhất, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
-comPhone: &p 02543834696
+comPhone: &p (0254) 3834696
 
 comInvoiceNo: 0000000
 english:
@@ -67,7 +67,9 @@ comInfo:
     col-2:
       - label: Email
         labelWidth: 60
-        value: dntn.truongtung.vt@gmail.com
+        value: dntruongtung@gmail.com
+  - label: Số tài khoản
+    value: 0081000660556 Ngân hàng Vietcombank - Chi nhánh Vũng Tàu
   # - label: Số tài khoản
   #   value: 
 #cusInfo Table
