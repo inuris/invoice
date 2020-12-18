@@ -103,17 +103,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
         <!--<link href="styles.css" type="text/css" rel="stylesheet" />-->
         <title>VAT</title>
         <style type="text/css" rel="stylesheet">
-          {{>css}}
-          @page {
-          size: "A4";
-          margin-left: 5px;
-          margin-right: 5px;
-          }
-          @media print {
-          html, body {
-          margin-left: 5px;
-          margin-right: 5px;
-          }}
+          {{>css}}         
           #main
           {
           margin: 0 auto;
@@ -125,9 +115,12 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
             font-family: {{cssFontFamily}}, Times, serif;
             font-size: 14px;
           }
-          .VTU-VATTEMP span, .VTU-VATTEMP i, .VTU-VATTEMP b{
+          .VTU-VATTEMP span,.VTU-VATTEMP p, .VTU-VATTEMP i, .VTU-VATTEMP b, .VTU-VATTEMP label{
           color: {{cssColor}};
           font-family: {{cssFontFamily}};
+          }
+          .VTU-VATTEMP td span{
+            font-size: 16px;
           }
           .VTU-VATTEMP .header-main, .content
           {
@@ -282,13 +275,17 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           }
           .VTU-VATTEMP .statistics table .back-bold
           {
+          padding: 0;
           padding-right: 5px;
           text-align: right;
 		      min-height: 26px;
+          
           }
           .VTU-VATTEMP .statistics tr td.back-bold2
           {
+          padding: 0;
           font-size: 16px;
+          font-family: 'Times New Roman', Times, serif;
           border-bottom: 1px dotted {{cssColor}};
           min-height: 26px;
           }
@@ -351,6 +348,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           cursor: pointer;
           //width: 170px;
           }
+          
           .bgimg p
           {
           color: {{cssColor}};
@@ -379,7 +377,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 			.comInfo .title{
 		  	}
 			
-			
+			{{>background}}
 			/* ================ */
 		  	/* Customer Info*/
 
@@ -492,11 +490,11 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 <span>Tên hàng hóa, dịch vụ</span>
                                 {{#if english}}<br /><i style="font-size: 16px;font-weight: 400;">(Description)</i>{{/if}}
                               </th>
-                              <th style="width: 58px;">
+                              <th style="width: 95px;">
                                 <span>Đơn vị tính</span>
                                 {{#if english}}<br /><i style="font-size: 16px;font-weight: 400;">(Unit)</i>{{/if}}
                               </th>
-                              <th style="width: 58px;">
+                              <th style="width: 74px;">
                                 <span>Số lượng</span>
                                 {{#if english}}<br /><i style="font-size: 16px;font-weight: 400;">(Quantity)</i>{{/if}}
                               </th>
@@ -531,7 +529,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                             </tr>
                             <xsl:for-each select="..//../Products/Product[  ($level1Count  + 10)  >= position() and  position() >  $level1Count]">
                               <tr class="noline back vat-product">
-                                <td class="back-bold2" style="text-align:center;">
+                                <td class="back-bold2" style="text-align:center;" height="26px">
                                   <div style="display: block;">
                                     <xsl:choose>
                                       <xsl:when test="Remark=''">
@@ -618,13 +616,14 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 </xsl:if>
 
                                 <tr  class="noline back" style="border-top: 1px solid {{cssColor}};">
-                                  <td class="back-bold" colspan="5" style="padding-left: 0px;text-align: right!important;border-bottom:none !important;border-right: 1px solid {{cssColor}}">
+                                  <td height="26px" class="back-bold" colspan="5" style="padding-left: 0px;text-align: right!important;border-bottom:none !important;border-right: 1px solid {{cssColor}}">
                                     <label>
-                                      <span style="font-weight:bold;font-size:16px;">Cộng tiền hàng{{#if english}} <i style="font-size: 16px;font-weight:normal;">(Sub total)</i>{{/if}}:</span>
+                                      <span style="font-weight:bold;">Cộng tiền hàng{{#if english}} <i style="font-size: 16px;font-weight:normal;">(Sub total)</i>{{/if}}:</span>
                                     </label>
                                   </td>
                                   <td style="text-align: right; border-left:none !important;border-right:none;">
                                     <label class="fl-l" style="float: right;width:100%; font-weight: 700;">
+                                      <span>
                                       <xsl:choose>
                                         <xsl:when test="(../../Total!='' and ../../Total!=0)">
                                           <!-- fix new-->
@@ -634,13 +633,15 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                           &#160;
                                         </xsl:otherwise>
                                       </xsl:choose>
+                                    </span>
                                     </label>
                                   </td>
                                 </tr>
                                 <tr class="noline back" style="border-top: 1px solid {{cssColor}}; ">
-                                  <td colspan="5" style="text-align: right; border-right: 1px solid {{cssColor}}">
+                                  <td height="26px" colspan="5" style="text-align: right; border-right: 1px solid {{cssColor}}">
                                     <label class="fl-l" style="line-height:20px; text-align:left;">
-                                      <span style="font-weight:bold;font-size:16px">Thuế suất GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Rate)</i>{{/if}}:</span>
+                                      <span style="font-weight:bold;">Thuế suất GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Rate)</i>{{/if}}:</span>
+                                      <span>
                                       <xsl:choose>
                                         <xsl:when test="../../VAT_Rate!=''">
                                         <xsl:choose>
@@ -655,14 +656,16 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                         <xsl:otherwise>
                                         &#160; %
                                         </xsl:otherwise>
-                                      </xsl:choose>                                      
+                                      </xsl:choose>
+                                      </span>                                    
                                     </label>
                                     <label class="fl-l" style="line-height:20px; float:right">
-                                        <span style="font-weight:bold;font-size:16px;">Tiền thuế GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Amount)</i>{{/if}}:</span>
+                                        <span style="font-weight:bold;;">Tiền thuế GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Amount)</i>{{/if}}:</span>
                                     </label>
                                   </td>
                                   <td style="border-left: 0;border-right:0px;">
                                     <label class="fl-l" style="float: right!important;width:100%;; text-align: right; font-weight: 700">
+                                      <span>
                                       <xsl:choose>
                                         <xsl:when test="../../VAT_Amount='0'">
                                           <xsl:choose>
@@ -683,37 +686,39 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                           &#160;
                                         </xsl:otherwise>
                                       </xsl:choose>
-                                      
+                                    </span>
                                     </label>
                                   </td>
                                 </tr>
                                 <tr class="noline back" style="border-top: 1px solid {{cssColor}}; border-bottom: 1px solid {{cssColor}};">
-                                  <td colspan="5" class="back-bold" style="text-align: left; border-right: 1px solid {{cssColor}}">
-                                    <label style="line-height:20px;float: right!important;font-size:16px;">
+                                  <td height="26px" colspan="5" class="back-bold" style="text-align: left; border-right: 1px solid {{cssColor}}">
+                                    <label style="line-height:20px;float: right!important;;">
                                       <span><b>Tổng cộng tiền thanh toán{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Total payment)</i>{{/if}}:</b></span>
                                     </label>
                                   </td>
                                   <td  colspan="3" style="border-left: 0;border-right:0px;">
                                     <label class="fl-l" style="float: right;width: 100%;text-align: right; font-weight: 700">
-                                      <xsl:choose>
-                                        <xsl:when test="(../../Amount!='' and ../../Amount!=0)">
-                                          <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                          &#160;
-                                        </xsl:otherwise>
-                                      </xsl:choose>
+                                      <span>
+                                        <xsl:choose>
+                                          <xsl:when test="(../../Amount!='' and ../../Amount!=0)">
+                                            <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                          </xsl:when>
+                                          <xsl:otherwise>
+                                            &#160;
+                                          </xsl:otherwise>
+                                        </xsl:choose>
+                                      </span>
                                     </label>
                                   </td>
                                 </tr>
                                 <tr class="noline back" style="border-top: 1px solid {{cssColor}}; border-bottom: 1px solid {{cssColor}};">
-                                  <td colspan="6" style="padding-right: 0px;padding-top: 8px; padding-bottom: 4px;border-right:0px;">
+                                  <td height="26px" colspan="6" style="padding-right: 0px;padding-top: 8px; padding-bottom: 4px;border-right:0px;">
                                     <div class="clearfix">
                                       <label class="fl-l2">
-                                        <span style="font-weight:bold;font-size:16px;">Số tiền viết bằng chữ{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>{{/if}}:</span>
+                                        <span style="font-weight:bold;">Số tiền viết bằng chữ{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>{{/if}}:</span>
                                       </label>
-                                      <label class="fl-l" style="width:687px; text-align: left; font-weight: 700">
-                                        <span style="font-size:15px; font-family: Arial; color: #111">
+                                      <label class="fl-l" style="width:687px; text-align: left;">
+                                        <span>
                                           <xsl:choose>
                                             <xsl:when test="../../Amount_words!=''">
                                               &#160;  <xsl:value-of select="../../Amount_words"/>
@@ -826,7 +831,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 													</b>
                           {{#if english}}<i style="font-size: 100%;">(Seller)</i>{{/if}}
 												</p>
-												{{>sign enter=true}}
+												{{>sign enter=true width=297}}
 											</td>
                     </tr>
                     <tr>
@@ -891,7 +896,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
               <span>(Cần kiểm tra, đối chiếu khi lập, giao nhận hóa đơn)</span>
             </i>
         
-            <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed; padding: 5px;">
+            <div style="font-size:13px; text-align: center; margin-top: 4px;border-top:1px dashed {{cssColor}}; padding: 5px;">
             {{>footer}}
 					  <span>Đơn vị cung cấp giải pháp hóa đơn điện tử: Trung tâm Kinh doanh VNPT Bà Rịa-Vũng Tàu - MST: 0106869738-044, Hotline đăng ký dịch vụ: 0913 759 468
                            
