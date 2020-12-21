@@ -1,0 +1,80 @@
+comFolder: 201221_NgocHoan_V5_AMLieu
+
+comName: DOANH NGHIỆP TƯ NHÂN NGỌC HOÀN
+comCode: ngochoan
+comTaxCode: 3501521577
+comRepresent: Nguyễn Văn Hoàn
+comSerial: NH
+comAddress: Tổ 1, ấp Hải Sơn, Xã Phước Hưng, Huyện Long Điền, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: &p 0918266714
+comQty: 300
+
+
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+
+### background: file, width, height, top, left, opacity
+background:
+  file:
+  top: 500
+
+### background: file, width, height, top, left, opacity
+background_full:
+  file: bg_full.png
+  top: 69 
+#header
+header:
+  #logo
+  logo:
+    file:
+    width: 150
+    height: 73
+    left: 38
+    top: 10
+  name:
+    - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    - value: Bản thể hiện của hóa đơn điện tử
+      valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+      style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+comInfo:
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: *p
+  - label: Số tài khoản
+    value: 
+    isInput: 1
+    width: 680
+cusInfo:
+  margin: 2
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 599
+    code: Buyer
+  - label: Tên đơn vị
+    width: 693
+    code: CusName
+  - label: Mã số thuế
+    width: 689
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 719
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 195
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 310
+      code: CusBankNo
