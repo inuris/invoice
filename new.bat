@@ -10,6 +10,7 @@ echo 7. Ban hang A5
 echo 8. Ban hang A4
 echo 9. Truong hoc
 echo 10. Thuy PM
+echo 11. Dung (Song ngu)
 
 set /p t=Choose template:
 
@@ -23,7 +24,7 @@ if "%t%"=="7" set template=_template_banhang_a5
 if "%t%"=="8" set template=_template_banhang
 if "%t%"=="9" set template=_template_truonghoc
 if "%t%"=="10" set template=_template_thuypm
-
+if "%t%"=="11" set template=_template_dung_songngu
 cls
 echo %template%
 set /p code=Code name:
