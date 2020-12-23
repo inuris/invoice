@@ -1,0 +1,108 @@
+comFolder: 201223_DVTVGiamDinhViet_V5_AMOanh
+
+comName: CÔNG TY CỔ PHẦN DỊCH VỤ TƯ VẤN GIÁM ĐỊNH VIỆT
+comCode: dvtvgiamdinhviet
+comTaxCode: 3502249645
+comRepresent: TRẦN VY PHÚ
+comSerial: VN
+comAddress: Số 34/1/4 Hoàng Hoa Thám, phường 2, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: &p 02543531052
+comAccount: &a 19028100247014 tại Ngân hàng TMCP Kỹ Thương Việt Nam – Chi nhánh VTU – TCB VŨNG TÀU
+comQty: 300
+
+comInvoiceNo: 0000000
+english: true
+debug: 
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+### background: file, width, height, top, left, opacity
+background_full:
+  file: 
+  top: 69 
+#background : file, width, height, top, left
+background:
+  file: 
+  top: 500
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file:
+    width: 120
+    top: 5
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 220
+    labelStyle: "display: block; width: 100px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 6
+  labelWidth: 172
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Điện thoại
+    sub: Tel
+    value: *p
+  - label: Số tài khoản
+    sub: Account No.
+    value: *a
+    valueStyle: "font-size: 15.5px; letter-spacing: -0.2px"
+  - label: Email
+    value: giamdinhviet@gmail.com
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth: 
+  isInput: true
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    width: 542
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 639
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 676
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 709
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 545
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
