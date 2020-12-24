@@ -8,7 +8,7 @@
 	{{#ifCond debug '==' 1}}
 	<ArisingDate/>
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/20E</SerialNo>
+	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}20E{{/if}}</SerialNo>
 	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
 	<Kind_of_Payment>TM</Kind_of_Payment>
 	<ComName>{{comName}}</ComName>
@@ -275,7 +275,7 @@
 	{{#ifCond debug '==' 2}}
 	<ArisingDate>21/08/2020 09:42:29</ArisingDate>
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/20E</SerialNo>
+	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}20E{{/if}}</SerialNo>
 	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
 	<Kind_of_Payment>TM</Kind_of_Payment>
 	<ComName>{{comName}}</ComName>
@@ -331,7 +331,7 @@
 	{{#ifCond debug '==' null}}
 	<ArisingDate/>
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/20E</SerialNo>
+	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}20E{{/if}}</SerialNo>
 	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
 	<Kind_of_Payment></Kind_of_Payment>
 	<ComName>{{comName}}</ComName>
@@ -400,7 +400,7 @@
 	{{#ifCond debug '==' 1}}
 	<ArisingDate/>
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/20E</SerialNo>
+	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}20E{{/if}}</SerialNo>
 	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
 	<Kind_of_Payment>TM</Kind_of_Payment>
 	<ComName>{{comName}}</ComName>
@@ -456,7 +456,7 @@
 	{{#ifCond debug '==' 2}}
 	<ArisingDate>21/08/2020 09:42:29</ArisingDate>
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/20E</SerialNo>
+	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}20E{{/if}}</SerialNo>
 	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
 	<Kind_of_Payment>TM</Kind_of_Payment>
 	<ComName>{{comName}}</ComName>
@@ -512,7 +512,7 @@
 	{{#ifCond debug '==' null}}
 	<ArisingDate/>
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/20E</SerialNo>
+	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}20E{{/if}}</SerialNo>
 	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
 	<Kind_of_Payment></Kind_of_Payment>
 	<ComName>{{comName}}</ComName>
