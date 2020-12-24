@@ -1,5 +1,5 @@
 comFolder: 201117_Posco_V5_AMTrong
-
+comYear: 21
 comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN POSCO - VIỆT NAM
 comCode: posco
 comDomain: poscovietnam
@@ -17,11 +17,11 @@ convert:
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#111"
-
+debug: 
 #background : file, width, height, top, left
 background:
   file: bg.png
-  top: 544
+  top: 504
 #header
 header:
   #logo : file, width, top, left
@@ -42,7 +42,7 @@ header:
     subStyle: "font-size: 13px; line-height: 1.4;"    
   serial:
     width: 220
-    labelStyle: "display: block; width: 100px; float: left"
+    labelStyle: "display: block; width: 105px; float: left"
 #comInfo Table
 comInfo:
   style: "font-weight: 700; font-size: 16px"
@@ -75,6 +75,7 @@ cusInfo:
   labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
   isInput:
+  margin: 6
   row:
   - label: Họ tên người mua hàng
     width: 543
