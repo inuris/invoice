@@ -67,7 +67,7 @@ comInfo:
     col-2:
       - label: Email
         labelWidth: 60
-        value: dntruongtung@gmail.com
+        value: dntn.truongtung.vt@gmail.com
   - label: Số tài khoản
     value: 0081000660556 Ngân hàng Vietcombank - Chi nhánh Vũng Tàu
   # - label: Số tài khoản
