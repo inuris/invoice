@@ -29,12 +29,23 @@ cls
 echo %template%
 set /p code=Code name:
 
+echo "Generating YML..."
 echo comCode: %code%>"src\data\%code%.yml"
 type "src\data\%template%.yml">>"src\data\%code%.yml"
 
+echo "Generating HTML..."
 xcopy "src\pages\%template%" "src\pages\%code%" /s /i /y
 echo {{#with %code%}}>"src\pages\%code%\index.html"
 type "src\pages\%template%\index.template">>"src\pages\%code%\index.html"
 del "src\pages\%code%\index.template"
+
+echo "Generating shortcut..."
+echo Set oWS = WScript.CreateObject("WScript.Shell") > CreateShortcut.vbs
+echo sLinkFile = "src\pages\%code%\dist.lnk" >> CreateShortcut.vbs
+echo Set oLink = oWS.CreateShortcut(sLinkFile) >> CreateShortcut.vbs
+echo oLink.TargetPath = "dist\%code%" >> CreateShortcut.vbs
+echo oLink.Save >> CreateShortcut.vbs
+cscript CreateShortcut.vbs
+del CreateShortcut.vbs
 
 echo "Finished..."
