@@ -204,16 +204,3 @@ br + br { display: none; }
   </script>
 </body>
 </html>
-{{#if comFolder}}
-<!-- split copy.bat -->
-md "{{@root.config.folder}}\\{{comFolder}}"
-copy "{{comCode}}.xml" "{{@root.config.folder}}\\{{comFolder}}"
-copy "{{comCode}}.xslt" "{{@root.config.folder}}\\{{comFolder}}"
-echo Set oWS = WScript.CreateObject("WScript.Shell") > CreateShortcut.vbs
-echo sLinkFile = "{{comFolder}}.lnk" >> CreateShortcut.vbs
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> CreateShortcut.vbs
-echo oLink.TargetPath = "{{@root.config.folder}}\\{{comFolder}}" >> CreateShortcut.vbs
-echo oLink.Save >> CreateShortcut.vbs
-cscript CreateShortcut.vbs
-del CreateShortcut.vbs
-{{/if}}
