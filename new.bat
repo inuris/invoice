@@ -41,21 +41,33 @@ echo {{#with %code%}}>"src\pages\%code%\index.html"
 type "src\pages\%template%\index.template">>"src\pages\%code%\index.html"
 del "src\pages\%code%\index.template"
 
-
 echo "Generating copy.bat..."
-(
-echo md "%rootPublish%\%publish%"
-echo copy "..\..\..\dist\%code%\%code%.xml" "%rootPublish%\%publish%"
-echo copy "..\..\..\dist\%code%\%code%.xslt" "%rootPublish%\%publish%"
-)>"src\pages\%code%\copy.bat"
+
+echo set /p rootPublish=^<..\..\..\copy.cfg>"src\pages\%code%\copy.bat"
+echo md "%%rootPublish%%\%publish%">>"src\pages\%code%\copy.bat"
+echo copy "..\..\..\dist\%code%\%code%.xml" "%%rootPublish%%\%publish%">>"src\pages\%code%\copy.bat"
+echo copy "..\..\..\dist\%code%\%code%.xslt" "%%rootPublish%%\%publish%">>"src\pages\%code%\copy.bat"
+echo echo Set oWS = WScript.CreateObject("WScript.Shell")^>CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
+echo echo Set oLink = oWS.CreateShortcut("%publish%.lnk")^>^>CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
+echo echo oLink.TargetPath = "%%rootPublish%%\%publish%"^>^>CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
+echo echo oLink.Save^>^>CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
+echo cscript CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
+echo del CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
 
 echo "Generating shortcut..."
+
 echo Set oWS = WScript.CreateObject("WScript.Shell")>CreateShortcut.vbs
-echo Set oLink = oWS.CreateShortcut("src\pages\%code%\%publish%.lnk")>>CreateShortcut.vbs
-echo oLink.TargetPath = "%rootPublish%\%publish%">>CreateShortcut.vbs
-echo oLink.Save>>CreateShortcut.vbs
+echo Set oLinkIE = oWS.CreateShortcut("src\pages\%code%\ie.lnk")>>CreateShortcut.vbs
+echo oLinkIE.TargetPath = "C:\Program Files\Internet Explorer\iexplore.exe">>CreateShortcut.vbs
+echo oLinkIE.Arguments = "http://localhost:8000/%code%">>CreateShortcut.vbs
+echo oLinkIE.WorkingDirectory = "C:\Program Files\Internet Explorer"
+echo oLinkIE.IconLocation = "\\Network\NETLOGON\People_Network_Icon.ico, 0"
+echo oLinkIE.Save>>CreateShortcut.vbs
+
 cscript CreateShortcut.vbs
 del CreateShortcut.vbs
+
+
 
 echo "Finished..."
 

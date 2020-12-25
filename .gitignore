@@ -6,3 +6,4 @@ dist
 backup
 *.swp
 copy.cfg
+*.lnk
