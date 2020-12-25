@@ -1,11 +1,10 @@
-comFolder: 
-comCode: _template_tuananh_tan_binh_dichvu
-
 comSerial: TN
 comName: CÔNG TY 
 comTaxCode: 350
 comAddress: BRVT
 comRepresent: 
+
+comFolder: 
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial

@@ -1,4 +1,3 @@
-{{#with _template_truonghoc}}
 <!-- split {{comCode}}.xslt -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"    xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl js" xmlns="http://www.w3.org/1999/xhtml"
 xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
@@ -460,7 +459,6 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                   </div>
                   <div class="statistics"  style="float:left;">
                     <div class="nenhd">
-                      {{>background_2}}
                       <table width="100%" cellspacing="0" cellpadding="0" style="width:834px !important;">
                         <thead>
                           <xsl:for-each select="/Invoice//Content">
@@ -469,9 +467,9 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 <table cellspacing="0" cellpadding="0" style="width:100%;">
                                   <tr style="line-height:17px;">
                                     <td style="color: {{cssColor}};padding-left: 10px;" >
-                                      
+                                      {{>info data=comInfo relative=true}}
                                     </td>
-                                    <td style="text-align:center;width:57%;">
+                                    <td style="text-align:center;width:34%;">
                                       {{>header-name relative=true}}
                                       <xsl:if test="$itemCount &gt; $itemperpage">
                                         <label style=" display: block; color:#000000">
@@ -494,15 +492,11 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 <table style="float: left;font-size:13px;width:100%;color:{{cssColor}};">                                  
                                   <tr style="border-top:1px solid;">
                                     <td colspan="6" style=" border-left: none!important;border-right: none!important;padding-left:10px;padding-top: 5px;">
-                                      {{>info data=comInfo relative=true}}
-                                    </td>
-                                  </tr>
-                                </table>
-                                <table style="float: left;font-size:13px;width:100%;color:{{cssColor}};">                                  
-                                  <tr style="border-top:1px solid;">
-                                    <td colspan="6" style=" border-left: none!important;border-right: none!important;padding-left:10px;padding-top: 5px;">
                                       {{>info data=cusInfo relative=true}}
                                     </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="height: 5px;border: none;"></td>
                                   </tr>
                                 </table>
                               </td>
@@ -563,12 +557,12 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 </div>
                               </td>
                               <td class="back-bold2">
-                                <div style="display: block;word-wrap: break-word;text-align: center;  overflow: hidden;">
+                                <div style="display: block;word-wrap: break-word;text-align: center; overflow: hidden;">
                                   <xsl:value-of select="ProdUnit"/>
                                 </div>
                               </td>
                               <td class="back-bold">
-                                <div style="display: block;word-wrap: break-word;text-align: center;  overflow: hidden;">
+                                <div style="display: block;word-wrap: break-word;text-align: center; overflow: hidden;">
                                   <xsl:choose>
                                     <xsl:when test="(ProdQuantity='') or(ProdQuantity=0)">
                                       &#160;
@@ -620,7 +614,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                     <tr style="border-top:1px solid {{cssColor}};">
                                       <td colspan="2" style="vertical-align: top;border:none;padding-top:5px;color: {{cssColor}}; width: 35%">
                                         <div style="padding-left: 50px; padding-bottom: 4px;">
-                                          Người nộp tiền
+                                          Người mua hàng
                                         </div>
                                         <div style="padding-left: 50px;">
                                           <i>(Ký, ghi rõ họ tên)</i>
@@ -668,7 +662,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                           <xsl:value-of select="../../InvoiceNo"/>
                                           </xsl:variable>
                                           <div style="text-align: right;padding-right: 100px;padding-bottom:4px;color:{{cssColor}};">
-                                            Đơn vị thu tiền
+                                            Người bán hàng
                                           </div>
                                           {{>sign-eng}}
                                         </p>

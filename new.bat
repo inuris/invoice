@@ -29,7 +29,12 @@ cls
 echo %template%
 set /p code=Code name:
 
-@xcopy "src\pages\%template%" "src\pages\%code%" /s /i /y
-@copy "src\data\%template%.yml" "src\data\%code%.yml" /y
+echo comCode: %code%>"src\data\%code%.yml"
+type "src\data\%template%.yml">>"src\data\%code%.yml"
+
+xcopy "src\pages\%template%" "src\pages\%code%" /s /i /y
+echo {{#with %code%}}>"src\pages\%code%\index.html"
+type "src\pages\%template%\index.template">>"src\pages\%code%\index.html"
+del "src\pages\%code%\index.template"
 
 echo "Finished..."

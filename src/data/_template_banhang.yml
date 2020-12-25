@@ -1,9 +1,4 @@
-comFolder: 
-comPattern: 02GTTT0/001
-isGTTT: true
-
 comName: DOANH NGHIỆP
-comCode: _template_banhang
 comTaxCode: 3502228042
 comRepresent: 
 comSerial: AA
@@ -11,6 +6,9 @@ comAddress:
 comSys: 1
 comPhone: &p 0254
 
+comFolder: 
+comPattern: 02GTTT0/001
+isGTTT: true
 
 comInvoiceNo: 0000000
 cssColor: "#005cb3"

@@ -1,13 +1,12 @@
-comFolder: 
-comCode: _template_trong_truonghoc
-comPattern: 02GTTT0/001
-isGTTT: true
-
-comSerial: SM
 comName: PHÒNG
+comSerial: SM
 comTaxCode: 3500
 comAddress: Số
-comRepresent: 
+comRepresent:
+
+comFolder: 
+comPattern: 02GTTT0/001
+isGTTT: true
 
 comInvoiceNo: 0000000
 convert: 

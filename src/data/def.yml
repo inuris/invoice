@@ -1,3 +1,4 @@
+comCode: def 
 comSerial: GA
 comName: CÔNG TY TNHH
 comTaxCode: 3
@@ -9,17 +10,30 @@ comFolder:
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
+
+### background: file, width, height, top, left, opacity
+background:
+  file: bg.png
+  top: 500
+
+### background: file, width, height, top, left, opacity
+background_full:
+  file: bg_full.png
+  top: 69 
 #header
 header:
   #logo
   logo:
-    width: 150
+    file: logo.png
+    width: 135
+    height: 73
+    left: 38
+    top: 10
   name:
-  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "font-size: 27px"
-  - value: Bản thể hiện của hóa đơn điện tử
-    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
-    style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+    - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    - value: Bản thể hiện của hóa đơn điện tử
+      valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+      style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
   row:
   - label: Đơn vị bán hàng
@@ -30,35 +44,31 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-  - label: STK
-    width: 180
-    code: ComBankNo
-    isInput: true
-    col-2:
-    - label: tại
-      width: 518
-      code: ComBankName
-      isInput: true
+  - label: Điện thoại
+    value: 
+  - label: Số tài khoản
+    value: 
 cusInfo:
+  margin: 2
   isInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 601
+    width: 599
     code: Buyer
   - label: Tên đơn vị
-    width: 695
+    width: 693
     code: CusName
   - label: Mã số thuế
-    width: 692
+    width: 689
     code: CusTaxCode
   - label: Địa chỉ
-    width: 723
+    width: 719
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 200
+    width: 195
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 308
+      width: 310
       code: CusBankNo

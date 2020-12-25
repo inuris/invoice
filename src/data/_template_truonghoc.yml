@@ -1,13 +1,12 @@
-comFolder: 
-comCode: _template_truonghoc
 comPattern: 02GTTT0/001
 isGTTT: true
-
 comSerial: GA
 comName: TRƯỜNG
 comTaxCode: 3
 comAddress: BR-VT
-comRepresent: 
+comRepresent:
+
+comFolder: 
 
 comInvoiceNo: 0000000
 cssColor: "#185b9d"

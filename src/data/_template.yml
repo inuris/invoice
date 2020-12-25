@@ -13,7 +13,9 @@ xml:                                      # bổ sung thêm tag XML
 debug:                                    # 1: test data VND, 2: test data USD
 english:                                  # true: hóa đơn song ngữ
 isHSM:                                    # true: hóa đơn HSM (thay link tra cứu)
-
+comPattern: 02GTTT0/001                   # đổi mẫu
+comYear: 21                               # đổi mã /21E
+isGTTT: true                              # true: hóa đơn bán hàng (đổi mục Cộng tổng tiền hàng)
 
 ### global CSS style: cssFontFamily, cssColor
 cssFontFamily: Arial

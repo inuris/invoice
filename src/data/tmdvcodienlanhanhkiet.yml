@@ -1,10 +1,11 @@
+comFolder: 
+comCode: _template_tuananh_tan_binh
+
 comSerial: GA
 comName: CÔNG TY TNHH
 comTaxCode: 3
 comAddress: BR-VT
 comRepresent: 
-
-comFolder: 
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial

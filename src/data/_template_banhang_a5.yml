@@ -1,12 +1,10 @@
-comFolder: 
-
-comCode: _template_banhang_a5
 comSerial: AA
 comName: CÔNG TY
 comTaxCode: 350
 comAddress: BRVT
 comRepresent: 
 
+comFolder: 
 comInvoiceNo: 0000000
 cssColor: "#005cb3"
 comFkey: "..."

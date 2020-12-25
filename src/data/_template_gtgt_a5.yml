@@ -1,11 +1,10 @@
-comFolder: 
-comCode: _template_gtgt_a5
-
 comSerial: AA
 comName: CÔNG TY
 comTaxCode: 350
 comAddress: BRVT
 comRepresent: 
+
+comFolder:
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
