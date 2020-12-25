@@ -13,16 +13,16 @@ cssColor: "#111"
 
 #background : file, width, height, top, left
 background:
-  file:
-  top: 480
+  file: bg.png
+  top: 527
 #header
 header:
   #logo : file, width, top, left
   logo:
-    file:
-    width: 120
+    file: logo.png
+    width: 150
     top: 5
-    left: 35
+    left: 25
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 22px"
@@ -62,7 +62,7 @@ comInfo:
     value: 0254 3511955 - 3626162
   - label: Số tài khoản
     sub: Account No.
-    value: 76010000278560 tại Ngân hàng BIDV - CN Vũng Tàu
+    value: 6090201019435 tại ngân hàng Agribank - CN Vũng Tàu
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"
