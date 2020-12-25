@@ -1,20 +1,31 @@
-comFolder: 
-comCode: _template_tuananh_tan_binh
+comFolder: 201224_TMDVCoDienLanhAnhKiet_V5_AMMinh
 
-comSerial: GA
-comName: CÔNG TY TNHH
-comTaxCode: 3
-comAddress: BR-VT
-comRepresent: 
+comName: CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ CƠ ĐIỆN LẠNH ANH KIỆT
+comCode: tmdvcodienlanhanhkiet
+comTaxCode: 3502137980
+comRepresent: ĐOÀN TUẤN ANH
+comSerial: AK
+comAddress: Số 22/36C Chi Lăng, Phường 12, Thành phố Vũng Tàu, Tỉnh Bà Rịa Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: &p 0254 3627729
+comAccount: &a 08001010058955 tại TMCP Hàng Hải Việt Nam - Chi nhánh Vũng Tàu
+comQty: 2000
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
-cssColor: "#005cb3"
+cssColor: "#111"
+background:
+  file: bg.jpg
+  top: 505
 #header
 header:
   #logo
   logo:
+    file: logo.jpg
     width: 150
+    top: 5
+    left: 25
+    bottom: 5
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 27px"
@@ -31,15 +42,10 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-  - label: STK
-    width: 180
-    code: ComBankNo
-    isInput: true
-    col-2:
-    - label: tại
-      width: 518
-      code: ComBankName
-      isInput: true
+  - label: Điện thoại
+    value: *p
+  - label: Số tài khoản
+    value: *a
 cusInfo:
   isInput: true
   row:
