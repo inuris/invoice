@@ -1,5 +1,5 @@
 @echo off
-set rootPublish=D:\Nodejs\VNPT-MauHoaDonDienTu
+set /p rootPublish=<copy.cfg
 cls
 echo 1. TuanAnh_Tan_Binh
 echo 2. Lieu_Khanh

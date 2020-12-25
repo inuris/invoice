@@ -5,5 +5,4 @@ bower_components
 dist
 backup
 *.swp
-.cache
-.idea
+copy.cfg
