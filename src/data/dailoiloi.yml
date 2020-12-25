@@ -21,17 +21,17 @@ background:
 
 ### background: file, width, height, top, left, opacity
 background_full:
-  file: bg_full.png
+  file: 
   top: 69 
 #header
 header:
   #logo
   logo:
-    file:
-    width: 135
-    height: 73
-    left: 38
+    file: logo.jpg
+    width: 150
+    left: 25
     top: 10
+    bottom: 10
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     - value: Bản thể hiện của hóa đơn điện tử
