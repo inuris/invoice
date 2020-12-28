@@ -1,30 +1,48 @@
-<label class="input-code">
-    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ComTaxCode,1,1)"/>
+<label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; border-right: 0">
+    <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},1,1)"/>
 </label>
-<label class="input-code">
-    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ComTaxCode,2,1)"/>
+<label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; margin-right: 10px">
+    <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},2,1)"/>
 </label>
-<label class="input-code">
-    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ComTaxCode,3,1)"/>
+<label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; border-right: 0">
+    <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},3,1)"/>
 </label>
-<label class="input-code">
-    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ComTaxCode,4,1)"/>
+<label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; border-right: 0">
+    <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},4,1)"/>
 </label>
-<label class="input-code">
-    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ComTaxCode,5,1)"/>
+<label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; border-right: 0">
+    <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},5,1)"/>
 </label>
-<label class="input-code">
-    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ComTaxCode,6,1)"/>
+<label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; border-right: 0">
+    <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},6,1)"/>
 </label>
-<label class="input-code">
-    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ComTaxCode,7,1)"/>
+<label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; border-right: 0">
+    <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},7,1)"/>
 </label>
-<label class="input-code">
-    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ComTaxCode,8,1)"/>
+<label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; margin-right: 10px">
+    <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},8,1)"/>
 </label>
-<label class="input-code">
-    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ComTaxCode,9,1)"/>
+<label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; margin-right: 10px">
+    <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},9,1)"/>
 </label>
-<label class="input-code">
-    <xsl:value-of select="substring({{#unless relative}}../../{{/unless}}ComTaxCode,10,1)"/>
+<label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; border-right: 0">
+    <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},10,1)"/>
 </label>
+{{#unless this.maxLength}}
+<xsl:choose>
+    <xsl:when test="string-length({{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}})&gt;11">
+{{/unless}}
+        <label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; border-right: 0">
+            <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},12,1)"/>
+        </label>
+        <label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; margin-right: 10px">
+            <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},13,1)"/>
+        </label>
+        <label maxlength="1" style="border: 1px solid {{cssColor}}; float: left; text-align: center; margin-right:0px; width: 20px; height: 24px;padding:3px 0;margin-top:-4px; ">
+            <xsl:value-of select="substring({{#unless this.relative}}../../{{/unless}}{{#if this.code}}{{this.code}}{{else}}ComTaxCode{{/if}},14,1)"/>
+        </label>
+{{#unless this.maxLength}}
+    </xsl:when>
+    <xsl:otherwise></xsl:otherwise>
+</xsl:choose>
+{{/unless}}
