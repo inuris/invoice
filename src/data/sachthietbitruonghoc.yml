@@ -1,19 +1,23 @@
 comCode: sachthietbitruonghoc
-comSerial: AD
-comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN
-comTaxCode: 3500
-comAddress: BRVT
-comRepresent: 
-
+comName: CÔNG TY CỔ PHẦN SÁCH - THIẾT BỊ TRƯỜNG HỌC TỈNH BR - VT
+comTaxCode: 3500661123
+comRepresent: Lại Hồng Sơn
+comSerial: AA
+comAddress: Số 237 Lê Lợi, Phường Thắng Nhì, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: &p "(0254) 3856161 | Fax: (0254) 3850243"
+comAccount: &a "Số tài khoản: 115000017259 tại Ngân hàng Công Thương Việt Nam- CN Bà Rịa-Vũng Tàu"
 comFolder: 
-
+debug: 
 comInvoiceNo: 0000000
 english:
 convert:
 #global style
 cssFontFamily: Times New Roman
-cssColor: "#000055"
+cssColor: "#000"
 
+background_full:
+  file: bg_full.png
 #logo : file, width, top, left
 logo:
   file: logo.png
@@ -22,8 +26,8 @@ logo:
   left: 5
 #background : file, width, height, top, left
 background:
-  file: bg.png
-  top: 500
+  file: bg.jpg
+  top: 365
 #header
 header:
   #logo : file, width, top, left
@@ -33,8 +37,10 @@ header:
     top: 12
     left: 15
   name:
-  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "font-size: 22px;"
+  - value: HÓA ĐƠN
+    style: "font-size: 22px; color: #e00"
+  - value: GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px; color: #e00"
   - sub: VAT INVOICE
     subStyle: "font-size: 18px; line-height: 1.2;"
   - value: Bản thể hiện của hóa đơn điện tử
@@ -47,33 +53,32 @@ header:
     labelStyle: "display: block; width: 100px; float: left"
 #comInfo Table
 comInfo:
-  style: "font-weight: 400; font-size: 16px"
-  margin: 2  
+  style: "font-weight: 400; font-size: 15px"
+  margin: 3 
   isInput:  
   labelStyle: 
   subStyle: "font-size: 100%"
   row:
   - code: ComName
     style: "line-height: 18px;"
-    valueStyle: "font-size: 18px; font-weight: 700"
+    valueStyle: "font-weight: 700; color: #e00"
+  - code: ComAddress
+    sub: Address
+  - label: ĐT
+    value: *p
   - label: Mã số thuế
     code: ComTaxCode
     valueStyle: "letter-spacing: 2px; font-weight: 700"
     sub: Tax code
-  - label: Địa chỉ
-    code: ComAddress
-    sub: Address
-  - label: Điện thoại
-    value: 
-  - label: Số tài khoản
-    value: 
+  - value: *a
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
   labelWidth:
   labelStyle: 
   subStyle: "font-size: 100%"
-  isInput:
+  margin: 6
+  isInput: 
   row:
   - label: Họ tên người mua hàng
     width: 661
@@ -83,10 +88,6 @@ cusInfo:
     width: 741
     code: CusName
     sub: Company Name
-  - label: Mã số thuế
-    width: 740
-    code: CusTaxCode
-    sub: Tax code
   - label: Địa chỉ
     width: 763
     code: CusAddress
@@ -97,5 +98,11 @@ cusInfo:
     isPayment: true
     sub: Method of Payment
     col-2:
-      - label: Tài khoản
-        width: 350
+      - label: Số tài khoản
+        width: 332
+  - label: Mã số thuế
+    labelStyle: "margin-left: 200px"
+    code: CusTaxCode
+    sub: Tax code
+    isTaxCode: true
+    maxLength: 1
