@@ -37,15 +37,15 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-  # - label: STK
-  #   width: 180
-  #   code: ComBankNo
-  #   isInput: true
-  #   col-2:
-  #   - label: tại
-  #     width: 518
-  #     code: ComBankName
-  #     isInput: true
+  - label: STK
+    width: 180
+    code: ComBankNo
+    isInput: true
+    col-2:
+    - label: tại
+      width: 518
+      code: ComBankName
+      isInput: true
 cusInfo:
   isInput: true
   row:
