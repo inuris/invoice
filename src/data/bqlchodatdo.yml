@@ -1,0 +1,77 @@
+comCode: bqlchodatdo
+comName: BAN QUẢN LÝ CHỢ ĐẤT ĐỎ
+comTaxCode: 3500272744
+comRepresent: Lê Văn Mực
+comSerial: DD
+comAddress: Khu phố Phước Thới, Thị trấn Đất Đỏ, Huyện Đất Đỏ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comAccount: &a 6005201004012 Agribank Huyện Đất Đỏ
+
+comFolder: 
+comInvoiceNo: 0000000
+cssColor: "#005cb3"
+comFkey: "..."
+convert:
+debug: 
+
+comPattern: 02GTTT0/001
+isGTTT: true
+#background : file, width, height, top, left
+background:
+  file: 
+  top: 155
+#header
+header:
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG
+    style: "font-size: 18px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-size: 12px; line-height: 1.4;"
+    styleConvert: "font-size: 12px; line-height: 1.4;"
+
+
+comInfo:   
+  row:
+  - valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    labelWidth: 65
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+    labelWidth: 65
+    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+  # - label: Điện thoại
+  #   value: 0254
+  #   labelWidth: 65
+  - label: STK
+    value: *a
+    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+    labelWidth: 65
+cusInfo:
+  isInput: true
+  margin: 4
+  row:
+  - label: Họ và tên người mua hàng
+    width: 654
+    code: Buyer
+  - label: Tên đơn vị
+    width: 747
+    code: CusName
+  - label: Mã số thuế
+    width: 745
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 769
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+      - label: Số tài khoản
+        width: 406
