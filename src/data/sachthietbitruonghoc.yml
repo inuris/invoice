@@ -6,7 +6,7 @@ comSerial: AA
 comAddress: Số 237 Lê Lợi, Phường Thắng Nhì, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
 comPhone: &p "(0254) 3856161 | Fax: (0254) 3850243"
-comAccount: &a "Số tài khoản: 115000017259 tại Ngân hàng Công Thương Việt Nam- CN Bà Rịa-Vũng Tàu"
+comAccount: &a "Số tài khoản: 115000017259 tại Ngân hàng TMCP Công Thương Việt nam - Chi nhánh Bà Rịa-Vũng Tàu"
 comFolder: 
 debug: 
 comInvoiceNo: 0000000
@@ -27,7 +27,7 @@ logo:
 #background : file, width, height, top, left
 background:
   file: bg.jpg
-  top: 365
+  top: 385
 #header
 header:
   #logo : file, width, top, left
