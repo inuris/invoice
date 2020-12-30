@@ -1,3 +1,4 @@
+comCode: _template_lieu_khanh_dichvu
 comSerial: GA
 comName: CÔNG TY TNHH
 comTaxCode: 3
@@ -10,6 +11,13 @@ comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
 
+#logo
+logo:
+  file: logo.png
+  width: 135
+  height: 73
+  left: 10
+  top: 10
 ### background: file, width, height, top, left, opacity
 background:
   file: bg.png
@@ -23,11 +31,8 @@ background_full:
 header:
   #logo
   logo:
-    file: logo.png
-    width: 135
-    height: 73
-    left: 38
-    top: 10
+    file: 
+    width: 150
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     - value: Bản thể hiện của hóa đơn điện tử
