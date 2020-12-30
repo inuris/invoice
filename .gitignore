@@ -7,3 +7,4 @@ backup
 *.swp
 copy.cfg
 *.lnk
+!ie.lnk
