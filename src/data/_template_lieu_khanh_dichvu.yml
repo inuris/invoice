@@ -10,7 +10,7 @@ comFolder:
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
-
+debug: 1
 #logo
 logo:
   file: logo.png
