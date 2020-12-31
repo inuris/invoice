@@ -23,6 +23,7 @@ import pdf           from 'html-pdf';
 import tap           from 'gulp-tap';
 
 import xsltproc from 'node-xsltproc';
+import index from 'gulp-index';
 
 // var cors = function (req, res, next) {
 //   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -149,6 +150,13 @@ function pages() {
 
 }
 
+function indexing(){
+    return gulp.src('src/pages/*')
+      .pipe(index())
+      .pipe(gulp.dest(PATHS.dist));
+}
+
+
 // Load updated HTML templates and partials into Panini
 function resetPages(done) {
   panini.refresh();
@@ -249,7 +257,7 @@ function reload(done) {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   // gulp.watch(PATHS.assets, copy);
-  gulp.watch('src/pages/**/*.{html,jpg,png,gif}').on('all', gulp.series(pages, browser.reload));
+  gulp.watch('src/pages/**/*.{html,jpg,png,gif}').on('all', gulp.series(pages, browser.reload, indexing));
   gulp.watch('src/pages/**/*.xml').on('all', gulp.series(copyxml, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
   gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
