@@ -457,7 +457,71 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                       </td>
                     </tr>
 										<tr style="">
-											{{>header relative=true}}									
+                      <td style="border:none;vertical-align:top; width: 150px">    
+                        {{>logo}}
+                      </td>
+                      <td style="vertical-align:top;border:none; text-align:center;">
+                        <div class="InvInfoLeft">
+                            <p style="margin:0 auto;">
+                                
+                                    <span style="font-weight: bold; font-size:24px;font-size: 20px">
+                                        HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+                                    </span>
+                                        <i style="font-size: 85%;
+                                                font-size: 18px; font-weight: 700;
+                                        "> (VAT INVOICE)</i>
+                            </p>
+                            <xsl:if test="substring(/Invoice/Content/SerialNo,1,2)='AB'">                        
+                              <p style="margin:0 auto;">
+                                  
+                                          <i style="font-size: 85%;
+                                                  font-size: 16px; line-height: 1.2;;
+                                          "> (CẢNG PHÍ - PORT CHARGE)</i>
+                              </p>
+                            </xsl:if>
+                            <p style="margin:0 auto;">
+                                
+                                <xsl:choose>
+                                    <xsl:when test="/Invoice/ConvertDate != ''">
+                                        <span style="font-style:italic; font-size: 16px; line-height: 24px;">
+                                            (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+                                        </span>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <span style="font-weight: bold;font-size: 16px; line-height: 24px;font-weight: bold; font-size: 16px; line-height: 1.4;">
+                                            Bản thể hiện của hóa đơn điện tử
+                                        </span>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </p>
+                            <p style="margin:0 auto;">
+                                
+                                        <i style="font-size: 85%;
+                                                font-size: 13px; line-height: 1.4;;
+                                        "> (Electronic Invoice Display)</i>
+                            </p>
+                            <p style="margin: auto; margin-top:10px;font-size:14px;  ">
+                                <xsl:choose>
+                                    <xsl:when test="ArisingDate!= '' and substring(ArisingDate,7,4) != '1957' ">
+                                        <span>Ngày <i style="font-size: 85%;">(Date) </i></span>
+                                        <xsl:value-of select="substring(ArisingDate,1,2)" />
+                                        <span> tháng <i style="font-size: 85%;">(month) </i></span>
+                                        <xsl:value-of select="substring(ArisingDate,4,2)" />
+                                        <span> năm <i style="font-size: 85%;">(year) </i></span>
+                                        <xsl:value-of select="substring(ArisingDate,7,4)" />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <span>Ngày <i style="font-size: 85%;">(Date) </i></span>&#8230;
+                                        <span> tháng <i style="font-size: 85%;">(month) </i></span>&#8230;
+                                        <span> năm <i style="font-size: 85%;">(year) </i></span>&#8230;
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </p>
+                        </div>
+                      </td>                    
+                      <td style="vertical-align:top;border:none; width:220px;">
+                        {{>header-serial relative=true}}		
+                      </td>								
                     </tr>
 									</table>
 
@@ -565,10 +629,10 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                       <xsl:otherwise>
                                         <xsl:choose>
                                           <xsl:when test="(../../CurrencyUnit ='USD') and (../../ExchangeRate > 0)">
-                                            <xsl:value-of select="translate(translate(translate(format-number(translate(ProdQuantity,',','.'), '###,###.00##'),',','?'),'.',','),'?','.')"/>
+                                            <xsl:value-of select="translate(translate(translate(format-number(translate(ProdQuantity,',','.'), '###,##0.00##'),',','?'),'.',','),'?','.')"/>
                                           </xsl:when>
                                           <xsl:otherwise>
-                                            <xsl:value-of select="translate(translate(translate(format-number(translate(ProdQuantity,',','.'), '###,###.####'),',','?'),'.',','),'?','.')"/>
+                                            <xsl:value-of select="translate(translate(translate(format-number(translate(ProdQuantity,',','.'), '###,##0.####'),',','?'),'.',','),'?','.')"/>
                                           </xsl:otherwise>                                        
                                         </xsl:choose>
                                       </xsl:otherwise>
@@ -585,10 +649,10 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                         
                                         <xsl:choose>
                                           <xsl:when test="(../../CurrencyUnit ='USD') and (../../ExchangeRate > 0)">
-                                          <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,###.00##'),',','?'),'.',','),'?','.')"/> USD
+                                          <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.00##'),',','?'),'.',','),'?','.')"/> USD
                                           </xsl:when>
                                           <xsl:otherwise>
-                                            <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,###.####'),',','?'),'.',','),'?','.')"/>
+                                            <xsl:value-of select="translate(translate(translate(format-number(translate(ProdPrice,',','.'), '###,##0.####'),',','?'),'.',','),'?','.')"/>
                                           </xsl:otherwise>                                        
                                         </xsl:choose>
                                         
@@ -610,7 +674,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                             <xsl:value-of select="translate(translate(translate(format-number(translate(Total,',','.'), '###,##0.00##'),',','?'),'.',','),'?','.')"/> USD
                                           </xsl:when>
                                           <xsl:otherwise>
-                                            <xsl:value-of select="translate(translate(translate(format-number(translate(Total,',','.'), '###,##0'),',','?'),'.',','),'?','.')"/>
+                                            <xsl:value-of select="translate(translate(translate(format-number(translate(Total,',','.'), '###,##0.####'),',','?'),'.',','),'?','.')"/>
                                           </xsl:otherwise>                                        
                                         </xsl:choose>
 
@@ -646,7 +710,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                               <xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.00##'),',','?'),'.',','),'?','.')"/> USD
                                             </xsl:when>
                                             <xsl:otherwise>
-                                              <xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                              <xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.####'),',','?'),'.',','),'?','.')"/>
                                             </xsl:otherwise>                                        
                                           </xsl:choose>                                          
                                           
@@ -707,7 +771,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                               <xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.00##'),',','?'),'.',','),'?','.')"/> USD
                                             </xsl:when>
                                             <xsl:otherwise>
-                                              <xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                              <xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.####'),',','?'),'.',','),'?','.')"/>
                                             </xsl:otherwise>                                        
                                           </xsl:choose>
                                           
@@ -737,7 +801,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                                 <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.00##'),',','?'),'.',','),'?','.')"/> USD
                                               </xsl:when>
                                               <xsl:otherwise>
-                                                <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                                <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.####'),',','?'),'.',','),'?','.')"/>
                                               </xsl:otherwise>                                        
                                             </xsl:choose>                                          
                                             

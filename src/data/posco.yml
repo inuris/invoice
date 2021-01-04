@@ -5,7 +5,7 @@ comCode: posco
 comDomain: poscovietnam
 comTaxCode: 3500771158
 comRepresent: Yun Hoon
-comSerial: AA
+comSerial: AB
 comAddress: Lô số 1, Khu Công nghiệp Phú Mỹ II, Phường Phú Mỹ, Thị Xã Phú Mỹ,Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 2
 comPhone: &comPhone "(84) 254 3923700 - Fax: ( 84) 254 3923000"
@@ -23,13 +23,13 @@ background:
   file: bg.png
   top: 504
 #header
-header:
-  #logo : file, width, top, left
-  logo:
+logo:
     file: logo.png
     width: 150
     top: 19
     left: 35
+header:
+  
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 22px"
