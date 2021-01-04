@@ -211,7 +211,7 @@
 						<!-- Dòng product đầu tiên của trang đầu -->
 						<xsl:when test="position()=1">
 							<xsl:text disable-output-escaping="yes">&lt;div class="pagecurrent" id="1"&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 1px solid {{cssColor}};width:900px !important;margin:0px auto;padding:15px 0;" &gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 1px solid {{cssColor}};width:900px !important;margin:0px auto;padding: 0;" &gt;</xsl:text>
 							<xsl:call-template name="addfirtbody">
 								<xsl:with-param name="pagesNeededfnc" select="$pagesNeededfnc"/>
 								<xsl:with-param name="itemCountfnc" select="count(Products//Product)"/>
@@ -239,8 +239,8 @@
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 								<xsl:call-template name="addfinalbody">
 								</xsl:call-template>
-								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 								<xsl:call-template name="add_vnpt_introduction"/>
+								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>								
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 								
 							</xsl:if>
@@ -250,7 +250,7 @@
 							<xsl:text disable-output-escaping="yes">&lt;div class="pagecurrent" id=</xsl:text>
 							<xsl:value-of select="((position()-1) div $itemNeeded) + 1"/>
 							<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 2px solid {{cssColor}};width:900px !important;margin:0px auto;padding:15px 0" &gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="border: 2px solid {{cssColor}};width:900px !important;margin:0px auto;padding:0" &gt;</xsl:text>
 							<xsl:call-template name="addfirtbody">
 								<xsl:with-param name="pagesNeededfnc" select="$pagesNeededfnc"/>
 								<xsl:with-param name="itemCountfnc" select="count(Products//Product)"/>
@@ -282,8 +282,9 @@
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 								<xsl:call-template name="addfinalbody">
 								</xsl:call-template>
-								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 								<xsl:call-template name="add_vnpt_introduction"/>
+								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+								
 								<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 								
 							</xsl:if>
@@ -317,8 +318,8 @@
 					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 					<xsl:call-template name="addfinalbody">
 					</xsl:call-template>
-					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 					<xsl:call-template name="add_vnpt_introduction"/>
+					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>					
 					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 					
 				</xsl:when>
@@ -356,14 +357,14 @@
 				</td>
 			</tr>			
 			<tr>
-				<td style="width: 132px; border-left: none!important;border-right: none!important;padding: 5px; vertical-align: top;">
+				<td style="width: 105px; border-left: none!important;border-right: none!important;vertical-align: top;">
 					{{>logo}}   
 				</td>
-				<td colspan="2" style="border-left: none!important;border-right: none!important;padding: 5px 10px 4px 10px;">
+				<td colspan="2" style="border-left: none!important;border-right: none!important;padding: 5px 5px 4px 5px;">
 					{{>info data=comInfo}}   
 				</td>
 			</tr>			
-			<tr>                                      
+			<tr style="border-top: 1px solid {{cssColor}}; border-bottom: 1px solid {{cssColor}};">                                      
 				{{>header cssLogo=null}}
 			</tr>
 			<!-- 
@@ -525,7 +526,7 @@
 					<tr>
 						<!--panel client-->
 						<td style="border: none;width: 32%;vertical-align: top;text-align:center;color: {{cssColor}};">
-							<p style="font-size:14px; margin-top:0;margin-bottom: 0;">
+							<p style="font-size:14px; margin-top:10px;margin-bottom: 0;">
 								<b>
 								Người mua hàng
 								</b>
@@ -589,7 +590,7 @@
 						</td>
 						<!--panel server-->
 						<td style="border: none;width: 32%;vertical-align: top;text-align:center;color: {{cssColor}};">
-							<p style="font-size:14px; margin-top:0;height: 20px;margin-bottom: 0;">
+							<p style="font-size:14px; margin-top:10px;height: 20px;margin-bottom: 0;">
 								<b>
 								Người bán hàng
 								</b>
@@ -682,7 +683,7 @@
 		</div>
 	</xsl:template>
 	<xsl:template name="add_vnpt_introduction">
-		<div id="invFooter" style="font-size:12px; text-align: center; margin-top: 4px;">
+		<div id="invFooter" style="font-size:12px; text-align: center; margin-top: 30px;">
 			<span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0254 800126</span>
 			<br/>
 			{{>footer center=true}}
@@ -787,7 +788,6 @@
 		  	}
 		  	.VTU-VATTEMP div label.fl-l,
 		  	div label {
-		  	margin-right: 5px;
 			  font-weight: 400;
 		  	}
 		  	.VTU-VATTEMP .input-name,
