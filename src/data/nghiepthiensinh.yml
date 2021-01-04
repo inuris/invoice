@@ -18,14 +18,13 @@ debug:
 #logo
 logo:
   file: logo.png
-  width: 135
-  height: 73
-  left: 10
+  width: 105
+  left: 5
   top: 10
 ### background: file, width, height, top, left, opacity
 background:
   file: bg.png
-  top: 475
+  top: 465
 
 ### background: file, width, height, top, left, opacity
 background_full:
@@ -36,41 +35,42 @@ header:
   #logo
   logo:
     file: 
-    width: 150
+    width: 1
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+      style: "color: #f00;"
     - value: Bản thể hiện của hóa đơn điện tử
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
   row:
-  - label: Đơn vị bán hàng
-    valueStyle: "font-weight: bold"
+  - valueStyle: "font-weight: bold; font-size: 18px; color: #f00"
     code: ComName
   - label: Mã số thuế
     valueStyle: "font-weight: bold"
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
+    valueStyle: "font-size: 13.5px; letter-spacing: -0.2px"
   - label: Điện thoại
-    value: 
+    value: *p
   - label: Số tài khoản
-    value: 
+    value: *a
 cusInfo:
   margin: 2
   isInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 688
+    width: 700
     code: Buyer
   - label: Tên đơn vị
-    width: 781
+    width: 793
     code: CusName
   - label: Mã số thuế
-    width: 780
+    width: 790
     code: CusTaxCode
   - label: Địa chỉ
-    width: 810
+    width: 822
     code: CusAddress
   - label: Hình thức thanh toán
     width: 225
@@ -78,5 +78,5 @@ cusInfo:
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 370
+      width: 397
       code: CusBankNo
