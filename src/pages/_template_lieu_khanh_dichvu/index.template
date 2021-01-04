@@ -1,4 +1,3 @@
-{{#with _template_lieu_khanh_dichvu}}
 <!-- split {{comCode}}.xslt -->
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns="http://www.w3.org/1999/xhtml" xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" version="1.0" exclude-result-prefixes="msxsl js">
@@ -143,12 +142,12 @@
 					<label class="fl-l" style="font-weight:normal; padding-left:10px;">
 						<span>Số tiền viết bằng chữ: </span>
 					</label>
-					<label class="fl-l input-name" style="width:645px;min-width: 100px;display: block;">
+					<label class="fl-l input-name" style="width:736px;min-width: 100px;display: block;">
 						&#160;<xsl:value-of select="$str1"/>
 					</label>
 				</div>
 				<div class="clearfix" style="padding-bottom:5px;">
-					<label class="fl-l input-name" style="width:789px;min-width: 100px;display: block;margin-left:10px;">
+					<label class="fl-l input-name" style="width:877px;min-width: 100px;display: block;margin-left:10px;">
 						&#160;<xsl:value-of select="$str2"/>
 					</label>
 				</div>
@@ -158,12 +157,12 @@
 					<label class="fl-l" style="font-weight:normal;padding-left:10px;padding-top:6px;">
 						<span>Số tiền viết bằng chữ: </span>
 					</label>
-					<label class="fl-l input-name" style="width:645px;min-width: 100px;display: block;padding-top:6px;">
+					<label class="fl-l input-name" style="width:736px;min-width: 100px;display: block;padding-top:6px;">
 						&#160;<xsl:value-of select="$str"/>
 					</label>
 				</div>
 				<div class="clearfix" style="padding-bottom:5px;">
-					<label class="fl-l input-name" style="width:789px;min-width: 100px;display: block;margin-left:10px;">
+					<label class="fl-l input-name" style="width:877px;min-width: 100px;display: block;margin-left:10px;">
 						&#160;
 					</label>
 				</div>
@@ -229,8 +228,6 @@
 							</xsl:call-template>
 							<!-- Trường hợp chỉ có 1 sản phẩm product -->
 							<xsl:if test="(position()=1) and $itemCountfnc=1">
-								<xsl:call-template name="addchuky">
-								</xsl:call-template>
 								<xsl:call-template name="addLine">
 									<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 -$countExtra2 - $counttyGia"/>
 								</xsl:call-template>
@@ -274,8 +271,6 @@
 							</xsl:call-template>
 							<!-- Trường hợp dòng product cuối cùng là dòng đầu tiên của trang cuối cùng -->
 							<xsl:if test=" position() = $itemCountfnc">
-								<xsl:call-template name="addchuky">
-								</xsl:call-template>
 								<xsl:call-template name="addLine">
 									<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 -$countExtra2 - $counttyGia"/>
 								</xsl:call-template>
@@ -311,8 +306,6 @@
 				<xsl:when test=" position() = $itemCountfnc">
 					<xsl:call-template name="callbodyproduct">
 					</xsl:call-template>
-					<xsl:call-template name="addchuky">
-					</xsl:call-template>
 					<xsl:call-template name="addLine">
 						<xsl:with-param name="count" select="$pagesNeededfnc * $itemNeeded - $itemCountfnc - $countExtra1 -$countExtra2 - $counttyGia"/>
 					</xsl:call-template>
@@ -325,8 +318,9 @@
 					<xsl:call-template name="addfinalbody">
 					</xsl:call-template>
 					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
-					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
 					<xsl:call-template name="add_vnpt_introduction"/>
+					<xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+					
 				</xsl:when>
 				<!-- Các vị trí dòng sản phẩm ở khoảng giữa một trang -->
 				<xsl:otherwise>
@@ -513,86 +507,6 @@
 	<xsl:template name="calltongsoproduct">
 		{{>total}}
 	</xsl:template>
-	<xsl:template name="addchuky">
-		<xsl:choose>
-			<xsl:when test="../../Extra1 != ''">
-				<tr>
-					<td class="back-bold">
-						<div style="display: block;word-wrap: break-word;width: 30px;text-align: center;  overflow: hidden;">
-
-						</div>
-					</td>
-					<td class="back-bold">
-						<div style="text-align: left; width: 310px; display: block; word-wrap: break-word; overflow: hidden; float: left; padding-left: 2px">
-							<xsl:value-of select="../../Extra1"/>
-						</div>
-					</td>
-					<td class="back-bold">
-						<div style="display: block;word-wrap: break-word;width: 70px;text-align: center;  overflow: hidden;">
-
-						</div>
-					</td>
-					<td class="back-bold">
-						<div style="display: block;word-wrap: break-word;width:130px;text-align: center;  overflow: hidden;">
-
-						</div>
-					</td>
-					<td class="back-bold">
-						<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
-
-						</div>
-					</td>
-					<td class="back-bold">
-						<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
-
-						</div>
-					</td>
-				</tr>
-			</xsl:when>
-			<xsl:otherwise>
-
-			</xsl:otherwise>
-		</xsl:choose>
-		<xsl:choose>
-			<xsl:when test="../../Extra2 != ''">
-				<tr>
-					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
-						<div style="display: block;word-wrap: break-word;width: 30px;text-align: center;  overflow: hidden;">
-
-						</div>
-					</td>
-					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
-						<div style="text-align: left; width: 310px; display: block; word-wrap: break-word; overflow: hidden; float: left; padding-left: 2px">
-							<xsl:value-of select="../../Extra2"/>
-						</div>
-					</td>
-					<td class="back-bold" style="height: 20px; border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
-						<div style="display: block;word-wrap: break-word;width: 70px;text-align: center;  overflow: hidden;">
-
-						</div>
-					</td>
-					<td class="back-bold" style="height: 20px; border-bottom-color: currentColor;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
-						<div style="display: block;word-wrap: break-word;width:130px;text-align: center;  overflow: hidden;">
-
-						</div>
-					</td>
-					<td class="back-bold" style="height: 20px; border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
-						<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
-
-						</div>
-					</td>
-					<td class="back-bold" style="height: 20px;border-bottom: 1px dotted #00348d;border-top: 0px solid #000;">
-						<div style="display: block;word-wrap: break-word;text-align: right;  overflow: hidden;">
-
-						</div>
-					</td>
-				</tr>
-			</xsl:when>
-			<xsl:otherwise>
-
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
 	<xsl:template name="addfinalbody">
 		<div class="clearfix">
 			<!--variable-->
@@ -773,9 +687,6 @@
 			<br/>
 			{{>footer center=true}}
 		</div>
-		<div style="margin:0px auto; margin-top:2px; ">
-			<div class="clearfix" id="bt" style="margin:0px auto;"/>
-		</div>
 	</xsl:template>
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml">
@@ -814,23 +725,19 @@
 
 		  	.VTU-VATTEMP .header-main,
 		  	.content {
-		  	width: 790px
 		  	}
 		  	.VTU-VATTEMP .header {
 		  	float: right;
-		  	width: 600px;
 		  	font-family: "{{cssFontFamily}}"
 		  	}
 		  	.VTU-VATTEMP .header-content {
 		  	float: left;
 		  	text-align: center;
-		  	width: 375px;
 		  	font-family: "{{cssFontFamily}}"
 		  	}
 		  	.VTU-VATTEMP .header-content2 {
 		  	float: left;
 		  	text-align: left;
-		  	width: 610px;
 		  	font-family: "{{cssFontFamily}}"
 		  	}
 		  	.VTU-VATTEMP .header h2 {
@@ -1005,7 +912,6 @@
 		  	border: 1 1 1 1 solid {{cssColor}};
 		  	font-size: 14px;
 		  	margin: 0;
-		  	height: 300px;
 		  	position: relative;
 		  	z-index: 2
 		  	}

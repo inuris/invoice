@@ -1,4 +1,3 @@
-comCode: _template_lieu_khanh_dichvu
 comSerial: GA
 comName: CÔNG TY TNHH
 comTaxCode: 3
@@ -10,7 +9,7 @@ comFolder:
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
-debug: 1
+debug: 
 #logo
 logo:
   file: logo.png
@@ -57,22 +56,22 @@ cusInfo:
   isInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 599
+    width: 688
     code: Buyer
   - label: Tên đơn vị
-    width: 693
+    width: 781
     code: CusName
   - label: Mã số thuế
-    width: 689
+    width: 780
     code: CusTaxCode
   - label: Địa chỉ
-    width: 719
+    width: 810
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 195
+    width: 225
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 310
+      width: 370
       code: CusBankNo
