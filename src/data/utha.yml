@@ -1,0 +1,81 @@
+comCode: utha
+comName: DOANH NGHIỆP TƯ NHÂN ÚT HÀ
+comTaxCode: 3500659195
+comRepresent: Phan Văn Trung
+comSerial: UH
+comAddress: Ô5 ấp Hải Hà, Thị Trấn Long Hải, Huyện Long Điền, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: &p 0254.3843165
+comAccount: &a 6001201000542 Tại Ngân hàng Nông nghiệp & PTNT chi nhánh Long Điền
+comQty: 1000
+
+
+comFolder: 
+
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+
+### background: file, width, height, top, left, opacity
+background:
+  file: 
+  top: 500
+
+### background: file, width, height, top, left, opacity
+background_full:
+  file: bg_full.png
+  top: 49 
+#header
+header:
+  #logo
+  logo:
+    file: 
+    width: 135
+    height: 73
+    left: 38
+    top: 10
+  name:
+    - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    - value: Bản thể hiện của hóa đơn điện tử
+      valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+      style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+comInfo:
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: *p
+  - label: Số tài khoản
+    value: *a
+    # isInput: 1
+    # width: 780
+cusInfo:
+  margin: 2
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 700
+    code: Buyer
+  - label: Tên đơn vị
+    width: 793
+    code: CusName
+  - label: Mã số thuế
+    width: 790
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 822
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 225
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 397
+      code: CusBankNo
