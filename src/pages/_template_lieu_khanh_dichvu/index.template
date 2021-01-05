@@ -142,7 +142,7 @@
 					<label class="fl-l" style="font-weight:normal; padding-left:10px;">
 						<span>Số tiền viết bằng chữ: </span>
 					</label>
-					<label class="fl-l input-name" style="width:736px;min-width: 100px;display: block;">
+					<label class="fl-l input-name" style="width:741px;min-width: 100px;display: block;">
 						&#160;<xsl:value-of select="$str1"/>
 					</label>
 				</div>
@@ -157,7 +157,7 @@
 					<label class="fl-l" style="font-weight:normal;padding-left:10px;padding-top:6px;">
 						<span>Số tiền viết bằng chữ: </span>
 					</label>
-					<label class="fl-l input-name" style="width:736px;min-width: 100px;display: block;padding-top:6px;">
+					<label class="fl-l input-name" style="width:741px;min-width: 100px;display: block;padding-top:6px;">
 						&#160;<xsl:value-of select="$str"/>
 					</label>
 				</div>
