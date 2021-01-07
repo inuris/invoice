@@ -6,7 +6,7 @@ comRepresent: Phạm Quốc Trung
 comSerial: HT
 comName: ĐỊA ĐIỂM KINH DOANH CÔNG TY CỔ PHẦN HƯNG THÁI HOLDINGS - CỬA HÀNG XĂNG DẦU SỐ 19
 comTaxCode: 3500798008-00001
-comAddress: Số 15 Trần Hưng Đạo, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa -Vũng Tàu
+comAddress: &a Số 15 Trần Hưng Đạo, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa -Vũng Tàu
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
@@ -53,7 +53,7 @@ comInfo:
     valueStyle: "font-weight: bold; letter-spacing: 3px"
     code: ComTaxCode
   - label: Địa chỉ
-    code: ComAddress    
+    value: *a  
     valueStyle: 
   # - label: Điện thoại
   #   value: 

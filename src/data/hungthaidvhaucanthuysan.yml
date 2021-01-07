@@ -6,7 +6,7 @@ comRepresent: Nguyễn Minh Tuấn
 comSerial: HT
 comName: CHI NHÁNH CÔNG TY CỔ PHẦN HƯNG THÁI HOLDINGS-XÍ NGHIỆP DỊCH VỤ HẬU CẦN THỦY SẢN HƯNG THÁI
 comTaxCode: 3500798008
-comAddress: ấp Lò Vôi, Xã Phước Hưng, Huyện Long Điền,Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comAddress: &a ấp Lò Vôi, Xã Phước Hưng, Huyện Long Điền,Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
@@ -54,7 +54,7 @@ comInfo:
     code: ComTaxCode
     codeSuffix: -008
   - label: Địa chỉ
-    code: ComAddress    
+    value: *a
     valueStyle: 
   - label: Điện thoại
     value: 0254 3661999
