@@ -8,7 +8,7 @@
         <b>
           <xsl:choose>
               <xsl:when test="../../Amount!=''">
-                <xsl:value-of select="translate(translate(translate(format-number(../../Amount, '###,###'),',','?'),'.',','),'?','.')"/> đồng
+                <xsl:value-of select="translate(translate(translate(format-number(../../Amount, '###,##0.###'),',','?'),'.',','),'?','.')"/> đồng
               </xsl:when>
               <xsl:otherwise>
                 &#160;
@@ -49,7 +49,7 @@
         <xsl:choose>
           <xsl:when test="(../../Total!='' and ../../Total!=0)">
             <!-- fix new-->
-            &#160;  <xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+            &#160;  <xsl:value-of select="translate(translate(translate(format-number(translate(../../Total,',','.'), '###,##0.###'),',','?'),'.',','),'?','.')"/>
           </xsl:when>
           <xsl:otherwise>
             &#160;
@@ -98,7 +98,7 @@
 
           <xsl:when test="../../VAT_Amount!=''">
             <!-- fix new-->
-            <xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+            <xsl:value-of select="translate(translate(translate(format-number(translate(../..//VAT_Amount,',','.'), '###,##0.###'),',','?'),'.',','),'?','.')"/>
           </xsl:when>
           <xsl:otherwise>
             &#160;
@@ -118,7 +118,7 @@
       <label class="fl-l" style="float: right;width: 100%;text-align: right; font-weight: 700">
         <xsl:choose>
           <xsl:when test="(../../Amount!='' and ../../Amount!=0)">
-            <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+            <xsl:value-of select="translate(translate(translate(format-number(translate(../../Amount,',','.'), '###,##0.###'),',','?'),'.',','),'?','.')"/>
           </xsl:when>
           <xsl:otherwise>
             &#160;
