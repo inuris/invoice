@@ -4,6 +4,9 @@ comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN SẢN XUẤT VẬT LIỆU XÂY DỰ
 comTaxCode: 3500644600
 comAddress: Số 402/1 Thống Nhất, Phường 8, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 comInvoiceNo: 0000000
+
+comFolder: 200909_CongNgheMoi_V5_AMTrong
+
 english: 1
 convert: 
 #global style
@@ -19,16 +22,13 @@ logo:
 #background : file, width, height, top, left
 background:
   file: bg.png
-  width: 260
-  height: 242
-  top: 542
-  left: 301
+  top: 546
 #header
 header:
   #logo : file, width, top, left
   logo:
     file: logo.png
-    width: 130
+    width: 150
     top: 1
     left: 5
     bottom: 8
@@ -43,12 +43,12 @@ header:
   - sub: Electronic Invoice Display
     subStyle: "font-size: 13px; line-height: 1.4;"    
   serial:
-    width: 220
-    labelStyle: "display: block; width: 100px; float: left"
+    width: 240
+    labelStyle: "display: block; width: 110px; float: left"
 #comInfo Table
 comInfo:
   style: "font-weight: 400; font-size: 15px"
-  margin: 4  
+  margin: 8  
   isInput:  
   labelStyle: 
   subStyle: "font-size: 90%"
@@ -84,33 +84,34 @@ comInfo:
 #cusInfo Table
 cusInfo:
   style: "font-size: 15px; font-weight: 400;"
+  margin: 8  
   labelWidth:
   labelStyle: 
   isInput: 
   subStyle: "font-size: 90%"  
   row:
   - label: Người mua
-    width: 704
+    width: 694
     code: Buyer
     sub: Buyer
   - label: Đơn vị
-    width: 677
+    width: 667
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 683
+    width: 673
     code: CusTaxCode
     sub: Tax Code
   - label: Địa chỉ
-    width: 720
+    width: 710
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 153
+    width: 143
     code: Kind_of_Payment
     isPayment: true
     sub: Payment method
     col-2:
       - label: Số tài khoản
         sub: Account No.
-        width: 258
+        width: 248
