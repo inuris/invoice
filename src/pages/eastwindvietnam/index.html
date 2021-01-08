@@ -71,23 +71,23 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
     <xsl:param name="count"/>
     <xsl:if test="$count > 0">
       <tr class="noline back">
-        <td class="back-bold">
-          <div><xsl:value-of select="''"/></div>
+        <td class="back-bold" height="26px">
+          <xsl:value-of select="''"/>
         </td>
         <td class="back-bold">
-          <div><xsl:value-of select="''"/></div>
+          <xsl:value-of select="''"/>
         </td>
         <td class="back-bold">
-          <div><xsl:value-of select="''"/></div>
+          <xsl:value-of select="''"/>
         </td>
         <td class="back-bold">
-          <div><xsl:value-of select="''"/></div>
+          <xsl:value-of select="''"/>
         </td>
         <td class="back-bold">
-          <div><xsl:value-of select="''"/></div>
+          <xsl:value-of select="''"/>
         </td>
         <td class="back-bold" style="border-right:none;">
-          <div><xsl:value-of select="''"/></div>
+          <xsl:value-of select="''"/>
         </td>
       </tr>
       <xsl:call-template name="addLine">
@@ -104,326 +104,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
         <title>VAT</title>
         <style type="text/css" rel="stylesheet">
         {{>css}}
-          html, body
-          {
-          margin: 0;
-          padding: 0;
-          height: 100%;
-          background-color: white;
-          }
-          @page {
-          size: "A4";
-          margin-left: 5px;
-          margin-right: 5px;
-          }
-          @media print {
-          html, body {
-          margin-left: 5px;
-          margin-right: 5px;
-          }}
-          #main
-          {
-          margin: 0 auto;
-          }
-          .VTU-VATTEMP
-          {
-            //width: 836px !important;
-            background-color: white;
-            font-family: {{cssFontFamily}}, Times, serif;
-            font-size: 14px;
-          }
-          .VTU-VATTEMP span, .VTU-VATTEMP i, .VTU-VATTEMP b{
-          color: {{cssColor}};
-          font-family: {{cssFontFamily}};
-          }
-          .VTU-VATTEMP .header-main, .content
-          {
-          width: 790px;
-          }
-          .VTU-VATTEMP #logo
-          {
-          float: left;
-          width: 100px;
-          height: 100px;
-          background: url('') no-repeat;
-          margin: 0;
-          }
-          .VTU-VATTEMP .header
-          {
-          float: right;
-          width: 613px;
-          }
-          .VTU-VATTEMP .header-content
-          {
-          float: left;
-          text-align: center;
-          width: 400px;
-          }
-          .VTU-VATTEMP .header h2
-          {
-          font-size: 1em;
-          }
-          .VTU-VATTEMP .header h2, .header p
-          {
-          margin: 0;
-          }
-          .VTU-VATTEMP .header p.name-upcase
-          {
-          font-size: 13px;
-          text-transform: uppercase;
-          }
-          .VTU-VATTEMP .header-note
-          {
-          float: right;
-          font-size: 100%;
-          width: 175px;
-          margin-top: 0;
-          }
-          .VTU-VATTEMP .header .number
-          {
-          font-family: 'Arial', Times, serif;
-          font-size: 100%;
-          }
-          .clearfix:after
-          {
-          clear: both;
-          content: ".";
-          display: block;
-          height: 1px;
-          overflow: hidden;
-          visibility: hidden;
-          }
-          .clearfix
-          {
-          clear: both;
-          }
-          .VTU-VATTEMP .input-code
-          {
-          border: 1px solid {{cssColor}};
-          float: left;
-          text-align: center;
-          width: 18px;
-          height: 14px;
-          }
-          .VTU-VATTEMP div label.fl-l, div label
-          {
-          margin-right: 0;
-          margin-top: 3px;
-
-          }
-          .VTU-VATTEMP .input-name, .input-date
-          {
-          border: 0;
-          border-bottom: 1px dotted {{cssColor}};
-          }
-          .VTU-VATTEMP .statistics
-          {
-          clear: both;
-          margin-right: 0;
-          }
-          .nenhd
-          {
-          position: relative;
-          }
-          
-          .VTU-VATTEMP .statistics table
-          {
-          background-position: bottom;
-          border: 0 none;
-          font-size: 100%;
-          margin: 0;
-          position: relative;
-          z-index: 2;
-          }
-          table
-          {
-          border-collapse: collapse;
-          }
-          .VTU-VATTEMP .statistics table th
-          {
-          font-size: 100%;
-          border-bottom: 1px solid {{cssColor}};
-          border-top: 1px solid {{cssColor}};
-          text-align:center;
-          padding:2px 5px;
-          }
-          .VTU-VATTEMP .statistics table th.h2
-          {
-          font-size: 100%;
-          text-transform: none;
-          border-bottom: 1px solid {{cssColor}} !important;
-          border-top: 1px solid {{cssColor}} !important;
-          color:  {{cssColor}};
-          }
-          .VTU-VATTEMP .statistics table td.stt
-          {
-          text-align: center;
-          padding-left: 0;
-          }
-          .VTU-VATTEMP .statistics table td.stt2
-          {
-          text-align: center;
-          color: {{cssColor}};
-          }
-          .VTU-VATTEMP .statistics table .back td
-          {
-          color: {{cssColor}};
-          font-family: 'Arial', Times, serif;
-          font-size: 100%;
-          }
-          <!-- .VTU-VATTEMP .statistics table .noline td -->
-          <!-- { -->
-          <!-- border-bottom: 1px dotted {{cssColor}}; -->
-          <!-- border-right: 1px solid {{cssColor}}; -->
-          <!-- border-left: 1px solid {{cssColor}}; -->
-          <!-- border-top: 0 none; -->
-          <!-- } -->
-          .VTU-VATTEMP .statistics table td
-          {
-            padding-top: 2px;
-          padding-bottom: 2px;
-          padding-right: 2px;
-          padding-left: 5px;
-          }
-          .VTU-VATTEMP .statistics tr td.back-bold
-          {
-          font-size: 100%;
-          border-bottom: 1px dotted {{cssColor}};
-          }
-          .VTU-VATTEMP .statistics table .back-bold
-          {
-          padding-right: 5px;
-          text-align: right;
-		      height: 26px;
-          }
-          .VTU-VATTEMP .statistics tr td.back-bold2
-          {
-          font-size: 16px;
-          border-bottom: 1px dotted {{cssColor}};
-          height: 26px;
-          }
-          .VTU-VATTEMP .statistics tr td.back-bold div, .VTU-VATTEMP .statistics tr td.back-bold2 div{
-            height: 26px;
-          }
-          .VTU-VATTEMP .statistics tr td.back-bold3
-          {
-          font-size: 100%;
-          border-bottom: none!important;
-          }
-          .VTU-VATTEMP .statistics table .back-bold2
-          {
-          padding-left: 5px;
-          text-align: left;
-          }
-          .VTU-VATTEMP .statistics tr.bg-pink td
-          {
-          font-size: 100%;
-          text-align: right;
-          background: none repeat scroll 0 0 #fedccc;
-          }
-          .VTU-VATTEMP .payment, .date
-          {
-          margin: 20px 0;
-          text-align: center;
-          width: 35%;
-          }
-          .VTU-VATTEMP .payment
-          {
-          float: left;
-          }
-          .VTU-VATTEMP .payment p, .date p
-          {
-          margin: 0;
-          }
-          .VTU-VATTEMP .date
-          {
-          float: right;
-          height: 120px;
-          }
-          .VTU-VATTEMP .input-date
-          {
-          width: 40px;
-          }
-          .VTU-VATTEMP .input-name, .back-bold, .input-date
-          {
-            font-family: 'Arial', Times, serif;
-          }
-          .fl-l2
-          {
-          float: left;
-          color: {{cssColor}};
-          }
-          .fl-l
-          {
-          float: left;
-          min-height: 16px;
-
-          }
-          .bgimg
-          {
-          border: 1px solid {{cssColor}};
-          cursor: pointer;
-          //width: 170px;
-          }
-          .bgimg p
-          {
-          color: {{cssColor}};
-          padding-left: 13px;
-          text-align: left;
-          }
-          p
-          {
-          font-size: 13px;
-          }
-          .item
-          {
-          color: {{cssColor}};
-          }
-		  /* ================ */
-		  	/* Company Info*/
-		  	.comInfo label{
-		  	
-		  	}
-			.comInfo td{
-		  		padding-left:10px;
-		  	}
-			.comInfo .vt-row{
-		  		margin-bottom:0;
-		  	}
-			.comInfo .title{
-		  	}
-			
-			
-			/* ================ */
-		  	/* Customer Info*/
-
-		  	.customerInfo{
-		  	margin-top: 5px;
-		  	display: block;		  	
-		  	}
-		  	.customerInfo td{
-		  		padding-left: 10px;
-		  	}
-		  	.customerInfo label{
-		  	}
-			.customerInfo .title{
-			}
-			.customerInfo .vt-row{
-			margin-bottom: 8px;
-			}
-			.InvInfoLeft{
-		  	text-align:center;
-		  	}
-			.InvInfoRight{
-		  	text-align:left;
-		  	padding-bottom:10px;
-		  	}
-			.InvInfoRight span{
-			font-size: 14px;
-			}
-      .vat-product th,td{
-				border-right:1px solid;
-			}
+         {{>css-trong}}
         </style>
 
 
@@ -546,7 +227,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                             </tr>
                             <xsl:for-each select="..//../Products/Product[  ($level1Count  + 10)  >= position() and  position() >  $level1Count]">
                               <tr class="noline back vat-product">
-                                <td class="back-bold2" style="text-align:center;">
+                                <td height="26px" class="back-bold2" style="text-align:center;">
                                   <div style="display: block;">
                                     <xsl:choose>
                                       <xsl:when test="Remark!='' and Remark!='.'">
@@ -636,7 +317,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 </xsl:if>
 
                                 <tr  class="noline back" style="border-top: 1px solid {{cssColor}};">
-                                  <td class="back-bold" colspan="5" style="padding-left: 0px;text-align: right!important;border-bottom:none !important;border-right: 1px solid {{cssColor}}">
+                                  <td height="26px" class="back-bold" colspan="5" style="padding-left: 0px;text-align: right!important;border-bottom:none !important;border-right: 1px solid {{cssColor}}">
                                     <label style="">
                                       <span style="font-weight:bold;font-size:16px;">Cộng tiền hàng{{#if english}} <i style="font-size: 16px;font-weight:normal;">(Sub total)</i>{{/if}}:</span>
                                     </label>
@@ -656,7 +337,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   </td>
                                 </tr>
                                 <tr class="noline back" style="border-top: 1px solid {{cssColor}}; ">
-                                  <td class="back-bold" colspan="5" style="text-align: right; border-right: 1px solid {{cssColor}}">
+                                  <td height="26px" class="back-bold" colspan="5" style="text-align: right; border-right: 1px solid {{cssColor}}">
                                     <label class="fl-l" style="line-height:20px; text-align:left;">
                                       <span style="font-weight:bold;font-size:16px">Thuế suất GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Rate)</i>{{/if}}:</span>
                                       <xsl:choose>
@@ -706,7 +387,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   </td>
                                 </tr>
                                 <tr class="noline back" style="border-top: 1px solid {{cssColor}}; border-bottom: 1px solid {{cssColor}};">
-                                  <td class="back-bold" style="text-align: left; border-right: 1px solid {{cssColor}}" colspan="5">
+                                  <td height="26px" class="back-bold" style="text-align: left; border-right: 1px solid {{cssColor}}" colspan="5">
                                     <label style="line-height:20px;float: right!important;font-size:16px;">
                                       <span><b>Tổng cộng tiền thanh toán{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Total payment)</i>{{/if}}:</b></span>
                                     </label>
@@ -725,7 +406,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   </td>
                                 </tr>
                                 <tr class="noline back" style="border-top: 1px solid {{cssColor}}; border-bottom: 1px solid {{cssColor}};">
-                                  <td colspan="6" style="padding-right: 0px;padding-top: 8px; padding-bottom: 4px;border-right:0px;">
+                                  <td height="26px" colspan="6" style="padding-right: 0px;padding-top: 8px; padding-bottom: 4px;border-right:0px;">
                                     <div class="clearfix">
                                       <label class="fl-l2">
                                         <span style="font-weight:bold;font-size:16px;">Số tiền viết bằng chữ{{#if english}} <i style="font-size: 100%;font-weight:normal;">(Amount in words)</i>{{/if}}:</span>

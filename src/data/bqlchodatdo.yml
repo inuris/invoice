@@ -5,6 +5,7 @@ comRepresent: Lê Văn Mực
 comSerial: DD
 comAddress: Khu phố Phước Thới, Thị trấn Đất Đỏ, Huyện Đất Đỏ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
+comPhone: &p 0254.3691525
 comAccount: &a 6005201004012 Agribank Huyện Đất Đỏ
 
 comFolder: 
@@ -45,13 +46,13 @@ comInfo:
     code: ComAddress
     labelWidth: 65
     valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
-  # - label: Điện thoại
-  #   value: 0254
-  #   labelWidth: 65
-  - label: STK
-    value: *a
-    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+  - label: Điện thoại
+    value: *p
     labelWidth: 65
+  # - label: STK
+  #   value: *a
+  #   valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+  #   labelWidth: 65
 cusInfo:
   isInput: true
   margin: 4
