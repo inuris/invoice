@@ -1,0 +1,89 @@
+comName: CÔNG TY TNHH AN HUY
+comCode: anhuy
+comTaxCode: 3500907539
+comRepresent: LÊ ĐỨC HIỀN
+comSerial: AH
+comAddress: Số 10 Nguyễn Hữu Thọ, Phường Phú Mỹ, Thị xã Phú Mỹ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: &p "02543.895895  - Fax: 02543.895895"
+
+comFolder: 
+
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+debug: 
+#logo
+logo:
+  file: logo.png
+  width: 135
+  left: 35
+  right: 10
+  top: 10
+  bottom: 10
+### background: file, width, height, top, left, opacity
+background:
+  file: 
+  top: 465
+
+### background: file, width, height, top, left, opacity
+background_full:
+  file: 
+  top: 49 
+#header
+header:
+  #logo
+  logo:
+    file: 
+    width: 1
+  name:
+    - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+      style: 
+    - value: Bản thể hiện của hóa đơn điện tử
+      valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+      style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+comInfo:
+  row:
+  - valueStyle: "font-weight: bold; font-size: 18px;"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+    valueStyle: "font-size: 13.5px; letter-spacing: -0.2px"
+  - label: Điện thoại
+    value: *p
+  - label: Email
+    value: anhuyco1@yahoo.com.vn
+  # - label: Số tài khoản
+  #   value: *a
+cusInfo:
+  margin: 8
+  
+  row:
+  - label: Họ tên người mua hàng
+    width: 700
+    code: Buyer
+    isInput: true
+  - label: Tên đơn vị
+    width: 793
+    code: CusName
+    isInput: true
+  - label: Địa chỉ
+    width: 822
+    code: CusAddress
+    isInput: true
+  - label: Mã số thuế
+    width: 790
+    code: CusTaxCode
+    isTaxCode: 1
+    maxLength: 1
+    isInput: false
+    valueStyle: "margin-left: 80px; display: inline-block;"
+
+  - label: Hình thức thanh toán
+    width: 720
+    code: Kind_of_Payment
+    isPayment: true
+    isInput: true
