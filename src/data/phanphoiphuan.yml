@@ -1,13 +1,13 @@
-comCode: quangtruong
-comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN QUANG TRƯỞNG
-comTaxCode: 3501322902
-comRepresent: Đinh Văn Trưởng
-comSerial: QT
-comAddress: Tổ 8 Đường Phạm Văn Đồng, Khu phố Hải Điền, Thị Trấn Long Hải, Huyện Long Điền, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comCode: phanphoiphuan
+comName: CÔNG TY TNHH PHÂN PHỐI PHÚ AN
+comTaxCode: 3502308393
+comRepresent: Nguyễn Thị Trang
+comSerial: PA
+comAddress: Số 162/7 Nguyễn Đình Chiểu, Phường Phước Hiệp, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
-comPhone: &p 0906334255
-comAccount:
-comQty: 300
+comPhone: &p 0254.672101
+comAccount: &a 76110000263855 tại Ngân hàng BIDV Bà Rịa
+comQty: 2000
 
 comFolder: 
 
@@ -17,12 +17,12 @@ cssColor: "#005cb3"
 
 ### background: file, width, height, top, left, opacity
 background:
-  file: 
-  top: 500
+  file: bg.png
+  top: 520
 
 ### background: file, width, height, top, left, opacity
 background_full:
-  file: bg_full.png
+  file: 
   top: 49 
 #header
 header:
@@ -48,13 +48,12 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-    valueStyle: "letter-spacing: -0.2px; font-size: 15.5px"
   - label: Điện thoại
     value: *p
   - label: Số tài khoản
-    value: 
-    isInput: 1
-    width: 780
+    value: *a
+    # isInput: 1
+    # width: 780
 cusInfo:
   margin: 2
   isInput: true
