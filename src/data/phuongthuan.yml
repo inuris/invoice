@@ -1,59 +1,64 @@
-comCode: phanphoiphuan
-comName: CÔNG TY TNHH PHÂN PHỐI PHÚ AN
-comTaxCode: 3502308393
-comRepresent: Nguyễn Thị Trang
-comSerial: PA
-comAddress: Số 162/7 Nguyễn Đình Chiểu, Phường Phước Hiệp, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comCode: phuongthuan
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN PHƯƠNG THUẬN
+comTaxCode: 3501170791
+comRepresent: Nguyễn Hữu Thuận
+comSerial: PT
+comAddress: Số 155 Nguyễn Văn Cừ, Phường Long Toàn, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
-comPhone: &p 0254.6721010
-comAccount: &a 76110000263855 tại Ngân hàng BIDV Bà Rịa
-comQty: 2000
+comPhone: 
+comAccount: &a 117000040673 tại Ngân hàng VietinBank Bà Rịa
+comQty: 500
+
 
 comFolder: 
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
-
+debug: 
+#logo
+logo:
+  file: 
+  width: 
+  left: 5
+  top: 10
 ### background: file, width, height, top, left, opacity
 background:
-  file: bg.png
-  top: 520
+  file: 
+  top: 465
 
 ### background: file, width, height, top, left, opacity
 background_full:
-  file: 
+  file: bg_full.png
   top: 49 
 #header
 header:
   #logo
   logo:
     file: 
-    width: 135
-    height: 73
-    left: 38
-    top: 10
+    width: 180
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+      style: ""
     - value: Bản thể hiện của hóa đơn điện tử
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
+  style: "text-align: center"
   row:
-  - label: Đơn vị bán hàng
-    valueStyle: "font-weight: bold"
+  - valueStyle: "font-weight: bold; font-size: 18px;"
     code: ComName
   - label: Mã số thuế
     valueStyle: "font-weight: bold"
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
+    valueStyle: "font-size: 13.5px; letter-spacing: -0.2px"
   - label: Điện thoại
-    value: *p
+    valueStyle: "display: inline-block; width: 317px" 
+    isInput: true
   - label: Số tài khoản
     value: *a
-    # isInput: 1
-    # width: 780
 cusInfo:
   margin: 2
   isInput: true
