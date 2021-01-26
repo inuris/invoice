@@ -137,8 +137,8 @@ function pages() {
       data: 'src/data/',
       helpers: 'src/helpers/'
     }))
-    .pipe(base64('/'))
     .pipe(htmlImg64())
+    .pipe(base64('/'))    
     .pipe(htmlsplit())
     // .pipe(rename(function (path) {
     //   // { dirname: 'huynhtan', basename: 'index', extname: '.xml' }

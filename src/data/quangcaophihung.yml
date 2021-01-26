@@ -4,28 +4,30 @@ comSerial: PH
 comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN THƯƠNG MẠI DỊCH VỤ QUẢNG CÁO PHI HÙNG
 comTaxCode: 3502277219
 comAddress: QL 51, Khu phố Phú Thạnh, Phường Mỹ Xuân, Thị xã Phú Mỹ, Tỉnh Bà Rịa - Vũng Tàu
+
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
 
 ### background: file, width, height, top, left, opacity
 background:
-  file: 
-  top: 500
+  file: bg.jpg
+  top: 440
 
 ### background: file, width, height, top, left, opacity
 background_full:
-  file: bg_full.png
+  file: 
   top: 69 
+
 #header
 header:
   #logo
   logo:
-    file: logo.jpg
-    width: 100
+    file: logo.png
+    width: 150
     left: 30
     top: 2
-    bottom: 2
+    bottom: 4
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     - value: Bản thể hiện của hóa đơn điện tử
@@ -46,27 +48,28 @@ comInfo:
   - label: Số tài khoản
     valueStyle: "letter-spacing: -0.2px; font-size: 15.5px;"
     value: "118000141244 Tại Ngân hàng TMCP Công Thương Việt Nam – CN Bà Rịa Vũng Tàu, PGD Bà Rịa"
+
 cusInfo:
   margin: 2
   isInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 599
+    width: 700
     code: Buyer
   - label: Tên đơn vị
-    width: 693
+    width: 793
     code: CusName
   - label: Mã số thuế
-    width: 689
+    width: 790
     code: CusTaxCode
   - label: Địa chỉ
-    width: 719
+    width: 822
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 195
+    width: 225
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 310
+      width: 397
       code: CusBankNo
