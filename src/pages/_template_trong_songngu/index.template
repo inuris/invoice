@@ -555,7 +555,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                         &#160;
                                       </xsl:when>
                                       <xsl:otherwise>
-                                        <xsl:value-of select="position()" />
+                                        <xsl:value-of select="position() + $level1Count" />
                                       </xsl:otherwise>
                                     </xsl:choose>
                                   </div>
