@@ -362,19 +362,7 @@
 					  </label>
 					</xsl:if>
 				</td>
-			</tr>			
-			<!-- <tr>
-				<td style="width: 105px; border-left: none!important;border-right: none!important;vertical-align: top;">
-					{{>logo}}   
-				</td>
-				<td colspan="2" style="border-left: none!important;border-right: none!important;padding: 5px 5px 4px 5px;">
-					{{>info data=comInfo}}   
-				</td>
-			</tr>			
-			<tr style="border-top: 1px solid {{cssColor}}; border-bottom: 1px solid {{cssColor}};">                                      
-				{{>header cssLogo=null}}
-			</tr> -->
-			 
+			</tr>
 			<tr style="border-bottom:1px solid {{cssColor}};">
 				{{>header}}		
 			</tr>

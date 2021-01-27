@@ -375,14 +375,6 @@
 				{{>header cssLogo=null}}
 			</tr>
 			 
-			<!-- <tr style="border-bottom:1px solid {{cssColor}};">
-				{{>header}}		
-			</tr>
-			<tr class="comInfo" style="border-bottom:1px solid {{cssColor}};">
-				<td colspan="3" style="padding-top:7px;">
-					{{>info data=comInfo}}	
-				</td>
-			</tr> -->
 		</table>
 	</xsl:template>
 	<xsl:template name="addsecondbody">
