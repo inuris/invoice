@@ -26,7 +26,7 @@ header:
     style: "font-size: 14px; font-weight: 400; font-family: Times New Roman;"
   - value: Độc lập - Tự do - Hạnh phúc
     style: "border-bottom: 1px solid #111;font-size: 14px; font-weight: 400; padding-bottom: 3px; font-family: Times New Roman;"
-  - value: HÓA ĐƠN THU TIỀN HỌC PHÍ
+  - value: HÓA ĐƠN – PHIẾU THU TIỀN
     style: "font-size: 18px; line-height: 28px; font-family: Times New Roman;"
   - value: Bản thể hiện của hóa đơn điện tử
     valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
