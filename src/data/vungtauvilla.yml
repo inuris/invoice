@@ -1,30 +1,22 @@
-comName: CÔNG TY TNHH AN HUY
-comCode: anhuy
-comTaxCode: 3500907539
-comRepresent: LÊ ĐỨC HIỀN
-comSerial: AH
-comAddress: Số 10 Nguyễn Hữu Thọ, Phường Phú Mỹ, Thị xã Phú Mỹ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comCode: vungtauvilla
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN VŨNG TÀU VILLA
+comTaxCode: 3502442014
+comRepresent: Phạm Thị Duyên
+comSerial: AA
+comAddress: 126/41 Nguyễn Thiện Thuật , Phường Thắng Nhất,Thành Phố Vũng Tàu, Tỉnh Bà Rịa Vũng Tàu
 comSys: 1
-comPhone: &p "02543.895895"
-comYear: 20
+comQty: 300
+
 comFolder: 
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
-debug: 
-#logo
-logo:
-  file: logo.png
-  width: 135
-  left: 35
-  right: 10
-  top: 10
-  bottom: 10
+
 ### background: file, width, height, top, left, opacity
 background:
-  file: 
-  top: 465
+  file:
+  top: 500
 
 ### background: file, width, height, top, left, opacity
 background_full:
@@ -35,59 +27,52 @@ header:
   #logo
   logo:
     file: 
-    width: 1
+    width: 135
+    height: 73
+    left: 38
+    top: 10
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-      style: 
     - value: Bản thể hiện của hóa đơn điện tử
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
   row:
-  - valueStyle: "font-weight: bold; font-size: 18px;"
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
     code: ComName
   - label: Mã số thuế
     valueStyle: "font-weight: bold"
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-    valueStyle: "font-size: 13.5px; letter-spacing: -0.2px"
-  - label: Điện thoại
-    value: *p
-    width: 100
-    col-2:
-    - label: " - Fax"
-      value: "02543.895895"
   - label: Email
-    value: anhuyco1@yahoo.com.vn
+    value: vungtauvilla2020@gmail.com
   # - label: Số tài khoản
-  #   value: *a
+  #   value: 
+  #   isInput: 1
+  #   width: 780
 cusInfo:
-  margin: 8
-  
+  margin: 2
+  isInput: true
   row:
   - label: Họ tên người mua hàng
     width: 700
     code: Buyer
-    isInput: true
   - label: Tên đơn vị
     width: 793
     code: CusName
-    isInput: true
-  - label: Địa chỉ
-    width: 822
-    code: CusAddress
-    isInput: true
   - label: Mã số thuế
     width: 790
     code: CusTaxCode
-    isTaxCode: 1
-    maxLength: 1
-    isInput: false
-    valueStyle: "margin-left: 80px; display: inline-block;"
-
+  - label: Địa chỉ
+    width: 822
+    code: CusAddress
   - label: Hình thức thanh toán
-    width: 720
+    width: 225
     code: Kind_of_Payment
     isPayment: true
-    isInput: true
+    col-2:
+    - label: Số tài khoản
+      width: 397
+      code: CusBankNo
