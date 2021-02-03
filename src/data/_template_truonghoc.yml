@@ -1,13 +1,14 @@
-comPattern: 02GTTT0/001
-isGTTT: true
-comSerial: GA
-comName: TRƯỜNG
-comTaxCode: 3
-comAddress: BR-VT
-comRepresent:
+comName: 
+comTaxCode: 3502228042
+comRepresent: 
+comSerial: AA
+comAddress: 
+comSys: 1
+comPhone: &p 0254
 
 comFolder: 
-
+comPattern: 02GTTT0/001
+isGTTT: true
 comInvoiceNo: 0000000
 cssColor: "#185b9d"
 
