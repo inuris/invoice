@@ -5,7 +5,7 @@ comCode: posco
 comDomain: poscovietnam
 comTaxCode: 3500771158
 comRepresent: Yun Hoon
-comSerial: AB
+comSerial: AA
 comAddress: Lô số 1, Khu Công nghiệp Phú Mỹ II, Phường Phú Mỹ, Thị Xã Phú Mỹ,Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 2
 comPhone: &comPhone "(84) 254 3923700 - Fax: ( 84) 254 3923000"
@@ -51,6 +51,7 @@ comInfo:
   isInput:  
   labelStyle: 
   subStyle: "font-size: 100%"
+  width: 654
   row:
   - label: Đơn vị bán hàng
     sub: Seller
