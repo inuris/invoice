@@ -6,13 +6,11 @@ echo 2. Lieu_Khanh
 echo 3. Lieu_Khanh Dich vu
 echo 4. Trong (Don ngu)
 echo 5. Trong (Song ngu)
-echo 6. Trong Dich vu (Don ngu)
-echo 7. Trong Dich vu (Song ngu)
-echo 8. Ban hang A5
-echo 9. Ban hang A4
-echo 10. Truong hoc
-echo 11. Thuy PM
-echo 12. Dung (Song ngu)
+echo 6. Ban hang A5
+echo 7. Ban hang A4
+echo 8. Truong hoc
+echo 9. Thuy PM
+echo 10. Dung (Song ngu)
 
 
 set /p t=Choose template:
@@ -22,13 +20,11 @@ if "%t%"=="2" set template=_template_lieu_khanh
 if "%t%"=="3" set template=_template_lieu_khanh_dichvu
 if "%t%"=="4" set template=_template_trong_donngu
 if "%t%"=="5" set template=_template_trong_songngu
-if "%t%"=="6" set template=_template_trong_dichvu_donngu
-if "%t%"=="7" set template=_template_trong_dichvu_songngu
-if "%t%"=="8" set template=_template_banhang_a5
-if "%t%"=="9" set template=_template_banhang
-if "%t%"=="10" set template=_template_truonghoc
-if "%t%"=="11" set template=_template_thuypm
-if "%t%"=="12" set template=_template_dung_songngu
+if "%t%"=="6" set template=_template_banhang_a5
+if "%t%"=="7" set template=_template_banhang
+if "%t%"=="8" set template=_template_truonghoc
+if "%t%"=="9" set template=_template_thuypm
+if "%t%"=="10" set template=_template_dung_songngu
 cls
 echo %template%
 set /p code=Code name:

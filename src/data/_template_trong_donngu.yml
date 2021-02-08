@@ -18,6 +18,8 @@ background:
   file: bg.png
   top: 500
 #header
+layout:
+  type: 1
 header:
   #logo : file, width, top, left
   logo:
@@ -36,8 +38,8 @@ header:
   - sub: Electronic Invoice Display
     subStyle: "font-size: 13px; line-height: 1.4;"    
   serial:
-    width: 220
-    labelStyle: "display: block; width: 100px; float: left"
+    width: 230
+    labelStyle: "display: block; width: 110px; float: left"
 #comInfo Table
 comInfo:
   style: "font-weight: 400; font-size: 16px"
