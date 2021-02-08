@@ -243,8 +243,7 @@ function images() {
 function server(done) {
   browser.init({
     server: PATHS.dist,
-    port: PORT,
-    startPath: "/_template/"
+    port: PORT
   }, done);
 }
 

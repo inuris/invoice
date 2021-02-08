@@ -52,9 +52,14 @@ comInfo:
     isInput: 1
     width: 797
   - label: Số tài khoản
-    value: 
-    isInput: 1
-    width: 780
+    width: 180
+    code: ComBankNo
+    isInput: true
+    col-2:
+    - label: tại
+      width: 574
+      code: ComBankName
+      isInput: true
 cusInfo:
   margin: 2
   isInput: true
