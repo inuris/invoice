@@ -67,33 +67,31 @@ comInfo:
     value: 
 #cusInfo Table
 cusInfo:
-  style: "font-size: 16px; font-weight: 400;"
+  style: "font-size: 16px"
   labelWidth:
-  labelStyle: 
+  margin: 8
+  labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
   isInput: 
   row:
   - label: Họ tên người mua hàng
-    width: 661
+    width: 547
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 741
+    width: 644
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 740
+    width: 682
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 763
+    width: 715
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 253
+    width: 551
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
-    col-2:
-      - label: Tài khoản
-        width: 350
