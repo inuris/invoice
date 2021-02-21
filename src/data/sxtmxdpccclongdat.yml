@@ -1,8 +1,13 @@
-comSerial: GA
-comName: CÔNG TY TNHH
-comTaxCode: 3
-comAddress: BR-VT
-comRepresent: 
+comCode: sxtmxdpccclongdat
+comName: CÔNG TY TNHH SẢN XUẤT - THƯƠNG MẠI - XÂY DỰNG PHÒNG CHÁY CHỮA CHÁY LONG ĐẠT
+comTaxCode: 3500925182
+comRepresent: TRƯƠNG TAY TAY
+comSerial: LD
+comAddress: Tổ 90 , ấp Liên Đức, Xã Xà Bang, Huyện Châu Đức, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: SĐT:..................................
+comAccount: STK:..................................
+comQty: 500
 
 comFolder: 
 

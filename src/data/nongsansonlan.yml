@@ -1,8 +1,14 @@
-comSerial: GA
-comName: CÔNG TY TNHH
-comTaxCode: 3
-comAddress: BR-VT
-comRepresent: 
+comCode: nongsansonlan
+comName: DOANH NGHIỆP TƯ NHÂN NÔNG SẢN SƠN LAN
+comTaxCode: 3502120384
+comRepresent: Trần Thanh Sơn
+comSerial: SL
+comAddress: Thôn Việt Cường, Xã Cù Bị, Huyện Châu Đức, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: SĐT:..............................
+comAccount: STK:..............................
+comQty: 500
+
 
 comFolder: 
 

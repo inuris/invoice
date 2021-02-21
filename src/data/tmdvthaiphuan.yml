@@ -1,8 +1,13 @@
-comSerial: GA
-comName: CÔNG TY TNHH
-comTaxCode: 3
-comAddress: BR-VT
-comRepresent: 
+comCode: tmdvthaiphuan
+comName: CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ THÁI PHÚ AN
+comTaxCode: 3502254807
+comRepresent: LÊ VĂN QUÝ
+comSerial: PA
+comAddress: Ấp Hiệp Cường, Xã Cù Bị, Huyện Châu Đức, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: SĐT:.......................
+comAccount: STK:.......................
+comQty: 500
 
 comFolder: 
 
