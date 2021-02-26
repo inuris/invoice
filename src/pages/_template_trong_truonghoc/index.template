@@ -654,12 +654,12 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 <td class="back-bold">
                                   <div style="display: block;word-wrap: break-word;text-align: right; overflow: hidden;">
                                     <xsl:choose>
-                                      <xsl:when test="(Amount=0) or(Amount='')">
+                                      <xsl:when test="(Total=0) or(Total='')">
                                         &#160;
                                       </xsl:when>
                                       <xsl:otherwise>
                                         <!-- fix new-->
-                                        <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                        <xsl:value-of select="translate(translate(translate(format-number(translate(Total,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
                                       </xsl:otherwise>
                                     </xsl:choose>
                                   </div>

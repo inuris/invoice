@@ -17,9 +17,13 @@ cssColor: "#111"
 background:
   file: bg.png
   top: 480
-#header
+
+# layout
+# type 1:  Cơ bản, 2: Dịch vụ
 layout:
   type: 1
+
+#header
 header:
   #logo : file, width, top, left
   logo:

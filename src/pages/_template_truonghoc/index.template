@@ -245,8 +245,6 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
           .VATTEMP div label.fl-l, div label
           {
           margin-right: 0;
-          margin-top: 3px;
-
           }
           .VATTEMP .input-name, .input-date
           {
@@ -466,7 +464,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                             <tr>
                               <td colspan="6">
                                 <table cellspacing="0" cellpadding="0" style="width:100%;">
-                                  <tr style="line-height:17px;">
+                                  <tr>
                                     <td style="color: {{cssColor}};padding-left: 10px;" >
                                       
                                     </td>
@@ -595,12 +593,12 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                               <td class="back-bold">
                                 <div style="display: block;word-wrap: break-word;text-align: right; overflow: hidden;">
                                   <xsl:choose>
-                                    <xsl:when test="(Amount=0) or(Amount='')">
+                                    <xsl:when test="(Total=0) or(Total='')">
                                       &#160;
                                     </xsl:when>
                                     <xsl:otherwise>
                                       <!-- fix new-->
-                                      <xsl:value-of select="translate(translate(translate(format-number(translate(Amount,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
+                                      <xsl:value-of select="translate(translate(translate(format-number(translate(Total,',','.'), '###,##0.##'),',','?'),'.',','),'?','.')"/>
                                     </xsl:otherwise>
                                   </xsl:choose>
                                 </div>
