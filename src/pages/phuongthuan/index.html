@@ -146,12 +146,12 @@
 					<label class="fl-l" style="font-weight:normal; padding-left:10px;">
 						<span>Số tiền viết bằng chữ: </span>
 					</label>
-					<label class="fl-l input-name" style="width:741px;min-width: 100px;display: block;">
+					<label class="fl-l input-name" style="width:726px;min-width: 100px;display: block;">
 						&#160;<xsl:value-of select="$str1"/>
 					</label>
 				</div>
 				<div class="clearfix" style="padding-bottom:5px;">
-					<label class="fl-l input-name" style="width:877px;min-width: 100px;display: block;margin-left:10px;">
+					<label class="fl-l input-name" style="width:862px;min-width: 100px;display: block;margin-left:10px;">
 						&#160;<xsl:value-of select="$str2"/>
 					</label>
 				</div>
@@ -161,12 +161,12 @@
 					<label class="fl-l" style="font-weight:normal;padding-left:10px;padding-top:6px;">
 						<span>Số tiền viết bằng chữ: </span>
 					</label>
-					<label class="fl-l input-name" style="width:741px;min-width: 100px;display: block;padding-top:6px;">
+					<label class="fl-l input-name" style="width:726px;min-width: 100px;display: block;padding-top:6px;">
 						&#160;<xsl:value-of select="$str"/>
 					</label>
 				</div>
 				<div class="clearfix" style="padding-bottom:5px;">
-					<label class="fl-l input-name" style="width:877px;min-width: 100px;display: block;margin-left:10px;">
+					<label class="fl-l input-name" style="width:862px;min-width: 100px;display: block;margin-left:10px;">
 						&#160;
 					</label>
 				</div>
@@ -215,7 +215,7 @@
 						<!-- Dòng product đầu tiên của trang đầu -->
 						<xsl:when test="position()=1">
 							<xsl:text disable-output-escaping="yes">&lt;div class="pagecurrent" id="1"&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="width:900px !important;margin:0px auto;padding: 0;" &gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="width:900px !important;margin:0px auto;padding: 10px;" &gt;</xsl:text>
 							<xsl:call-template name="background"></xsl:call-template>
 							<xsl:call-template name="addfirtbody">
 								<xsl:with-param name="pagesNeededfnc" select="$pagesNeededfnc"/>
@@ -256,7 +256,7 @@
 							<xsl:text disable-output-escaping="yes">&lt;div class="pagecurrent" id=</xsl:text>
 							<xsl:value-of select="((position()-1) div $itemNeeded) + 1"/>
 							<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
-							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="width:900px !important;margin:0px auto;padding:0;" &gt;</xsl:text>
+							<xsl:text disable-output-escaping="yes">&lt;div class="VATBound" style="width:900px !important;margin:0px auto;padding:10px;" &gt;</xsl:text>
 							<xsl:call-template name="background"></xsl:call-template>
 							<xsl:call-template name="addfirtbody">
 								<xsl:with-param name="pagesNeededfnc" select="$pagesNeededfnc"/>
