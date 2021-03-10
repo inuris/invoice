@@ -54,6 +54,8 @@ comInfo:
     # width: 797
   - label: Số tài khoản
     value: *a
+  - labelWidth: 98
+    value: 050041233386 Tại Ngân hàng Sacombank - PGD Châu Đức
     # isInput: 1
     # width: 780
 cusInfo:
