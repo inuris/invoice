@@ -6,7 +6,7 @@ comSerial: VL
 comAddress: Số 63 Nguyễn Văn Hưởng, Khu phố 1, Phường Long Tâm, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
 comPhone: &p 0909045689
-comAccount:
+comAccount: &a 007146375 tại Ngân hàng Quốc Tế - VIB Bà Rịa
 comQty: 300
 
 
@@ -24,7 +24,7 @@ background_full:
 #background : file, width, height, top, left
 background:
   file: bg.jpg
-  top: 505
+  top: 540
 #header
 header:
   #logo : file, width, top, left
@@ -50,7 +50,7 @@ header:
 comInfo:
   style: "font-weight: 700; font-size: 16px; line-height: 20px"
   margin: 4
-  labelWidth: 165
+  labelWidth: 185
   isInput:  
   labelStyle: 
   subStyle: "font-size: 100%"
@@ -71,9 +71,9 @@ comInfo:
   - label: Điện thoại
     sub: Tel
     value: *p
-  # - label: Số tài khoản
-  #   sub: Account No.
-  #   value: 
+  - label: Số tài khoản
+    sub: Account No.
+    value: *a
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"
