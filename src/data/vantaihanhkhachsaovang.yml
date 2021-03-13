@@ -6,7 +6,7 @@ comSerial: SV
 comAddress: Khu phố 3, Phường Long Toàn, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
 comPhone: &p 0906.226200
-comAccount: ĐỂ TRỐNG
+comAccount: &a 7873968 tại Ngân hàng TMCP Á Châu - Chi nhánh Bà Rịa, Tỉnh BRVT
 comQty: 500
 
 
@@ -52,9 +52,9 @@ comInfo:
   - label: Điện thoại
     value: *p
   - label: Số tài khoản
-    value: 
-    isInput: 1
-    width: 780
+    value: *a
+    # isInput: 1
+    # width: 780
 cusInfo:
   margin: 2
   isInput: true
