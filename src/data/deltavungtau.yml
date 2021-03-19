@@ -15,10 +15,15 @@ convert:
 cssFontFamily: Times New Roman
 cssColor: "#170965"
 
+# layout
+# type 1:  Cơ bản, 2: Dịch vụ
+layout:
+  type: 1
+
 #background : file, width, height, top, left
 background:
   file: bg.png
-  top: 490
+  top: 465
 #header
 header:
   #logo : file, width, top, left
@@ -27,7 +32,7 @@ header:
     width: 220
     top: 1
     left: 10
-    bottom: 5
+    bottom: 10
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 22px; color: #d00"
@@ -44,7 +49,7 @@ header:
 #comInfo Table
 comInfo:
   style: "font-weight: 400; font-size: 16px"
-  margin: 6
+  margin: 8
   labelWidth: 120
   isInput:  
   labelStyle: 
@@ -60,6 +65,7 @@ comInfo:
     valueStyle: "letter-spacing: 2px; font-weight: 700"
     sub: Tax code
     isTaxCode: 1
+    # maxLength: 1
   - label: Địa chỉ
     code: ComAddress
     sub: Address
@@ -78,6 +84,7 @@ cusInfo:
   style: "font-size: 16px; font-weight: 400;"
   labelWidth:
   labelStyle: 
+  margin: 8
   subStyle: "font-size: 100%"
   isInput: 
   row:
