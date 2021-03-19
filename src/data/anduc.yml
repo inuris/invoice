@@ -5,6 +5,8 @@ comTaxCode: 3500409646
 comAddress: 183 Nguyễn An Ninh, Phường Thắng Nhì, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 comInvoiceNo: 0000000
 english:
+
+comFolder: 200908_AnDuc_V5_AMTrong
 convert: 1
 #global style
 cssFontFamily: Times New Roman
@@ -70,19 +72,19 @@ cusInfo:
   subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 673
+    width: 663
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 755
+    width: 745
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 753
+    width: 743
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 778
+    width: 768
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
@@ -92,4 +94,4 @@ cusInfo:
     sub: Method of Payment
     col-2:
       - label: Tài khoản
-        width: 370
+        width: 350
