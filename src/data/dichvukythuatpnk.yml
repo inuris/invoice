@@ -11,10 +11,15 @@ convert:
 cssFontFamily: Times New Roman
 cssColor: "#111"
 
+# layout
+# type 1:  Cơ bản, 2: Dịch vụ
+layout:
+  type: 1
+
 #background : file, width, height, top, left
 background:
   file: bg.jpg
-  top: 500
+  top: 490
 #header
 header:
   #logo : file, width, top, left
@@ -39,7 +44,7 @@ header:
 #comInfo Table
 comInfo:
   style: "font-weight: 700; font-size: 16px"
-  margin: 6
+  margin: 8
   labelWidth: 180
   isInput:  
   labelStyle: 
@@ -67,6 +72,7 @@ comInfo:
 cusInfo:
   style: "font-size: 16px"
   labelWidth: 
+  margin: 8
   labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
   isInput: 
