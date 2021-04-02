@@ -504,7 +504,7 @@
 		{{>total}}
 	</xsl:template>
 	<xsl:template name="addfinalbody">
-		<div class="clearfix">
+		<div>
 			<!--variable-->
 			<xsl:variable name="serial">
 				<xsl:value-of select="SerialNo"/>
@@ -624,8 +624,6 @@
 					<div style="color:#184D4E">Xem thông tin chứng thư</div>
 				</a>
 			</div>
-			<!---->
-			<div class="clearfix"/>
 			<!--panel replace-->
 			<xsl:choose>
 				<xsl:when test="/Invoice/TvanData/Content/isReplace!=''">
