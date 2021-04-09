@@ -110,8 +110,14 @@ cusInfo:
     code: CusTaxCode
     sub: Tax code
   - label: Số tài khoản
-    code: ComBankNo
+    code: CusBankNo
     sub: Bank A/C
+    width: 120
+    col-2:
+      - code: CusBankName
+        codePrefix: tại
+        labelWidth: 1
+        width: 457
   - label: Hình thức thanh toán
     code: Kind_of_Payment
     isPayment: true
