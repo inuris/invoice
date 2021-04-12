@@ -17,12 +17,12 @@ cssColor: "#005cb3"
 
 ### background: file, width, height, top, left, opacity
 background:
-  # file: bg.png
-  top: 500
+  file: bg.png
+  top: 525
 
 ### background: file, width, height, top, left, opacity
 background_full:
-  file: bg_full.png
+  # file: bg_full.png
   top: 49 
 #header
 header:
