@@ -6,7 +6,7 @@ comTaxCode: 3500810304
 comAddress: 195/44 Ba Cu, Phường 4, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
 english:
-debug:
+debug: 
 convert: 1
 #global style
 cssFontFamily: Times New Roman
@@ -15,7 +15,7 @@ cssColor: "#3b7b43"
 #background : file, width, height, top, left
 background:
   file: bg.jpg
-  top: 473
+  top: 512
 #header
 header:
   #logo : file, width, top, left

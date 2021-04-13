@@ -53,7 +53,7 @@ comInfo:
     value: *p
   - label: Số tài khoản
     value: *a
-  - value: 707094046999999 tại Ngân hàng TMCP Nam Á phòng giao dịch TP.Bà Rịa
+  - value: 707094046999999 tại Ngân hàng Nam Á - Chi nhánh Vũng Tàu
     valueStyle: "margin-left: 99px;"
 cusInfo:
   margin: 4
