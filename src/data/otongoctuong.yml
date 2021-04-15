@@ -1,0 +1,107 @@
+comCode: otongoctuong
+comName: CÔNG TY TNHH Ô TÔ NGỌC TƯỜNG
+comTaxCode: 3502444808
+comRepresent: LƯU THỊ PHƯƠNG LOAN
+comSerial: NT
+comAddress: 609 Quốc lộ 51, Khu phố Hương Sơn, Phường Long Hương, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comPhone: &p 0914311768
+comQty: 2000
+comFolder: 
+
+comInvoiceNo: 0000000
+english:
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  top: 525
+
+# layout
+# type 1:  Cơ bản, 2: Dịch vụ
+layout:
+  type: 1
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 160
+    top: 12
+    left: 15
+    bottom: 10
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px; color: #3569a7"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 230
+    labelStyle: "display: block; width: 110px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 400; font-size: 16px"
+  margin: 6
+  labelWidth: 120
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px; font-weight: 700"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px; font-weight: 700"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+    width: 543
+  - label: Điện thoại
+    value: *p
+  - label: Số tài khoản
+    value: 
+    isInput: 1
+    width: 700
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth:
+  margin: 8
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  isInput: 1
+  row:
+  - label: Họ tên người mua hàng
+    width: 657
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 744
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 742
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 769
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 671
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
