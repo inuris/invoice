@@ -5,7 +5,7 @@ comRepresent: Đào Công Tuấn
 comSerial: HT
 comAddress: Số 17, Khu phố Phước Trung, Thị Trấn Đất Đỏ, Huyện Đất đỏ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
-comPhone: &p 0337577272
+comPhone: &p '0337577272'
 comAccount: &a 76110000424023 tại Ngân hàng BIDV CN Bà Rịa Vũng Tàu
 comQty: 300
 
