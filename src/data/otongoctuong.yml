@@ -19,7 +19,7 @@ cssColor: "#111"
 #background : file, width, height, top, left
 background:
   file: bg.png
-  top: 525
+  top: 565
 
 # layout
 # type 1:  Cơ bản, 2: Dịch vụ
@@ -29,7 +29,7 @@ layout:
 header:
   #logo : file, width, top, left
   logo:
-    file: logo.png
+    file: 
     width: 160
     top: 12
     left: 15
