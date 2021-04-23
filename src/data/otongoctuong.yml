@@ -17,10 +17,14 @@ cssFontFamily: Times New Roman
 cssColor: "#111"
 
 #background : file, width, height, top, left
-background:
-  file: bg.png
-  top: 565
+# background:
+#   file: bg.png
+#   top: 565
 
+### background: file, width, height, top, left, opacity
+background_full:
+  file: bg_full.png
+  top: 10
 # layout
 # type 1:  Cơ bản, 2: Dịch vụ
 layout:
