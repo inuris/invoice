@@ -6,7 +6,7 @@ comSerial: AP
 comAddress: Số 243 đường 27/4, Khu phố Thạnh Sơn, Thị trấn Phước Bửu, Huyện Xuyên Mộc, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
 comQty: 300
-
+debug: 1
 
 comFolder: 
 
