@@ -312,14 +312,14 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                     <label class="fl-l" style="float: right;width:100%; font-weight: 700;">
                                       <span>
                                         <xsl:choose>
-                                          <xsl:when test="(../../GrossValue=0)">
+                                          <xsl:when test="(../../VatAmount30=0)">
                                               0
                                           </xsl:when>
-                                          <xsl:when test="(../../GrossValue='')">
+                                          <xsl:when test="(../../VatAmount30='')">
                                               &#160;
                                           </xsl:when>
                                           <xsl:otherwise>
-                                              <xsl:value-of select="translate(translate(translate(format-number(../../GrossValue, '###,###'),',','?'),'.',','),'?','.')"/>
+                                              <xsl:value-of select="translate(translate(translate(format-number(../../VatAmount30, '###,###'),',','?'),'.',','),'?','.')"/>
                                           </xsl:otherwise>
                                         </xsl:choose>
                                     </span>
