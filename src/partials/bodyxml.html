@@ -5,8 +5,6 @@
 <Invoice> 
 <CNCom>{{comName}}</CNCom>
 <Content Id="SigningData">
-	{{#ifCond debug '==' 1}}
-	<ArisingDate/>
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
 	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}21E{{/if}}</SerialNo>
 	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
@@ -16,7 +14,11 @@
 	<ComAddress>{{comAddress}}</ComAddress>
 	<ComPhone>{{comPhone}}</ComPhone>
 	<ComFax/>
-	<ComBankNo/>	
+	<ComBankNo>{{comBankNo}}</ComBankNo>
+	<ComBankName>{{comBankName}}</ComBankName>
+	
+	{{#ifCond debug '==' 1}}
+	<ArisingDate>21/08/2020 09:42:29</ArisingDate>	
 	<CusCode/>
 	<CusName>Công ty TNHH Steinsvik</CusName>
 	<CusBankNo>1231231231</CusBankNo>
@@ -276,16 +278,6 @@
 	{{/ifCond}}
 	{{#ifCond debug '==' 2}}
 	<ArisingDate>21/08/2020 09:42:29</ArisingDate>
-	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}21E{{/if}}</SerialNo>
-	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
-	<Kind_of_Payment>TM</Kind_of_Payment>
-	<ComName>{{comName}}</ComName>
-	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
-	<ComAddress>{{comAddress}}</ComAddress>
-	<ComPhone>{{comPhone}}</ComPhone>
-	<ComFax/>
-	<ComBankNo/>	
 	<CusCode/>
 	<CusName>Công ty TNHH Steinsvik</CusName>
 	<CusPhone></CusPhone>
@@ -332,16 +324,6 @@
 	{{/ifCond}}
 	{{#ifCond debug '==' null}}
 	<ArisingDate/>
-	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}21E{{/if}}</SerialNo>
-	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
-	<Kind_of_Payment></Kind_of_Payment>
-	<ComName>{{comName}}</ComName>
-	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
-	<ComAddress>{{comAddress}}</ComAddress>
-	<ComPhone>{{comPhone}}</ComPhone>
-	<ComFax/>
-	<ComBankNo/>
 	<CusCode/>
 	<CusName/>
 	<CusPhone/>
@@ -398,9 +380,7 @@
 
 <Invoice> 
 <CNCom>{{comName}}</CNCom>
-<Content Id="SigningData">
-	{{#ifCond debug '==' 1}}
-	<ArisingDate/>
+<Content Id="SigningData">	
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
 	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}21E{{/if}}</SerialNo>
 	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
@@ -410,7 +390,11 @@
 	<ComAddress>{{comAddress}}</ComAddress>
 	<ComPhone>{{comPhone}}</ComPhone>
 	<ComFax/>
-	<ComBankNo/>	
+	<ComBankNo>{{comBankNo}}</ComBankNo>
+	<ComBankName>{{comBankName}}</ComBankName>
+
+	{{#ifCond debug '==' 1}}
+	<ArisingDate>21/08/2020 09:42:29</ArisingDate>
 	<CusCode/>
 	<CusName>Công ty TNHH Steinsvik</CusName>
 	<CusPhone></CusPhone>
@@ -456,17 +440,7 @@
 	<SignDate/>	
 	{{/ifCond}}
 	{{#ifCond debug '==' 2}}
-	<ArisingDate>21/08/2020 09:42:29</ArisingDate>
-	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}21E{{/if}}</SerialNo>
-	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
-	<Kind_of_Payment>TM</Kind_of_Payment>
-	<ComName>{{comName}}</ComName>
-	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
-	<ComAddress>{{comAddress}}</ComAddress>
-	<ComPhone>{{comPhone}}</ComPhone>
-	<ComFax/>
-	<ComBankNo/>	
+	<ArisingDate>21/08/2020 09:42:29</ArisingDate>		
 	<CusCode/>
 	<CusName>Công ty TNHH Steinsvik</CusName>
 	<CusPhone></CusPhone>
@@ -512,17 +486,6 @@
 	<SignDate/>	
 	{{/ifCond}}
 	{{#ifCond debug '==' null}}
-	<ArisingDate/>
-	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}21E{{/if}}</SerialNo>
-	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
-	<Kind_of_Payment></Kind_of_Payment>
-	<ComName>{{comName}}</ComName>
-	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
-	<ComAddress>{{comAddress}}</ComAddress>
-	<ComPhone>{{comPhone}}</ComPhone>
-	<ComFax/>
-	<ComBankNo/>
 	<CusCode/>
 	<CusName/>
 	<CusPhone/>

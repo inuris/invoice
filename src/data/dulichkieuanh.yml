@@ -1,0 +1,148 @@
+comCode: dulichkieuanh
+comName: DOANH NGHIỆP TƯ NHÂN DU LỊCH KIỀU ANH
+comTaxCode: 3502315383
+comRepresent: Nguyễn Thành Đồng
+comSerial: KA
+comAddress: Số 69-69A Thùy Vân, Phường 2, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 2
+comPhone: &p "0254.3623888"
+comAccount: &a 5511101656007 tại Ngân hàng MB Bank - CN Vũng Tàu
+comQty: 2000
+comBankNo: 5511101656007
+comBankName: Ngân hàng MB Bank - CN Vũng Tàu
+comDomain: premierpearlhotel
+isHSM: 1
+xml:
+  - GrossValue
+comFolder: 
+
+comInvoiceNo: 0000000
+english: true
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+
+#background : file, width, height, top, left
+background:
+  file: bg.png
+  top: 525
+
+# layout
+# type 1:  Cơ bản, 2: Dịch vụ
+layout:
+  type: 1
+
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: logo.png
+    width: 150
+    top: 5
+    left: 25
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 230
+    labelStyle: "display: block; width: 110px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 4
+  labelWidth: 172
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - label: Đơn vị bán hàng
+    sub: Seller
+    code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 18px;"
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+  - label: Điện thoại
+    sub: Tel
+    value: *p
+  - label: Email
+    value: info@premierpearlhotel.com
+    width: 250
+    col-2:
+      - label: Website
+        labelWidth: 60
+        value: www.premierpearlhotel.com
+  - label: Số tài khoản
+    sub: Account No.
+    code: ComBankNo
+    width: 150
+    col-2:
+      - label: Ngân hàng
+        labelWidth: 120
+        sub: Bank
+        code: ComBankName
+
+#cusInfo Table
+cusInfo:
+  style: "font-size: 15px"
+  margin: 4
+  labelWidth:   
+  isInput: 1
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  row:
+  - label: Họ tên người mua hàng
+    code: Buyer
+    sub: Customer's Name
+    width: 321
+    col-2: 
+      - label: Ngày đến
+        sub: Arrival
+        code: Arrival
+        width: 113
+  - label: Tên công ty
+    code: CusName
+    sub: Company's Name
+    width: 399
+    col-2: 
+      - label: Ngày đi
+        sub: Departure
+        code: Departure
+        width: 105
+  - label: Mã số thuế
+    code: CusTaxCode
+    sub: Tax code
+    width: 450
+    col-2: 
+      - label: Số phòng
+        sub: Room No
+        width: 102
+        code: RoomNo
+  - label: Địa chỉ
+    code: CusAddress
+    sub: Address
+    width: 716
+
+  - label: Hình thức thanh toán
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Payment method
+    width: 171
+    col-2: 
+      - label: Số tài khoản
+        sub: Account No
+        width: 236
+        code: CusBankNo
