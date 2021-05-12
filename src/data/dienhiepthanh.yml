@@ -6,6 +6,7 @@ comAddress: Số 126 Lưu Hữu Phước, Phường Thắng Nhất, Thành Phố
 comInvoiceNo: 0000000
 comAccount: &a 0081001318688 tại Ngân hàng Vietcombank – CN Vũng Tàu
 english:
+debug: 1
 convert: 1
 #global style
 cssFontFamily: Times New Roman
