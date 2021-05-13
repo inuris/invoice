@@ -6,6 +6,7 @@ comAddress: Số 6A, Đinh Tiên Hoàng, TT.Ngãi Giao, Huyện Châu Đức, T�
 comInvoiceNo: 0000000
 cssFontFamily: Times New Roman
 cssColor: "#7b5473"
+comFolder: 200907_XayDungHoangThinh_V5_AMBinh
 
 ### background: file, width, height, top, left, opacity
 background_full:
@@ -31,32 +32,33 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    width: 717
+    width: 802
     code: ComPhone
     isInput: true
   - label: Số tài khoản
     isInput: true
-    width: 704
+    width: 789
 cusInfo:
- isInput: true
- row:
+  margin: 2
+  isInput: true
+  row:
   - label: Họ tên người mua hàng
-    width: 633
+    width: 718
     code: Buyer
   - label: Tên đơn vị
-    width: 715
+    width: 799
     code: CusName
   - label: Mã số thuế
-    width: 713
+    width: 799
     code: CusTaxCode
   - label: Địa chỉ
-    width: 738
+    width: 823
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 200
+    width: 225
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 364
+      width: 421
       code: CusBankNo
