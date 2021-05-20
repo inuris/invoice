@@ -2,11 +2,11 @@ comCode: xaydungthanhthu
 comSerial: AA
 comName: CÔNG TY TNHH XÂY DỰNG THÀNH THƯ
 comTaxCode: 3502345878
-comAddress: Tổ 6, Khu phố 3, TT.Ngãi Giao, Huyện Châu Đức, Tỉnh BR-VT, Việt Nam
+comAddress: Hẻm 193 đường Âu Cơ, Thị Trấn Ngãi Giao, Huyện Châu Đức, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
 cssFontFamily: Times New Roman
 cssColor: "#3b6735"
-
+comFolder: 200907_XayDungThanhThu_V5_AMBinh
 ### background: file, width, height, top, left, opacity
 background_full:
   file: bg_full.png
@@ -32,33 +32,34 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    width: 716
-    code: ComPhone
-    isInput: true
+    value: 
+    isInput: 1
+    width: 800
   - label: Số tài khoản
-    width: 703
-    code: ComBankNo
-    isInput: true
+    value: 
+    isInput: 1
+    width: 787
 cusInfo:
- isInput: true
- row:
+  margin: 2
+  isInput: true
+  row:
   - label: Họ tên người mua hàng
-    width: 633
+    width: 716
     code: Buyer
   - label: Tên đơn vị
-    width: 715
+    width: 798
     code: CusName
   - label: Mã số thuế
-    width: 713
+    width: 796
     code: CusTaxCode
   - label: Địa chỉ
-    width: 738
+    width: 822
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 200
+    width: 225
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 364
+      width: 420
       code: CusBankNo
