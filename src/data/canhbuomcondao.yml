@@ -6,7 +6,7 @@ comAddress: Khu 5, đường Nguyễn Đức Thuận, Thị Trấn Côn Đảo, 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
-
+comFolder: 201021_CanhBuomConDao_V5_AMKhanh
 #logo
 logo:
   file: logo.jpg
@@ -49,7 +49,7 @@ comInfo:
     sub: Address
     width: 595
   - label: Số tài khoản
-    value: 116002645268 tại ngân hàng Vietinbank chi nhánh Bà Rịa - Vũng Tàu, Phòng giao dịch tại Côn Đảo
+    value: 1609201000695 tại Ngân hàng Agribank Côn Đảo
     width: 555 
 #cusInfo Table
 cusInfo:
