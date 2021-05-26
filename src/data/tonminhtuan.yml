@@ -63,7 +63,10 @@ comInfo:
     valueStyle: "font-size: 15px; letter-spacing: -0.3px;"
   - label: Số tài khoản
     sub: Account No.
-    value: 5601111868788 tại Ngân hàng MB - CN Bà Rịa
+    value: 5601111868788 tại Ngân hàng MB - Chi nhánh Bà Rịa
+  - label: Số điện thoại
+    sub: Tel
+    value: 0908096110
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px; font-weight: 400;"
