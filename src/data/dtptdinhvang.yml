@@ -1,17 +1,18 @@
-comCode: xepdovantaiphuongnam
-comName: HỢP TÁC XÃ DỊCH VỤ - XẾP DỠ - VẬN TẢI PHƯƠNG NAM
-comTaxCode: 3500401044
-comRepresent: Nguyễn Văn Biện
-comSerial: PN
-comAddress: 60-62 đường Độc Lập, Khu Phố Ngọc Hà, Thị trấn Phú Mỹ, Huyện Tân Thành, Tỉnh Bà Rịa - Vũng Tàu
+comCode: dtptdinhvang
+comName: CÔNG TY TNHH ĐT - PT ĐỈNH VÀNG
+comTaxCode: 3502393416
+comRepresent: TRẦN VĂN ĐỈNH
+comSerial: DV
+comAddress: Khu B2, Số nhà 27, Tổ 11, Ấp Nam, Xã Hoà Long, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
-comQty: 300
-
+comPhone: &p 0985 742 858
+comAccount: &a 7611.0000.394047 tại Ngân hàng BIDV - Chi nhánh Bà Rịa
+comQty: 500
 comFolder: 
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
-cssColor: "#e40000"
+cssColor: "#005cb3"
 
 ### background: file, width, height, top, left, opacity
 background:
@@ -26,8 +27,9 @@ background_full:
 header:
   #logo
   logo:
-    file: logo.png
-    width: 150
+    # file: logo.png
+    width: 135
+    height: 73
     left: 38
     top: 10
   name:
@@ -46,13 +48,13 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 
-    isInput: 1
-    width: 797
+    value: *p
+    # isInput: 1
+    # width: 797
   - label: Số tài khoản
-    value: 
-    isInput: 1
-    width: 780
+    value: *a
+    # isInput: 1
+    # width: 780
 cusInfo:
   margin: 2
   isInput: true
