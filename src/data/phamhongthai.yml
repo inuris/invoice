@@ -6,8 +6,11 @@ comSerial: HT
 comAddress: Ấp 4, Xã Hòa Bình, Huyện Xuyên Mộc, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
 comQty: 5000
-
+debug: 
 comFolder: 
+
+comBankNo:
+comBankName:
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
@@ -51,9 +54,11 @@ comInfo:
     isInput: 1
     width: 797
   - label: Số tài khoản
-    code: ComAccount
-    isInput: 1
-    width: 780
+    code: ComBankNo
+    width: 160
+    col-2:
+      - label: tại
+        code: ComBankName
 cusInfo:
   margin: 2
   isInput: true
