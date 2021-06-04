@@ -6,6 +6,7 @@ comSerial: AH
 comAddress: Số 10 Nguyễn Hữu Thọ, Phường Phú Mỹ, Thị xã Phú Mỹ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
 comPhone: &p "02543.895895"
+comAccount: &a 76210000186144 - Ngân Hàng BIDV - CN Phú Mỹ
 comYear: 20
 comFolder: 
 
@@ -60,8 +61,8 @@ comInfo:
       value: "02543.895895"
   - label: Email
     value: anhuyco1@yahoo.com.vn
-  # - label: Số tài khoản
-  #   value: *a
+  - label: Số tài khoản
+    value: *a
 cusInfo:
   margin: 8
   
