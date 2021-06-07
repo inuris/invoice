@@ -14,7 +14,7 @@ english: true
 convert:
 #global style
 cssFontFamily: Times New Roman
-cssColor: "#111"
+cssColor: "#005cb3"
 
 #background : file, width, height, top, left
 background:
@@ -85,7 +85,7 @@ cusInfo:
   margin: 8
   labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
-  isInput: 
+  isInput: 1
   row:
   - label: Họ tên người mua hàng
     width: 547
