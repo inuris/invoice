@@ -1,6 +1,6 @@
 comCode: nhasangtacvungtau
 comFolder: 210601_NhaSangTacVungTau_V5_AMQHuong
-comName: NHÀ SÁNG TÁC VŨNG TÀU
+comName: NHÀ SÁNG TÁC VŨNG TÀU - TRUNG TÂM HỖ TRỢ SÁNG TÁC
 comTaxCode: 3500434297
 comRepresent: Đỗ Thị Thanh Thùy
 comSerial: ST
@@ -10,6 +10,9 @@ comPhone: &p 0254 3816276
 comAccount: &a 76010000116341 tại Ngân hàng Đầu tư Phát triển - CN BRVT
 comQty: 2000
 
+comPattern: 02GTTT0/001
+isGTTT: true
+
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
@@ -18,6 +21,7 @@ cssColor: "#005cb3"
 background:
   file: bg.png
   top: 570
+  opacity: 0.1
 
 ### background: file, width, height, top, left, opacity
 background_full:
@@ -33,10 +37,11 @@ header:
     left: 38
     top: 10
   name:
-    - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    - value: Bản thể hiện của hóa đơn điện tử
-      valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
-      style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+  - value: HÓA ĐƠN BÁN HÀNG
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "line-height: 1.4;"
+    styleConvert: "line-height: 1.4;"
 comInfo:
   row:
   - label: Đơn vị bán hàng
