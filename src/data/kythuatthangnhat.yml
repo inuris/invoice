@@ -23,6 +23,7 @@ background:
 background_full:
   file: bg_full.png
   top: 49 
+  opacity: 0.1
 #header
 header:
   #logo
