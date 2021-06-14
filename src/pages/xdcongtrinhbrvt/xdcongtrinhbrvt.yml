@@ -28,9 +28,9 @@ header:
   #logo
   logo:
     file: logo.png
-    width: 239
+    width: 220
     left: 18
-    top: 14
+    top: 19
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     - value: Bản thể hiện của hóa đơn điện tử
@@ -53,9 +53,7 @@ comInfo:
   - label: Email
     value: bariavungtaucons@gmail.com
   - label: Số tài khoản
-    value: 
-    isInput: 1
-    width: 780
+    value: 76610000229287 tại Ngân hàng TMCP Đầu Tư và Phát Triển Việt Nam BIDV chi nhánh Vũng Tàu - Côn Đảo
 cusInfo:
   margin: 2
   isInput: true
