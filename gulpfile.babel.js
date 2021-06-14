@@ -134,7 +134,7 @@ function pages() {
       root: 'src/pages/',
       layouts: 'src/layouts/',
       partials: 'src/partials/',
-      data: 'src/data/',
+      data: 'src/pages/**/',
       helpers: 'src/helpers/'
     }))
     .pipe(htmlImg64())
@@ -256,10 +256,10 @@ function reload(done) {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   // gulp.watch(PATHS.assets, copy);
-  gulp.watch('src/pages/**/*.{html,jpg,png,gif}').on('all', gulp.series(pages, browser.reload, indexing));
+  gulp.watch('src/pages/**/*.{html,jpg,png,gif,js,json,yml}').on('all', gulp.series(pages, browser.reload, indexing));
   gulp.watch('src/pages/**/*.xml').on('all', gulp.series(copyxml, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/data/**/*.{js,json,yml}').on('all', gulp.series(resetPages, pages, browser.reload));
+  
   gulp.watch('src/helpers/**/*.js').on('all', gulp.series(resetPages, pages, browser.reload));
   // gulp.watch('src/assets/scss/**/*.scss').on('all', sass);
   // gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
