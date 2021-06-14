@@ -50,7 +50,7 @@ echo echo oLink.TargetPath = "%%rootPublish%%\%publish%"^>^>CreateShortcut.vbs>>
 echo echo oLink.Save^>^>CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
 echo cscript CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
 echo del CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
-echo ren "index.html" "index.html.bak">"src\pages\%code%\archive.bat"
+echo ren "index.html" "index.html.bak">>"src\pages\%code%\copy.bat"
 
 echo "Generating restore.bat..."
 echo ren "index.html.bak" "index.html">"src\pages\%code%\restore.bat"
