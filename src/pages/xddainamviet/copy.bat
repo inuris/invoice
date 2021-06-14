@@ -8,3 +8,4 @@ echo oLink.TargetPath = "%rootPublish%\210608_XDDaiNamViet_V5_AMTuanAnh">>Create
 echo oLink.Save>>CreateShortcut.vbs
 cscript CreateShortcut.vbs
 del CreateShortcut.vbs
+ren "index.html" "index.html.bak"
