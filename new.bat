@@ -54,6 +54,7 @@ echo ren "index.html" "index.html.bak">>"src\pages\%code%\copy.bat"
 
 echo "Generating restore.bat..."
 echo ren "index.html.bak" "index.html">"src\pages\%code%\restore.bat"
+echo start ie.lnk>>"src\pages\%code%\restore.bat"
 
 echo "Generating shortcut..."
 
