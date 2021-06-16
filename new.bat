@@ -29,8 +29,8 @@ set /p code=Code name:
 set /p publish=Folder publish:
 
 echo "Generating YML..."
-echo comCode: %code%>"src\pages\%code%.yml"
-type "src\data\%template%.yml">>"src\pages\%code%.yml"
+echo comCode: %code%>"src\pages\%code%\%code%.yml"
+type "src\data\%template%.yml">>"src\pages\%code%\%code%.yml"
 
 echo "Generating HTML..."
 xcopy "src\pages\%template%" "src\pages\%code%" /s /i /y
@@ -38,23 +38,23 @@ echo {{#with %code%}}>"src\pages\%code%\index.html"
 type "src\pages\%template%\index.template">>"src\pages\%code%\index.html"
 del "src\pages\%code%\index.template"
 
-echo "Generating copy.bat..."
+echo "Generating _copy.bat..."
 
-echo set /p rootPublish=^<..\..\..\copy.cfg>"src\pages\%code%\copy.bat"
-echo md "%%rootPublish%%\%publish%">>"src\pages\%code%\copy.bat"
-echo copy "..\..\..\dist\%code%\%code%.xml" "%%rootPublish%%\%publish%">>"src\pages\%code%\copy.bat"
-echo copy "..\..\..\dist\%code%\%code%.xslt" "%%rootPublish%%\%publish%">>"src\pages\%code%\copy.bat"
-echo echo Set oWS = WScript.CreateObject("WScript.Shell")^>CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
-echo echo Set oLink = oWS.CreateShortcut("%publish%.lnk")^>^>CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
-echo echo oLink.TargetPath = "%%rootPublish%%\%publish%"^>^>CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
-echo echo oLink.Save^>^>CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
-echo cscript CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
-echo del CreateShortcut.vbs>>"src\pages\%code%\copy.bat"
-echo ren "index.html" "index.html.bak">>"src\pages\%code%\copy.bat"
+echo set /p rootPublish=^<..\..\..\copy.cfg>"src\pages\%code%\_copy.bat"
+echo md "%%rootPublish%%\%publish%">>"src\pages\%code%\_copy.bat"
+echo copy "..\..\..\dist\%code%\%code%.xml" "%%rootPublish%%\%publish%">>"src\pages\%code%\_copy.bat"
+echo copy "..\..\..\dist\%code%\%code%.xslt" "%%rootPublish%%\%publish%">>"src\pages\%code%\_copy.bat"
+echo echo Set oWS = WScript.CreateObject("WScript.Shell")^>CreateShortcut.vbs>>"src\pages\%code%\_copy.bat"
+echo echo Set oLink = oWS.CreateShortcut("%publish%.lnk")^>^>CreateShortcut.vbs>>"src\pages\%code%\_copy.bat"
+echo echo oLink.TargetPath = "%%rootPublish%%\%publish%"^>^>CreateShortcut.vbs>>"src\pages\%code%\_copy.bat"
+echo echo oLink.Save^>^>CreateShortcut.vbs>>"src\pages\%code%\_copy.bat"
+echo cscript CreateShortcut.vbs>>"src\pages\%code%\_copy.bat"
+echo del CreateShortcut.vbs>>"src\pages\%code%\_copy.bat"
+echo ren "index.html" "index.html.bak">>"src\pages\%code%\_copy.bat"
 
-echo "Generating restore.bat..."
-echo ren "index.html.bak" "index.html">"src\pages\%code%\restore.bat"
-echo start ie.lnk>>"src\pages\%code%\restore.bat"
+echo "Generating _restore.bat..."
+echo ren "index.html.bak" "index.html">"src\pages\%code%\_restore.bat"
+echo start ie.lnk>>"src\pages\%code%\_restore.bat"
 
 echo "Generating shortcut..."
 
