@@ -28,15 +28,17 @@ echo %template%
 set /p code=Code name:
 set /p publish=Folder publish:
 
-echo "Generating YML..."
-echo comCode: %code%>"src\pages\%code%\%code%.yml"
-type "src\data\%template%.yml">>"src\pages\%code%\%code%.yml"
+
 
 echo "Generating HTML..."
 xcopy "src\pages\%template%" "src\pages\%code%" /s /i /y
 echo {{#with %code%}}>"src\pages\%code%\index.html"
 type "src\pages\%template%\index.template">>"src\pages\%code%\index.html"
 del "src\pages\%code%\index.template"
+
+echo "Generating YML..."
+echo comCode: %code%>"src\pages\%code%\%code%.yml"
+type "src\data\%template%.yml">>"src\pages\%code%\%code%.yml"
 
 echo "Generating _copy.bat..."
 
