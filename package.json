@@ -37,7 +37,7 @@
     "gulp-html-img64": "^1.0.8",
     "gulp-html-pdf": "^0.3.0",
     "gulp-htmlsplit": "^1.1.1",
-    "gulp-if": "^2.0.0",
+    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-index": "^0.2.0",
     "gulp-load-plugins": "^1.6.0",
