@@ -129,7 +129,7 @@ function copyxml() {
 
 // Copy page templates into finished HTML files
 function pages() {
-  return gulp.src('src/pages/**/*.{html,hbs,handlebars}')    
+  return gulp.src('src/pages/**/*.html')    
     .pipe(panini({
       root: 'src/pages/',
       layouts: 'src/layouts/',
