@@ -7,7 +7,7 @@ comSerial: TC
 comAddress: 703/51 Cách Mạng Tháng Tám, Phường Long Toàn, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
 comPhone: &p 0254 3737586
-comAccount: &a Số tài khoản 050067338879 tại Ngân hàng Sacombank - Chi nhánh Bà Rịa
+comAccount: &a 050067338879 tại Ngân hàng Sacombank - Chi nhánh Bà Rịa
 comQty: 2000
 
 comInvoiceNo: 0000000
@@ -29,9 +29,9 @@ header:
   logo:
     file: logo.png
     width: 150
-    height: 73
     left: 38
-    top: 10
+    top: 3
+    bottom: 3
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     - value: Bản thể hiện của hóa đơn điện tử
