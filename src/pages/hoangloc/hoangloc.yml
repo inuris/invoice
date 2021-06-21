@@ -18,8 +18,8 @@ cssColor: "#005cb3"
 
 #background : file, width, height, top, left
 background:
-  # file: bg.png
-  top: 500
+  file: bg.jpg
+  top: 470
 
 # layout
 # type 1:  Cơ bản, 2: Dịch vụ
@@ -29,10 +29,11 @@ layout:
 header:
   #logo : file, width, top, left
   logo:
-    # file: logo.png
+    file: logo.jpg
     width: 160
-    top: 12
+    top: 1
     left: 15
+    bottom: 5
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 22px; color: red;"
