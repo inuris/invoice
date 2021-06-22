@@ -1,42 +1,47 @@
-comCode: hoangloc
-comFolder: 210603_HoangLoc_V5_AMChi
-comName: DOANH NGHIỆP TƯ NHÂN HOÀNG LỘC
-comTaxCode: 3500627330
-comRepresent: Hoàng Văn Đức
-comSerial: HL
-comAddress: Số 169A Huyền Trân Công Chúa, Phường 8, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu
+comCode: lanngoc
+comFolder: 210616_LanNgoc_V5_AMBichHang
+comName: CÔNG TY TNHH LAN NGỌC
+comTaxCode: 3500807333
+comRepresent: NGUYỄN THỊ NGỌC
+comSerial: LN
+comAddress: 12D17, Sương Nguyệt Ánh, Phường 9, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
-comAccount: &a 76010000265739 Ngân Hàng đầu tư và phát triển (BIDV)-CN tỉnh BR-VT
-comQty: 200
+comQty: 500
 
 comInvoiceNo: 0000000
-english:
+english: true
 convert:
 #global style
 cssFontFamily: Times New Roman
-cssColor: "#005cb3"
+cssColor: "#111"
+
+logo:
+    file: logo.jpg
+    width: 94
+    top: 1
+    left: 18
 
 #background : file, width, height, top, left
 background:
-  file: bg.jpg
-  top: 470
+  # file: bg.png
+  top: 480
 
 # layout
 # type 1:  Cơ bản, 2: Dịch vụ
 layout:
-  type: 1
+  type: 2
+
 #header
 header:
   #logo : file, width, top, left
   logo:
-    file: logo.jpg
-    width: 160
-    top: 1
-    left: 15
-    bottom: 5
+    file: 
+    width: 120
+    top: 5
+    left: 35
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "font-size: 22px; color: red;"
+    style: "font-size: 22px"
   - sub: VAT INVOICE
     subStyle: "font-size: 18px; line-height: 1.2;"
   - value: Bản thể hiện của hóa đơn điện tử
@@ -49,29 +54,32 @@ header:
     labelStyle: "display: block; width: 110px; float: left"
 #comInfo Table
 comInfo:
-  style: "font-weight: 400; font-size: 16px"
+  style: "font-weight: 700; font-size: 16px"
   margin: 6
-  labelWidth: 120
+  # labelWidth: 160
   isInput:  
   labelStyle: 
   subStyle: "font-size: 100%"
   row:
-  - label: Đơn vị bán hàng
-    sub: Seller
-    code: ComName
+  - sub: Seller
+    value: CÔNG TY TNHH LAN NGỌC (LAN NGOC COMPANY LIMITED)
     style: "line-height: 18px;"
-    valueStyle: "font-size: 18px; font-weight: 700; color: red"
-  - label: Mã số thuế
-    code: ComTaxCode
-    valueStyle: "letter-spacing: 2px; font-weight: 700"
-    sub: Tax code
+    valueStyle: "font-size: 22px;"  
   - label: Địa chỉ
     code: ComAddress
     sub: Address
-  # - label: Điện thoại
-  #   value: 
-  - label: Số tài khoản
-    value: *a
+    valueStyle: "letter-spacing: -0.3px;"
+  - label: Điện thoại
+    sub: Tel
+    value: "0254.2 241 291 - 3 585 299 - Email: sales@lanngocco.com"
+    width: 
+  - label: Tài khoản
+    sub: Acc No.
+    value: 29227469 tại Ngân hàng TMCP Á Châu - Chi nhánh Vũng tàu
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"
@@ -79,26 +87,26 @@ cusInfo:
   margin: 8
   labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
-  isInput: 1
+  isInput: 
   row:
   - label: Họ tên người mua hàng
-    width: 657
+    width: 547
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 744
+    width: 644
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 742
+    width: 682
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 770
+    width: 715
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 669
+    width: 551
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
