@@ -1,0 +1,112 @@
+comCode: lanngoc
+comFolder: 210616_LanNgoc_V5_AMBichHang
+comName: CÔNG TY TNHH LAN NGỌC
+comTaxCode: 3500807333
+comRepresent: NGUYỄN THỊ NGỌC
+comSerial: LN
+comAddress: 12D17, Sương Nguyệt Ánh, Phường 9, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+comSys: 1
+comQty: 500
+
+comInvoiceNo: 0000000
+english: true
+convert:
+#global style
+cssFontFamily: Times New Roman
+cssColor: "#111"
+
+logo:
+    file: logo.jpg
+    width: 94
+    top: 1
+    left: 18
+
+#background : file, width, height, top, left
+background:
+  # file: bg.png
+  top: 480
+
+# layout
+# type 1:  Cơ bản, 2: Dịch vụ
+layout:
+  type: 2
+
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file: 
+    width: 120
+    top: 5
+    left: 35
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px"
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 230
+    labelStyle: "display: block; width: 110px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 700; font-size: 16px"
+  margin: 6
+  # labelWidth: 160
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:
+  - sub: Seller
+    value: CÔNG TY TNHH LAN NGỌC (LAN NGOC COMPANY LIMITED)
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 22px;"  
+  - label: Địa chỉ
+    code: ComAddress
+    sub: Address
+    valueStyle: "letter-spacing: -0.3px;"
+  # - label: Điện thoại
+  #   sub: Tel
+  #   value: "0254.2 241 291 - FaxL 0254.3585 299 - Email: sales@lanngocco.com"
+  #   width: 
+  # - label: Tài khoản
+  #   sub: Acc No.
+  #   value: 29227
+  - label: Mã số thuế
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px;"
+    sub: Tax code
+#cusInfo Table
+cusInfo:
+  style: "font-size: 16px"
+  labelWidth:
+  margin: 8
+  labelStyle: "font-weight: 700;"
+  subStyle: "font-size: 100%"
+  isInput: 
+  row:
+  - label: Họ tên người mua hàng
+    width: 547
+    code: Buyer
+    sub: Customer's Name
+  - label: Tên đơn vị
+    width: 644
+    code: CusName
+    sub: Company Name
+  - label: Mã số thuế
+    width: 682
+    code: CusTaxCode
+    sub: Tax code
+  - label: Địa chỉ
+    width: 715
+    code: CusAddress
+    sub: Address
+  - label: Hình thức thanh toán
+    width: 551
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
