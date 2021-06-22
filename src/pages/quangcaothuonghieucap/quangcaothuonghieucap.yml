@@ -1,0 +1,122 @@
+comCode: quangcaothuonghieucap
+comFolder: 210622_QuangCaoThuongHieuCap_V5_AMChi
+comName: CÔNG TY TNHH QUẢNG CÁO THƯƠNG HIỆU CÁP
+comTaxCode: 3500876104
+comRepresent: TRỊNH PHƯƠNG THẢO
+comSerial: CA
+comAddress: 97/15A Lê Hồng Phong, P. 7, TP. Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+comSys: 1
+comPhone: &p "0254. 3575595 - Fax: 0254.3575070"
+comAccount: &a 08001010023869 Tại ngân hàng TMCP Hàng Hải – CN. Vũng Tàu
+comQty: 300
+debug: 
+comInvoiceNo: 0000000
+english: true
+convert:
+#global style
+cssFontFamily: Arial
+cssColor: "#111"
+
+#background : file, width, height, top, left
+background:
+  # file: bg.png
+  top: 480
+
+logo:
+    file: logo.png
+    width: 200
+    top: 25
+    left: 15
+# layout
+# type 1:  Cơ bản, 2: Dịch vụ
+layout:
+  type: 2
+
+#header
+header:
+  #logo : file, width, top, left
+  logo:
+    file:
+    width: 1
+    top: 
+    left: 
+  name:
+  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    style: "font-size: 22px; color:#e5322c; font-family: Times New Roman; "
+  - sub: VAT INVOICE
+    subStyle: "font-size: 18px; line-height: 1.2;"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
+  - sub: Electronic Invoice Display
+    subStyle: "font-size: 13px; line-height: 1.4;"    
+  serial:
+    width: 230
+    labelStyle: "display: block; width: 110px; float: left"
+#comInfo Table
+comInfo:
+  style: "font-weight: 400; font-size: 14px; font-family: Times New Roman;"
+  margin: 2
+  labelWidth: 
+  isInput:  
+  labelStyle: 
+  subStyle: "font-size: 100%"
+  row:  
+  - code: ComName
+    style: "line-height: 18px;"
+    valueStyle: "font-size: 20px; color:#e5322c; font-weight: 700;"
+  - value: (QUẢNG CÁO 2D)
+    valueStyle: "font-size: 18px; color:#e5322c; font-weight: 700;"  
+  - label: ĐC
+    code: ComAddress
+    # sub: Address
+  - label: Tel
+    # sub: Tel
+    value: *p
+  - label: Tài khoản
+    # sub: Account No.
+    value: *a
+  - label: MÃ SỐ THUẾ
+    code: ComTaxCode
+    valueStyle: "letter-spacing: 2px; color: #e5322c"
+    style: "font-size: 16px; font-weight: 700;font-family: Arial;"
+    # sub: Tax code
+#cusInfo Table
+cusInfo:
+  style: "font-size: 15px"
+  labelWidth:
+  margin: 4
+  labelStyle: "font-weight: 400;"
+  subStyle: "font-size: 85%"  
+  row:
+  - label: Họ tên người mua hàng
+    width: 553
+    code: Buyer
+    sub: Customer's Name
+    isInput: 1
+  - label: Tên đơn vị
+    width: 649
+    code: CusName
+    sub: Company Name
+    isInput: 1
+  - label: Mã số thuế
+    width: 687
+    code: CusTaxCode
+    sub: Tax code
+    isInput: 1
+  - label: Địa chỉ
+    width: 720
+    code: CusAddress
+    sub: Address
+    isInput: 1
+  - label: Hình thức thanh toán
+    width: 221
+    code: Kind_of_Payment
+    isPayment: true
+    sub: Method of Payment
+    isInput: 1
+    col-2: 
+      - label: Mã số thuế
+        code: CusTaxCode
+        width: 221
+        isTaxCode: 1
