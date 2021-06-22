@@ -65,7 +65,7 @@ echo Set oLinkIE = oWS.CreateShortcut("src\pages\%code%\ie.lnk")>>CreateShortcut
 echo oLinkIE.TargetPath = "C:\Program Files\Internet Explorer\iexplore.exe">>CreateShortcut.vbs
 echo oLinkIE.Arguments = "http://localhost:8000/%code%">>CreateShortcut.vbs
 echo oLinkIE.WorkingDirectory = "C:\Program Files\Internet Explorer">>CreateShortcut.vbs
-echo oLinkIE.IconLocation = "\\Network\NETLOGON\People_Network_Icon.ico, 0">>CreateShortcut.vbs
+echo oLinkIE.IconLocation = "%%SystemRoot%%\System32\SHELL32.dll, 14">>CreateShortcut.vbs
 echo oLinkIE.Save>>CreateShortcut.vbs
 
 cscript CreateShortcut.vbs
