@@ -69,13 +69,13 @@ comInfo:
     code: ComAddress
     sub: Address
     valueStyle: "letter-spacing: -0.3px;"
-  # - label: Điện thoại
-  #   sub: Tel
-  #   value: "0254.2 241 291 - FaxL 0254.3585 299 - Email: sales@lanngocco.com"
-  #   width: 
-  # - label: Tài khoản
-  #   sub: Acc No.
-  #   value: 29227
+  - label: Điện thoại
+    sub: Tel
+    value: "0254.2 241 291 - 3 585 299 - Email: sales@lanngocco.com"
+    width: 
+  - label: Tài khoản
+    sub: Acc No.
+    value: 29227469 tại Ngân hàng TMCP Á Châu - Chi nhánh Vũng tàu
   - label: Mã số thuế
     code: ComTaxCode
     valueStyle: "letter-spacing: 2px;"
