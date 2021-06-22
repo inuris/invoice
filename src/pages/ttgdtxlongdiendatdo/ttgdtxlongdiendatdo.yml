@@ -1,0 +1,54 @@
+comCode: ttgdtxlongdiendatdo
+comFolder: 210622_TTGDTXLongDienDatDo_V5_AMLieu
+comName: TRUNG TÂM GIÁO DỤC THƯỜNG XUYÊN LONG ĐIỀN - ĐẤT ĐỎ
+comTaxCode: 3501397626
+comRepresent: Trần Thị Thanh Tuyền
+comSerial: LD
+comAddress: Đường Nguyễn Văn Trỗi, Khu phố Long Sơn, Thị trấn Long Điền, Huyện Long Điền, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comSys: 1
+comQty: 5000
+
+
+comPattern: 02GTTT0/001
+isGTTT: true
+comInvoiceNo: 0000000
+cssColor: "#185b9d"
+
+header:
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG - PHIẾU THU TIỀN
+    style: "font-size: 18px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-size: 12px; line-height: 1.4;"
+    styleConvert: "font-size: 12px; line-height: 1.4;"
+
+comInfo:
+  row:
+  - label: Đơn vị thu tiền
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  # - label: Số điện thoại
+  #   value: 
+  # - label: Số tài khoản
+  #   value: 
+cusInfo:
+  isInput: true
+  row:
+  - label: Họ và tên người nộp tiền
+    width: 664
+    code: Buyer
+  - label: Địa chỉ (lớp)
+    width: 737
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 685
+    code: Kind_of_Payment
+    isPayment: true
