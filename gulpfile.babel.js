@@ -18,11 +18,13 @@ import autoprefixer  from 'autoprefixer';
 import base64        from 'gulp-base64-inline';
 import htmlImg64     from 'gulp-html-img64';
 import htmlsplit     from 'gulp-htmlsplit';
-import pdf           from 'html-pdf';
 
-import tap           from 'gulp-tap';
+// import pdf           from 'html-pdf';
 
-import xsltproc from 'node-xsltproc';
+// import tap           from 'gulp-tap';
+
+// import xsltproc from 'node-xsltproc';
+
 import index from 'gulp-index';
 
 // var cors = function (req, res, next) {
@@ -46,50 +48,52 @@ function loadConfig() {
   return yaml.load(ymlFile);
 }
 
-function xml2html(){
-  return gulp.src(PATHS.dist+'/dienmattroidonga/*.xml')
-          .pipe(tap(function(file, t) {
-            readxml(file.path);
-          })
-          );
-}
-function readxml(filename){
-  var options = { 
-    width: (210 * 1.2)+"mm", // avoid pantomjs bug
-    height: (297 * 1.2)+"mm",
-    border: {
-      top: "0.1in",            // default is 0, units: mm, cm, in, px
-      right: "0.1in",
-      left: "0.1in"
-    },
-  };
-  let filenoext = path.join(path.dirname(filename),path.basename(filename,'.xml'));
-  let filexml = filenoext+'.xml';
-  let filexslt = filenoext+'.xslt';
-  xsltproc().transform([filexml , filexslt], {debug: true}).then((data) => {    
-    fs.writeFile(path.dirname(filename)+'/topdf.html', data.result ,'utf8', function(err) {
-      if(err) {
-          return console.log(err);
-      }
-    })
-  }).then((e)=>{
-    console.log(e);
-    var html = fs.readFileSync(path.dirname(filename)+'/topdf.html', 'utf8');
-    pdf.create(html,options).toFile(filenoext+'.pdf', function(err, res){
-      if (err){
-        console.log(err);
-      }
-      else{
-        rimraf(path.dirname(filename)+'/topdf.html',function(err){
-          if (err){
-            console.log(err);
-          }            
-        });
-      }        
-    });
-  }); ;
+// function xml2html(){
+//   return gulp.src(PATHS.dist+'/**/*.xml')
+//           .pipe(tap(function(file, t) {
+//             readxml(file.path);
+//           })
+//           );
+// }
 
-}
+// function readxml(filename){
+//   var options = { 
+//     width: (210 * 1.2)+"mm", // avoid pantomjs bug
+//     height: (297 * 1.2)+"mm",
+//     border: {
+//       top: "0.1in",            // default is 0, units: mm, cm, in, px
+//       right: "0.1in",
+//       left: "0.1in"
+//     },
+//   };
+//   let filenoext = path.join(path.dirname(filename),path.basename(filename,'.xml'));
+//   let filexml = filenoext+'.xml';
+//   let filexslt = filenoext+'.xslt';
+//   xsltproc().transform([filexml , filexslt], {debug: true}).then((data) => {    
+//     fs.writeFile(path.dirname(filename)+'/topdf.html', data.result ,'utf8', function(err) {
+//       if(err) {
+//           return console.log(err);
+//       }
+//     })
+//   }).then((e)=>{
+//     console.log(e);
+//     var html = fs.readFileSync(path.dirname(filename)+'/topdf.html', 'utf8');
+//     pdf.create(html,options).toFile(filenoext+'.pdf', function(err, res){
+//       if (err){
+//         console.log(err);
+//       }
+//       else{
+//         rimraf(path.dirname(filename)+'/topdf.html',function(err){
+//           if (err){
+//             console.log(err);
+//           }            
+//         });
+//       }        
+//     });
+//   }); ;
+
+// }
+
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task('build',
@@ -105,7 +109,7 @@ gulp.task('build',
 //   gulp.series(screenshot)
 //           );
 
-gulp.task('ss', xml2html);
+// gulp.task('ss', xml2html);
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
   gulp.series('build', server, watch));
@@ -243,7 +247,11 @@ function images() {
 function server(done) {
   browser.init({
     server: PATHS.dist,
-    port: PORT
+    port: PORT,
+    browser: "iexplore",
+    reloadOnRestart: true,
+    directory: true,
+    index: "index.html"
   }, done);
 }
 

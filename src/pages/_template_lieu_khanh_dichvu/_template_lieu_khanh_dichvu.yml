@@ -1,14 +1,15 @@
 comName: CÔNG TY
+comFolder: 
 comTaxCode: 35
 comRepresent: 
 comSerial: AA
 comAddress: 
 comSys: 1
-comPhone: &p
-comAccount: &a
+comPhone: 
+comAccount: 
 comQty: 300
 
-comFolder: 
+
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
@@ -52,9 +53,9 @@ comInfo:
     code: ComAddress
     valueStyle: "font-size: 13.5px; letter-spacing: -0.2px"
   - label: Điện thoại
-    value: *p
+    value: 
   - label: Số tài khoản
-    value: *a
+    value: 
 cusInfo:
   margin: 2
   isInput: true

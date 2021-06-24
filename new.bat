@@ -38,7 +38,7 @@ del "src\pages\%code%\index.template"
 
 echo "Generating YML..."
 echo comCode: %code%>"src\pages\%code%\%code%.yml"
-type "src\data\%template%.yml">>"src\pages\%code%\%code%.yml"
+type "src\%template%\%template%.yml">>"src\pages\%code%\%code%.yml"
 
 echo "Generating _copy.bat..."
 

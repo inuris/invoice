@@ -1,22 +1,21 @@
-comSerial: TC
-comName: CÔNG TY TNHH 
-comTaxCode: 
-comAddress: 
+comSerial: AA
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN
+comFolder: 
+comTaxCode: 3500
+comAddress: BRVT
 comRepresent: 
 
-comFolder:
+
+comPattern: 02GTTT0/001
+isGTTT: true
 
 comInvoiceNo: 0000000
-english: true
-debug: 
+english:
 convert:
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#111"
-### background: file, width, height, top, left, opacity
-background_full:
-  file: 
-  top: 69 
+
 #background : file, width, height, top, left
 background:
   file: bg.png
@@ -26,12 +25,12 @@ header:
   #logo : file, width, top, left
   logo:
     file: logo.png
-    width: 120
-    top: 5
-    left: 35
+    width: 160
+    top: 12
+    left: 15
   name:
-  - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-    style: "font-size: 22px"
+  - value: HÓA ĐƠN BÁN HÀNG
+    style: "font-size: 22px; color: #3569a7"
   - sub: VAT INVOICE
     subStyle: "font-size: 18px; line-height: 1.2;"
   - value: Bản thể hiện của hóa đơn điện tử
@@ -44,9 +43,9 @@ header:
     labelStyle: "display: block; width: 100px; float: left"
 #comInfo Table
 comInfo:
-  style: "font-weight: 700; font-size: 16px"
+  style: "font-weight: 400; font-size: 16px"
   margin: 6
-  labelWidth: 160
+  labelWidth: 120
   isInput:  
   labelStyle: 
   subStyle: "font-size: 100%"
@@ -55,46 +54,46 @@ comInfo:
     sub: Seller
     code: ComName
     style: "line-height: 18px;"
-    valueStyle: "font-size: 18px;"
+    valueStyle: "font-size: 18px; font-weight: 700"
   - label: Mã số thuế
     code: ComTaxCode
-    valueStyle: "letter-spacing: 2px;"
+    valueStyle: "letter-spacing: 2px; font-weight: 700"
     sub: Tax code
   - label: Địa chỉ
     code: ComAddress
     sub: Address
   - label: Điện thoại
-    sub: Tel
-    value: 0
+    value: 
   - label: Số tài khoản
-    sub: Account No.
     value: 
 #cusInfo Table
 cusInfo:
-  style: "font-size: 16px"
-  labelWidth: 
-  isInput: true
-  labelStyle: "font-weight: 700;"
+  style: "font-size: 16px; font-weight: 400;"
+  labelWidth:
+  labelStyle: 
   subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 542
+    width: 661
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 639
+    width: 741
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 676
+    width: 740
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 709
+    width: 763
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 545
+    width: 253
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
+    col-2:
+      - label: Tài khoản
+        width: 350

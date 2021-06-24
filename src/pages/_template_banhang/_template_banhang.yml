@@ -1,12 +1,13 @@
 comName: DOANH NGHIỆP
+comFolder: 
 comTaxCode: 3502228042
 comRepresent: 
 comSerial: AA
 comAddress: 
 comSys: 1
-comPhone: &p 0254
+comPhone: 0254
 
-comFolder: 
+
 comPattern: 02GTTT0/001
 isGTTT: true
 
@@ -46,7 +47,7 @@ comInfo:
     code: ComAddress
     valueStyle: 
   - label: Điện thoại
-    value: *p
+    value: 
 cusInfo:
   isInput: true
   row:
