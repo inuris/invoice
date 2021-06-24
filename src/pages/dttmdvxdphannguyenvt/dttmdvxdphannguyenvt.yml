@@ -5,6 +5,7 @@ comTaxCode: 3502455052
 comRepresent: NGUYỄN NGỌC NHUNG
 comSerial: PN
 comAddress: Ấp Thanh Bình 1, Xã Bình Châu, Huyện Xuyên Mộc, Tỉnh Bà Rịa - Vũng Tàu
+comAccount: &a 6002201006461 tại Ngân hàng Agribank Chi nhánh Huyện Xuyên Mộc
 comSys: 1
 comQty: 1000
 
@@ -51,9 +52,9 @@ comInfo:
     isInput: 1
     width: 797
   - label: Số tài khoản
-    value: 
-    isInput: 1
-    width: 780
+    value: *a
+    # isInput: 1
+    # width: 780
 cusInfo:
   margin: 2
   isInput: true
