@@ -18,6 +18,7 @@ cssColor: "#005cb3"
 background:
   file: bg.png
   top: 550
+  opacity: 0.05
 
 ### background: file, width, height, top, left, opacity
 background_full:
@@ -41,7 +42,7 @@ comInfo:
   style: "font-size: 16px;"
   row:
   - label: Đơn vị bán hàng
-    valueStyle: "font-size: 22px;font-weight: bold; margin-left: 120px;letter-spacing: 1px;"
+    valueStyle: "font-size: 22px;font-weight: bold; letter-spacing: 1px;"
     code: ComName
   - label: Mã số thuế
     valueStyle: "font-weight: bold"
