@@ -18,7 +18,8 @@ cssColor: "#005cb3"
 background:
   # file: bg.png
   top: 500
-
+footer:
+  margin: 50
 ### background: file, width, height, top, left, opacity
 background_full:
   file: bg_full.png
