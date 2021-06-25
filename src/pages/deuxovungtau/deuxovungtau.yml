@@ -18,10 +18,11 @@ cssColor: "#005cb3"
 debug: 
 #logo
 logo:
-  file: logo.png
-  width: 155
-  left: 5
-  top: 10
+  file: logo.jpg
+  width: 150
+  left: 10
+  top: 7
+  bottom: 5
 ### background: file, width, height, top, left, opacity
 background:
   # file: bg.png
@@ -39,24 +40,25 @@ header:
     width: 1
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-      style: "color: #f00;"
+      # style: "color: #f00;"
     - value: Bản thể hiện của hóa đơn điện tử
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
+  style: "font-size: 16px"
   row:
-  - valueStyle: "font-weight: bold; font-size: 18px; color: #f00"
+  - valueStyle: "font-weight: bold; font-size: 18px;"
     code: ComName
   - label: Mã số thuế
     valueStyle: "font-weight: bold"
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-    valueStyle: "font-size: 13.5px; letter-spacing: -0.2px"
+    valueStyle: 
   - label: Điện thoại
-    value: 
+    value: 0919250979 - 0254.3850099
   - label: Số tài khoản
-    value: 
+    value: 76610000092568 tại Ngân hàng BIDV - Chi Nhánh Vũng Tàu - Côn Đảo
 cusInfo:
   margin: 2
   isInput: true
