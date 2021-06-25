@@ -31,6 +31,12 @@ background:
 layout:
   type: 2
 
+footer: 
+  margin: 
+  top: 
+    - value: "Đơn vị cung cấp giải pháp hóa đơn điện tử: Tổng Công ty Dịch vụ Viễn thông - VNPT Vinaphone, MST:0106869738, Điện thoại:18001260"
+  bottom:
+    - value:
 #header
 header:
   #logo : file, width, top, left
