@@ -1,6 +1,6 @@
 {{#*inline "rowEntry"}}
 	{{#ifOr v1=this.label v2=this.labelWidth v3=globalLabelWidth}}
-		<label class="fl-l title" style="{{#if globalLabelWidth}}width:{{globalLabelWidth}}px;{{/if}}
+		<label class="{{#ifOr v1=this.center v2=globalCenter}}{{else}}fl-l{{/ifOr}} title" style="{{#if globalLabelWidth}}width:{{globalLabelWidth}}px;{{/if}}
 										{{#if this.labelWidth}}width:{{this.labelWidth}}px;{{/if}}
 										">
 			<span 
@@ -25,7 +25,7 @@
 		</label>
 	{{/ifOr}}
 	{{#if this.label}}
-	<label class="fl-l">
+	<label class="{{#ifOr v1=this.center v2=globalCenter}}{{else}}fl-l{{/ifOr}}">
 		<span 
 		{{#ifOr v1=globalStyle v2=globalColonStyle v3=this.style}}
 			style="{{#if globalStyle}}{{globalStyle}};{{/if}}
@@ -37,10 +37,10 @@
 	{{else}}
 		{{#ifOr v1=this.labelWidth v2=globalLabelWidth}}
 			{{#if this.label}}
-			<label class="fl-l"><span style="margin-left: 8px"></span></label>{{/if}}
+			<label class="{{#ifOr v1=this.center v2=globalCenter}}{{else}}fl-l{{/ifOr}}"><span style="margin-left: 8px"></span></label>{{/if}}
 		{{/ifOr}}
 	{{/if}} 
-	<label class="fl-l 
+	<label class="{{#ifOr v1=this.center v2=globalCenter}}{{else}}fl-l{{/ifOr}} 
 		{{#ifOr v1=isGlobalInput v2=this.isInput}}
 			input-name
 		{{/ifOr}}
@@ -96,11 +96,11 @@
 {{/inline}}
 {{#with data}}
 	{{#each row}}
-	<div class="clearfix vt-row" {{#if ../margin}}style="margin-bottom:{{../margin}}px"{{/if}}>
-		{{#> rowEntry english=../../english relative=../../relative isGlobalInput=../isInput globalStyle=../style globalLabelStyle=../labelStyle globalValueStyle=../valueStyle globalSubStyle=../subStyle globalLabelWidth=../labelWidth globalWidth=../width globalColonStyle=../colonStyle}}
+	<div class="clearfix vt-row" style="{{#if ../center}}text-align: center;{{/if}}{{#if ../margin}}margin-bottom:{{../margin}}px;{{/if}}">
+		{{#> rowEntry english=../../english relative=../../relative isGlobalInput=../isInput globalStyle=../style globalLabelStyle=../labelStyle globalCenter=../center globalValueStyle=../valueStyle globalSubStyle=../subStyle globalLabelWidth=../labelWidth globalWidth=../width globalColonStyle=../colonStyle}}
 		{{/rowEntry}}    
 		{{#each this.col-2}}
-			{{#> rowEntry english=../../../english relative=../../../relative isGlobalInput=../../isInput globalStyle=../../style globalLabelStyle=../../labelStyle globalValueStyle=../../valueStyle globalSubStyle=../../subStyle globalLabelWidth=../../labelWidth globalWidth=../../width globalColonStyle=../../colonStyle}}
+			{{#> rowEntry english=../../../english relative=../../../relative isGlobalInput=../../isInput globalStyle=../../style globalLabelStyle=../../labelStyle globalCenter=../../center globalValueStyle=../../valueStyle globalSubStyle=../../subStyle globalLabelWidth=../../labelWidth globalWidth=../../width globalColonStyle=../../colonStyle}}
 			{{/rowEntry}}
 		{{/each}}
 	</div>
