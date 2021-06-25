@@ -35,6 +35,7 @@ xcopy "src\pages\%template%" "src\pages\%code%" /s /i /y
 echo {{#with %code%}}>"src\pages\%code%\index.html"
 type "src\pages\%template%\index.template">>"src\pages\%code%\index.html"
 del "src\pages\%code%\index.template"
+del "src\pages\%code%\%template%.yml"
 
 echo "Generating YML..."
 echo comCode: %code%>"src\pages\%code%\%code%.yml"
