@@ -75,5 +75,5 @@ del CreateShortcut.vbs
 
 
 echo "Finished..."
-
-start "src\pages\%code%\ie.lnk"
+cd "src\pages\%code%\"
+start ie.lnk
