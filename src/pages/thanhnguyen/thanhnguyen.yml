@@ -7,17 +7,17 @@ comSerial: TN
 comAddress: Số 90/1A Khu phố 4, Phường Phước Hưng, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
 comPhone: 
-comAccount: &a 6000431101041090 Tại Agribank Chi nhánh Tỉnh Bà Rịa - Vũng Tàu
+comAccount: &a 6000431101041090 tại Agribank Chi nhánh Tỉnh Bà Rịa - Vũng Tàu
 comQty: 300
 
 comInvoiceNo: 0000000
-cssFontFamily: Arial
+cssFontFamily: Times New Roman
 cssColor: "#005cb3"
 
 ### background: file, width, height, top, left, opacity
 background:
-  # file: bg.png
-  top: 500
+  file: bg.png
+  top: 550
 
 ### background: file, width, height, top, left, opacity
 background_full:
@@ -38,9 +38,10 @@ header:
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
+  style: "font-size: 16px;"
   row:
   - label: Đơn vị bán hàng
-    valueStyle: "font-weight: bold"
+    valueStyle: "font-size: 22px;font-weight: bold; margin-left: 120px;letter-spacing: 1px;"
     code: ComName
   - label: Mã số thuế
     valueStyle: "font-weight: bold"
@@ -60,16 +61,16 @@ cusInfo:
   isInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 700
+    width: 720
     code: Buyer
   - label: Tên đơn vị
-    width: 793
+    width: 801
     code: CusName
   - label: Mã số thuế
-    width: 790
+    width: 800
     code: CusTaxCode
   - label: Địa chỉ
-    width: 822
+    width: 825
     code: CusAddress
   - label: Hình thức thanh toán
     width: 225
@@ -77,5 +78,5 @@ cusInfo:
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 397
+      width: 422
       code: CusBankNo
