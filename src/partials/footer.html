@@ -1,12 +1,13 @@
 
 {{#if full}}
-<div id="invFooter" style="font-size:12px; text-align: center; margin-top: {{#if footer.margin}}{{footer.margin}}{{else}}10{{/if}}px; line-height: 1;">
+<div id="invFooter" style="font-size:12px; text-align: center; margin-top: {{#if footer.margin}}{{footer.margin}}{{else}}110{{/if}}px; line-height: 1;">
+  <p style="line-height: 1.5; margin-bottom: 4px;"><i>(Cần kiểm tra, đối chiếu khi lập, giao nhận hóa đơn)</i></p>
   {{#if footer.top}}
     {{#each footer.top}}
-      <p style="line-height: 1; margin: 0;">{{this.value}}</p>
+      <p style="line-height: 1.5; margin: 0; font-size: 13px;"><span>{{this.value}}</span></p>
     {{/each}}
   {{else}}
-    <p><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0254 800126</p>
+    <p style="line-height: 1.5; margin: 0; font-size: 13px;"><span>Giải pháp Hóa đơn Điện tử được cung cấp bởi Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu - MST 0106869738-044 - ĐT 0254 800126</span></p>
   {{/if}}
 {{/if}}
 <xsl:variable name="comTaxCode" select="/Invoice/Content/ComTaxCode" />
