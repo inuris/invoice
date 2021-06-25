@@ -1,0 +1,83 @@
+comCode: deuxovungtau
+comFolder: 210628_DeuxoVungTau_V5_AMChi
+comName: CÔNG TY CỔ PHẦN DEUXO VŨNG TÀU
+comTaxCode: 3502356319
+comRepresent: Hoàng Thế Tình
+comSerial: DX
+comAddress: 506 đường Bình Giã, Phường Nguyễn An Ninh, Thành Phố Vũng Tàu, Bà Rịa - Vũng Tàu
+comSys: 1
+comPhone: 0919250979 -0254.3850099
+comAccount: 76610000092568 tại Ngân hàng BIDV - Chi Nhánh Vũng Tàu - Côn Đảo
+comQty: 500
+
+
+
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+debug: 
+#logo
+logo:
+  file: logo.png
+  width: 155
+  left: 5
+  top: 10
+### background: file, width, height, top, left, opacity
+background:
+  # file: bg.png
+  top: 465
+
+### background: file, width, height, top, left, opacity
+background_full:
+  file: 
+  top: 49 
+#header
+header:
+  #logo
+  logo:
+    file: 
+    width: 1
+  name:
+    - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+      style: "color: #f00;"
+    - value: Bản thể hiện của hóa đơn điện tử
+      valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+      style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+comInfo:
+  row:
+  - valueStyle: "font-weight: bold; font-size: 18px; color: #f00"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+    valueStyle: "font-size: 13.5px; letter-spacing: -0.2px"
+  - label: Điện thoại
+    value: 
+  - label: Số tài khoản
+    value: 
+cusInfo:
+  margin: 2
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 700
+    code: Buyer
+  - label: Tên đơn vị
+    width: 793
+    code: CusName
+  - label: Mã số thuế
+    width: 790
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 822
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 225
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 397
+      code: CusBankNo

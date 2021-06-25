@@ -1,3 +1,8 @@
+{{#if full}}
+<div id="invFooter" style="font-size:12px; text-align: center; margin-top: 80px; line-height: 1;">
+  <span><b>Giải pháp Hóa đơn Điện tử</b> được cung cấp bởi <b>Trung Tâm Kinh Doanh VNPT Bà Rịa- Vũng Tàu</b> - MST 0106869738-044 - ĐT 0254 800126</span>
+  <br/>
+{{/if}}
 <xsl:variable name="comTaxCode" select="/Invoice/Content/ComTaxCode" />
 {{#if isHSM}}
   <xsl:variable name="portalV5" select="concat('https://','{{#if comDomain}}{{comDomain}}{{else}}{{comCode}}{{/if}}','.vnpt-invoice.com.vn')" />
@@ -39,3 +44,6 @@
     </div>
   </xsl:otherwise>
 </xsl:choose>
+{{#if full}}
+</div>
+{{/if}}

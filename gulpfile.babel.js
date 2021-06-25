@@ -250,8 +250,7 @@ function server(done) {
     port: PORT,
     browser: "iexplore",
     reloadOnRestart: true,
-    directory: true,
-    index: "index.html"
+    directory: true
   }, done);
 }
 
