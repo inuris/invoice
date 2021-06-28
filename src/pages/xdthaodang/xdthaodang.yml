@@ -32,26 +32,30 @@ background:
 background_full:
   file: 
   top: 49 
+
+footer:
+  margin: 120
 #header
 header:
   #logo
   logo:
     file: 
-    width: 1
+    width: 170
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
-      style: "color: #f00;"
+      style: ""
     - value: Bản thể hiện của hóa đơn điện tử
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
-  center: true
+  # center: true
   style: "font-size: 16px;" 
   row:
-  - valueStyle: "font-weight: bold; font-size: 18px; color: #f00"
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold; font-size: 18px;"
     code: ComName
   - label: Mã số thuế
-    valueStyle: "font-weight: bold"
+    valueStyle: "font-weight: bold; font-size: 18px; letter-spacing: 4px"
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
