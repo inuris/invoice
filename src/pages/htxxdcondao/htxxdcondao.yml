@@ -1,0 +1,84 @@
+comCode: htxxdcondao
+comFolder: 210629_HTXXDConDao_V5_AMKhanh
+comName: HỢP TÁC XÃ XÂY DỰNG CÔN ĐẢO
+comTaxCode: 3500435741
+comRepresent: Vũ Đình An
+comSerial: CD
+comAddress: Số 12 Đường Lê Duẩn, Huyện Côn Đảo, Tỉnh Bà Rịa - Vũng Tàu
+comSys: 1
+comPhone: 0982350127
+comAccount: 102010000346173 ngân hàng TMCP Công Thương Việt nam chi nhánh Huyện Côn Đảo
+comQty: 1000
+
+
+
+comInvoiceNo: 0000000
+cssFontFamily: Times New Roman
+cssColor: "#111"
+
+### background: file, width, height, top, left, opacity
+background:
+  # file: bg.png
+  top: 500
+
+### background: file, width, height, top, left, opacity
+background_full:
+  # file: bg_full.png
+  top: 49 
+#header
+header:
+  #logo
+  logo:
+    # file: logo.png
+    width: 150
+    left: 20
+    top: 5
+  name:
+    - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+      style: "color: #f00"
+    - value: Bản thể hiện của hóa đơn điện tử
+      valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+      style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+comInfo:
+  labelWidth: 140
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: 0982350127
+    # isInput: 1
+    # width: 797
+  - label: Số tài khoản
+    value: 102010000346173 ngân hàng TMCP Công Thương Việt nam chi nhánh Huyện Côn Đảo
+    # isInput: 1
+    # width: 780
+cusInfo:
+  margin: 2
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 720
+    code: Buyer
+  - label: Tên đơn vị
+    width: 801
+    code: CusName
+  - label: Mã số thuế
+    width: 800
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 825
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 225
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 425
+      code: CusBankNo
