@@ -1,17 +1,17 @@
 comFolder:                                # tên folder
 comCode: _template                        # tên file
-
 comSerial: VN                             # mã hóa đơn
 comName: CÔNG TY TNHH                     # tên công ty
 comTaxCode: 123456789                     # mst
 comAddress: 123 tỉnh Bà Rịa Vũng Tàu      # địa chỉ
 comRepresent:                             # tên người đại diện
+comSys: 1
 
 comInvoiceNo: 0000000                     # [optional] đổi serial
 comFkey: ...                              # [optional] đổi Fkey
 xml:                                      # bổ sung thêm tag XML
-debug:                                    # 1: test data VND, 2: test data USD
-english:                                  # true: hóa đơn song ngữ
+debug: 1                                  # 1: test data VND, 2: test data USD
+english: true                             # true: hóa đơn song ngữ
 isHSM:                                    # true: hóa đơn HSM (thay link tra cứu)
 comPattern: 02GTTT0/001                   # đổi mẫu
 comYear: 21                               # đổi mã /21E
@@ -51,6 +51,14 @@ header:
   serial:
     style: 
 
+### footer
+footer: 
+  margin: 100                     # khoảng cách từ chữ ký đến footer, default 80
+  top:                            # thay thế dòng 1
+    - value: "Đơn vị cung cấp giải pháp hóa đơn điện tử: Tổng Công ty Dịch vụ Viễn thông - VNPT Vinaphone, MST: 0106869738-044, Điện thoại: 18001260"
+  bottom:                         # thay thế dòng 2
+    - value:
+
 ### Thông tin công ty comInfo: style, margin, width, isInput, row
 comInfo:
   style:                          # global css style (cả label & value)
@@ -71,11 +79,12 @@ comInfo:
     valueStyle: "font-weight: bold; font-size: 20px;"   # Style riêng của value
   - label: Mã số thuế
     code: ComTaxCode
+    isTaxCode: true                                     # Đóng khung MST
     valueStyle: "font-weight: bold; letter-spacing: 2px; color:#111"
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 02543541091
+    value: 
 
 ### Thông tin khách hàng cusInfo: style, margin, width, isInput, row
 cusInfo:
