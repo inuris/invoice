@@ -25,8 +25,8 @@ logo:
   top: 0
 ### background: file, width, height, top, left, opacity
 background:
-  # file: bg.png
-  top: 465
+  file: bg.png
+  top: 510
 
 ### background: file, width, height, top, left, opacity
 background_full:
