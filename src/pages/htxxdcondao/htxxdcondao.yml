@@ -7,7 +7,7 @@ comSerial: CD
 comAddress: Số 12 Đường Lê Duẩn, Huyện Côn Đảo, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
 comPhone: 0982350127
-comAccount: 102010000346173 ngân hàng TMCP Công Thương Việt nam chi nhánh Huyện Côn Đảo
+comAccount: 119.000.017.340 ngân hàng TMCP Công Thương Việt nam chi nhánh Huyện Côn Đảo
 comQty: 1000
 
 
@@ -18,8 +18,8 @@ cssColor: "#111"
 
 ### background: file, width, height, top, left, opacity
 background:
-  # file: bg.png
-  top: 500
+  file: bg.png
+  top: 460
 
 ### background: file, width, height, top, left, opacity
 background_full:
@@ -29,10 +29,11 @@ background_full:
 header:
   #logo
   logo:
-    # file: logo.png
+    file: logo.png
     width: 150
-    left: 20
+    left: 35
     top: 5
+    bottom: 5
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
       style: "color: #f00"
@@ -55,7 +56,7 @@ comInfo:
     # isInput: 1
     # width: 797
   - label: Số tài khoản
-    value: 102010000346173 ngân hàng TMCP Công Thương Việt nam chi nhánh Huyện Côn Đảo
+    value: 119.000.017.340 ngân hàng TMCP Công Thương Việt nam chi nhánh Huyện Côn Đảo
     # isInput: 1
     # width: 780
 cusInfo:
