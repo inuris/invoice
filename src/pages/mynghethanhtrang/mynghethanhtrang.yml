@@ -51,9 +51,9 @@ comInfo:
     # isInput: 1
     # width: 797
   - label: Số tài khoản
-    value: 
-    isInput: 1
-    width: 780
+    value: 122000086982 Ngân hàng TMCP Công thương Việt Nam - Chi nhánh huyện Côn Đảo
+    # isInput: 1
+    # width: 780
 cusInfo:
   margin: 2
   isInput: true
