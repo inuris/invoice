@@ -6,8 +6,9 @@ comRepresent: Vũ Đình An
 comSerial: CD
 comAddress: Số 12 Đường Lê Duẩn, Huyện Côn Đảo, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
-comPhone: 0982350127
-comAccount: 119.000.017.340 ngân hàng TMCP Công Thương Việt nam chi nhánh Huyện Côn Đảo
+comPhone: &p 0982350127
+comAccount: &a 119.000.017.340 Ngân hàng TMCP Công thương Việt Nam-Chi nhánh huyện Côn Đảo
+            
 comQty: 1000
 
 
@@ -52,11 +53,11 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 0982350127
+    value: *p
     # isInput: 1
     # width: 797
   - label: Số tài khoản
-    value: 119.000.017.340 ngân hàng TMCP Công Thương Việt nam chi nhánh Huyện Côn Đảo
+    value: *a
     # isInput: 1
     # width: 780
 cusInfo:
