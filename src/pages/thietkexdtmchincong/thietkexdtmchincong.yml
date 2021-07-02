@@ -1,0 +1,85 @@
+comCode: thietkexdtmchincong
+comFolder: 210706_ThietKeXDTMChinCong_V5_AMBinhCdc
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN THIẾT KẾ XÂY DỰNG THƯƠNG MẠI CHÍN CÔNG
+comTaxCode: 3501700833
+comRepresent: NGUYỄN MINH CÔNG
+comSerial: CC
+comAddress: F10, ấp Tân Phước, Xã Phước Tỉnh, Huyện Long Điền, Bà Rịa - Vũng Tàu
+comSys: 1
+comPhone: &p "0983966951    - Fax: 02543.673558"
+comAccount: &a "09170407000128 tại Ngân hàng HD Bank - PGD Phước Tỉnh"
+comQty: 300
+
+
+
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+
+### background: file, width, height, top, left, opacity
+background:
+  # file: bg.png
+  top: 500
+
+### background: file, width, height, top, left, opacity
+background_full:
+  # file: bg_full.png
+  top: 49 
+
+footer:
+  margin: 70
+#header
+header:
+  #logo
+  logo:
+    # file: logo.png
+    width: 150
+    left: 20
+    top: 5
+  name:
+    - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+    - value: Bản thể hiện của hóa đơn điện tử
+      valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+      style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+comInfo:
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    value: *p
+    # isInput: 1
+    # width: 797
+  - label: Số tài khoản
+    value: *a
+    # isInput: 1
+    # width: 780
+cusInfo:
+  margin: 2
+  isInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 700
+    code: Buyer
+  - label: Tên đơn vị
+    width: 793
+    code: CusName
+  - label: Mã số thuế
+    width: 790
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 822
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 225
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 397
+      code: CusBankNo
