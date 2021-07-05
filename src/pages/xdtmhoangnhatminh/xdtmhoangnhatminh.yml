@@ -1,6 +1,6 @@
 comCode: xdtmhoangnhatminh
 comFolder: 210705_XDTMHoangNhatMinh_V5_AMOanhBra
-comName: CÔNG TY NHH XÂY DỰNG THƯƠNG MAI HOÀNG NHẬT MINH
+comName: CÔNG TY TNHH XÂY DỰNG THƯƠNG MẠI HOÀNG NHẬT MINH
 comTaxCode: 3502346021
 comRepresent: NGUYỄN TUẤN ANH
 comSerial: NM
@@ -20,25 +20,27 @@ background:
 
 ### background: file, width, height, top, left, opacity
 background_full:
-  # file: bg_full.png
+  file: bg_full.png
   top: 49 
 #header
 header:
   #logo
   logo:
-    # file: logo.png
-    width: 150
-    left: 20
-    top: 5
+    file: logo.png
+    width: 220
+    left: 15
+    top: 22
+    bottom: 5
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
+      style: "color:red"
     - value: Bản thể hiện của hóa đơn điện tử
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 comInfo:
   row:
   - label: Đơn vị bán hàng
-    valueStyle: "font-weight: bold"
+    valueStyle: "font-weight: bold; color: red"
     code: ComName
   - label: Mã số thuế
     valueStyle: "font-weight: bold"
