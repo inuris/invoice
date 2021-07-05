@@ -3,7 +3,7 @@ comFolder: 210707_CongNgheGomSuVietNam_V5_AMBinhCdc
 comName: CÔNG TY CỔ PHẦN CÔNG NGHỆ GỐM SỨ VIỆT NAM
 comTaxCode: 3502455983
 comRepresent: Nguyễn Thanh Tùng
-comSerial: GS/E
+comSerial: GS
 comAddress: Thôn Quảng Phú, Xã Đá Bạc, Huyện Châu Đức, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
 comPhone: SĐT:..............................
@@ -18,7 +18,7 @@ cssColor: "#005cb3"
 
 ### background: file, width, height, top, left, opacity
 background:
-  # file: bg.png
+  file: bg.png
   top: 500
 
 ### background: file, width, height, top, left, opacity
@@ -29,15 +29,19 @@ background_full:
 header:
   #logo
   logo:
-    # file: logo.png
-    width: 150
+    file: logo.png
+    width: 174
     left: 20
     top: 5
+    bottom: 5
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     - value: Bản thể hiện của hóa đơn điện tử
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+
+footer: 
+  margin: 80
 comInfo:
   row:
   - label: Đơn vị bán hàng
