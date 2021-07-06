@@ -23,10 +23,10 @@ background:
 
 ### background: file, width, height, top, left, opacity
 background_full:
-  # file: bg_full.png
+  file: bg_full.png
   top: 49 
 footer:
-  margin: 80
+  margin: 75
 #header
 header:
   #logo
