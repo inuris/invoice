@@ -1,0 +1,79 @@
+comCode: ubndxabongtrang
+comFolder: 210708_UBNDXaBongTrang_V5_AMTuanAnh
+comName: UBND XÃ BÔNG TRANG
+comTaxCode: 3500279228
+comRepresent: HOÀNG THỊ DUYÊN
+comSerial: BT
+comAddress: Ấp Trang Nghiêm, Xã Bông Trang, Huyện Xuyên Mộc, Tỉnh Bà Rịa - Vũng Tàu
+comSys: 1
+comQty: 300
+
+
+
+comInvoiceNo: 0000000
+cssColor: "#005cb3"
+comFkey: "..."
+convert:
+debug: 
+
+comPattern: 02GTTT0/001
+isGTTT: true
+#background : file, width, height, top, left
+background:
+  # file: bg.png
+  top: 155
+#header
+header:
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG
+    style: "font-size: 18px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-size: 12px; line-height: 1.4;"
+    styleConvert: "font-size: 12px; line-height: 1.4;"
+
+
+comInfo:   
+  row:
+  - valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    # labelWidth: 65
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+    # labelWidth: 65
+    valueStyle: "width: 240px; display: inline-block; vertical-align: top;"
+  # - label: Điện thoại
+  #   value: 0254
+  #   labelWidth: 65
+  # - label: STK
+  #   value: 0000
+  #   valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+  #   labelWidth: 65
+cusInfo:
+  isInput: true
+  margin: 4
+  row:
+  - label: Họ và tên người mua hàng
+    width: 654
+    code: Buyer
+  - label: Tên đơn vị
+    width: 747
+    code: CusName
+  - label: Mã số thuế
+    width: 745
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 769
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 200
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+      - label: Số tài khoản
+        width: 406
