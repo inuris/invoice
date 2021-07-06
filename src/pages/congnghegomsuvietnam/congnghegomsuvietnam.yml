@@ -52,14 +52,19 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-  - label: Điện thoại
-    value: 
-    isInput: 1
-    width: 797
+  - label: Email
+    value: ceratechvietnam@gmail.com
+    width: 300 
+    col-2:
+      - label: Điện thoại
+        value: 
+        code: comPhone
+        isInput: 1
+        width: 448
   - label: Số tài khoản
-    value: 
-    isInput: 1
-    width: 780
+    value:  1021365340 Ngân hàng Vietcombank-CN Sài Gòn, TP. Hồ Chí Minh
+    # isInput: 1
+    # width: 780
 cusInfo:
   margin: 2
   isInput: true
