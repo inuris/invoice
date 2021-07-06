@@ -5,6 +5,8 @@ comTaxCode: 350
 comAddress: BRVT
 comRepresent: 
 
+
+
 comInvoiceNo: 0000000
 cssColor: "#005cb3"
 comFkey: "..."
@@ -15,7 +17,7 @@ comPattern: 02GTTT0/001
 isGTTT: true
 #background : file, width, height, top, left
 background:
-  file: bg.png
+  # file: bg.png
   top: 155
 #header
 header:
@@ -36,19 +38,19 @@ comInfo:
     code: ComName
   - label: Mã số thuế
     valueStyle: "font-weight: bold"
-    labelWidth: 65
+    # labelWidth: 65
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-    labelWidth: 65
-    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
-  - label: Điện thoại
-    value: 0254
-    labelWidth: 65
-  - label: STK
-    value: 0000
-    valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
-    labelWidth: 65
+    # labelWidth: 65
+    valueStyle: "width: 240px; display: inline-block; vertical-align: top;"
+  # - label: Điện thoại
+  #   value: 0254
+  #   labelWidth: 65
+  # - label: STK
+  #   value: 0000
+  #   valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
+  #   labelWidth: 65
 cusInfo:
   isInput: true
   margin: 4

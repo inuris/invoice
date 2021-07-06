@@ -470,7 +470,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                     <td style="color: {{cssColor}};padding-left: 10px;" >
                                       {{>info data=comInfo relative=true}}
                                     </td>
-                                    <td style="text-align:center;width:34%;">
+                                    <td style="text-align:center;width:44%;">
                                       {{>header-name relative=true}}
                                       <xsl:if test="$itemCount &gt; $itemperpage">
                                         <label style=" display: block; color:#000000">
