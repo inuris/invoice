@@ -48,13 +48,13 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 
-    isInput: 1
-    width: 797
+    value: 0978315682
+    # isInput: 1
+    # width: 797
   - label: Số tài khoản
-    value: 
-    isInput: 1
-    width: 780
+    value: 050080743456 tại Ngân hàng TMCP Sài Gòn Thương Tín - PGD Châu Đức
+    # isInput: 1
+    # width: 780
 cusInfo:
   margin: 2
   isInput: true
