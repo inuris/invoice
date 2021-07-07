@@ -23,7 +23,7 @@ background:
 
 ### background: file, width, height, top, left, opacity
 background_full:
-  # file: bg_full.png
+  file: bg_full.png
   top: 49 
 #header
 header:
