@@ -5,9 +5,14 @@ comTaxCode: 3502346021
 comRepresent: NGUYỄN TUẤN ANH
 comSerial: NM
 comAddress: Số 149 Lê Lợi, Thị Trấn Ngãi Giao, Huyện Châu Đức, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comPhone: 0978315682
+comAccount: 050080743456 Ngân hàng TMCP Sài Gòn Thương Tín - PGD Châu Đức
 comSys: 1
 comQty: 500
+comBankNo: 050080743456
+comBankName: Ngân hàng TMCP Sài Gòn Thương Tín - PGD Châu Đức
 
+debug: 
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
@@ -48,16 +53,17 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 0978315682
-    # isInput: 1
-    # width: 797
+    code: ComPhone
+    isInput: 1
+    width: 797
   - label: Số tài khoản
-    value: 050080743456 tại Ngân hàng TMCP Sài Gòn Thương Tín - PGD Châu Đức
-    # isInput: 1
-    # width: 780
+    isBank: 1
+    isInput: 1
+    width: 780
 cusInfo:
   margin: 2
   isInput: true
+  isForceInput: true
   row:
   - label: Họ tên người mua hàng
     width: 700
