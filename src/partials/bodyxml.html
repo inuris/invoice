@@ -7,8 +7,7 @@
 <Content Id="SigningData">
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
 	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}21E{{/if}}</SerialNo>
-	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
-	<Kind_of_Payment></Kind_of_Payment>
+	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>	
 	<ComName>{{comName}}</ComName>
 	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
 	<ComAddress>{{comAddress}}</ComAddress>
@@ -19,6 +18,7 @@
 	
 	{{#ifCond debug '==' 1}}
 	<ArisingDate>21/08/2020 09:42:29</ArisingDate>	
+	<Kind_of_Payment>TM</Kind_of_Payment>
 	<CusCode/>
 	<CusName>Công ty TNHH Steinsvik</CusName>
 	<CusBankNo>1231231231</CusBankNo>
@@ -278,6 +278,7 @@
 	{{/ifCond}}
 	{{#ifCond debug '==' 2}}
 	<ArisingDate>21/08/2020 09:42:29</ArisingDate>
+	<Kind_of_Payment>Wired</Kind_of_Payment>
 	<CusCode/>
 	<CusName>Công ty TNHH Steinsvik</CusName>
 	<CusPhone></CusPhone>
@@ -323,7 +324,7 @@
 	<SignDate/>	
 	{{/ifCond}}
 	{{#ifCond debug '==' null}}
-	<ArisingDate/>
+	<ArisingDate/>	
 	<CusCode/>
 	<CusName/>
 	<CusPhone/>

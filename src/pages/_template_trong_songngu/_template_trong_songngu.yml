@@ -1,10 +1,11 @@
-comSerial: AA
-comName: CÔNG TY TNHH 
-comTaxCode: 
-comAddress: 
+comSerial: GA
+comFolder: 
+comName: CÔNG TY TNHH
+comTaxCode: 3
+comAddress: BR-VT
 comRepresent: 
 
-comFolder: 
+#============================================================
 
 comInvoiceNo: 0000000
 english: true
@@ -67,7 +68,13 @@ comInfo:
     sub: Address
   - label: Điện thoại
     sub: Tel
-    value: 0
+    code: ComPhone
+    isInput: 1
+  - label: Số tài khoản
+    sub: Account No.
+    value:
+    isBank: 1
+    isInput: 1
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"

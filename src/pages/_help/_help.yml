@@ -6,6 +6,11 @@ comTaxCode: 123456789                     # mst
 comAddress: 123 tỉnh Bà Rịa Vũng Tàu      # địa chỉ
 comRepresent:                             # tên người đại diện
 comSys: 1
+comAccount:                               # tài khoản, nếu ko có comBankNo và comBankName sẽ lấy nguyên chuỗi này
+comBankNo:                                # số tài khoản
+comBankName:                              # tên ngân hàng
+
+
 
 comInvoiceNo: 0000000                     # [optional] đổi serial
 comFkey: ...                              # [optional] đổi Fkey
@@ -84,7 +89,13 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 
+    code: ComPhone
+    isInput: 1
+    width: 797
+  - label: Số tài khoản
+    isBank: 1                                           # Dành cho field ngân hàng, đọc data từ comAccount (nguyên chuỗi) hoặc comBankNo+comBankName
+    isInput: 1
+    width: 780
 
 ### Thông tin khách hàng cusInfo: style, margin, width, isInput, row
 cusInfo:

@@ -5,7 +5,7 @@ comTaxCode: 3
 comAddress: BR-VT
 comRepresent: 
 
-
+#============================================================
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
@@ -33,6 +33,11 @@ header:
     - value: Bản thể hiện của hóa đơn điện tử
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+
+#footer    
+footer:
+  margin: 80
+
 comInfo:
   row:
   - label: Đơn vị bán hàng
@@ -44,16 +49,17 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 
+    code: ComPhone
     isInput: 1
     width: 797
   - label: Số tài khoản
-    value: 
+    isBank: 1
     isInput: 1
     width: 780
 cusInfo:
   margin: 2
   isInput: true
+  isForceInput: true
   row:
   - label: Họ tên người mua hàng
     width: 700

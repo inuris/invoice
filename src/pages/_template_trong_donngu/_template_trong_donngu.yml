@@ -1,10 +1,11 @@
-comSerial: AD
-comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN
-comTaxCode: 3500
-comAddress: BRVT
+comSerial: GA
+comFolder: 
+comName: CÔNG TY TNHH
+comTaxCode: 3
+comAddress: BR-VT
 comRepresent: 
 
-comFolder: 
+#============================================================
 
 comInvoiceNo: 0000000
 english:
@@ -15,7 +16,7 @@ cssColor: "#111"
 
 #background : file, width, height, top, left
 background:
-  file: bg.png
+  # file: bg.png
   top: 500
 
 # layout
@@ -26,10 +27,11 @@ layout:
 header:
   #logo : file, width, top, left
   logo:
-    file: logo.png
+    # file: logo.png
     width: 160
-    top: 12
+    top: 5
     left: 15
+    bottom: 5
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 22px; color: #3569a7"
@@ -43,6 +45,11 @@ header:
   serial:
     width: 230
     labelStyle: "display: block; width: 110px; float: left"
+
+#footer    
+footer:
+  margin: 80
+
 #comInfo Table
 comInfo:
   style: "font-weight: 400; font-size: 16px"
@@ -65,9 +72,12 @@ comInfo:
     code: ComAddress
     sub: Address
   - label: Điện thoại
-    value: 
+    code: ComPhone
+    isInput: 1
   - label: Số tài khoản
-    value: 
+    value:
+    isBank: 1
+    isInput: 1
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"

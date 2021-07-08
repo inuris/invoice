@@ -5,10 +5,10 @@ comTaxCode: 3
 comAddress: BR-VT
 comRepresent: 
 
+#============================================================
 
 comPattern: 02GTTT0/001
 isGTTT: true
-
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
@@ -47,16 +47,17 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 
+    code: ComPhone
     isInput: 1
     width: 797
   - label: Số tài khoản
-    value: 
+    isBank: 1
     isInput: 1
     width: 780
 cusInfo:
   margin: 2
   isInput: true
+  isForceInput: true
   row:
   - label: Họ tên người mua hàng
     width: 700

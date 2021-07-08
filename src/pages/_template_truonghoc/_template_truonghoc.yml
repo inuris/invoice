@@ -1,12 +1,14 @@
-comName: 
-comTaxCode: 3502228042
-comRepresent: 
-comSerial: AA
-comAddress: 
-comSys: 1
-comPhone: &p 0254
-
+comSerial: GA
 comFolder: 
+comName: CÔNG TY TNHH
+comTaxCode: 3
+comAddress: BR-VT
+comRepresent: 
+
+#============================================================
+
+
+
 comPattern: 02GTTT0/001
 isGTTT: true
 comInvoiceNo: 0000000
@@ -33,10 +35,13 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-  - label: Số điện thoại
-    value: 
+  - label: Điện thoại
+    code: ComPhone
+    isInput: 1
   - label: Số tài khoản
-    value: 
+    value:
+    isBank: 1
+    isInput: 1
 cusInfo:
   isInput: true
   row:

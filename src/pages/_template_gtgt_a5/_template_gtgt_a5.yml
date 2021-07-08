@@ -1,9 +1,11 @@
-comSerial: AA
-comFolder:
-comName: CÔNG TY
-comTaxCode: 350
-comAddress: BRVT
+comSerial: GA
+comFolder: 
+comName: CÔNG TY TNHH
+comTaxCode: 3
+comAddress: BR-VT
 comRepresent: 
+
+#============================================================
 
 
 comInvoiceNo: 0000000
@@ -36,10 +38,10 @@ comInfo:
     labelWidth: 65
     valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
   - label: Điện thoại
-    value: 
+    code: ComPhone
     labelWidth: 65
   # - label: STK
-  #   value: 0000
+  #   isBank: 1
   #   valueStyle: "width: 299px; display: inline-block; vertical-align: top;"
   #   labelWidth: 65
 cusInfo:

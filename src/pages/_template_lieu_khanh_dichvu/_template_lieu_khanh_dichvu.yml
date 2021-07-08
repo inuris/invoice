@@ -1,13 +1,11 @@
-comName: CÔNG TY
+comSerial: GA
 comFolder: 
-comTaxCode: 35
+comName: CÔNG TY TNHH
+comTaxCode: 3
+comAddress: BR-VT
 comRepresent: 
-comSerial: AA
-comAddress: 
-comSys: 1
-comPhone: 
-comAccount: 
-comQty: 300
+
+#============================================================
 
 
 
@@ -57,12 +55,16 @@ comInfo:
     code: ComAddress
     valueStyle: "font-size: 13.5px; letter-spacing: -0.2px"
   - label: Điện thoại
-    value: 
+    code: ComPhone
+    isInput: 1
   - label: Số tài khoản
-    value: 
+    value:
+    isBank: 1
+    isInput: 1
 cusInfo:
   margin: 2
   isInput: true
+  isForceInput: true
   row:
   - label: Họ tên người mua hàng
     width: 700
