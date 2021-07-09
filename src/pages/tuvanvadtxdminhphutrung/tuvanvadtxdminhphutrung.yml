@@ -4,9 +4,11 @@ comName: CÔNG TY TNHH TƯ VẤN VÀ ĐẦU TƯ XÂY DỰNG MINH PHÚ TRUNG
 comTaxCode: 3501911471
 comRepresent: PHAN THANH HOÀNG ANH
 comSerial: PT
-comAddress: Số 175 Hùng Vương, Thị Trấn Ngãi Giao, Huyện Châu Đức, Tỉnh Bà Rịa - Vũng Tàu
+comAddress: Số 175 Hùng Vương, thị trấn Ngãi Giao, huyện Châu Đức, tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
-comPhone: SĐT:...........................
+comPhone: "0254.3962644"
+comBankNo: "0500.1845.9415"
+comBankName: Ngân hàng Sacombank Chi nhánh Vũng Tàu - PGD Châu Đức
 comAccount: STK:...........................
 comQty: 300
 
@@ -19,8 +21,8 @@ cssColor: "#005cb3"
 
 ### background: file, width, height, top, left, opacity
 background:
-  # file: bg.png
-  top: 500
+  file: bg.png
+  top: 540
 
 ### background: file, width, height, top, left, opacity
 background_full:
@@ -30,7 +32,7 @@ background_full:
 header:
   #logo
   logo:
-    # file: logo.png
+    file: logo.png
     width: 150
     left: 20
     top: 5
@@ -50,11 +52,11 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 
+    code: ComPhone
     isInput: 1
     width: 797
   - label: Số tài khoản
-    value: 
+    isBank: 1
     isInput: 1
     width: 780
 cusInfo:
