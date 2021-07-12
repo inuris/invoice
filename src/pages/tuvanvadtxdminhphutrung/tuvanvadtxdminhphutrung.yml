@@ -22,7 +22,7 @@ cssColor: "#005cb3"
 ### background: file, width, height, top, left, opacity
 background:
   file: bg.png
-  top: 540
+  top: 530
 
 ### background: file, width, height, top, left, opacity
 background_full:
@@ -33,9 +33,9 @@ header:
   #logo
   logo:
     file: logo.png
-    width: 150
+    width: 180
     left: 20
-    top: 5
+    top: 25
   name:
     - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     - value: Bản thể hiện của hóa đơn điện tử
