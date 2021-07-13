@@ -43,7 +43,8 @@
 	{{#if comBankNo}}
 	<xsl:choose>
 		<xsl:when test="{{#unless relative}}../../{{/unless}}ComBankNo!=''">
-			<label class="{{#ifOr v1=this.center v2=globalCenter}}{{else}}fl-l {{/ifOr}}" 
+			<label class="{{#ifOr v1=this.center v2=globalCenter}}{{else}}fl-l {{/ifOr}}
+			{{#ifOr v1=isGlobalForceInput v2=this.isForceInput}}input-name{{/ifOr}}" 
 			style="{{#if this.width}}width:{{this.width}}px;{{else}}
 					{{#if globalWidth}}width:{{globalWidth}}px;{{/if}}{{/if}}">
 				<span 
@@ -69,16 +70,31 @@
 		</xsl:otherwise>
 	</xsl:choose>
 	{{else}}
-		<label class="{{#ifOr v1=this.center v2=globalCenter}}{{else}}fl-l {{/ifOr}}" 
-		style="{{#if this.width}}width:{{this.width}}px;{{else}}
-				{{#if globalWidth}}width:{{globalWidth}}px;{{/if}}{{/if}}">
-			<span 
-			{{#ifOr v1=globalStyle v2=globalValueStyle v3=this.style v4=this.valueStyle}}
-				style="{{#if globalStyle}}{{globalStyle}};{{/if}}{{#if globalValueStyle}}{{globalValueStyle}};{{/if}}{{#if this.style}}{{this.style}};{{/if}}{{#if this.valueStyle}}{{this.valueStyle}};{{/if}}"
-			{{/ifOr}}>	
+		{{#if comAccount}}
+		<label class="{{#ifOr v1=this.center v2=globalCenter}}{{else}}fl-l {{/ifOr}}
+			{{#ifOr v1=isGlobalForceInput v2=this.isForceInput}}input-name{{/ifOr}}" 
+			style="{{#if this.width}}width:{{this.width}}px;{{else}}
+					{{#if globalWidth}}width:{{globalWidth}}px;{{/if}}{{/if}}">
+				<span 
+				{{#ifOr v1=globalStyle v2=globalValueStyle v3=this.style v4=this.valueStyle}}
+					style="{{#if globalStyle}}{{globalStyle}};{{/if}}{{#if globalValueStyle}}{{globalValueStyle}};{{/if}}{{#if this.style}}{{this.style}};{{/if}}{{#if this.valueStyle}}{{this.valueStyle}};{{/if}}"
+				{{/ifOr}}>	
 				{{comAccount}}
 			</span>
 		</label>
+		{{else}}
+		<label class="{{#ifOr v1=this.center v2=globalCenter}}{{else}}fl-l {{/ifOr}}
+			{{#ifOr v1=isGlobalInput v2=this.isInput}}input-name{{/ifOr}}" 
+			style="{{#if this.width}}width:{{this.width}}px;{{else}}
+					{{#if globalWidth}}width:{{globalWidth}}px;{{/if}}{{/if}}">
+				<span 
+				{{#ifOr v1=globalStyle v2=globalValueStyle v3=this.style v4=this.valueStyle}}
+					style="{{#if globalStyle}}{{globalStyle}};{{/if}}{{#if globalValueStyle}}{{globalValueStyle}};{{/if}}{{#if this.style}}{{this.style}};{{/if}}{{#if this.valueStyle}}{{this.valueStyle}};{{/if}}"
+				{{/ifOr}}>	
+				&#160;
+			</span>
+		</label>
+		{{/if}}
 	{{/if}}
 {{else}}
 	{{#if this.code}}
