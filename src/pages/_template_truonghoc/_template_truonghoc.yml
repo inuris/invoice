@@ -38,12 +38,15 @@ comInfo:
   - label: Điện thoại
     code: ComPhone
     isInput: 1
+    width: 750
   - label: Số tài khoản
     value:
     isBank: 1
     isInput: 1
+    width: 737
 cusInfo:
   isInput: true
+  isForceInput: true
   row:
   - label: Họ và tên người nộp tiền
     width: 664
