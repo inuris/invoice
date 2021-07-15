@@ -15,7 +15,7 @@ comBankName: Ngân hàng TMCP Sài Gòn Thương Tín - PGD Châu Đức
 debug: 
 
 comInvoiceNo: 0000000
-cssFontFamily: Arial
+cssFontFamily: Times New Roman
 cssColor: "#005cb3"
 
 ### background: file, width, height, top, left, opacity
@@ -66,16 +66,16 @@ cusInfo:
   isForceInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 700
+    width: 716
     code: Buyer
   - label: Tên đơn vị
-    width: 793
+    width: 798
     code: CusName
   - label: Mã số thuế
-    width: 790
+    width: 796
     code: CusTaxCode
   - label: Địa chỉ
-    width: 822
+    width: 821
     code: CusAddress
   - label: Hình thức thanh toán
     width: 225
@@ -83,5 +83,5 @@ cusInfo:
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 397
+      width: 419
       code: CusBankNo
