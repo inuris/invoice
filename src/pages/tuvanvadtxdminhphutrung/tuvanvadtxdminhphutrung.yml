@@ -8,7 +8,7 @@ comAddress: Số 175 Hùng Vương, thị trấn Ngãi Giao, huyện Châu Đứ
 comSys: 1
 comPhone: "0254.3962644"
 comBankNo: "0500.1845.9415"
-comBankName: Ngân hàng Sacombank Chi nhánh Vũng Tàu - PGD Châu Đức
+comBankName: Ngân hàng Sacombank, Chi nhánh Bà Rịa - Vũng Tàu, PGD Châu Đức
 comAccount: STK:...........................
 comQty: 300
 
@@ -22,17 +22,16 @@ cssColor: "#005cb3"
 ### background: file, width, height, top, left, opacity
 background:
   file: bg.png
-  top: 530
-
+  top: 585
 ### background: file, width, height, top, left, opacity
 background_full:
-  # file: bg_full.png
+  file: bg_full.png
   top: 49 
 #header
 header:
   #logo
   logo:
-    file: logo.png
+    # file: logo.png
     width: 180
     left: 20
     top: 25
@@ -41,6 +40,8 @@ header:
     - value: Bản thể hiện của hóa đơn điện tử
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+footer:
+  # margin: 70
 comInfo:
   row:
   - label: Đơn vị bán hàng
@@ -51,10 +52,10 @@ comInfo:
     code: ComTaxCode
   - label: Địa chỉ
     code: ComAddress
-  - label: Điện thoại
+  - label: Điện thoại/Fax
     code: ComPhone
     isInput: 1
-    width: 797
+    width: 770
   - label: Số tài khoản
     isBank: 1
     isInput: 1
