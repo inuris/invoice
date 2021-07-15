@@ -1,9 +1,15 @@
-comSerial: GA
-comFolder: 
-comName: CÔNG TY TNHH
-comTaxCode: 3
-comAddress: BR-VT
-comRepresent: 
+comCode: truongthcschauduc
+comFolder: 210714_TruongTHCSChauDuc_V5_AMBinhCdc
+comName: TRƯỜNG TRUNG HỌC CƠ SỞ CHÂU ĐỨC
+comTaxCode: 3502209963
+comRepresent: Nguyễn Văn Đạt
+comSerial: CD
+comAddress: Số 365 đường Hùng Vương - thị trấn Ngãi Giao - huyện Châu Đức - tỉnh Bà Rịa - Vũng Tàu
+comSys: 1
+comPhone: 
+comAccount:
+comQty: 1000
+
 
 #============================================================
 
