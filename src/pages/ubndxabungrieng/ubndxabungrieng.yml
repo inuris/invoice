@@ -4,7 +4,7 @@ comName: UBND XÃ BƯNG RIỀNG
 comTaxCode: 3500279115
 comRepresent: TỐNG VĂN NGHĨA
 comSerial: BR
-comAddress: Ấp 2, Xã Bưng Riềng, Huyện Xuyên Mộc, Tỉnh Bà Rịa - Vũng Tàu
+comAddress: Ấp 1, Xã Bưng Riềng, Huyện Xuyên Mộc, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
 comQty: 1000
 
@@ -55,6 +55,7 @@ comInfo:
   #   labelWidth: 65
 cusInfo:
   isInput: true
+  isForceInput: true
   margin: 4
   row:
   - label: Họ và tên người mua hàng
