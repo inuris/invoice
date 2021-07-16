@@ -75,6 +75,7 @@ cusInfo:
   labelStyle: 
   subStyle: "font-size: 100%"
   isInput: 1
+  isForceInput: true
   row:
   - label: Họ tên người mua hàng
     width: 661

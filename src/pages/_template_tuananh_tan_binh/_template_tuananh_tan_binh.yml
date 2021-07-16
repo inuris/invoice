@@ -41,6 +41,7 @@ comInfo:
       isInput: true
 cusInfo:
   isInput: true
+  isForceInput: true
   row:
   - label: Họ tên người mua hàng
     width: 601

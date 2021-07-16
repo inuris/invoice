@@ -55,6 +55,7 @@ comInfo:
     labelWidth: 65
 cusInfo:
   isInput: true
+  isForceInput: true
   margin: 4
   row:
   - label: Họ và tên người mua hàng
