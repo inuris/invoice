@@ -10,7 +10,7 @@ convert:
 #global style
 cssFontFamily: Times New Roman
 cssColor: "#111"
-
+debug: 1
 # layout
 # type 1:  Cơ bản, 2: Dịch vụ
 layout:
