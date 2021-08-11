@@ -34,6 +34,8 @@ header:
     - value: Bản thể hiện của hóa đơn điện tử
       valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
       style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+footer:
+  margin: 15
 comInfo:
   row:
   - label: Đơn vị bán hàng
@@ -56,29 +58,31 @@ comInfo:
     isInput: true
     col-2:
     - label: tại
-      width: 553
+      width: 633
       code: ComBankName
       isInput: true
 cusInfo:
+  margin: 4
   isInput: true
+  isForceInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 616
+    width: 700
     code: Buyer
   - label: Tên đơn vị
-    width: 710
+    width: 793
     code: CusName
   - label: Mã số thuế
-    width: 708
+    width: 790
     code: CusTaxCode
   - label: Địa chỉ
-    width: 737
+    width: 822
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 200
+    width: 225
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 342
+      width: 397
       code: CusBankNo
