@@ -4,7 +4,7 @@ comName: CHI NHÁNH CÔNG TY CỔ PHẦN SUẤT ĂN CÔNG NGHIỆP SÀI GÒN T�
 comTaxCode: 3702343758-001
 comRepresent: Trần Tuấn Hải	
 comSerial: SG
-comAddress: 62 Lê Thánh Tông, Phường Thắng Nhất, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
+comAddress: 62 Lê Thánh Tông, P. Thắng Nhất, TP. Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
 comPhone: 0912.871978
 comAccount: 0156103000008668 tại Ngân hàng TMCP Phương Đông (OCB) - CN Vũng Tàu
@@ -13,7 +13,7 @@ comBankName: Ngân hàng TMCP Phương Đông (OCB) - CN Vũng Tàu
 comQty: 300
 
 #============================================================
-
+debug: 
 comInvoiceNo: 0000000
 english: true
 convert:
@@ -23,8 +23,8 @@ cssColor: "#111"
 
 #background : file, width, height, top, left
 background:
-  # file: bg.png
-  top: 480
+  file: bg.jpg
+  top: 512
 
 # layout
 # type 1:  Cơ bản, 2: Dịch vụ
@@ -33,9 +33,9 @@ layout:
 
 logo: 
   file: logo.png
-  width: 180
+  width: 110
   top: 1
-  left: 10
+  left: 7
   bottom: 5
 
 footer:
@@ -58,44 +58,44 @@ header:
     style: "font-weight: bold; font-size: 16px; line-height: 1.4;"    
   - sub: Electronic Invoice Display
     subStyle: "font-size: 13px; line-height: 1.4;"    
+  date:
+    style: "font-style: italic"
   serial:
     width: 230
-    labelStyle: "display: block; width: 110px; float: left"
+    labelStyle: "display: block; width: 110px; float: left;"
+    valueStyle: "font-weight: 700;"
 #comInfo Table
 comInfo:
   style: "font-weight: 400; font-size: 16px"
-  margin: 2
+  margin: 8
   # labelWidth: 160
   isInput:  
   labelStyle: 
   subStyle: "font-size: 100%"
   row:
-  - code: ComName
-    style: "line-height: 22px;"
-    valueStyle: "color: #080391; font-size: 20px; font-weight: 700; letter-spacing: -0.3px"
   - label: Mã số thuế
     code: ComTaxCode
-    valueStyle: "letter-spacing: 2px;"
+    valueStyle: "letter-spacing: 2px; font-weight: 700;"
     sub: Tax code
   - label: Địa chỉ
     code: ComAddress
     sub: Address
-    width: 440
   - label: Điện thoại
     sub: Tel
     code: ComPhone
     isInput: 1
-  - label: Số tài khoản
+    valueStyle: "font-weight: 700;"
+  - label: Số TK
     sub: Account No.
     value:
     isBank: 1
     isInput: 1
-    width: 430
+    valueStyle: "letter-spacing: -0.2px; font-weight: 700;"
 #cusInfo Table
 cusInfo:
   style: "font-size: 16px"
   labelWidth:
-  margin: 2
+  margin: 4
   labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
   isInput: 
@@ -117,7 +117,12 @@ cusInfo:
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 551
+    width: 150
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
+    col-2:
+    - label: Số tài khoản
+      width: 225
+      code: CusBankNo
+      sub: Account No.
