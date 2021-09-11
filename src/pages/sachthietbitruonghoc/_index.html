@@ -5,6 +5,10 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
   <xsl:param name="bien" select="0"/>
   <xsl:param name="bien1" select="0"/>
 
+  <xsl:variable name="itemsPerPage">
+		<xsl:value-of select="15"/>
+	</xsl:variable>
+
   <xsl:variable name="itemCount">
     <xsl:value-of select="count(Invoice//Content//Products//Product)"/>
   </xsl:variable>
@@ -117,8 +121,8 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
               </xsl:when>
             </xsl:choose>
 
-            <xsl:for-each select="Invoice//Content/Products/Product[(position()-1) mod 12 = 0]">
-              <xsl:variable name="level1Count" select="(position()-1)*12"/>
+            <xsl:for-each select="Invoice//Content/Products/Product[(position()-1) mod $itemsPerPage = 0]">
+              <xsl:variable name="level1Count" select="(position()-1)*$itemsPerPage"/>
               <xsl:variable name="pageC" select="(position())"/>
 
               <div class = "VATTEMP VTU-VATTEMP" style="border:1px solid white;">
@@ -136,14 +140,14 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                   <table class="comInfo" style="width:100%;" cellspacing="0" cellpadding="0">
                                     <tr style="border:none;">
                                       <td colspan="3" style="border:none;padding-left:5px;text-align:left;">
-                                          <xsl:if test="$itemCount&gt;12">
+                                          <xsl:if test="$itemCount&gt;$itemsPerPage">
                                             <label style=" display: block; color:{{cssColor}}">
                                               <xsl:choose>
                                                 <xsl:when test="$pageC = 1">
-                                                  Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 12)" />
+                                                  Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div $itemsPerPage)" />
                                                 </xsl:when>
                                                 <xsl:when test="$pageC &gt; 1">
-                                                  Tiếp theo trang trước - Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div 12)" />
+                                                  Tiếp theo trang trước - Trang <xsl:value-of select="$pageC" />/<xsl:value-of select="ceiling($itemCount div $itemsPerPage)" />
                                                 </xsl:when>
                                               </xsl:choose>
                                             </label>
@@ -224,7 +228,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                 6 = 4 x 5
                               </th>
                             </tr>
-                            <xsl:for-each select="..//../Products/Product[  ($level1Count  + 12)  >= position() and  position() >  $level1Count]">
+                            <xsl:for-each select="../../Products/Product[($level1Count  + $itemsPerPage)  >= position() and  position() >  $level1Count]">
                               <tr class="noline back vat-product">
                                 <td class="back-bold2" style="text-align:center; border-left: 1px solid {{cssColor}};">
                                   <div style="display: block;">
@@ -309,9 +313,10 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
 
 
                               <xsl:if test="(position() + $level1Count)= $itemCount">
-                                <xsl:if test="($itemCount mod 12) != 0">
+                                <xsl:if test="($itemCount mod $itemsPerPage) != 0">
                                   <xsl:call-template name="addLine">
-                                    <xsl:with-param name="count" select="12- ($itemCount mod 12)"/>
+                                    <xsl:with-param name="itemsPerPage" select="$itemsPerPage"/>
+                                    <xsl:with-param name="count" select="$itemsPerPage - ($itemCount mod $itemsPerPage)"/>
                                   </xsl:call-template>
                                 </xsl:if>
 

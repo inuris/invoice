@@ -27,7 +27,7 @@ logo:
 #background : file, width, height, top, left
 background:
   file: bg.jpg
-  top: 385
+  top: 455
 #header
 header:
   #logo : file, width, top, left
