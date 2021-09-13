@@ -49,8 +49,9 @@ header:
   - sub: Electronic Invoice Display
     subStyle: "font-size: 13px; line-height: 1.4;"    
   serial:
-    width: 220
-    labelStyle: "display: block; width: 100px; float: left"
+    width: 230
+    labelStyle: "display: block; width: 70px; float: left;font-size: 14px"
+    valueStyle: "font-size: 14px; line-height: 1.2; display: block; float: left; widsth: 120px;"
 #comInfo Table
 comInfo:
   style: "font-weight: 400; font-size: 15px"
