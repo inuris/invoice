@@ -6,7 +6,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
   <xsl:param name="bien1" select="0"/>
 
   <xsl:variable name="itemsPerPage">
-		<xsl:value-of select="15"/>
+		<xsl:value-of select="18"/>
 	</xsl:variable>
 
   <xsl:variable name="itemCount">
@@ -230,7 +230,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                             </tr>
                             <xsl:for-each select="../../Products/Product[($level1Count  + $itemsPerPage)  >= position() and  position() >  $level1Count]">
                               <tr class="noline back vat-product">
-                                <td class="back-bold2" style="text-align:center; border-left: 1px solid {{cssColor}};">
+                                <td class="back-bold2" height="26px" style="text-align:center; border-left: 1px solid {{cssColor}};">
                                   <div style="display: block;">
                                     <xsl:choose>
                                       <xsl:when test="Remark!='' and Remark!='.'">
@@ -623,7 +623,7 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                             <!-- </xsl:for-each> -->
                           </tbody>
                         </table>
-                        <div class="nenhd_bg"> &#160; </div>
+                        <!-- <div class="nenhd_bg"> &#160; </div> -->
                         
                       </div>
                       <!--panel footer-->

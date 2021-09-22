@@ -19,6 +19,7 @@ cssColor: "#000"
 
 background_full:
   file: bg_full.png
+  height: 1290
 #logo : file, width, top, left
 logo:
   file: logo.png
@@ -29,6 +30,8 @@ logo:
 background:
   file: bg.jpg
   top: 455
+footer:
+  margin: 20
 #header
 header:
   #logo : file, width, top, left
