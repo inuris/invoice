@@ -6,6 +6,6 @@
     {{/if}}
     background-position: {{#if left}}{{left}}%{{else}}center{{/if}} {{#if top}}{{top}}%{{else}}center{{/if}};
     background-repeat: no-repeat;
-    height: 1230px;
+    height: {{#if height}}{{height}}{{else}}1230{{/if}}px;
 }
 {{/with}}

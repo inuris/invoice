@@ -13,7 +13,7 @@
         </xsl:when>
         <xsl:otherwise>
           <label class="input-name summary" style="height:20px;display: block;margin-right:5px;color:black;border-bottom: none;">
-            <xsl:value-of select="translate(translate(translate(format-number(../../Amount, '###,###'),',','?'),'.',','),'?','.')"/>
+            <xsl:value-of select="translate(translate(translate(format-number(../../Amount, '###,##0'),',','?'),'.',','),'?','.')"/>
           </label>
         </xsl:otherwise>
       </xsl:choose>
@@ -42,7 +42,7 @@
         </xsl:when>
         <xsl:otherwise>
           <label class="input-name summary" style="height:20px;display: block;margin-right:5px;border-bottom: none;color: black;">
-            <xsl:value-of select="translate(translate(translate(format-number(../../Total, '###,###'),',','?'),'.',','),'?','.')"/>
+            <xsl:value-of select="translate(translate(translate(format-number(../../Total, '###,##0'),',','?'),'.',','),'?','.')"/>
           </label>
         </xsl:otherwise>
       </xsl:choose>
@@ -88,7 +88,7 @@
         </xsl:when>
         <xsl:otherwise>
           <label class="input-name summary" style="height:20px;display: block;margin-right:5px;color: black;border-bottom: none;">
-            <xsl:value-of select="translate(translate(translate(format-number(../../VAT_Amount, '###,###'),',','?'),'.',','),'?','.')"/>
+            <xsl:value-of select="translate(translate(translate(format-number(../../VAT_Amount, '###,##0'),',','?'),'.',','),'?','.')"/>
           </label>
         </xsl:otherwise>
       </xsl:choose>
@@ -109,7 +109,7 @@
         </xsl:when>
         <xsl:otherwise>
           <label class="input-name summary" style="height:20px;display: block;margin-right:5px;color:black;border-bottom: none;">
-            <xsl:value-of select="translate(translate(translate(format-number(../../Amount, '###,###'),',','?'),'.',','),'?','.')"/>
+            <xsl:value-of select="translate(translate(translate(format-number(../../Amount, '###,##0'),',','?'),'.',','),'?','.')"/>
           </label>
         </xsl:otherwise>
       </xsl:choose>

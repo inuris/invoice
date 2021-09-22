@@ -6,7 +6,7 @@
 {{/if}} 
 <xsl:choose>
   <xsl:when test="/Invoice/Fkey !=''">
-    <div style="font-size:13px; text-align: left; margin-top: 4px;">
+    <div style="font-size:13px; text-align: left; margin-top:  {{#if footer.margin}}{{footer.margin}}{{else}}4{{/if}}px;">
       <p style="margin:0; color: {{cssColor}}">
         <span>Mã tra cứu hóa đơn{{#if isEnglish}} <i style="font-size: 90%;">(Code for checking)</i>{{/if}}: 
           <xsl:value-of select="/Invoice/Fkey" /></span>
@@ -23,7 +23,7 @@
     </div>
   </xsl:when>
   <xsl:otherwise>
-    <div style="font-size:13px; text-align: left; margin-top: 4px; padding-left:10px;">
+    <div style="font-size:13px; text-align: left; margin-top:  {{#if footer.margin}}{{footer.margin}}{{else}}4{{/if}}px; padding-left:10px;">
       <p style="margin:0; color: {{cssColor}}">
         <span>Mã tra cứu hóa đơn{{#if isEnglish}} <i style="font-size: 90%;">(Code for checking)</i>{{/if}}: </span>
       </p>
