@@ -36,6 +36,10 @@ header:
     style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
 
 
+#footer    
+footer:
+  margin: 120
+
 comInfo:
   row:
   - label: Đơn vị bán hàng
@@ -49,26 +53,29 @@ comInfo:
     valueStyle: "font-size: 15.5px; letter-spacing: -0.2px"
   - label: Điện thoại
     value: *p
+
 cusInfo:
+  margin: 2
   isInput: true
+  isForceInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 619
+    width: 718
     code: Buyer
   - label: Tên đơn vị
-    width: 700
+    width: 799
     code: CusName
   - label: Mã số thuế
-    width: 699
+    width: 798
     code: CusTaxCode
   - label: Địa chỉ
-    width: 723
+    width: 822
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 195
+    width: 225
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 337
+      width: 421
       code: CusBankNo
