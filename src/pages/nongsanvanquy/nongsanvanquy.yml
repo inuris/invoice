@@ -8,7 +8,7 @@ comAddress: Ấp Đức Trung, Xã Bình Ba, Huyện Châu Đức, Tỉnh Bà R�
 comSys: 1
 comPhone:
 comQty: 500
-
+debug: 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
@@ -47,11 +47,11 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 
+    code: ComPhone
     isInput: 1
     width: 797
   - label: Số tài khoản
-    value: 
+    isBank: 1
     isInput: 1
     width: 780
 cusInfo:
