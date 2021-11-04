@@ -8,7 +8,7 @@ comAddress: Số 130 Đồ Chiểu Phường 3 Thành Phố Vũng Tàu, Tỉnh B
 comSys: 1
 comPhone: &p 0899797679
 comQty: 1000
-debug:
+debug: 
 
 comInvoiceNo: 0000000
 english: true

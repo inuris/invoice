@@ -57,8 +57,15 @@
         <label class="input-name"> \ %</label>
       </xsl:when>
       <xsl:when test="../../VAT_Rate!=''">
-        <label class="input-name" style="width:40px;height:20px;padding-top:0px;font-size:15px;border-bottom: none;">
-         <xsl:value-of select="../../VAT_Rate"/> %
+        <label class="input-name" style="width:40px;height:20px;padding-top:0px;font-size:15px;border-bottom: none;">         
+          <xsl:choose>
+            <xsl:when test="../../KindOfService='70' and (../../VAT_Rate='5' or ../../VAT_Rate='10')">
+              <xsl:value-of select="../../VAT_Rate"/> % x 70%
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="../../VAT_Rate"/> %
+            </xsl:otherwise>
+          </xsl:choose>        
         </label>
       </xsl:when>
       <xsl:otherwise>
