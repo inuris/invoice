@@ -51,7 +51,7 @@ comInfo:
     # isInput: 1
     # width: 797
   - label: Số tài khoản
-    value: 
+    isBank: 1
     isInput: 1
     width: 780
 cusInfo:
