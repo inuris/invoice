@@ -10,6 +10,7 @@ comPhone: &p 0899797679
 comQty: 1000
 debug: 
 
+vat70: 1
 comInvoiceNo: 0000000
 english: true
 convert:
