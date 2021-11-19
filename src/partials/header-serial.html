@@ -1,3 +1,36 @@
+{{#if tt78}}
+<div class="InvInfoRight" style="padding-left:10px; padding-top:10px; {{#if header.serial.style}}{{header.serial.style}}{{/if}}">    
+    <div class="clearfix" style="line-height:22px">
+        <span {{#if header.serial.labelStyle}}
+                style="{{header.serial.labelStyle}}"
+            {{/if}}>Ký hiệu {{#if english}}<i style="font-size: 85%;{{#if header.serial.subStyle}}{{header.serial.subStyle}}{{/if}}">(Serial)</i>{{/if}}: </span>
+        <span {{#if header.serial.valueStyle}}
+                style="{{header.serial.valueStyle}}"
+            {{/if}}>
+            <strong>
+                <xsl:value-of select="{{#unless relative}}../../{{/unless}}SerialNo" />
+            </strong>
+        </span>
+    </div>
+    <div class="clearfix" style="line-height:22px">
+        <span {{#if header.serial.labelStyle}}
+                 style="{{header.serial.labelStyle}}"
+            {{/if}}>Số {{#if english}}<i style="font-size: 85%;{{#if header.serial.subStyle}}{{header.serial.subStyle}}{{/if}}">(No.)</i>{{/if}}: </span>
+        <span style="{{#if cssColorRed}}color:{{cssColorRed}}{{else}}color:red{{/if}};font-size:140%;letter-spacing: 2px;
+            {{#if header.serial.valueStyle}}
+                {{header.serial.valueStyle}}
+            {{/if}}
+            ">
+            <strong>
+                <xsl:call-template name="addZero">
+                    <xsl:with-param name="count" select="7-string-length({{#unless relative}}../../{{/unless}}InvoiceNo)" />
+                </xsl:call-template>
+                <xsl:value-of select="{{#unless relative}}../../{{/unless}}InvoiceNo" />
+            </strong>
+        </span>
+    </div>
+</div>
+{{else}}
 <div class="InvInfoRight" style="padding-left:10px; padding-top:10px; {{#if header.serial.style}}{{header.serial.style}}{{/if}}">
     <div class="clearfix" style="line-height:22px;">
         <span {{#if header.serial.labelStyle}}
@@ -40,3 +73,4 @@
         </span>
     </div>
 </div>
+{{/if}}

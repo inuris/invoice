@@ -11,7 +11,7 @@ comBankNo:                                # số tài khoản
 comBankName:                              # tên ngân hàng
 
 
-
+tt78: 1                                   # [optional] 1: mẫu tt78, bỏ Mẫu số và sửa Ký hiệu mới
 comInvoiceNo: 0000000                     # [optional] đổi serial
 comFkey: ...                              # [optional] đổi Fkey
 xml:                                      # bổ sung thêm tag XML

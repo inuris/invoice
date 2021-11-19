@@ -6,7 +6,7 @@
 <CNCom>{{comName}}</CNCom>
 <Content Id="SigningData">
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}21E{{/if}}</SerialNo>
+	<SerialNo>{{comSerial}}{{#unless tt78}}/{{#if comYear}}{{comYear}}E{{else}}21E{{/if}}{{/unless}}</SerialNo>
 	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>	
 	<ComName>{{comName}}</ComName>
 	<ComTaxCode>{{comTaxCode}}</ComTaxCode>
@@ -383,7 +383,7 @@
 <CNCom>{{comName}}</CNCom>
 <Content Id="SigningData">	
 	<InvoicePattern>{{#if comPattern}}{{comPattern}}{{else}}01GTKT0/001{{/if}}</InvoicePattern>
-	<SerialNo>{{comSerial}}/{{#if comYear}}{{comYear}}E{{else}}21E{{/if}}</SerialNo>
+	<SerialNo>{{comSerial}}{{#unless tt78}}/{{#if comYear}}{{comYear}}E{{else}}21E{{/if}}{{/unless}}</SerialNo>
 	<InvoiceNo>{{comInvoiceNo}}</InvoiceNo>
 	<Kind_of_Payment></Kind_of_Payment>
 	<ComName>{{comName}}</ComName>
