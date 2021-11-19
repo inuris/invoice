@@ -2,7 +2,7 @@ comName: CÔNG TY TNHH AN HUY
 comCode: anhuy
 comTaxCode: 3500907539
 comRepresent: LÊ ĐỨC HIỀN
-comSerial: AH
+comSerial: 1T21AH
 comAddress: Số 10 Nguyễn Hữu Thọ, Phường Phú Mỹ, Thị xã Phú Mỹ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
 comPhone: &p "02543.895895"
@@ -10,6 +10,7 @@ comAccount: &a 76210000186144 - Ngân Hàng BIDV - CN Phú Mỹ
 comYear: 20
 comFolder: 
 
+tt78: 1
 comInvoiceNo: 0000000
 cssFontFamily: Arial
 cssColor: "#005cb3"
