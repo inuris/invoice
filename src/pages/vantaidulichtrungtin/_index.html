@@ -517,8 +517,15 @@
 						<label class="input-name"> \ %</label>
 					</xsl:when>
 					<xsl:when test="../../VAT_Rate!=''">
-						<label class="input-name" style="width:40px;height:20px;padding-top:0px;font-size:15px;border-bottom: none;">
-						 <xsl:value-of select="../../VAT_Rate"/> %
+						<label class="input-name" style="height:20px;padding-top:0px;font-size:15px;border-bottom: none;">         
+						<xsl:choose>
+							<xsl:when test="../../KindOfService='70' and (../../VAT_Rate='5' or ../../VAT_Rate='10')">
+							<xsl:value-of select="../../VAT_Rate"/> % x 70%
+							</xsl:when>
+							<xsl:otherwise>
+							<xsl:value-of select="../../VAT_Rate"/> %
+							</xsl:otherwise>
+						</xsl:choose>        
 						</label>
 					</xsl:when>
 					<xsl:otherwise>
@@ -894,13 +901,10 @@
 				<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 				<title>VAT</title>
 				<style type="text/css" rel="stylesheet">		  	
-			@charset "utf-8";
+			{{>css}}
 			#main{margin:0 auto}
-			@page {size: "A4"; margin: 11mm;}
-		  	* html,body {
-		  	margin: 0px auto;
-		  	padding: 0;
-		  	height: 100%;
+			body {
+		  		margin: 0 auto;
 		  	}
 		  	span, i, b{
 		  		color: {{cssColor}};
@@ -913,7 +917,7 @@
 		  	}
 		  	#main {
 		  	margin: 0 auto
-		  	}
+		  	}	
 		  	.VTU-VATTEMP {
 		  	background-color: #fff;
 		  	font: 78%/1.4em {{cssFontFamily}}, "Helvetica Neue", Helvetica, sans-serif;
