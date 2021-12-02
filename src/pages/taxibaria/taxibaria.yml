@@ -28,25 +28,27 @@ comInfo:
   - label: STK
     value: "80200013714758 tại Ngân hàng Seabank - Phòng giao dịch Bà Rịa"
 cusInfo:
+  margin: 2
   isInput: true
+  isForceInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 638
+    width: 715
     code: Buyer
   - label: Tên đơn vị
-    width: 720
+    width: 796
     code: CusName
   - label: Mã số thuế
-    width: 718
+    width: 796
     code: CusTaxCode
   - label: Địa chỉ
-    width: 743
+    width: 820
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 200
+    width: 225
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 370
+      width: 419
       code: CusBankNo
