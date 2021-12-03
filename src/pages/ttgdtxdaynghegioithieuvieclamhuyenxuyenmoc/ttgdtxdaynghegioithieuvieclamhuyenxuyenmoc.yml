@@ -1,0 +1,66 @@
+comCode: ttgdtxdaynghegioithieuvieclamhuyenxuyenmoc
+comFolder: 211206_TTGDTXDayNgheGioiThieuViecLamHuyenXuyenMoc_V5_AMTuanAnh
+comName: TRUNG TÂM GIÁO DỤC THƯỜNG XUYÊN - DẠY NGHỀ - GIỚI THIỆU VIỆC LÀM HUYỆN XUYÊN MỘC
+comTaxCode: 3500297562-034
+comRepresent: HUỲNH TẤN PHÚC
+comSerial: TX
+comAddress: Khu Phố Láng Sim, Thị Trấn Phước Bửu, Huyện Xuyên Mộc, Tỉnh Bà Rịa - Vũng Tàu
+comSys: 1
+comEmail: trananhbn@gmail.com
+comQty: 300
+
+#============================================================
+
+
+
+comPattern: 02GTTT0/001
+isGTTT: true
+comInvoiceNo: 0000000
+cssColor: "#185b9d"
+
+header:
+  logo:
+    width: 150
+  name:
+  - value: HÓA ĐƠN BÁN HÀNG - PHIẾU THU TIỀN
+    style: "font-size: 18px"
+  - value: Bản thể hiện của hóa đơn điện tử
+    valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+    style: "font-size: 12px; line-height: 1.4;"
+    styleConvert: "font-size: 12px; line-height: 1.4;"
+
+comInfo:
+  margin: 4
+  row:
+  - label: Đơn vị thu tiền
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  # - label: Điện thoại
+  #   code: ComPhone
+  #   isInput: 1
+  #   width: 750
+  # - label: Số tài khoản
+  #   value:
+  #   isBank: 1
+  #   isInput: 1
+  #   width: 737
+cusInfo:
+  margin: 4
+  isInput: true
+  isForceInput: true
+  row:
+  - label: Họ và tên người nộp tiền
+    width: 664
+    code: Buyer
+  - label: Địa chỉ (lớp)
+    width: 737
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 685
+    code: Kind_of_Payment
+    isPayment: true
