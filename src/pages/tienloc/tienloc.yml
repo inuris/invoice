@@ -71,23 +71,23 @@ cusInfo:
   subStyle: "font-size: 100%"
   row:
   - label: Họ tên người mua hàng
-    width: 514
+    width: 500
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 611
+    width: 596
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 648
+    width: 633
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 681
+    width: 666
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 517
+    width: 501
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
