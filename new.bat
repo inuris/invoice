@@ -28,7 +28,7 @@ echo %template%
 set /p code=Code name:
 set /p publish=Folder publish:
 
-
+if not "%t%"=="0" (
 
 echo "Generating HTML..."
 xcopy "src\pages\%template%" "src\pages\%code%" /s /i /y
@@ -41,6 +41,7 @@ echo "Generating YML..."
 echo comCode: %code%>"src\pages\%code%\%code%.yml"
 type "src\pages\%template%\%template%.yml">>"src\pages\%code%\%code%.yml"
 
+)
 echo "Generating _copy.bat..."
 
 echo set /p rootPublish=^<..\..\..\copy.cfg>"src\pages\%code%\_copy.bat"
