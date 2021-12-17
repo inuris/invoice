@@ -4,7 +4,7 @@ comPattern: 01GTKT/003
 comCode: hungthaidvhaucanthuysan
 comRepresent: Nguyễn Minh Tuấn
 comSerial: HT
-comName: CHI NHÁNH CÔNG TY CỔ PHẦN HƯNG THÁI HOLDINGS-XÍ NGHIỆP DỊCH VỤ HẬU CẦN THỦY SẢN HƯNG THÁI
+comName: CHI NHÁNH CÔNG TY CỔ PHẦN HƯNG THÁI HOLDINGS - XÍ NGHIỆP DỊCH VỤ HẬU CẦN THỦY SẢN HƯNG THÁI
 comTaxCode: 3500798008
 comAddress: &a ấp Lò Vôi, Xã Phước Hưng, Huyện Long Điền,Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comInvoiceNo: 0000000
@@ -48,7 +48,7 @@ comInfo:
   row:
   - label: Đơn vị bán hàng
     valueStyle: "font-weight: bold; line-height: 16px; letter-spacing: -0.2px"
-    code: ComName 
+    value: CHI NHÁNH CÔNG TY CỔ PHẦN HƯNG THÁI HOLDINGS - XÍ NGHIỆP DỊCH VỤ HẬU CẦN THỦY SẢN HƯNG THÁI
   - label: Mã số thuế
     valueStyle: "font-weight: bold; letter-spacing: 3px"
     code: ComTaxCode
