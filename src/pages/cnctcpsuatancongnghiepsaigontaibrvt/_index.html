@@ -370,19 +370,24 @@ xmlns:js="urn:custom-javascript" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                                     <label class="fl-l" style="line-height:20px; text-align:left;">
                                       <span style="font-weight:bold;">Thuế suất GTGT{{#if english}} <i style="font-size: 100%;font-weight:normal;">(VAT Rate)</i>{{/if}}:</span>
                                       <span>
+                                      
+
                                       <xsl:choose>
-                                        <xsl:when test="../../VAT_Rate!=''">
-                                        <xsl:choose>
-                                          <xsl:when test="../../VAT_Rate!='-1' ">
-                                          &#160; <xsl:value-of select="../../VAT_Rate"/>&#160;%
-                                          </xsl:when>
-                                          <xsl:otherwise>
-                                          &#160;/
-                                          </xsl:otherwise>
-                                        </xsl:choose>
+                                        <xsl:when test="../../VAT_Rate='-1'">
+                                          &#160;\&#160;%
+                                        </xsl:when>
+                                        <xsl:when test="../../VAT_Rate!=''">        
+                                            <xsl:choose>
+                                              <xsl:when test="../../KindOfService='70' and (../../VAT_Rate='5' or ../../VAT_Rate='10')">
+                                                <xsl:value-of select="../../VAT_Rate"/>% x 70%
+                                              </xsl:when>
+                                              <xsl:otherwise>
+                                                <xsl:value-of select="../../VAT_Rate"/>%
+                                              </xsl:otherwise>
+                                            </xsl:choose>
                                         </xsl:when>
                                         <xsl:otherwise>
-                                        &#160; %
+                                          &#160;%
                                         </xsl:otherwise>
                                       </xsl:choose>
                                       </span>                                    
