@@ -98,6 +98,7 @@ cusInfo:
     sub: Method of Payment
     col-2:
       - label: Tài khoản
+        code: CusBankNo
         width: 350
   - label: Đơn đặt hàng số / Dự án
     width: 654
