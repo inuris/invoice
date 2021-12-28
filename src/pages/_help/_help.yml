@@ -99,7 +99,8 @@ comInfo:
 
 ### Thông tin khách hàng cusInfo: style, margin, width, isInput, row
 cusInfo:
-  isInput: true                                         # isInput = true sẽ hiển thị "..." trong value
+  isInput: true                                         # true: hiển thị "..." trong value (chỉ khi value rỗng)
+  isForceInput: true                                    # true: luôn hiển thị "..." trong value 
   row:
   - label: Họ tên người mua hàng
     width: 640
