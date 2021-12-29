@@ -7,8 +7,10 @@ comRepresent: LƯU KIM PHƯỢNG
 comSerial: LL
 comAddress: Ấp Tân Hiệp, Xã Long Tân, Huyện Đất Đỏ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
-comPhone: &p 0908448724
+comPhone: &p 0932626463
 comAccount: &a 6005201002732 Ngân hàng Agribank - Chi nhánh Huyện Đất Đỏ
+comBankName: Ngân hàng Agribank - Chi nhánh Huyện Đất Đỏ
+comBankNo: 6005201002732
 
 comInvoiceNo: 0000000
 cssFontFamily: Arial
@@ -48,9 +50,10 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: *p
+    code: ComPhone
   - label: Số tài khoản
-    value: *a
+    isBank: 1                                           # Dành cho field ngân hàng, đọc data từ comAccount (nguyên chuỗi) hoặc comBankNo+comBankName
+    
 cusInfo:
   margin: 2
   isInput: true
