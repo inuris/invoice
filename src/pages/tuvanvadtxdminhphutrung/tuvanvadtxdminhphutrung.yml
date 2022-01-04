@@ -12,6 +12,7 @@ comBankName: Ngân hàng Sacombank, Chi nhánh Bà Rịa - Vũng Tàu, PGD Châu
 comAccount: STK:...........................
 comQty: 300
 
+debug: 
 
 
 
@@ -43,6 +44,7 @@ header:
 footer:
   # margin: 70
 comInfo:
+  margin: 4
   row:
   - label: Đơn vị bán hàng
     valueStyle: "font-weight: bold"
@@ -61,7 +63,7 @@ comInfo:
     isInput: 1
     width: 780
 cusInfo:
-  margin: 2
+  margin: 4
   isInput: true
   isForceInput: true
   row:
@@ -78,10 +80,10 @@ cusInfo:
     width: 822
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 225
+    width: 155
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 397
-      code: CusBankNo
+      width: 467
+      isCusBank: 1
