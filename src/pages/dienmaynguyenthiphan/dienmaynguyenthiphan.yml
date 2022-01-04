@@ -6,8 +6,10 @@ comRepresent: TĂNG AN
 comSerial: TP
 comAddress: Số 86-88 Lê Quý Đôn, Phường Phước Trung, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu
 comSys: 1
-comPhone: &p "02543.825.231"
-comAccount: &a 7611.00000.58936 tại Ngân hàng TMCP Đầu Tư và Phát Triển Việt Nam, Chi nhánh Bà Rịa
+comPhone: "02543.825.231"
+comAccount: 7611.00000.58936 tại Ngân hàng TMCP Đầu Tư và Phát Triển Việt Nam, Chi nhánh Bà Rịa
+comBankNo: "7611.00000.58936"
+comBankName: Ngân hàng TMCP Đầu Tư và Phát Triển Việt Nam, Chi nhánh Bà Rịa
 comQty: 500
 
 
@@ -49,13 +51,13 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: *p
+    code: ComPhone
     # isInput: 1
     # width: 797
   - label: Số tài khoản
-    value: *a
-    # isInput: 1
-    # width: 780
+    isBank: 1          
+    isInput: 1
+    width: 780
 cusInfo:
   margin: 2
   isInput: true
