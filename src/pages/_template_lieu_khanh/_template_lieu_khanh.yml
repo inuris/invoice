@@ -74,10 +74,10 @@ cusInfo:
     width: 822
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 225
+    width: 170
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 397
-      code: CusBankNo
+      width: 452
+      isCusBank: 1
