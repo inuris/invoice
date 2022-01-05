@@ -1,13 +1,13 @@
 comCode: tmxdnamtrung
 comFolder: 210629_TMXDNamTrung_V5_AMBinh
-comName: CÔNG TY TNHH MỘT THÀNH VIÊN THƯƠNG MẠI VÀ XÂY DỰNG NAM TRUNG
+comName: CÔNG TY TRÁCH NHIỆM HỮU HẠN THƯƠNG MẠI VÀ XÂY DỰNG NAM TRUNG
 comTaxCode: 3501537714
 comRepresent: NGUYỄN KIM DƯ
 comSerial: NT
-comAddress: Xã Kim Long, Huyện Châu Đức, Tỉnh Bà Rịa - Vũng Tàu
+comAddress: Thôn Tam Long, Xã Kim Long, Huyện Châu Đức, Bà Rịa, Vũng Tàu
 comSys: 1
-comPhone: SĐT:......................
-comAccount: STK:......................
+comPhone:
+comAccount: 
 comQty: 300
 
 
@@ -51,11 +51,11 @@ comInfo:
   - label: Địa chỉ
     code: ComAddress
   - label: Điện thoại
-    value: 
+    code: comPhone
     isInput: 1
     width: 797
   - label: Số tài khoản
-    value: 
+    isBank:  1
     isInput: 1
     width: 780
 cusInfo:
