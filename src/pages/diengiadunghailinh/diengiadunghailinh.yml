@@ -35,35 +35,34 @@ comInfo:
     code: ComAddress
   - label: Điện thoại
     code: ComPhone
-  - label: STK
-    width: 180
-    code: ComBankNo
-    isInput: true
-    col-2:
-    - label: tại
-      width: 518
-      code: ComBankName
-      isInput: true
+    isInput: 1
+    width: 797
+  - label: Số tài khoản
+    isBank: 1
+    isInput: 1
+    width: 780
 cusInfo:
+  margin: 6
   isInput: true
+  isForceInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 601
+    width: 700
     code: Buyer
   - label: Tên đơn vị
-    width: 695
+    width: 793
     code: CusName
   - label: Mã số thuế
-    width: 692
+    width: 790
     code: CusTaxCode
   - label: Địa chỉ
-    width: 723
+    width: 822
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 200
+    width: 170
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 308
-      code: CusBankNo
+      width: 452
+      isCusBank: 1
