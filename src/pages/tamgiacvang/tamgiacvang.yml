@@ -1,28 +1,34 @@
 comCode: tamgiacvang
+comYear: 20
 comSerial: AA
 comName: CÔNG TY TNHH THƯƠNG MẠI-XUẤT NHẬP KHẨU-DỊCH VỤ KỸ THUẬT TAM GIÁC VÀNG
 comTaxCode: 3502409842
-comAddress: 420 Lê Hồng Phong, Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comAddress: Số 16, đường Bùi Xuân Phái, Phường Phước Hưng, Thành phố Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comPhone: "02546530300"
+
 english: true
 #global style
-cssFontFamily: Arial
-cssColor: "#000"
+cssFontFamily: Times New Roman
+cssColor: "#111"
+comFolder: 191112_TamGiacVang_AMTrong
+
+# layout
+# type 1:  Cơ bản, 2: Dịch vụ
+layout:
+  type: 1
 
 #background : file, width, height, top, left
 background:
-  file: 
-  width: 268
-  height: 260
-  top: 500
-  left: 275
+  file: bg.png
+  top: 520
 #header
 header:
   #logo : file, width, top, left
   logo:
-    file: 
-    width: 120
+    file: logo.png
+    width: 213
     top: 5
-    left: 35
+    left: 5
   name:
   - value: HÓA ĐƠN GIÁ TRỊ GIA TĂNG
     style: "font-size: 22px"
@@ -33,8 +39,8 @@ header:
   - sub: Electronic Invoice Display
     subStyle: "font-size: 13px; line-height: 1.4;"    
   serial:
-    width: 220
-    labelStyle: "display: block; width: 100px; float: left"
+    width: 230
+    labelStyle: "display: block; width: 110px; float: left"
 #comInfo Table
 comInfo:
   style: "font-weight: 700; font-size: 15px; letter-spacing: -0.2px"
@@ -60,35 +66,37 @@ comInfo:
   - label: Điện thoại
     sub: Tel
     valueStyle: "font-size: 15px"
-    value: 0973632646
+    code: ComPhone
   - label: Email
     value: tamgiacvangvt@gmail.com
 #cusInfo Table
+
 cusInfo:
   style: "font-size: 16px"
-  labelWidth: 
-  isInput: true
+  labelWidth:
+  margin: 8
   labelStyle: "font-weight: 700;"
   subStyle: "font-size: 100%"
+  isInput: 
   row:
   - label: Họ tên người mua hàng
-    width: 514
+    width: 547
     code: Buyer
     sub: Customer's Name
   - label: Tên đơn vị
-    width: 611
+    width: 644
     code: CusName
     sub: Company Name
   - label: Mã số thuế
-    width: 648
+    width: 682
     code: CusTaxCode
     sub: Tax code
   - label: Địa chỉ
-    width: 681
+    width: 715
     code: CusAddress
     sub: Address
   - label: Hình thức thanh toán
-    width: 517
+    width: 551
     code: Kind_of_Payment
     isPayment: true
     sub: Method of Payment
