@@ -7,9 +7,10 @@ comCode: tiemvanghoangkim
 comTaxCode: 3500103520
 comRepresent: Trần Thị Kim Sương
 comSerial: HK
+comYear: 20
 comAddress: Số 82 Lý Tự Trọng, Phường 1, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
 comSys: 1
-comPhone: &p 0254-3855484
+comPhone: 0254-3855484
 
 comInvoiceNo: 0000000
 cssColor: "#005cb3"
@@ -17,6 +18,10 @@ cssFontFamily: "Times New Roman"
 comFkey: "..."
 convert:
 debug: 
+
+#footer    
+footer:
+  margin: 80
 
 #background : file, width, height, top, left
 background:
@@ -36,6 +41,7 @@ header:
 
 
 comInfo:
+  margin: 6
   row:
   - label: Đơn vị bán hàng
     valueStyle: "font-weight: bold"
@@ -47,27 +53,31 @@ comInfo:
     code: ComAddress
     valueStyle:
   - label: Điện thoại
-    value: *p
+    code: ComPhone
+    isInput: 1
+    width: 797
 cusInfo:
+  margin: 6
   isInput: true
+  isForceInput: true
   row:
   - label: Họ tên người mua hàng
-    width: 619
+    width: 718
     code: Buyer
   - label: Tên đơn vị
-    width: 700
+    width: 799
     code: CusName
   - label: Mã số thuế
-    width: 699
+    width: 798
     code: CusTaxCode
   - label: Địa chỉ
-    width: 723
+    width: 822
     code: CusAddress
   - label: Hình thức thanh toán
-    width: 195
+    width: 170
     code: Kind_of_Payment
     isPayment: true
     col-2:
     - label: Số tài khoản
-      width: 337
-      code: CusBankNo
+      width: 475
+      isCusBank: 1
