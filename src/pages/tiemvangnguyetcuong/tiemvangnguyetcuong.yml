@@ -1,0 +1,90 @@
+comCode: tiemvangnguyetcuong
+comSerial: NC
+comFolder: 
+comName: DOANH NGHIỆP TƯ NHÂN TIỆM VÀNG NGUYỆT CƯỜNG
+comTaxCode: 3502239478
+comAddress: Số 01B, Khu phố Phước Thới, Thị Trấn Đất Đỏ, Huyện Đất Đỏ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam
+comRepresent: 
+comPhone: 0933263789
+comAccount:                               # tài khoản, nếu ko có comBankNo và comBankName sẽ lấy nguyên chuỗi này
+comBankNo: 6005201002393                               # số tài khoản
+comBankName: Agribank Chi nhánh Huyện Đất Đỏ                             # tên ngân hàng
+comYear: 21
+#============================================================
+
+comPattern: 02GTTT0/001
+isGTTT: true
+
+comInvoiceNo: 0000000
+cssFontFamily: Arial
+cssColor: "#005cb3"
+
+### background: file, width, height, top, left, opacity
+background:
+  # file: bg.png
+  top: 500
+
+### background: file, width, height, top, left, opacity
+background_full:
+  # file: bg_full.png
+  top: 49 
+#header
+header:
+  #logo
+  logo:
+    # file: logo.png
+    width: 150
+    left: 20
+    top: 5
+  name:
+    - value: HÓA ĐƠN BÁN HÀNG
+    - value: Bản thể hiện của hóa đơn điện tử
+      valueConvert: (Hóa đơn chuyển đổi từ hóa đơn điện tử)
+      style: "font-weight: bold; font-size: 16px; line-height: 1.4;" 
+#footer    
+footer:
+  margin: 120
+comInfo:
+  margin: 6
+  row:
+  - label: Đơn vị bán hàng
+    valueStyle: "font-weight: bold"
+    code: ComName
+  - label: Mã số thuế
+    valueStyle: "font-weight: bold"
+    code: ComTaxCode
+  - label: Địa chỉ
+    code: ComAddress
+  - label: Điện thoại
+    code: ComPhone
+    isInput: 1
+    width: 797
+  - label: Số tài khoản
+    isBank: 1
+    isInput: 1
+    width: 780
+cusInfo:
+  margin: 6
+  isInput: true
+  isForceInput: true
+  row:
+  - label: Họ tên người mua hàng
+    width: 700
+    code: Buyer
+  - label: Tên đơn vị
+    width: 793
+    code: CusName
+  - label: Mã số thuế
+    width: 790
+    code: CusTaxCode
+  - label: Địa chỉ
+    width: 822
+    code: CusAddress
+  - label: Hình thức thanh toán
+    width: 225
+    code: Kind_of_Payment
+    isPayment: true
+    col-2:
+    - label: Số tài khoản
+      width: 397
+      code: CusBankNo
