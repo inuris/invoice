@@ -28,7 +28,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.29.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-base64-inline": "^1.0.6",
